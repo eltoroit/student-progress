@@ -1,16 +1,12 @@
 {
 	"packageDirectories": [
 		{
-			"path": "force-apps/doFirst",
+			"path": "force-apps/doNotDeploy",
 			"default": false
 		},
 		{
 			"path": "force-apps/deploy",
 			"default": true
-		},
-		{
-			"path": "force-apps/doNotDeploy",
-			"default": false
 		}
 	],
 	"name": "et-basic-project",
