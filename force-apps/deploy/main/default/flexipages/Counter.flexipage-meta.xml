@@ -3,24 +3,26 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>demoCounter</identifier>
                 <componentName>demoCounter</componentName>
+                <identifier>demoCounter</identifier>
             </componentInstance>
         </itemInstances>
-        <name>region1</name>
+        <name>column1</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <name>region2</name>
-        <type>Region</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <name>region3</name>
+        <itemInstances>
+            <componentInstance>
+                <componentName>flowElement</componentName>
+                <identifier>c_flowElement</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column2</name>
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>Counter</masterLabel>
     <template>
-        <name>flexipage:appHomeTemplateHeaderTwoColumnsLeftSidebar</name>
+        <name>flexipage:appHomeTemplateTwoColumns</name>
     </template>
     <type>AppPage</type>
 </FlexiPage>

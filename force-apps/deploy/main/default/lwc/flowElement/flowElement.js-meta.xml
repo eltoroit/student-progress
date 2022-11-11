@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Best LWC + FLOW Component Ever (V1.1)</masterLabel>
+    <description>This is a counter component for flows</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="txtCounter" label="Counter value (text)" type="String" />
+            <property name="intCounter" label="Counter value (integer)" type="Integer" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
