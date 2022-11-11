@@ -6,18 +6,19 @@ export default class FlowInLwc extends LightningElement {
 			{
 				name: "intQuantity",
 				type: "Number",
-				value: 57
+				value: 10
 			},
 			{
 				name: "txtItem",
 				type: "String",
-				value: "Shoe"
+				value: "Pizza"
 			}
 		];
 	}
 
 	handleStatusChange(event) {
+        const detail = JSON.parse(JSON.stringify(event.detail));
+		console.log(detail);
 		debugger;
-		console.log(event.detail);
 	}
 }
