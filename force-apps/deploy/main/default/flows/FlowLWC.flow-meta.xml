@@ -2,15 +2,22 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>56.0</apiVersion>
     <assignments>
-        <name>AssignValue</name>
-        <label>Assign Value</label>
+        <name>AssignValues</name>
+        <label>Assign Values</label>
         <locationX>176</locationX>
         <locationY>278</locationY>
         <assignmentItems>
-            <assignToReference>txtCounter</assignToReference>
+            <assignToReference>txtItem</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>FlowData</elementReference>
+                <elementReference>inputItem</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>intQuantity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>inputQuantity</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -71,15 +78,26 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>AssignValue</targetReference>
+            <targetReference>AssignValues</targetReference>
         </connector>
         <fields>
-            <name>FlowData</name>
+            <name>inputQuantity</name>
+            <dataType>Number</dataType>
+            <defaultValue>
+                <elementReference>intQuantity</elementReference>
+            </defaultValue>
+            <fieldText>Quantity</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+        <fields>
+            <name>inputItem</name>
             <dataType>String</dataType>
             <defaultValue>
-                <elementReference>txtCounter</elementReference>
+                <elementReference>txtItem</elementReference>
             </defaultValue>
-            <fieldText>Flow Data</fieldText>
+            <fieldText>Item</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>false</isRequired>
         </fields>
@@ -98,30 +116,30 @@
             <targetReference>LoopAgain</targetReference>
         </connector>
         <fields>
-            <name>X</name>
+            <name>ComponentLWC</name>
             <extensionName>c:flowElement</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>intCounter</name>
+                <name>txtItem</name>
                 <value>
-                    <elementReference>intCounter</elementReference>
+                    <elementReference>txtItem</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>txtCounter</name>
+                <name>intQuantity</name>
                 <value>
-                    <elementReference>txtCounter</elementReference>
+                    <elementReference>intQuantity</elementReference>
                 </value>
             </inputParameters>
-            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <outputParameters>
-                <assignToReference>intCounter</assignToReference>
-                <name>intCounter</name>
+                <assignToReference>txtItem</assignToReference>
+                <name>txtItem</name>
             </outputParameters>
             <outputParameters>
-                <assignToReference>txtCounter</assignToReference>
-                <name>txtCounter</name>
+                <assignToReference>intQuantity</assignToReference>
+                <name>intQuantity</name>
             </outputParameters>
         </fields>
         <fields>
@@ -166,9 +184,9 @@
             <targetReference>FlowScreen</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
-        <name>intCounter</name>
+        <name>intQuantity</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
@@ -179,13 +197,13 @@
         </value>
     </variables>
     <variables>
-        <name>txtCounter</name>
+        <name>txtItem</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
         <value>
-            <stringValue>5</stringValue>
+            <stringValue>Pizza</stringValue>
         </value>
     </variables>
 </Flow>

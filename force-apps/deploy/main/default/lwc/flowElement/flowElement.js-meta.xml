@@ -10,8 +10,8 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <property name="txtCounter" label="Counter value (text)" type="String" />
-            <property name="intCounter" label="Counter value (integer)" type="Integer" />
+            <property name="txtItem" label="Item ordered" type="String" />
+            <property name="intQuantity" label="Quantity ordered" type="Integer" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

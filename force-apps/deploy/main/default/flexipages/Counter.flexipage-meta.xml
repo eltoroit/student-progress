@@ -7,14 +7,20 @@
                 <identifier>demoCounter</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>flowElement</componentName>
+                <identifier>c_flowElement</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>column1</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>flowElement</componentName>
-                <identifier>c_flowElement</identifier>
+                <componentName>flowInLwc</componentName>
+                <identifier>c_flowInLwc</identifier>
             </componentInstance>
         </itemInstances>
         <name>column2</name>

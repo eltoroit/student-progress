@@ -2,61 +2,61 @@ import { api, LightningElement } from "lwc";
 import { FlowAttributeChangeEvent } from "lightning/flowSupport";
 
 export default class FlowElement extends LightningElement {
-	_counter = 0;
-	errorCount = 0;
-	errorMessage = "";
+	@api txtItem = "";
+
 	timer = null;
+	_intQuantity = 0;
+	errorMessage = null;
 
 	@api
-	get txtCounter() {
-		return `${this.counter}`;
+	get intQuantity() {
+		return this._intQuantity;
 	}
-	set txtCounter(value) {
-		this.counter = value.replaceAll('"', "").replaceAll("'", "");
-	}
-
-	@api
-	get intCounter() {
-		return `${this.counter}`;
-	}
-	set intCounter(value) {
-		// this.counter = value;
-	}
-
-	get counter() {
-		return this._counter;
-	}
-	set counter(value) {
+	set intQuantity(value) {
+		this._intQuantity = 0;
 		if (isNaN(value)) {
-			this.errorCount++;
-			this._counter = 0;
 			this.errorMessage = "Must be a number!";
 		} else if (value < 0) {
-			this.errorCount++;
-			this._counter = 0;
 			this.errorMessage = "Must be a positive number!";
 		} else {
-			this.errorCount = 0;
-			this._counter = value;
-			this.errorMessage = "";
+			this._intQuantity = value;
+			this.errorMessage = null;
 		}
 	}
 
+	get message() {
+		let message = `You are ordering: ${this.intQuantity} ${this.txtItem}`;
+		if (this.intQuantity < 0) {
+			message = "Error, must be a positive quantity";
+		} else if (this.intQuantity > 1) {
+			message = `${message}s`;
+		}
+		return message;
+	}
+
 	plus1() {
-		this.counter++;
+		this.intQuantity++;
+	}
+
+	minus1() {
+		this.intQuantity--;
 	}
 
 	onSave() {
-		this.dispatchEvent(new FlowAttributeChangeEvent("intCounter", this.counter));
-		this.dispatchEvent(new FlowAttributeChangeEvent("txtCounter", this.counter));
+		this.dispatchEvent(new FlowAttributeChangeEvent("txtItem", this.txtItem));
+		this.dispatchEvent(new FlowAttributeChangeEvent("intQuantity", this.intQuantity));
 	}
 
-	updateCounter(event) {
+	updateQuantity(event) {
 		const value = event.target.value;
 		clearTimeout(this.timer);
 		// eslint-disable-next-line @lwc/lwc/no-async-operation
 		this.timer = setTimeout(() => {
-			this.counter = value;
+			this.intQuantity = value;
 		}, 500);
+	}
+
+	updateItem(event) {
+		this.txtItem = event.target.value;
 	}
 }
