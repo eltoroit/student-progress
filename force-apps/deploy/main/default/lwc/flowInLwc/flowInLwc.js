@@ -4,14 +4,14 @@ export default class FlowInLwc extends LightningElement {
 	get inputVariables() {
 		return [
 			{
-				name: "intCounter",
-				type: "Integer",
+				name: "intQuantity",
+				type: "Number",
 				value: 57
 			},
 			{
-				name: "strCounter",
+				name: "txtItem",
 				type: "String",
-				value: "Pizza"
+				value: "Shoe"
 			}
 		];
 	}
