@@ -1,7 +1,7 @@
 {
 	"name": "et-basic-project",
 	"private": true,
-	"version": "Summer '22 (v55)",
+	"version": "Winter '23 (v56)",
 	"description": "Sample SFDX Scratch Project",
 	"repository": {
 		"type": "git",
