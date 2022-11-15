@@ -5,6 +5,10 @@
 			"default": false
 		},
 		{
+			"path": "force-apps/sites",
+			"default": false
+		},
+		{
 			"path": "force-apps/deploy",
 			"default": true
 		}

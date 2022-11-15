@@ -11,7 +11,8 @@
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>LWC Demo</label>
     <navType>Standard</navType>
-    <tabs>standard-home</tabs>
+    <tabs>Exercise__c</tabs>
+    <tabs>Student__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LWC_Demo_UtilityBar</utilityBar>
 </CustomApplication>
