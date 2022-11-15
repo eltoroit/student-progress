@@ -5,7 +5,12 @@ public without sharing class Students {
 	}
 
     @AuraEnabled(cacheable=true)
-	public static List<Exercise__c> getExercises() {
+	public static List<Exercise__c> getActiveExercises() {
 		return [SELECT Id, Name, IsActive__c FROM Exercise__c WHERE IsActive__c = true ORDER BY Name ASC];
+	}
+
+    @AuraEnabled(cacheable=true)
+	public static List<Exercise__c> getAllExercises() {
+		return [SELECT Id, Name, IsActive__c FROM Exercise__c ORDER BY Name ASC];
 	}
 }

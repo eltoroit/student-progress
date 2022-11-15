@@ -1,6 +1,6 @@
 import { LightningElement, wire } from "lwc";
 import getStudents from "@salesforce/apex/Students.getStudents";
-import getExercises from "@salesforce/apex/Students.getExercises";
+import getActiveExercises from "@salesforce/apex/Students.getActiveExercises";
 
 export default class StudentsLwc extends LightningElement {
 	students = [];
@@ -22,8 +22,8 @@ export default class StudentsLwc extends LightningElement {
 		}
 	}
 
-    @wire(getExercises)
-	wired_GetExercises({ data, error }) {
+    @wire(getActiveExercises)
+	wired_GetActiveExercises({ data, error }) {
 		if (data) {
 			this.exercises = data.map((student) => ({
 				value: student.Id,
