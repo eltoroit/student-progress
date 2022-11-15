@@ -18,12 +18,12 @@
     <genericErrorPage>Exception</genericErrorPage>
     <inMaintenancePage>InMaintenance</inMaintenancePage>
     <inactiveIndexPage>InMaintenance</inactiveIndexPage>
-    <indexPage>InMaintenance</indexPage>
+    <indexPage>studentsVF</indexPage>
     <masterLabel>Students</masterLabel>
     <redirectToCustomDomain>true</redirectToCustomDomain>
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
-    <siteAdmin>test-0lsnbwjqzhhi@example.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>test-0lsnbwjqzhhi@example.com</siteGuestRecordDefaultOwner>
+    <siteAdmin>test-jsot59isvnfn@example.com</siteAdmin>
+    <siteGuestRecordDefaultOwner>test-jsot59isvnfn@example.com</siteGuestRecordDefaultOwner>
     <siteTemplate>SiteTemplate</siteTemplate>
     <siteType>Visualforce</siteType>
 </CustomSite>
