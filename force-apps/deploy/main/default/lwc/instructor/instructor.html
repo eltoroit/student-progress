@@ -1,15 +1,28 @@
 <template>
-	<lightning-card>
+	<lightning-card title="Instructor view">
 		<div class="slds-text-heading_medium slds-m-horizontal_xx-large">
-			<lightning-combobox
-				name="Exercise"
-				label="Exercise"
-				value={selectedExercise}
-				placeholder="Which exercise?"
-				options={exercises}
-				onchange={handleExerciseChange}
-			></lightning-combobox>
-            
+			<table border="0">
+				<tr>
+					<td style="width: 95%">
+						<lightning-combobox
+							name="Exercise"
+							label="Exercise"
+							value={selectedExercise}
+							placeholder="Which exercise?"
+							options={exercises}
+							onchange={onExerciseChange}
+						></lightning-combobox>
+					</td>
+					<td style="vertical-align: bottom;">
+						<lightning-button label="Activate" onclick={onActivateClick}></lightning-button>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<lightning-button label="Activate next" variant="brand" onclick={onActivateNext}></lightning-button>
+					</td>
+				</tr>
+			</table>
 		</div>
 	</lightning-card>
 </template>

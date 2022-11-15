@@ -1,4 +1,5 @@
 import { LightningElement, wire } from "lwc";
+import Utils from "c/utils";
 import getStudents from "@salesforce/apex/Students.getStudents";
 import getActiveExercises from "@salesforce/apex/Students.getActiveExercises";
 
@@ -7,7 +8,7 @@ export default class StudentsLwc extends LightningElement {
 	exercises = [];
 	selectedStudent = null;
 	selectedExercise = null;
-
+	
 	@wire(getStudents)
 	wired_GetStudents({ data, error }) {
 		if (data) {
@@ -16,8 +17,8 @@ export default class StudentsLwc extends LightningElement {
 				label: student.Name
 			}));
 		} else if (error) {
+			Utils.showNotification(this, { title: "Error", message: "Error getting students", variant: Utils.variants.error });
 			console.log(error);
-			alert("Error getting students"); // eslint-disable-line no-alert
 			debugger;
 		}
 	}
@@ -33,8 +34,8 @@ export default class StudentsLwc extends LightningElement {
                 this.selectedExercise = this.exercises[0].value;
             }
 		} else if (error) {
+			Utils.showNotification(this, { title: "Error", message: "Error getting exercises", variant: Utils.variants.error });
 			console.log(error);
-			alert("Error getting exercises"); // eslint-disable-line no-alert
 			debugger;
 		}
 	}
@@ -43,11 +44,11 @@ export default class StudentsLwc extends LightningElement {
 		this.selectedStudent = this.getCookie("student");
 	}
 
-	handleExerciseChange(event) {
+	onExerciseChange(event) {
         this.selectedExercise = event.detail.value;
     }
 
-	handleStudentChange(event) {
+	onStudentChange(event) {
 		this.selectedStudent = event.detail.value;
 		document.cookie = `student=${this.selectedStudent}`;
 	}
