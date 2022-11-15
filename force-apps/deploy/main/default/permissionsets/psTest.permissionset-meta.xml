@@ -4,6 +4,11 @@
         <application>LWC_Demo</application>
         <visible>true</visible>
     </applicationVisibilities>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Exercise__c.IsActive__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>psTest</label>
     <objectPermissions>
