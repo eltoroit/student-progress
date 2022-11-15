@@ -20,7 +20,7 @@
 
 # --- Batch variables
 	# Alias for scratch org
-	ALIAS=soDEMO
+	ALIAS=soStudents
 
 	# How long will the scratch org live (max 30)
 	DAYS=1
@@ -79,7 +79,7 @@
 	SHOW_DEPLOY_PAGE=true
 
 	# Do you want to run JEST tests in this project?
-	RUN_JEST_TESTS=true
+	RUN_JEST_TESTS=false
 
 	# Stop to validate org was succesfully created? Sometimes Sslesforce fails when creating an org and shows the login screen rather than opening an org.
 	PAUSE2CHECK_ORG=false
