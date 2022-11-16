@@ -20,7 +20,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>psTest</label>
+    <label>psStudents</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -50,6 +50,10 @@
     </objectPermissions>
     <tabSettings>
         <tab>Exercise__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>LWC</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

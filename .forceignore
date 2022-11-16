@@ -19,4 +19,4 @@ package.xml
 Admin.profile
 
 # Ignore any profile... Comment this line if you do need to work with your own profiles
-**/profiles/** 
+# **/profiles/** 

@@ -1,8 +1,8 @@
 import Utils from "c/utils";
 import { LightningElement, wire } from "lwc";
 import { refreshApex } from "@salesforce/apex";
-import markAsDone from "@salesforce/apex/Students.markAsDone";
 import getStudents from "@salesforce/apex/Students.getStudents";
+import updateStatus from "@salesforce/apex/Students.updateStatus";
 import getActiveExercises from "@salesforce/apex/Students.getActiveExercises";
 
 export default class StudentsLwc extends LightningElement {
@@ -53,6 +53,10 @@ export default class StudentsLwc extends LightningElement {
 
 	connectedCallback() {
 		this.selectedStudent = this.getCookie("student");
+		setInterval(() => {
+			this.onRefreshClick();
+			this.doneLoading();
+		}, 1e3);
 	}
 
 	onExerciseChange(event) {
@@ -78,9 +82,21 @@ export default class StudentsLwc extends LightningElement {
 			});
 	}
 
-	onClickDone() {
+	onDoneClick() {
+		this.updateStatus("DONE");
+	}
+
+	onWorkingClick() {
+		this.updateStatus("WORKING");
+	}
+
+	onLaterClick() {
+		this.updateStatus("LATER");
+	}
+
+	updateStatus(status) {
 		this.loading = true;
-		markAsDone({ exerciseId: this.selectedExercise, studentId: this.selectedStudent })
+		updateStatus({ exerciseId: this.selectedExercise, studentId: this.selectedStudent, status })
 			.then(() => {
 				Utils.showNotification(this, { title: "Success", message: "Thanks for completing the exercise" });
 				this.doneLoading();
@@ -109,9 +125,8 @@ export default class StudentsLwc extends LightningElement {
 	}
 
 	doneLoading() {
-		// eslint-disable-next-line @lwc/lwc/no-async-operation
-		setTimeout(() => {
-			this.loading = false;
-		}, 1e3);
+		// setTimeout(() => {
+		this.loading = false;
+		// }, 1e3);
 	}
 }

@@ -3,6 +3,7 @@
 	"rules": {
 		"no-debugger": "off",
 		"@lwc/lwc/no-async-await": "off",
+		"@lwc/lwc/no-async-operation": "off",
 		"@lwc/lwc/no-api-reassignments": "off"
 	}
 }

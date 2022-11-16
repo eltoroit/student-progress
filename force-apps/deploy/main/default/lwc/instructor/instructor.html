@@ -16,7 +16,27 @@
 						<td>{activeExerciseName}</td>
 					</tr>
 					<tr>
-						<th>Timer:</th>
+						<th>Start:</th>
+						<td>
+							<lightning-formatted-date-time
+								value={exerciseStart}
+								hour="2-digit"
+								minute="2-digit"
+							></lightning-formatted-date-time>
+						</td>
+					</tr>
+					<tr>
+						<th>End:</th>
+						<td>
+							<lightning-formatted-date-time
+								value={exerciseEnd}
+								hour="2-digit"
+								minute="2-digit"
+							></lightning-formatted-date-time>
+						</td>
+					</tr>
+					<tr>
+						<th>Duration:</th>
 						<td>{exerciseTimer}</td>
 					</tr>
 					<tr>
@@ -35,8 +55,9 @@
 						</td>
 					</tr>
 				</table>
+				<br/>
+				<lightning-datatable key-field="name" data={progress} columns={columns}> </lightning-datatable>
 			</div>
 		</lightning-card>
-		<lightning-datatable key-field="name" data={progress} columns={columns}> </lightning-datatable>
 	</div>
 </template>

@@ -5,9 +5,6 @@
 				<lightning-spinner variant="brand"></lightning-spinner>
 			</template>
 			<lightning-button-group slot="actions">
-				<lightning-button label="Stop" variant="destructive" onclick={onClickDone}></lightning-button>
-				<lightning-button label="Continue" variant="success" onclick={onClickDone}></lightning-button>
-				<lightning-button label="Later" variant="" onclick={onClickDone}></lightning-button>
 				<lightning-button label="Refresh" variant="" onclick={onRefreshClick}></lightning-button>
 			</lightning-button-group>
 			<div class="slds-m-horizontal_xx-large">
@@ -27,6 +24,27 @@
 					options={exercises}
 					onchange={onExerciseChange}
 				></lightning-combobox>
+				<div class="slds-m-around_xx-large" style="text-align: center">
+					<div class="slds-m-around_small">
+						<lightning-button stretch="true" label="I'm done" variant="destructive" onclick={onDoneClick}></lightning-button>
+					</div>
+					<div class="slds-m-around_small">
+						<lightning-button
+							stretch="true"
+							label="I'm working"
+							variant="success"
+							onclick={onWorkingClick}
+						></lightning-button>
+					</div>
+					<div class="slds-m-around_small">
+						<lightning-button
+							stretch="true"
+							label="I'll finish later"
+							variant=""
+							onclick={onLaterClick}
+						></lightning-button>
+					</div>
+				</div>
 			</div>
 		</lightning-card>
 	</div>
