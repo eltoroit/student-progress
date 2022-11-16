@@ -6,8 +6,8 @@ import activateExercise from "@salesforce/apex/Students.activateExercise";
 import getStudentsProgress from "@salesforce/apex/Students.getStudentsProgress";
 
 const columns = [
-	{ label: "Name", fieldName: "name" },
-	{ label: "Status", fieldName: "status" }
+	{ label: "Status", fieldName: "status", fixedWidth: 40 },
+	{ label: "Name", fieldName: "name" }
 ];
 
 export default class Instructor extends LightningElement {
@@ -94,6 +94,10 @@ export default class Instructor extends LightningElement {
 			console.log(error);
 			this.loading = false;
 		}
+	}
+
+	onRestartTimerClick() {
+		this.activateExerciseJS(this.selectedExercise);
 	}
 
 	onExerciseChange(event) {

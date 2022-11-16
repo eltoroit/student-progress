@@ -21,7 +21,7 @@ public without sharing class Students {
 			active.IsActive__c = false;
 		}
 		update activeExercises;
-		update new Exercise__c(Id = Id, IsActive__c = true);
+		update new Exercise__c(Id = Id, IsActive__c = true, Start__c = Datetime.now());
 		return getAllExercises();
 	}
 

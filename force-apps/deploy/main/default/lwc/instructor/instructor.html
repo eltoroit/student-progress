@@ -5,6 +5,7 @@
 				<lightning-spinner variant="brand"></lightning-spinner>
 			</template>
 			<lightning-button-group slot="actions">
+				<lightning-button label="Restart timer" onclick={onRestartTimerClick}></lightning-button>
 				<lightning-button label="Refresh" onclick={onRefreshClick}></lightning-button>
 				<lightning-button label="Activate" onclick={onActivateClick}></lightning-button>
 				<lightning-button label="Next" variant="brand" onclick={onActivateNext}></lightning-button>
@@ -57,7 +58,7 @@
 								</td>
 							</tr>
 						</table>
-						<br/>
+						<br />
 						<lightning-datatable key-field="name" data={progress} columns={columns}> </lightning-datatable>
 					</lightning-tab>
 					<lightning-tab label="Student">
