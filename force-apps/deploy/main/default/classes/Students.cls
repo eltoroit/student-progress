@@ -4,24 +4,56 @@ public without sharing class Students {
 		return [SELECT Id, Name FROM Student__c ORDER BY Name ASC];
 	}
 
-    @AuraEnabled(cacheable=true)
+	@AuraEnabled(cacheable=true)
 	public static List<Exercise__c> getActiveExercises() {
-		return [SELECT Id, Name, IsActive__c FROM Exercise__c WHERE IsActive__c = true ORDER BY Name ASC];
+		return [SELECT Id, Name, IsActive__c, Start__c, End__c FROM Exercise__c WHERE IsActive__c = TRUE ORDER BY Name ASC];
 	}
 
-    @AuraEnabled(cacheable=true)
+	@AuraEnabled(cacheable=true)
 	public static List<Exercise__c> getAllExercises() {
-		return [SELECT Id, Name, IsActive__c FROM Exercise__c ORDER BY Name ASC];
+		return [SELECT Id, Name, IsActive__c, Start__c, End__c FROM Exercise__c ORDER BY Name ASC];
 	}
 
 	@AuraEnabled
 	public static List<Exercise__c> activateExercise(String Id) {
-		List<Exercise__c> activeExercises = getActiveExercises(); 
-		for (Exercise__c active: activeExercises) {
+		List<Exercise__c> activeExercises = getActiveExercises();
+		for (Exercise__c active : activeExercises) {
 			active.IsActive__c = false;
 		}
 		update activeExercises;
-		update new Exercise__c(Id =  Id, IsActive__c = true);
+		update new Exercise__c(Id = Id, IsActive__c = true);
 		return getAllExercises();
+	}
+
+	@AuraEnabled
+	public static void markAsDone(String exerciseId, String studentId) {
+		List<Exercise_X_Student__c> ExSs = [
+			SELECT Id, Name, Exercise__c, Student__c
+			FROM Exercise_X_Student__c
+			WHERE Exercise__c = :exerciseId AND Student__c = :studentId
+		];
+		if (ExSs.size() == 0) {
+			insert new Exercise_X_Student__c(Exercise__c = exerciseId, Student__c = studentId);
+		} else if (ExSs.size() == 1) {
+			update ExSs[0];
+		} else {
+			throw new AuraException('Multiple records per student');
+		}
+	}
+
+	@AuraEnabled(cacheable=true)
+	public static Map<String, Object> getStudentsProgress(String exerciseId) {
+		Map<String, Object> output = new Map<String, Object>();
+		output.put(
+			'TABLE',
+			[
+				SELECT Id, Name, (SELECT ID, lastModifiedDate FROM Exercises_X_Students__r WHERE Exercise__c = :exerciseId)
+				FROM Student__c
+				ORDER BY Name
+			]
+		);
+		output.put('EXERCISE', [SELECT Id, Name, IsActive__c, Start__c, End__c FROM Exercise__c WHERE Id = :exerciseId]);
+		output.put('DTTM', Datetime.now());
+		return output;
 	}
 }

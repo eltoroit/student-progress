@@ -1,28 +1,42 @@
 <template>
-	<lightning-card title="Instructor view">
-		<div class="slds-text-heading_medium slds-m-horizontal_xx-large">
-			<table border="0">
-				<tr>
-					<td style="width: 95%">
-						<lightning-combobox
-							name="Exercise"
-							label="Exercise"
-							value={selectedExercise}
-							placeholder="Which exercise?"
-							options={exercises}
-							onchange={onExerciseChange}
-						></lightning-combobox>
-					</td>
-					<td style="vertical-align: bottom;">
-						<lightning-button label="Activate" onclick={onActivateClick}></lightning-button>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center">
-						<lightning-button label="Activate next" variant="brand" onclick={onActivateNext}></lightning-button>
-					</td>
-				</tr>
-			</table>
-		</div>
-	</lightning-card>
+	<div class="slds-text-heading_medium">
+		<lightning-card class="slds-is-relative">
+			<template if:true={loading}>
+				<lightning-spinner variant="brand"></lightning-spinner>
+			</template>
+			<lightning-button-group slot="actions">
+				<lightning-button label="Refresh" onclick={onRefreshClick}></lightning-button>
+				<lightning-button label="Activate" onclick={onActivateClick}></lightning-button>
+				<lightning-button label="Next" variant="brand" onclick={onActivateNext}></lightning-button>
+			</lightning-button-group>
+			<div class="slds-m-horizontal_xx-large">
+				<table>
+					<tr>
+						<th>Active Exercise:</th>
+						<td>{activeExerciseName}</td>
+					</tr>
+					<tr>
+						<th>Timer:</th>
+						<td>{exerciseTimer}</td>
+					</tr>
+					<tr>
+						<th>Exercises:</th>
+						<td>
+							<lightning-combobox
+								variant="label-hidden"
+								name="Exercise"
+								label="Exercise"
+								value={selectedExercise}
+								placeholder="Which exercise?"
+								options={exercises}
+								style="text-align: left"
+								onchange={onExerciseChange}
+							></lightning-combobox>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</lightning-card>
+		<lightning-datatable key-field="name" data={progress} columns={columns}> </lightning-datatable>
+	</div>
 </template>

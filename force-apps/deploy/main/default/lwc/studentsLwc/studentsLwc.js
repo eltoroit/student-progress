@@ -1,42 +1,53 @@
-import { LightningElement, wire } from "lwc";
 import Utils from "c/utils";
+import { LightningElement, wire } from "lwc";
+import { refreshApex } from "@salesforce/apex";
+import markAsDone from "@salesforce/apex/Students.markAsDone";
 import getStudents from "@salesforce/apex/Students.getStudents";
 import getActiveExercises from "@salesforce/apex/Students.getActiveExercises";
 
 export default class StudentsLwc extends LightningElement {
 	students = [];
 	exercises = [];
+	wiredStudents = null;
+	wiredExercises = null;
 	selectedStudent = null;
 	selectedExercise = null;
-	
+	loading = true;
+
 	@wire(getStudents)
-	wired_GetStudents({ data, error }) {
+	wired_GetStudents(result) {
+		this.wiredStudents = result;
+		let { data, error } = result;
 		if (data) {
 			this.students = data.map((student) => ({
 				value: student.Id,
 				label: student.Name
 			}));
+			this.doneLoading();
 		} else if (error) {
 			Utils.showNotification(this, { title: "Error", message: "Error getting students", variant: Utils.variants.error });
 			console.log(error);
-			debugger;
+			this.doneLoading();
 		}
 	}
 
-    @wire(getActiveExercises)
-	wired_GetActiveExercises({ data, error }) {
+	@wire(getActiveExercises)
+	wired_GetActiveExercises(result) {
+		this.wiredExercises = result;
+		let { data, error } = result;
 		if (data) {
 			this.exercises = data.map((student) => ({
 				value: student.Id,
 				label: student.Name
 			}));
-            if (this.exercises.length > 0) {
-                this.selectedExercise = this.exercises[0].value;
-            }
+			if (this.exercises.length > 0) {
+				this.selectedExercise = this.exercises[0].value;
+			}
+			this.doneLoading();
 		} else if (error) {
 			Utils.showNotification(this, { title: "Error", message: "Error getting exercises", variant: Utils.variants.error });
 			console.log(error);
-			debugger;
+			this.doneLoading();
 		}
 	}
 
@@ -45,12 +56,40 @@ export default class StudentsLwc extends LightningElement {
 	}
 
 	onExerciseChange(event) {
-        this.selectedExercise = event.detail.value;
-    }
+		this.selectedExercise = event.detail.value;
+	}
 
 	onStudentChange(event) {
 		this.selectedStudent = event.detail.value;
 		document.cookie = `student=${this.selectedStudent}`;
+	}
+
+	onRefreshClick() {
+		this.loading = true;
+		const promises = [refreshApex(this.wiredExercises), refreshApex(this.wiredStudents)];
+		Promise.allSettled(promises)
+			.then(() => {
+				this.doneLoading();
+			})
+			.catch((error) => {
+				this.doneLoading();
+				console.log(error);
+				Utils.showNotification(this, { title: "Error", message: "Error refreshing data", variant: Utils.variants.error });
+			});
+	}
+
+	onClickDone() {
+		this.loading = true;
+		markAsDone({ exerciseId: this.selectedExercise, studentId: this.selectedStudent })
+			.then(() => {
+				Utils.showNotification(this, { title: "Success", message: "Thanks for completing the exercise" });
+				this.doneLoading();
+			})
+			.catch((error) => {
+				this.doneLoading();
+				console.log(error);
+				Utils.showNotification(this, { title: "Error", message: "Error marking as done", variant: Utils.variants.error });
+			});
 	}
 
 	getCookie(cname) {
@@ -67,5 +106,12 @@ export default class StudentsLwc extends LightningElement {
 			}
 		}
 		return "";
+	}
+
+	doneLoading() {
+		// eslint-disable-next-line @lwc/lwc/no-async-operation
+		setTimeout(() => {
+			this.loading = false;
+		}, 1e3);
 	}
 }
