@@ -3,7 +3,7 @@
 	"edition": "Developer",
 	"hasSampleData": false,
 	"features": [
-		"EnableSetPasswordInApi"
+		"EnableSetPasswordInApi", "Sites"
 	],
 	"settings": {
 		"lightningExperienceSettings": {
