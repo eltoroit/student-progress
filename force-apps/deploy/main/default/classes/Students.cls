@@ -59,4 +59,34 @@ public without sharing class Students {
 		// output.put('DTTM', Datetime.now());
 		return output;
 	}
+
+	@AuraEnabled(cacheable=true)
+	public static Map<String, Object> getClassReport() {
+		Map<String, Object> output = new Map<String, Object>();
+		output.put(
+			'STUDENTS',
+			[
+				SELECT Id, Name
+				FROM Student__c
+				ORDER BY Name
+			]
+		);
+		output.put(
+			'EXERCISES',
+			[
+				SELECT
+					Id,
+					Name,
+					(
+						SELECT ID, Student__r.Name, Status__c, lastModifiedDate
+						FROM Exercises_X_Students__r
+						ORDER BY lastModifiedDate ASC
+					)
+				FROM Exercise__c
+				WHERE Id IN (SELECT Exercise__c FROM Exercise_X_Student__c)
+				ORDER BY Name
+			]
+		);
+		return output;
+	}
 }

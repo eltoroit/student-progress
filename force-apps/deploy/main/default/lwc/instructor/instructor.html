@@ -12,7 +12,7 @@
 			</lightning-button-group>
 			<div class="slds-m-horizontal_xx-large">
 				<lightning-tabset>
-					<lightning-tab label="Instructor">
+					<lightning-tab label="Current Exercise">
 						<table>
 							<tr>
 								<th>Active Exercise:</th>
@@ -60,6 +60,9 @@
 						</table>
 						<br />
 						<lightning-datatable key-field="name" data={progress} columns={columns}> </lightning-datatable>
+					</lightning-tab>
+					<lightning-tab label="Class Progress">
+						<c-class-progress></c-class-progress>
 					</lightning-tab>
 					<lightning-tab label="Student">
 						<c-students-lwc></c-students-lwc>
