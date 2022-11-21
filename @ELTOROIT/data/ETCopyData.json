@@ -1,6 +1,6 @@
 {
-  "orgSource": "soStudents",
-  "orgDestination": "soStudents",
+  "orgSource": "soStudentsProd",
+  "orgDestination": "soStudentsProd",
   "sObjectsData": [],
   "sObjectsMetadata": [],
   "rootFolder": "ETCopyData",
