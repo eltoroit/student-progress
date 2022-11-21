@@ -26,13 +26,31 @@
 				></lightning-combobox>
 				<div class="slds-m-around_xx-large" style="text-align: center">
 					<div class="slds-m-around_small">
-						<lightning-button stretch="true" label="I'm done" variant="success" onclick={onDoneClick}></lightning-button>
+						<lightning-button
+							stretch="true"
+							label="I'm done"
+							variant="success"
+							onclick={onDoneClick}
+							disabled={isButtonsDisabled}
+						></lightning-button>
 					</div>
 					<div class="slds-m-around_small">
-						<lightning-button stretch="true" label="I'm working" variant="brand" onclick={onWorkingClick}></lightning-button>
+						<lightning-button
+							stretch="true"
+							label="I'm working"
+							variant="brand"
+							onclick={onWorkingClick}
+							disabled={isButtonsDisabled}
+						></lightning-button>
 					</div>
 					<div class="slds-m-around_small">
-						<lightning-button stretch="true" label="I'll finish later" variant="" onclick={onLaterClick}></lightning-button>
+						<lightning-button
+							stretch="true"
+							label="I'll finish later"
+							variant=""
+							onclick={onLaterClick}
+							disabled={isButtonsDisabled}
+						></lightning-button>
 					</div>
 				</div>
 			</div>

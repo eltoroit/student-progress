@@ -10,8 +10,8 @@ export default class StudentsLwc extends LightningElement {
 	exercises = [];
 	wiredStudents = null;
 	wiredExercises = null;
-	selectedStudent = null;
-	selectedExercise = null;
+	selectedStudent = "";
+	selectedExercise = "";
 	loading = true;
 
 	@wire(getStudents)
@@ -23,6 +23,7 @@ export default class StudentsLwc extends LightningElement {
 				value: student.Id,
 				label: student.Name
 			}));
+			this.students.unshift({ value: "", label: "Who are you?" });
 			this.doneLoading();
 		} else if (error) {
 			Utils.showNotification(this, { title: "Error", message: "Error getting students", variant: Utils.variants.error });
@@ -49,6 +50,10 @@ export default class StudentsLwc extends LightningElement {
 			console.log(error);
 			this.doneLoading();
 		}
+	}
+
+	get isButtonsDisabled() {
+		return !((this.selectedExercise !== "") && (this.selectedStudent !== ""));
 	}
 
 	connectedCallback() {
