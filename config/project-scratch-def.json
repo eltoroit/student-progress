@@ -2,15 +2,16 @@
 	"orgName": "ELTOROIT Demos Computing",
 	"edition": "Developer",
 	"hasSampleData": false,
-	"features": [
-		"EnableSetPasswordInApi", "Sites"
-	],
+	"features": ["EnableSetPasswordInApi", "Sites", "Communities"],
 	"settings": {
 		"lightningExperienceSettings": {
 			"enableS1DesktopEnabled": true
 		},
 		"mobileSettings": {
 			"enableS1EncryptedStoragePref2": false
+		},
+		"communitiesSettings": {
+			"enableNetworksEnabled": true
 		}
 	}
 }
