@@ -2,6 +2,8 @@
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <brand>
         <headerColor>#0070D2</headerColor>
+        <logo>TH</logo>
+        <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
     <formFactors>Small</formFactors>
@@ -9,9 +11,9 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
-    <label>LWC Demo</label>
+    <label>Students Report</label>
     <navType>Standard</navType>
-    <tabs>LWC</tabs>
+    <tabs>Home</tabs>
     <tabs>Exercise__c</tabs>
     <tabs>Student__c</tabs>
     <uiType>Lightning</uiType>

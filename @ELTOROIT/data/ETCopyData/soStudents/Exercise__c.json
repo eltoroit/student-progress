@@ -55,6 +55,7 @@
 				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2UAAR"
 			},
 			"Id": "a012100000Abp2UAAR",
+			"IsActive__c": true,
 			"Name": "Exercise 02-06: Create an External Connection Using Salesforce Connect (OPTIO..."
 		},
 		{
