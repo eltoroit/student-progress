@@ -1,0 +1,14 @@
+{
+	"fetched": 1,
+	"records": [
+		{
+			"attributes": {
+				"type": "Course__c",
+				"url": "/services/data/v56.0/sobjects/Course__c/a007i000005Lf1UAAS"
+			},
+			"Id": "a007i000005Lf1UAAS",
+			"Name": "DEX403"
+		}
+	],
+	"total": 1
+}

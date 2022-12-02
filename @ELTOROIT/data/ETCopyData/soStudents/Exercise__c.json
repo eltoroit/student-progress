@@ -4,10 +4,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0M8AAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jYAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0M8AAI",
+			"Id": "a027i00000678jYAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 04-05: Implement Sharing Rules",
 			"Start__c": null
@@ -15,10 +16,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0M9AAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jZAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0M9AAI",
+			"Id": "a027i00000678jZAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 04-06: Implement Manual Sharing",
 			"Start__c": null
@@ -26,10 +28,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MAAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jaAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MAAAY",
+			"Id": "a027i00000678jaAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 05-01: Create a Validation Rule",
 			"Start__c": null
@@ -37,10 +40,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MBAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jbAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MBAAY",
+			"Id": "a027i00000678jbAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 05-02: Mass Transfer Ownership of Records",
 			"Start__c": null
@@ -48,10 +52,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MCAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jcAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MCAAY",
+			"Id": "a027i00000678jcAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 05-03 (OPTION #1): Import with Data Loader",
 			"Start__c": null
@@ -59,10 +64,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MDAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jdAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MDAAY",
+			"Id": "a027i00000678jdAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 06-01: Create a Lightning App",
 			"Start__c": null
@@ -70,10 +76,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MEAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jeAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MEAAY",
+			"Id": "a027i00000678jeAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 06-02: Compare Table List View to Kanban View and Split View",
 			"Start__c": null
@@ -81,10 +88,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MFAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jfAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MFAAY",
+			"Id": "a027i00000678jfAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 06-03: Customize a Page Layout",
 			"Start__c": null
@@ -92,10 +100,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MGAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jgAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MGAAY",
+			"Id": "a027i00000678jgAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 06-04: Use Dynamic Forms to Filter Fields Based on a Checkbox",
 			"Start__c": null
@@ -103,10 +112,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MHAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jhAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MHAAY",
+			"Id": "a027i00000678jhAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 06-05: Create an Object-Speciﬁc Quick Action",
 			"Start__c": null
@@ -114,10 +124,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MIAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jiAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MIAAY",
+			"Id": "a027i00000678jiAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 06-06: Create a Global Quick Action and a Global Layout",
 			"Start__c": null
@@ -125,10 +136,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MJAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jjAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MJAAY",
+			"Id": "a027i00000678jjAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 06-07: Create Record Types",
 			"Start__c": null
@@ -136,10 +148,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MKAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jkAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MKAAY",
+			"Id": "a027i00000678jkAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 06-08: Create Page Layouts for Record Types",
 			"Start__c": null
@@ -147,10 +160,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MLAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jlAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MLAAY",
+			"Id": "a027i00000678jlAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 07-01: Create a Contact Wizard Flow",
 			"Start__c": null
@@ -158,10 +172,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MMAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jmAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MMAAY",
+			"Id": "a027i00000678jmAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 07-02: Create a New Version of Flow Contact Wizard",
 			"Start__c": null
@@ -169,10 +184,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MNAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jnAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MNAAY",
+			"Id": "a027i00000678jnAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 07-03: Update Sales Message using Loop Element",
 			"Start__c": null
@@ -180,10 +196,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MOAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678joAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MOAAY",
+			"Id": "a027i00000678joAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 07-04: Create a Flow to Capture Service Vendor Account Info",
 			"Start__c": null
@@ -191,10 +208,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MPAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jpAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MPAAY",
+			"Id": "a027i00000678jpAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 07-05: Create a Reusable Flow",
 			"Start__c": null
@@ -202,10 +220,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MQAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jqAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MQAAY",
+			"Id": "a027i00000678jqAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 07-06: Create a Login Flow to Verify User Info",
 			"Start__c": null
@@ -213,10 +232,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MRAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jrAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MRAAY",
+			"Id": "a027i00000678jrAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 08-01: Create a Flow to Change Delivery to Virtual on Weekends",
 			"Start__c": null
@@ -224,10 +244,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MSAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jsAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MSAAY",
+			"Id": "a027i00000678jsAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 08-02: Create a Flow to Auto-Register New Technicians for Class",
 			"Start__c": null
@@ -235,10 +256,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MTAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jtAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MTAAY",
+			"Id": "a027i00000678jtAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 08-03: Add Notiﬁcations to Auto-Registration Flow",
 			"Start__c": null
@@ -246,10 +268,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MUAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678juAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MUAAY",
+			"Id": "a027i00000678juAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 08-04: Create Custom Error Logging using Platform Events",
 			"Start__c": null
@@ -257,10 +280,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MVAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jvAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MVAAY",
+			"Id": "a027i00000678jvAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 08-05: Create a Flow to Send Email When Course Attendee Is Deleted",
 			"Start__c": null
@@ -268,10 +292,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MWAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jwAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MWAAY",
+			"Id": "a027i00000678jwAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 08-06: Create a Flow to Send an Email Reminder One Week Before Class",
 			"Start__c": null
@@ -279,10 +304,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MXAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jxAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MXAAY",
+			"Id": "a027i00000678jxAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 09-01: Review and Test Process Builder",
 			"Start__c": null
@@ -290,10 +316,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MYAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jyAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MYAAY",
+			"Id": "a027i00000678jyAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 10-01: Create Multi-Step Approval Process",
 			"Start__c": null
@@ -301,10 +328,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MZAAY"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678jzAAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MZAAY",
+			"Id": "a027i00000678jzAAA",
 			"IsActive__c": false,
 			"Name": "Exercise 10-02: Add an “Items to Approve” Component to the Home Page",
 			"Start__c": null
@@ -312,10 +340,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MaAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678k0AAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MaAAI",
+			"Id": "a027i00000678k0AAA",
 			"IsActive__c": false,
 			"Name": "Exercise 10-03: Auto-Submit Approval Requests with Flow",
 			"Start__c": null
@@ -323,10 +352,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MbAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678k1AAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MbAAI",
+			"Id": "a027i00000678k1AAA",
 			"IsActive__c": false,
 			"Name": "Exercise 12-01: Create a Flow Using Invocable Apex",
 			"Start__c": null
@@ -334,10 +364,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0McAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678k2AAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0McAAI",
+			"Id": "a027i00000678k2AAA",
 			"IsActive__c": false,
 			"Name": "Exercise 12-02: Fix Account Messages Flow",
 			"Start__c": null
@@ -345,10 +376,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MdAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678k3AAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MdAAI",
+			"Id": "a027i00000678k3AAA",
 			"IsActive__c": false,
 			"Name": "Exercise 12-03: Replace Contact Workﬂow with Before Record-Triggered Flow",
 			"Start__c": null
@@ -356,10 +388,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MeAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678k4AAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MeAAI",
+			"Id": "a027i00000678k4AAA",
 			"IsActive__c": false,
 			"Name": "Exercise 12-04: Replace Commission Process with After Record-Triggered Flow",
 			"Start__c": null
@@ -367,10 +400,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MfAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678k5AAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MfAAI",
+			"Id": "a027i00000678k5AAA",
 			"IsActive__c": false,
 			"Name": "Exercise 13-01: Deploy Changes Using Change Sets",
 			"Start__c": null
@@ -378,10 +412,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0MgAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678k6AAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0MgAAI",
+			"Id": "a027i00000678k6AAA",
 			"IsActive__c": false,
 			"Name": "Exercise 05-03 (OPTION #2): Import with dataloader.io",
 			"Start__c": null
@@ -389,10 +424,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0LrAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678k7AAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0LrAAI",
+			"Id": "a027i00000678k7AAA",
 			"IsActive__c": false,
 			"Name": "Exercise 01-01: Prepare Your Training Org",
 			"Start__c": null
@@ -400,10 +436,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0LsAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678k8AAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0LsAAI",
+			"Id": "a027i00000678k8AAA",
 			"IsActive__c": false,
 			"Name": "Exercise 02-01: Create Custom Object",
 			"Start__c": null
@@ -411,10 +448,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0LtAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678k9AAA"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0LtAAI",
+			"Id": "a027i00000678k9AAA",
 			"IsActive__c": false,
 			"Name": "Exercise 02-02: Create Custom Fields",
 			"Start__c": null
@@ -422,10 +460,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0LuAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678kAAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0LuAAI",
+			"Id": "a027i00000678kAAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 02-03: Create Relationship Fields",
 			"Start__c": null
@@ -433,10 +472,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0LvAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678kBAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0LvAAI",
+			"Id": "a027i00000678kBAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 02-04: Create a Self Relationship with Customer Story",
 			"Start__c": null
@@ -444,10 +484,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0LwAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678kCAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0LwAAI",
+			"Id": "a027i00000678kCAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 02-05: Create a Custom Junction Object",
 			"Start__c": null
@@ -455,10 +496,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0LxAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678kDAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0LxAAI",
+			"Id": "a027i00000678kDAAQ",
 			"IsActive__c": true,
 			"Name": "Exercise 02-06: Create an External Connection Using Salesforce Connect (OPTIO...",
 			"Start__c": null
@@ -466,10 +508,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0LyAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678kEAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0LyAAI",
+			"Id": "a027i00000678kEAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 02-07: Create an External Lookup Relationship (OPTIONAL)",
 			"Start__c": null
@@ -477,10 +520,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0LzAAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678kFAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0LzAAI",
+			"Id": "a027i00000678kFAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 02-08: Create an Indirect Lookup Relationship (OPTIONAL)",
 			"Start__c": null
@@ -488,10 +532,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0M0AAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678kGAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0M0AAI",
+			"Id": "a027i00000678kGAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 02-09: Create a Cross-Object Formula Field",
 			"Start__c": null
@@ -499,10 +544,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0M1AAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678kHAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0M1AAI",
+			"Id": "a027i00000678kHAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 02-10: Create Roll-Up Summary Fields",
 			"Start__c": null
@@ -510,10 +556,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0M2AAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678kIAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0M2AAI",
+			"Id": "a027i00000678kIAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 03-01: Modify and Create Custom Proﬁles",
 			"Start__c": null
@@ -521,10 +568,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0M3AAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678kJAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0M3AAI",
+			"Id": "a027i00000678kJAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 03-02: Create Permission Sets",
 			"Start__c": null
@@ -532,10 +580,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0M4AAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678kKAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0M4AAI",
+			"Id": "a027i00000678kKAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 04-01: Create a Custom Object Queue",
 			"Start__c": null
@@ -543,10 +592,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0M5AAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678kLAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0M5AAI",
+			"Id": "a027i00000678kLAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 04-02: Set Organization-Wide Defaults",
 			"Start__c": null
@@ -554,10 +604,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0M6AAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678kMAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0M6AAI",
+			"Id": "a027i00000678kMAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 04-03: Implement a Role Hierarchy",
 			"Start__c": null
@@ -565,10 +616,11 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a017e000009d0M7AAI"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a027i00000678kNAAQ"
 			},
+			"Course__c": "a007i000005Lf1UAAS",
 			"End__c": null,
-			"Id": "a017e000009d0M7AAI",
+			"Id": "a027i00000678kNAAQ",
 			"IsActive__c": false,
 			"Name": "Exercise 04-04: Create a Public Group",
 			"Start__c": null
