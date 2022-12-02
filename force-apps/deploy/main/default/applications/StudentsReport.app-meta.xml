@@ -13,7 +13,8 @@
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>Students Report</label>
     <navType>Standard</navType>
-    <tabs>Home</tabs>
+    <tabs>Status</tabs>
+    <tabs>Course__c</tabs>
     <tabs>Exercise__c</tabs>
     <tabs>Student__c</tabs>
     <uiType>Lightning</uiType>
