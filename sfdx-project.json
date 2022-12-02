@@ -5,12 +5,12 @@
 			"default": false
 		},
 		{
-			"path": "force-apps/sites",
-			"default": false
-		},
-		{
 			"path": "force-apps/deploy",
 			"default": true
+		},
+		{
+			"path": "force-apps/digitalExperience",
+			"default": false
 		}
 	],
 	"name": "et-basic-project",

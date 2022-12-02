@@ -23,7 +23,7 @@
 	ALIAS=soStudents
 
 	# How long will the scratch org live (max 30)
-	DAYS=5
+	DAYS=1
 	
 	# Install required packages before pushing
 	# Sample: PACKAGES=("04tB0000000P1yA" "04tB0000000P1yB" "04tB0000000P1yC")
@@ -94,7 +94,7 @@
 	ADMIN_PROFILE=force-apps/doNotDeploy/main/default/profiles/Admin.profile-meta.xml
 
 	# Do you want to run APEX tests in this new org before starting?
-	RUN_APEX_TESTS=true
+	RUN_APEX_TESTS=false
 
 	# Do you need a password for the user name? You may need this depening on the use of the new scratch org
 	GENERATE_PASSWORD=true
