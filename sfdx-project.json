@@ -6,11 +6,11 @@
 		},
 		{
 			"path": "force-apps/sites",
-			"default": false
+			"default": true
 		},
 		{
 			"path": "force-apps/deploy",
-			"default": true
+			"default": false
 		}
 	],
 	"name": "et-basic-project",
