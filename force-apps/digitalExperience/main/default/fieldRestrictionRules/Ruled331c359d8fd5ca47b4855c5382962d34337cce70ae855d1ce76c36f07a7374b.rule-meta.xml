@@ -5,7 +5,7 @@
     <classificationType>FieldSet</classificationType>
     <description>Field Restriction Rule for Portal PersonalInfo_EPIM</description>
     <enforcementType>FieldRestrict</enforcementType>
-    <masterLabel>Rule10865ac8306480ce681d0a5e5d07626eff7c0d7fc57bed7df52d85a31126239b</masterLabel>
+    <masterLabel>Ruled331c359d8fd5ca47b4855c5382962d34337cce70ae855d1ce76c36f07a7374b</masterLabel>
     <recordFilter>Id=$User.Id</recordFilter>
     <targetEntity>User</targetEntity>
     <userCriteria>CASE($User.UserType,&apos;Standard&apos;,0,&apos;AutomatedProcess&apos;,0,&apos;CloudIntegrationUser&apos;,0,&apos;LicenseManager&apos;,0,&apos;Guest&apos;,0,1)=1</userCriteria>

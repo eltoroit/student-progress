@@ -5,7 +5,7 @@
     <classificationType>FieldSet</classificationType>
     <description>Field Restriction Rule for Guest PersonalInfo_EPIM</description>
     <enforcementType>FieldRestrict</enforcementType>
-    <masterLabel>Rule925c8a2bd628502fe1bd6820c50e74bef776c8cdae5c83ea7c61dfa669889cad</masterLabel>
+    <masterLabel>Rule7b5cfa5adb75c668d429c4bd4e6cdd44f1473c856600758bee55f22b18fbedc0</masterLabel>
     <recordFilter>Id=&apos;NEVER_TRUE&apos;</recordFilter>
     <targetEntity>User</targetEntity>
     <userCriteria>CASE($User.UserType,&apos;Guest&apos;,1,0)=1</userCriteria>
