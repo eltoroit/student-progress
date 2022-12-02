@@ -6,11 +6,11 @@
 		},
 		{
 			"path": "force-apps/deploy",
-			"default": false
+			"default": true
 		},
 		{
 			"path": "force-apps/digitalExperience",
-			"default": true
+			"default": false
 		}
 	],
 	"name": "et-basic-project",

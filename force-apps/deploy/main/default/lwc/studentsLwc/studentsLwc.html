@@ -8,51 +8,23 @@
 				<lightning-button label="Refresh" variant="" onclick={onRefreshClick}></lightning-button>
 			</lightning-button-group>
 			<div class="slds-m-horizontal_xx-large">
-				<lightning-combobox
-					name="Student"
-					label="Student"
-					value={selectedStudent}
-					placeholder="Who are you?"
-					options={students}
-					onchange={onStudentChange}
-				></lightning-combobox>
-				<lightning-combobox
-					name="Exercise"
-					label="Exercise"
-					value={selectedExercise}
-					placeholder="Which exercise?"
-					options={exercises}
-					onchange={onExerciseChange}
-				></lightning-combobox>
-				<div class="slds-m-around_xx-large" style="text-align: center">
-					<div class="slds-m-around_small">
-						<lightning-button
-							stretch="true"
-							label="I'm done"
-							variant="success"
-							onclick={onDoneClick}
-							disabled={isButtonsDisabled}
-						></lightning-button>
-					</div>
-					<div class="slds-m-around_small">
-						<lightning-button
-							stretch="true"
-							label="I'm working"
-							variant="brand"
-							onclick={onWorkingClick}
-							disabled={isButtonsDisabled}
-						></lightning-button>
-					</div>
-					<div class="slds-m-around_small">
-						<lightning-button
-							stretch="true"
-							label="I'll finish later"
-							variant=""
-							onclick={onLaterClick}
-							disabled={isButtonsDisabled}
-						></lightning-button>
-					</div>
-				</div>
+				<lightning-layout multiple-rows>
+					<lightning-layout-item size="12">
+						<lightning-combobox name="Student" label="Student" value={selectedStudent} placeholder="Who are you?" options={students} onchange={onStudentChange}></lightning-combobox>
+					</lightning-layout-item>
+					<lightning-layout-item size="12">
+						<lightning-combobox name="Exercise" label="Exercise" value={selectedExercise} placeholder="Which exercise?" options={exercises} onchange={onExerciseChange}></lightning-combobox>
+					</lightning-layout-item>
+					<lightning-layout-item size="12">
+						<lightning-button stretch="true" label="I'm done" variant="success" onclick={onDoneClick} disabled={isButtonsDisabled}></lightning-button>
+					</lightning-layout-item>
+					<lightning-layout-item size="12">
+						<lightning-button stretch="true" label="I'm working" variant="brand" onclick={onWorkingClick} disabled={isButtonsDisabled}></lightning-button>
+					</lightning-layout-item>
+					<lightning-layout-item size="12">
+						<lightning-button stretch="true" label="I'll finish later" variant="" onclick={onLaterClick} disabled={isButtonsDisabled}></lightning-button>
+					</lightning-layout-item>
+				</lightning-layout>
 			</div>
 		</lightning-card>
 	</div>
