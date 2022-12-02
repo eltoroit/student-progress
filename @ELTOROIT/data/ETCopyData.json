@@ -10,7 +10,7 @@
   "ignoreFields": null,
   "copyToProduction": false,
   "twoPassReferenceFields": null,
-  "deleteDestination": false,
+  "deleteDestination": true,
   "useBulkAPI": false,
   "bulkPollingTimeout": null
 }
