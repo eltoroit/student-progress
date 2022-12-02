@@ -5,12 +5,12 @@
 			"default": false
 		},
 		{
-			"path": "force-apps/sites",
-			"default": true
-		},
-		{
 			"path": "force-apps/deploy",
 			"default": false
+		},
+		{
+			"path": "force-apps/sites",
+			"default": true
 		}
 	],
 	"name": "et-basic-project",
