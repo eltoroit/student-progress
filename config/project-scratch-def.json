@@ -4,6 +4,9 @@
 	"hasSampleData": false,
 	"features": ["EnableSetPasswordInApi", "Sites", "Communities"],
 	"settings": {
+		"experienceBundleSettings": {
+			"enableExperienceBundleMetadata": true
+		},
 		"lightningExperienceSettings": {
 			"enableS1DesktopEnabled": true
 		},
