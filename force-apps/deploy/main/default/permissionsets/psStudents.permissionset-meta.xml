@@ -6,12 +6,22 @@
     </applicationVisibilities>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Delivery__c.IsActive__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Exercise__c.Course__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Exercise__c.End__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Exercise__c.ExpectedDuration__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
