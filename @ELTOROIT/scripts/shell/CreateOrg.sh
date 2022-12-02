@@ -23,7 +23,7 @@
 	ALIAS=soStudents
 
 	# How long will the scratch org live (max 30)
-	DAYS=5
+	DAYS=1
 	
 	# Install required packages before pushing
 	# Sample: PACKAGES=("04tB0000000P1yA" "04tB0000000P1yB" "04tB0000000P1yC")
