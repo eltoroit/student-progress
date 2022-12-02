@@ -9,7 +9,7 @@
 			"default": false
 		},
 		{
-			"path": "force-apps/sites",
+			"path": "force-apps/digitalExperience",
 			"default": true
 		}
 	],
