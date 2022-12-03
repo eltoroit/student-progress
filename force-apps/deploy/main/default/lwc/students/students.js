@@ -6,7 +6,7 @@ import updateStatus from "@salesforce/apex/Students.updateStatus";
 import getActiveExercise from "@salesforce/apex/Students.getActiveExercise";
 import getActiveDeliveries from "@salesforce/apex/Students.getActiveDeliveries";
 
-export default class StudentsLwc extends LightningElement {
+export default class Students extends LightningElement {
 	students = [];
 	exercises = [];
 	deliveries = [];

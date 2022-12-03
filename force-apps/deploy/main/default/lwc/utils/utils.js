@@ -175,4 +175,21 @@ export default class Util {
 
 		return output;
 	}
+
+	static setCookie({ key, value }) {
+		document.cookie = `${key}=${value}`;
+	}
+
+	static getCookie({ key }) {
+		let output = null;
+
+		document.cookie.split(";").find((cookie) => {
+			let isFound = cookie.trim().startsWith(key + "=");
+			if (isFound) {
+				output = cookie.split("=")[1];
+			}
+			return isFound;
+		});
+		return output;
+	}
 }

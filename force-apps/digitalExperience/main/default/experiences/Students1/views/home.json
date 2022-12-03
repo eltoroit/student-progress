@@ -10,7 +10,7 @@
   }, {
     "components" : [ {
       "componentAttributes" : { },
-      "componentName" : "c:studentsLwc",
+      "componentName" : "c:students",
       "id" : "b429668b-7a01-46d7-b197-7c54c77acb45",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
