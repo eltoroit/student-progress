@@ -6,6 +6,21 @@
     </applicationVisibilities>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Course_X_Delivery__c.Order__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Delivery__c.ActivatedDTTM__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Delivery__c.ActiveExercise__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Delivery__c.IsActive__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -16,22 +31,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Exercise__c.End__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Exercise__c.ExpectedDuration__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Exercise__c.IsActive__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Exercise__c.Start__c</field>
+        <field>Exercise__c.Order__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

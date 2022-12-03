@@ -5,68 +5,54 @@
 				<lightning-spinner variant="brand"></lightning-spinner>
 			</template>
 			<lightning-button-group slot="actions">
-				<lightning-button label="Restart timer" onclick={onRestartTimerClick}></lightning-button>
-				<lightning-button label="Refresh" onclick={onRefreshClick}></lightning-button>
-				<lightning-button label="Activate" onclick={onActivateClick}></lightning-button>
-				<lightning-button label="Next" variant="brand" onclick={onActivateNext}></lightning-button>
+				<lightning-button label="Next" onclick={onNextClick} if:true={selectedExercise}></lightning-button>
+				<lightning-button label="Start" variant="success" onclick={onStartClick} if:true={selectedExercise} disabled={areButtonsDisabled}></lightning-button>
+				<lightning-button label="Stop" variant="destructive" onclick={onStopClick} if:true={selectedExercise} disabled={areButtonsDisabled}></lightning-button>
+				<lightning-button label="Refresh" variant="brand" onclick={onRefreshClick}></lightning-button>
 			</lightning-button-group>
 			<div class="slds-m-horizontal_xx-large">
 				<lightning-tabset>
 					<lightning-tab label="Current Exercise">
-						<table>
-							<tr>
-								<th>Active Exercise:</th>
-								<td>{activeExerciseName}</td>
-							</tr>
-							<tr>
-								<th>Start:</th>
-								<td>
-									<lightning-formatted-date-time
-										value={exerciseStart}
-										hour="2-digit"
-										minute="2-digit"
-									></lightning-formatted-date-time>
-								</td>
-							</tr>
-							<tr>
-								<th>End:</th>
-								<td>
-									<lightning-formatted-date-time
-										value={exerciseEnd}
-										hour="2-digit"
-										minute="2-digit"
-									></lightning-formatted-date-time>
-								</td>
-							</tr>
-							<tr>
-								<th>Duration:</th>
-								<td>{exerciseTimer}</td>
-							</tr>
-							<tr>
-								<th>Exercises:</th>
-								<td>
-									<lightning-combobox
-										variant="label-hidden"
-										name="Exercise"
-										label="Exercise"
-										value={selectedExercise}
-										placeholder="Which exercise?"
-										options={exercises}
-										style="text-align: left"
-										onchange={onExerciseChange}
-									></lightning-combobox>
-								</td>
-							</tr>
-						</table>
+						<lightning-layout multiple-rows>
+							<lightning-layout-item size="4"> Deliveries: </lightning-layout-item>
+							<lightning-layout-item size="8"
+								><lightning-combobox variant="label-hidden" name="Delivery" label="Delivery" value={selectedCxD} placeholder="Which Delivery?" options={deliveries} style="text-align: left" onchange={onDeliveryChange}></lightning-combobox>
+							</lightning-layout-item>
+							<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+							
+							<lightning-layout-item size="4"> Exercises: </lightning-layout-item>
+							<lightning-layout-item size="8">
+								<lightning-combobox variant="label-hidden" name="Exercise" label="Exercise" value={selectedExercise} placeholder="Which exercise?" options={exercises} style="text-align: left" onchange={onExerciseChange}></lightning-combobox>
+							</lightning-layout-item>
+							<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+							
+							<template if:true={activeExerciseName}>
+								<lightning-layout-item size="4"> Active Exercise: </lightning-layout-item>
+								<lightning-layout-item size="8"> {activeExerciseName} </lightning-layout-item>
+								<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+								
+								<lightning-layout-item size="4"> Duration: </lightning-layout-item>
+								<lightning-layout-item size="8">{exerciseTimer} </lightning-layout-item>
+								<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+								
+								<lightning-layout-item size="4"> Start: </lightning-layout-item>
+								<lightning-layout-item size="8">
+									<lightning-formatted-date-time value={exerciseStart} hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
+								</lightning-layout-item>
+							</template>
+
+							<lightning-layout-item size="12" class="slds-m-top_medium">
+								<lightning-datatable key-field="name" data={progress} columns={columns}> </lightning-datatable>
+							</lightning-layout-item>
+						</lightning-layout>
 						<br />
-						<lightning-datatable key-field="name" data={progress} columns={columns}> </lightning-datatable>
 					</lightning-tab>
-					<lightning-tab label="Class Progress">
+					<!-- <lightning-tab label="Class Progress">
 						<c-class-progress></c-class-progress>
 					</lightning-tab>
 					<lightning-tab label="Student">
 						<c-students-lwc></c-students-lwc>
-					</lightning-tab>
+					</lightning-tab> -->
 				</lightning-tabset>
 			</div>
 		</lightning-card>

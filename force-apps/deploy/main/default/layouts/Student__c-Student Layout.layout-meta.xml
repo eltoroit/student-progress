@@ -11,7 +11,12 @@
                 <field>Name</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Delivery__c</field>
+            </layoutItems>
+        </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
@@ -70,8 +75,6 @@
         <fields>Exercise__c.NAME</fields>
         <fields>Status__c</fields>
         <fields>LAST_UPDATE</fields>
-        <fields>Exercise__c.Start__c</fields>
-        <fields>Exercise__c.End__c</fields>
         <relatedList>Exercise_X_Student__c.Student__c</relatedList>
         <sortField>Exercise__c.NAME</sortField>
         <sortOrder>Asc</sortOrder>
@@ -82,7 +85,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h6s000001FRIv</masterLabel>
+        <masterLabel>00hDL000008lNDX</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

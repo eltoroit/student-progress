@@ -1,8 +1,9 @@
 import Utils from "c/utils";
 import { LightningElement, wire } from "lwc";
 import { refreshApex } from "@salesforce/apex";
-import getAllExercises from "@salesforce/apex/Students.getAllExercises";
-import activateExercise from "@salesforce/apex/Students.activateExercise";
+import startStopExercise from "@salesforce/apex/Students.startStopExercise";
+import getActiveDeliveries from "@salesforce/apex/Students.getActiveDeliveries";
+import getAllExercisesForCxD from "@salesforce/apex/Students.getAllExercisesForCxD";
 import getStudentsProgress from "@salesforce/apex/Students.getStudentsProgress";
 
 const columns = [
@@ -13,21 +14,44 @@ const columns = [
 export default class Instructor extends LightningElement {
 	timers = { progress: null, screen: null };
 	progress = [];
-	exercises = [];
 	loading = true;
+	exercises = [];
+	deliveries = [];
 	columns = columns;
 	wiredProgress = null;
+	selectedCxD = null;
 	selectedExercise = null;
 	activeExerciseName = null;
-	exerciseEnd = null;
 	exerciseTimer = null;
 	exerciseStart = null;
 
-	@wire(getAllExercises)
-	wired_GetAllExercises({ data, error }) {
+	get areButtonsDisabled() {
+		return this.selectedExercise === null;
+	}
+
+	connectedCallback() {
+		this.onRefreshClick();
+	}
+
+	@wire(getActiveDeliveries)
+	wired_GetActiveDeliveries({ data, error }) {
 		if (data) {
-			this.loadExercises(data);
+			this.loadDeliveries(data);
 			this.loading = false;
+		} else if (error) {
+			Utils.showNotification(this, { title: "Error (Instructor)", message: "Error getting deliveries", variant: Utils.variants.error });
+			console.log(error);
+			this.loading = false;
+		}
+	}
+
+	@wire(getAllExercisesForCxD, { CxD: "$selectedCxD" })
+	wired_GetAllExercisesForCxD({ data, error }) {
+		if (data) {
+			if (data.length > 0) {
+				this.loadExercises(data);
+				this.loading = false;
+			}
 		} else if (error) {
 			Utils.showNotification(this, { title: "Error (Instructor)", message: "Error getting exercises", variant: Utils.variants.error });
 			console.log(error);
@@ -35,12 +59,15 @@ export default class Instructor extends LightningElement {
 		}
 	}
 
-	@wire(getStudentsProgress, { exerciseId: "$selectedExercise" })
+	@wire(getStudentsProgress, { CxD: "$selectedCxD", exerciseId: "$selectedExercise" })
 	wired_GetStudentsProgress(result) {
 		this.wiredProgress = result;
 		let { data, error } = result;
 		if (data) {
 			this.progress = [];
+			if (!data.TABLE) {
+				return;
+			}
 			this.progress = data.TABLE.map((student) => {
 				const row = {
 					name: student.Name,
@@ -68,26 +95,18 @@ export default class Instructor extends LightningElement {
 				}
 				return row;
 			});
-			if (data.EXERCISES.length === 1) {
-				const exercise = data.EXERCISES[0];
-				this.exerciseStart = new Date(exercise.Start__c);
-				this.exerciseEnd = new Date(exercise.End__c);
-				clearInterval(this.timers.screen);
+
+			clearInterval(this.timers.screen);
+			this.exerciseTimer = null;
+			clearInterval(this.timers.screen);
+			if (data.DELIVERY.length === 1) {
+				this.exerciseStart = new Date(data.DELIVERY[0].ActivatedDTTM__c);
 				this.timers.screen = setInterval(() => {
-					if (exercise.IsActive__c) {
-						this.exerciseTimer = Utils.calculateDuration({ startAt: exercise.Start__c, endAt: new Date() });
-					} else {
-						this.exerciseTimer = Utils.calculateDuration({ startAt: exercise.Start__c, endAt: exercise.End__c });
-					}
+					this.exerciseTimer = Utils.calculateDuration({ startAt: this.exerciseStart, endAt: new Date() });
 					this.exerciseTimer = this.exerciseTimer.seconds.toString();
 				}, 5e2);
-			} else if (this.selectedExercise) {
-				Utils.showNotification(this, {
-					title: "Error (Instructor)",
-					message: "Error getting exercise when fetching progress",
-					variant: Utils.variants.error
-				});
 			}
+
 			this.loading = false;
 		} else if (error) {
 			Utils.showNotification(this, { title: "Error (Instructor)", message: "Error getting progress", variant: Utils.variants.error });
@@ -96,32 +115,58 @@ export default class Instructor extends LightningElement {
 		}
 	}
 
-	onRestartTimerClick() {
-		this.activateExerciseJS(this.selectedExercise);
+	onDeliveryChange(event) {
+		this.selectedCxD = event.detail.value;
 	}
 
 	onExerciseChange(event) {
 		this.selectedExercise = event.detail.value;
 	}
 
-	onActivateNext() {
+	onNextClick() {
 		let index = this.exercises.findIndex((exercise) => exercise.value === this.selectedExercise);
-		this.activateExerciseJS(this.exercises[index + 1].value);
-	}
-
-	onActivateClick() {
-		this.activateExerciseJS(this.selectedExercise);
-	}
-
-	connectedCallback() {
-		this.onRefreshClick();
+		this.selectedExercise = this.exercises[index + 1].value;
 	}
 
 	onRefreshClick() {
 		clearInterval(this.timers.progress);
-		this.timers.progress = setInterval(() => {
-			refreshApex(this.wiredProgress);
-		}, 1e3);
+		if (this.wiredProgress) {
+			this.timers.progress = setInterval(() => {
+				refreshApex(this.wiredProgress);
+			}, 1e3);
+		}
+	}
+
+	onStartClick() {
+		this.exerciseStateChange(true);
+	}
+
+	onStopClick() {
+		this.exerciseStateChange(false);
+	}
+
+	exerciseStateChange(isStart) {
+		startStopExercise({ CxD: this.selectedCxD, exerciseId: this.selectedExercise, isStart })
+			.then((data) => {
+				this.exerciseStart = data.ActivatedDTTM__c;
+				this.activeExerciseName = data.ActiveExercise__r?.Name;
+			})
+			.catch((err) => {
+				console.log(err);
+				debugger;
+			});
+	}
+
+	loadDeliveries(data) {
+		this.deliveries = data.map((CxD) => ({
+			value: `${CxD.Course__c}|${CxD.Delivery__c}`,
+			label: `${CxD.Delivery__r.Name} (${CxD.Course__r.Name})`
+		}));
+		if (data.length > 0) {
+			this.selectedCxD = this.deliveries[0].value;
+			this.selectedExercise = data[0].Delivery__r.ActiveExercise__c;
+			this.activeExerciseName = data[0].Delivery__r.ActiveExercise__r.Name;
+		}
 	}
 
 	loadExercises(data) {
@@ -129,28 +174,5 @@ export default class Instructor extends LightningElement {
 			value: student.Id,
 			label: student.Name
 		}));
-		let activeExercises = data.filter((exercise) => exercise.IsActive__c);
-		if (activeExercises.length < 1) {
-			Utils.showNotification(this, { title: "Error (Instructor)", message: "Not active exercises found", variant: Utils.variants.error });
-		} else if (activeExercises.length > 1) {
-			Utils.showNotification(this, { title: "Error (Instructor)", message: "Multiple active exercises found", variant: Utils.variants.error });
-		}
-		if (activeExercises.length > 0) {
-			this.activeExerciseName = activeExercises[0].Name;
-			this.selectedExercise = activeExercises[0].Id;
-		}
-	}
-
-	activateExerciseJS(Id) {
-		activateExercise({ Id })
-			.then((data) => {
-				this.loadExercises(data);
-				const activeExercise = data.filter((exercise) => exercise.IsActive__c)[0];
-				Utils.showNotification(this, { title: "Success", message: `Exercise marked as active: ${activeExercise.Name}` });
-			})
-			.catch((error) => {
-				Utils.showNotification(this, { title: "Error (Instructor)", message: "Error activating exercises", variant: Utils.variants.error });
-				console.log(error);
-			});
 	}
 }
