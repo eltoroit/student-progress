@@ -1,10 +1,10 @@
 import Utils from "c/utils";
 import { LightningElement, wire } from "lwc";
 import { refreshApex } from "@salesforce/apex";
-import startStopExercise from "@salesforce/apex/Students.startStopExercise";
-import getActiveCxDs from "@salesforce/apex/Students.getActiveCxDs";
-import getAllExercisesForCxD from "@salesforce/apex/Students.getAllExercisesForCxD";
-import getStudentsProgress from "@salesforce/apex/Students.getStudentsProgress";
+import getActiveCxDs from "@salesforce/apex/Instructor.getActiveCxDs";
+import getAllExercisesForCxD from "@salesforce/apex/Instructor.getAllExercisesForCxD";
+import getStudentsProgress from "@salesforce/apex/Instructor.getStudentsProgress";
+import startStopExercise from "@salesforce/apex/Instructor.startStopExercise";
 
 const columns = [
 	{ label: "Status", fieldName: "status", fixedWidth: 40 },
@@ -81,8 +81,6 @@ export default class InstructorCurrent extends LightningElement {
 		ui.pnlExercisesSelector = isCxD;
 		ui.pnlActiveExerciseData = exActive;
 		ui.pnlStudents = exSelected;
-
-		console.log({ exercises, exActive, exSelected, isCxD, ui });
 
 		return ui;
 	}

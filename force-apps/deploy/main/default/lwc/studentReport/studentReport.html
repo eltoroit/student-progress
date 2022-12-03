@@ -1,5 +1,5 @@
 <template>
-	<div class="slds-text-heading_medium">
+	<!-- <div class="slds-text-heading_medium">
 		<lightning-card class="slds-is-relative">
 			<template if:true={loading}>
 				<lightning-spinner variant="brand"></lightning-spinner>
@@ -7,7 +7,7 @@
 			<lightning-button-group slot="actions">
 				<lightning-button label="Refresh" variant="" onclick={onRefreshClick}></lightning-button>
 			</lightning-button-group>
-			<div class="slds-m-horizontal_xx-large">
+			
 				<lightning-layout multiple-rows>
 					<lightning-layout-item size="12">
 						<lightning-combobox name="Delivery" label="Delivery" value={selectedDeliveryId} placeholder="Which class are you attending?" options={deliveries} onchange={onDeliveryChange}></lightning-combobox>
@@ -16,7 +16,6 @@
 						<lightning-combobox name="Student" label="Student" value={selectedStudentId} placeholder="Who are you?" options={students} onchange={onStudentChange}></lightning-combobox>
 					</lightning-layout-item>
 					<lightning-layout-item size="12">
-						<!-- <lightning-combobox name="Exercise" label="Exercise" value={selectedExerciseId} placeholder="Which exercise?" options={exercises} onchange={onExerciseChange}></lightning-combobox> -->
 						{selectedExerciseName}
 					</lightning-layout-item>
 					<lightning-layout-item size="12">
@@ -38,7 +37,7 @@
 						</div>
 					</lightning-layout-item>
 				</lightning-layout>
-			</div>
+			
 		</lightning-card>
-	</div>
+	</div> -->
 </template>

@@ -1,45 +1,54 @@
 {
-  "appPageId" : "71285cf4-0d96-46cd-a79c-446d87404736",
-  "componentName" : "siteforce:sldsOneColLayout",
-  "id" : "257e5b33-091e-4619-9ab8-042c5590500a",
-  "label" : "Home",
-  "regions" : [ {
-    "id" : "94363ef8-11ef-4794-a47c-80ad47de994a",
-    "regionName" : "header",
-    "type" : "region"
-  }, {
-    "components" : [ {
-      "componentAttributes" : { },
-      "componentName" : "c:students",
-      "id" : "b429668b-7a01-46d7-b197-7c54c77acb45",
-      "renderPriority" : "NEUTRAL",
-      "renditionMap" : { },
-      "type" : "component"
-    } ],
-    "id" : "950aa91b-3197-4925-ab51-61dcd2cbe607",
-    "regionName" : "content",
-    "type" : "region"
-  }, {
-    "id" : "f81dcf97-02be-4351-84d3-3d30df859f7f",
-    "regionName" : "footer",
-    "type" : "region"
-  }, {
-    "components" : [ {
-      "componentAttributes" : {
-        "customHeadTags" : "",
-        "description" : "",
-        "title" : "Trailhead Academy - Report exercise completion"
-      },
-      "componentName" : "forceCommunity:seoAssistant",
-      "id" : "d06f5827-92dd-42fa-85af-9d4a1321c6e6",
-      "renditionMap" : { },
-      "type" : "component"
-    } ],
-    "id" : "1eb6353e-0c9b-4e16-833d-10e2a3c27924",
-    "regionName" : "sfdcHiddenRegion",
-    "type" : "region"
-  } ],
-  "themeLayoutType" : "Home",
-  "type" : "view",
-  "viewType" : "home"
+	"appPageId": "71285cf4-0d96-46cd-a79c-446d87404736",
+	"componentName": "siteforce:sldsOneColLayout",
+	"id": "257e5b33-091e-4619-9ab8-042c5590500a",
+	"label": "Home",
+	"regions": [
+		{
+			"id": "94363ef8-11ef-4794-a47c-80ad47de994a",
+			"regionName": "header",
+			"type": "region"
+		},
+		{
+			"components": [
+				{
+					"componentAttributes": {},
+					"componentName": "c:student",
+					"id": "b429668b-7a01-46d7-b197-7c54c77acb45",
+					"renderPriority": "NEUTRAL",
+					"renditionMap": {},
+					"type": "component"
+				}
+			],
+			"id": "950aa91b-3197-4925-ab51-61dcd2cbe607",
+			"regionName": "content",
+			"type": "region"
+		},
+		{
+			"id": "f81dcf97-02be-4351-84d3-3d30df859f7f",
+			"regionName": "footer",
+			"type": "region"
+		},
+		{
+			"components": [
+				{
+					"componentAttributes": {
+						"customHeadTags": "",
+						"description": "",
+						"title": "Trailhead Academy - Report exercise completion"
+					},
+					"componentName": "forceCommunity:seoAssistant",
+					"id": "d06f5827-92dd-42fa-85af-9d4a1321c6e6",
+					"renditionMap": {},
+					"type": "component"
+				}
+			],
+			"id": "1eb6353e-0c9b-4e16-833d-10e2a3c27924",
+			"regionName": "sfdcHiddenRegion",
+			"type": "region"
+		}
+	],
+	"themeLayoutType": "Home",
+	"type": "view",
+	"viewType": "home"
 }
