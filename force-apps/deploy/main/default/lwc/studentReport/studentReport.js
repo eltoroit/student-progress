@@ -1,87 +1,63 @@
-// import Utils from "c/utils";
-import { LightningElement, wire } from "lwc";
+import Utils from "c/utils";
+import { api, LightningElement, wire } from "lwc";
 // import { refreshApex } from "@salesforce/apex";
 // import getStudents from "@salesforce/apex/Students.getStudents";
 // import updateStatus from "@salesforce/apex/Students.updateStatus";
-// import getActiveExercise from "@salesforce/apex/Students.getActiveExercise";
+import getStudentById from "@salesforce/apex/Student.getStudentById";
+import getDeliveryById from "@salesforce/apex/Student.getDeliveryById";
+import getExercisetById from "@salesforce/apex/Student.getExercisetById";
 // import getActiveDeliveries from "@salesforce/apex/Students.getActiveDeliveries";
 
 export default class Student extends LightningElement {
-	// students = [];
-	// exercises = [];
-	// deliveries = [];
-	// mapDeliveries = {};
-	// wiredStudents = null;
-	// wiredExercises = null;
-	// wiredDeliveries = null;
-	// selectedStudentId = "";
-	// selectedExerciseId = "";
-	// selectedDeliveryId = "";
-	// selectedExerciseName = "";
-	// loading = true;
-	// @wire(getActiveDeliveries)
-	// wired_GetActiveDeliveries(result) {
-	// 	this.wiredDeliveries = result;
-	// 	let { data, error } = result;
-	// 	if (data) {
-	// 		this.deliveries = [];
-	// 		this.mapDeliveries = new Map();
-	// 		data.forEach((delivery) => {
-	// 			this.deliveries.push({
-	// 				value: delivery.Id,
-	// 				label: delivery.Name
-	// 			});
-	// 			this.mapDeliveries.set(delivery.Id, delivery);
-	// 		});
-	// 		this.deliveries.unshift({ value: "", label: "Which class are you attending?" });
-	// 		this.doneLoading();
-	// 	} else if (error) {
-	// 		Utils.showNotification(this, {
-	// 			title: "Error",
-	// 			message: "Error getting deliveries",
-	// 			variant: Utils.variants.error
-	// 		});
-	// 		console.log(error);
-	// 		this.doneLoading();
-	// 	}
-	// }
-	// @wire(getStudents)
-	// wired_GetStudents(result) {
-	// 	this.wiredStudents = result;
-	// 	let { data, error } = result;
-	// 	if (data) {
-	// 		this.students = data.map((student) => ({
-	// 			value: student.Id,
-	// 			label: student.Name
-	// 		}));
-	// 		this.students.unshift({ value: "", label: "Who are you?" });
-	// 		this.doneLoading();
-	// 	} else if (error) {
-	// 		Utils.showNotification(this, {
-	// 			title: "Error",
-	// 			message: "Error getting students",
-	// 			variant: Utils.variants.error
-	// 		});
-	// 		console.log(error);
-	// 		this.doneLoading();
-	// 	}
-	// }
-	// @wire(getActiveExercise, { exerciseId: "$selectedExerciseId" })
-	// wired_GetActiveExercise(result) {
-	// 	let { data, error } = result;
-	// 	if (data) {
-	// 		this.selectedExerciseName = data?.Name;
-	// 		this.doneLoading();
-	// 	} else if (error) {
-	// 		Utils.showNotification(this, {
-	// 			title: "Error",
-	// 			message: "Error getting exercise",
-	// 			variant: Utils.variants.error
-	// 		});
-	// 		console.log(error);
-	// 		this.doneLoading();
-	// 	}
-	// }
+	loading = true;
+	student = {};
+	wiredStudent = null;
+	@api studentId = null;
+
+	delivery = {};
+	wiredDelivery = null;
+	@api deliveryId = null;
+
+	exercise = {};
+	exerciseId = null;
+	wiredExercise = null;
+
+	@wire(getStudentById, { studentId: "$studentId" })
+	wired_GetStudentById(result) {
+		let { data, error } = result;
+		if (data) {
+			this.student = data;
+		} else if (error) {
+			this.student = {};
+		}
+	}
+
+	@wire(getDeliveryById, { deliveryId: "$deliveryId" })
+	wired_GetDeliveryById(result) {
+		let { data, error } = result;
+		if (data) {
+			this.delivery = data;
+			this.exerciseId = data.ActiveExercise__c;
+		} else if (error) {
+			this.delivery = {};
+		}
+	}
+
+	@wire(getExercisetById, { exerciseId: "$exerciseId" })
+	wired_GetExercisetById(result) {
+		let { data, error } = result;
+		if (data) {
+			this.exercise = data;
+			this.loading = false;
+		} else if (error) {
+			this.exercise = {};
+		}
+	}
+
+	onRegisterClick() {
+		this.dispatchEvent(new CustomEvent("register"));
+	}
+
 	// get isButtonsDisabled() {
 	// 	return !(this.selectedExerciseId !== "" && this.selectedStudentId !== "");
 	// }
@@ -154,9 +130,6 @@ export default class Student extends LightningElement {
 	// 	}
 	// 	return "";
 	// }
-	// doneLoading() {
-	// 	// setTimeout(() => {
-	// 	this.loading = false;
-	// 	// }, 1e3);
-	// }
+
+	//
 }

@@ -14,22 +14,41 @@ public without sharing class Student {
 		return [SELECT Id, Name FROM Student__c WHERE Delivery__c = :deliveryId ORDER BY Name ASC];
 	}
 
+	@AuraEnabled(cacheable=true)
+	public static Student__c getStudentById(String studentId) {
+		return [SELECT Id, Name FROM Student__c WHERE Id = :studentId];
+	}
+
+	@AuraEnabled(cacheable=true)
+	public static Delivery__c getDeliveryById(String deliveryId) {
+		return [SELECT Id, Name, ActiveExercise__c FROM Delivery__c WHERE Id = :deliveryId];
+	}
+
+	@AuraEnabled(cacheable=true)
+	public static Exercise__c getExercisetById(String exerciseId) {
+		return [SELECT Id, Name FROM Exercise__c WHERE Id = :exerciseId];
+	}
+
+	@AuraEnabled(cacheable=true)
+	public static Exercise__c getActiveExercise(String deliveryId) {
+		Exercise__c output = null;
+		List<Exercise__c> exercises = [
+			SELECT Id, Name
+			FROM Exercise__c
+			WHERE Id IN (SELECT ActiveExercise__c FROM Delivery__c WHERE Id = :deliveryId)
+		];
+		if (exercises.size() == 1) {
+			output = exercises[0];
+		}
+		return output;
+	}
+
 	@AuraEnabled
 	public static Student__c registerStudent(String deliveryId, String studentName) {
 		Student__c student = new Student__c(Name = studentName, delivery__c = deliveryId);
 		upsert student Name;
 		return student;
 	}
-
-	// @AuraEnabled(cacheable=true)
-	// public static Exercise__c getActiveExercise(String exerciseId) {
-	// 	Exercise__c output = null;
-	// 	List<Exercise__c> exercises = [SELECT Id, Name FROM Exercise__c WHERE Id = :exerciseId];
-	// 	if (exercises.size() == 1) {
-	// 		output = exercises[0];
-	// 	}
-	// 	return output;
-	// }
 
 	// @AuraEnabled
 	// public static void updateStatus(String exerciseId, String studentId, String status) {
