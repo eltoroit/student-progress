@@ -3,16 +3,48 @@ import { LightningElement, wire } from "lwc";
 import { refreshApex } from "@salesforce/apex";
 import getStudents from "@salesforce/apex/Students.getStudents";
 import updateStatus from "@salesforce/apex/Students.updateStatus";
-import getActiveExercises from "@salesforce/apex/Students.getActiveExercises";
+import getActiveExercise from "@salesforce/apex/Students.getActiveExercise";
+import getActiveDeliveries from "@salesforce/apex/Students.getActiveDeliveries";
 
 export default class StudentsLwc extends LightningElement {
 	students = [];
 	exercises = [];
+	deliveries = [];
+	mapDeliveries = {};
+
 	wiredStudents = null;
 	wiredExercises = null;
-	selectedStudent = "";
-	selectedExercise = "";
+	wiredDeliveries = null;
+
+	selectedStudentId = "";
+	selectedExerciseId = "";
+	selectedDeliveryId = "";
+	selectedExerciseName = "";
+
 	loading = true;
+
+	@wire(getActiveDeliveries)
+	wired_GetActiveDeliveries(result) {
+		this.wiredDeliveries = result;
+		let { data, error } = result;
+		if (data) {
+			this.deliveries = [];
+			this.mapDeliveries = new Map();
+			data.forEach((delivery) => {
+				this.deliveries.push({
+					value: delivery.Id,
+					label: delivery.Name
+				});
+				this.mapDeliveries.set(delivery.Id, delivery);
+			});
+			this.deliveries.unshift({ value: "", label: "Which class are you attending?" });
+			this.doneLoading();
+		} else if (error) {
+			Utils.showNotification(this, { title: "Error", message: "Error getting deliveries", variant: Utils.variants.error });
+			console.log(error);
+			this.doneLoading();
+		}
+	}
 
 	@wire(getStudents)
 	wired_GetStudents(result) {
@@ -32,60 +64,54 @@ export default class StudentsLwc extends LightningElement {
 		}
 	}
 
-	@wire(getActiveExercises)
-	wired_GetActiveExercises(result) {
-		this.wiredExercises = result;
+	@wire(getActiveExercise, { exerciseId: "$selectedExerciseId" })
+	wired_GetActiveExercise(result) {
 		let { data, error } = result;
 		if (data) {
-			this.exercises = data.map((student) => ({
-				value: student.Id,
-				label: student.Name
-			}));
-			if (this.exercises.length > 0) {
-				this.selectedExercise = this.exercises[0].value;
-			}
+			this.selectedExerciseName = data?.Name;
 			this.doneLoading();
 		} else if (error) {
-			Utils.showNotification(this, { title: "Error", message: "Error getting exercises", variant: Utils.variants.error });
+			Utils.showNotification(this, { title: "Error", message: "Error getting exercise", variant: Utils.variants.error });
 			console.log(error);
 			this.doneLoading();
 		}
 	}
 
 	get isButtonsDisabled() {
-		return !((this.selectedExercise !== "") && (this.selectedStudent !== ""));
+		return !(this.selectedExerciseId !== "" && this.selectedStudentId !== "");
 	}
 
 	connectedCallback() {
-		this.selectedStudent = this.getCookie("student");
+		this.selectedStudentId = this.getCookie("student");
 		setInterval(() => {
 			this.onRefreshClick();
 			this.doneLoading();
 		}, 1e3);
 	}
 
-	onExerciseChange(event) {
-		this.selectedExercise = event.detail.value;
+	onDeliveryChange(event) {
+		this.selectedDeliverId = event.detail.value;
+		this.selectedExerciseId = this.mapDeliveries.get(this.selectedDeliverId).ActiveExercise__c;
 	}
 
 	onStudentChange(event) {
-		this.selectedStudent = event.detail.value;
-		document.cookie = `student=${this.selectedStudent}`;
+		this.selectedStudentId = event.detail.value;
+		document.cookie = `student=${this.selectedStudentId}`;
 	}
 
-	onRefreshClick() {
-		this.loading = true;
-		const promises = [refreshApex(this.wiredExercises), refreshApex(this.wiredStudents)];
-		Promise.allSettled(promises)
-			.then(() => {
-				this.doneLoading();
-			})
-			.catch((error) => {
-				this.doneLoading();
-				console.log(error);
-				Utils.showNotification(this, { title: "Error", message: "Error refreshing data", variant: Utils.variants.error });
-			});
-	}
+	// onRefreshClick() {
+	// 	this.loading = true;
+	// 	const promises = [refreshApex(this.wiredExercises), refreshApex(this.wiredStudents)];
+	// 	Promise.allSettled(promises)
+	// 		.then(() => {
+	// 			this.doneLoading();
+	// 		})
+	// 		.catch((error) => {
+	// 			this.doneLoading();
+	// 			console.log(error);
+	// 			Utils.showNotification(this, { title: "Error", message: "Error refreshing data", variant: Utils.variants.error });
+	// 		});
+	// }
 
 	onDoneClick() {
 		this.updateStatus("DONE");
@@ -101,7 +127,7 @@ export default class StudentsLwc extends LightningElement {
 
 	updateStatus(status) {
 		this.loading = true;
-		updateStatus({ exerciseId: this.selectedExercise, studentId: this.selectedStudent, status })
+		updateStatus({ exerciseId: this.selectedExerciseId, studentId: this.selectedStudentId, status })
 			.then(() => {
 				Utils.showNotification(this, { title: "Success", message: "Thanks for completing the exercise" });
 				this.doneLoading();

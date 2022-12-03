@@ -10,10 +10,14 @@
 			<div class="slds-m-horizontal_xx-large">
 				<lightning-layout multiple-rows>
 					<lightning-layout-item size="12">
-						<lightning-combobox name="Student" label="Student" value={selectedStudent} placeholder="Who are you?" options={students} onchange={onStudentChange}></lightning-combobox>
+						<lightning-combobox name="Delivery" label="Delivery" value={selectedDeliveryId} placeholder="Which class are you attending?" options={deliveries} onchange={onDeliveryChange}></lightning-combobox>
 					</lightning-layout-item>
 					<lightning-layout-item size="12">
-						<lightning-combobox name="Exercise" label="Exercise" value={selectedExercise} placeholder="Which exercise?" options={exercises} onchange={onExerciseChange}></lightning-combobox>
+						<lightning-combobox name="Student" label="Student" value={selectedStudentId} placeholder="Who are you?" options={students} onchange={onStudentChange}></lightning-combobox>
+					</lightning-layout-item>
+					<lightning-layout-item size="12">
+						<!-- <lightning-combobox name="Exercise" label="Exercise" value={selectedExerciseId} placeholder="Which exercise?" options={exercises} onchange={onExerciseChange}></lightning-combobox> -->
+						{selectedExerciseName}
 					</lightning-layout-item>
 					<lightning-layout-item size="12">
 						<div class="slds-m-around_small"></div>

@@ -1,5 +1,56 @@
 {
-	"fetched": 0,
-	"records": [],
-	"total": 0
+	"fetched": 5,
+	"records": [
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DL00000D2PApYAN"
+			},
+			"Exercise__c": "a04DL00000Ir1eJYAR",
+			"Id": "a03DL00000D2PApYAN",
+			"Status__c": "LATER",
+			"Student__c": "a05DL00000AwKCrYAN"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DL00000D2PAkYAN"
+			},
+			"Exercise__c": "a04DL00000Ir1eJYAR",
+			"Id": "a03DL00000D2PAkYAN",
+			"Status__c": "WORKING",
+			"Student__c": "a05DL00000AwKErYAN"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DL00000D2PAaYAN"
+			},
+			"Exercise__c": "a04DL00000Ir1eJYAR",
+			"Id": "a03DL00000D2PAaYAN",
+			"Status__c": "DONE",
+			"Student__c": "a05DL00000AwKEmYAN"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DL00000D2PAfYAN"
+			},
+			"Exercise__c": "a04DL00000Ir1eJYAR",
+			"Id": "a03DL00000D2PAfYAN",
+			"Status__c": "DONE",
+			"Student__c": "a05DL00000AwKEwYAN"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DL00000D2PAuYAN"
+			},
+			"Exercise__c": "a04DL00000Ir1eIYAR",
+			"Id": "a03DL00000D2PAuYAN",
+			"Status__c": "DONE",
+			"Student__c": "a05DL00000AwKCrYAN"
+		}
+	],
+	"total": 5
 }

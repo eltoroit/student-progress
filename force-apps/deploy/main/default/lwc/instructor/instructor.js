@@ -2,7 +2,7 @@ import Utils from "c/utils";
 import { LightningElement, wire } from "lwc";
 import { refreshApex } from "@salesforce/apex";
 import startStopExercise from "@salesforce/apex/Students.startStopExercise";
-import getActiveDeliveries from "@salesforce/apex/Students.getActiveDeliveries";
+import getActiveCxDs from "@salesforce/apex/Students.getActiveCxDs";
 import getAllExercisesForCxD from "@salesforce/apex/Students.getAllExercisesForCxD";
 import getStudentsProgress from "@salesforce/apex/Students.getStudentsProgress";
 
@@ -33,10 +33,10 @@ export default class Instructor extends LightningElement {
 		this.onRefreshClick();
 	}
 
-	@wire(getActiveDeliveries)
-	wired_GetActiveDeliveries({ data, error }) {
+	@wire(getActiveCxDs)
+	wired_GetActiveCxDs({ data, error }) {
 		if (data) {
-			this.loadDeliveries(data);
+			this.loadCxDs(data);
 			this.loading = false;
 		} else if (error) {
 			Utils.showNotification(this, { title: "Error (Instructor)", message: "Error getting deliveries", variant: Utils.variants.error });
@@ -157,7 +157,7 @@ export default class Instructor extends LightningElement {
 			});
 	}
 
-	loadDeliveries(data) {
+	loadCxDs(data) {
 		this.deliveries = data.map((CxD) => ({
 			value: `${CxD.Course__c}|${CxD.Delivery__c}`,
 			label: `${CxD.Delivery__r.Name} (${CxD.Course__r.Name})`
