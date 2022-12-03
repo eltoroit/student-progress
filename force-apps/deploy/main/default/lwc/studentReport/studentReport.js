@@ -1,6 +1,5 @@
-import Utils from "c/utils";
 import { api, LightningElement, wire } from "lwc";
-// import { refreshApex } from "@salesforce/apex";
+import { refreshApex } from "@salesforce/apex";
 // import getStudents from "@salesforce/apex/Students.getStudents";
 // import updateStatus from "@salesforce/apex/Students.updateStatus";
 import getStudentById from "@salesforce/apex/Student.getStudentById";
@@ -11,16 +10,20 @@ import getExercisetById from "@salesforce/apex/Student.getExercisetById";
 export default class Student extends LightningElement {
 	loading = true;
 	student = {};
-	wiredStudent = null;
 	@api studentId = null;
 
 	delivery = {};
-	wiredDelivery = null;
+	wiredDeliver = null;
 	@api deliveryId = null;
 
 	exercise = {};
 	exerciseId = null;
-	wiredExercise = null;
+
+	connectedCallback() {
+		// setInterval(() => {
+		// 	this.onRefreshClick();
+		// }, 1e3);
+	}
 
 	@wire(getStudentById, { studentId: "$studentId" })
 	wired_GetStudentById(result) {
@@ -34,12 +37,21 @@ export default class Student extends LightningElement {
 
 	@wire(getDeliveryById, { deliveryId: "$deliveryId" })
 	wired_GetDeliveryById(result) {
+		this.wiredDeliver = result;
 		let { data, error } = result;
 		if (data) {
-			this.delivery = data;
+			this.delivery = {...data};
+			if (this.delivery) {
+				this.delivery.Name = `${data.Name} (${data.Instructor__c})`;
+			}
 			this.exerciseId = data.ActiveExercise__c;
+			if (!this.exerciseId) {
+				this.exercise = {};
+			}
+			this.loading = false;
 		} else if (error) {
 			this.delivery = {};
+			this.loading = false;
 		}
 	}
 
@@ -51,6 +63,7 @@ export default class Student extends LightningElement {
 			this.loading = false;
 		} else if (error) {
 			this.exercise = {};
+			this.loading = false;
 		}
 	}
 
@@ -58,37 +71,10 @@ export default class Student extends LightningElement {
 		this.dispatchEvent(new CustomEvent("register"));
 	}
 
-	// get isButtonsDisabled() {
-	// 	return !(this.selectedExerciseId !== "" && this.selectedStudentId !== "");
-	// }
-	// connectedCallback() {
-	// 	this.selectedStudentId = this.getCookie("student");
-	// 	setInterval(() => {
-	// 		this.onRefreshClick();
-	// 		this.doneLoading();
-	// 	}, 1e3);
-	// }
-	// onDeliveryChange(event) {
-	// 	this.selectedDeliverId = event.detail.value;
-	// 	this.selectedExerciseId = this.mapDeliveries.get(this.selectedDeliverId).ActiveExercise__c;
-	// }
-	// onStudentChange(event) {
-	// 	this.selectedStudentId = event.detail.value;
-	// 	document.cookie = `student=${this.selectedStudentId}`;
-	// }
-	// // onRefreshClick() {
-	// // 	this.loading = true;
-	// // 	const promises = [refreshApex(this.wiredExercises), refreshApex(this.wiredStudents)];
-	// // 	Promise.allSettled(promises)
-	// // 		.then(() => {
-	// // 			this.doneLoading();
-	// // 		})
-	// // 		.catch((error) => {
-	// // 			this.doneLoading();
-	// // 			console.log(error);
-	// // 			Utils.showNotification(this, { title: "Error", message: "Error refreshing data", variant: Utils.variants.error });
-	// // 		});
-	// // }
+	onRefreshClick() {
+		refreshApex(this.wiredDeliver);
+	}
+
 	// onDoneClick() {
 	// 	this.updateStatus("DONE");
 	// }
@@ -115,21 +101,4 @@ export default class Student extends LightningElement {
 	// 			});
 	// 		});
 	// }
-	// getCookie(cname) {
-	// 	let name = cname + "=";
-	// 	let decodedCookie = decodeURIComponent(document.cookie);
-	// 	let parts = decodedCookie.split(";");
-	// 	for (let i = 0; i < parts.length; i++) {
-	// 		let c = parts[i];
-	// 		while (c.charAt(0) === " ") {
-	// 			c = c.substring(1);
-	// 		}
-	// 		if (c.indexOf(name) === 0) {
-	// 			return c.substring(name.length, c.length);
-	// 		}
-	// 	}
-	// 	return "";
-	// }
-
-	//
 }

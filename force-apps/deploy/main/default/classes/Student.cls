@@ -21,7 +21,7 @@ public without sharing class Student {
 
 	@AuraEnabled(cacheable=true)
 	public static Delivery__c getDeliveryById(String deliveryId) {
-		return [SELECT Id, Name, ActiveExercise__c FROM Delivery__c WHERE Id = :deliveryId];
+		return [SELECT Id, Name, Instructor__c, ActiveExercise__c FROM Delivery__c WHERE Id = :deliveryId];
 	}
 
 	@AuraEnabled(cacheable=true)
