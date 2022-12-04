@@ -1,11 +1,10 @@
+import Utils from "c/utils";
 import { api, LightningElement, wire } from "lwc";
 import { refreshApex } from "@salesforce/apex";
-// import getStudents from "@salesforce/apex/Students.getStudents";
-// import updateStatus from "@salesforce/apex/Students.updateStatus";
+import updateStatus from "@salesforce/apex/Student.updateStatus";
 import getStudentById from "@salesforce/apex/Student.getStudentById";
 import getDeliveryById from "@salesforce/apex/Student.getDeliveryById";
 import getExercisetById from "@salesforce/apex/Student.getExercisetById";
-// import getActiveDeliveries from "@salesforce/apex/Students.getActiveDeliveries";
 
 export default class Student extends LightningElement {
 	loading = true;
@@ -20,9 +19,9 @@ export default class Student extends LightningElement {
 	exerciseId = null;
 
 	connectedCallback() {
-		// setInterval(() => {
-		// 	this.onRefreshClick();
-		// }, 1e3);
+		setInterval(() => {
+			this.onRefreshClick();
+		}, 1e3);
 	}
 
 	@wire(getStudentById, { studentId: "$studentId" })
@@ -40,7 +39,7 @@ export default class Student extends LightningElement {
 		this.wiredDeliver = result;
 		let { data, error } = result;
 		if (data) {
-			this.delivery = {...data};
+			this.delivery = { ...data };
 			if (this.delivery) {
 				this.delivery.Name = `${data.Name} (${data.Instructor__c})`;
 			}
@@ -75,30 +74,32 @@ export default class Student extends LightningElement {
 		refreshApex(this.wiredDeliver);
 	}
 
-	// onDoneClick() {
-	// 	this.updateStatus("DONE");
-	// }
-	// onWorkingClick() {
-	// 	this.updateStatus("WORKING");
-	// }
-	// onLaterClick() {
-	// 	this.updateStatus("LATER");
-	// }
-	// updateStatus(status) {
-	// 	this.loading = true;
-	// 	updateStatus({ exerciseId: this.selectedExerciseId, studentId: this.selectedStudentId, status })
-	// 		.then(() => {
-	// 			Utils.showNotification(this, { title: "Success", message: "Thanks for completing the exercise" });
-	// 			this.doneLoading();
-	// 		})
-	// 		.catch((error) => {
-	// 			this.doneLoading();
-	// 			console.log(error);
-	// 			Utils.showNotification(this, {
-	// 				title: "Error",
-	// 				message: "Error marking as done",
-	// 				variant: Utils.variants.error
-	// 			});
-	// 		});
-	// }
+	onDoneClick() {
+		this.updateStatus("DONE");
+	}
+	onWorkingClick() {
+		this.updateStatus("WORKING");
+	}
+	onLaterClick() {
+		this.updateStatus("LATER");
+	}
+	updateStatus(status) {
+		this.loading = true;
+		updateStatus({ exerciseId: this.exerciseId, studentId: this.studentId, status })
+			.then(() => {
+				Utils.showNotification(this, { title: "Success", message: "Thanks for completing the exercise" });
+				setTimeout(() => {
+					this.loading = false;
+				}, 1e3);
+			})
+			.catch((error) => {
+				this.loading = false;
+				console.log(error);
+				Utils.showNotification(this, {
+					title: "Error",
+					message: "Error marking as done",
+					variant: Utils.variants.error
+				});
+			});
+	}
 }

@@ -76,6 +76,10 @@ export default class StudentRegister extends LightningElement {
 				});
 				this.mapDeliveries.set(delivery.Id, delivery);
 			});
+			if (data.length === 1) {
+				this.selectedDeliveryId = data[0].Id;
+				Utils.setCookie({ key: "selectedDeliveryId", value: this.selectedDeliveryId });
+			}
 			this.deliveries.unshift({ value: "", label: "Which class are you attending?" });
 			this.loading = false;
 		} else if (error) {

@@ -115,7 +115,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Student</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
