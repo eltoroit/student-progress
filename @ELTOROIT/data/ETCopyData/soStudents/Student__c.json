@@ -1,42 +1,5 @@
 {
 	"fetched": 4,
-	"records": [
-		{
-			"attributes": {
-				"type": "Student__c",
-				"url": "/services/data/v56.0/sobjects/Student__c/a05DL00000AwKErYAN"
-			},
-			"Delivery__c": "a02DL00000LAxLeYAL",
-			"Id": "a05DL00000AwKErYAN",
-			"Name": "A2"
-		},
-		{
-			"attributes": {
-				"type": "Student__c",
-				"url": "/services/data/v56.0/sobjects/Student__c/a05DL00000AwKEwYAN"
-			},
-			"Delivery__c": "a02DL00000LAxLeYAL",
-			"Id": "a05DL00000AwKEwYAN",
-			"Name": "A3"
-		},
-		{
-			"attributes": {
-				"type": "Student__c",
-				"url": "/services/data/v56.0/sobjects/Student__c/a05DL00000AwKEmYAN"
-			},
-			"Delivery__c": "a02DL00000LAxLeYAL",
-			"Id": "a05DL00000AwKEmYAN",
-			"Name": "A1"
-		},
-		{
-			"attributes": {
-				"type": "Student__c",
-				"url": "/services/data/v56.0/sobjects/Student__c/a05DL00000AwKCrYAN"
-			},
-			"Delivery__c": "a02DL00000LAxLeYAL",
-			"Id": "a05DL00000AwKCrYAN",
-			"Name": "Andres Perez"
-		}
-	],
+	"records": [],
 	"total": 4
 }
