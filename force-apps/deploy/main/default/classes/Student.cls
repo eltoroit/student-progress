@@ -4,7 +4,7 @@ public without sharing class Student {
 		return [
 			SELECT Id, Name, ActiveExercise__r.Name, Instructor__c
 			FROM Delivery__c
-			WHERE IsActive__c = TRUE
+			WHERE IsActive__c = TRUE AND Id IN (SELECT Delivery__c FROM Course_X_Delivery__c)
 			ORDER BY Name ASC
 		];
 	}
@@ -50,6 +50,34 @@ public without sharing class Student {
 		return student;
 	}
 
+	@AuraEnabled(cacheable=true)
+	public static Map<String, String> validateRegistration(String deliveryId, String studentId) {
+		List<String> errors = new List<String>();
+		Map<String, String> output = new Map<String, String>();
+		output.put('deliveryId', '');
+		output.put('studentId', '');
+
+		List<Delivery__c> deliveries = [SELECT Id FROM Delivery__c WHERE IsActive__c = TRUE AND Id = :deliveryId];
+		if (deliveries.size() == 1) {
+			output.put('deliveryId', deliveryId);
+		} else {
+			errors.add('Invalid deliveryId');
+		}
+
+		List<Student__c> students = [SELECT Id FROM Student__c WHERE Delivery__c = :deliveryId AND Id = :studentId];
+		if (students.size() == 1) {
+			output.put('studentId', studentId);
+		} else {
+			errors.add('Invalid studentId');
+		}
+
+		if (errors.size() > 0) {
+			throw new CalloutException('Registration data is not valid: ' + JSON.serialize(errors));
+		}
+
+		return output;
+	}
+
 	@AuraEnabled
 	public static void updateStatus(String exerciseId, String studentId, String status) {
 		List<Exercise_X_Student__c> ExSs = [
@@ -68,52 +96,4 @@ public without sharing class Student {
 		ExS.Status__c = status;
 		upsert ExS;
 	}
-
-	//////////////////////////////
-
-	// @AuraEnabled(cacheable=true)
-	// public static List<Exercise__c> getActiveExercises() {
-	// 	return [SELECT Id, Name, IsActive__c FROM Exercise__c WHERE IsActive__c = TRUE ORDER BY Name ASC];
-	// }
-
-	// @AuraEnabled
-	// public static List<Exercise__c> activateExercise(String exerciseId, String courseId) {
-	// 	List<Exercise__c> activeExercises = getActiveExercises();
-	// 	for (Exercise__c active : activeExercises) {
-	// 		active.IsActive__c = false;
-	// 	}
-	// 	update activeExercises;
-	// 	update new Exercise__c(Id = exerciseId, IsActive__c = true); //, Start__c = Datetime.now()
-	// 	return getAllExercisesForCourse(courseId);
-	// }
-
-	// @AuraEnabled(cacheable=true)
-	// public static Map<String, Object> getClassReport() {
-	// 	Map<String, Object> output = new Map<String, Object>();
-	// 	output.put(
-	// 		'STUDENTS',
-	// 		[
-	// 			SELECT Id, Name
-	// 			FROM Student__c
-	// 			ORDER BY Name
-	// 		]
-	// 	);
-	// 	output.put(
-	// 		'EXERCISES',
-	// 		[
-	// 			SELECT
-	// 				Id,
-	// 				Name,
-	// 				(
-	// 					SELECT ID, Student__r.Name, Status__c, lastModifiedDate
-	// 					FROM Exercises_X_Students__r
-	// 					ORDER BY lastModifiedDate ASC
-	// 				)
-	// 			FROM Exercise__c
-	// 			WHERE Id IN (SELECT Exercise__c FROM Exercise_X_Student__c)
-	// 			ORDER BY Name
-	// 		]
-	// 	);
-	// 	return output;
-	// }
 }

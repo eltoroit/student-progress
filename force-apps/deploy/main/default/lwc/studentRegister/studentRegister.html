@@ -7,7 +7,6 @@
 			<lightning-button-group slot="actions">
 				<lightning-button
 					label="Register"
-					variant="brand"
 					if:true={ui.btnRegister.isVisible}
 					disabled={ui.btnRegister.isDisabled}
 					onclick={onRegisterClick}
@@ -19,35 +18,44 @@
 					disabled={ui.btnNext.isDisabled}
 					onclick={onNextClick}
 				></lightning-button>
+				<lightning-button
+					label="Refresh"
+					variant="brand"
+					if:true={ui.btnRefresh.isVisible}
+					disabled={ui.btnRefresh.isDisabled}
+					onclick={onRefreshClick}
+				></lightning-button>
 			</lightning-button-group>
 
-			<lightning-layout multiple-rows>
-				<lightning-layout-item size="12">
-					<lightning-combobox
-						name="Delivery"
-						label="Which class are you attending?"
-						value={selectedDeliveryId}
-						placeholder="Which class are you attending?"
-						options={deliveries}
-						onchange={onDeliveryChange}
-					></lightning-combobox>
-				</lightning-layout-item>
-				<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
-
-				<template if:true={ui.pnlStudent}>
+			<div class="slds-m-horizontal_xx-large">
+				<lightning-layout multiple-rows>
 					<lightning-layout-item size="12">
 						<lightning-combobox
-							name="Student"
-							label="What's your name?"
-							value={selectedStudentId}
-							placeholder="What's your name?"
-							options={students}
-							onchange={onStudentChange}
+							name="Delivery"
+							label="Which class are you attending?"
+							value={deliveryId}
+							placeholder="Which class are you attending?"
+							options={deliveries}
+							onchange={onDeliveryChange}
 						></lightning-combobox>
 					</lightning-layout-item>
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
-				</template>
-			</lightning-layout>
+
+					<template if:true={ui.pnlStudent}>
+						<lightning-layout-item size="12">
+							<lightning-combobox
+								name="Student"
+								label="What's your name?"
+								value={studentId}
+								placeholder="What's your name?"
+								options={students}
+								onchange={onStudentChange}
+							></lightning-combobox>
+						</lightning-layout-item>
+						<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+					</template>
+				</lightning-layout>
+			</div>
 		</lightning-card>
 	</div>
 </template>

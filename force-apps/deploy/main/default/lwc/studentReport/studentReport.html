@@ -10,55 +10,57 @@
 				<lightning-button label="Register" variant="brand" onclick={onRegisterClick}></lightning-button>
 			</lightning-button-group>
 
-			<lightning-layout multiple-rows>
-				<lightning-layout-item size="4"> Delivery </lightning-layout-item>
-				<lightning-layout-item size="8">{delivery.Name}</lightning-layout-item>
-				<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
-
-				<lightning-layout-item size="4"> Student </lightning-layout-item>
-				<lightning-layout-item size="8">{student.Name}</lightning-layout-item>
-				<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
-
-				<template if:true={exerciseId}>
-					<lightning-layout-item size="4"> Exercise </lightning-layout-item>
-					<lightning-layout-item size="8">{exercise.Name}</lightning-layout-item>
+			<div class="slds-m-horizontal_xx-large">
+				<lightning-layout multiple-rows>
+					<lightning-layout-item size="4"> Delivery </lightning-layout-item>
+					<lightning-layout-item size="8">{delivery.Name}</lightning-layout-item>
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
 
-					<lightning-layout-item size="12" medium-device-size="4">
-						<div class="slds-m-around_small">
-							<button
-								class="slds-button slds-button_success slds-button_stretch"
-								onclick={onDoneClick}
-								disabled={isButtonsDisabled}
-							>
-								I'm<br />done
-							</button>
-						</div>
-					</lightning-layout-item>
-					<lightning-layout-item size="12" medium-device-size="4">
-						<div class="slds-m-around_small">
-							<button
-								class="slds-button slds-button_brand slds-button_stretch"
-								onclick={onWorkingClick}
-								disabled={isButtonsDisabled}
-							>
-								I'm<br />working
-							</button>
-						</div>
-					</lightning-layout-item>
-					<lightning-layout-item size="12" medium-device-size="4">
-						<div class="slds-m-around_small">
-							<button
-								class="slds-button slds-button_neutral slds-button_stretch"
-								onclick={onLaterClick}
-								disabled={isButtonsDisabled}
-							>
-								I'll<br />finish later
-							</button>
-						</div>
-					</lightning-layout-item>
-				</template>
-			</lightning-layout>
+					<lightning-layout-item size="4"> Student </lightning-layout-item>
+					<lightning-layout-item size="8">{student.Name}</lightning-layout-item>
+					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+
+					<template if:true={exerciseId}>
+						<lightning-layout-item size="4"> Exercise </lightning-layout-item>
+						<lightning-layout-item size="8">{exercise.Name}</lightning-layout-item>
+						<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+
+						<lightning-layout-item size="12" medium-device-size="4">
+							<div class="slds-m-around_small">
+								<button
+									class="slds-button slds-button_success slds-button_stretch"
+									onclick={onDoneClick}
+									disabled={isButtonsDisabled}
+								>
+									I'm<br />done
+								</button>
+							</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="12" medium-device-size="4">
+							<div class="slds-m-around_small">
+								<button
+									class="slds-button slds-button_brand slds-button_stretch"
+									onclick={onWorkingClick}
+									disabled={isButtonsDisabled}
+								>
+									I'm<br />working
+								</button>
+							</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="12" medium-device-size="4">
+							<div class="slds-m-around_small">
+								<button
+									class="slds-button slds-button_neutral slds-button_stretch"
+									onclick={onLaterClick}
+									disabled={isButtonsDisabled}
+								>
+									I'll<br />finish later
+								</button>
+							</div>
+						</lightning-layout-item>
+					</template>
+				</lightning-layout>
+			</div>
 		</lightning-card>
 	</div>
 </template>
