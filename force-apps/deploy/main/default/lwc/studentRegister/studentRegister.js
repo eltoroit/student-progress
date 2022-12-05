@@ -23,18 +23,18 @@ export default class StudentRegister extends LightningElement {
 	get ui() {
 		const ui = {};
 		ui.btnRegister = {
-			isVisible: true,
+			isVisible: !(this.deliveryId === "" || this.studentId !== "CREATE"),
 			isDisabled: this.deliveryId === "" || this.studentId !== "CREATE"
 		};
 		ui.btnNext = {
-			isVisible: true,
+			isVisible: !(this.deliveryId === "" || this.studentId === "CREATE" || this.studentId === ""),
 			isDisabled: this.deliveryId === "" || this.studentId === "CREATE" || this.studentId === ""
 		};
 		ui.btnRefresh = {
 			isVisible: true,
 			isDisabled: false
 		};
-		ui.pnlStudent = this.deliveryId !== "";
+		ui.pnlStudent = (this.deliveryId !== "") && (this.deliveries.length > 1);
 
 		return ui;
 	}
