@@ -9,7 +9,7 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightningCommunity__Default">
-            <property name="url" type="String" default=""></property>
+            <property name="pathInSr" type="String" default=""></property>
             <property name="maxWidth" type="String" default="100%"></property>
             <property name="maxHeight" type="String" default="250px"></property>
         </targetConfig>
