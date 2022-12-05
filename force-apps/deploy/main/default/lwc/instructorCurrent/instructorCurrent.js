@@ -14,7 +14,6 @@ const columns = [
 export default class InstructorCurrent extends LightningElement {
 	// Control
 	loading = true;
-	wiredProgress = null;
 	exerciseTimer = null;
 	exerciseStart = null;
 	timers = { progress: null, screen: null };
@@ -23,6 +22,11 @@ export default class InstructorCurrent extends LightningElement {
 	exercises = [];
 	deliveries = [];
 	activeExercise = {};
+
+	wiredActiveCxDs = null;
+	wiredStudentsProgress = null;
+	wiredAllExercisesForCxD = null;
+
 	_selectedExerciseId = "";
 	_selectedCourseDeliveryId = "";
 
@@ -31,14 +35,22 @@ export default class InstructorCurrent extends LightningElement {
 	columns = columns;
 
 	get selectedExerciseId() {
-		return this._selectedExerciseId;
+		let output = "";
+		if (this._selectedExerciseId) {
+			output = this._selectedExerciseId;
+		}
+		return output;
 	}
 	set selectedExerciseId(value) {
 		if (!value) value = "";
 		this._selectedExerciseId = value;
 	}
 	get selectedCourseDeliveryId() {
-		return this._selectedCourseDeliveryId;
+		let output = "";
+		if (this._selectedCourseDeliveryId) {
+			output = this._selectedCourseDeliveryId;
+		}
+		return output;
 	}
 	set selectedCourseDeliveryId(value) {
 		if (!value) value = "";
@@ -94,7 +106,9 @@ export default class InstructorCurrent extends LightningElement {
 	}
 
 	@wire(getActiveCxDs)
-	wired_GetActiveCxDs({ data, error }) {
+	wired_GetActiveCxDs(result) {
+		this.wiredActiveCxDs = result;
+		let { data, error } = result;
 		if (data) {
 			this.loadCxDs(data);
 			this.loading = false;
@@ -110,7 +124,9 @@ export default class InstructorCurrent extends LightningElement {
 	}
 
 	@wire(getAllExercisesForCxD, { CxD: "$selectedCourseDeliveryId" })
-	wired_GetAllExercisesForCxD({ data, error }) {
+	wired_GetAllExercisesForCxD(result) {
+		this.wiredAllExercisesForCxD = result;
+		let { data, error } = result;
 		if (data) {
 			if (data.length > 0) {
 				this.loadExercises(data);
@@ -129,7 +145,7 @@ export default class InstructorCurrent extends LightningElement {
 
 	@wire(getStudentsProgress, { CxD: "$selectedCourseDeliveryId", exerciseId: "$selectedExerciseId" })
 	wired_GetStudentsProgress(result) {
-		this.wiredProgress = result;
+		this.wiredStudentsProgress = result;
 		let { data, error } = result;
 		if (data) {
 			this.progress = [];
@@ -210,10 +226,10 @@ export default class InstructorCurrent extends LightningElement {
 	onRefreshClick() {
 		// This clock is to get the data
 		clearInterval(this.timers.progress);
-		this.timers.progress = setInterval(() => {
-			if (this.wiredProgress) {
-				refreshApex(this.wiredProgress);
-			}
+		this.timers.progress = setInterval(async () => {
+			await refreshApex(this.wiredActiveCxDs);
+			await refreshApex(this.wiredAllExercisesForCxD);
+			await refreshApex(this.wiredStudentsProgress);
 		}, 1e3);
 	}
 
