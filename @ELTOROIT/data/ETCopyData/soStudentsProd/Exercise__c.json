@@ -4,237 +4,6 @@
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5WYAW"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "45 min",
-			"Id": "a04DH000003GK5WYAW",
-			"Name": "Your Turn 4-1: Implement Vertical Navigation",
-			"Order__c": 20
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5XYAW"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "35 min",
-			"Id": "a04DH000003GK5XYAW",
-			"Name": "Your Turn 4-2: Use <lightning-data-table>",
-			"Order__c": 21
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5YYAW"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "25 min",
-			"Id": "a04DH000003GK5YYAW",
-			"Name": "Your Turn 4-3: Use <lightning-button-group>",
-			"Order__c": 22
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5ZYAW"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "15 min",
-			"Id": "a04DH000003GK5ZYAW",
-			"Name": "Your Turn 4-4: Create a Responsive Layout",
-			"Order__c": 23
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5aYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "40 min",
-			"Id": "a04DH000003GK5aYAG",
-			"Name": "Your Turn 5-1: Create a Responsive Datatable",
-			"Order__c": 24
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5bYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "25 min",
-			"Id": "a04DH000003GK5bYAG",
-			"Name": "Your Turn 5-2: Use Custom Events and Public Methods",
-			"Order__c": 25
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5cYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "35 min",
-			"Id": "a04DH000003GK5cYAG",
-			"Name": "Your Turn 5-3: Implement Toasts",
-			"Order__c": 26
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5dYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "30 min",
-			"Id": "a04DH000003GK5dYAG",
-			"Name": "Your Turn 5-4: Use Slots to Implement Modal Notifications",
-			"Order__c": 27
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5eYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "15 min",
-			"Id": "a04DH000003GK5eYAG",
-			"Name": "Your Turn 5-5: Localize Your Components",
-			"Order__c": 28
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5fYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "35 min",
-			"Id": "a04DH000003GK5fYAG",
-			"Name": "Your Turn 5-6: Add the \"Certification Popularity\" bar chart",
-			"Order__c": 29
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5gYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "25 min",
-			"Id": "a04DH000003GK5gYAG",
-			"Name": "Your Turn 6-1: Implement a Form using Standard Controls",
-			"Order__c": 30
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5hYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "40 min",
-			"Id": "a04DH000003GK5hYAG",
-			"Name": "Your Turn 6-2: Implement a Form using Custom Controls",
-			"Order__c": 31
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5iYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "20 min",
-			"Id": "a04DH000003GK5iYAG",
-			"Name": "Your Turn 6-3: Validate Form Data",
-			"Order__c": 32
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5jYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "35 min",
-			"Id": "a04DH000003GK5jYAG",
-			"Name": "Your Turn 6-4: View and Edit Salesforce Records",
-			"Order__c": 33
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5kYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "20 min",
-			"Id": "a04DH000003GK5kYAG",
-			"Name": "Your Turn 6-5: Display an Interstitial While Data is Loading",
-			"Order__c": 34
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5lYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "15 min",
-			"Id": "a04DH000003GK5lYAG",
-			"Name": "Your Turn 7-1: Deploy a Component to a Dev Hub",
-			"Order__c": 35
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5mYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "75 min",
-			"Id": "a04DH000003GK5mYAG",
-			"Name": "Lab Phase 2: Use Lightning Data Service CRUD Operations",
-			"Order__c": 36
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5nYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "20 min",
-			"Id": "a04DH000003GK5nYAG",
-			"Name": "Lab Phase 3: Read and Output Dynamic Data",
-			"Order__c": 37
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5oYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "20 min",
-			"Id": "a04DH000003GK5oYAG",
-			"Name": "Your Turn 2-4: Work with Component Properties",
-			"Order__c": 5
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5pYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "30 min",
-			"Id": "a04DH000003GK5pYAG",
-			"Name": "Your Turn 2-5: Handle DOM Events",
-			"Order__c": 6
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5qYAG"
-			},
-			"Course__c": "a01DH000008us8JYAQ",
-			"ExpectedDuration__c": "25 min",
-			"Id": "a04DH000003GK5qYAG",
-			"Name": "Your Turn 2-2: Create a Lightning Web Component",
-			"Order__c": 3
-		},
-		{
-			"attributes": {
-				"type": "Exercise__c",
 				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK4QYAW"
 			},
 			"Course__c": "a01DH000008us8JYAQ",
@@ -979,6 +748,237 @@
 			"Id": "a04DH000003GK5VYAW",
 			"Name": "Your Turn 3-6: Surface Components in Visualforce Pages",
 			"Order__c": 19
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5WYAW"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "45 min",
+			"Id": "a04DH000003GK5WYAW",
+			"Name": "Your Turn 4-1: Implement Vertical Navigation",
+			"Order__c": 20
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5XYAW"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "35 min",
+			"Id": "a04DH000003GK5XYAW",
+			"Name": "Your Turn 4-2: Use <lightning-data-table>",
+			"Order__c": 21
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5YYAW"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04DH000003GK5YYAW",
+			"Name": "Your Turn 4-3: Use <lightning-button-group>",
+			"Order__c": 22
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5ZYAW"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04DH000003GK5ZYAW",
+			"Name": "Your Turn 4-4: Create a Responsive Layout",
+			"Order__c": 23
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5aYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "40 min",
+			"Id": "a04DH000003GK5aYAG",
+			"Name": "Your Turn 5-1: Create a Responsive Datatable",
+			"Order__c": 24
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5bYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04DH000003GK5bYAG",
+			"Name": "Your Turn 5-2: Use Custom Events and Public Methods",
+			"Order__c": 25
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5cYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "35 min",
+			"Id": "a04DH000003GK5cYAG",
+			"Name": "Your Turn 5-3: Implement Toasts",
+			"Order__c": 26
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5dYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "30 min",
+			"Id": "a04DH000003GK5dYAG",
+			"Name": "Your Turn 5-4: Use Slots to Implement Modal Notifications",
+			"Order__c": 27
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5eYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04DH000003GK5eYAG",
+			"Name": "Your Turn 5-5: Localize Your Components",
+			"Order__c": 28
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5fYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "35 min",
+			"Id": "a04DH000003GK5fYAG",
+			"Name": "Your Turn 5-6: Add the \"Certification Popularity\" bar chart",
+			"Order__c": 29
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5gYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04DH000003GK5gYAG",
+			"Name": "Your Turn 6-1: Implement a Form using Standard Controls",
+			"Order__c": 30
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5hYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "40 min",
+			"Id": "a04DH000003GK5hYAG",
+			"Name": "Your Turn 6-2: Implement a Form using Custom Controls",
+			"Order__c": 31
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5iYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04DH000003GK5iYAG",
+			"Name": "Your Turn 6-3: Validate Form Data",
+			"Order__c": 32
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5jYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "35 min",
+			"Id": "a04DH000003GK5jYAG",
+			"Name": "Your Turn 6-4: View and Edit Salesforce Records",
+			"Order__c": 33
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5kYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04DH000003GK5kYAG",
+			"Name": "Your Turn 6-5: Display an Interstitial While Data is Loading",
+			"Order__c": 34
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5lYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04DH000003GK5lYAG",
+			"Name": "Your Turn 7-1: Deploy a Component to a Dev Hub",
+			"Order__c": 35
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5mYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "75 min",
+			"Id": "a04DH000003GK5mYAG",
+			"Name": "Lab Phase 2: Use Lightning Data Service CRUD Operations",
+			"Order__c": 36
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5nYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04DH000003GK5nYAG",
+			"Name": "Lab Phase 3: Read and Output Dynamic Data",
+			"Order__c": 37
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5oYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04DH000003GK5oYAG",
+			"Name": "Your Turn 2-4: Work with Component Properties",
+			"Order__c": 5
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5pYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "30 min",
+			"Id": "a04DH000003GK5pYAG",
+			"Name": "Your Turn 2-5: Handle DOM Events",
+			"Order__c": 6
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04DH000003GK5qYAG"
+			},
+			"Course__c": "a01DH000008us8JYAQ",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04DH000003GK5qYAG",
+			"Name": "Your Turn 2-2: Create a Lightning Web Component",
+			"Order__c": 3
 		}
 	],
 	"total": 89
