@@ -1,5 +1,5 @@
 public without sharing class Instructor {
-    @AuraEnabled(cacheable=true)
+	@AuraEnabled(cacheable=true)
 	public static List<Course_X_Delivery__c> getActiveCxDs() {
 		return [
 			SELECT Id, Name, Course__r.Name, Delivery__r.Name, Delivery__r.ActiveExercise__r.Name
@@ -90,6 +90,44 @@ public without sharing class Instructor {
 			}
 		}
 
+		return output;
+	}
+
+	@AuraEnabled(cacheable=true)
+	public static Map<String, Object> getClassReport(String CxD) {
+		Map<String, Object> output = new Map<String, Object>();
+
+		if (CxD != '') {
+			List<String> parts = CxD.split('\\|');
+			String courseId = parts[0];
+			String deliveryId = parts[1];
+
+			List<Student__c> students = [SELECT Id, Name FROM Student__c WHERE Delivery__c = :deliveryId ORDER BY Name];
+
+			output.put('STUDENTS', students);
+			output.put(
+				'EXERCISES',
+				[
+					SELECT
+						Id,
+						Name,
+						(
+							SELECT ID, Student__c, Student__r.Name, Status__c, lastModifiedDate
+							FROM Exercises_X_Students__r
+							WHERE Student__c IN :students
+							ORDER BY lastModifiedDate ASC
+						)
+					FROM Exercise__c
+					WHERE
+						Id IN (
+							SELECT Exercise__c
+							FROM Exercise_X_Student__c
+							WHERE Student__c IN :students
+						)
+					ORDER BY Name
+				]
+			);
+		}
 		return output;
 	}
 }

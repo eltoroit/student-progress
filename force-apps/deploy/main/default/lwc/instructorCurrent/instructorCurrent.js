@@ -103,6 +103,7 @@ export default class InstructorCurrent extends LightningElement {
 		console.log("*** *** *** Connected Callback");
 		this.selectedExerciseId = Utils.getCookie({ key: "selectedExerciseId" });
 		this.selectedCourseDeliveryId = Utils.getCookie({ key: "selectedCourseDeliveryId" });
+		this.dispatchEvent(new CustomEvent("change", { detail: { CxD: this.selectedCourseDeliveryId } }));
 		this.onRefreshClick();
 	}
 
@@ -208,6 +209,7 @@ export default class InstructorCurrent extends LightningElement {
 	onDeliveryChange(event) {
 		this.selectedCourseDeliveryId = event.detail.value;
 		Utils.setCookie({ key: "selectedCourseDeliveryId", value: this.selectedCourseDeliveryId });
+		this.dispatchEvent(new CustomEvent("change", { detail: { CxD: this.selectedCourseDeliveryId } }));
 	}
 
 	onExerciseChange(event) {

@@ -6,6 +6,7 @@
     -   To calculate exercise duration better
     -   Create a special student named "EXERCISE_START" that has no DeliveryId so it can be used on any delivery and have an entry with status "START"
 -   Student progress to calculate best student in class
+    -   Do not display instructor points
 -   Class notes
     -   Export to PDF and email it to students
     -   Include images, and links
