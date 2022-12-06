@@ -21,9 +21,14 @@
 			<lightning-layout-item size="4">
 				<div class="slds-m-horizontal_small">
 					<lightning-card>
-						<div class="slds-m-horizontal_xx-large slds-align_absolute-center">
-							<c-image path-in-sr="QR.png" max-width="100%"></c-image>
-						</div>
+						<lightning-layout multiple-rows>
+							<lightning-layout-item size="12" class="slds-align_absolute-center">
+								<c-image path-in-sr="QR.png" max-width="100%"></c-image>
+							</lightning-layout-item>
+							<lightning-layout-item size="12" class="slds-align_absolute-center">
+								<a href="https://bit.ly/thStudentReport" style="letter-spacing: 7px;">https://bit.ly/thStudentReport</a>
+							</lightning-layout-item>
+						</lightning-layout>
 					</lightning-card>
 				</div>
 			</lightning-layout-item>
