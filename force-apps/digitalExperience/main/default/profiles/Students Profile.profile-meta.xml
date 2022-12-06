@@ -155,6 +155,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Note__c.Note__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Student__c.Delivery__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -172,6 +177,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Exercise__c-Exercise Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Note__c-Note Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Student__c-Student Layout</layout>
@@ -278,6 +286,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Exercise__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Note__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>

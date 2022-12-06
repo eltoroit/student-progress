@@ -41,6 +41,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Note__c.Note__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Student__c.Delivery__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -97,6 +102,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Note__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Student__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -110,6 +124,10 @@
     </tabSettings>
     <tabSettings>
         <tab>Exercise__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Note__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

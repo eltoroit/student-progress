@@ -62,7 +62,7 @@
         <redirectionWarning>true</redirectionWarning>
         <referrerPolicy>true</referrerPolicy>
         <requireHttpOnly>false</requireHttpOnly>
-        <sessionTimeout>TwoHours</sessionTimeout>
+        <sessionTimeout>TwentyFourHours</sessionTimeout>
         <sidToken3rdPartyAuraApp>false</sidToken3rdPartyAuraApp>
         <useLocalStorageForLogoutUrl>true</useLocalStorageForLogoutUrl>
     </sessionSettings>
