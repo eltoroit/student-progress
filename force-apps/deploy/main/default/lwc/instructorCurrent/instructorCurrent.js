@@ -13,6 +13,7 @@ const columns = [
 
 export default class InstructorCurrent extends LightningElement {
 	// Control
+	errorMessage = "";
 	loading = true;
 	exerciseTimer = null;
 	exerciseStart = null;
@@ -227,9 +228,14 @@ export default class InstructorCurrent extends LightningElement {
 		// This clock is to get the data
 		clearInterval(this.timers.progress);
 		this.timers.progress = setInterval(async () => {
-			await refreshApex(this.wiredActiveCxDs);
-			await refreshApex(this.wiredAllExercisesForCxD);
-			await refreshApex(this.wiredStudentsProgress);
+			try {
+				await refreshApex(this.wiredActiveCxDs);
+				await refreshApex(this.wiredAllExercisesForCxD);
+				await refreshApex(this.wiredStudentsProgress);
+				this.errorMessage = "";
+			} catch (error) {
+				this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
+			}
 		}, 1e3);
 	}
 

@@ -9,6 +9,7 @@ import getExercisetById from "@salesforce/apex/Student.getExercisetById";
 export default class Student extends LightningElement {
 	loading = true;
 	student = {};
+	errorMessage = "";
 	@api studentId = null;
 
 	delivery = {};
@@ -20,7 +21,7 @@ export default class Student extends LightningElement {
 
 	connectedCallback() {
 		setInterval(() => {
-			console.log('*** Refresh');
+			console.log("*** Refresh");
 			this.onRefreshClick();
 		}, 5e3);
 	}
@@ -72,7 +73,14 @@ export default class Student extends LightningElement {
 	}
 
 	onRefreshClick() {
-		refreshApex(this.wiredDeliver);
+		refreshApex(this.wiredDeliver)
+			.then(() => {
+				this.errorMessage = "";
+			})
+			.catch((error) => {
+				console.log(error);
+				this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
+			});
 	}
 
 	onDoneClick() {

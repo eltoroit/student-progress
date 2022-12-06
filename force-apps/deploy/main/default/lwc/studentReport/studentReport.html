@@ -12,6 +12,14 @@
 
 			<div class="slds-m-horizontal_xx-large">
 				<lightning-layout multiple-rows>
+					<template if:true={errorMessage}>
+						<lightning-layout-item size="12">
+							<div class="slds-notify slds-notify_alert slds-alert_error slds-m-bottom_x-small" role="alert">
+								{errorMessage}
+							</div>
+						</lightning-layout-item>
+					</template>
+
 					<lightning-layout-item size="4"> Delivery </lightning-layout-item>
 					<lightning-layout-item size="8">{delivery.Name}</lightning-layout-item>
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
