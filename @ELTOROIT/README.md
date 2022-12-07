@@ -14,4 +14,7 @@
 -   Delivery could have a field of class location
     -   Company (if private)
     -   City
--
+-   On the instrcutor page reporting the particular exercise (for any exercise, even previous ones), be able to change the status of the student
+    -   Add a row action to select "DONE, WORKING, LATER" states.
+-   Add a note to the exercise, like "We took a break while doing the exercise"
+-   Display expected duration

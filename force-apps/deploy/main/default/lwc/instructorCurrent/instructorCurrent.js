@@ -6,9 +6,19 @@ import getAllExercisesForCxD from "@salesforce/apex/Instructor.getAllExercisesFo
 import getStudentsProgress from "@salesforce/apex/Instructor.getStudentsProgress";
 import startStopExercise from "@salesforce/apex/Instructor.startStopExercise";
 
+const actions = [
+	{ label: "I'm done", name: "Status|DONE" },
+	{ label: "I'm working", name: "Status|WORKING" },
+	{ label: "I'll finish later", name: "Status|LATER" }
+];
+
 const columns = [
 	{ label: "Status", fieldName: "status", fixedWidth: 40 },
-	{ label: "Name", fieldName: "name" }
+	{ label: "Name", fieldName: "name" },
+	{
+		type: "action",
+		typeAttributes: { rowActions: actions }
+	}
 ];
 
 export default class InstructorCurrent extends LightningElement {
@@ -156,11 +166,14 @@ export default class InstructorCurrent extends LightningElement {
 			}
 			this.progress = data.TABLE.map((student) => {
 				const row = {
+					studentId: student.Id,
 					name: student.Name,
 					status: ""
 				};
 				if (student.Exercises_X_Students__r?.length > 0) {
-					const status = student.Exercises_X_Students__r[0]?.Status__c;
+					const rowData = student.Exercises_X_Students__r[0];
+					row.exsId = rowData?.Id;
+					const status = rowData?.Status__c;
 					switch (status) {
 						case "DONE": {
 							row.status = "✅";
@@ -247,6 +260,23 @@ export default class InstructorCurrent extends LightningElement {
 
 	onStopClick() {
 		this.exerciseStateChange(false);
+	}
+
+	onRowAction(event) {
+		const row = event.detail.row;
+		const actionName = event.detail.action.name;
+		const actionNameParts = actionName.split("|");
+		const actionNameCommand = actionNameParts[0];
+		const actionNameValue = actionNameParts[1];
+
+		switch (actionNameCommand) {
+			case "Status":
+				console.log({...row}, actionNameValue);
+				break;
+			default: {
+				debugger;
+			}
+		}
 	}
 
 	exerciseStateChange(isStart) {
