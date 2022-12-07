@@ -75,31 +75,33 @@ public without sharing class Instructor {
 			String courseId = parts[0];
 			String deliveryId = parts[1];
 
-			List<Student__c> students = [SELECT Id, Name FROM Student__c WHERE Delivery__c = :deliveryId ORDER BY Name];
-
+			List<Student__c> students = [
+				SELECT Id, Name, IsInstructor__c
+				FROM Student__c
+				WHERE Delivery__c = :deliveryId
+				ORDER BY Name
+			];
+			List<Exercise__c> exercises = [
+				SELECT
+					Id,
+					Name,
+					(
+						SELECT ID, Student__c, Student__r.Name, Status__c, lastModifiedDate
+						FROM Exercises_X_Students__r
+						WHERE Student__c IN :students
+						ORDER BY lastModifiedDate ASC
+					)
+				FROM Exercise__c
+				WHERE
+					Id IN (
+						SELECT Exercise__c
+						FROM Exercise_X_Student__c
+						WHERE Student__r.Delivery__c = :deliveryId
+					)
+				ORDER BY Name
+			];
 			output.put('STUDENTS', students);
-			output.put(
-				'EXERCISES',
-				[
-					SELECT
-						Id,
-						Name,
-						(
-							SELECT ID, Student__c, Student__r.Name, Status__c, lastModifiedDate
-							FROM Exercises_X_Students__r
-							WHERE Student__c IN :students
-							ORDER BY lastModifiedDate ASC
-						)
-					FROM Exercise__c
-					WHERE
-						Id IN (
-							SELECT Exercise__c
-							FROM Exercise_X_Student__c
-							WHERE Student__c IN :students
-						)
-					ORDER BY Name
-				]
-			);
+			output.put('EXERCISES', exercises);
 		}
 		return output;
 	}

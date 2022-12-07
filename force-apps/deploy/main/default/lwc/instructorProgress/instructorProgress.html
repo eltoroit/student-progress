@@ -1,3 +1,11 @@
 <template>
-    {selectedCourseDeliveryId}
+	<lightning-card>
+		<div>
+			<canvas class="certBarChart" lwc:dom="manual"></canvas>
+		</div>
+	</lightning-card>
+	<div style="display: none">
+		<!-- Do I really need this? -->
+		{selectedCourseDeliveryId}
+	</div>
 </template>
