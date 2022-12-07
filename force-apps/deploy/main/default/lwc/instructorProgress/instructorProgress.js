@@ -116,7 +116,7 @@ export default class ClassProgress extends LightningElement {
 
 	makeChart() {
 		// Make chart data
-		this.tableAllData = this.tableAllData.sort((a, b) => (a.Points < b.Points ? -1 : 1));
+		this.tableAllData = this.tableAllData.sort((a, b) => -(a.Points < b.Points ? -1 : 1));
 		const labels = this.tableAllData.map((row) => row.Name);
 		const data = this.tableAllData.map((row) => row.Points);
 		const options = {
