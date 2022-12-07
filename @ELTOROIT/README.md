@@ -17,9 +17,9 @@
     -   Company (if private)
     -   City
 -   Add a note to the exercise, like "We took a break while doing the exercise"
--   Display expected duration
 
 # DONE
 
+-   Display expected duration
 -   On the instrcutor page reporting the particular exercise (for any exercise, even previous ones), be able to change the status of the student
     -   Add a row action to select "DONE, WORKING, LATER" states.
