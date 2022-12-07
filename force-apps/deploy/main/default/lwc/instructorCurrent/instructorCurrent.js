@@ -338,10 +338,13 @@ export default class InstructorCurrent extends LightningElement {
 	}
 
 	loadExercises(data) {
-		this.exercises = data.map((student) => ({
-			value: student.Id,
-			label: student.Name
-		}));
+		this.exercises = data.map((exercise) => {
+			let expectedDuration = exercise.ExpectedDuration__c ? ` (${exercise.ExpectedDuration__c})` : "";
+			return {
+				value: exercise.Id,
+				label: `${exercise.Name} ${expectedDuration}`
+			};
+		});
 		this.exercises.unshift({ value: "", label: "Which exercise are you working on?" });
 	}
 }
