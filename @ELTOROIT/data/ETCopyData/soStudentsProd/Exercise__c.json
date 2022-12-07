@@ -592,7 +592,7 @@
 			"Course__c": "a01DH000008us8JYAQ",
 			"ExpectedDuration__c": "20 min",
 			"Id": "a04DH000003GK5HYAW",
-			"Name": "* Your Turn 2-7B: Work with Lightning Data Service",
+			"Name": "Your Turn 2-7B: Work with Lightning Data Service",
 			"Order__c": 9
 		},
 		{
@@ -691,7 +691,7 @@
 			"Course__c": "a01DH000008us8JYAQ",
 			"ExpectedDuration__c": "25 min",
 			"Id": "a04DH000003GK5QYAW",
-			"Name": "* Your Turn 2-7A: Work with Apex",
+			"Name": "Your Turn 2-7A: Work with Apex",
 			"Order__c": 8
 		},
 		{
