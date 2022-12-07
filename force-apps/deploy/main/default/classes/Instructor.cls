@@ -65,34 +65,6 @@ public without sharing class Instructor {
 		return output;
 	}
 
-	@AuraEnabled
-	public static Delivery__c startStopExercise(String CxD, String exerciseId, Boolean isStart) {
-		Delivery__c output = null;
-
-		if (CxD != '') {
-			List<String> parts = CxD.split('\\|');
-			String courseId = parts[0];
-			String deliveryId = parts[1];
-
-			try {
-				if (isStart) {
-					update new Delivery__c(
-						Id = deliveryId,
-						ActiveExercise__c = exerciseId,
-						ActivatedDTTM__c = Datetime.now()
-					);
-				} else {
-					update new Delivery__c(Id = deliveryId, ActiveExercise__c = null, ActivatedDTTM__c = null);
-				}
-				output = [SELECT ActiveExercise__r.Name, ActivatedDTTM__c FROM Delivery__c WHERE Id = :deliveryId];
-			} catch (Exception e) {
-				throw new AuraHandledException(e.getMessage());
-			}
-		}
-
-		return output;
-	}
-
 	@AuraEnabled(cacheable=true)
 	public static Map<String, Object> getClassReport(String CxD) {
 		Map<String, Object> output = new Map<String, Object>();
@@ -129,5 +101,48 @@ public without sharing class Instructor {
 			);
 		}
 		return output;
+	}
+
+	@AuraEnabled
+	public static Delivery__c startStopExercise(String CxD, String exerciseId, Boolean isStart) {
+		Delivery__c output = null;
+
+		if (CxD != '') {
+			List<String> parts = CxD.split('\\|');
+			String courseId = parts[0];
+			String deliveryId = parts[1];
+
+			try {
+				if (isStart) {
+					update new Delivery__c(
+						Id = deliveryId,
+						ActiveExercise__c = exerciseId,
+						ActivatedDTTM__c = Datetime.now()
+					);
+				} else {
+					update new Delivery__c(Id = deliveryId, ActiveExercise__c = null, ActivatedDTTM__c = null);
+				}
+				output = [SELECT ActiveExercise__r.Name, ActivatedDTTM__c FROM Delivery__c WHERE Id = :deliveryId];
+			} catch (Exception e) {
+				throw new AuraHandledException(e.getMessage());
+			}
+		}
+
+		return output;
+	}
+
+	@AuraEnabled
+	public static void updateStudentStatus(String ExS, String exerciseId, String studentId, String status) {
+		Exercise_X_Student__c record = new Exercise_X_Student__c(
+			Student__c = studentId,
+			Exercise__c = exerciseId,
+			Status__c = status
+		);
+		if (String.isEmpty(ExS)) {
+			insert record;
+		} else {
+			record.Id = ExS;
+			update record;
+		}
 	}
 }

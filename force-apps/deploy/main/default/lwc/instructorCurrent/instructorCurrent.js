@@ -2,9 +2,10 @@ import Utils from "c/utils";
 import { LightningElement, wire } from "lwc";
 import { refreshApex } from "@salesforce/apex";
 import getActiveCxDs from "@salesforce/apex/Instructor.getActiveCxDs";
-import getAllExercisesForCxD from "@salesforce/apex/Instructor.getAllExercisesForCxD";
-import getStudentsProgress from "@salesforce/apex/Instructor.getStudentsProgress";
 import startStopExercise from "@salesforce/apex/Instructor.startStopExercise";
+import updateStudentStatus from "@salesforce/apex/Instructor.updateStudentStatus";
+import getStudentsProgress from "@salesforce/apex/Instructor.getStudentsProgress";
+import getAllExercisesForCxD from "@salesforce/apex/Instructor.getAllExercisesForCxD";
 
 const actions = [
 	{ label: "I'm done", name: "Status|DONE" },
@@ -271,7 +272,17 @@ export default class InstructorCurrent extends LightningElement {
 
 		switch (actionNameCommand) {
 			case "Status":
-				console.log({...row}, actionNameValue);
+				updateStudentStatus({
+					ExS: row.exsId,
+					studentId: row.studentId,
+					exerciseId: this.selectedExerciseId,
+					status: actionNameValue
+				})
+					.then(() => {})
+					.catch((error) => {
+						console.log(error);
+						debugger;
+					});
 				break;
 			default: {
 				debugger;
