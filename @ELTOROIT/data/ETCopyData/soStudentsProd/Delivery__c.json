@@ -6,8 +6,8 @@
 				"type": "Delivery__c",
 				"url": "/services/data/v56.0/sobjects/Delivery__c/a02DH000003hjhzYAA"
 			},
-			"ActivatedDTTM__c": "2022-12-07T00:17:08.000+0000",
-			"ActiveExercise__c": "a04DH000003GK5JYAW",
+			"ActivatedDTTM__c": null,
+			"ActiveExercise__c": null,
 			"Id": "a02DH000003hjhzYAA",
 			"Instructor__c": "Andres Perez",
 			"IsActive__c": true,
