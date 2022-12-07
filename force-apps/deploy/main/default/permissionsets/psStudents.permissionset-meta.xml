@@ -49,6 +49,11 @@
         <field>Student__c.Delivery__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Student__c.IsInstructor__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>psStudents</label>
     <objectPermissions>

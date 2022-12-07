@@ -171,6 +171,9 @@ export default class InstructorCurrent extends LightningElement {
 					name: student.Name,
 					status: ""
 				};
+				if (student.IsInstructor__c) {
+					row.name += ` 🧑‍🏫`;
+				}
 				if (student.Exercises_X_Students__r?.length > 0) {
 					const rowData = student.Exercises_X_Students__r[0];
 					row.exsId = rowData?.Id;

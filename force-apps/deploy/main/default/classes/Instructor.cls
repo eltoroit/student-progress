@@ -44,6 +44,7 @@ public without sharing class Instructor {
 					SELECT
 						Id,
 						Name,
+						IsInstructor__c,
 						(SELECT ID, Status__c, lastModifiedDate FROM Exercises_X_Students__r WHERE Exercise__c = :exerciseId)
 					FROM Student__c
 					WHERE Delivery__c = :deliveryId
