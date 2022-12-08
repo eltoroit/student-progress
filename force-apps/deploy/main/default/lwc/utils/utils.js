@@ -7,6 +7,7 @@ export default class Util {
 		success: "success",
 		info: "info"
 	};
+
 	static showNotification(cmp, { title = "", message = "", variant = "success" }) {
 		cmp.dispatchEvent(
 			new ShowToastEvent({
@@ -193,7 +194,28 @@ export default class Util {
 		return output;
 	}
 
-	static deleteCookie({key}) {
+	static deleteCookie({ key }) {
 		document.cookie = `${key}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
+	}
+
+	static getEmoji({ status }) {
+		let output = "";
+		switch (status) {
+			case "DONE": {
+				output = "✅";
+				break;
+			}
+			case "WORKING": {
+				output = "👩‍💻";
+				break;
+			}
+			case "LATER": {
+				output = "🕒";
+				break;
+			}
+			default:
+				break;
+		}
+		return output;
 	}
 }

@@ -9,8 +9,14 @@
     -   DEX602 only needs the org at the start of the class on Monday
     -   Some private workshops have a combination of courses and the orgs change during the week
 -   Store exercise start time
+    -   Maybe add a child object for events
+        -   Exercise start
+        -   Breaks
+        -   etc
     -   To calculate exercise duration better
     -   Create a special student named "EXERCISE_START" that has no DeliveryId so it can be used on any delivery and have an entry with status "START"
+    -   Another idea is to create all the studnts with a "START" status, then the students can change that to "DONE", "WORKING", or "LATER"
+        -   We know how long a student took to complete the exercise by diff og CreatedData and LastModiedDate
 -   Class notes
     -   Export to PDF and email it to students
     -   Include images, and links
@@ -19,7 +25,6 @@
     -   Company (if private)
     -   City
 -   Add a note to the exercise, like "We took a break while doing the exercise"
--   Swap chart to display horizontally, not vertically.
 -   Add a timer for breaks
 -   Let the instructor connect via phone/tablet
 -   Stoping an active exercise should change the time only
@@ -32,6 +37,7 @@
 
 -   Student progress to calculate best student in class
     -   Do not display instructor points
+    -   Swap chart to display horizontally, not vertically.
 -   Display expected duration
 -   On the instrcutor page reporting the particular exercise (for any exercise, even previous ones), be able to change the status of the student
     -   Add a row action to select "DONE, WORKING, LATER" states.

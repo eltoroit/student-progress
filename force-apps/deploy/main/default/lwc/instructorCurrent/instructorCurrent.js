@@ -177,24 +177,7 @@ export default class InstructorCurrent extends LightningElement {
 				if (student.Exercises_X_Students__r?.length > 0) {
 					const rowData = student.Exercises_X_Students__r[0];
 					row.exsId = rowData?.Id;
-					const status = rowData?.Status__c;
-					switch (status) {
-						case "DONE": {
-							row.status = "✅";
-							break;
-						}
-						case "WORKING": {
-							row.status = "👩‍💻";
-							break;
-						}
-						case "LATER": {
-							row.status = "🕒";
-							break;
-						}
-
-						default:
-							break;
-					}
+					row.status = Utils.getEmoji({ status: rowData?.Status__c });
 				}
 				return row;
 			});

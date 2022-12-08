@@ -7,6 +7,7 @@ import { refreshApex } from "@salesforce/apex";
 import { api, LightningElement, wire } from "lwc";
 import ChartJS from "@salesforce/resourceUrl/chartjs_v280";
 import { loadScript } from "lightning/platformResourceLoader";
+import instructorProgressTable from "c/instructorProgressTable";
 import getClassReport from "@salesforce/apex/Instructor.getClassReport";
 
 export default class ClassProgress extends LightningElement {
@@ -67,26 +68,36 @@ export default class ClassProgress extends LightningElement {
 					StudentId: student.Id,
 					Name: student.Name,
 					Points: student.Points,
-					IsInstructor: student.IsInstructor
+					IsInstructor: student.IsInstructor,
+					EX: []
 				};
 				this.exercises.forEach((ex, index) => {
 					const ExS = student.mExS[ex.Id];
 					const paddedIndex = `${index}`.padStart(3, "0");
+					const tmp = {
+						index: paddedIndex,
+						ranking: 0,
+						points: 0,
+						status: "?",
+						emoji: ""
+					};
 					if (ExS) {
-						output[`EX_${paddedIndex}_Ranking`] = ExS.Ranking;
-						output[`EX_${paddedIndex}_Points`] = ExS.Points;
-						output[`EX_${paddedIndex}_Status`] = ExS.Status;
-					} else {
-						output[`EX_${paddedIndex}_Ranking`] = 0;
-						output[`EX_${paddedIndex}_Points`] = 0;
-						output[`EX_${paddedIndex}_Status`] = "?";
+						tmp.ranking = ExS.Ranking;
+						tmp.points = ExS.Points;
+						tmp.status = ExS.Status;
+						tmp.emoji = Utils.getEmoji({ status: ExS.Status });
 					}
+					output.EX.push(tmp);
 				});
 				return output;
 			});
 			// Only the students
 			this.tableAllData = this.tableAllData.filter((row) => !row.IsInstructor);
-			this.makeChart();
+			// Sort it :-)
+			this.tableAllData = this.tableAllData.sort((a, b) => -(a.Points < b.Points ? -1 : 1));
+			setTimeout(() => {
+				this.makeChart();
+			}, 0);
 			this.loading = false;
 		} else if (error) {
 			Utils.showNotification(this, {
@@ -118,7 +129,6 @@ export default class ClassProgress extends LightningElement {
 
 	makeChart() {
 		// Make chart data
-		this.tableAllData = this.tableAllData.sort((a, b) => -(a.Points < b.Points ? -1 : 1));
 		const labels = this.tableAllData.map((row) => row.Name);
 		const data = this.tableAllData.map((row) => row.Points);
 		const config = {
@@ -142,10 +152,28 @@ export default class ClassProgress extends LightningElement {
 				}
 			}
 		};
-		this._chart = new window.Chart(this._ctxChart, config);
+		try {
+			this._chart = new window.Chart(this._ctxChart, config);
+		} catch (ex) {
+			console.log(ex);
+			// eslint-disable-next-line
+			alert("An error creating the chart has occurred. You will need to refresh the page.");
+		}
 	}
 
 	onRefresh() {
-		refreshApex(this.wiredGetClassReport);
+		let tmp = this.selectedCourseDeliveryId;
+		this.selectedCourseDeliveryId = "";
+		setTimeout(() => {
+			this.selectedCourseDeliveryId = tmp;
+			refreshApex(this.wiredGetClassReport);
+		}, 0);
+	}
+
+	async onShowTable() {
+		await instructorProgressTable.open({
+			size: "large",
+			studentsData: this.tableAllData
+		});
 	}
 }
