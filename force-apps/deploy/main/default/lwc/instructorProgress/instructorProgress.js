@@ -122,7 +122,7 @@ export default class ClassProgress extends LightningElement {
 		const labels = this.tableAllData.map((row) => row.Name);
 		const data = this.tableAllData.map((row) => row.Points);
 		const config = {
-			type: "bar",
+			type: "horizontalBar",
 			data: {
 				labels,
 				datasets: [
@@ -133,18 +133,6 @@ export default class ClassProgress extends LightningElement {
 					}
 				]
 			},
-			// options: {
-			// 	responsive: false,
-			// 	plugins: {
-			// 		legend: {
-			// 			position: "right"
-			// 		}
-			// 	},
-			// 	animation: {
-			// 		animateScale: true,
-			// 		animateRotate: true
-			// 	}
-			// }
 			options: {
 				responsive: true,
 				legend: { display: false },
