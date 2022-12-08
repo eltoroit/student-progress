@@ -1,8 +1,12 @@
 <template>
 	<lightning-card>
-		<div>
+		<lightning-button-group slot="actions">
+			<lightning-button label="Refresh" onclick={onRefresh} variant="brand"></lightning-button>
+		</lightning-button-group>
+		<div class="chart slds-var-m-around_medium" lwc:dom="manual"></div>
+		<!-- <div>
 			<canvas class="certBarChart" lwc:dom="manual"></canvas>
-		</div>
+		</div> -->
 	</lightning-card>
 	<div style="display: none">
 		<!-- Do I really need this? -->

@@ -1,10 +1,11 @@
 // Chart - Review this...
 // https://salesforcelabs.github.io/LightningWebChartJS/docs/api/chart.html
+// https://github.com/trailheadapps/lwc-recipes/blob/main/force-app/main/default/lwc/libsChartjs/libsChartjs.html
 
 import Utils from "c/utils";
-// import { refreshApex } from "@salesforce/apex";
+import { refreshApex } from "@salesforce/apex";
 import { api, LightningElement, wire } from "lwc";
-import chartjs from "@salesforce/resourceUrl/Chartjs";
+import ChartJS from "@salesforce/resourceUrl/chartjs_v280";
 import { loadScript } from "lightning/platformResourceLoader";
 import getClassReport from "@salesforce/apex/Instructor.getClassReport";
 
@@ -17,6 +18,7 @@ export default class ClassProgress extends LightningElement {
 	tableAllData = [];
 	wiredGetClassReport = null;
 
+	_chart = null;
 	_ctxChart = null;
 	_chartjsInitialized = false;
 
@@ -102,16 +104,16 @@ export default class ClassProgress extends LightningElement {
 			return;
 		}
 		this._chartjsInitialized = true;
-		loadScript(this, chartjs)
-			.then((...data) => {
-				console.log(data);
-				debugger;
+		loadScript(this, ChartJS)
+			.then(() => {
+				const canvas = document.createElement("canvas");
+				this.template.querySelector("div.chart").appendChild(canvas);
+				this._ctxChart = canvas.getContext("2d");
+				// this._ctxChart = this.template.querySelector("canvas.certBarChart").getContext("2d");
 			})
 			.catch((error) => {
-				console.log(error);
-				debugger;
+				this.error = error;
 			});
-		this._ctxChart = this.template.querySelector("canvas.certBarChart").getContext("2d");
 	}
 
 	makeChart() {
@@ -119,17 +121,30 @@ export default class ClassProgress extends LightningElement {
 		this.tableAllData = this.tableAllData.sort((a, b) => -(a.Points < b.Points ? -1 : 1));
 		const labels = this.tableAllData.map((row) => row.Name);
 		const data = this.tableAllData.map((row) => row.Points);
-		const options = {
+		const config = {
 			type: "bar",
 			data: {
 				labels,
 				datasets: [
 					{
 						backgroundColor: "#639dff",
+						label: "Students",
 						data
 					}
 				]
 			},
+			// options: {
+			// 	responsive: false,
+			// 	plugins: {
+			// 		legend: {
+			// 			position: "right"
+			// 		}
+			// 	},
+			// 	animation: {
+			// 		animateScale: true,
+			// 		animateRotate: true
+			// 	}
+			// }
 			options: {
 				responsive: true,
 				legend: { display: false },
@@ -139,7 +154,10 @@ export default class ClassProgress extends LightningElement {
 				}
 			}
 		};
-		// eslint-disable-next-line no-new
-		new window.Chart(this._ctxChart, options);
+		this._chart = new window.Chart(this._ctxChart, config);
+	}
+
+	onRefresh() {
+		refreshApex(this.wiredGetClassReport);
 	}
 }
