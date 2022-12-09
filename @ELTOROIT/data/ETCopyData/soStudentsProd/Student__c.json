@@ -8,6 +8,7 @@
 			},
 			"Delivery__c": "a02DH000003hjhzYAA",
 			"Id": "a05DH000002dIyHYAU",
+			"IsInstructor__c": false,
 			"Name": "Matias"
 		},
 		{
@@ -17,6 +18,7 @@
 			},
 			"Delivery__c": "a02DH000003hjhzYAA",
 			"Id": "a05DH000002dIyMYAU",
+			"IsInstructor__c": false,
 			"Name": "Achuth"
 		},
 		{
@@ -26,6 +28,7 @@
 			},
 			"Delivery__c": "a02DH000003hjhzYAA",
 			"Id": "a05DH000002dIyRYAU",
+			"IsInstructor__c": false,
 			"Name": "Monisha"
 		},
 		{
@@ -35,6 +38,7 @@
 			},
 			"Delivery__c": "a02DH000003hjhzYAA",
 			"Id": "a05DH000002dIyWYAU",
+			"IsInstructor__c": false,
 			"Name": "Sameer"
 		},
 		{
@@ -44,6 +48,7 @@
 			},
 			"Delivery__c": "a02DH000003hjhzYAA",
 			"Id": "a05DH000002dIybYAE",
+			"IsInstructor__c": false,
 			"Name": "Chris"
 		},
 		{
@@ -53,6 +58,7 @@
 			},
 			"Delivery__c": "a02DH000003hjhzYAA",
 			"Id": "a05DH000002dIygYAE",
+			"IsInstructor__c": false,
 			"Name": "Vaibhav"
 		},
 		{
@@ -62,6 +68,7 @@
 			},
 			"Delivery__c": "a02DH000003hjhzYAA",
 			"Id": "a05DH000002dIyhYAE",
+			"IsInstructor__c": false,
 			"Name": "Kyle Tejada"
 		},
 		{
@@ -71,6 +78,7 @@
 			},
 			"Delivery__c": "a02DH000003hjhzYAA",
 			"Id": "a05DH000002dIylYAE",
+			"IsInstructor__c": false,
 			"Name": "Lakshmi"
 		},
 		{
@@ -80,6 +88,7 @@
 			},
 			"Delivery__c": "a02DH000003hjhzYAA",
 			"Id": "a05DH000002dIyqYAE",
+			"IsInstructor__c": false,
 			"Name": "Priyanka"
 		},
 		{
@@ -89,6 +98,7 @@
 			},
 			"Delivery__c": "a02DH000003hjhzYAA",
 			"Id": "a05DH000002dIyvYAE",
+			"IsInstructor__c": true,
 			"Name": "Andres"
 		},
 		{
@@ -98,6 +108,7 @@
 			},
 			"Delivery__c": "a02DH000003hjhzYAA",
 			"Id": "a05DH000002dIz0YAE",
+			"IsInstructor__c": false,
 			"Name": "Ramadhar Mishra"
 		},
 		{
@@ -107,6 +118,7 @@
 			},
 			"Delivery__c": "a02DH000003hjhzYAA",
 			"Id": "a05DH000002dIz5YAE",
+			"IsInstructor__c": false,
 			"Name": "Bhoopa"
 		}
 	],
