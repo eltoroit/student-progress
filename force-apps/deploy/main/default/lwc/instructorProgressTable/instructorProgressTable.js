@@ -14,7 +14,12 @@ export default class InstructorProgressTable extends LightningModal {
 		if (value && value.length > 0) {
 			let initialized = false;
 			this.columns.push({ label: "Name", fieldName: "name", type: "text" });
-			this.columns.push({ label: "Points", fieldName: "points", type: "number" });
+			this.columns.push({
+				type: "number",
+				label: "Points",
+				fieldName: "points",
+				cellAttributes: { alignment: "right" }
+			});
 			this._studentsData = value.map((student) => {
 				let output = {
 					id: student.StudentId,
@@ -26,10 +31,16 @@ export default class InstructorProgressTable extends LightningModal {
 					output[`EX${element.index}`] = `${element.ranking} ${element.emoji}`;
 					// output[`EX${element.index}`] = `${element.ranking} ($${element.points}) ${element.emoji}`;
 					if (!initialized) {
-                        this.columns.push({ label: `EX${element.index}`, fieldName: `EX${element.index}`, type: "text" });
+						this.columns.push({
+							type: "text",
+							fixedWidth: 50,
+							label: `EX${element.index}`,
+							fieldName: `EX${element.index}`,
+							cellAttributes: { alignment: "right" }
+						});
 					}
 				});
-                initialized = true;
+				initialized = true;
 
 				return output;
 			});

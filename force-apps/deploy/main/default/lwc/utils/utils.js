@@ -214,8 +214,10 @@ export default class Util {
 				break;
 			}
 			default:
+				output = "❓";
 				break;
 		}
+		console.log(`*** ${status} => ${output}`);
 		return output;
 	}
 }
