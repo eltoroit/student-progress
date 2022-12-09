@@ -8,29 +8,23 @@
         -   Click on any will copy to clipboard
     -   DEX602 only needs the org at the start of the class on Monday
     -   Some private workshops have a combination of courses and the orgs change during the week
--   Store exercise start time
-    -   Maybe add a child object for events
-        -   Exercise start
-        -   Breaks
-        -   etc
-    -   To calculate exercise duration better
-    -   Create a special student named "EXERCISE_START" that has no DeliveryId so it can be used on any delivery and have an entry with status "START"
-    -   Another idea is to create all the studnts with a "START" status, then the students can change that to "DONE", "WORKING", or "LATER"
-        -   We know how long a student took to complete the exercise by diff og CreatedData and LastModiedDate
+-   Store exercise start time to calculate exercise duration better
+    -   When you activate a class, create all the students (who have not been created) with a "START" status, then the students can change that to "DONE", "WORKING", or "LATER"
+    -   We can find out how long a student took to complete the exercise by diff of CreatedData and LastModiedDate
 -   Class notes
     -   Export to PDF and email it to students
     -   Include images, and links
     -   Sorted by CreatedDate
+    -   Add a note to the exercise, like "We took a break while doing the exercise"
 -   Delivery could have a field of class location
     -   Company (if private)
     -   City
--   Add a note to the exercise, like "We took a break while doing the exercise"
 -   Add a timer for breaks
 -   Let the instructor connect via phone/tablet
 -   Stoping an active exercise should change the time only
     -   Not the lookup to the exercise, currently is set to null
     -   So that we could come back to the exercise even after it has stoped.
-        -   Right now, clicking current clears the item from the combo box
+        -   Right now, clicking current clears the item from the combo box and it has to be found manually. It would be just esier to go to the next exercise if we do not forget which one is the crrent one.
 -   Exercise should automatically stop when all students are done (or they indicated "LATER")
 
 # DONE
