@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>ActivatedDTTM__c</fullName>
+    <fullName>CurrentExerciseIsActive__c</fullName>
+    <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>Activated DTTM</label>
-    <required>false</required>
+    <label>Current Exercise Is Active</label>
     <trackTrending>false</trackTrending>
-    <type>DateTime</type>
+    <type>Checkbox</type>
 </CustomField>

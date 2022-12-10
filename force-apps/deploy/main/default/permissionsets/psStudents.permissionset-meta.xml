@@ -11,12 +11,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Delivery__c.ActivatedDTTM__c</field>
+        <field>Delivery__c.CurrentExerciseIsActive__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Delivery__c.ActiveExercise__c</field>
+        <field>Delivery__c.CurrentExerciseStart__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Delivery__c.CurrentExercise__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

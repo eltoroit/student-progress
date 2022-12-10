@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>ActiveExercise__c</fullName>
+    <fullName>CurrentExercise__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>Active Exercise</label>
+    <label>Current Exercise</label>
     <referenceTo>Exercise__c</referenceTo>
     <relationshipLabel>Deliveries</relationshipLabel>
     <relationshipName>Deliveries</relationshipName>

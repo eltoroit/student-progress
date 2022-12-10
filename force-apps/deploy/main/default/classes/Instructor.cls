@@ -2,7 +2,7 @@ public without sharing class Instructor {
 	@AuraEnabled(cacheable=true)
 	public static List<Course_X_Delivery__c> getActiveCxDs() {
 		return [
-			SELECT Id, Name, Course__r.Name, Delivery__r.Name, Delivery__r.ActiveExercise__r.Name
+			SELECT Id, Name, Course__r.Name, Delivery__r.Name, Delivery__r.CurrentExercise__r.Name
 			FROM Course_X_Delivery__c
 			WHERE Delivery__r.IsActive__c = TRUE
 			ORDER BY Delivery__r.Name ASC, Order__c ASC
@@ -55,9 +55,9 @@ public without sharing class Instructor {
 			output.put(
 				'DELIVERY',
 				[
-					SELECT ActiveExercise__r.Name, ActivatedDTTM__c
+					SELECT CurrentExercise__r.Name, CurrentExerciseStart__c, CurrentExerciseIsActive__c
 					FROM Delivery__c
-					WHERE Id = :deliveryId AND ActiveExercise__c != NULL
+					WHERE Id = :deliveryId AND CurrentExercise__c != NULL
 				]
 			);
 			// output.put('DTTM', Datetime.now());
@@ -119,13 +119,18 @@ public without sharing class Instructor {
 				if (isStart) {
 					update new Delivery__c(
 						Id = deliveryId,
-						ActiveExercise__c = exerciseId,
-						ActivatedDTTM__c = Datetime.now()
+						CurrentExercise__c = exerciseId,
+						CurrentExerciseIsActive__c = true,
+						CurrentExerciseStart__c = Datetime.now()
 					);
 				} else {
-					update new Delivery__c(Id = deliveryId, ActiveExercise__c = null, ActivatedDTTM__c = null);
+					update new Delivery__c(Id = deliveryId, CurrentExerciseIsActive__c = false);
 				}
-				output = [SELECT ActiveExercise__r.Name, ActivatedDTTM__c FROM Delivery__c WHERE Id = :deliveryId];
+				output = [
+					SELECT CurrentExercise__r.Name, CurrentExerciseIsActive__c, CurrentExerciseStart__c
+					FROM Delivery__c
+					WHERE Id = :deliveryId
+				];
 			} catch (Exception e) {
 				throw new AuraHandledException(e.getMessage());
 			}

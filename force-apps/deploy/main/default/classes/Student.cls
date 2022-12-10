@@ -2,7 +2,7 @@ public without sharing class Student {
 	@AuraEnabled(cacheable=true)
 	public static List<Delivery__c> getActiveDeliveries() {
 		return [
-			SELECT Id, Name, ActiveExercise__r.Name, Instructor__c
+			SELECT Id, Name, CurrentExercise__r.Name, Instructor__c
 			FROM Delivery__c
 			WHERE IsActive__c = TRUE AND Id IN (SELECT Delivery__c FROM Course_X_Delivery__c)
 			ORDER BY Name ASC
@@ -21,7 +21,7 @@ public without sharing class Student {
 
 	@AuraEnabled(cacheable=true)
 	public static Delivery__c getDeliveryById(String deliveryId) {
-		return [SELECT Id, Name, Instructor__c, ActiveExercise__c FROM Delivery__c WHERE Id = :deliveryId];
+		return [SELECT Id, Name, Instructor__c, CurrentExercise__c FROM Delivery__c WHERE Id = :deliveryId];
 	}
 
 	@AuraEnabled(cacheable=true)
@@ -35,7 +35,7 @@ public without sharing class Student {
 		List<Exercise__c> exercises = [
 			SELECT Id, Name
 			FROM Exercise__c
-			WHERE Id IN (SELECT ActiveExercise__c FROM Delivery__c WHERE Id = :deliveryId)
+			WHERE Id IN (SELECT CurrentExercise__c FROM Delivery__c WHERE Id = :deliveryId)
 		];
 		if (exercises.size() == 1) {
 			output = exercises[0];
