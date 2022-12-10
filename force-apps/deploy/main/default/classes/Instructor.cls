@@ -68,9 +68,10 @@ public without sharing class Instructor {
 
 	@AuraEnabled(cacheable=true)
 	public static Map<String, Object> getClassReport(String CxD) {
-		Map<String, Object> output = new Map<String, Object>();
+		Map<String, Object> output = null;
 
 		if (CxD != '') {
+			output = new Map<String, Object>();
 			List<String> parts = CxD.split('\\|');
 			String courseId = parts[0];
 			String deliveryId = parts[1];
@@ -103,6 +104,7 @@ public without sharing class Instructor {
 			output.put('STUDENTS', students);
 			output.put('EXERCISES', exercises);
 		}
+
 		return output;
 	}
 
