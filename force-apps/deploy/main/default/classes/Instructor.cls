@@ -38,29 +38,29 @@ public without sharing class Instructor {
 			String courseId = parts[0];
 			String deliveryId = parts[1];
 
-			output.put(
-				'TABLE',
-				[
-					SELECT
-						Id,
-						Name,
-						IsInstructor__c,
-						(SELECT ID, Status__c, lastModifiedDate FROM Exercises_X_Students__r WHERE Exercise__c = :exerciseId)
-					FROM Student__c
-					WHERE Delivery__c = :deliveryId
-					ORDER BY Name ASC
-				]
-			);
-			output.put('EXERCISES', Instructor.getAllExercisesForCxD(CxD));
-			output.put(
-				'DELIVERY',
-				[
+			List<Student__c> students = [
+				SELECT
+					Id,
+					Name,
+					IsInstructor__c,
+					(SELECT ID, Status__c, lastModifiedDate FROM Exercises_X_Students__r WHERE Exercise__c = :exerciseId)
+				FROM Student__c
+				WHERE Delivery__c = :deliveryId
+				ORDER BY Name ASC
+			];
+			Delivery__c delivery = null;
+			try {
+				delivery = [
 					SELECT CurrentExercise__r.Name, CurrentExerciseStart__c, CurrentExerciseIsActive__c
 					FROM Delivery__c
 					WHERE Id = :deliveryId AND CurrentExercise__c != NULL
-				]
-			);
-			// output.put('DTTM', Datetime.now());
+				];
+			} catch (Exception ex) {
+				// Do not handle this, just ignore it.
+			}
+			output.put('TABLE', students);
+			output.put('DELIVERY', delivery);
+			output.put('EXERCISES', Instructor.getAllExercisesForCxD(CxD));
 		}
 
 		return output;

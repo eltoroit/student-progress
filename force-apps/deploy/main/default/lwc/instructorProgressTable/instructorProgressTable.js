@@ -22,7 +22,7 @@ export default class InstructorProgressTable extends LightningModal {
 			});
 			this._studentsData = value.map((student) => {
 				let output = {
-					id: student.StudentId,
+					Id: student.StudentId,
 					name: student.Name,
 					points: student.Points
 				};

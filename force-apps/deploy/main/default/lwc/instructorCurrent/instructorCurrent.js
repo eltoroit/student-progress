@@ -24,77 +24,52 @@ const columns = [
 
 export default class InstructorCurrent extends LightningElement {
 	// Control
-	errorMessage = "";
 	loading = true;
-	exerciseTimer = null;
-	exerciseStart = null;
+	errorMessage = "";
+	activeExerciseTimer = null;
 	timers = { progress: null, screen: null };
 
 	// Lists
 	exercises = [];
 	deliveries = [];
-	activeExercise = {};
+	activeExercise = {}; // The exercise the students are working on
+	currentExercise = {}; // The exercise currently being selected (displayed)
+	currentCourseDelivery = {}; // The CxD being selected
 
 	wiredActiveCxDs = null;
 	wiredStudentsProgress = null;
 	wiredAllExercisesForCxD = null;
 
-	_selectedExerciseId = "";
-	_selectedCourseDeliveryId = "";
-
 	// Table
 	progress = [];
 	columns = columns;
 
-	get selectedExerciseId() {
-		let output = "";
-		if (this._selectedExerciseId) {
-			output = this._selectedExerciseId;
-		}
-		return output;
-	}
-	set selectedExerciseId(value) {
-		if (!value) value = "";
-		this._selectedExerciseId = value;
-	}
-	get selectedCourseDeliveryId() {
-		let output = "";
-		if (this._selectedCourseDeliveryId) {
-			output = this._selectedCourseDeliveryId;
-		}
-		return output;
-	}
-	set selectedCourseDeliveryId(value) {
-		if (!value) value = "";
-		this._selectedCourseDeliveryId = value;
-	}
-
 	get ui() {
-		const exActive = this.activeExercise.Id;
-		const exSelected = this.selectedExerciseId;
-		const isCxD = this.selectedCourseDeliveryId;
+		const exActive = this.activeExercise;
+		const exCurrent = this.currentExercise;
+		const currentCxD = this.currentCourseDelivery;
 		const exercises = {
 			max: this.exercises.length - 1,
-			selected: this.exercises.findIndex((option) => option.value === this.selectedExerciseId),
-			active: this.exercises.findIndex((option) => option.value === this.activeExercise.Id)
+			activeIdx: this.exercises.findIndex((option) => option.value === exActive.Id),
+			currentIdx: this.exercises.findIndex((option) => option.value === exCurrent.Id)
 		};
 
 		const ui = {};
 		ui.btnCurrent = {
-			isVisible: isCxD,
-			isDisabled: !isCxD || exActive === exSelected
+			isVisible: currentCxD.Id,
+			isDisabled: !currentCxD.Id || exActive.Id === exCurrent.Id
 		};
 		ui.btnNext = {
-			isVisible: isCxD,
-			isDisabled: !exSelected || exActive || exercises.selected === exercises.max
+			isVisible: currentCxD.Id,
+			isDisabled: !exCurrent.Id || exActive.Id || exercises.currentIdx === exercises.max
 		};
 		ui.btnStart = {
-			isVisible: isCxD,
-			isDisabled: !exSelected || exActive
+			isVisible: currentCxD.Id,
+			isDisabled: !exCurrent.Id || exActive.IsActive__c
 		};
 		ui.btnStop = {
-			isVisible: isCxD,
-			isDisabled: !exSelected || !exActive || exActive !== exSelected
+			isVisible: currentCxD.Id,
+			isDisabled: !exCurrent.Id || !exActive.IsActive__c
 		};
 		ui.btnRefresh = {
 			isVisible: true,
@@ -102,19 +77,19 @@ export default class InstructorCurrent extends LightningElement {
 		};
 
 		ui.pnlDeliveriesSelector = true;
-		ui.pnlExercisesSelector = isCxD;
-		ui.pnlActiveExerciseData = exActive;
-		ui.pnlStudents = exSelected;
+		ui.pnlExercisesSelector = currentCxD.Id;
+		ui.pnlActiveExerciseData = exActive.IsActive__c;
+		ui.pnlStudents = exCurrent.Id;
 
 		return ui;
 	}
 
 	connectedCallback() {
 		// debugger;
-		console.log("*** *** *** Connected Callback");
-		this.selectedExerciseId = Utils.getCookie({ key: "selectedExerciseId" });
-		this.selectedCourseDeliveryId = Utils.getCookie({ key: "selectedCourseDeliveryId" });
-		this.dispatchEvent(new CustomEvent("change", { detail: { CxD: this.selectedCourseDeliveryId } }));
+		console.log("*** *** *** Connected Callback (read cookies)");
+		this.currentExercise = { Id: Utils.getCookie({ key: "currentExerciseId" }) };
+		this.currentCourseDelivery = { Id: Utils.getCookie({ key: "currentCourseDeliveryId" }) };
+		this.dispatchEvent(new CustomEvent("change", { detail: { CxD: this.currentCourseDelivery.Id } }));
 		this.onRefreshClick();
 	}
 
@@ -136,7 +111,7 @@ export default class InstructorCurrent extends LightningElement {
 		}
 	}
 
-	@wire(getAllExercisesForCxD, { CxD: "$selectedCourseDeliveryId" })
+	@wire(getAllExercisesForCxD, { CxD: "$currentCourseDeliveryId" })
 	wired_GetAllExercisesForCxD(result) {
 		this.wiredAllExercisesForCxD = result;
 		let { data, error } = result;
@@ -156,7 +131,7 @@ export default class InstructorCurrent extends LightningElement {
 		}
 	}
 
-	@wire(getStudentsProgress, { CxD: "$selectedCourseDeliveryId", exerciseId: "$selectedExerciseId" })
+	@wire(getStudentsProgress, { CxD: "$currentCourseDeliveryId", exerciseId: "$currentExerciseId" })
 	wired_GetStudentsProgress(result) {
 		this.wiredStudentsProgress = result;
 		let { data, error } = result;
@@ -185,12 +160,21 @@ export default class InstructorCurrent extends LightningElement {
 			// This timer is to update the clock, not to get the data
 			clearInterval(this.timers.screen);
 			this.timers.screen = null;
-			this.exerciseTimer = null;
+			this.activeExerciseTimer = null;
 			if (data.DELIVERY.length === 1) {
-				this.exerciseStart = new Date(data.DELIVERY[0].ActivatedDTTM__c);
+				const startAt = new Date(data.DELIVERY.CurrentExerciseStart__c);
 				this.timers.screen = setInterval(() => {
-					this.exerciseTimer = Utils.calculateDuration({ startAt: this.exerciseStart, endAt: new Date() });
-					this.exerciseTimer = this.exerciseTimer.seconds.toString();
+					try {
+						this.activeExerciseTimer = Utils.calculateDuration({ startAt, endAt: new Date() });
+						this.activeExerciseTimer = this.activeExerciseTimer.seconds.toString();
+					} catch (ex) {
+						Utils.showNotification(this, {
+							title: "Error (Instructor)",
+							message: "Error updating timer",
+							variant: Utils.variants.error
+						});
+						console.log(error);
+					}
 				}, 5e2);
 			}
 
@@ -206,24 +190,37 @@ export default class InstructorCurrent extends LightningElement {
 		}
 	}
 
-	onDeliveryChange(event) {
-		this.selectedCourseDeliveryId = event.detail.value;
-		Utils.setCookie({ key: "selectedCourseDeliveryId", value: this.selectedCourseDeliveryId });
-		this.dispatchEvent(new CustomEvent("change", { detail: { CxD: this.selectedCourseDeliveryId } }));
+	onCourseDeliveryChange(event) {
+		const Id = event.target.value;
+		const option = this.deliveries.find((CxD) => CxD.value === Id);
+		this.currentCourseDelivery = option.CxD;
+		Utils.setCookie({ key: "currentCourseDeliveryId", value: this.currentCourseDelivery.Id });
+		this.dispatchEvent(new CustomEvent("change", { detail: { CxD: this.currentCourseDeliveryId } }));
 	}
 
 	onExerciseChange(event) {
-		this.selectedExerciseId = event.detail.value;
-		Utils.setCookie({ key: "selectedExerciseId", value: this.selectedExerciseId });
+		const Id = event.target.value;
+		const option = this.exercises.find((exercise) => exercise.value === Id);
+		this.currentExercise = option.exercise;
+		Utils.setCookie({ key: "currentExerciseId", value: this.currentExercise.Id });
 	}
 
 	onNextClick() {
-		let index = this.exercises.findIndex((exercise) => exercise.value === this.selectedExerciseId);
-		this.selectedExerciseId = this.exercises[index + 1].value;
+		const index = this.exercises.findIndex((exercise) => exercise.value === this.currentExercise.Id);
+		const record = this.exercises[index + 1];
+		this.currentExercise = {
+			Id: record.value,
+			Name: record.label
+		};
 	}
 
 	onCurrentClick() {
-		this.selectedExerciseId = this.activeExercise.Id;
+		const index = this.exercises.findIndex((exercise) => exercise.value === this.activeExercise.Id);
+		const record = this.exercises[index];
+		this.currentExercise = {
+			Id: record.value,
+			Name: record.label
+		};
 	}
 
 	onRefreshClick() {
@@ -241,28 +238,20 @@ export default class InstructorCurrent extends LightningElement {
 		}, 1e3);
 	}
 
-	onStartClick() {
-		this.exerciseStateChange(true);
-	}
-
-	onStopClick() {
-		this.exerciseStateChange(false);
-	}
-
 	onRowAction(event) {
 		const row = event.detail.row;
 		const actionName = event.detail.action.name;
 		const actionNameParts = actionName.split("|");
 		const actionNameCommand = actionNameParts[0];
-		const actionNameValue = actionNameParts[1];
+		const actionValue = actionNameParts[1];
 
 		switch (actionNameCommand) {
 			case "Status":
 				updateStudentStatus({
 					ExS: row.exsId,
 					studentId: row.studentId,
-					exerciseId: this.selectedExerciseId,
-					status: actionNameValue
+					exerciseId: this.currentExerciseId,
+					status: actionValue
 				})
 					.then(() => {})
 					.catch((error) => {
@@ -276,15 +265,24 @@ export default class InstructorCurrent extends LightningElement {
 		}
 	}
 
+	onStartClick() {
+		this.exerciseStateChange(true);
+	}
+
+	onStopClick() {
+		this.exerciseStateChange(false);
+	}
+
 	exerciseStateChange(isStart) {
 		this.loading = true;
 		setTimeout(() => {
-			startStopExercise({ CxD: this.selectedCourseDeliveryId, exerciseId: this.selectedExerciseId, isStart })
+			startStopExercise({ CxD: this.currentCourseDelivery.Id, exerciseId: this.currentExercise.Id, isStart })
 				.then((data) => {
-					this.exerciseStart = data.ActivatedDTTM__c;
-
-					let ae = data.ActiveExercise__r;
-					this.activeExercise = ae ? ae : {};
+					if (data.CurrentExerciseIsActive__c) {
+						this.activeExercise = data.CurrentExercise__r;
+					} else {
+						this.activeExercise = {};
+					}
 					this.loading = false;
 				})
 				.catch((err) => {
@@ -297,29 +295,14 @@ export default class InstructorCurrent extends LightningElement {
 
 	loadCxDs(data) {
 		this.deliveries = data.map((CxD) => ({
+			CxD,
 			value: `${CxD.Course__c}|${CxD.Delivery__c}`,
 			label: `${CxD.Delivery__r.Name} (${CxD.Course__r.Name})`
 		}));
 		this.deliveries.unshift({ value: "", label: "Which class are you delivering?" });
 		if (data.length > 0) {
-			if (!this.selectedCourseDeliveryId) {
-				this.selectedCourseDeliveryId = this.deliveries[0].value;
-			}
-
-			if (data[0].Delivery__r.ActiveExercise__c) {
-				this.selectedExerciseId = data[0].Delivery__r.ActiveExercise__c;
-				let ae = data[0].Delivery__r.ActiveExercise__r;
-				this.activeExercise = ae ? ae : {};
-			} else {
-				if (!this.selectedExerciseId) {
-					this.selectedExerciseId = data[0].Delivery__r.ActiveExercise__c;
-				}
-
-				if (!this.activeExercise.Id) {
-					let ae = data[0].Delivery__r.ActiveExercise__r;
-					this.activeExercise = ae ? ae : {};
-				}
-			}
+			this.currentCourseDelivery = data.find((CxD) => CxD.Id === this.currentCourseDelivery.Id);
+			this.activeExercise = this.currentCourseDelivery?.Delivery__r?.CurrentExercise__r;
 		}
 	}
 
@@ -327,10 +310,15 @@ export default class InstructorCurrent extends LightningElement {
 		this.exercises = data.map((exercise) => {
 			let expectedDuration = exercise.ExpectedDuration__c ? ` (${exercise.ExpectedDuration__c})` : "";
 			return {
+				exercise,
 				value: exercise.Id,
 				label: `${exercise.Name} ${expectedDuration}`
 			};
 		});
+		if (data.length > 0) {
+			this.activeExercise = data.find((exercise) => exercise.Id === this.activeExercise.Id);
+			this.currentExercise = data.find((exercise) => exercise.Id === this.currentExercise.Id);
+		}
 		this.exercises.unshift({ value: "", label: "Which exercise are you working on?" });
 	}
 }

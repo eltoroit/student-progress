@@ -55,11 +55,11 @@
 							variant="label-hidden"
 							name="Delivery"
 							label="Delivery"
-							value={selectedCourseDeliveryId}
+							value={currentCourseDelivery.Id}
 							placeholder="Which Delivery?"
 							options={deliveries}
 							style="text-align: left"
-							onchange={onDeliveryChange}
+							onchange={onCourseDeliveryChange}
 						></lightning-combobox>
 					</lightning-layout-item>
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
@@ -72,7 +72,7 @@
 							variant="label-hidden"
 							name="Exercise"
 							label="Exercise"
-							value={selectedExerciseId}
+							value={currentExercise.Id}
 							placeholder="Which exercise?"
 							options={exercises}
 							style="text-align: left"
@@ -90,7 +90,7 @@
 					<lightning-layout-item size="4"> Start: </lightning-layout-item>
 					<lightning-layout-item size="8">
 						<lightning-formatted-date-time
-							value={exerciseStart}
+							value={activeExercise.CurrentExerciseStart__c}
 							hour="2-digit"
 							minute="2-digit"
 						></lightning-formatted-date-time>
@@ -98,12 +98,18 @@
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
 
 					<lightning-layout-item size="4"> Duration: </lightning-layout-item>
-					<lightning-layout-item size="8">{exerciseTimer} </lightning-layout-item>
+					<lightning-layout-item size="8">{activeExerciseTimer} </lightning-layout-item>
 				</template>
 
 				<template if:true={ui.pnlStudents}>
 					<lightning-layout-item size="12" class="slds-m-top_medium">
-						<lightning-datatable key-field="name" data={progress} columns={columns} onrowaction={onRowAction} hide-checkbox-column> 
+						<lightning-datatable
+							key-field="name"
+							data={progress}
+							columns={columns}
+							onrowaction={onRowAction}
+							hide-checkbox-column
+						>
 						</lightning-datatable>
 					</lightning-layout-item>
 				</template>

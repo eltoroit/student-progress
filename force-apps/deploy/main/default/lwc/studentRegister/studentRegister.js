@@ -11,59 +11,44 @@ export default class StudentRegister extends LightningElement {
 	timer = null;
 	loading = true;
 
+	student = {};
 	students = [];
-	_studentId = "";
 	wiredStudents = null;
 
+	delivery = {};
 	deliveries = [];
-	_deliveryId = "";
-	mapDeliveries = {};
 	wiredDeliveries = null;
 
 	get ui() {
 		const ui = {};
 		ui.btnRegister = {
-			isVisible: !(this.deliveryId === "" || this.studentId !== "CREATE"),
-			isDisabled: this.deliveryId === "" || this.studentId !== "CREATE"
+			isVisible: !(this.delivery.Id === "" || this.student.Id !== "CREATE"),
+			isDisabled: this.delivery.Id === "" || this.student.Id !== "CREATE"
 		};
 		ui.btnNext = {
-			isVisible: !(this.deliveryId === "" || this.studentId === "CREATE" || this.studentId === ""),
-			isDisabled: this.deliveryId === "" || this.studentId === "CREATE" || this.studentId === ""
+			isVisible: !(this.delivery.Id === "" || this.student.Id === "CREATE" || this.student.Id === ""),
+			isDisabled: this.delivery.Id === "" || this.student.Id === "CREATE" || this.student.Id === ""
 		};
 		ui.btnRefresh = {
 			isVisible: true,
 			isDisabled: false
 		};
-		ui.pnlStudent = (this.deliveryId !== "") && (this.deliveries.length > 1);
+		ui.pnlStudent = this.delivery.Id !== "" && this.deliveries.length > 1;
 
 		return ui;
 	}
 
 	get studentId() {
-		return this._studentId;
-	}
-
-	set studentId(value) {
-		if (!value) {
-			value = "";
-		}
-		this._studentId = value;
+		return this.student.Id;
 	}
 
 	get deliveryId() {
-		return this._deliveryId;
-	}
-
-	set deliveryId(value) {
-		if (!value) {
-			value = "";
-		}
-		this._deliveryId = value;
+		return this.delivery.Id;
 	}
 
 	connectedCallback() {
-		this.studentId = Utils.getCookie({ key: "studentId" });
-		this.deliveryId = Utils.getCookie({ key: "deliveryId" });
+		this.student.Id = Utils.getCookie({ key: "studentId" });
+		this.delivery.Id = Utils.getCookie({ key: "deliveryId" });
 		this.validateRegistrationJS();
 	}
 
@@ -72,18 +57,14 @@ export default class StudentRegister extends LightningElement {
 		this.wiredDeliveries = result;
 		let { data, error } = result;
 		if (data) {
-			this.deliveries = [];
-			this.mapDeliveries = new Map();
-			data.forEach((delivery) => {
-				this.deliveries.push({
-					value: delivery.Id,
-					label: `${delivery.Name} (${delivery.Instructor__c})`
-				});
-				this.mapDeliveries.set(delivery.Id, delivery);
-			});
+			this.deliveries = data.map((delivery) => ({
+				delivery,
+				value: delivery.Id,
+				label: `${delivery.Name} (${delivery.Instructor__c})`
+			}));
 			if (data.length === 1) {
-				this.deliveryId = data[0].Id;
-				Utils.setCookie({ key: "deliveryId", value: this.deliveryId });
+				this.delivery.Id = data[0].Id;
+				Utils.setCookie({ key: "deliveryId", value: this.delivery.Id });
 			}
 			this.deliveries.unshift({ value: "", label: "Which class are you attending?" });
 			this.loading = false;
@@ -98,18 +79,17 @@ export default class StudentRegister extends LightningElement {
 		}
 	}
 
+	// Can you use a getter?
 	@wire(getStudentsForDelivery, { deliveryId: "$deliveryId" })
 	wired_GetStudentsForDelivery(result) {
 		this.wiredStudents = result;
 		let { data, error } = result;
 		if (data) {
-			this.students = [];
-			data.forEach((student) => {
-				this.students.push({
-					value: student.Id,
-					label: student.Name
-				});
-			});
+			this.students = data.map((student) => ({
+				student,
+				value: student.Id,
+				label: student.Name
+			}));
 			this.students.unshift({ value: "", label: "What's your name?" });
 			this.students.push({ value: "CREATE", label: "I'm not in your list" });
 			this.loading = false;
@@ -126,13 +106,17 @@ export default class StudentRegister extends LightningElement {
 
 	onDeliveryChange(event) {
 		this.loading = true;
-		this.deliveryId = event.target.value;
-		Utils.setCookie({ key: "deliveryId", value: this.deliveryId });
+		const Id = event.target.value;
+		const option = this.deliveries.find((delivery) => delivery.value === Id);
+		this.delivery = option.delivery;
+		Utils.setCookie({ key: "deliveryId", value: this.delivery.Id });
 	}
 
 	onStudentChange(event) {
-		this.studentId = event.target.value;
-		Utils.setCookie({ key: "studentId", value: this.studentId });
+		const Id = event.target.value;
+		const option = this.students.find((students) => students.value === Id);
+		this.student = option.students;
+		Utils.setCookie({ key: "studentId", value: this.student.Id });
 	}
 
 	onRegisterClick() {
@@ -144,11 +128,11 @@ export default class StudentRegister extends LightningElement {
 			defaultValue: ""
 		}).then((studentName) => {
 			if (studentName) {
-				registerStudent({ deliveryId: this.deliveryId, studentName })
+				registerStudent({ deliveryId: this.deliver.Id, studentName })
 					.then((student) => {
 						refreshApex(this.wiredStudents);
-						this.studentId = student.Id;
-						Utils.setCookie({ key: "studentId", value: this.studentId });
+						this.student = student;
+						Utils.setCookie({ key: "studentId", value: this.student.Id });
 					})
 					.catch((err) => {
 						console.log(err);
@@ -162,8 +146,8 @@ export default class StudentRegister extends LightningElement {
 		this.dispatchEvent(
 			new CustomEvent("next", {
 				detail: {
-					deliveryId: this.deliveryId,
-					studentId: this.studentId
+					deliveryId: this.delivery.Id,
+					studentId: this.student.Id
 				}
 			})
 		);
@@ -192,27 +176,27 @@ export default class StudentRegister extends LightningElement {
 	async validateRegistrationJS() {
 		clearInterval(this.timer);
 		return new Promise((resolve, reject) => {
-			validateRegistration({ deliveryId: this.deliveryId, studentId: this.studentId })
+			validateRegistration({ deliveryId: this.delivery.Id, studentId: this.student.Id })
 				.then((data) => {
-					this.studentId = data.studentId;
-					this.deliveryId = data.deliveryId;
-					Utils.setCookie({ key: "deliveryId", value: this.deliveryId });
-					Utils.setCookie({ key: "studentId", value: this.studentId });
+					this.student = data.student;
+					this.delivery = data.delivery;
+					Utils.setCookie({ key: "studentId", value: this.student.Id });
+					Utils.setCookie({ key: "deliveryId", value: this.delivery.Id });
 					resolve();
 				})
 				.catch((err) => {
-					this.studentId = "";
-					this.deliveryId = "";
-					Utils.deleteCookie({ key: "deliveryId" });
+					this.student = {};
+					this.delivery = {};
 					Utils.deleteCookie({ key: "studentId" });
+					Utils.deleteCookie({ key: "deliveryId" });
 
 					this.timer = setInterval(() => {
 						console.log("*** Interval deliveries");
-						if (this.deliveryId === "") {
-							console.log(`*** REFRESH ${this.deliveryId}`);
+						if (this.delivery.Id === "") {
+							console.log(`*** REFRESH ${this.delivery.Id}`);
 							this.onRefreshClick();
 						} else {
-							console.log(`*** CLEAR ${this.deliveryId}`);
+							console.log(`*** CLEAR ${this.delivery.Id}`);
 							clearInterval(this.timer);
 						}
 					}, 5e3);
