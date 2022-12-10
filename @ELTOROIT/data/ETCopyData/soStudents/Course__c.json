@@ -4,17 +4,17 @@
 		{
 			"attributes": {
 				"type": "Course__c",
-				"url": "/services/data/v56.0/sobjects/Course__c/a01DL00000nqiv4YAA"
+				"url": "/services/data/v56.0/sobjects/Course__c/a01DH000008us8JYAQ"
 			},
-			"Id": "a01DL00000nqiv4YAA",
+			"Id": "a01DH000008us8JYAQ",
 			"Name": "DEX602"
 		},
 		{
 			"attributes": {
 				"type": "Course__c",
-				"url": "/services/data/v56.0/sobjects/Course__c/a01DL00000nqiv5YAA"
+				"url": "/services/data/v56.0/sobjects/Course__c/a01DH000008us8KYAQ"
 			},
-			"Id": "a01DL00000nqiv5YAA",
+			"Id": "a01DH000008us8KYAQ",
 			"Name": "DEX403"
 		}
 	],

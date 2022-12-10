@@ -1,6 +1,6 @@
 {
-  "orgSource": "soStudentsProd",
-  "orgDestination": "soStudentsProd",
+  "orgSource": "soStudents",
+  "orgDestination": "soStudents",
   "sObjectsData": [
     {
       "name": "Course__c",
@@ -36,14 +36,6 @@
     },
     {
       "name": "Exercise_X_Student__c",
-      "ignoreFields": "",
-      "externalIdField": null,
-      "twoPassReferenceFields": "",
-      "where": null,
-      "orderBy": "Id"
-    },
-    {
-      "name": "Note__c",
       "ignoreFields": "",
       "externalIdField": null,
       "twoPassReferenceFields": "",

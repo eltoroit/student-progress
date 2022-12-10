@@ -1,5 +1,3896 @@
 {
-	"fetched": 5,
-	"records": [],
-	"total": 5
+	"fetched": 389,
+	"records": [
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Nw0YAE"
+			},
+			"Exercise__c": "a04DH000003GK5MYAW",
+			"Id": "a03DH0000061Nw0YAE",
+			"Status__c": "WORKING",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Nw5YAE"
+			},
+			"Exercise__c": "a04DH000003GK5MYAW",
+			"Id": "a03DH0000061Nw5YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061NwAYAU"
+			},
+			"Exercise__c": "a04DH000003GK5MYAW",
+			"Id": "a03DH0000061NwAYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061NwFYAU"
+			},
+			"Exercise__c": "a04DH000003GK5MYAW",
+			"Id": "a03DH0000061NwFYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061O0yYAE"
+			},
+			"Exercise__c": "a04DH000003GK5MYAW",
+			"Id": "a03DH0000061O0yYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061O21YAE"
+			},
+			"Exercise__c": "a04DH000003GK5MYAW",
+			"Id": "a03DH0000061O21YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061O2GYAU"
+			},
+			"Exercise__c": "a04DH000003GK5MYAW",
+			"Id": "a03DH0000061O2GYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061O47YAE"
+			},
+			"Exercise__c": "a04DH000003GK5MYAW",
+			"Id": "a03DH0000061O47YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061O4lYAE"
+			},
+			"Exercise__c": "a04DH000003GK5MYAW",
+			"Id": "a03DH0000061O4lYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061O4qYAE"
+			},
+			"Exercise__c": "a04DH000003GK5MYAW",
+			"Id": "a03DH0000061O4qYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061O50YAE"
+			},
+			"Exercise__c": "a04DH000003GK5MYAW",
+			"Id": "a03DH0000061O50YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061O55YAE"
+			},
+			"Exercise__c": "a04DH000003GK5MYAW",
+			"Id": "a03DH0000061O55YAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061P4FYAU"
+			},
+			"Exercise__c": "a04DH000003GK5NYAW",
+			"Id": "a03DH0000061P4FYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061P4KYAU"
+			},
+			"Exercise__c": "a04DH000003GK5NYAW",
+			"Id": "a03DH0000061P4KYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061P4PYAU"
+			},
+			"Exercise__c": "a04DH000003GK5NYAW",
+			"Id": "a03DH0000061P4PYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061P4UYAU"
+			},
+			"Exercise__c": "a04DH000003GK5NYAW",
+			"Id": "a03DH0000061P4UYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061P4ZYAU"
+			},
+			"Exercise__c": "a04DH000003GK5NYAW",
+			"Id": "a03DH0000061P4ZYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061P4eYAE"
+			},
+			"Exercise__c": "a04DH000003GK5NYAW",
+			"Id": "a03DH0000061P4eYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061P4jYAE"
+			},
+			"Exercise__c": "a04DH000003GK5NYAW",
+			"Id": "a03DH0000061P4jYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061P4oYAE"
+			},
+			"Exercise__c": "a04DH000003GK5NYAW",
+			"Id": "a03DH0000061P4oYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061P4tYAE"
+			},
+			"Exercise__c": "a04DH000003GK5NYAW",
+			"Id": "a03DH0000061P4tYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061P4yYAE"
+			},
+			"Exercise__c": "a04DH000003GK5NYAW",
+			"Id": "a03DH0000061P4yYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061P53YAE"
+			},
+			"Exercise__c": "a04DH000003GK5NYAW",
+			"Id": "a03DH0000061P53YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061P58YAE"
+			},
+			"Exercise__c": "a04DH000003GK5NYAW",
+			"Id": "a03DH0000061P58YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PGTYA2"
+			},
+			"Exercise__c": "a04DH000003GK5qYAG",
+			"Id": "a03DH0000061PGTYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PNqYAM"
+			},
+			"Exercise__c": "a04DH000003GK5qYAG",
+			"Id": "a03DH0000061PNqYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PNvYAM"
+			},
+			"Exercise__c": "a04DH000003GK5qYAG",
+			"Id": "a03DH0000061PNvYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PO0YAM"
+			},
+			"Exercise__c": "a04DH000003GK5qYAG",
+			"Id": "a03DH0000061PO0YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PO5YAM"
+			},
+			"Exercise__c": "a04DH000003GK5qYAG",
+			"Id": "a03DH0000061PO5YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061POAYA2"
+			},
+			"Exercise__c": "a04DH000003GK5qYAG",
+			"Id": "a03DH0000061POAYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061POFYA2"
+			},
+			"Exercise__c": "a04DH000003GK5qYAG",
+			"Id": "a03DH0000061POFYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061POKYA2"
+			},
+			"Exercise__c": "a04DH000003GK5qYAG",
+			"Id": "a03DH0000061POKYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061POPYA2"
+			},
+			"Exercise__c": "a04DH000003GK5qYAG",
+			"Id": "a03DH0000061POPYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061POUYA2"
+			},
+			"Exercise__c": "a04DH000003GK5qYAG",
+			"Id": "a03DH0000061POUYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061POZYA2"
+			},
+			"Exercise__c": "a04DH000003GK5qYAG",
+			"Id": "a03DH0000061POZYA2",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061POtYAM"
+			},
+			"Exercise__c": "a04DH000003GK5qYAG",
+			"Id": "a03DH0000061POtYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PWkYAM"
+			},
+			"Exercise__c": "a04DH000003GK5RYAW",
+			"Id": "a03DH0000061PWkYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PWpYAM"
+			},
+			"Exercise__c": "a04DH000003GK5RYAW",
+			"Id": "a03DH0000061PWpYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PWuYAM"
+			},
+			"Exercise__c": "a04DH000003GK5RYAW",
+			"Id": "a03DH0000061PWuYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PWzYAM"
+			},
+			"Exercise__c": "a04DH000003GK5RYAW",
+			"Id": "a03DH0000061PWzYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PX4YAM"
+			},
+			"Exercise__c": "a04DH000003GK5RYAW",
+			"Id": "a03DH0000061PX4YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PX9YAM"
+			},
+			"Exercise__c": "a04DH000003GK5RYAW",
+			"Id": "a03DH0000061PX9YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PXEYA2"
+			},
+			"Exercise__c": "a04DH000003GK5RYAW",
+			"Id": "a03DH0000061PXEYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PXJYA2"
+			},
+			"Exercise__c": "a04DH000003GK5RYAW",
+			"Id": "a03DH0000061PXJYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PXOYA2"
+			},
+			"Exercise__c": "a04DH000003GK5RYAW",
+			"Id": "a03DH0000061PXOYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PXTYA2"
+			},
+			"Exercise__c": "a04DH000003GK5RYAW",
+			"Id": "a03DH0000061PXTYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PXYYA2"
+			},
+			"Exercise__c": "a04DH000003GK5RYAW",
+			"Id": "a03DH0000061PXYYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PXdYAM"
+			},
+			"Exercise__c": "a04DH000003GK5oYAG",
+			"Id": "a03DH0000061PXdYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PXiYAM"
+			},
+			"Exercise__c": "a04DH000003GK5oYAG",
+			"Id": "a03DH0000061PXiYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PXnYAM"
+			},
+			"Exercise__c": "a04DH000003GK5oYAG",
+			"Id": "a03DH0000061PXnYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PXsYAM"
+			},
+			"Exercise__c": "a04DH000003GK5oYAG",
+			"Id": "a03DH0000061PXsYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PXxYAM"
+			},
+			"Exercise__c": "a04DH000003GK5oYAG",
+			"Id": "a03DH0000061PXxYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PY2YAM"
+			},
+			"Exercise__c": "a04DH000003GK5oYAG",
+			"Id": "a03DH0000061PY2YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PY7YAM"
+			},
+			"Exercise__c": "a04DH000003GK5oYAG",
+			"Id": "a03DH0000061PY7YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PYCYA2"
+			},
+			"Exercise__c": "a04DH000003GK5oYAG",
+			"Id": "a03DH0000061PYCYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PYHYA2"
+			},
+			"Exercise__c": "a04DH000003GK5oYAG",
+			"Id": "a03DH0000061PYHYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PYMYA2"
+			},
+			"Exercise__c": "a04DH000003GK5oYAG",
+			"Id": "a03DH0000061PYMYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PahYAE"
+			},
+			"Exercise__c": "a04DH000003GK5oYAG",
+			"Id": "a03DH0000061PahYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PamYAE"
+			},
+			"Exercise__c": "a04DH000003GK5oYAG",
+			"Id": "a03DH0000061PamYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PqvYAE"
+			},
+			"Exercise__c": "a04DH000003GK5pYAG",
+			"Id": "a03DH0000061PqvYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Pr0YAE"
+			},
+			"Exercise__c": "a04DH000003GK5pYAG",
+			"Id": "a03DH0000061Pr0YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Pr5YAE"
+			},
+			"Exercise__c": "a04DH000003GK5pYAG",
+			"Id": "a03DH0000061Pr5YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PrAYAU"
+			},
+			"Exercise__c": "a04DH000003GK5pYAG",
+			"Id": "a03DH0000061PrAYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PrBYAU"
+			},
+			"Exercise__c": "a04DH000003GK5pYAG",
+			"Id": "a03DH0000061PrBYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PrFYAU"
+			},
+			"Exercise__c": "a04DH000003GK5pYAG",
+			"Id": "a03DH0000061PrFYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PrKYAU"
+			},
+			"Exercise__c": "a04DH000003GK5pYAG",
+			"Id": "a03DH0000061PrKYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PrPYAU"
+			},
+			"Exercise__c": "a04DH000003GK5pYAG",
+			"Id": "a03DH0000061PrPYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PrUYAU"
+			},
+			"Exercise__c": "a04DH000003GK5pYAG",
+			"Id": "a03DH0000061PrUYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PrZYAU"
+			},
+			"Exercise__c": "a04DH000003GK5pYAG",
+			"Id": "a03DH0000061PrZYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PreYAE"
+			},
+			"Exercise__c": "a04DH000003GK5pYAG",
+			"Id": "a03DH0000061PreYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PrjYAE"
+			},
+			"Exercise__c": "a04DH000003GK5pYAG",
+			"Id": "a03DH0000061PrjYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Pz6YAE"
+			},
+			"Exercise__c": "a04DH000003GK4QYAW",
+			"Id": "a03DH0000061Pz6YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PzGYAU"
+			},
+			"Exercise__c": "a04DH000003GK4QYAW",
+			"Id": "a03DH0000061PzGYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PzLYAU"
+			},
+			"Exercise__c": "a04DH000003GK4QYAW",
+			"Id": "a03DH0000061PzLYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PzQYAU"
+			},
+			"Exercise__c": "a04DH000003GK4QYAW",
+			"Id": "a03DH0000061PzQYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PzVYAU"
+			},
+			"Exercise__c": "a04DH000003GK4QYAW",
+			"Id": "a03DH0000061PzVYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PzaYAE"
+			},
+			"Exercise__c": "a04DH000003GK4QYAW",
+			"Id": "a03DH0000061PzaYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PzfYAE"
+			},
+			"Exercise__c": "a04DH000003GK4QYAW",
+			"Id": "a03DH0000061PzfYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PzkYAE"
+			},
+			"Exercise__c": "a04DH000003GK4QYAW",
+			"Id": "a03DH0000061PzkYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PzpYAE"
+			},
+			"Exercise__c": "a04DH000003GK4QYAW",
+			"Id": "a03DH0000061PzpYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PzuYAE"
+			},
+			"Exercise__c": "a04DH000003GK4QYAW",
+			"Id": "a03DH0000061PzuYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061PzzYAE"
+			},
+			"Exercise__c": "a04DH000003GK4QYAW",
+			"Id": "a03DH0000061PzzYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Q00YAE"
+			},
+			"Exercise__c": "a04DH000003GK4QYAW",
+			"Id": "a03DH0000061Q00YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Q0iYAE"
+			},
+			"Exercise__c": "a04DH000003GK5HYAW",
+			"Id": "a03DH0000061Q0iYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Q0nYAE"
+			},
+			"Exercise__c": "a04DH000003GK5HYAW",
+			"Id": "a03DH0000061Q0nYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Q0sYAE"
+			},
+			"Exercise__c": "a04DH000003GK5HYAW",
+			"Id": "a03DH0000061Q0sYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Q0xYAE"
+			},
+			"Exercise__c": "a04DH000003GK5HYAW",
+			"Id": "a03DH0000061Q0xYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Q12YAE"
+			},
+			"Exercise__c": "a04DH000003GK5HYAW",
+			"Id": "a03DH0000061Q12YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Q17YAE"
+			},
+			"Exercise__c": "a04DH000003GK5HYAW",
+			"Id": "a03DH0000061Q17YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Q1CYAU"
+			},
+			"Exercise__c": "a04DH000003GK5HYAW",
+			"Id": "a03DH0000061Q1CYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Q1HYAU"
+			},
+			"Exercise__c": "a04DH000003GK5HYAW",
+			"Id": "a03DH0000061Q1HYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Q1MYAU"
+			},
+			"Exercise__c": "a04DH000003GK5HYAW",
+			"Id": "a03DH0000061Q1MYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Q1WYAU"
+			},
+			"Exercise__c": "a04DH000003GK5HYAW",
+			"Id": "a03DH0000061Q1WYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Q1bYAE"
+			},
+			"Exercise__c": "a04DH000003GK5HYAW",
+			"Id": "a03DH0000061Q1bYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Q1gYAE"
+			},
+			"Exercise__c": "a04DH000003GK5HYAW",
+			"Id": "a03DH0000061Q1gYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QQqYAM"
+			},
+			"Exercise__c": "a04DH000003GK5IYAW",
+			"Id": "a03DH0000061QQqYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QVOYA2"
+			},
+			"Exercise__c": "a04DH000003GK5IYAW",
+			"Id": "a03DH0000061QVOYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QVTYA2"
+			},
+			"Exercise__c": "a04DH000003GK5IYAW",
+			"Id": "a03DH0000061QVTYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QVYYA2"
+			},
+			"Exercise__c": "a04DH000003GK5IYAW",
+			"Id": "a03DH0000061QVYYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QVdYAM"
+			},
+			"Exercise__c": "a04DH000003GK5IYAW",
+			"Id": "a03DH0000061QVdYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QViYAM"
+			},
+			"Exercise__c": "a04DH000003GK5IYAW",
+			"Id": "a03DH0000061QViYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QVnYAM"
+			},
+			"Exercise__c": "a04DH000003GK5IYAW",
+			"Id": "a03DH0000061QVnYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QVsYAM"
+			},
+			"Exercise__c": "a04DH000003GK5IYAW",
+			"Id": "a03DH0000061QVsYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QVxYAM"
+			},
+			"Exercise__c": "a04DH000003GK5IYAW",
+			"Id": "a03DH0000061QVxYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QVyYAM"
+			},
+			"Exercise__c": "a04DH000003GK5IYAW",
+			"Id": "a03DH0000061QVyYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QW2YAM"
+			},
+			"Exercise__c": "a04DH000003GK5IYAW",
+			"Id": "a03DH0000061QW2YAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QW7YAM"
+			},
+			"Exercise__c": "a04DH000003GK5IYAW",
+			"Id": "a03DH0000061QW7YAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QWCYA2"
+			},
+			"Exercise__c": "a04DH000003GK5JYAW",
+			"Id": "a03DH0000061QWCYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QWHYA2"
+			},
+			"Exercise__c": "a04DH000003GK5JYAW",
+			"Id": "a03DH0000061QWHYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QWMYA2"
+			},
+			"Exercise__c": "a04DH000003GK5JYAW",
+			"Id": "a03DH0000061QWMYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QWRYA2"
+			},
+			"Exercise__c": "a04DH000003GK5JYAW",
+			"Id": "a03DH0000061QWRYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QWWYA2"
+			},
+			"Exercise__c": "a04DH000003GK5JYAW",
+			"Id": "a03DH0000061QWWYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QWbYAM"
+			},
+			"Exercise__c": "a04DH000003GK5JYAW",
+			"Id": "a03DH0000061QWbYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QWgYAM"
+			},
+			"Exercise__c": "a04DH000003GK5JYAW",
+			"Id": "a03DH0000061QWgYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QXPYA2"
+			},
+			"Exercise__c": "a04DH000003GK5JYAW",
+			"Id": "a03DH0000061QXPYA2",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QXQYA2"
+			},
+			"Exercise__c": "a04DH000003GK5JYAW",
+			"Id": "a03DH0000061QXQYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QXUYA2"
+			},
+			"Exercise__c": "a04DH000003GK5JYAW",
+			"Id": "a03DH0000061QXUYA2",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QXZYA2"
+			},
+			"Exercise__c": "a04DH000003GK5JYAW",
+			"Id": "a03DH0000061QXZYA2",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QXeYAM"
+			},
+			"Exercise__c": "a04DH000003GK5JYAW",
+			"Id": "a03DH0000061QXeYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QfwYAE"
+			},
+			"Exercise__c": "a04DH000003GK5QYAW",
+			"Id": "a03DH0000061QfwYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Qw2YAE"
+			},
+			"Exercise__c": "a04DH000003GK5KYAW",
+			"Id": "a03DH0000061Qw2YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Qw7YAE"
+			},
+			"Exercise__c": "a04DH000003GK5KYAW",
+			"Id": "a03DH0000061Qw7YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QwCYAU"
+			},
+			"Exercise__c": "a04DH000003GK5KYAW",
+			"Id": "a03DH0000061QwCYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QwHYAU"
+			},
+			"Exercise__c": "a04DH000003GK5KYAW",
+			"Id": "a03DH0000061QwHYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QwMYAU"
+			},
+			"Exercise__c": "a04DH000003GK5KYAW",
+			"Id": "a03DH0000061QwMYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QwgYAE"
+			},
+			"Exercise__c": "a04DH000003GK5KYAW",
+			"Id": "a03DH0000061QwgYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QwlYAE"
+			},
+			"Exercise__c": "a04DH000003GK5KYAW",
+			"Id": "a03DH0000061QwlYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061QwqYAE"
+			},
+			"Exercise__c": "a04DH000003GK5KYAW",
+			"Id": "a03DH0000061QwqYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061R4NYAU"
+			},
+			"Exercise__c": "a04DH000003GK5KYAW",
+			"Id": "a03DH0000061R4NYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061R4SYAU"
+			},
+			"Exercise__c": "a04DH000003GK5KYAW",
+			"Id": "a03DH0000061R4SYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061R4XYAU"
+			},
+			"Exercise__c": "a04DH000003GK5KYAW",
+			"Id": "a03DH0000061R4XYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061R4cYAE"
+			},
+			"Exercise__c": "a04DH000003GK5KYAW",
+			"Id": "a03DH0000061R4cYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061R5QYAU"
+			},
+			"Exercise__c": "a04DH000003GK5OYAW",
+			"Id": "a03DH0000061R5QYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RDWYA2"
+			},
+			"Exercise__c": "a04DH000003GK5OYAW",
+			"Id": "a03DH0000061RDWYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RDgYAM"
+			},
+			"Exercise__c": "a04DH000003GK5OYAW",
+			"Id": "a03DH0000061RDgYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RDlYAM"
+			},
+			"Exercise__c": "a04DH000003GK5OYAW",
+			"Id": "a03DH0000061RDlYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RDqYAM"
+			},
+			"Exercise__c": "a04DH000003GK5OYAW",
+			"Id": "a03DH0000061RDqYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RDvYAM"
+			},
+			"Exercise__c": "a04DH000003GK5OYAW",
+			"Id": "a03DH0000061RDvYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RE0YAM"
+			},
+			"Exercise__c": "a04DH000003GK5OYAW",
+			"Id": "a03DH0000061RE0YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RE5YAM"
+			},
+			"Exercise__c": "a04DH000003GK5OYAW",
+			"Id": "a03DH0000061RE5YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061REAYA2"
+			},
+			"Exercise__c": "a04DH000003GK5OYAW",
+			"Id": "a03DH0000061REAYA2",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061REFYA2"
+			},
+			"Exercise__c": "a04DH000003GK5OYAW",
+			"Id": "a03DH0000061REFYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061REKYA2"
+			},
+			"Exercise__c": "a04DH000003GK5OYAW",
+			"Id": "a03DH0000061REKYA2",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061REPYA2"
+			},
+			"Exercise__c": "a04DH000003GK5OYAW",
+			"Id": "a03DH0000061REPYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061REUYA2"
+			},
+			"Exercise__c": "a04DH000003GK5PYAW",
+			"Id": "a03DH0000061REUYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061REZYA2"
+			},
+			"Exercise__c": "a04DH000003GK5PYAW",
+			"Id": "a03DH0000061REZYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061REeYAM"
+			},
+			"Exercise__c": "a04DH000003GK5PYAW",
+			"Id": "a03DH0000061REeYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061REjYAM"
+			},
+			"Exercise__c": "a04DH000003GK5PYAW",
+			"Id": "a03DH0000061REjYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061REoYAM"
+			},
+			"Exercise__c": "a04DH000003GK5PYAW",
+			"Id": "a03DH0000061REoYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061REtYAM"
+			},
+			"Exercise__c": "a04DH000003GK5PYAW",
+			"Id": "a03DH0000061REtYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061REyYAM"
+			},
+			"Exercise__c": "a04DH000003GK5PYAW",
+			"Id": "a03DH0000061REyYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RF3YAM"
+			},
+			"Exercise__c": "a04DH000003GK5PYAW",
+			"Id": "a03DH0000061RF3YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RF8YAM"
+			},
+			"Exercise__c": "a04DH000003GK5PYAW",
+			"Id": "a03DH0000061RF8YAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RFDYA2"
+			},
+			"Exercise__c": "a04DH000003GK5PYAW",
+			"Id": "a03DH0000061RFDYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RFIYA2"
+			},
+			"Exercise__c": "a04DH000003GK5PYAW",
+			"Id": "a03DH0000061RFIYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RFNYA2"
+			},
+			"Exercise__c": "a04DH000003GK5PYAW",
+			"Id": "a03DH0000061RFNYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RFcYAM"
+			},
+			"Exercise__c": "a04DH000003GK5SYAW",
+			"Id": "a03DH0000061RFcYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RG6YAM"
+			},
+			"Exercise__c": "a04DH000003GK5SYAW",
+			"Id": "a03DH0000061RG6YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RGBYA2"
+			},
+			"Exercise__c": "a04DH000003GK5SYAW",
+			"Id": "a03DH0000061RGBYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RNxYAM"
+			},
+			"Exercise__c": "a04DH000003GK5SYAW",
+			"Id": "a03DH0000061RNxYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RO2YAM"
+			},
+			"Exercise__c": "a04DH000003GK5SYAW",
+			"Id": "a03DH0000061RO2YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RO7YAM"
+			},
+			"Exercise__c": "a04DH000003GK5SYAW",
+			"Id": "a03DH0000061RO7YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061ROCYA2"
+			},
+			"Exercise__c": "a04DH000003GK5SYAW",
+			"Id": "a03DH0000061ROCYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061ROHYA2"
+			},
+			"Exercise__c": "a04DH000003GK5SYAW",
+			"Id": "a03DH0000061ROHYA2",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061ROMYA2"
+			},
+			"Exercise__c": "a04DH000003GK5SYAW",
+			"Id": "a03DH0000061ROMYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RORYA2"
+			},
+			"Exercise__c": "a04DH000003GK5SYAW",
+			"Id": "a03DH0000061RORYA2",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061ROWYA2"
+			},
+			"Exercise__c": "a04DH000003GK5SYAW",
+			"Id": "a03DH0000061ROWYA2",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RObYAM"
+			},
+			"Exercise__c": "a04DH000003GK5SYAW",
+			"Id": "a03DH0000061RObYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061ROqYAM"
+			},
+			"Exercise__c": "a04DH000003GK5TYAW",
+			"Id": "a03DH0000061ROqYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061ROvYAM"
+			},
+			"Exercise__c": "a04DH000003GK5TYAW",
+			"Id": "a03DH0000061ROvYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RP5YAM"
+			},
+			"Exercise__c": "a04DH000003GK5TYAW",
+			"Id": "a03DH0000061RP5YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RPFYA2"
+			},
+			"Exercise__c": "a04DH000003GK5TYAW",
+			"Id": "a03DH0000061RPFYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RPKYA2"
+			},
+			"Exercise__c": "a04DH000003GK5TYAW",
+			"Id": "a03DH0000061RPKYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RPUYA2"
+			},
+			"Exercise__c": "a04DH000003GK5TYAW",
+			"Id": "a03DH0000061RPUYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RPZYA2"
+			},
+			"Exercise__c": "a04DH000003GK5TYAW",
+			"Id": "a03DH0000061RPZYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RPeYAM"
+			},
+			"Exercise__c": "a04DH000003GK5TYAW",
+			"Id": "a03DH0000061RPeYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RPfYAM"
+			},
+			"Exercise__c": "a04DH000003GK5TYAW",
+			"Id": "a03DH0000061RPfYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RPjYAM"
+			},
+			"Exercise__c": "a04DH000003GK5TYAW",
+			"Id": "a03DH0000061RPjYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RPoYAM"
+			},
+			"Exercise__c": "a04DH000003GK5TYAW",
+			"Id": "a03DH0000061RPoYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RPtYAM"
+			},
+			"Exercise__c": "a04DH000003GK5TYAW",
+			"Id": "a03DH0000061RPtYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RQ8YAM"
+			},
+			"Exercise__c": "a04DH000003GK5UYAW",
+			"Id": "a03DH0000061RQ8YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RQDYA2"
+			},
+			"Exercise__c": "a04DH000003GK5UYAW",
+			"Id": "a03DH0000061RQDYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RQIYA2"
+			},
+			"Exercise__c": "a04DH000003GK5UYAW",
+			"Id": "a03DH0000061RQIYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RQNYA2"
+			},
+			"Exercise__c": "a04DH000003GK5UYAW",
+			"Id": "a03DH0000061RQNYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RQSYA2"
+			},
+			"Exercise__c": "a04DH000003GK5UYAW",
+			"Id": "a03DH0000061RQSYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RQXYA2"
+			},
+			"Exercise__c": "a04DH000003GK5UYAW",
+			"Id": "a03DH0000061RQXYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RQcYAM"
+			},
+			"Exercise__c": "a04DH000003GK5UYAW",
+			"Id": "a03DH0000061RQcYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RQhYAM"
+			},
+			"Exercise__c": "a04DH000003GK5UYAW",
+			"Id": "a03DH0000061RQhYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RQmYAM"
+			},
+			"Exercise__c": "a04DH000003GK5UYAW",
+			"Id": "a03DH0000061RQmYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RQrYAM"
+			},
+			"Exercise__c": "a04DH000003GK5UYAW",
+			"Id": "a03DH0000061RQrYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RQwYAM"
+			},
+			"Exercise__c": "a04DH000003GK5UYAW",
+			"Id": "a03DH0000061RQwYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RR1YAM"
+			},
+			"Exercise__c": "a04DH000003GK5UYAW",
+			"Id": "a03DH0000061RR1YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RWkYAM"
+			},
+			"Exercise__c": "a04DH000003GK5VYAW",
+			"Id": "a03DH0000061RWkYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RWpYAM"
+			},
+			"Exercise__c": "a04DH000003GK5VYAW",
+			"Id": "a03DH0000061RWpYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RWuYAM"
+			},
+			"Exercise__c": "a04DH000003GK5VYAW",
+			"Id": "a03DH0000061RWuYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RdhYAE"
+			},
+			"Exercise__c": "a04DH000003GK5VYAW",
+			"Id": "a03DH0000061RdhYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RezYAE"
+			},
+			"Exercise__c": "a04DH000003GK5VYAW",
+			"Id": "a03DH0000061RezYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RgaYAE"
+			},
+			"Exercise__c": "a04DH000003GK5VYAW",
+			"Id": "a03DH0000061RgaYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RgfYAE"
+			},
+			"Exercise__c": "a04DH000003GK5VYAW",
+			"Id": "a03DH0000061RgfYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RglYAE"
+			},
+			"Exercise__c": "a04DH000003GK5VYAW",
+			"Id": "a03DH0000061RglYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RgmYAE"
+			},
+			"Exercise__c": "a04DH000003GK5VYAW",
+			"Id": "a03DH0000061RgmYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Rh4YAE"
+			},
+			"Exercise__c": "a04DH000003GK5VYAW",
+			"Id": "a03DH0000061Rh4YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RhdYAE"
+			},
+			"Exercise__c": "a04DH000003GK5VYAW",
+			"Id": "a03DH0000061RhdYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RheYAE"
+			},
+			"Exercise__c": "a04DH000003GK5VYAW",
+			"Id": "a03DH0000061RheYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RjeYAE"
+			},
+			"Exercise__c": "a04DH000003GK5WYAW",
+			"Id": "a03DH0000061RjeYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RjjYAE"
+			},
+			"Exercise__c": "a04DH000003GK5WYAW",
+			"Id": "a03DH0000061RjjYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RjoYAE"
+			},
+			"Exercise__c": "a04DH000003GK5WYAW",
+			"Id": "a03DH0000061RjoYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RjyYAE"
+			},
+			"Exercise__c": "a04DH000003GK5WYAW",
+			"Id": "a03DH0000061RjyYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Rk8YAE"
+			},
+			"Exercise__c": "a04DH000003GK5WYAW",
+			"Id": "a03DH0000061Rk8YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RkDYAU"
+			},
+			"Exercise__c": "a04DH000003GK5WYAW",
+			"Id": "a03DH0000061RkDYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RkIYAU"
+			},
+			"Exercise__c": "a04DH000003GK5WYAW",
+			"Id": "a03DH0000061RkIYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RkNYAU"
+			},
+			"Exercise__c": "a04DH000003GK5WYAW",
+			"Id": "a03DH0000061RkNYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RkSYAU"
+			},
+			"Exercise__c": "a04DH000003GK5WYAW",
+			"Id": "a03DH0000061RkSYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RkXYAU"
+			},
+			"Exercise__c": "a04DH000003GK5WYAW",
+			"Id": "a03DH0000061RkXYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RkcYAE"
+			},
+			"Exercise__c": "a04DH000003GK5WYAW",
+			"Id": "a03DH0000061RkcYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RkhYAE"
+			},
+			"Exercise__c": "a04DH000003GK5WYAW",
+			"Id": "a03DH0000061RkhYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RkmYAE"
+			},
+			"Exercise__c": "a04DH000003GK5XYAW",
+			"Id": "a03DH0000061RkmYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RkrYAE"
+			},
+			"Exercise__c": "a04DH000003GK5XYAW",
+			"Id": "a03DH0000061RkrYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RkwYAE"
+			},
+			"Exercise__c": "a04DH000003GK5XYAW",
+			"Id": "a03DH0000061RkwYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Rl1YAE"
+			},
+			"Exercise__c": "a04DH000003GK5XYAW",
+			"Id": "a03DH0000061Rl1YAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Rl2YAE"
+			},
+			"Exercise__c": "a04DH000003GK5XYAW",
+			"Id": "a03DH0000061Rl2YAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Rl3YAE"
+			},
+			"Exercise__c": "a04DH000003GK5XYAW",
+			"Id": "a03DH0000061Rl3YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Rl6YAE"
+			},
+			"Exercise__c": "a04DH000003GK5XYAW",
+			"Id": "a03DH0000061Rl6YAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RlBYAU"
+			},
+			"Exercise__c": "a04DH000003GK5XYAW",
+			"Id": "a03DH0000061RlBYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RlGYAU"
+			},
+			"Exercise__c": "a04DH000003GK5XYAW",
+			"Id": "a03DH0000061RlGYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RlLYAU"
+			},
+			"Exercise__c": "a04DH000003GK5XYAW",
+			"Id": "a03DH0000061RlLYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RlQYAU"
+			},
+			"Exercise__c": "a04DH000003GK5XYAW",
+			"Id": "a03DH0000061RlQYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RlVYAU"
+			},
+			"Exercise__c": "a04DH000003GK5XYAW",
+			"Id": "a03DH0000061RlVYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RlaYAE"
+			},
+			"Exercise__c": "a04DH000003GK5YYAW",
+			"Id": "a03DH0000061RlaYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RlfYAE"
+			},
+			"Exercise__c": "a04DH000003GK5YYAW",
+			"Id": "a03DH0000061RlfYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RlkYAE"
+			},
+			"Exercise__c": "a04DH000003GK5YYAW",
+			"Id": "a03DH0000061RlkYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RlpYAE"
+			},
+			"Exercise__c": "a04DH000003GK5YYAW",
+			"Id": "a03DH0000061RlpYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RluYAE"
+			},
+			"Exercise__c": "a04DH000003GK5YYAW",
+			"Id": "a03DH0000061RluYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RlzYAE"
+			},
+			"Exercise__c": "a04DH000003GK5YYAW",
+			"Id": "a03DH0000061RlzYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Rm4YAE"
+			},
+			"Exercise__c": "a04DH000003GK5YYAW",
+			"Id": "a03DH0000061Rm4YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Rm9YAE"
+			},
+			"Exercise__c": "a04DH000003GK5YYAW",
+			"Id": "a03DH0000061Rm9YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RmEYAU"
+			},
+			"Exercise__c": "a04DH000003GK5YYAW",
+			"Id": "a03DH0000061RmEYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RmJYAU"
+			},
+			"Exercise__c": "a04DH000003GK5YYAW",
+			"Id": "a03DH0000061RmJYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RmKYAU"
+			},
+			"Exercise__c": "a04DH000003GK5YYAW",
+			"Id": "a03DH0000061RmKYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061RmLYAU"
+			},
+			"Exercise__c": "a04DH000003GK5YYAW",
+			"Id": "a03DH0000061RmLYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S6oYAE"
+			},
+			"Exercise__c": "a04DH000003GK5ZYAW",
+			"Id": "a03DH0000061S6oYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S6tYAE"
+			},
+			"Exercise__c": "a04DH000003GK5ZYAW",
+			"Id": "a03DH0000061S6tYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S6yYAE"
+			},
+			"Exercise__c": "a04DH000003GK5ZYAW",
+			"Id": "a03DH0000061S6yYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S7KYAU"
+			},
+			"Exercise__c": "a04DH000003GK5ZYAW",
+			"Id": "a03DH0000061S7KYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S7PYAU"
+			},
+			"Exercise__c": "a04DH000003GK5ZYAW",
+			"Id": "a03DH0000061S7PYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S7UYAU"
+			},
+			"Exercise__c": "a04DH000003GK5ZYAW",
+			"Id": "a03DH0000061S7UYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S7ZYAU"
+			},
+			"Exercise__c": "a04DH000003GK5ZYAW",
+			"Id": "a03DH0000061S7ZYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S7eYAE"
+			},
+			"Exercise__c": "a04DH000003GK5ZYAW",
+			"Id": "a03DH0000061S7eYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S7jYAE"
+			},
+			"Exercise__c": "a04DH000003GK5ZYAW",
+			"Id": "a03DH0000061S7jYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S7oYAE"
+			},
+			"Exercise__c": "a04DH000003GK5ZYAW",
+			"Id": "a03DH0000061S7oYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S7pYAE"
+			},
+			"Exercise__c": "a04DH000003GK5ZYAW",
+			"Id": "a03DH0000061S7pYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S8BYAU"
+			},
+			"Exercise__c": "a04DH000003GK5ZYAW",
+			"Id": "a03DH0000061S8BYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S8fYAE"
+			},
+			"Exercise__c": "a04DH000003GK5aYAG",
+			"Id": "a03DH0000061S8fYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S8kYAE"
+			},
+			"Exercise__c": "a04DH000003GK5aYAG",
+			"Id": "a03DH0000061S8kYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S8pYAE"
+			},
+			"Exercise__c": "a04DH000003GK5aYAG",
+			"Id": "a03DH0000061S8pYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S8uYAE"
+			},
+			"Exercise__c": "a04DH000003GK5aYAG",
+			"Id": "a03DH0000061S8uYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S8zYAE"
+			},
+			"Exercise__c": "a04DH000003GK5aYAG",
+			"Id": "a03DH0000061S8zYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S94YAE"
+			},
+			"Exercise__c": "a04DH000003GK5aYAG",
+			"Id": "a03DH0000061S94YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S99YAE"
+			},
+			"Exercise__c": "a04DH000003GK5aYAG",
+			"Id": "a03DH0000061S99YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S9EYAU"
+			},
+			"Exercise__c": "a04DH000003GK5aYAG",
+			"Id": "a03DH0000061S9EYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S9JYAU"
+			},
+			"Exercise__c": "a04DH000003GK5aYAG",
+			"Id": "a03DH0000061S9JYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061S9OYAU"
+			},
+			"Exercise__c": "a04DH000003GK5aYAG",
+			"Id": "a03DH0000061S9OYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SCXYA2"
+			},
+			"Exercise__c": "a04DH000003GK5aYAG",
+			"Id": "a03DH0000061SCXYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SCmYAM"
+			},
+			"Exercise__c": "a04DH000003GK5bYAG",
+			"Id": "a03DH0000061SCmYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SCrYAM"
+			},
+			"Exercise__c": "a04DH000003GK5bYAG",
+			"Id": "a03DH0000061SCrYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SCwYAM"
+			},
+			"Exercise__c": "a04DH000003GK5bYAG",
+			"Id": "a03DH0000061SCwYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SD6YAM"
+			},
+			"Exercise__c": "a04DH000003GK5bYAG",
+			"Id": "a03DH0000061SD6YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SDBYA2"
+			},
+			"Exercise__c": "a04DH000003GK5bYAG",
+			"Id": "a03DH0000061SDBYA2",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SDCYA2"
+			},
+			"Exercise__c": "a04DH000003GK5bYAG",
+			"Id": "a03DH0000061SDCYA2",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SDGYA2"
+			},
+			"Exercise__c": "a04DH000003GK5bYAG",
+			"Id": "a03DH0000061SDGYA2",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SDLYA2"
+			},
+			"Exercise__c": "a04DH000003GK5bYAG",
+			"Id": "a03DH0000061SDLYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SDQYA2"
+			},
+			"Exercise__c": "a04DH000003GK5bYAG",
+			"Id": "a03DH0000061SDQYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SDVYA2"
+			},
+			"Exercise__c": "a04DH000003GK5bYAG",
+			"Id": "a03DH0000061SDVYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SDfYAM"
+			},
+			"Exercise__c": "a04DH000003GK5bYAG",
+			"Id": "a03DH0000061SDfYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SDkYAM"
+			},
+			"Exercise__c": "a04DH000003GK5bYAG",
+			"Id": "a03DH0000061SDkYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SPLYA2"
+			},
+			"Exercise__c": "a04DH000003GK5cYAG",
+			"Id": "a03DH0000061SPLYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SXqYAM"
+			},
+			"Exercise__c": "a04DH000003GK5cYAG",
+			"Id": "a03DH0000061SXqYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SXrYAM"
+			},
+			"Exercise__c": "a04DH000003GK5cYAG",
+			"Id": "a03DH0000061SXrYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SXvYAM"
+			},
+			"Exercise__c": "a04DH000003GK5cYAG",
+			"Id": "a03DH0000061SXvYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SY0YAM"
+			},
+			"Exercise__c": "a04DH000003GK5cYAG",
+			"Id": "a03DH0000061SY0YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SY5YAM"
+			},
+			"Exercise__c": "a04DH000003GK5cYAG",
+			"Id": "a03DH0000061SY5YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SYAYA2"
+			},
+			"Exercise__c": "a04DH000003GK5cYAG",
+			"Id": "a03DH0000061SYAYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SiPYAU"
+			},
+			"Exercise__c": "a04DH000003GK5dYAG",
+			"Id": "a03DH0000061SiPYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SkkYAE"
+			},
+			"Exercise__c": "a04DH000003GK5dYAG",
+			"Id": "a03DH0000061SkkYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SlEYAU"
+			},
+			"Exercise__c": "a04DH000003GK5dYAG",
+			"Id": "a03DH0000061SlEYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SlnYAE"
+			},
+			"Exercise__c": "a04DH000003GK5dYAG",
+			"Id": "a03DH0000061SlnYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Sp6YAE"
+			},
+			"Exercise__c": "a04DH000003GK5dYAG",
+			"Id": "a03DH0000061Sp6YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SppYAE"
+			},
+			"Exercise__c": "a04DH000003GK5dYAG",
+			"Id": "a03DH0000061SppYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SqiYAE"
+			},
+			"Exercise__c": "a04DH000003GK5dYAG",
+			"Id": "a03DH0000061SqiYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SqnYAE"
+			},
+			"Exercise__c": "a04DH000003GK5dYAG",
+			"Id": "a03DH0000061SqnYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SqsYAE"
+			},
+			"Exercise__c": "a04DH000003GK5dYAG",
+			"Id": "a03DH0000061SqsYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SqxYAE"
+			},
+			"Exercise__c": "a04DH000003GK5dYAG",
+			"Id": "a03DH0000061SqxYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Sr7YAE"
+			},
+			"Exercise__c": "a04DH000003GK5dYAG",
+			"Id": "a03DH0000061Sr7YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SrCYAU"
+			},
+			"Exercise__c": "a04DH000003GK5dYAG",
+			"Id": "a03DH0000061SrCYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SrbYAE"
+			},
+			"Exercise__c": "a04DH000003GK5eYAG",
+			"Id": "a03DH0000061SrbYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SrqYAE"
+			},
+			"Exercise__c": "a04DH000003GK5eYAG",
+			"Id": "a03DH0000061SrqYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SrvYAE"
+			},
+			"Exercise__c": "a04DH000003GK5eYAG",
+			"Id": "a03DH0000061SrvYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Ss0YAE"
+			},
+			"Exercise__c": "a04DH000003GK5eYAG",
+			"Id": "a03DH0000061Ss0YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Ss5YAE"
+			},
+			"Exercise__c": "a04DH000003GK5eYAG",
+			"Id": "a03DH0000061Ss5YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SsAYAU"
+			},
+			"Exercise__c": "a04DH000003GK5eYAG",
+			"Id": "a03DH0000061SsAYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SsFYAU"
+			},
+			"Exercise__c": "a04DH000003GK5eYAG",
+			"Id": "a03DH0000061SsFYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SsPYAU"
+			},
+			"Exercise__c": "a04DH000003GK5eYAG",
+			"Id": "a03DH0000061SsPYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SsUYAU"
+			},
+			"Exercise__c": "a04DH000003GK5eYAG",
+			"Id": "a03DH0000061SsUYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SsVYAU"
+			},
+			"Exercise__c": "a04DH000003GK5eYAG",
+			"Id": "a03DH0000061SsVYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SsZYAU"
+			},
+			"Exercise__c": "a04DH000003GK5eYAG",
+			"Id": "a03DH0000061SsZYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061SseYAE"
+			},
+			"Exercise__c": "a04DH000003GK5eYAG",
+			"Id": "a03DH0000061SseYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061StSYAU"
+			},
+			"Exercise__c": "a04DH000003GK5fYAG",
+			"Id": "a03DH0000061StSYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061StcYAE"
+			},
+			"Exercise__c": "a04DH000003GK5fYAG",
+			"Id": "a03DH0000061StcYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061T1EYAU"
+			},
+			"Exercise__c": "a04DH000003GK5fYAG",
+			"Id": "a03DH0000061T1EYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061T1TYAU"
+			},
+			"Exercise__c": "a04DH000003GK5fYAG",
+			"Id": "a03DH0000061T1TYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061T1YYAU"
+			},
+			"Exercise__c": "a04DH000003GK5fYAG",
+			"Id": "a03DH0000061T1YYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061T1dYAE"
+			},
+			"Exercise__c": "a04DH000003GK5fYAG",
+			"Id": "a03DH0000061T1dYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061T1iYAE"
+			},
+			"Exercise__c": "a04DH000003GK5fYAG",
+			"Id": "a03DH0000061T1iYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061T1xYAE"
+			},
+			"Exercise__c": "a04DH000003GK5fYAG",
+			"Id": "a03DH0000061T1xYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061T22YAE"
+			},
+			"Exercise__c": "a04DH000003GK5fYAG",
+			"Id": "a03DH0000061T22YAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061T27YAE"
+			},
+			"Exercise__c": "a04DH000003GK5fYAG",
+			"Id": "a03DH0000061T27YAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061T2CYAU"
+			},
+			"Exercise__c": "a04DH000003GK5fYAG",
+			"Id": "a03DH0000061T2CYAU",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061T9oYAE"
+			},
+			"Exercise__c": "a04DH000003GK5fYAG",
+			"Id": "a03DH0000061T9oYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061T9tYAE"
+			},
+			"Exercise__c": "a04DH000003GK5gYAG",
+			"Id": "a03DH0000061T9tYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061T9yYAE"
+			},
+			"Exercise__c": "a04DH000003GK5gYAG",
+			"Id": "a03DH0000061T9yYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TA3YAM"
+			},
+			"Exercise__c": "a04DH000003GK5gYAG",
+			"Id": "a03DH0000061TA3YAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TA8YAM"
+			},
+			"Exercise__c": "a04DH000003GK5gYAG",
+			"Id": "a03DH0000061TA8YAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TADYA2"
+			},
+			"Exercise__c": "a04DH000003GK5gYAG",
+			"Id": "a03DH0000061TADYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TAIYA2"
+			},
+			"Exercise__c": "a04DH000003GK5gYAG",
+			"Id": "a03DH0000061TAIYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TANYA2"
+			},
+			"Exercise__c": "a04DH000003GK5gYAG",
+			"Id": "a03DH0000061TANYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TASYA2"
+			},
+			"Exercise__c": "a04DH000003GK5gYAG",
+			"Id": "a03DH0000061TASYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TAXYA2"
+			},
+			"Exercise__c": "a04DH000003GK5gYAG",
+			"Id": "a03DH0000061TAXYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TAcYAM"
+			},
+			"Exercise__c": "a04DH000003GK5gYAG",
+			"Id": "a03DH0000061TAcYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TAhYAM"
+			},
+			"Exercise__c": "a04DH000003GK5gYAG",
+			"Id": "a03DH0000061TAhYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TAmYAM"
+			},
+			"Exercise__c": "a04DH000003GK5gYAG",
+			"Id": "a03DH0000061TAmYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TfYYAU"
+			},
+			"Exercise__c": "a04DH000003GK5hYAG",
+			"Id": "a03DH0000061TfYYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Tg2YAE"
+			},
+			"Exercise__c": "a04DH000003GK5hYAG",
+			"Id": "a03DH0000061Tg2YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Tg7YAE"
+			},
+			"Exercise__c": "a04DH000003GK5hYAG",
+			"Id": "a03DH0000061Tg7YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TgCYAU"
+			},
+			"Exercise__c": "a04DH000003GK5hYAG",
+			"Id": "a03DH0000061TgCYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TgWYAU"
+			},
+			"Exercise__c": "a04DH000003GK5hYAG",
+			"Id": "a03DH0000061TgWYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TgbYAE"
+			},
+			"Exercise__c": "a04DH000003GK5hYAG",
+			"Id": "a03DH0000061TgbYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TggYAE"
+			},
+			"Exercise__c": "a04DH000003GK5hYAG",
+			"Id": "a03DH0000061TggYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TglYAE"
+			},
+			"Exercise__c": "a04DH000003GK5hYAG",
+			"Id": "a03DH0000061TglYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TgqYAE"
+			},
+			"Exercise__c": "a04DH000003GK5hYAG",
+			"Id": "a03DH0000061TgqYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TgvYAE"
+			},
+			"Exercise__c": "a04DH000003GK5hYAG",
+			"Id": "a03DH0000061TgvYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061Th0YAE"
+			},
+			"Exercise__c": "a04DH000003GK5hYAG",
+			"Id": "a03DH0000061Th0YAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061ThAYAU"
+			},
+			"Exercise__c": "a04DH000003GK5hYAG",
+			"Id": "a03DH0000061ThAYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TpLYAU"
+			},
+			"Exercise__c": "a04DH000003GK5iYAG",
+			"Id": "a03DH0000061TpLYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TplYAE"
+			},
+			"Exercise__c": "a04DH000003GK5iYAG",
+			"Id": "a03DH0000061TplYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TqxYAE"
+			},
+			"Exercise__c": "a04DH000003GK5iYAG",
+			"Id": "a03DH0000061TqxYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TrbYAE"
+			},
+			"Exercise__c": "a04DH000003GK5iYAG",
+			"Id": "a03DH0000061TrbYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TsFYAU"
+			},
+			"Exercise__c": "a04DH000003GK5iYAG",
+			"Id": "a03DH0000061TsFYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TxhYAE"
+			},
+			"Exercise__c": "a04DH000003GK5iYAG",
+			"Id": "a03DH0000061TxhYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TyBYAU"
+			},
+			"Exercise__c": "a04DH000003GK5iYAG",
+			"Id": "a03DH0000061TyBYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TyQYAU"
+			},
+			"Exercise__c": "a04DH000003GK5iYAG",
+			"Id": "a03DH0000061TyQYAU",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TyaYAE"
+			},
+			"Exercise__c": "a04DH000003GK5iYAG",
+			"Id": "a03DH0000061TyaYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TybYAE"
+			},
+			"Exercise__c": "a04DH000003GK5iYAG",
+			"Id": "a03DH0000061TybYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TyfYAE"
+			},
+			"Exercise__c": "a04DH000003GK5iYAG",
+			"Id": "a03DH0000061TyfYAE",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061TykYAE"
+			},
+			"Exercise__c": "a04DH000003GK5iYAG",
+			"Id": "a03DH0000061TykYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061U9xYAE"
+			},
+			"Exercise__c": "a04DH000003GK5jYAG",
+			"Id": "a03DH0000061U9xYAE",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UBeYAM"
+			},
+			"Exercise__c": "a04DH000003GK5jYAG",
+			"Id": "a03DH0000061UBeYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UBjYAM"
+			},
+			"Exercise__c": "a04DH000003GK5jYAG",
+			"Id": "a03DH0000061UBjYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UBoYAM"
+			},
+			"Exercise__c": "a04DH000003GK5jYAG",
+			"Id": "a03DH0000061UBoYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UBtYAM"
+			},
+			"Exercise__c": "a04DH000003GK5jYAG",
+			"Id": "a03DH0000061UBtYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UByYAM"
+			},
+			"Exercise__c": "a04DH000003GK5jYAG",
+			"Id": "a03DH0000061UByYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UBzYAM"
+			},
+			"Exercise__c": "a04DH000003GK5jYAG",
+			"Id": "a03DH0000061UBzYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UC3YAM"
+			},
+			"Exercise__c": "a04DH000003GK5jYAG",
+			"Id": "a03DH0000061UC3YAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UC8YAM"
+			},
+			"Exercise__c": "a04DH000003GK5jYAG",
+			"Id": "a03DH0000061UC8YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UCDYA2"
+			},
+			"Exercise__c": "a04DH000003GK5jYAG",
+			"Id": "a03DH0000061UCDYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UCIYA2"
+			},
+			"Exercise__c": "a04DH000003GK5jYAG",
+			"Id": "a03DH0000061UCIYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UJpYAM"
+			},
+			"Exercise__c": "a04DH000003GK5kYAG",
+			"Id": "a03DH0000061UJpYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UJuYAM"
+			},
+			"Exercise__c": "a04DH000003GK5kYAG",
+			"Id": "a03DH0000061UJuYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UJzYAM"
+			},
+			"Exercise__c": "a04DH000003GK5kYAG",
+			"Id": "a03DH0000061UJzYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UK4YAM"
+			},
+			"Exercise__c": "a04DH000003GK5kYAG",
+			"Id": "a03DH0000061UK4YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UK9YAM"
+			},
+			"Exercise__c": "a04DH000003GK5kYAG",
+			"Id": "a03DH0000061UK9YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UKEYA2"
+			},
+			"Exercise__c": "a04DH000003GK5kYAG",
+			"Id": "a03DH0000061UKEYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UKJYA2"
+			},
+			"Exercise__c": "a04DH000003GK5kYAG",
+			"Id": "a03DH0000061UKJYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UKOYA2"
+			},
+			"Exercise__c": "a04DH000003GK5kYAG",
+			"Id": "a03DH0000061UKOYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UKTYA2"
+			},
+			"Exercise__c": "a04DH000003GK5kYAG",
+			"Id": "a03DH0000061UKTYA2",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UKYYA2"
+			},
+			"Exercise__c": "a04DH000003GK5kYAG",
+			"Id": "a03DH0000061UKYYA2",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UKdYAM"
+			},
+			"Exercise__c": "a04DH000003GK5kYAG",
+			"Id": "a03DH0000061UKdYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UKiYAM"
+			},
+			"Exercise__c": "a04DH000003GK5kYAG",
+			"Id": "a03DH0000061UKiYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UKnYAM"
+			},
+			"Exercise__c": "a04DH000003GK5lYAG",
+			"Id": "a03DH0000061UKnYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyvYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UKsYAM"
+			},
+			"Exercise__c": "a04DH000003GK5lYAG",
+			"Id": "a03DH0000061UKsYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIygYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UKxYAM"
+			},
+			"Exercise__c": "a04DH000003GK5lYAG",
+			"Id": "a03DH0000061UKxYAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyWYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UL2YAM"
+			},
+			"Exercise__c": "a04DH000003GK5lYAG",
+			"Id": "a03DH0000061UL2YAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIyqYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UL7YAM"
+			},
+			"Exercise__c": "a04DH000003GK5lYAG",
+			"Id": "a03DH0000061UL7YAM",
+			"Status__c": "LATER",
+			"Student__c": "a05DH000002dIybYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061ULCYA2"
+			},
+			"Exercise__c": "a04DH000003GK5lYAG",
+			"Id": "a03DH0000061ULCYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyMYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UTuYAM"
+			},
+			"Exercise__c": "a04DH000003GK5lYAG",
+			"Id": "a03DH0000061UTuYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyHYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UTzYAM"
+			},
+			"Exercise__c": "a04DH000003GK5lYAG",
+			"Id": "a03DH0000061UTzYAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyhYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UU4YAM"
+			},
+			"Exercise__c": "a04DH000003GK5lYAG",
+			"Id": "a03DH0000061UU4YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIyRYAU"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UU9YAM"
+			},
+			"Exercise__c": "a04DH000003GK5lYAG",
+			"Id": "a03DH0000061UU9YAM",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz5YAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UUEYA2"
+			},
+			"Exercise__c": "a04DH000003GK5lYAG",
+			"Id": "a03DH0000061UUEYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIylYAE"
+		},
+		{
+			"attributes": {
+				"type": "Exercise_X_Student__c",
+				"url": "/services/data/v56.0/sobjects/Exercise_X_Student__c/a03DH0000061UUJYA2"
+			},
+			"Exercise__c": "a04DH000003GK5lYAG",
+			"Id": "a03DH0000061UUJYA2",
+			"Status__c": "DONE",
+			"Student__c": "a05DH000002dIz0YAE"
+		}
+	],
+	"total": 389
 }
