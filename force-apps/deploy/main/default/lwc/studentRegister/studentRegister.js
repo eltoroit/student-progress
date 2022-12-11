@@ -194,16 +194,16 @@ export default class StudentRegister extends LightningElement {
 					Utils.deleteCookie({ key: "studentId" });
 					Utils.deleteCookie({ key: "deliveryId" });
 
-					// this.timer = setInterval(() => {
-					console.log("*** Interval deliveries");
-					if (this.delivery.Id === "") {
-						console.log(`*** REFRESH ${this.delivery.Id}`);
-						this.onRefreshClick();
-					} else {
-						console.log(`*** CLEAR ${this.delivery.Id}`);
-						clearInterval(this.timer);
-					}
-					// }, 5e3);
+					this.timer = setInterval(() => {
+						console.log("*** Interval deliveries");
+						if (this.delivery.Id === "") {
+							console.log(`*** REFRESH ${this.delivery.Id}`);
+							this.onRefreshClick();
+						} else {
+							console.log(`*** CLEAR ${this.delivery.Id}`);
+							clearInterval(this.timer);
+						}
+					}, 5e3);
 
 					reject(err);
 				});

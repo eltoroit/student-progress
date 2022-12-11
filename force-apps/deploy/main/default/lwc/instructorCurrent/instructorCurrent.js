@@ -27,6 +27,7 @@ export default class InstructorCurrent extends LightningElement {
 	loading = true;
 	errorMessage = "";
 	activeExerciseTimer = null;
+	activeExerciseStartAt = null;
 	timers = { progress: null, screen: null };
 
 	// Lists
@@ -174,8 +175,9 @@ export default class InstructorCurrent extends LightningElement {
 			clearInterval(this.timers.screen);
 			this.timers.screen = null;
 			this.activeExerciseTimer = null;
-			if (data.DELIVERY.length === 1) {
+			if (data.DELIVERY) {
 				const startAt = new Date(data.DELIVERY.CurrentExerciseStart__c);
+				this.activeExerciseStartAt = startAt;
 				this.timers.screen = setInterval(() => {
 					try {
 						this.activeExerciseTimer = Utils.calculateDuration({ startAt, endAt: new Date() });
@@ -240,16 +242,16 @@ export default class InstructorCurrent extends LightningElement {
 	async onRefreshClick() {
 		// This clock is to get the data
 		clearInterval(this.timers.progress);
-		// this.timers.progress = setInterval(async () => {
-		try {
-			await refreshApex(this.wiredActiveCxDs);
-			await refreshApex(this.wiredAllExercisesForCxD);
-			await refreshApex(this.wiredStudentsProgress);
-			this.errorMessage = "";
-		} catch (error) {
-			this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
-		}
-		// }, 1e3);
+		this.timers.progress = setInterval(async () => {
+			try {
+				await refreshApex(this.wiredActiveCxDs);
+				await refreshApex(this.wiredAllExercisesForCxD);
+				await refreshApex(this.wiredStudentsProgress);
+				this.errorMessage = "";
+			} catch (error) {
+				this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
+			}
+		}, 1e3);
 	}
 
 	onRowAction(event) {

@@ -8,6 +8,7 @@ public without sharing class Instructor {
 				Course__r.Name,
 				Delivery__r.Name,
 				Delivery__r.CurrentExercise__r.Name,
+				Delivery__r.CurrentExerciseStart__c,
 				Delivery__r.CurrentExerciseIsActive__c
 			FROM Course_X_Delivery__c
 			WHERE Delivery__r.IsActive__c = TRUE
