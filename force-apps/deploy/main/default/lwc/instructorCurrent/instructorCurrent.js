@@ -1,6 +1,6 @@
 import Utils from "c/utils";
 import { LightningElement, wire } from "lwc";
-import { refreshApex } from "@salesforce/apex";
+// import { refreshApex } from "@salesforce/apex";
 import getActiveCxDs from "@salesforce/apex/Instructor.getActiveCxDs";
 import startStopExercise from "@salesforce/apex/Instructor.startStopExercise";
 import updateStudentStatus from "@salesforce/apex/Instructor.updateStudentStatus";
@@ -25,6 +25,7 @@ const columns = [
 export default class InstructorCurrent extends LightningElement {
 	// Control
 	loading = true;
+	forceRefresh = 0;
 	errorMessage = "";
 	activeExerciseTimer = null;
 	activeExerciseStartAt = null;
@@ -145,7 +146,11 @@ export default class InstructorCurrent extends LightningElement {
 		}
 	}
 
-	@wire(getStudentsProgress, { CxD: "$currentCourseDeliveryKey", exerciseId: "$currentExerciseId" })
+	@wire(getStudentsProgress, {
+		CxD: "$currentCourseDeliveryKey",
+		exerciseId: "$currentExerciseId",
+		forceRefresh: "$forceRefresh"
+	})
 	wired_GetStudentsProgress(result) {
 		this.wiredStudentsProgress = result;
 		let { data, error } = result;
@@ -178,10 +183,16 @@ export default class InstructorCurrent extends LightningElement {
 			if (data.DELIVERY) {
 				const startAt = new Date(data.DELIVERY.CurrentExerciseStart__c);
 				this.activeExerciseStartAt = startAt;
+				this.activeExerciseTimer = Utils.calculateDuration({
+					startAt,
+					endAt: new Date()
+				}).seconds.toString();
 				this.timers.screen = setInterval(() => {
 					try {
-						this.activeExerciseTimer = Utils.calculateDuration({ startAt, endAt: new Date() });
-						this.activeExerciseTimer = this.activeExerciseTimer.seconds.toString();
+						this.activeExerciseTimer = Utils.calculateDuration({
+							startAt,
+							endAt: new Date()
+						}).seconds.toString();
 					} catch (ex) {
 						Utils.showNotification(this, {
 							title: "Error (Instructor)",
@@ -243,14 +254,15 @@ export default class InstructorCurrent extends LightningElement {
 		// This clock is to get the data
 		clearInterval(this.timers.progress);
 		this.timers.progress = setInterval(async () => {
-			try {
-				await refreshApex(this.wiredActiveCxDs);
-				await refreshApex(this.wiredAllExercisesForCxD);
-				await refreshApex(this.wiredStudentsProgress);
-				this.errorMessage = "";
-			} catch (error) {
-				this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
-			}
+			this.forceRefresh++;
+			// try {
+			// 	await refreshApex(this.wiredActiveCxDs);
+			// 	await refreshApex(this.wiredAllExercisesForCxD);
+			// 	await refreshApex(this.wiredStudentsProgress);
+			// 	this.errorMessage = "";
+			// } catch (error) {
+			// 	this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
+			// }
 		}, 1e3);
 	}
 
@@ -291,22 +303,20 @@ export default class InstructorCurrent extends LightningElement {
 
 	exerciseStateChange(isStart) {
 		this.loading = true;
-		setTimeout(() => {
-			startStopExercise({ CxD: this.currentCourseDeliveryKey, exerciseId: this.currentExercise.Id, isStart })
-				.then((data) => {
-					if (data.CurrentExerciseIsActive__c) {
-						this.activeExercise = data.CurrentExercise__r;
-					} else {
-						this.activeExercise = {};
-					}
-					this.loading = false;
-				})
-				.catch((err) => {
-					this.loading = false;
-					console.log(err);
-					debugger;
-				});
-		}, 0);
+		startStopExercise({ CxD: this.currentCourseDeliveryKey, exerciseId: this.currentExercise.Id, isStart })
+			.then((data) => {
+				if (data.CurrentExerciseIsActive__c) {
+					this.activeExercise = data.CurrentExercise__r;
+				} else {
+					this.activeExercise = {};
+				}
+				this.loading = false;
+			})
+			.catch((err) => {
+				this.loading = false;
+				console.log(err);
+				debugger;
+			});
 	}
 
 	loadCxDs(data) {

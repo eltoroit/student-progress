@@ -1,12 +1,13 @@
 import Utils from "c/utils";
 import { api, LightningElement, wire } from "lwc";
-import { refreshApex } from "@salesforce/apex";
+// import { refreshApex } from "@salesforce/apex";
 import updateStatus from "@salesforce/apex/Student.updateStatus";
 import getStudentById from "@salesforce/apex/Student.getStudentById";
 import getDeliveryById from "@salesforce/apex/Student.getDeliveryById";
 import getExercisetById from "@salesforce/apex/Student.getExercisetById";
 
 export default class Student extends LightningElement {
+	forceRefresh = 0;
 	loading = true;
 	student = {};
 	errorMessage = "";
@@ -18,9 +19,10 @@ export default class Student extends LightningElement {
 
 	exercise = {};
 	exerciseId = null;
+	exerciseIsActive = false;
 
 	connectedCallback() {
-		setTimeout(() => {
+		setInterval(() => {
 			console.log("*** Refresh");
 			this.onRefreshClick();
 		}, 5e3);
@@ -36,7 +38,7 @@ export default class Student extends LightningElement {
 		}
 	}
 
-	@wire(getDeliveryById, { deliveryId: "$deliveryId" })
+	@wire(getDeliveryById, { deliveryId: "$deliveryId", forceRefresh: "$forceRefresh" })
 	wired_GetDeliveryById(result) {
 		this.wiredDeliver = result;
 		let { data, error } = result;
@@ -45,7 +47,9 @@ export default class Student extends LightningElement {
 			if (this.delivery) {
 				this.delivery.Name = `${data.Name} (${data.Instructor__c})`;
 			}
-			this.exerciseId = data.ActiveExercise__c;
+			this.exercise = data.CurrentExercise__r;
+			this.exerciseId = data.CurrentExercise__c;
+			this.exerciseIsActive = data.CurrentExerciseIsActive__c;
 			if (!this.exerciseId) {
 				this.exercise = {};
 			}
@@ -73,14 +77,15 @@ export default class Student extends LightningElement {
 	}
 
 	onRefreshClick() {
-		refreshApex(this.wiredDeliver)
-			.then(() => {
-				this.errorMessage = "";
-			})
-			.catch((error) => {
-				console.log(error);
-				this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
-			});
+		this.forceRefresh++;
+		// refreshApex(this.wiredDeliver)
+		// 	.then(() => {
+		// 		this.errorMessage = "";
+		// 	})
+		// 	.catch((error) => {
+		// 		console.log(error);
+		// 		this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
+		// 	});
 	}
 
 	onDoneClick() {

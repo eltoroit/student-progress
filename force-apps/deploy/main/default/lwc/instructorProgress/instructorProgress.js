@@ -164,10 +164,10 @@ export default class ClassProgress extends LightningElement {
 	onRefresh() {
 		let tmp = this.currentCourseDeliveryKey;
 		this.currentCourseDeliveryKey = "";
-		setTimeout(() => {
-			this.currentCourseDeliveryKey = tmp;
-			refreshApex(this.wiredGetClassReport);
-		}, 0);
+		// setTimeout(() => {
+		this.currentCourseDeliveryKey = tmp;
+		refreshApex(this.wiredGetClassReport);
+		// }, 0);
 	}
 
 	async onShowTable() {

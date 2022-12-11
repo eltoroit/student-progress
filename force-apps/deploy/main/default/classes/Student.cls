@@ -34,12 +34,12 @@ public without sharing class Student {
 	}
 
 	@AuraEnabled(cacheable=true)
-	public static Delivery__c getDeliveryById(String deliveryId) {
+	public static Delivery__c getDeliveryById(String deliveryId, Integer forceRefresh) {
 		Delivery__c output = new Delivery__c();
 
 		System.debug(deliveryId);
 		output = [
-			SELECT Id, Name, Instructor__c, CurrentExercise__c, CurrentExerciseIsActive__c
+			SELECT Id, Name, Instructor__c, CurrentExercise__r.Name, CurrentExerciseIsActive__c
 			FROM Delivery__c
 			WHERE Id = :deliveryId
 		];
@@ -122,7 +122,6 @@ public without sharing class Student {
 
 	@AuraEnabled
 	public static void updateStatus(String exerciseId, String studentId, String status) {
-
 		System.debug(exerciseId);
 		System.debug(studentId);
 		System.debug(status);
