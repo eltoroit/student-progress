@@ -10,6 +10,7 @@ import getStudentsForDelivery from "@salesforce/apex/Student.getStudentsForDeliv
 export default class StudentRegister extends LightningElement {
 	timer = null;
 	loading = true;
+	forceRefresh = 0;
 
 	student = {};
 	students = [];
@@ -49,10 +50,12 @@ export default class StudentRegister extends LightningElement {
 	connectedCallback() {
 		this.student.Id = Utils.getCookie({ key: "studentId" });
 		this.delivery.Id = Utils.getCookie({ key: "deliveryId" });
-		this.validateRegistrationJS();
+		this.validateRegistrationJS()
+			.then(() => {})
+			.catch(() => {});
 	}
 
-	@wire(getActiveDeliveries)
+	@wire(getActiveDeliveries, { forceRefresh: "$forceRefresh" })
 	wired_GetActiveDeliveries(result) {
 		this.wiredDeliveries = result;
 		let { data, error } = result;
@@ -80,7 +83,7 @@ export default class StudentRegister extends LightningElement {
 	}
 
 	// Can you use a getter?
-	@wire(getStudentsForDelivery, { deliveryId: "$deliveryId" })
+	@wire(getStudentsForDelivery, { deliveryId: "$deliveryId", forceRefresh: "$forceRefresh" })
 	wired_GetStudentsForDelivery(result) {
 		this.wiredStudents = result;
 		let { data, error } = result;
@@ -159,22 +162,7 @@ export default class StudentRegister extends LightningElement {
 
 	onRefreshClick() {
 		this.loading = false;
-		setTimeout(() => {
-			refreshApex(this.wiredDeliveries)
-				.then(() => {
-					this.loading = false;
-				})
-				.catch(() => {
-					debugger;
-				});
-			refreshApex(this.wiredStudents)
-				.then(() => {
-					this.loading = false;
-				})
-				.catch(() => {
-					debugger;
-				});
-		}, 5e2);
+		this.forceRefresh++;
 	}
 
 	async validateRegistrationJS() {

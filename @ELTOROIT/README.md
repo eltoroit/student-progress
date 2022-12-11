@@ -6,7 +6,7 @@
 -   Assign org Ids
     -   Include late registrations
     -   Display URL (login.salesforce.com), username, and password.
-        -   Click on any will copy to clipboard
+        -   Click on any text will copy to clipboard
     -   DEX602 only needs the org at the start of the class on Monday
     -   Some private workshops have a combination of courses and the orgs change during the week
 -   Class notes
@@ -21,8 +21,11 @@
     -   Steal the clock from THCM
 -   Exercise should automatically stop when all students are done (or they indicated "LATER")
 -   Display the time it took an student to complete the exercise
+-   Let the instructor connect via phone/tablet
+    -   Salesforce App
+    -   Needs to activate an exercise
 
-# TEST THIS WHEN I GET INTERNET
+# DONE
 
 -   Activating an exercise is based on a field on the delivery.
     -   The current exercise field does not change until an exercise is started
@@ -35,12 +38,6 @@
     -   Not the lookup to the exercise, currently is set to null
     -   So that we could come back to the exercise even after it has stoped.
         -   Right now, clicking current clears the item from the combo box and it has to be found manually. It would be just esier to go to the next exercise if we do not forget which one is the crrent one.
--   Let the instructor connect via phone/tablet
-    -   Salesforce App
-    -   Needs to activate an exercise
-
-# DONE
-
 -   Student progress to calculate best student in class
     -   Do not display instructor points
     -   Swap chart to display horizontally, not vertically.
