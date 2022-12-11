@@ -50,13 +50,15 @@ export default class InstructorCurrent extends LightningElement {
 	get ui() {
 		const exCurrent = this.currentExercise;
 		const currentCxD = this.currentCourseDeliveryKey;
-		const exIsActive = this.activeExercise?.Id === this.currentExercise?.Id;
-		const exercises = {
-			max: this.exercises.length - 1,
-			activeIdx: this.exercises.findIndex((option) => option.value === this.activeExercise?.Id),
-			currentIdx: this.exercises.findIndex((option) => option.value === exCurrent.Id)
-		};
-
+		const exIsActive = this.activeExercise?.Id && this.activeExercise?.Id === this.currentExercise?.Id ;
+		let exercises = {};
+		if (this.exercises.length > 0) {
+			exercises = {
+				max: this.exercises.length - 1,
+				activeIdx: this.exercises.findIndex((option) => option.value === this.activeExercise?.Id),
+				currentIdx: this.exercises.findIndex((option) => option.value === exCurrent?.Id)
+			};
+		}
 		const ui = {};
 		ui.btnCurrent = {
 			isVisible: currentCxD,
@@ -349,8 +351,14 @@ export default class InstructorCurrent extends LightningElement {
 			};
 		});
 		if (data.length > 0) {
-			this.activeExercise = data.find((exercise) => exercise.Id === this.activeExercise.Id);
-			this.currentExercise = data.find((exercise) => exercise.Id === this.currentExercise.Id);
+			this.activeExercise = data.find((exercise) => exercise.Id === this.activeExercise?.Id);
+			this.currentExercise = data.find((exercise) => exercise.Id === this.currentExercise?.Id);
+			if (!this.activeExercise) {
+				this.activeExercise = {};
+			}
+			if (!this.currentExercise) {
+				this.currentExercise = {};
+			}
 		}
 		this.exercises.unshift({ value: "", label: "Which exercise are you working on?" });
 	}

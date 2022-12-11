@@ -4,13 +4,14 @@
 		{
 			"attributes": {
 				"type": "Delivery__c",
-				"url": "/services/data/v56.0/sobjects/Delivery__c/a02DH000003hjhzYAA"
+				"url": "/services/data/v56.0/sobjects/Delivery__c/a021g000005m0JzAAI"
 			},
-			"ActivatedDTTM__c": null,
-			"ActiveExercise__c": null,
-			"Id": "a02DH000003hjhzYAA",
+			"CurrentExerciseIsActive__c": false,
+			"CurrentExerciseStart__c": null,
+			"CurrentExercise__c": null,
+			"Id": "a021g000005m0JzAAI",
 			"Instructor__c": "Andres Perez",
-			"IsActive__c": true,
+			"IsActive__c": false,
 			"Name": "2022-12-05 Workday"
 		}
 	],
