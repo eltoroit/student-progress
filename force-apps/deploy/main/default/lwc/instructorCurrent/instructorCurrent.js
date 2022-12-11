@@ -35,6 +35,7 @@ export default class InstructorCurrent extends LightningElement {
 	activeExercise = {}; // The exercise the students are working on
 	currentExercise = {}; // The exercise currently being selected (displayed)
 	currentCourseDelivery = {}; // The CxD being selected
+	currentCourseDeliveryKey = "";
 
 	wiredActiveCxDs = null;
 	wiredStudentsProgress = null;
@@ -45,9 +46,9 @@ export default class InstructorCurrent extends LightningElement {
 	columns = columns;
 
 	get ui() {
-		const exActive = this.activeExercise;
-		const exCurrent = this.currentExercise;
-		const currentCxD = this.currentCourseDelivery;
+		const exActive = this.activeExercise?.Id ? this.activeExercise : {};
+		const exCurrent = this.currentExercise?.Id ? this.currentExercise : {};
+		const currentCxD = this.currentCourseDeliveryKey;
 		const exercises = {
 			max: this.exercises.length - 1,
 			activeIdx: this.exercises.findIndex((option) => option.value === exActive.Id),
@@ -56,19 +57,19 @@ export default class InstructorCurrent extends LightningElement {
 
 		const ui = {};
 		ui.btnCurrent = {
-			isVisible: currentCxD.Id,
-			isDisabled: !currentCxD.Id || exActive.Id === exCurrent.Id
+			isVisible: currentCxD,
+			isDisabled: !currentCxD || exActive.Id === exCurrent.Id
 		};
 		ui.btnNext = {
-			isVisible: currentCxD.Id,
+			isVisible: currentCxD,
 			isDisabled: !exCurrent.Id || exActive.Id || exercises.currentIdx === exercises.max
 		};
 		ui.btnStart = {
-			isVisible: currentCxD.Id,
+			isVisible: currentCxD,
 			isDisabled: !exCurrent.Id || exActive.IsActive__c
 		};
 		ui.btnStop = {
-			isVisible: currentCxD.Id,
+			isVisible: currentCxD,
 			isDisabled: !exCurrent.Id || !exActive.IsActive__c
 		};
 		ui.btnRefresh = {
@@ -77,19 +78,31 @@ export default class InstructorCurrent extends LightningElement {
 		};
 
 		ui.pnlDeliveriesSelector = true;
-		ui.pnlExercisesSelector = currentCxD.Id;
+		ui.pnlExercisesSelector = currentCxD;
 		ui.pnlActiveExerciseData = exActive.IsActive__c;
 		ui.pnlStudents = exCurrent.Id;
 
 		return ui;
 	}
 
+	get currentExerciseId() {
+		return this.currentExercise?.Id ? this.currentExercise.Id : "";
+	}
+
 	connectedCallback() {
 		// debugger;
 		console.log("*** *** *** Connected Callback (read cookies)");
-		this.currentExercise = { Id: Utils.getCookie({ key: "currentExerciseId" }) };
-		this.currentCourseDelivery = { Id: Utils.getCookie({ key: "currentCourseDeliveryId" }) };
-		this.dispatchEvent(new CustomEvent("change", { detail: { CxD: this.currentCourseDelivery.Id } }));
+
+		let Id = Utils.getCookie({ key: "currentExerciseId" });
+		if (Id) {
+			this.currentExercise = { Id };
+		}
+
+		let key = Utils.getCookie({ key: "currentCourseDeliveryKey" });
+		if (key) {
+			this.currentCourseDeliveryKey = key;
+			this.dispatchEvent(new CustomEvent("change", { detail: { CxD: this.currentCourseDeliveryKey } }));
+		}
 		this.onRefreshClick();
 	}
 
@@ -111,7 +124,7 @@ export default class InstructorCurrent extends LightningElement {
 		}
 	}
 
-	@wire(getAllExercisesForCxD, { CxD: "$currentCourseDeliveryId" })
+	@wire(getAllExercisesForCxD, { CxD: "$currentCourseDeliveryKey" })
 	wired_GetAllExercisesForCxD(result) {
 		this.wiredAllExercisesForCxD = result;
 		let { data, error } = result;
@@ -131,7 +144,7 @@ export default class InstructorCurrent extends LightningElement {
 		}
 	}
 
-	@wire(getStudentsProgress, { CxD: "$currentCourseDeliveryId", exerciseId: "$currentExerciseId" })
+	@wire(getStudentsProgress, { CxD: "$currentCourseDeliveryKey", exerciseId: "$currentExerciseId" })
 	wired_GetStudentsProgress(result) {
 		this.wiredStudentsProgress = result;
 		let { data, error } = result;
@@ -191,11 +204,12 @@ export default class InstructorCurrent extends LightningElement {
 	}
 
 	onCourseDeliveryChange(event) {
-		const Id = event.target.value;
-		const option = this.deliveries.find((CxD) => CxD.value === Id);
+		const key = event.target.value;
+		this.currentCourseDeliveryKey = key;
+		const option = this.deliveries.find((CxD) => CxD.value === key);
 		this.currentCourseDelivery = option.CxD;
-		Utils.setCookie({ key: "currentCourseDeliveryId", value: this.currentCourseDelivery.Id });
-		this.dispatchEvent(new CustomEvent("change", { detail: { CxD: this.currentCourseDeliveryId } }));
+		Utils.setCookie({ key: "currentCourseDeliveryKey", value: this.currentCourseDeliveryKey });
+		this.dispatchEvent(new CustomEvent("change", { detail: { CxD: this.currentCourseDeliveryKey } }));
 	}
 
 	onExerciseChange(event) {
@@ -223,19 +237,19 @@ export default class InstructorCurrent extends LightningElement {
 		};
 	}
 
-	onRefreshClick() {
+	async onRefreshClick() {
 		// This clock is to get the data
 		clearInterval(this.timers.progress);
-		this.timers.progress = setInterval(async () => {
-			try {
-				await refreshApex(this.wiredActiveCxDs);
-				await refreshApex(this.wiredAllExercisesForCxD);
-				await refreshApex(this.wiredStudentsProgress);
-				this.errorMessage = "";
-			} catch (error) {
-				this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
-			}
-		}, 1e3);
+		// this.timers.progress = setInterval(async () => {
+		try {
+			await refreshApex(this.wiredActiveCxDs);
+			await refreshApex(this.wiredAllExercisesForCxD);
+			await refreshApex(this.wiredStudentsProgress);
+			this.errorMessage = "";
+		} catch (error) {
+			this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
+		}
+		// }, 1e3);
 	}
 
 	onRowAction(event) {
@@ -276,7 +290,7 @@ export default class InstructorCurrent extends LightningElement {
 	exerciseStateChange(isStart) {
 		this.loading = true;
 		setTimeout(() => {
-			startStopExercise({ CxD: this.currentCourseDelivery.Id, exerciseId: this.currentExercise.Id, isStart })
+			startStopExercise({ CxD: this.currentCourseDeliveryKey, exerciseId: this.currentExercise.Id, isStart })
 				.then((data) => {
 					if (data.CurrentExerciseIsActive__c) {
 						this.activeExercise = data.CurrentExercise__r;
@@ -301,7 +315,8 @@ export default class InstructorCurrent extends LightningElement {
 		}));
 		this.deliveries.unshift({ value: "", label: "Which class are you delivering?" });
 		if (data.length > 0) {
-			this.currentCourseDelivery = data.find((CxD) => CxD.Id === this.currentCourseDelivery.Id);
+			const option = this.deliveries.find((CxD) => CxD.value === this.currentCourseDeliveryKey);
+			this.currentCourseDelivery = option.CxD;
 			this.activeExercise = this.currentCourseDelivery?.Delivery__r?.CurrentExercise__r;
 		}
 	}

@@ -20,7 +20,7 @@ export default class Student extends LightningElement {
 	exerciseId = null;
 
 	connectedCallback() {
-		setInterval(() => {
+		setTimeout(() => {
 			console.log("*** Refresh");
 			this.onRefreshClick();
 		}, 5e3);

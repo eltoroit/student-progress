@@ -11,7 +11,7 @@ import instructorProgressTable from "c/instructorProgressTable";
 import getClassReport from "@salesforce/apex/Instructor.getClassReport";
 
 export default class ClassProgress extends LightningElement {
-	@api selectedCourseDeliveryId = "";
+	@api currentCourseDeliveryKey = "";
 
 	students = [];
 	exercises = [];
@@ -23,7 +23,7 @@ export default class ClassProgress extends LightningElement {
 	_ctxChart = null;
 	_chartjsInitialized = false;
 
-	@wire(getClassReport, { CxD: "$selectedCourseDeliveryId" })
+	@wire(getClassReport, { CxD: "$currentCourseDeliveryKey" })
 	wired_getClassReport(result) {
 		this.wiredGetClassReport = result;
 		let { data, error } = result;
@@ -162,10 +162,10 @@ export default class ClassProgress extends LightningElement {
 	}
 
 	onRefresh() {
-		let tmp = this.selectedCourseDeliveryId;
-		this.selectedCourseDeliveryId = "";
+		let tmp = this.currentCourseDeliveryKey;
+		this.currentCourseDeliveryKey = "";
 		setTimeout(() => {
-			this.selectedCourseDeliveryId = tmp;
+			this.currentCourseDeliveryKey = tmp;
 			refreshApex(this.wiredGetClassReport);
 		}, 0);
 	}

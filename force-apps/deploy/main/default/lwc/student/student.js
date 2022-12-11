@@ -82,8 +82,8 @@ export default class Student extends LightningElement {
 		return new Promise((resolve, reject) => {
 			validateRegistration({ deliveryId: this.deliveryId, studentId: this.studentId })
 				.then((data) => {
-					this.studentId = data.studentId;
-					this.deliveryId = data.deliveryId;
+					this.studentId = data.student.Id;
+					this.deliveryId = data.delivery.Id;
 					Utils.setCookie({ key: "deliveryId", value: this.deliveryId });
 					Utils.setCookie({ key: "studentId", value: this.studentId });
 					resolve();

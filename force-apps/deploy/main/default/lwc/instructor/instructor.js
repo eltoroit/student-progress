@@ -1,9 +1,9 @@
 import { LightningElement } from "lwc";
 
 export default class Instructor extends LightningElement {
-	selectedCourseDeliveryId = "";
+	currentCourseDeliveryKey = "";
 
 	onChangedCxD(event) {
-		this.selectedCourseDeliveryId = event.detail.CxD;
+		this.currentCourseDeliveryKey = event.detail.CxD;
 	}
 }

@@ -13,7 +13,8 @@ public without sharing class Instructor {
 	public static List<Exercise__c> getAllExercisesForCxD(String CxD) {
 		List<Exercise__c> output = new List<Exercise__c>();
 
-		if (CxD != '') {
+		System.debug('*' + CxD + '*');
+		if (CxD != null && CxD != '') {
 			List<String> parts = CxD.split('\\|');
 			String courseId = parts[0];
 			String deliveryId = parts[1];
@@ -33,7 +34,8 @@ public without sharing class Instructor {
 	public static Map<String, Object> getStudentsProgress(String CxD, String exerciseId) {
 		Map<String, Object> output = new Map<String, Object>();
 
-		if (CxD != '') {
+		System.debug('*' + CxD + '*');
+		if (CxD != null && CxD != '') {
 			List<String> parts = CxD.split('\\|');
 			String courseId = parts[0];
 			String deliveryId = parts[1];
@@ -70,7 +72,8 @@ public without sharing class Instructor {
 	public static Map<String, Object> getClassReport(String CxD) {
 		Map<String, Object> output = null;
 
-		if (CxD != '') {
+		System.debug('*' + CxD + '*');
+		if (CxD != null && CxD != '') {
 			output = new Map<String, Object>();
 			List<String> parts = CxD.split('\\|');
 			String courseId = parts[0];
@@ -112,7 +115,8 @@ public without sharing class Instructor {
 	public static Delivery__c startStopExercise(String CxD, String exerciseId, Boolean isStart) {
 		Delivery__c output = null;
 
-		if (CxD != '') {
+		System.debug('*' + CxD + '*');
+		if (CxD != null && CxD != '') {
 			List<String> parts = CxD.split('\\|');
 			String courseId = parts[0];
 			String deliveryId = parts[1];
@@ -125,6 +129,56 @@ public without sharing class Instructor {
 						CurrentExerciseIsActive__c = true,
 						CurrentExerciseStart__c = Datetime.now()
 					);
+
+					List<Student__c> students = [
+						SELECT Id, Name
+						FROM Student__c
+						WHERE Delivery__c = :deliveryId
+						ORDER BY Name
+					];
+
+					List<Exercise_X_Student__c> existingExS = [
+						SELECT Student__c
+						FROM Exercise_X_Student__c
+						WHERE Student__r.Delivery__c = :deliveryId AND Exercise__c = :exerciseId
+					];
+
+					if (existingExS.size() < students.size()) {
+						// Must create missing ExS
+						Set<Id> missingStudentIds = new Set<Id>();
+						for (Student__c student : students) {
+							missingStudentIds.add(student.Id);
+						}
+						for (Exercise_X_Student__c ExS : existingExS) {
+							missingStudentIds.remove(ExS.Student__c);
+						}
+						if (missingStudentIds.size() > 0) {
+							List<Exercise_X_Student__c> newExS = new List<Exercise_X_Student__c>();
+							for (Id studentId : missingStudentIds) {
+								newExS.add(
+									new Exercise_X_Student__c(
+										Student__c = studentId,
+										Exercise__c = exerciseId,
+										Status__c = 'START'
+									)
+								);
+							}
+							insert newExS;
+						} else {
+							throw new CalloutException('I thought you said we were missing records...');
+						}
+					} else if (students.size() == existingExS.size()) {
+						// Good to go
+					} else {
+						// Why?
+						throw new CalloutException(
+							'There are [' +
+							existingExS.size() +
+							'] ExS records, but only [' +
+							students.size() +
+							'] students'
+						);
+					}
 				} else {
 					update new Delivery__c(Id = deliveryId, CurrentExerciseIsActive__c = false);
 				}

@@ -114,9 +114,13 @@ export default class StudentRegister extends LightningElement {
 
 	onStudentChange(event) {
 		const Id = event.target.value;
-		const option = this.students.find((students) => students.value === Id);
-		this.student = option.students;
-		Utils.setCookie({ key: "studentId", value: this.student.Id });
+		const option = this.students.find((student) => student.value === Id);
+		if (option.student) {
+			this.student = option.student;
+			Utils.setCookie({ key: "studentId", value: this.student.Id });
+		} else {
+			this.student = { Id: option.value };
+		}
 	}
 
 	onRegisterClick() {
@@ -128,7 +132,7 @@ export default class StudentRegister extends LightningElement {
 			defaultValue: ""
 		}).then((studentName) => {
 			if (studentName) {
-				registerStudent({ deliveryId: this.deliver.Id, studentName })
+				registerStudent({ deliveryId: this.delivery.Id, studentName })
 					.then((student) => {
 						refreshApex(this.wiredStudents);
 						this.student = student;
@@ -190,16 +194,16 @@ export default class StudentRegister extends LightningElement {
 					Utils.deleteCookie({ key: "studentId" });
 					Utils.deleteCookie({ key: "deliveryId" });
 
-					this.timer = setInterval(() => {
-						console.log("*** Interval deliveries");
-						if (this.delivery.Id === "") {
-							console.log(`*** REFRESH ${this.delivery.Id}`);
-							this.onRefreshClick();
-						} else {
-							console.log(`*** CLEAR ${this.delivery.Id}`);
-							clearInterval(this.timer);
-						}
-					}, 5e3);
+					// this.timer = setInterval(() => {
+					console.log("*** Interval deliveries");
+					if (this.delivery.Id === "") {
+						console.log(`*** REFRESH ${this.delivery.Id}`);
+						this.onRefreshClick();
+					} else {
+						console.log(`*** CLEAR ${this.delivery.Id}`);
+						clearInterval(this.timer);
+					}
+					// }, 5e3);
 
 					reject(err);
 				});

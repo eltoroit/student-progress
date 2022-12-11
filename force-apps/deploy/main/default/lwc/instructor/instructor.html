@@ -10,7 +10,7 @@
 							</lightning-tab>
 							<lightning-tab label="Class Progress" value="Progress">
 								<c-instructor-progress
-									selected-course-delivery-id={selectedCourseDeliveryId}
+									current-course-delivery-key={currentCourseDeliveryKey}
 								></c-instructor-progress>
 							</lightning-tab>
 							<lightning-tab label="Student" value="Student">
@@ -35,13 +35,13 @@
 						</lightning-layout>
 					</lightning-card>
 					<br />
-					<c-instructor-progress selected-course-delivery-id={selectedCourseDeliveryId}></c-instructor-progress>
+					<c-instructor-progress current-course-delivery-key={currentCourseDeliveryKey}></c-instructor-progress>
 				</div>
 			</lightning-layout-item>
 		</lightning-layout>
 	</div>
 	<div style="display: none">
 		<!-- Do I really need this? -->
-		{selectedCourseDeliveryId}
+		{currentCourseDeliveryKey}
 	</div>
 </template>
