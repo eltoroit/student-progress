@@ -46,9 +46,9 @@ export default class InstructorCurrent extends LightningElement {
 	columns = columns;
 
 	get ui() {
-		const exActive = this.activeExercise?.Id ? this.activeExercise : {};
-		const exCurrent = this.currentExercise?.Id ? this.currentExercise : {};
+		const exActive = this.activeExercise;
 		const currentCxD = this.currentCourseDeliveryKey;
+		const exCurrent = this.currentExercise?.Id ? this.currentExercise : {};
 		const exercises = {
 			max: this.exercises.length - 1,
 			activeIdx: this.exercises.findIndex((option) => option.value === exActive.Id),
@@ -66,11 +66,11 @@ export default class InstructorCurrent extends LightningElement {
 		};
 		ui.btnStart = {
 			isVisible: currentCxD,
-			isDisabled: !exCurrent.Id || exActive.IsActive__c
+			isDisabled: !exCurrent.Id || exActive.Id
 		};
 		ui.btnStop = {
 			isVisible: currentCxD,
-			isDisabled: !exCurrent.Id || !exActive.IsActive__c
+			isDisabled: !exCurrent.Id || !exActive.Id
 		};
 		ui.btnRefresh = {
 			isVisible: true,
@@ -79,7 +79,7 @@ export default class InstructorCurrent extends LightningElement {
 
 		ui.pnlDeliveriesSelector = true;
 		ui.pnlExercisesSelector = currentCxD;
-		ui.pnlActiveExerciseData = exActive.IsActive__c;
+		ui.pnlActiveExerciseData = exActive.Id;
 		ui.pnlStudents = exCurrent.Id;
 
 		return ui;

@@ -2,7 +2,13 @@ public without sharing class Instructor {
 	@AuraEnabled(cacheable=true)
 	public static List<Course_X_Delivery__c> getActiveCxDs() {
 		return [
-			SELECT Id, Name, Course__r.Name, Delivery__r.Name, Delivery__r.CurrentExercise__r.Name
+			SELECT
+				Id,
+				Name,
+				Course__r.Name,
+				Delivery__r.Name,
+				Delivery__r.CurrentExercise__r.Name,
+				Delivery__r.CurrentExerciseIsActive__c
 			FROM Course_X_Delivery__c
 			WHERE Delivery__r.IsActive__c = TRUE
 			ORDER BY Delivery__r.Name ASC, Order__c ASC
