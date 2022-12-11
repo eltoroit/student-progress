@@ -46,31 +46,31 @@ export default class InstructorCurrent extends LightningElement {
 	columns = columns;
 
 	get ui() {
-		const exActive = this.activeExercise;
+		const exCurrent = this.currentExercise;
 		const currentCxD = this.currentCourseDeliveryKey;
-		const exCurrent = this.currentExercise?.Id ? this.currentExercise : {};
+		const exIsActive = this.activeExercise?.Id === this.currentExercise?.Id;
 		const exercises = {
 			max: this.exercises.length - 1,
-			activeIdx: this.exercises.findIndex((option) => option.value === exActive.Id),
+			activeIdx: this.exercises.findIndex((option) => option.value === this.activeExercise?.Id),
 			currentIdx: this.exercises.findIndex((option) => option.value === exCurrent.Id)
 		};
 
 		const ui = {};
 		ui.btnCurrent = {
 			isVisible: currentCxD,
-			isDisabled: !currentCxD || exActive.Id === exCurrent.Id
+			isDisabled: !currentCxD || exIsActive
 		};
 		ui.btnNext = {
 			isVisible: currentCxD,
-			isDisabled: !exCurrent.Id || exActive.Id || exercises.currentIdx === exercises.max
+			isDisabled: !exCurrent.Id || exIsActive || exercises.currentIdx === exercises.max
 		};
 		ui.btnStart = {
 			isVisible: currentCxD,
-			isDisabled: !exCurrent.Id || exActive.Id
+			isDisabled: !exCurrent.Id || exIsActive
 		};
 		ui.btnStop = {
 			isVisible: currentCxD,
-			isDisabled: !exCurrent.Id || !exActive.Id
+			isDisabled: !exCurrent.Id || !exIsActive
 		};
 		ui.btnRefresh = {
 			isVisible: true,
@@ -79,7 +79,7 @@ export default class InstructorCurrent extends LightningElement {
 
 		ui.pnlDeliveriesSelector = true;
 		ui.pnlExercisesSelector = currentCxD;
-		ui.pnlActiveExerciseData = exActive.Id;
+		ui.pnlActiveExerciseData = exIsActive;
 		ui.pnlStudents = exCurrent.Id;
 
 		return ui;
@@ -317,7 +317,13 @@ export default class InstructorCurrent extends LightningElement {
 		if (data.length > 0) {
 			const option = this.deliveries.find((CxD) => CxD.value === this.currentCourseDeliveryKey);
 			this.currentCourseDelivery = option.CxD;
-			this.activeExercise = this.currentCourseDelivery?.Delivery__r?.CurrentExercise__r;
+			this.currentCourseDeliveryKey = null;
+			setTimeout(() => {
+				// Preselect the current active exercise, put a timeout in case the exercises load before the CxD
+				this.currentCourseDeliveryKey = option.value;
+				this.activeExercise = this.currentCourseDelivery?.Delivery__r?.CurrentExercise__r;
+				this.currentExercise = this.activeExercise;
+			}, 5e2);
 		}
 	}
 
