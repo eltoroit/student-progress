@@ -24,6 +24,8 @@
 -   Let the instructor connect via phone/tablet
     -   Salesforce App
     -   Needs to activate an exercise
+-   Review new class, and no students.
+    -   There seems to be a glitch here...
 
 # DONE
 
