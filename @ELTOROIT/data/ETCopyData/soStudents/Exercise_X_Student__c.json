@@ -8,7 +8,7 @@
 			},
 			"Exercise__c": "a04P0000007RezmIAC",
 			"Id": "a03P00000091q96IAA",
-			"Status__c": "WORKING",
+			"Status__c": "01-WORKING",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -18,7 +18,7 @@
 			},
 			"Exercise__c": "a04P0000007RezmIAC",
 			"Id": "a03P00000091q97IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -28,7 +28,7 @@
 			},
 			"Exercise__c": "a04P0000007RezmIAC",
 			"Id": "a03P00000091q98IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -38,7 +38,7 @@
 			},
 			"Exercise__c": "a04P0000007RezmIAC",
 			"Id": "a03P00000091q99IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -48,7 +48,7 @@
 			},
 			"Exercise__c": "a04P0000007RezmIAC",
 			"Id": "a03P00000091q9AIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -58,7 +58,7 @@
 			},
 			"Exercise__c": "a04P0000007RezmIAC",
 			"Id": "a03P00000091q9BIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -68,7 +68,7 @@
 			},
 			"Exercise__c": "a04P0000007RezmIAC",
 			"Id": "a03P00000091q9CIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -78,7 +78,7 @@
 			},
 			"Exercise__c": "a04P0000007RezmIAC",
 			"Id": "a03P00000091q9DIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -88,7 +88,7 @@
 			},
 			"Exercise__c": "a04P0000007RezmIAC",
 			"Id": "a03P00000091q9EIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -98,7 +98,7 @@
 			},
 			"Exercise__c": "a04P0000007RezmIAC",
 			"Id": "a03P00000091q9FIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -108,7 +108,7 @@
 			},
 			"Exercise__c": "a04P0000007RezmIAC",
 			"Id": "a03P00000091q9GIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -118,7 +118,7 @@
 			},
 			"Exercise__c": "a04P0000007RezmIAC",
 			"Id": "a03P00000091q9HIAQ",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -128,7 +128,7 @@
 			},
 			"Exercise__c": "a04P0000007ReznIAC",
 			"Id": "a03P00000091q9IIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -138,7 +138,7 @@
 			},
 			"Exercise__c": "a04P0000007ReznIAC",
 			"Id": "a03P00000091q9JIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -148,7 +148,7 @@
 			},
 			"Exercise__c": "a04P0000007ReznIAC",
 			"Id": "a03P00000091q9KIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -158,7 +158,7 @@
 			},
 			"Exercise__c": "a04P0000007ReznIAC",
 			"Id": "a03P00000091q9LIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -168,7 +168,7 @@
 			},
 			"Exercise__c": "a04P0000007ReznIAC",
 			"Id": "a03P00000091q9MIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -178,7 +178,7 @@
 			},
 			"Exercise__c": "a04P0000007ReznIAC",
 			"Id": "a03P00000091q9NIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -188,7 +188,7 @@
 			},
 			"Exercise__c": "a04P0000007ReznIAC",
 			"Id": "a03P00000091q9OIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -198,7 +198,7 @@
 			},
 			"Exercise__c": "a04P0000007ReznIAC",
 			"Id": "a03P00000091q9PIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -208,7 +208,7 @@
 			},
 			"Exercise__c": "a04P0000007ReznIAC",
 			"Id": "a03P00000091q9QIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -218,7 +218,7 @@
 			},
 			"Exercise__c": "a04P0000007ReznIAC",
 			"Id": "a03P00000091q9RIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -228,7 +228,7 @@
 			},
 			"Exercise__c": "a04P0000007ReznIAC",
 			"Id": "a03P00000091q9SIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -238,7 +238,7 @@
 			},
 			"Exercise__c": "a04P0000007ReznIAC",
 			"Id": "a03P00000091q9TIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -248,7 +248,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0GIAS",
 			"Id": "a03P00000091q9UIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -258,7 +258,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0GIAS",
 			"Id": "a03P00000091q9VIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -268,7 +268,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0GIAS",
 			"Id": "a03P00000091q9WIAQ",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -278,7 +278,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0GIAS",
 			"Id": "a03P00000091q9XIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -288,7 +288,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0GIAS",
 			"Id": "a03P00000091q9YIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -298,7 +298,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0GIAS",
 			"Id": "a03P00000091q9ZIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -308,7 +308,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0GIAS",
 			"Id": "a03P00000091q9aIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -318,7 +318,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0GIAS",
 			"Id": "a03P00000091q9bIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -328,7 +328,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0GIAS",
 			"Id": "a03P00000091q9cIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -338,7 +338,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0GIAS",
 			"Id": "a03P00000091q9dIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -348,7 +348,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0GIAS",
 			"Id": "a03P00000091q9eIAA",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -358,7 +358,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0GIAS",
 			"Id": "a03P00000091q9fIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -368,7 +368,7 @@
 			},
 			"Exercise__c": "a04P0000007RezrIAC",
 			"Id": "a03P00000091q9gIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -378,7 +378,7 @@
 			},
 			"Exercise__c": "a04P0000007RezrIAC",
 			"Id": "a03P00000091q9hIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -388,7 +388,7 @@
 			},
 			"Exercise__c": "a04P0000007RezrIAC",
 			"Id": "a03P00000091q9iIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -398,7 +398,7 @@
 			},
 			"Exercise__c": "a04P0000007RezrIAC",
 			"Id": "a03P00000091q9jIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -408,7 +408,7 @@
 			},
 			"Exercise__c": "a04P0000007RezrIAC",
 			"Id": "a03P00000091q9kIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -418,7 +418,7 @@
 			},
 			"Exercise__c": "a04P0000007RezrIAC",
 			"Id": "a03P00000091q9lIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -428,7 +428,7 @@
 			},
 			"Exercise__c": "a04P0000007RezrIAC",
 			"Id": "a03P00000091q9mIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -438,7 +438,7 @@
 			},
 			"Exercise__c": "a04P0000007RezrIAC",
 			"Id": "a03P00000091q9nIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -448,7 +448,7 @@
 			},
 			"Exercise__c": "a04P0000007RezrIAC",
 			"Id": "a03P00000091q9oIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -458,7 +458,7 @@
 			},
 			"Exercise__c": "a04P0000007RezrIAC",
 			"Id": "a03P00000091q9pIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -468,7 +468,7 @@
 			},
 			"Exercise__c": "a04P0000007RezrIAC",
 			"Id": "a03P00000091q9qIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -478,7 +478,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0EIAS",
 			"Id": "a03P00000091q9rIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -488,7 +488,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0EIAS",
 			"Id": "a03P00000091q9sIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -498,7 +498,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0EIAS",
 			"Id": "a03P00000091q9tIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -508,7 +508,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0EIAS",
 			"Id": "a03P00000091q9uIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -518,7 +518,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0EIAS",
 			"Id": "a03P00000091q9vIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -528,7 +528,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0EIAS",
 			"Id": "a03P00000091q9wIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -538,7 +538,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0EIAS",
 			"Id": "a03P00000091q9xIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -548,7 +548,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0EIAS",
 			"Id": "a03P00000091q9yIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -558,7 +558,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0EIAS",
 			"Id": "a03P00000091q9zIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -568,7 +568,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0EIAS",
 			"Id": "a03P00000091qA0IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -578,7 +578,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0EIAS",
 			"Id": "a03P00000091qA1IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -588,7 +588,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0EIAS",
 			"Id": "a03P00000091qA2IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -598,7 +598,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0FIAS",
 			"Id": "a03P00000091qA3IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -608,7 +608,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0FIAS",
 			"Id": "a03P00000091qA4IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -618,7 +618,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0FIAS",
 			"Id": "a03P00000091qA5IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -628,7 +628,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0FIAS",
 			"Id": "a03P00000091qA6IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -638,7 +638,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0FIAS",
 			"Id": "a03P00000091qA7IAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -648,7 +648,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0FIAS",
 			"Id": "a03P00000091qA8IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -658,7 +658,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0FIAS",
 			"Id": "a03P00000091qA9IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -668,7 +668,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0FIAS",
 			"Id": "a03P00000091qAAIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -678,7 +678,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0FIAS",
 			"Id": "a03P00000091qABIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -688,7 +688,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0FIAS",
 			"Id": "a03P00000091qACIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -698,7 +698,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0FIAS",
 			"Id": "a03P00000091qADIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -708,7 +708,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0FIAS",
 			"Id": "a03P00000091qAEIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -718,7 +718,7 @@
 			},
 			"Exercise__c": "a04P0000007ReyqIAC",
 			"Id": "a03P00000091qAFIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -728,7 +728,7 @@
 			},
 			"Exercise__c": "a04P0000007ReyqIAC",
 			"Id": "a03P00000091qAGIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -738,7 +738,7 @@
 			},
 			"Exercise__c": "a04P0000007ReyqIAC",
 			"Id": "a03P00000091qAHIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -748,7 +748,7 @@
 			},
 			"Exercise__c": "a04P0000007ReyqIAC",
 			"Id": "a03P00000091qAIIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -758,7 +758,7 @@
 			},
 			"Exercise__c": "a04P0000007ReyqIAC",
 			"Id": "a03P00000091qAJIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -768,7 +768,7 @@
 			},
 			"Exercise__c": "a04P0000007ReyqIAC",
 			"Id": "a03P00000091qAKIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -778,7 +778,7 @@
 			},
 			"Exercise__c": "a04P0000007ReyqIAC",
 			"Id": "a03P00000091qALIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -788,7 +788,7 @@
 			},
 			"Exercise__c": "a04P0000007ReyqIAC",
 			"Id": "a03P00000091qAMIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -798,7 +798,7 @@
 			},
 			"Exercise__c": "a04P0000007ReyqIAC",
 			"Id": "a03P00000091qANIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -808,7 +808,7 @@
 			},
 			"Exercise__c": "a04P0000007ReyqIAC",
 			"Id": "a03P00000091qAOIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -818,7 +818,7 @@
 			},
 			"Exercise__c": "a04P0000007ReyqIAC",
 			"Id": "a03P00000091qAPIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -828,7 +828,7 @@
 			},
 			"Exercise__c": "a04P0000007ReyqIAC",
 			"Id": "a03P00000091qAQIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -838,7 +838,7 @@
 			},
 			"Exercise__c": "a04P0000007RezhIAC",
 			"Id": "a03P00000091qARIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -848,7 +848,7 @@
 			},
 			"Exercise__c": "a04P0000007RezhIAC",
 			"Id": "a03P00000091qASIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -858,7 +858,7 @@
 			},
 			"Exercise__c": "a04P0000007RezhIAC",
 			"Id": "a03P00000091qATIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -868,7 +868,7 @@
 			},
 			"Exercise__c": "a04P0000007RezhIAC",
 			"Id": "a03P00000091qAUIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -878,7 +878,7 @@
 			},
 			"Exercise__c": "a04P0000007RezhIAC",
 			"Id": "a03P00000091qAVIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -888,7 +888,7 @@
 			},
 			"Exercise__c": "a04P0000007RezhIAC",
 			"Id": "a03P00000091qAWIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -898,7 +898,7 @@
 			},
 			"Exercise__c": "a04P0000007RezhIAC",
 			"Id": "a03P00000091qAXIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -908,7 +908,7 @@
 			},
 			"Exercise__c": "a04P0000007RezhIAC",
 			"Id": "a03P00000091qAYIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -918,7 +918,7 @@
 			},
 			"Exercise__c": "a04P0000007RezhIAC",
 			"Id": "a03P00000091qAZIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -928,7 +928,7 @@
 			},
 			"Exercise__c": "a04P0000007RezhIAC",
 			"Id": "a03P00000091qAaIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -938,7 +938,7 @@
 			},
 			"Exercise__c": "a04P0000007RezhIAC",
 			"Id": "a03P00000091qAbIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -948,7 +948,7 @@
 			},
 			"Exercise__c": "a04P0000007RezhIAC",
 			"Id": "a03P00000091qAcIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -958,7 +958,7 @@
 			},
 			"Exercise__c": "a04P0000007ReziIAC",
 			"Id": "a03P00000091qAdIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -968,7 +968,7 @@
 			},
 			"Exercise__c": "a04P0000007ReziIAC",
 			"Id": "a03P00000091qAeIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -978,7 +978,7 @@
 			},
 			"Exercise__c": "a04P0000007ReziIAC",
 			"Id": "a03P00000091qAfIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -988,7 +988,7 @@
 			},
 			"Exercise__c": "a04P0000007ReziIAC",
 			"Id": "a03P00000091qAgIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -998,7 +998,7 @@
 			},
 			"Exercise__c": "a04P0000007ReziIAC",
 			"Id": "a03P00000091qAhIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -1008,7 +1008,7 @@
 			},
 			"Exercise__c": "a04P0000007ReziIAC",
 			"Id": "a03P00000091qAiIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -1018,7 +1018,7 @@
 			},
 			"Exercise__c": "a04P0000007ReziIAC",
 			"Id": "a03P00000091qAjIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -1028,7 +1028,7 @@
 			},
 			"Exercise__c": "a04P0000007ReziIAC",
 			"Id": "a03P00000091qAkIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -1038,7 +1038,7 @@
 			},
 			"Exercise__c": "a04P0000007ReziIAC",
 			"Id": "a03P00000091qAlIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -1048,7 +1048,7 @@
 			},
 			"Exercise__c": "a04P0000007ReziIAC",
 			"Id": "a03P00000091qAmIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -1058,7 +1058,7 @@
 			},
 			"Exercise__c": "a04P0000007ReziIAC",
 			"Id": "a03P00000091qAnIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -1068,7 +1068,7 @@
 			},
 			"Exercise__c": "a04P0000007ReziIAC",
 			"Id": "a03P00000091qAoIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -1078,7 +1078,7 @@
 			},
 			"Exercise__c": "a04P0000007RezjIAC",
 			"Id": "a03P00000091qApIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -1088,7 +1088,7 @@
 			},
 			"Exercise__c": "a04P0000007RezjIAC",
 			"Id": "a03P00000091qAqIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -1098,7 +1098,7 @@
 			},
 			"Exercise__c": "a04P0000007RezjIAC",
 			"Id": "a03P00000091qArIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -1108,7 +1108,7 @@
 			},
 			"Exercise__c": "a04P0000007RezjIAC",
 			"Id": "a03P00000091qAsIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -1118,7 +1118,7 @@
 			},
 			"Exercise__c": "a04P0000007RezjIAC",
 			"Id": "a03P00000091qAtIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -1128,7 +1128,7 @@
 			},
 			"Exercise__c": "a04P0000007RezjIAC",
 			"Id": "a03P00000091qAuIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -1138,7 +1138,7 @@
 			},
 			"Exercise__c": "a04P0000007RezjIAC",
 			"Id": "a03P00000091qAvIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -1148,7 +1148,7 @@
 			},
 			"Exercise__c": "a04P0000007RezjIAC",
 			"Id": "a03P00000091qAwIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -1158,7 +1158,7 @@
 			},
 			"Exercise__c": "a04P0000007RezjIAC",
 			"Id": "a03P00000091qAxIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -1168,7 +1168,7 @@
 			},
 			"Exercise__c": "a04P0000007RezjIAC",
 			"Id": "a03P00000091qAyIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -1178,7 +1178,7 @@
 			},
 			"Exercise__c": "a04P0000007RezjIAC",
 			"Id": "a03P00000091qAzIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -1188,7 +1188,7 @@
 			},
 			"Exercise__c": "a04P0000007RezjIAC",
 			"Id": "a03P00000091qB0IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -1198,7 +1198,7 @@
 			},
 			"Exercise__c": "a04P0000007RezqIAC",
 			"Id": "a03P00000091qB1IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -1208,7 +1208,7 @@
 			},
 			"Exercise__c": "a04P0000007RezkIAC",
 			"Id": "a03P00000091qB2IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -1218,7 +1218,7 @@
 			},
 			"Exercise__c": "a04P0000007RezkIAC",
 			"Id": "a03P00000091qB3IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -1228,7 +1228,7 @@
 			},
 			"Exercise__c": "a04P0000007RezkIAC",
 			"Id": "a03P00000091qB4IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -1238,7 +1238,7 @@
 			},
 			"Exercise__c": "a04P0000007RezkIAC",
 			"Id": "a03P00000091qB5IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -1248,7 +1248,7 @@
 			},
 			"Exercise__c": "a04P0000007RezkIAC",
 			"Id": "a03P00000091qB6IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -1258,7 +1258,7 @@
 			},
 			"Exercise__c": "a04P0000007RezkIAC",
 			"Id": "a03P00000091qB7IAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -1268,7 +1268,7 @@
 			},
 			"Exercise__c": "a04P0000007RezkIAC",
 			"Id": "a03P00000091qB8IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -1278,7 +1278,7 @@
 			},
 			"Exercise__c": "a04P0000007RezkIAC",
 			"Id": "a03P00000091qB9IAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -1288,7 +1288,7 @@
 			},
 			"Exercise__c": "a04P0000007RezkIAC",
 			"Id": "a03P00000091qBAIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -1298,7 +1298,7 @@
 			},
 			"Exercise__c": "a04P0000007RezkIAC",
 			"Id": "a03P00000091qBBIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -1308,7 +1308,7 @@
 			},
 			"Exercise__c": "a04P0000007RezkIAC",
 			"Id": "a03P00000091qBCIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -1318,7 +1318,7 @@
 			},
 			"Exercise__c": "a04P0000007RezkIAC",
 			"Id": "a03P00000091qBDIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -1328,7 +1328,7 @@
 			},
 			"Exercise__c": "a04P0000007RezoIAC",
 			"Id": "a03P00000091qBEIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -1338,7 +1338,7 @@
 			},
 			"Exercise__c": "a04P0000007RezoIAC",
 			"Id": "a03P00000091qBFIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -1348,7 +1348,7 @@
 			},
 			"Exercise__c": "a04P0000007RezoIAC",
 			"Id": "a03P00000091qBGIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -1358,7 +1358,7 @@
 			},
 			"Exercise__c": "a04P0000007RezoIAC",
 			"Id": "a03P00000091qBHIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -1368,7 +1368,7 @@
 			},
 			"Exercise__c": "a04P0000007RezoIAC",
 			"Id": "a03P00000091qBIIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -1378,7 +1378,7 @@
 			},
 			"Exercise__c": "a04P0000007RezoIAC",
 			"Id": "a03P00000091qBJIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -1388,7 +1388,7 @@
 			},
 			"Exercise__c": "a04P0000007RezoIAC",
 			"Id": "a03P00000091qBKIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -1398,7 +1398,7 @@
 			},
 			"Exercise__c": "a04P0000007RezoIAC",
 			"Id": "a03P00000091qBLIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -1408,7 +1408,7 @@
 			},
 			"Exercise__c": "a04P0000007RezoIAC",
 			"Id": "a03P00000091qBMIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -1418,7 +1418,7 @@
 			},
 			"Exercise__c": "a04P0000007RezoIAC",
 			"Id": "a03P00000091qBNIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -1428,7 +1428,7 @@
 			},
 			"Exercise__c": "a04P0000007RezoIAC",
 			"Id": "a03P00000091qBOIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -1438,7 +1438,7 @@
 			},
 			"Exercise__c": "a04P0000007RezoIAC",
 			"Id": "a03P00000091qBPIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -1448,7 +1448,7 @@
 			},
 			"Exercise__c": "a04P0000007RezpIAC",
 			"Id": "a03P00000091qBQIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -1458,7 +1458,7 @@
 			},
 			"Exercise__c": "a04P0000007RezpIAC",
 			"Id": "a03P00000091qBRIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -1468,7 +1468,7 @@
 			},
 			"Exercise__c": "a04P0000007RezpIAC",
 			"Id": "a03P00000091qBSIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -1478,7 +1478,7 @@
 			},
 			"Exercise__c": "a04P0000007RezpIAC",
 			"Id": "a03P00000091qBTIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -1488,7 +1488,7 @@
 			},
 			"Exercise__c": "a04P0000007RezpIAC",
 			"Id": "a03P00000091qBUIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -1498,7 +1498,7 @@
 			},
 			"Exercise__c": "a04P0000007RezpIAC",
 			"Id": "a03P00000091qBVIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -1508,7 +1508,7 @@
 			},
 			"Exercise__c": "a04P0000007RezpIAC",
 			"Id": "a03P00000091qBWIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -1518,7 +1518,7 @@
 			},
 			"Exercise__c": "a04P0000007RezpIAC",
 			"Id": "a03P00000091qBXIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -1528,7 +1528,7 @@
 			},
 			"Exercise__c": "a04P0000007RezpIAC",
 			"Id": "a03P00000091qBYIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -1538,7 +1538,7 @@
 			},
 			"Exercise__c": "a04P0000007RezpIAC",
 			"Id": "a03P00000091qBZIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -1548,7 +1548,7 @@
 			},
 			"Exercise__c": "a04P0000007RezpIAC",
 			"Id": "a03P00000091qBaIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -1558,7 +1558,7 @@
 			},
 			"Exercise__c": "a04P0000007RezpIAC",
 			"Id": "a03P00000091qBbIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -1568,7 +1568,7 @@
 			},
 			"Exercise__c": "a04P0000007RezsIAC",
 			"Id": "a03P00000091qBcIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -1578,7 +1578,7 @@
 			},
 			"Exercise__c": "a04P0000007RezsIAC",
 			"Id": "a03P00000091qBdIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -1588,7 +1588,7 @@
 			},
 			"Exercise__c": "a04P0000007RezsIAC",
 			"Id": "a03P00000091qBeIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -1598,7 +1598,7 @@
 			},
 			"Exercise__c": "a04P0000007RezsIAC",
 			"Id": "a03P00000091qBfIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -1608,7 +1608,7 @@
 			},
 			"Exercise__c": "a04P0000007RezsIAC",
 			"Id": "a03P00000091qBgIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -1618,7 +1618,7 @@
 			},
 			"Exercise__c": "a04P0000007RezsIAC",
 			"Id": "a03P00000091qBhIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -1628,7 +1628,7 @@
 			},
 			"Exercise__c": "a04P0000007RezsIAC",
 			"Id": "a03P00000091qBiIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -1638,7 +1638,7 @@
 			},
 			"Exercise__c": "a04P0000007RezsIAC",
 			"Id": "a03P00000091qBjIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -1648,7 +1648,7 @@
 			},
 			"Exercise__c": "a04P0000007RezsIAC",
 			"Id": "a03P00000091qBkIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -1658,7 +1658,7 @@
 			},
 			"Exercise__c": "a04P0000007RezsIAC",
 			"Id": "a03P00000091qBlIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -1668,7 +1668,7 @@
 			},
 			"Exercise__c": "a04P0000007RezsIAC",
 			"Id": "a03P00000091qBmIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -1678,7 +1678,7 @@
 			},
 			"Exercise__c": "a04P0000007RezsIAC",
 			"Id": "a03P00000091qBnIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -1688,7 +1688,7 @@
 			},
 			"Exercise__c": "a04P0000007ReztIAC",
 			"Id": "a03P00000091qBoIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -1698,7 +1698,7 @@
 			},
 			"Exercise__c": "a04P0000007ReztIAC",
 			"Id": "a03P00000091qBpIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -1708,7 +1708,7 @@
 			},
 			"Exercise__c": "a04P0000007ReztIAC",
 			"Id": "a03P00000091qBqIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -1718,7 +1718,7 @@
 			},
 			"Exercise__c": "a04P0000007ReztIAC",
 			"Id": "a03P00000091qBrIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -1728,7 +1728,7 @@
 			},
 			"Exercise__c": "a04P0000007ReztIAC",
 			"Id": "a03P00000091qBsIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -1738,7 +1738,7 @@
 			},
 			"Exercise__c": "a04P0000007ReztIAC",
 			"Id": "a03P00000091qBtIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -1748,7 +1748,7 @@
 			},
 			"Exercise__c": "a04P0000007ReztIAC",
 			"Id": "a03P00000091qBuIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -1758,7 +1758,7 @@
 			},
 			"Exercise__c": "a04P0000007ReztIAC",
 			"Id": "a03P00000091qBvIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -1768,7 +1768,7 @@
 			},
 			"Exercise__c": "a04P0000007ReztIAC",
 			"Id": "a03P00000091qBwIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -1778,7 +1778,7 @@
 			},
 			"Exercise__c": "a04P0000007ReztIAC",
 			"Id": "a03P00000091qBxIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -1788,7 +1788,7 @@
 			},
 			"Exercise__c": "a04P0000007ReztIAC",
 			"Id": "a03P00000091qByIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -1798,7 +1798,7 @@
 			},
 			"Exercise__c": "a04P0000007ReztIAC",
 			"Id": "a03P00000091qBzIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -1808,7 +1808,7 @@
 			},
 			"Exercise__c": "a04P0000007RezuIAC",
 			"Id": "a03P00000091qC0IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -1818,7 +1818,7 @@
 			},
 			"Exercise__c": "a04P0000007RezuIAC",
 			"Id": "a03P00000091qC1IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -1828,7 +1828,7 @@
 			},
 			"Exercise__c": "a04P0000007RezuIAC",
 			"Id": "a03P00000091qC2IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -1838,7 +1838,7 @@
 			},
 			"Exercise__c": "a04P0000007RezuIAC",
 			"Id": "a03P00000091qC3IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -1848,7 +1848,7 @@
 			},
 			"Exercise__c": "a04P0000007RezuIAC",
 			"Id": "a03P00000091qC4IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -1858,7 +1858,7 @@
 			},
 			"Exercise__c": "a04P0000007RezuIAC",
 			"Id": "a03P00000091qC5IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -1868,7 +1868,7 @@
 			},
 			"Exercise__c": "a04P0000007RezuIAC",
 			"Id": "a03P00000091qC6IAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -1878,7 +1878,7 @@
 			},
 			"Exercise__c": "a04P0000007RezuIAC",
 			"Id": "a03P00000091qC7IAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -1888,7 +1888,7 @@
 			},
 			"Exercise__c": "a04P0000007RezuIAC",
 			"Id": "a03P00000091qC8IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -1898,7 +1898,7 @@
 			},
 			"Exercise__c": "a04P0000007RezuIAC",
 			"Id": "a03P00000091qC9IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -1908,7 +1908,7 @@
 			},
 			"Exercise__c": "a04P0000007RezuIAC",
 			"Id": "a03P00000091qCAIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -1918,7 +1918,7 @@
 			},
 			"Exercise__c": "a04P0000007RezuIAC",
 			"Id": "a03P00000091qCBIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -1928,7 +1928,7 @@
 			},
 			"Exercise__c": "a04P0000007RezvIAC",
 			"Id": "a03P00000091qCCIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -1938,7 +1938,7 @@
 			},
 			"Exercise__c": "a04P0000007RezvIAC",
 			"Id": "a03P00000091qCDIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -1948,7 +1948,7 @@
 			},
 			"Exercise__c": "a04P0000007RezvIAC",
 			"Id": "a03P00000091qCEIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -1958,7 +1958,7 @@
 			},
 			"Exercise__c": "a04P0000007RezvIAC",
 			"Id": "a03P00000091qCFIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -1968,7 +1968,7 @@
 			},
 			"Exercise__c": "a04P0000007RezvIAC",
 			"Id": "a03P00000091qCGIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -1978,7 +1978,7 @@
 			},
 			"Exercise__c": "a04P0000007RezvIAC",
 			"Id": "a03P00000091qCHIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -1988,7 +1988,7 @@
 			},
 			"Exercise__c": "a04P0000007RezvIAC",
 			"Id": "a03P00000091qCIIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -1998,7 +1998,7 @@
 			},
 			"Exercise__c": "a04P0000007RezvIAC",
 			"Id": "a03P00000091qCJIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -2008,7 +2008,7 @@
 			},
 			"Exercise__c": "a04P0000007RezvIAC",
 			"Id": "a03P00000091qCKIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -2018,7 +2018,7 @@
 			},
 			"Exercise__c": "a04P0000007RezvIAC",
 			"Id": "a03P00000091qCLIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -2028,7 +2028,7 @@
 			},
 			"Exercise__c": "a04P0000007RezvIAC",
 			"Id": "a03P00000091qCMIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -2038,7 +2038,7 @@
 			},
 			"Exercise__c": "a04P0000007RezvIAC",
 			"Id": "a03P00000091qCNIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -2048,7 +2048,7 @@
 			},
 			"Exercise__c": "a04P0000007RezwIAC",
 			"Id": "a03P00000091qCOIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -2058,7 +2058,7 @@
 			},
 			"Exercise__c": "a04P0000007RezwIAC",
 			"Id": "a03P00000091qCPIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -2068,7 +2068,7 @@
 			},
 			"Exercise__c": "a04P0000007RezwIAC",
 			"Id": "a03P00000091qCQIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -2078,7 +2078,7 @@
 			},
 			"Exercise__c": "a04P0000007RezwIAC",
 			"Id": "a03P00000091qCRIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -2088,7 +2088,7 @@
 			},
 			"Exercise__c": "a04P0000007RezwIAC",
 			"Id": "a03P00000091qCSIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -2098,7 +2098,7 @@
 			},
 			"Exercise__c": "a04P0000007RezwIAC",
 			"Id": "a03P00000091qCTIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -2108,7 +2108,7 @@
 			},
 			"Exercise__c": "a04P0000007RezwIAC",
 			"Id": "a03P00000091qCUIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -2118,7 +2118,7 @@
 			},
 			"Exercise__c": "a04P0000007RezwIAC",
 			"Id": "a03P00000091qCVIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -2128,7 +2128,7 @@
 			},
 			"Exercise__c": "a04P0000007RezwIAC",
 			"Id": "a03P00000091qCWIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -2138,7 +2138,7 @@
 			},
 			"Exercise__c": "a04P0000007RezwIAC",
 			"Id": "a03P00000091qCXIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -2148,7 +2148,7 @@
 			},
 			"Exercise__c": "a04P0000007RezwIAC",
 			"Id": "a03P00000091qCYIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -2158,7 +2158,7 @@
 			},
 			"Exercise__c": "a04P0000007RezwIAC",
 			"Id": "a03P00000091qCZIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -2168,7 +2168,7 @@
 			},
 			"Exercise__c": "a04P0000007RezxIAC",
 			"Id": "a03P00000091qCaIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -2178,7 +2178,7 @@
 			},
 			"Exercise__c": "a04P0000007RezxIAC",
 			"Id": "a03P00000091qCbIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -2188,7 +2188,7 @@
 			},
 			"Exercise__c": "a04P0000007RezxIAC",
 			"Id": "a03P00000091qCcIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -2198,7 +2198,7 @@
 			},
 			"Exercise__c": "a04P0000007RezxIAC",
 			"Id": "a03P00000091qCdIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -2208,7 +2208,7 @@
 			},
 			"Exercise__c": "a04P0000007RezxIAC",
 			"Id": "a03P00000091qCeIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -2218,7 +2218,7 @@
 			},
 			"Exercise__c": "a04P0000007RezxIAC",
 			"Id": "a03P00000091qCfIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -2228,7 +2228,7 @@
 			},
 			"Exercise__c": "a04P0000007RezxIAC",
 			"Id": "a03P00000091qCgIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -2238,7 +2238,7 @@
 			},
 			"Exercise__c": "a04P0000007RezxIAC",
 			"Id": "a03P00000091qChIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -2248,7 +2248,7 @@
 			},
 			"Exercise__c": "a04P0000007RezxIAC",
 			"Id": "a03P00000091qCiIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -2258,7 +2258,7 @@
 			},
 			"Exercise__c": "a04P0000007RezxIAC",
 			"Id": "a03P00000091qCjIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -2268,7 +2268,7 @@
 			},
 			"Exercise__c": "a04P0000007RezxIAC",
 			"Id": "a03P00000091qCkIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -2278,7 +2278,7 @@
 			},
 			"Exercise__c": "a04P0000007RezxIAC",
 			"Id": "a03P00000091qClIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -2288,7 +2288,7 @@
 			},
 			"Exercise__c": "a04P0000007RezyIAC",
 			"Id": "a03P00000091qCmIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -2298,7 +2298,7 @@
 			},
 			"Exercise__c": "a04P0000007RezyIAC",
 			"Id": "a03P00000091qCnIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -2308,7 +2308,7 @@
 			},
 			"Exercise__c": "a04P0000007RezyIAC",
 			"Id": "a03P00000091qCoIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -2318,7 +2318,7 @@
 			},
 			"Exercise__c": "a04P0000007RezyIAC",
 			"Id": "a03P00000091qCpIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -2328,7 +2328,7 @@
 			},
 			"Exercise__c": "a04P0000007RezyIAC",
 			"Id": "a03P00000091qCqIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -2338,7 +2338,7 @@
 			},
 			"Exercise__c": "a04P0000007RezyIAC",
 			"Id": "a03P00000091qCrIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -2348,7 +2348,7 @@
 			},
 			"Exercise__c": "a04P0000007RezyIAC",
 			"Id": "a03P00000091qCsIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -2358,7 +2358,7 @@
 			},
 			"Exercise__c": "a04P0000007RezyIAC",
 			"Id": "a03P00000091qCtIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -2368,7 +2368,7 @@
 			},
 			"Exercise__c": "a04P0000007RezyIAC",
 			"Id": "a03P00000091qCuIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -2378,7 +2378,7 @@
 			},
 			"Exercise__c": "a04P0000007RezyIAC",
 			"Id": "a03P00000091qCvIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -2388,7 +2388,7 @@
 			},
 			"Exercise__c": "a04P0000007RezyIAC",
 			"Id": "a03P00000091qCwIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -2398,7 +2398,7 @@
 			},
 			"Exercise__c": "a04P0000007RezyIAC",
 			"Id": "a03P00000091qCxIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -2408,7 +2408,7 @@
 			},
 			"Exercise__c": "a04P0000007RezzIAC",
 			"Id": "a03P00000091qCyIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -2418,7 +2418,7 @@
 			},
 			"Exercise__c": "a04P0000007RezzIAC",
 			"Id": "a03P00000091qCzIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -2428,7 +2428,7 @@
 			},
 			"Exercise__c": "a04P0000007RezzIAC",
 			"Id": "a03P00000091qD0IAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -2438,7 +2438,7 @@
 			},
 			"Exercise__c": "a04P0000007RezzIAC",
 			"Id": "a03P00000091qD1IAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -2448,7 +2448,7 @@
 			},
 			"Exercise__c": "a04P0000007RezzIAC",
 			"Id": "a03P00000091qD2IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -2458,7 +2458,7 @@
 			},
 			"Exercise__c": "a04P0000007RezzIAC",
 			"Id": "a03P00000091qD3IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -2468,7 +2468,7 @@
 			},
 			"Exercise__c": "a04P0000007RezzIAC",
 			"Id": "a03P00000091qD4IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -2478,7 +2478,7 @@
 			},
 			"Exercise__c": "a04P0000007RezzIAC",
 			"Id": "a03P00000091qD5IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -2488,7 +2488,7 @@
 			},
 			"Exercise__c": "a04P0000007RezzIAC",
 			"Id": "a03P00000091qD6IAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -2498,7 +2498,7 @@
 			},
 			"Exercise__c": "a04P0000007RezzIAC",
 			"Id": "a03P00000091qD7IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -2508,7 +2508,7 @@
 			},
 			"Exercise__c": "a04P0000007RezzIAC",
 			"Id": "a03P00000091qD8IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -2518,7 +2518,7 @@
 			},
 			"Exercise__c": "a04P0000007RezzIAC",
 			"Id": "a03P00000091qD9IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -2528,7 +2528,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf00IAC",
 			"Id": "a03P00000091qDAIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -2538,7 +2538,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf00IAC",
 			"Id": "a03P00000091qDBIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -2548,7 +2548,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf00IAC",
 			"Id": "a03P00000091qDCIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -2558,7 +2558,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf00IAC",
 			"Id": "a03P00000091qDDIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -2568,7 +2568,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf00IAC",
 			"Id": "a03P00000091qDEIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -2578,7 +2578,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf00IAC",
 			"Id": "a03P00000091qDFIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -2588,7 +2588,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf00IAC",
 			"Id": "a03P00000091qDGIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -2598,7 +2598,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf00IAC",
 			"Id": "a03P00000091qDHIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -2608,7 +2608,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf00IAC",
 			"Id": "a03P00000091qDIIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -2618,7 +2618,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf00IAC",
 			"Id": "a03P00000091qDJIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -2628,7 +2628,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf00IAC",
 			"Id": "a03P00000091qDKIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -2638,7 +2638,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf01IAC",
 			"Id": "a03P00000091qDLIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -2648,7 +2648,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf01IAC",
 			"Id": "a03P00000091qDMIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -2658,7 +2658,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf01IAC",
 			"Id": "a03P00000091qDNIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -2668,7 +2668,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf01IAC",
 			"Id": "a03P00000091qDOIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -2678,7 +2678,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf01IAC",
 			"Id": "a03P00000091qDPIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -2688,7 +2688,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf01IAC",
 			"Id": "a03P00000091qDQIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -2698,7 +2698,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf01IAC",
 			"Id": "a03P00000091qDRIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -2708,7 +2708,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf01IAC",
 			"Id": "a03P00000091qDSIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -2718,7 +2718,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf01IAC",
 			"Id": "a03P00000091qDTIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -2728,7 +2728,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf01IAC",
 			"Id": "a03P00000091qDUIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -2738,7 +2738,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf01IAC",
 			"Id": "a03P00000091qDVIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -2748,7 +2748,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf01IAC",
 			"Id": "a03P00000091qDWIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -2758,7 +2758,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf02IAC",
 			"Id": "a03P00000091qDXIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -2768,7 +2768,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf02IAC",
 			"Id": "a03P00000091qDYIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -2778,7 +2778,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf02IAC",
 			"Id": "a03P00000091qDZIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -2788,7 +2788,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf02IAC",
 			"Id": "a03P00000091qDaIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -2798,7 +2798,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf02IAC",
 			"Id": "a03P00000091qDbIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -2808,7 +2808,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf02IAC",
 			"Id": "a03P00000091qDcIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -2818,7 +2818,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf02IAC",
 			"Id": "a03P00000091qDdIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -2828,7 +2828,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf03IAC",
 			"Id": "a03P00000091qDeIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -2838,7 +2838,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf03IAC",
 			"Id": "a03P00000091qDfIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -2848,7 +2848,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf03IAC",
 			"Id": "a03P00000091qDgIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -2858,7 +2858,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf03IAC",
 			"Id": "a03P00000091qDhIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -2868,7 +2868,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf03IAC",
 			"Id": "a03P00000091qDiIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -2878,7 +2878,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf03IAC",
 			"Id": "a03P00000091qDjIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -2888,7 +2888,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf03IAC",
 			"Id": "a03P00000091qDkIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -2898,7 +2898,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf03IAC",
 			"Id": "a03P00000091qDlIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -2908,7 +2908,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf03IAC",
 			"Id": "a03P00000091qDmIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -2918,7 +2918,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf03IAC",
 			"Id": "a03P00000091qDnIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -2928,7 +2928,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf03IAC",
 			"Id": "a03P00000091qDoIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -2938,7 +2938,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf03IAC",
 			"Id": "a03P00000091qDpIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -2948,7 +2948,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf04IAC",
 			"Id": "a03P00000091qDqIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -2958,7 +2958,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf04IAC",
 			"Id": "a03P00000091qDrIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -2968,7 +2968,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf04IAC",
 			"Id": "a03P00000091qDsIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -2978,7 +2978,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf04IAC",
 			"Id": "a03P00000091qDtIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -2988,7 +2988,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf04IAC",
 			"Id": "a03P00000091qDuIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -2998,7 +2998,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf04IAC",
 			"Id": "a03P00000091qDvIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -3008,7 +3008,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf04IAC",
 			"Id": "a03P00000091qDwIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -3018,7 +3018,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf04IAC",
 			"Id": "a03P00000091qDxIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -3028,7 +3028,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf04IAC",
 			"Id": "a03P00000091qDyIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -3038,7 +3038,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf04IAC",
 			"Id": "a03P00000091qDzIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -3048,7 +3048,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf04IAC",
 			"Id": "a03P00000091qE0IAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -3058,7 +3058,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf04IAC",
 			"Id": "a03P00000091qE1IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -3068,7 +3068,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf05IAC",
 			"Id": "a03P00000091qE2IAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -3078,7 +3078,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf05IAC",
 			"Id": "a03P00000091qE3IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -3088,7 +3088,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf05IAC",
 			"Id": "a03P00000091qE4IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -3098,7 +3098,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf05IAC",
 			"Id": "a03P00000091qE5IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -3108,7 +3108,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf05IAC",
 			"Id": "a03P00000091qE6IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -3118,7 +3118,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf05IAC",
 			"Id": "a03P00000091qE7IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -3128,7 +3128,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf05IAC",
 			"Id": "a03P00000091qE8IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -3138,7 +3138,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf05IAC",
 			"Id": "a03P00000091qE9IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -3148,7 +3148,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf05IAC",
 			"Id": "a03P00000091qEAIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -3158,7 +3158,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf05IAC",
 			"Id": "a03P00000091qEBIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -3168,7 +3168,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf05IAC",
 			"Id": "a03P00000091qECIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -3178,7 +3178,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf05IAC",
 			"Id": "a03P00000091qEDIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -3188,7 +3188,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf06IAC",
 			"Id": "a03P00000091qEEIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -3198,7 +3198,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf06IAC",
 			"Id": "a03P00000091qEFIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -3208,7 +3208,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf06IAC",
 			"Id": "a03P00000091qEGIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -3218,7 +3218,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf06IAC",
 			"Id": "a03P00000091qEHIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -3228,7 +3228,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf06IAC",
 			"Id": "a03P00000091qEIIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -3238,7 +3238,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf06IAC",
 			"Id": "a03P00000091qEJIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -3248,7 +3248,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf06IAC",
 			"Id": "a03P00000091qEKIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -3258,7 +3258,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf06IAC",
 			"Id": "a03P00000091qELIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -3268,7 +3268,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf06IAC",
 			"Id": "a03P00000091qEMIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -3278,7 +3278,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf06IAC",
 			"Id": "a03P00000091qENIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -3288,7 +3288,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf06IAC",
 			"Id": "a03P00000091qEOIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -3298,7 +3298,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf06IAC",
 			"Id": "a03P00000091qEPIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -3308,7 +3308,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf07IAC",
 			"Id": "a03P00000091qEQIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -3318,7 +3318,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf07IAC",
 			"Id": "a03P00000091qERIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -3328,7 +3328,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf07IAC",
 			"Id": "a03P00000091qESIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -3338,7 +3338,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf07IAC",
 			"Id": "a03P00000091qETIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -3348,7 +3348,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf07IAC",
 			"Id": "a03P00000091qEUIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -3358,7 +3358,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf07IAC",
 			"Id": "a03P00000091qEVIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -3368,7 +3368,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf07IAC",
 			"Id": "a03P00000091qEWIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -3378,7 +3378,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf07IAC",
 			"Id": "a03P00000091qEXIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -3388,7 +3388,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf07IAC",
 			"Id": "a03P00000091qEYIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -3398,7 +3398,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf07IAC",
 			"Id": "a03P00000091qEZIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -3408,7 +3408,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf07IAC",
 			"Id": "a03P00000091qEaIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -3418,7 +3418,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf07IAC",
 			"Id": "a03P00000091qEbIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -3428,7 +3428,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf08IAC",
 			"Id": "a03P00000091qEcIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -3438,7 +3438,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf08IAC",
 			"Id": "a03P00000091qEdIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -3448,7 +3448,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf08IAC",
 			"Id": "a03P00000091qEeIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -3458,7 +3458,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf08IAC",
 			"Id": "a03P00000091qEfIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -3468,7 +3468,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf08IAC",
 			"Id": "a03P00000091qEgIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -3478,7 +3478,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf08IAC",
 			"Id": "a03P00000091qEhIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -3488,7 +3488,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf08IAC",
 			"Id": "a03P00000091qEiIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -3498,7 +3498,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf08IAC",
 			"Id": "a03P00000091qEjIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -3508,7 +3508,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf08IAC",
 			"Id": "a03P00000091qEkIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -3518,7 +3518,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf08IAC",
 			"Id": "a03P00000091qElIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -3528,7 +3528,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf08IAC",
 			"Id": "a03P00000091qEmIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -3538,7 +3538,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf08IAC",
 			"Id": "a03P00000091qEnIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -3548,7 +3548,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf09IAC",
 			"Id": "a03P00000091qEoIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -3558,7 +3558,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf09IAC",
 			"Id": "a03P00000091qEpIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -3568,7 +3568,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf09IAC",
 			"Id": "a03P00000091qEqIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -3578,7 +3578,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf09IAC",
 			"Id": "a03P00000091qErIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -3588,7 +3588,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf09IAC",
 			"Id": "a03P00000091qEsIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -3598,7 +3598,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf09IAC",
 			"Id": "a03P00000091qEtIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -3608,7 +3608,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf09IAC",
 			"Id": "a03P00000091qEuIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -3618,7 +3618,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf09IAC",
 			"Id": "a03P00000091qEvIAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -3628,7 +3628,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf09IAC",
 			"Id": "a03P00000091qEwIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -3638,7 +3638,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf09IAC",
 			"Id": "a03P00000091qExIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -3648,7 +3648,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf09IAC",
 			"Id": "a03P00000091qEyIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -3658,7 +3658,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0AIAS",
 			"Id": "a03P00000091qEzIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -3668,7 +3668,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0AIAS",
 			"Id": "a03P00000091qF0IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -3678,7 +3678,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0AIAS",
 			"Id": "a03P00000091qF1IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -3688,7 +3688,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0AIAS",
 			"Id": "a03P00000091qF2IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -3698,7 +3698,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0AIAS",
 			"Id": "a03P00000091qF3IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -3708,7 +3708,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0AIAS",
 			"Id": "a03P00000091qF4IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -3718,7 +3718,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0AIAS",
 			"Id": "a03P00000091qF5IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -3728,7 +3728,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0AIAS",
 			"Id": "a03P00000091qF6IAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -3738,7 +3738,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0AIAS",
 			"Id": "a03P00000091qF7IAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -3748,7 +3748,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0AIAS",
 			"Id": "a03P00000091qF8IAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -3758,7 +3758,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0AIAS",
 			"Id": "a03P00000091qF9IAI",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -3768,7 +3768,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0AIAS",
 			"Id": "a03P00000091qFAIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -3778,7 +3778,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0BIAS",
 			"Id": "a03P00000091qFBIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyHIAV"
 		},
 		{
@@ -3788,7 +3788,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0BIAS",
 			"Id": "a03P00000091qFCIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyDIAV"
 		},
 		{
@@ -3798,7 +3798,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0BIAS",
 			"Id": "a03P00000091qFDIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyBIAV"
 		},
 		{
@@ -3808,7 +3808,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0BIAS",
 			"Id": "a03P00000091qFEIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyGIAV"
 		},
 		{
@@ -3818,7 +3818,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0BIAS",
 			"Id": "a03P00000091qFFIAY",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhQyCIAV"
 		},
 		{
@@ -3828,7 +3828,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0BIAS",
 			"Id": "a03P00000091qFGIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy9IAF"
 		},
 		{
@@ -3838,7 +3838,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0BIAS",
 			"Id": "a03P00000091qFHIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQy8IAF"
 		},
 		{
@@ -3848,7 +3848,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0BIAS",
 			"Id": "a03P00000091qFIIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyEIAV"
 		},
 		{
@@ -3858,7 +3858,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0BIAS",
 			"Id": "a03P00000091qFJIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyAIAV"
 		},
 		{
@@ -3868,7 +3868,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0BIAS",
 			"Id": "a03P00000091qFKIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyJIAV"
 		},
 		{
@@ -3878,7 +3878,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0BIAS",
 			"Id": "a03P00000091qFLIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyFIAV"
 		},
 		{
@@ -3888,7 +3888,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0BIAS",
 			"Id": "a03P00000091qFMIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyIIAV"
 		},
 		{
@@ -3898,7 +3898,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wbtIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyKIAV"
 		},
 		{
@@ -3908,7 +3908,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wbuIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9XIAV"
 		},
 		{
@@ -3918,7 +3918,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wbvIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9NIAV"
 		},
 		{
@@ -3928,7 +3928,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wbwIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRA1IAN"
 		},
 		{
@@ -3938,7 +3938,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wbxIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAQIA3"
 		},
 		{
@@ -3948,7 +3948,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wbyIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAGIA3"
 		},
 		{
@@ -3958,7 +3958,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wbzIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9SIAV"
 		},
 		{
@@ -3968,7 +3968,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wc0IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAfIAN"
 		},
 		{
@@ -3978,7 +3978,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wc1IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRA6IAN"
 		},
 		{
@@ -3988,7 +3988,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wc2IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9cIAF"
 		},
 		{
@@ -3998,7 +3998,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wc3IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRALIA3"
 		},
 		{
@@ -4008,7 +4008,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wc4IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9wIAF"
 		},
 		{
@@ -4018,7 +4018,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wc5IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRABIA3"
 		},
 		{
@@ -4028,7 +4028,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wc6IAA",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhRAaIAN"
 		},
 		{
@@ -4038,7 +4038,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wc7IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9hIAF"
 		},
 		{
@@ -4048,7 +4048,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0IIAS",
 			"Id": "a03P00000091wc8IAA",
-			"Status__c": "LATER",
+			"Status__c": "02-LATER",
 			"Student__c": "a06P000000AhR9rIAF"
 		},
 		{
@@ -4058,7 +4058,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wg9IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyKIAV"
 		},
 		{
@@ -4068,7 +4068,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgAIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9XIAV"
 		},
 		{
@@ -4078,7 +4078,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgBIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9NIAV"
 		},
 		{
@@ -4088,7 +4088,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgCIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRA1IAN"
 		},
 		{
@@ -4098,7 +4098,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgDIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAQIA3"
 		},
 		{
@@ -4108,7 +4108,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgEIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAGIA3"
 		},
 		{
@@ -4118,7 +4118,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgFIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9SIAV"
 		},
 		{
@@ -4128,7 +4128,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgGIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAfIAN"
 		},
 		{
@@ -4138,7 +4138,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgHIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRA6IAN"
 		},
 		{
@@ -4148,7 +4148,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgIIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9cIAF"
 		},
 		{
@@ -4158,7 +4158,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgJIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRALIA3"
 		},
 		{
@@ -4168,7 +4168,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgKIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9wIAF"
 		},
 		{
@@ -4178,7 +4178,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgLIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRABIA3"
 		},
 		{
@@ -4188,7 +4188,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgMIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAaIAN"
 		},
 		{
@@ -4198,7 +4198,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgNIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9hIAF"
 		},
 		{
@@ -4208,7 +4208,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0JIAS",
 			"Id": "a03P00000091wgOIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9rIAF"
 		},
 		{
@@ -4218,7 +4218,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wrZIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyKIAV"
 		},
 		{
@@ -4228,7 +4228,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wraIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9XIAV"
 		},
 		{
@@ -4238,7 +4238,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wrbIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9NIAV"
 		},
 		{
@@ -4248,7 +4248,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wrcIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRA1IAN"
 		},
 		{
@@ -4258,7 +4258,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wrdIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAQIA3"
 		},
 		{
@@ -4268,7 +4268,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wreIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAGIA3"
 		},
 		{
@@ -4278,7 +4278,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wrfIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9SIAV"
 		},
 		{
@@ -4288,7 +4288,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wrgIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAfIAN"
 		},
 		{
@@ -4298,7 +4298,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wrhIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRA6IAN"
 		},
 		{
@@ -4308,7 +4308,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wriIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9cIAF"
 		},
 		{
@@ -4318,7 +4318,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wrjIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRALIA3"
 		},
 		{
@@ -4328,7 +4328,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wrkIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9wIAF"
 		},
 		{
@@ -4338,7 +4338,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wrlIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRABIA3"
 		},
 		{
@@ -4348,7 +4348,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wrmIAA",
-			"Status__c": "WORKING",
+			"Status__c": "01-WORKING",
 			"Student__c": "a06P000000AhRAaIAN"
 		},
 		{
@@ -4358,7 +4358,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wrnIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9hIAF"
 		},
 		{
@@ -4368,7 +4368,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0LIAS",
 			"Id": "a03P00000091wroIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9rIAF"
 		},
 		{
@@ -4378,7 +4378,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xCYIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyKIAV"
 		},
 		{
@@ -4388,7 +4388,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xCZIAY",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9XIAV"
 		},
 		{
@@ -4398,7 +4398,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xCaIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9NIAV"
 		},
 		{
@@ -4408,7 +4408,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xCbIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRA1IAN"
 		},
 		{
@@ -4418,7 +4418,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xCcIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAQIA3"
 		},
 		{
@@ -4428,7 +4428,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xCdIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAGIA3"
 		},
 		{
@@ -4438,7 +4438,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xCeIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9SIAV"
 		},
 		{
@@ -4448,7 +4448,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xCfIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAfIAN"
 		},
 		{
@@ -4458,7 +4458,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xCgIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRA6IAN"
 		},
 		{
@@ -4468,7 +4468,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xChIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9cIAF"
 		},
 		{
@@ -4478,7 +4478,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xCiIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRALIA3"
 		},
 		{
@@ -4488,7 +4488,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xCjIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9wIAF"
 		},
 		{
@@ -4498,7 +4498,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xCkIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRABIA3"
 		},
 		{
@@ -4508,7 +4508,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xClIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAaIAN"
 		},
 		{
@@ -4518,7 +4518,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xCmIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9hIAF"
 		},
 		{
@@ -4528,7 +4528,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0MIAS",
 			"Id": "a03P00000091xCnIAI",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9rIAF"
 		},
 		{
@@ -4538,7 +4538,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xp8IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyKIAV"
 		},
 		{
@@ -4548,7 +4548,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xp9IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9XIAV"
 		},
 		{
@@ -4558,7 +4558,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xpAIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9NIAV"
 		},
 		{
@@ -4568,7 +4568,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xpBIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRA1IAN"
 		},
 		{
@@ -4578,7 +4578,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xpCIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAQIA3"
 		},
 		{
@@ -4588,7 +4588,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xpDIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAGIA3"
 		},
 		{
@@ -4598,7 +4598,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xpEIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9SIAV"
 		},
 		{
@@ -4608,7 +4608,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xpFIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAfIAN"
 		},
 		{
@@ -4618,7 +4618,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xpGIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRA6IAN"
 		},
 		{
@@ -4628,7 +4628,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xpHIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9cIAF"
 		},
 		{
@@ -4638,7 +4638,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xpIIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRALIA3"
 		},
 		{
@@ -4648,7 +4648,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xpJIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9wIAF"
 		},
 		{
@@ -4658,7 +4658,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xpKIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRABIA3"
 		},
 		{
@@ -4668,7 +4668,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xpLIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAaIAN"
 		},
 		{
@@ -4678,7 +4678,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xpMIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9hIAF"
 		},
 		{
@@ -4688,7 +4688,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0NIAS",
 			"Id": "a03P00000091xpNIAQ",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9rIAF"
 		},
 		{
@@ -4698,7 +4698,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xpiIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyKIAV"
 		},
 		{
@@ -4708,7 +4708,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xpjIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9XIAV"
 		},
 		{
@@ -4718,7 +4718,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xpkIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9NIAV"
 		},
 		{
@@ -4728,7 +4728,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xplIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRA1IAN"
 		},
 		{
@@ -4738,7 +4738,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xpmIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAQIA3"
 		},
 		{
@@ -4748,7 +4748,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xpnIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAGIA3"
 		},
 		{
@@ -4758,7 +4758,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xpoIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9SIAV"
 		},
 		{
@@ -4768,7 +4768,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xppIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAfIAN"
 		},
 		{
@@ -4778,7 +4778,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xpqIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRA6IAN"
 		},
 		{
@@ -4788,7 +4788,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xprIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9cIAF"
 		},
 		{
@@ -4798,7 +4798,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xpsIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRALIA3"
 		},
 		{
@@ -4808,7 +4808,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xptIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9wIAF"
 		},
 		{
@@ -4818,7 +4818,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xpuIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRABIA3"
 		},
 		{
@@ -4828,7 +4828,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xpvIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAaIAN"
 		},
 		{
@@ -4838,7 +4838,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xpwIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9hIAF"
 		},
 		{
@@ -4848,7 +4848,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0OIAS",
 			"Id": "a03P00000091xpxIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9rIAF"
 		},
 		{
@@ -4858,7 +4858,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xqrIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhQyKIAV"
 		},
 		{
@@ -4868,7 +4868,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xqsIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9XIAV"
 		},
 		{
@@ -4878,7 +4878,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xqtIAA",
-			"Status__c": "START",
+			"Status__c": "00-START",
 			"Student__c": "a06P000000AhR9NIAV"
 		},
 		{
@@ -4888,7 +4888,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xquIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRA1IAN"
 		},
 		{
@@ -4898,7 +4898,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xqvIAA",
-			"Status__c": "START",
+			"Status__c": "00-START",
 			"Student__c": "a06P000000AhRAQIA3"
 		},
 		{
@@ -4908,7 +4908,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xqwIAA",
-			"Status__c": "START",
+			"Status__c": "00-START",
 			"Student__c": "a06P000000AhRAGIA3"
 		},
 		{
@@ -4918,7 +4918,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xqxIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9SIAV"
 		},
 		{
@@ -4928,7 +4928,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xqyIAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRAfIAN"
 		},
 		{
@@ -4938,7 +4938,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xqzIAA",
-			"Status__c": "START",
+			"Status__c": "00-START",
 			"Student__c": "a06P000000AhRA6IAN"
 		},
 		{
@@ -4948,7 +4948,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xr0IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9cIAF"
 		},
 		{
@@ -4958,7 +4958,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xr1IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRALIA3"
 		},
 		{
@@ -4968,7 +4968,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xr2IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9wIAF"
 		},
 		{
@@ -4978,7 +4978,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xr3IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhRABIA3"
 		},
 		{
@@ -4988,7 +4988,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xr4IAA",
-			"Status__c": "START",
+			"Status__c": "00-START",
 			"Student__c": "a06P000000AhRAaIAN"
 		},
 		{
@@ -4998,7 +4998,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xr5IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9hIAF"
 		},
 		{
@@ -5008,7 +5008,7 @@
 			},
 			"Exercise__c": "a04P0000007Rf0PIAS",
 			"Id": "a03P00000091xr6IAA",
-			"Status__c": "DONE",
+			"Status__c": "03-DONE",
 			"Student__c": "a06P000000AhR9rIAF"
 		}
 	],
