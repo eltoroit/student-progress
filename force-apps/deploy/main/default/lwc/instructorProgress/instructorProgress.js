@@ -53,7 +53,7 @@ export default class ClassProgress extends LightningElement {
 						Status: ExS.Status__c,
 						DTTM: new Date(ExS.LastModifiedDate)
 					};
-					if (ExS.Status__c === "DONE") {
+					if (ExS.Status__c === "03-DONE") {
 						newExS.Ranking = index + 1;
 						newExS.Points = points--;
 					}

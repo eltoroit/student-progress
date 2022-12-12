@@ -201,16 +201,20 @@ export default class Util {
 	static getEmoji({ status }) {
 		let output = "";
 		switch (status) {
-			case "DONE": {
+			case "03-DONE": {
 				output = "✅";
 				break;
 			}
-			case "WORKING": {
+			case "01-WORKING": {
 				output = "👩‍💻";
 				break;
 			}
-			case "LATER": {
+			case "02-LATER": {
 				output = "🕒";
+				break;
+			}
+			case "00-START": {
+				output = "💻";
 				break;
 			}
 			default:

@@ -89,13 +89,13 @@ export default class Student extends LightningElement {
 	}
 
 	onDoneClick() {
-		this.updateStatus("DONE");
+		this.updateStatus("03-DONE");
 	}
 	onWorkingClick() {
-		this.updateStatus("WORKING");
+		this.updateStatus("01-WORKING");
 	}
 	onLaterClick() {
-		this.updateStatus("LATER");
+		this.updateStatus("02-LATER");
 	}
 	updateStatus(status) {
 		this.loading = true;

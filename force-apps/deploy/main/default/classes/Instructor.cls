@@ -166,7 +166,7 @@ public without sharing class Instructor {
 									new Exercise_X_Student__c(
 										Student__c = studentId,
 										Exercise__c = exerciseId,
-										Status__c = 'START'
+										Status__c = '00-START'
 									)
 								);
 							}

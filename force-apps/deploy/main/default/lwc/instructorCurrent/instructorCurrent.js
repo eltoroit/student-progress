@@ -8,9 +8,9 @@ import getStudentsProgress from "@salesforce/apex/Instructor.getStudentsProgress
 import getAllExercisesForCxD from "@salesforce/apex/Instructor.getAllExercisesForCxD";
 
 const actions = [
-	{ label: "I'm done", name: "Status|DONE" },
-	{ label: "I'm working", name: "Status|WORKING" },
-	{ label: "I'll finish later", name: "Status|LATER" }
+	{ label: "I'm done", name: "Status|03-DONE" },
+	{ label: "I'm working", name: "Status|01-WORKING" },
+	{ label: "I'll finish later", name: "Status|02-LATER" }
 ];
 
 const columns = [
@@ -50,7 +50,7 @@ export default class InstructorCurrent extends LightningElement {
 	get ui() {
 		const exCurrent = this.currentExercise;
 		const currentCxD = this.currentCourseDeliveryKey;
-		const exIsActive = this.activeExercise?.Id && this.activeExercise?.Id === this.currentExercise?.Id ;
+		const exIsActive = this.currentExercise?.Id && this.activeExercise?.Id === this.currentExercise?.Id && this.currentCourseDelivery.Delivery__r.CurrentExerciseIsActive__c;
 		let exercises = {};
 		if (this.exercises.length > 0) {
 			exercises = {
