@@ -214,7 +214,7 @@ export default class Util {
 				break;
 			}
 			case "00-START": {
-				output = "💻";
+				output = "⚒️";
 				break;
 			}
 			default:
