@@ -374,6 +374,7 @@
 		"CampaignChangeEvent": [],
 		"CampaignFeed": [],
 		"CampaignHistory": [],
+		"CampaignInfluenceModel": [],
 		"CampaignMember": [],
 		"CampaignMemberChangeEvent": [],
 		"CampaignMemberStatus": [],
@@ -507,6 +508,13 @@
 		"ContractChangeEvent": [],
 		"ContractContactRole": [],
 		"ContractFeed": [],
+		"ContractGroupPlan": [],
+		"ContractGroupPlanFeed": [],
+		"ContractGroupPlanGroupClass": [],
+		"ContractGroupPlanGroupClassFeed": [],
+		"ContractGroupPlanGroupClassHistory": [],
+		"ContractGroupPlanGroupClassShare": [],
+		"ContractGroupPlanHistory": [],
 		"ContractHistory": [],
 		"ContractLineItem": [],
 		"ContractLineItemChangeEvent": [],
@@ -778,6 +786,20 @@
 		"FormulaFunctionCategory": [],
 		"GrantedByLicense": [],
 		"Group": [],
+		"GroupCensus": [],
+		"GroupCensusFeed": [],
+		"GroupCensusHistory": [],
+		"GroupCensusMember": [],
+		"GroupCensusMemberFeed": [],
+		"GroupCensusMemberHistory": [],
+		"GroupCensusMemberPlan": [],
+		"GroupCensusMemberPlanFeed": [],
+		"GroupCensusMemberPlanHistory": [],
+		"GroupCensusShare": [],
+		"GroupClass": [],
+		"GroupClassContribution": [],
+		"GroupClassContributionHistory": [],
+		"GroupClassHistory": [],
 		"GroupMember": [],
 		"GtwyProvPaymentMethodType": [],
 		"Holiday": [],
@@ -798,6 +820,10 @@
 		"IndividualHistory": [],
 		"IndividualShare": [],
 		"InstalledMobileApp": [],
+		"InsuranceContract": [],
+		"InsuranceContractFeed": [],
+		"InsuranceContractHistory": [],
+		"InsuranceContractShare": [],
 		"Invoice": [],
 		"InvoiceFeed": [],
 		"InvoiceHistory": [],
@@ -1092,6 +1118,16 @@
 		"ProductWarrantyTermFeed": [],
 		"ProductWarrantyTermHistory": [],
 		"Profile": [],
+		"ProfileSkill": [],
+		"ProfileSkillEndorsement": [],
+		"ProfileSkillEndorsementFeed": [],
+		"ProfileSkillEndorsementHistory": [],
+		"ProfileSkillFeed": [],
+		"ProfileSkillHistory": [],
+		"ProfileSkillShare": [],
+		"ProfileSkillUser": [],
+		"ProfileSkillUserFeed": [],
+		"ProfileSkillUserHistory": [],
 		"Prompt": [],
 		"PromptAction": [],
 		"PromptActionShare": [],
@@ -1475,34 +1511,33 @@
 			"Exercise_X_Student__c.SystemModstamp": [
 				"Must be createable"
 			],
-			"Note__c.IsDeleted": [
+			"Student__c.OwnerId": [
+				"Reference, but it points to 0 or more than 1 sObject: | Group | User | "
+			],
+			"Student__c.IsDeleted": [
 				"Must be createable"
 			],
-			"Note__c.Name": [
-				"Can't be autoNumber",
+			"Student__c.CreatedDate": [
 				"Must be createable"
 			],
-			"Note__c.CreatedDate": [
-				"Must be createable"
-			],
-			"Note__c.CreatedById": [
+			"Student__c.CreatedById": [
 				"Must be createable",
 				"Parent sObject [User] is not processed"
 			],
-			"Note__c.LastModifiedDate": [
+			"Student__c.LastModifiedDate": [
 				"Must be createable"
 			],
-			"Note__c.LastModifiedById": [
+			"Student__c.LastModifiedById": [
 				"Must be createable",
 				"Parent sObject [User] is not processed"
 			],
-			"Note__c.SystemModstamp": [
+			"Student__c.SystemModstamp": [
 				"Must be createable"
 			],
-			"Note__c.LastViewedDate": [
+			"Student__c.LastViewedDate": [
 				"Must be createable"
 			],
-			"Note__c.LastReferencedDate": [
+			"Student__c.LastReferencedDate": [
 				"Must be createable"
 			],
 			"Exercise__c.OwnerId": [
@@ -1534,6 +1569,60 @@
 			"Exercise__c.LastReferencedDate": [
 				"Must be createable"
 			],
+			"Course_X_Delivery__c.IsDeleted": [
+				"Must be createable"
+			],
+			"Course_X_Delivery__c.Name": [
+				"Can't be autoNumber",
+				"Must be createable"
+			],
+			"Course_X_Delivery__c.CreatedDate": [
+				"Must be createable"
+			],
+			"Course_X_Delivery__c.CreatedById": [
+				"Must be createable",
+				"Parent sObject [User] is not processed"
+			],
+			"Course_X_Delivery__c.LastModifiedDate": [
+				"Must be createable"
+			],
+			"Course_X_Delivery__c.LastModifiedById": [
+				"Must be createable",
+				"Parent sObject [User] is not processed"
+			],
+			"Course_X_Delivery__c.SystemModstamp": [
+				"Must be createable"
+			],
+			"Note__c.IsDeleted": [
+				"Must be createable"
+			],
+			"Note__c.Name": [
+				"Can't be autoNumber",
+				"Must be createable"
+			],
+			"Note__c.CreatedDate": [
+				"Must be createable"
+			],
+			"Note__c.CreatedById": [
+				"Must be createable",
+				"Parent sObject [User] is not processed"
+			],
+			"Note__c.LastModifiedDate": [
+				"Must be createable"
+			],
+			"Note__c.LastModifiedById": [
+				"Must be createable",
+				"Parent sObject [User] is not processed"
+			],
+			"Note__c.SystemModstamp": [
+				"Must be createable"
+			],
+			"Note__c.LastViewedDate": [
+				"Must be createable"
+			],
+			"Note__c.LastReferencedDate": [
+				"Must be createable"
+			],
 			"Course__c.OwnerId": [
 				"Reference, but it points to 0 or more than 1 sObject: | Group | User | "
 			],
@@ -1561,59 +1650,6 @@
 				"Must be createable"
 			],
 			"Course__c.LastReferencedDate": [
-				"Must be createable"
-			],
-			"Student__c.OwnerId": [
-				"Reference, but it points to 0 or more than 1 sObject: | Group | User | "
-			],
-			"Student__c.IsDeleted": [
-				"Must be createable"
-			],
-			"Student__c.CreatedDate": [
-				"Must be createable"
-			],
-			"Student__c.CreatedById": [
-				"Must be createable",
-				"Parent sObject [User] is not processed"
-			],
-			"Student__c.LastModifiedDate": [
-				"Must be createable"
-			],
-			"Student__c.LastModifiedById": [
-				"Must be createable",
-				"Parent sObject [User] is not processed"
-			],
-			"Student__c.SystemModstamp": [
-				"Must be createable"
-			],
-			"Student__c.LastViewedDate": [
-				"Must be createable"
-			],
-			"Student__c.LastReferencedDate": [
-				"Must be createable"
-			],
-			"Course_X_Delivery__c.IsDeleted": [
-				"Must be createable"
-			],
-			"Course_X_Delivery__c.Name": [
-				"Can't be autoNumber",
-				"Must be createable"
-			],
-			"Course_X_Delivery__c.CreatedDate": [
-				"Must be createable"
-			],
-			"Course_X_Delivery__c.CreatedById": [
-				"Must be createable",
-				"Parent sObject [User] is not processed"
-			],
-			"Course_X_Delivery__c.LastModifiedDate": [
-				"Must be createable"
-			],
-			"Course_X_Delivery__c.LastModifiedById": [
-				"Must be createable",
-				"Parent sObject [User] is not processed"
-			],
-			"Course_X_Delivery__c.SystemModstamp": [
 				"Must be createable"
 			],
 			"Delivery__c.OwnerId": [
@@ -1773,130 +1809,133 @@
 			"Exercise_X_Student__c.TopicAssignments => TopicAssignment": [
 				"Child sObject [TopicAssignment] is not processed"
 			],
-			"Note__c.null => AIInsightValue": [
+			"Student__c.null => AIInsightValue": [
 				"Child sObject [AIInsightValue] is not processed"
 			],
-			"Note__c.null => AIRecordInsight": [
+			"Student__c.null => AIRecordInsight": [
 				"Child sObject [AIRecordInsight] is not processed"
 			],
-			"Note__c.AttachedContentDocuments => AttachedContentDocument": [
+			"Student__c.AttachedContentDocuments => AttachedContentDocument": [
 				"Child sObject [AttachedContentDocument] is not processed"
 			],
-			"Note__c.Attachments => Attachment": [
+			"Student__c.Attachments => Attachment": [
 				"Child sObject [Attachment] is not processed"
 			],
-			"Note__c.RecordAssociatedGroups => CollaborationGroupRecord": [
+			"Student__c.RecordAssociatedGroups => CollaborationGroupRecord": [
 				"Child sObject [CollaborationGroupRecord] is not processed"
 			],
-			"Note__c.CombinedAttachments => CombinedAttachment": [
+			"Student__c.CombinedAttachments => CombinedAttachment": [
 				"Child sObject [CombinedAttachment] is not processed"
 			],
-			"Note__c.ContactRequests => ContactRequest": [
+			"Student__c.ContactRequests => ContactRequest": [
 				"Child sObject [ContactRequest] is not processed"
 			],
-			"Note__c.null => ContentDistribution": [
+			"Student__c.null => ContentDistribution": [
 				"Child sObject [ContentDistribution] is not processed"
 			],
-			"Note__c.ContentDocumentLinks => ContentDocumentLink": [
+			"Student__c.ContentDocumentLinks => ContentDocumentLink": [
 				"Child sObject [ContentDocumentLink] is not processed"
 			],
-			"Note__c.null => ContentDocumentLinkChangeEvent": [
+			"Student__c.null => ContentDocumentLinkChangeEvent": [
 				"Child sObject [ContentDocumentLinkChangeEvent] is not processed"
 			],
-			"Note__c.null => ContentVersion": [
+			"Student__c.null => ContentVersion": [
 				"Child sObject [ContentVersion] is not processed"
 			],
-			"Note__c.null => ContentVersionChangeEvent": [
+			"Student__c.null => ContentVersionChangeEvent": [
 				"Child sObject [ContentVersionChangeEvent] is not processed"
 			],
-			"Note__c.DuplicateRecordItems => DuplicateRecordItem": [
+			"Student__c.DuplicateRecordItems => DuplicateRecordItem": [
 				"Child sObject [DuplicateRecordItem] is not processed"
 			],
-			"Note__c.null => EmailMessageChangeEvent": [
+			"Student__c.null => EmailMessageChangeEvent": [
 				"Child sObject [EmailMessageChangeEvent] is not processed"
 			],
-			"Note__c.FeedSubscriptionsForEntity => EntitySubscription": [
+			"Student__c.FeedSubscriptionsForEntity => EntitySubscription": [
 				"Child sObject [EntitySubscription] is not processed"
 			],
-			"Note__c.null => EventChangeEvent": [
+			"Student__c.null => EventChangeEvent": [
 				"Child sObject [EventChangeEvent] is not processed"
 			],
-			"Note__c.null => EventRelationChangeEvent": [
+			"Student__c.null => EventRelationChangeEvent": [
 				"Child sObject [EventRelationChangeEvent] is not processed"
 			],
-			"Note__c.null => FeedComment": [
+			"Student__c.null => FeedComment": [
 				"Child sObject [FeedComment] is not processed"
 			],
-			"Note__c.null => FeedItem": [
+			"Student__c.null => FeedItem": [
 				"Child sObject [FeedItem] is not processed"
 			],
-			"Note__c.FinanceBalanceSnapshots => FinanceBalanceSnapshot": [
+			"Student__c.FinanceBalanceSnapshots => FinanceBalanceSnapshot": [
 				"Child sObject [FinanceBalanceSnapshot] is not processed"
 			],
-			"Note__c.null => FinanceBalanceSnapshotChangeEvent": [
+			"Student__c.null => FinanceBalanceSnapshotChangeEvent": [
 				"Child sObject [FinanceBalanceSnapshotChangeEvent] is not processed"
 			],
-			"Note__c.DestinationFinanceTransactions => FinanceTransaction": [
+			"Student__c.DestinationFinanceTransactions => FinanceTransaction": [
 				"Child sObject [FinanceTransaction] is not processed"
 			],
-			"Note__c.FinanceTransactions => FinanceTransaction": [
+			"Student__c.FinanceTransactions => FinanceTransaction": [
 				"Child sObject [FinanceTransaction] is not processed"
 			],
-			"Note__c.ParentFinanceTransactions => FinanceTransaction": [
+			"Student__c.ParentFinanceTransactions => FinanceTransaction": [
 				"Child sObject [FinanceTransaction] is not processed"
 			],
-			"Note__c.SourceFinanceTransactions => FinanceTransaction": [
+			"Student__c.SourceFinanceTransactions => FinanceTransaction": [
 				"Child sObject [FinanceTransaction] is not processed"
 			],
-			"Note__c.null => FinanceTransactionChangeEvent": [
+			"Student__c.null => FinanceTransactionChangeEvent": [
 				"Child sObject [FinanceTransactionChangeEvent] is not processed"
 			],
-			"Note__c.null => FlowExecutionErrorEvent": [
+			"Student__c.null => FlowExecutionErrorEvent": [
 				"Child sObject [FlowExecutionErrorEvent] is not processed"
 			],
-			"Note__c.null => FlowOrchestrationWorkItem": [
+			"Student__c.null => FlowOrchestrationWorkItem": [
 				"Child sObject [FlowOrchestrationWorkItem] is not processed"
 			],
-			"Note__c.null => FlowRecordRelation": [
+			"Student__c.null => FlowRecordRelation": [
 				"Child sObject [FlowRecordRelation] is not processed"
 			],
-			"Note__c.ParentEntities => NetworkActivityAudit": [
+			"Student__c.ParentEntities => NetworkActivityAudit": [
 				"Child sObject [NetworkActivityAudit] is not processed"
 			],
-			"Note__c.null => NetworkFeedResponseMetric": [
+			"Student__c.null => NetworkFeedResponseMetric": [
 				"Child sObject [NetworkFeedResponseMetric] is not processed"
 			],
-			"Note__c.NetworkUserHistoryRecentToRecord => NetworkUserHistoryRecent": [
+			"Student__c.NetworkUserHistoryRecentToRecord => NetworkUserHistoryRecent": [
 				"Child sObject [NetworkUserHistoryRecent] is not processed"
 			],
-			"Note__c.Notes => Note": [
+			"Student__c.Notes => Note": [
 				"Child sObject [Note] is not processed"
 			],
-			"Note__c.NotesAndAttachments => NoteAndAttachment": [
+			"Student__c.NotesAndAttachments => NoteAndAttachment": [
 				"Child sObject [NoteAndAttachment] is not processed"
 			],
-			"Note__c.ProcessExceptions => ProcessException": [
+			"Student__c.ProcessExceptions => ProcessException": [
 				"Child sObject [ProcessException] is not processed"
 			],
-			"Note__c.null => ProcessExceptionEvent": [
+			"Student__c.null => ProcessExceptionEvent": [
 				"Child sObject [ProcessExceptionEvent] is not processed"
 			],
-			"Note__c.ProcessInstances => ProcessInstance": [
+			"Student__c.ProcessInstances => ProcessInstance": [
 				"Child sObject [ProcessInstance] is not processed"
 			],
-			"Note__c.ProcessSteps => ProcessInstanceHistory": [
+			"Student__c.ProcessSteps => ProcessInstanceHistory": [
 				"Child sObject [ProcessInstanceHistory] is not processed"
 			],
-			"Note__c.RecordActions => RecordAction": [
+			"Student__c.RecordActions => RecordAction": [
 				"Child sObject [RecordAction] is not processed"
 			],
-			"Note__c.RecordActionHistories => RecordActionHistory": [
+			"Student__c.RecordActionHistories => RecordActionHistory": [
 				"Child sObject [RecordActionHistory] is not processed"
 			],
-			"Note__c.null => TaskChangeEvent": [
+			"Student__c.Shares => Student__Share": [
+				"Child sObject [Student__Share] is not processed"
+			],
+			"Student__c.null => TaskChangeEvent": [
 				"Child sObject [TaskChangeEvent] is not processed"
 			],
-			"Note__c.TopicAssignments => TopicAssignment": [
+			"Student__c.TopicAssignments => TopicAssignment": [
 				"Child sObject [TopicAssignment] is not processed"
 			],
 			"Exercise__c.null => AIInsightValue": [
@@ -2028,6 +2067,258 @@
 			"Exercise__c.TopicAssignments => TopicAssignment": [
 				"Child sObject [TopicAssignment] is not processed"
 			],
+			"Course_X_Delivery__c.null => AIInsightValue": [
+				"Child sObject [AIInsightValue] is not processed"
+			],
+			"Course_X_Delivery__c.null => AIRecordInsight": [
+				"Child sObject [AIRecordInsight] is not processed"
+			],
+			"Course_X_Delivery__c.AttachedContentDocuments => AttachedContentDocument": [
+				"Child sObject [AttachedContentDocument] is not processed"
+			],
+			"Course_X_Delivery__c.Attachments => Attachment": [
+				"Child sObject [Attachment] is not processed"
+			],
+			"Course_X_Delivery__c.RecordAssociatedGroups => CollaborationGroupRecord": [
+				"Child sObject [CollaborationGroupRecord] is not processed"
+			],
+			"Course_X_Delivery__c.CombinedAttachments => CombinedAttachment": [
+				"Child sObject [CombinedAttachment] is not processed"
+			],
+			"Course_X_Delivery__c.ContactRequests => ContactRequest": [
+				"Child sObject [ContactRequest] is not processed"
+			],
+			"Course_X_Delivery__c.null => ContentDistribution": [
+				"Child sObject [ContentDistribution] is not processed"
+			],
+			"Course_X_Delivery__c.ContentDocumentLinks => ContentDocumentLink": [
+				"Child sObject [ContentDocumentLink] is not processed"
+			],
+			"Course_X_Delivery__c.null => ContentDocumentLinkChangeEvent": [
+				"Child sObject [ContentDocumentLinkChangeEvent] is not processed"
+			],
+			"Course_X_Delivery__c.null => ContentVersion": [
+				"Child sObject [ContentVersion] is not processed"
+			],
+			"Course_X_Delivery__c.null => ContentVersionChangeEvent": [
+				"Child sObject [ContentVersionChangeEvent] is not processed"
+			],
+			"Course_X_Delivery__c.DuplicateRecordItems => DuplicateRecordItem": [
+				"Child sObject [DuplicateRecordItem] is not processed"
+			],
+			"Course_X_Delivery__c.null => EmailMessageChangeEvent": [
+				"Child sObject [EmailMessageChangeEvent] is not processed"
+			],
+			"Course_X_Delivery__c.FeedSubscriptionsForEntity => EntitySubscription": [
+				"Child sObject [EntitySubscription] is not processed"
+			],
+			"Course_X_Delivery__c.null => EventChangeEvent": [
+				"Child sObject [EventChangeEvent] is not processed"
+			],
+			"Course_X_Delivery__c.null => EventRelationChangeEvent": [
+				"Child sObject [EventRelationChangeEvent] is not processed"
+			],
+			"Course_X_Delivery__c.null => FeedComment": [
+				"Child sObject [FeedComment] is not processed"
+			],
+			"Course_X_Delivery__c.null => FeedItem": [
+				"Child sObject [FeedItem] is not processed"
+			],
+			"Course_X_Delivery__c.FinanceBalanceSnapshots => FinanceBalanceSnapshot": [
+				"Child sObject [FinanceBalanceSnapshot] is not processed"
+			],
+			"Course_X_Delivery__c.null => FinanceBalanceSnapshotChangeEvent": [
+				"Child sObject [FinanceBalanceSnapshotChangeEvent] is not processed"
+			],
+			"Course_X_Delivery__c.DestinationFinanceTransactions => FinanceTransaction": [
+				"Child sObject [FinanceTransaction] is not processed"
+			],
+			"Course_X_Delivery__c.FinanceTransactions => FinanceTransaction": [
+				"Child sObject [FinanceTransaction] is not processed"
+			],
+			"Course_X_Delivery__c.ParentFinanceTransactions => FinanceTransaction": [
+				"Child sObject [FinanceTransaction] is not processed"
+			],
+			"Course_X_Delivery__c.SourceFinanceTransactions => FinanceTransaction": [
+				"Child sObject [FinanceTransaction] is not processed"
+			],
+			"Course_X_Delivery__c.null => FinanceTransactionChangeEvent": [
+				"Child sObject [FinanceTransactionChangeEvent] is not processed"
+			],
+			"Course_X_Delivery__c.null => FlowExecutionErrorEvent": [
+				"Child sObject [FlowExecutionErrorEvent] is not processed"
+			],
+			"Course_X_Delivery__c.null => FlowOrchestrationWorkItem": [
+				"Child sObject [FlowOrchestrationWorkItem] is not processed"
+			],
+			"Course_X_Delivery__c.null => FlowRecordRelation": [
+				"Child sObject [FlowRecordRelation] is not processed"
+			],
+			"Course_X_Delivery__c.ParentEntities => NetworkActivityAudit": [
+				"Child sObject [NetworkActivityAudit] is not processed"
+			],
+			"Course_X_Delivery__c.null => NetworkFeedResponseMetric": [
+				"Child sObject [NetworkFeedResponseMetric] is not processed"
+			],
+			"Course_X_Delivery__c.NetworkUserHistoryRecentToRecord => NetworkUserHistoryRecent": [
+				"Child sObject [NetworkUserHistoryRecent] is not processed"
+			],
+			"Course_X_Delivery__c.Notes => Note": [
+				"Child sObject [Note] is not processed"
+			],
+			"Course_X_Delivery__c.NotesAndAttachments => NoteAndAttachment": [
+				"Child sObject [NoteAndAttachment] is not processed"
+			],
+			"Course_X_Delivery__c.ProcessExceptions => ProcessException": [
+				"Child sObject [ProcessException] is not processed"
+			],
+			"Course_X_Delivery__c.null => ProcessExceptionEvent": [
+				"Child sObject [ProcessExceptionEvent] is not processed"
+			],
+			"Course_X_Delivery__c.ProcessInstances => ProcessInstance": [
+				"Child sObject [ProcessInstance] is not processed"
+			],
+			"Course_X_Delivery__c.ProcessSteps => ProcessInstanceHistory": [
+				"Child sObject [ProcessInstanceHistory] is not processed"
+			],
+			"Course_X_Delivery__c.RecordActions => RecordAction": [
+				"Child sObject [RecordAction] is not processed"
+			],
+			"Course_X_Delivery__c.RecordActionHistories => RecordActionHistory": [
+				"Child sObject [RecordActionHistory] is not processed"
+			],
+			"Course_X_Delivery__c.null => TaskChangeEvent": [
+				"Child sObject [TaskChangeEvent] is not processed"
+			],
+			"Course_X_Delivery__c.TopicAssignments => TopicAssignment": [
+				"Child sObject [TopicAssignment] is not processed"
+			],
+			"Note__c.null => AIInsightValue": [
+				"Child sObject [AIInsightValue] is not processed"
+			],
+			"Note__c.null => AIRecordInsight": [
+				"Child sObject [AIRecordInsight] is not processed"
+			],
+			"Note__c.AttachedContentDocuments => AttachedContentDocument": [
+				"Child sObject [AttachedContentDocument] is not processed"
+			],
+			"Note__c.Attachments => Attachment": [
+				"Child sObject [Attachment] is not processed"
+			],
+			"Note__c.RecordAssociatedGroups => CollaborationGroupRecord": [
+				"Child sObject [CollaborationGroupRecord] is not processed"
+			],
+			"Note__c.CombinedAttachments => CombinedAttachment": [
+				"Child sObject [CombinedAttachment] is not processed"
+			],
+			"Note__c.ContactRequests => ContactRequest": [
+				"Child sObject [ContactRequest] is not processed"
+			],
+			"Note__c.null => ContentDistribution": [
+				"Child sObject [ContentDistribution] is not processed"
+			],
+			"Note__c.ContentDocumentLinks => ContentDocumentLink": [
+				"Child sObject [ContentDocumentLink] is not processed"
+			],
+			"Note__c.null => ContentDocumentLinkChangeEvent": [
+				"Child sObject [ContentDocumentLinkChangeEvent] is not processed"
+			],
+			"Note__c.null => ContentVersion": [
+				"Child sObject [ContentVersion] is not processed"
+			],
+			"Note__c.null => ContentVersionChangeEvent": [
+				"Child sObject [ContentVersionChangeEvent] is not processed"
+			],
+			"Note__c.DuplicateRecordItems => DuplicateRecordItem": [
+				"Child sObject [DuplicateRecordItem] is not processed"
+			],
+			"Note__c.null => EmailMessageChangeEvent": [
+				"Child sObject [EmailMessageChangeEvent] is not processed"
+			],
+			"Note__c.FeedSubscriptionsForEntity => EntitySubscription": [
+				"Child sObject [EntitySubscription] is not processed"
+			],
+			"Note__c.null => EventChangeEvent": [
+				"Child sObject [EventChangeEvent] is not processed"
+			],
+			"Note__c.null => EventRelationChangeEvent": [
+				"Child sObject [EventRelationChangeEvent] is not processed"
+			],
+			"Note__c.null => FeedComment": [
+				"Child sObject [FeedComment] is not processed"
+			],
+			"Note__c.null => FeedItem": [
+				"Child sObject [FeedItem] is not processed"
+			],
+			"Note__c.FinanceBalanceSnapshots => FinanceBalanceSnapshot": [
+				"Child sObject [FinanceBalanceSnapshot] is not processed"
+			],
+			"Note__c.null => FinanceBalanceSnapshotChangeEvent": [
+				"Child sObject [FinanceBalanceSnapshotChangeEvent] is not processed"
+			],
+			"Note__c.DestinationFinanceTransactions => FinanceTransaction": [
+				"Child sObject [FinanceTransaction] is not processed"
+			],
+			"Note__c.FinanceTransactions => FinanceTransaction": [
+				"Child sObject [FinanceTransaction] is not processed"
+			],
+			"Note__c.ParentFinanceTransactions => FinanceTransaction": [
+				"Child sObject [FinanceTransaction] is not processed"
+			],
+			"Note__c.SourceFinanceTransactions => FinanceTransaction": [
+				"Child sObject [FinanceTransaction] is not processed"
+			],
+			"Note__c.null => FinanceTransactionChangeEvent": [
+				"Child sObject [FinanceTransactionChangeEvent] is not processed"
+			],
+			"Note__c.null => FlowExecutionErrorEvent": [
+				"Child sObject [FlowExecutionErrorEvent] is not processed"
+			],
+			"Note__c.null => FlowOrchestrationWorkItem": [
+				"Child sObject [FlowOrchestrationWorkItem] is not processed"
+			],
+			"Note__c.null => FlowRecordRelation": [
+				"Child sObject [FlowRecordRelation] is not processed"
+			],
+			"Note__c.ParentEntities => NetworkActivityAudit": [
+				"Child sObject [NetworkActivityAudit] is not processed"
+			],
+			"Note__c.null => NetworkFeedResponseMetric": [
+				"Child sObject [NetworkFeedResponseMetric] is not processed"
+			],
+			"Note__c.NetworkUserHistoryRecentToRecord => NetworkUserHistoryRecent": [
+				"Child sObject [NetworkUserHistoryRecent] is not processed"
+			],
+			"Note__c.Notes => Note": [
+				"Child sObject [Note] is not processed"
+			],
+			"Note__c.NotesAndAttachments => NoteAndAttachment": [
+				"Child sObject [NoteAndAttachment] is not processed"
+			],
+			"Note__c.ProcessExceptions => ProcessException": [
+				"Child sObject [ProcessException] is not processed"
+			],
+			"Note__c.null => ProcessExceptionEvent": [
+				"Child sObject [ProcessExceptionEvent] is not processed"
+			],
+			"Note__c.ProcessInstances => ProcessInstance": [
+				"Child sObject [ProcessInstance] is not processed"
+			],
+			"Note__c.ProcessSteps => ProcessInstanceHistory": [
+				"Child sObject [ProcessInstanceHistory] is not processed"
+			],
+			"Note__c.RecordActions => RecordAction": [
+				"Child sObject [RecordAction] is not processed"
+			],
+			"Note__c.RecordActionHistories => RecordActionHistory": [
+				"Child sObject [RecordActionHistory] is not processed"
+			],
+			"Note__c.null => TaskChangeEvent": [
+				"Child sObject [TaskChangeEvent] is not processed"
+			],
+			"Note__c.TopicAssignments => TopicAssignment": [
+				"Child sObject [TopicAssignment] is not processed"
+			],
 			"Course__c.null => AIInsightValue": [
 				"Child sObject [AIInsightValue] is not processed"
 			],
@@ -2155,261 +2446,6 @@
 				"Child sObject [TaskChangeEvent] is not processed"
 			],
 			"Course__c.TopicAssignments => TopicAssignment": [
-				"Child sObject [TopicAssignment] is not processed"
-			],
-			"Student__c.null => AIInsightValue": [
-				"Child sObject [AIInsightValue] is not processed"
-			],
-			"Student__c.null => AIRecordInsight": [
-				"Child sObject [AIRecordInsight] is not processed"
-			],
-			"Student__c.AttachedContentDocuments => AttachedContentDocument": [
-				"Child sObject [AttachedContentDocument] is not processed"
-			],
-			"Student__c.Attachments => Attachment": [
-				"Child sObject [Attachment] is not processed"
-			],
-			"Student__c.RecordAssociatedGroups => CollaborationGroupRecord": [
-				"Child sObject [CollaborationGroupRecord] is not processed"
-			],
-			"Student__c.CombinedAttachments => CombinedAttachment": [
-				"Child sObject [CombinedAttachment] is not processed"
-			],
-			"Student__c.ContactRequests => ContactRequest": [
-				"Child sObject [ContactRequest] is not processed"
-			],
-			"Student__c.null => ContentDistribution": [
-				"Child sObject [ContentDistribution] is not processed"
-			],
-			"Student__c.ContentDocumentLinks => ContentDocumentLink": [
-				"Child sObject [ContentDocumentLink] is not processed"
-			],
-			"Student__c.null => ContentDocumentLinkChangeEvent": [
-				"Child sObject [ContentDocumentLinkChangeEvent] is not processed"
-			],
-			"Student__c.null => ContentVersion": [
-				"Child sObject [ContentVersion] is not processed"
-			],
-			"Student__c.null => ContentVersionChangeEvent": [
-				"Child sObject [ContentVersionChangeEvent] is not processed"
-			],
-			"Student__c.DuplicateRecordItems => DuplicateRecordItem": [
-				"Child sObject [DuplicateRecordItem] is not processed"
-			],
-			"Student__c.null => EmailMessageChangeEvent": [
-				"Child sObject [EmailMessageChangeEvent] is not processed"
-			],
-			"Student__c.FeedSubscriptionsForEntity => EntitySubscription": [
-				"Child sObject [EntitySubscription] is not processed"
-			],
-			"Student__c.null => EventChangeEvent": [
-				"Child sObject [EventChangeEvent] is not processed"
-			],
-			"Student__c.null => EventRelationChangeEvent": [
-				"Child sObject [EventRelationChangeEvent] is not processed"
-			],
-			"Student__c.null => FeedComment": [
-				"Child sObject [FeedComment] is not processed"
-			],
-			"Student__c.null => FeedItem": [
-				"Child sObject [FeedItem] is not processed"
-			],
-			"Student__c.FinanceBalanceSnapshots => FinanceBalanceSnapshot": [
-				"Child sObject [FinanceBalanceSnapshot] is not processed"
-			],
-			"Student__c.null => FinanceBalanceSnapshotChangeEvent": [
-				"Child sObject [FinanceBalanceSnapshotChangeEvent] is not processed"
-			],
-			"Student__c.DestinationFinanceTransactions => FinanceTransaction": [
-				"Child sObject [FinanceTransaction] is not processed"
-			],
-			"Student__c.FinanceTransactions => FinanceTransaction": [
-				"Child sObject [FinanceTransaction] is not processed"
-			],
-			"Student__c.ParentFinanceTransactions => FinanceTransaction": [
-				"Child sObject [FinanceTransaction] is not processed"
-			],
-			"Student__c.SourceFinanceTransactions => FinanceTransaction": [
-				"Child sObject [FinanceTransaction] is not processed"
-			],
-			"Student__c.null => FinanceTransactionChangeEvent": [
-				"Child sObject [FinanceTransactionChangeEvent] is not processed"
-			],
-			"Student__c.null => FlowExecutionErrorEvent": [
-				"Child sObject [FlowExecutionErrorEvent] is not processed"
-			],
-			"Student__c.null => FlowOrchestrationWorkItem": [
-				"Child sObject [FlowOrchestrationWorkItem] is not processed"
-			],
-			"Student__c.null => FlowRecordRelation": [
-				"Child sObject [FlowRecordRelation] is not processed"
-			],
-			"Student__c.ParentEntities => NetworkActivityAudit": [
-				"Child sObject [NetworkActivityAudit] is not processed"
-			],
-			"Student__c.null => NetworkFeedResponseMetric": [
-				"Child sObject [NetworkFeedResponseMetric] is not processed"
-			],
-			"Student__c.NetworkUserHistoryRecentToRecord => NetworkUserHistoryRecent": [
-				"Child sObject [NetworkUserHistoryRecent] is not processed"
-			],
-			"Student__c.Notes => Note": [
-				"Child sObject [Note] is not processed"
-			],
-			"Student__c.NotesAndAttachments => NoteAndAttachment": [
-				"Child sObject [NoteAndAttachment] is not processed"
-			],
-			"Student__c.ProcessExceptions => ProcessException": [
-				"Child sObject [ProcessException] is not processed"
-			],
-			"Student__c.null => ProcessExceptionEvent": [
-				"Child sObject [ProcessExceptionEvent] is not processed"
-			],
-			"Student__c.ProcessInstances => ProcessInstance": [
-				"Child sObject [ProcessInstance] is not processed"
-			],
-			"Student__c.ProcessSteps => ProcessInstanceHistory": [
-				"Child sObject [ProcessInstanceHistory] is not processed"
-			],
-			"Student__c.RecordActions => RecordAction": [
-				"Child sObject [RecordAction] is not processed"
-			],
-			"Student__c.RecordActionHistories => RecordActionHistory": [
-				"Child sObject [RecordActionHistory] is not processed"
-			],
-			"Student__c.Shares => Student__Share": [
-				"Child sObject [Student__Share] is not processed"
-			],
-			"Student__c.null => TaskChangeEvent": [
-				"Child sObject [TaskChangeEvent] is not processed"
-			],
-			"Student__c.TopicAssignments => TopicAssignment": [
-				"Child sObject [TopicAssignment] is not processed"
-			],
-			"Course_X_Delivery__c.null => AIInsightValue": [
-				"Child sObject [AIInsightValue] is not processed"
-			],
-			"Course_X_Delivery__c.null => AIRecordInsight": [
-				"Child sObject [AIRecordInsight] is not processed"
-			],
-			"Course_X_Delivery__c.AttachedContentDocuments => AttachedContentDocument": [
-				"Child sObject [AttachedContentDocument] is not processed"
-			],
-			"Course_X_Delivery__c.Attachments => Attachment": [
-				"Child sObject [Attachment] is not processed"
-			],
-			"Course_X_Delivery__c.RecordAssociatedGroups => CollaborationGroupRecord": [
-				"Child sObject [CollaborationGroupRecord] is not processed"
-			],
-			"Course_X_Delivery__c.CombinedAttachments => CombinedAttachment": [
-				"Child sObject [CombinedAttachment] is not processed"
-			],
-			"Course_X_Delivery__c.ContactRequests => ContactRequest": [
-				"Child sObject [ContactRequest] is not processed"
-			],
-			"Course_X_Delivery__c.null => ContentDistribution": [
-				"Child sObject [ContentDistribution] is not processed"
-			],
-			"Course_X_Delivery__c.ContentDocumentLinks => ContentDocumentLink": [
-				"Child sObject [ContentDocumentLink] is not processed"
-			],
-			"Course_X_Delivery__c.null => ContentDocumentLinkChangeEvent": [
-				"Child sObject [ContentDocumentLinkChangeEvent] is not processed"
-			],
-			"Course_X_Delivery__c.null => ContentVersion": [
-				"Child sObject [ContentVersion] is not processed"
-			],
-			"Course_X_Delivery__c.null => ContentVersionChangeEvent": [
-				"Child sObject [ContentVersionChangeEvent] is not processed"
-			],
-			"Course_X_Delivery__c.DuplicateRecordItems => DuplicateRecordItem": [
-				"Child sObject [DuplicateRecordItem] is not processed"
-			],
-			"Course_X_Delivery__c.null => EmailMessageChangeEvent": [
-				"Child sObject [EmailMessageChangeEvent] is not processed"
-			],
-			"Course_X_Delivery__c.FeedSubscriptionsForEntity => EntitySubscription": [
-				"Child sObject [EntitySubscription] is not processed"
-			],
-			"Course_X_Delivery__c.null => EventChangeEvent": [
-				"Child sObject [EventChangeEvent] is not processed"
-			],
-			"Course_X_Delivery__c.null => EventRelationChangeEvent": [
-				"Child sObject [EventRelationChangeEvent] is not processed"
-			],
-			"Course_X_Delivery__c.null => FeedComment": [
-				"Child sObject [FeedComment] is not processed"
-			],
-			"Course_X_Delivery__c.null => FeedItem": [
-				"Child sObject [FeedItem] is not processed"
-			],
-			"Course_X_Delivery__c.FinanceBalanceSnapshots => FinanceBalanceSnapshot": [
-				"Child sObject [FinanceBalanceSnapshot] is not processed"
-			],
-			"Course_X_Delivery__c.null => FinanceBalanceSnapshotChangeEvent": [
-				"Child sObject [FinanceBalanceSnapshotChangeEvent] is not processed"
-			],
-			"Course_X_Delivery__c.DestinationFinanceTransactions => FinanceTransaction": [
-				"Child sObject [FinanceTransaction] is not processed"
-			],
-			"Course_X_Delivery__c.FinanceTransactions => FinanceTransaction": [
-				"Child sObject [FinanceTransaction] is not processed"
-			],
-			"Course_X_Delivery__c.ParentFinanceTransactions => FinanceTransaction": [
-				"Child sObject [FinanceTransaction] is not processed"
-			],
-			"Course_X_Delivery__c.SourceFinanceTransactions => FinanceTransaction": [
-				"Child sObject [FinanceTransaction] is not processed"
-			],
-			"Course_X_Delivery__c.null => FinanceTransactionChangeEvent": [
-				"Child sObject [FinanceTransactionChangeEvent] is not processed"
-			],
-			"Course_X_Delivery__c.null => FlowExecutionErrorEvent": [
-				"Child sObject [FlowExecutionErrorEvent] is not processed"
-			],
-			"Course_X_Delivery__c.null => FlowOrchestrationWorkItem": [
-				"Child sObject [FlowOrchestrationWorkItem] is not processed"
-			],
-			"Course_X_Delivery__c.null => FlowRecordRelation": [
-				"Child sObject [FlowRecordRelation] is not processed"
-			],
-			"Course_X_Delivery__c.ParentEntities => NetworkActivityAudit": [
-				"Child sObject [NetworkActivityAudit] is not processed"
-			],
-			"Course_X_Delivery__c.null => NetworkFeedResponseMetric": [
-				"Child sObject [NetworkFeedResponseMetric] is not processed"
-			],
-			"Course_X_Delivery__c.NetworkUserHistoryRecentToRecord => NetworkUserHistoryRecent": [
-				"Child sObject [NetworkUserHistoryRecent] is not processed"
-			],
-			"Course_X_Delivery__c.Notes => Note": [
-				"Child sObject [Note] is not processed"
-			],
-			"Course_X_Delivery__c.NotesAndAttachments => NoteAndAttachment": [
-				"Child sObject [NoteAndAttachment] is not processed"
-			],
-			"Course_X_Delivery__c.ProcessExceptions => ProcessException": [
-				"Child sObject [ProcessException] is not processed"
-			],
-			"Course_X_Delivery__c.null => ProcessExceptionEvent": [
-				"Child sObject [ProcessExceptionEvent] is not processed"
-			],
-			"Course_X_Delivery__c.ProcessInstances => ProcessInstance": [
-				"Child sObject [ProcessInstance] is not processed"
-			],
-			"Course_X_Delivery__c.ProcessSteps => ProcessInstanceHistory": [
-				"Child sObject [ProcessInstanceHistory] is not processed"
-			],
-			"Course_X_Delivery__c.RecordActions => RecordAction": [
-				"Child sObject [RecordAction] is not processed"
-			],
-			"Course_X_Delivery__c.RecordActionHistories => RecordActionHistory": [
-				"Child sObject [RecordActionHistory] is not processed"
-			],
-			"Course_X_Delivery__c.null => TaskChangeEvent": [
-				"Child sObject [TaskChangeEvent] is not processed"
-			],
-			"Course_X_Delivery__c.TopicAssignments => TopicAssignment": [
 				"Child sObject [TopicAssignment] is not processed"
 			],
 			"Delivery__c.null => AIInsightValue": [
@@ -3385,6 +3421,13 @@
 				"Must be updateable",
 				"Was Not requested"
 			],
+			"CampaignInfluenceModel": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be replicateable",
+				"Must be updateable",
+				"Was Not requested"
+			],
 			"CampaignMember": [
 				"Was Not requested"
 			],
@@ -4046,6 +4089,38 @@
 			],
 			"ContractFeed": [
 				"Must be createable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"ContractGroupPlan": [
+				"Was Not requested"
+			],
+			"ContractGroupPlanFeed": [
+				"Must be createable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"ContractGroupPlanGroupClass": [
+				"Was Not requested"
+			],
+			"ContractGroupPlanGroupClassFeed": [
+				"Must be createable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"ContractGroupPlanGroupClassHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"ContractGroupPlanGroupClassShare": [
+				"Must be replicateable",
+				"Was Not requested"
+			],
+			"ContractGroupPlanHistory": [
+				"Must be createable",
+				"Must be deletable",
 				"Must be updateable",
 				"Was Not requested"
 			],
@@ -5156,6 +5231,70 @@
 			"Group": [
 				"Was Not requested"
 			],
+			"GroupCensus": [
+				"Was Not requested"
+			],
+			"GroupCensusFeed": [
+				"Must be createable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"GroupCensusHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"GroupCensusMember": [
+				"Was Not requested"
+			],
+			"GroupCensusMemberFeed": [
+				"Must be createable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"GroupCensusMemberHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"GroupCensusMemberPlan": [
+				"Was Not requested"
+			],
+			"GroupCensusMemberPlanFeed": [
+				"Must be createable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"GroupCensusMemberPlanHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"GroupCensusShare": [
+				"Must be replicateable",
+				"Was Not requested"
+			],
+			"GroupClass": [
+				"Was Not requested"
+			],
+			"GroupClassContribution": [
+				"Was Not requested"
+			],
+			"GroupClassContributionHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"GroupClassHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
 			"GroupMember": [
 				"Must be updateable",
 				"Was Not requested"
@@ -5255,6 +5394,24 @@
 				"Must be createable",
 				"Must be deletable",
 				"Must be updateable",
+				"Was Not requested"
+			],
+			"InsuranceContract": [
+				"Was Not requested"
+			],
+			"InsuranceContractFeed": [
+				"Must be createable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"InsuranceContractHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"InsuranceContractShare": [
+				"Must be replicateable",
 				"Was Not requested"
 			],
 			"Invoice": [
@@ -6763,6 +6920,52 @@
 				"Was Not requested"
 			],
 			"Profile": [
+				"Was Not requested"
+			],
+			"ProfileSkill": [
+				"Was Not requested"
+			],
+			"ProfileSkillEndorsement": [
+				"Was Not requested"
+			],
+			"ProfileSkillEndorsementFeed": [
+				"Must be createable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"ProfileSkillEndorsementHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"ProfileSkillFeed": [
+				"Must be createable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"ProfileSkillHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"ProfileSkillShare": [
+				"Must be replicateable",
+				"Was Not requested"
+			],
+			"ProfileSkillUser": [
+				"Was Not requested"
+			],
+			"ProfileSkillUserFeed": [
+				"Must be createable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"ProfileSkillUserHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be updateable",
 				"Was Not requested"
 			],
 			"Prompt": [
