@@ -103,14 +103,16 @@
 
 				<template if:true={ui.pnlStudents}>
 					<lightning-layout-item size="12" class="slds-m-top_medium">
-						<lightning-datatable
-							key-field="name"
-							data={progress}
-							columns={columns}
-							onrowaction={onRowAction}
-							hide-checkbox-column
-						>
-						</lightning-datatable>
+						<div class="slds-scrollable_y" style="height: 400px; width: 100%">
+							<lightning-datatable
+								key-field="name"
+								data={progress}
+								columns={columns}
+								onrowaction={onRowAction}
+								hide-checkbox-column
+							>
+							</lightning-datatable>
+						</div>
 					</lightning-layout-item>
 				</template>
 			</lightning-layout>
