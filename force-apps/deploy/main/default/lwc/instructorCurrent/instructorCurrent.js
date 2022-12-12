@@ -14,7 +14,8 @@ const actions = [
 ];
 
 const columns = [
-	{ label: "Status", fieldName: "status", fixedWidth: 40 },
+	{ label: "Emoji", fieldName: "emoji", fixedWidth: 40 },
+	// { label: "Status2", fieldName: "status" },
 	{ label: "Name", fieldName: "name" },
 	{
 		type: "action",
@@ -50,7 +51,10 @@ export default class InstructorCurrent extends LightningElement {
 	get ui() {
 		const exCurrent = this.currentExercise;
 		const currentCxD = this.currentCourseDeliveryKey;
-		const exIsActive = this.currentExercise?.Id && this.activeExercise?.Id === this.currentExercise?.Id && this.currentCourseDelivery.Delivery__r.CurrentExerciseIsActive__c;
+		const exIsActive =
+			this.currentExercise?.Id &&
+			this.activeExercise?.Id === this.currentExercise?.Id &&
+			this.currentCourseDelivery.Delivery__r.CurrentExerciseIsActive__c;
 		let exercises = {};
 		if (this.exercises.length > 0) {
 			exercises = {
@@ -173,9 +177,28 @@ export default class InstructorCurrent extends LightningElement {
 				if (student.Exercises_X_Students__r?.length > 0) {
 					const rowData = student.Exercises_X_Students__r[0];
 					row.exsId = rowData?.Id;
-					row.status = Utils.getEmoji({ status: rowData?.Status__c });
+					row.status = rowData?.Status__c;
+					row.emoji = Utils.getEmoji({ status: rowData?.Status__c });
 				}
 				return row;
+			});
+			this.progress = this.progress.sort((a, b) => {
+				let output = 0;
+				if (a.status < b.status) {
+					output = -1;
+				} else if (a.status === b.status) {
+					if (a.name < b.name) {
+						output = -1;
+					} else if (a.name === b.name) {
+						output = 0;
+					} else if (a.name > b.name) {
+						output = 1;
+					}
+				} else if (a.status > b.status) {
+					output = 1;
+				}
+
+				return output;
 			});
 
 			// This timer is to update the clock, not to get the data
