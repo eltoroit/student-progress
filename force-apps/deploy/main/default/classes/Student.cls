@@ -130,6 +130,26 @@ public without sharing class Student {
 			FROM Exercise_X_Student__c
 			WHERE Student__c = :studentId AND Exercise__c = :exerciseId
 		];
+		// This code could be removed later... :-)
+		// START
+		switch on status {
+			when 'DONE' {
+				status = '03-DONE';
+			}
+			when 'WORKING' {
+				status = '01-WORKING';
+			}
+			when 'LATER' {
+				status = '02-LATER';
+			}
+			when 'START' {
+				status = '00-START';
+			}
+			when else {
+				//
+			}
+		}
+		// END
 		Exercise_X_Student__c ExS;
 		if (ExSs.size() == 0) {
 			ExS = new Exercise_X_Student__c(Exercise__c = exerciseId, Student__c = studentId);
