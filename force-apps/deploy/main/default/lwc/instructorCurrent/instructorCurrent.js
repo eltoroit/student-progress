@@ -17,6 +17,7 @@ const columns = [
 	{ label: "Emoji", fieldName: "emoji", fixedWidth: 40 },
 	// { label: "Status2", fieldName: "status" },
 	{ label: "Name", fieldName: "name" },
+	{ label: "Duration", fieldName: "duration" },
 	{
 		type: "action",
 		typeAttributes: { rowActions: actions }
@@ -179,6 +180,17 @@ export default class InstructorCurrent extends LightningElement {
 					row.exsId = rowData?.Id;
 					row.status = rowData?.Status__c;
 					row.emoji = Utils.getEmoji({ status: rowData?.Status__c });
+					row.startAt = rowData.CreatedDate;
+					row.endAt = rowData.LastModifiedDate;
+
+					if (row.status === "03-DONE") {
+						const duration = Utils.calculateDuration({
+							startAt: row.startAt,
+							endAt: row.endAt
+						});
+						row.durationObj = duration;
+						row.duration = duration.minutes.toString();
+					}
 				}
 				return row;
 			});
@@ -187,12 +199,18 @@ export default class InstructorCurrent extends LightningElement {
 				if (a.status < b.status) {
 					output = -1;
 				} else if (a.status === b.status) {
-					if (a.name < b.name) {
-						output = -1;
-					} else if (a.name === b.name) {
-						output = 0;
-					} else if (a.name > b.name) {
+					if (a.durationObj?.seconds?.total < b.durationObj?.seconds?.total) {
 						output = 1;
+					} else if (a.durationObj?.seconds?.total === b.durationObj?.seconds?.total) {
+						if (a.name < b.name) {
+							output = -1;
+						} else if (a.name === b.name) {
+							output = 0;
+						} else if (a.name > b.name) {
+							output = 1;
+						}
+					} else if (a.durationObj?.seconds?.total > b.durationObj?.seconds?.total) {
+						output = -1;
 					}
 				} else if (a.status > b.status) {
 					output = 1;

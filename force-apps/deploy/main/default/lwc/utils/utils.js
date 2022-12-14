@@ -33,24 +33,24 @@ export default class Util {
 			let strMilliseconds = "";
 			if (withLeadingZeroes) {
 				if (days > 0) {
-					strDays = `${days}d`;
+					strDays = `${days} d`;
 				}
 				if (hours > 0 || days > 0) {
-					strHours = `${("00" + hours).slice(-2)}h`;
+					strHours = `${("00" + hours).slice(-2)} h`;
 				}
-				strMinutes = `${("00" + minutes).slice(-2)}m`;
-				strSeconds = `${("00" + seconds).slice(-2)}s`;
-				strMilliseconds = `${("000" + milliseconds).slice(-3)}ms`;
+				strMinutes = `${("00" + minutes).slice(-2)} m`;
+				strSeconds = `${("00" + seconds).slice(-2)} s`;
+				strMilliseconds = `${("000" + milliseconds).slice(-3)} ms`;
 			} else {
 				if (days > 0) {
-					strDays = `${days}d`;
+					strDays = `${days} d`;
 				}
 				if (hours > 0 || days > 0) {
-					strHours = `${hours}h`;
+					strHours = `${hours} h`;
 				}
-				strMinutes = `${minutes}m`;
-				strSeconds = `${seconds}s`;
-				strMilliseconds = `${milliseconds}ms`;
+				strMinutes = `${minutes} m`;
+				strSeconds = `${seconds} s`;
+				strMilliseconds = `${milliseconds} ms`;
 			}
 			switch (rounding) {
 				case "MILLIS": {

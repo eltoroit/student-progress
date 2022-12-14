@@ -37,6 +37,7 @@ public without sharing class Instructor {
 		return output;
 	}
 
+	// Display table of student status for exercise
 	@AuraEnabled(cacheable=true)
 	public static Map<String, Object> getStudentsProgress(String CxD, String exerciseId) {
 		Map<String, Object> output = new Map<String, Object>();
@@ -52,7 +53,11 @@ public without sharing class Instructor {
 					Id,
 					Name,
 					IsInstructor__c,
-					(SELECT ID, Status__c, lastModifiedDate FROM Exercises_X_Students__r WHERE Exercise__c = :exerciseId)
+					(
+						SELECT ID, Status__c, CreatedDate, lastModifiedDate
+						FROM Exercises_X_Students__r
+						WHERE Exercise__c = :exerciseId
+					)
 				FROM Student__c
 				WHERE Delivery__c = :deliveryId
 				ORDER BY Name ASC
@@ -75,6 +80,7 @@ public without sharing class Instructor {
 		return output;
 	}
 
+	// Display chart with data for entire delivery
 	@AuraEnabled(cacheable=true)
 	public static Map<String, Object> getClassReport(String CxD) {
 		Map<String, Object> output = null;
