@@ -29,11 +29,13 @@ export default class EmpApiManager extends LightningElement {
 				}
 			});
 			onError((error) => {
+				const message = `EmpApi connection failed: ${JSON.stringify(error)}`;
 				Utils.showNotification(this, {
 					title: "Error Connecting",
-					message: `EmpApi connection failed: ${JSON.stringify(error)}`,
+					message,
 					variant: Utils.variants.error
 				});
+				console.error(message);
 				debugger;
 			});
 		} else {
@@ -80,7 +82,7 @@ export default class EmpApiManager extends LightningElement {
 		this.empApi.pending[key].clock = setTimeout(() => {
 			const entityName = key.split("|")[1];
 			const recordIds = this.empApi.pending[key].recordIds;
-			// console.log(`*** New Data (processing): ${entityName}`, recordIds);
+			console.log(`*** New Data (processing): ${entityName}`, recordIds);
 			this.dispatchEvent(
 				new CustomEvent("received", {
 					detail: {

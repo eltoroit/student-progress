@@ -1,8 +1,3 @@
 <template>
-	<c-emp-api-manager
-		filter-key="Delivery__c"
-		filter-value="a020400000HfhU8AAJ"
-		onreceived={onEventReceived}
-		onerror={onEventError}
-	></c-emp-api-manager>
+	<c-emp-api-manager filter-key={filterKey} filter-value={filterValue} onreceived={onEventReceived} onerror={onEventError}></c-emp-api-manager>
 </template>

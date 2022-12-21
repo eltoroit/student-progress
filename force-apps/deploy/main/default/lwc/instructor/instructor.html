@@ -4,15 +4,10 @@
 			<lightning-layout-item size="8">
 				<lightning-card>
 					<div class="slds-m-horizontal_xx-large">
-						<lightning-tabset active-tab-value="TestData">
-							<lightning-tab label="TestData" value="TestData">
-								<c-data-manager ondata={onData}></c-data-manager>
-							</lightning-tab>
+						<lightning-tabset active-tab-value="Instructor">
 							<lightning-tab label="Current Exercise" value="Instructor">
-								<!-- <c-instructor-current onchange={onChangedCxD}></c-instructor-current> -->
-							</lightning-tab>
-							<lightning-tab label="Class Progress" value="Progress">
-								<!-- <c-instructor-progress current-course-delivery-key={currentCourseDeliveryKey}></c-instructor-progress> -->
+								<c-instructor-delivery></c-instructor-delivery>
+								<!-- <c-instructor-current></c-instructor-current> -->
 							</lightning-tab>
 							<lightning-tab label="Student" value="Student">
 								<!-- <c-student></c-student> -->

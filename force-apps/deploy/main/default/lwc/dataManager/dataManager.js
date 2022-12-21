@@ -1,32 +1,32 @@
 import Utils from "c/utils";
-import { api, LightningElement, track, wire } from "lwc";
+import { api, LightningElement } from "lwc";
 import getActiveDeliveries from "@salesforce/apex/Data.getActiveDeliveries";
+import getCoursesPerDelivery from "@salesforce/apex/Data.getCoursesPerDelivery";
+import getAllExercisesForCourse from "@salesforce/apex/Data.getAllExercisesForCourse";
 
 export default class DataManager extends LightningElement {
+	@api filterKey = null;
 	@api filterValue = null;
-	@api filterKey = "Delivery__c";
-	@track forceRefresh = {
-		ActiveDeliveries: 0
-	};
+	@api isRefreshing = false;
+	oldValues = {};
 
-	@wire(getActiveDeliveries, { forceRefresh: "$forceRefresh.ActiveDeliveries" })
-	wGetActiveDeliveries({ data, error }) {
-		if (data) {
-			this._notifyData({ obj: "ActiveDeliveries", data });
-		} else if (error) {
-			Utils.showNotification(this, {
-				title: "Error Getting Data",
-				message: `ActiveDeliveries: ${JSON.stringify(error)}`,
-				variant: Utils.variants.error
-			});
-		}
+	@api fetchActiveDeliveries() {
+		this._processApexResults({ obj: "ActiveDeliveries", apexCall: getActiveDeliveries() });
+	}
+
+	@api fetchCoursesPerDelivery({ deliveryId }) {
+		this._processApexResults({ obj: "CoursesPerDelivery", apexCall: getCoursesPerDelivery({ deliveryId }) });
+	}
+
+	@api fetchAllExercisesForCourse({ courseId }) {
+		this._processApexResults({ obj: "AllExercisesForCourse", apexCall: getAllExercisesForCourse({ courseId }) });
 	}
 
 	onEventReceived(event) {
 		const { entityName, recordIds } = event.detail;
 		switch (entityName) {
 			case "Delivery__c": {
-				this.forceRefresh.ActiveDeliveries++;
+				this.fetchActiveDeliveries();
 				break;
 			}
 			default:
@@ -45,7 +45,27 @@ export default class DataManager extends LightningElement {
 		debugger;
 	}
 
-	_notifyData({ obj, data }) {
-		this.dispatchEvent(new CustomEvent("data", { detail: { obj, data } }));
+	_processApexResults({ obj, apexCall }) {
+		apexCall
+			.then((data) => {
+				const oldValue = this.oldValues[obj]?.data;
+				const newValue = JSON.stringify(data);
+				if (this.isRefreshing || oldValue !== newValue) {
+					this.oldValues[obj] = {
+						dttm: new Date(),
+						data: newValue
+					};
+					this.dispatchEvent(new CustomEvent("data", { detail: { obj, data } }));
+				} else {
+					console.log(`*** Data was the same, skipping`);
+				}
+			})
+			.catch((error) => {
+				Utils.showNotification(this, {
+					title: "Error Getting Data",
+					message: `${obj}: ${JSON.stringify(error)}`,
+					variant: Utils.variants.error
+				});
+			});
 	}
 }
