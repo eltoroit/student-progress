@@ -96,11 +96,8 @@ export default class InstructorDelivery extends LightningElement {
 		ui.pnlSelectorDeliveries = true;
 		ui.pnlSelectorCourses = this.deliveries?.currentId;
 		ui.pnlSelectorExercises = this.courses?.currentId;
-		// ui.pnlDeliveriesSelector = true;
-		// ui.pnlDeliveriesSelector = true;
-		// ui.pnlExercisesSelector = currentCxDId;
 		ui.pnlActiveExerciseData = exIsActive;
-		ui.pnlStudents = exCurrentId;
+		// ui.pnlStudents = exCurrentId;
 
 		return ui;
 	}
@@ -152,10 +149,16 @@ export default class InstructorDelivery extends LightningElement {
 		this.loading = false;
 	}
 
+	onTestClick() {
+		debugger;
+		console.log(this.ui);
+	}
+
 	//#region options
 	onDeliveryChange(event) {
 		this._onOptionchange({ event, objectName: "deliveries", cookieName: "deliveryId" });
 		this.dataManager.fetchCoursesPerDelivery({ deliveryId: this.deliveries.currentId });
+		this._getActiveDelivery();
 	}
 
 	onCourseChange(event) {
@@ -185,6 +188,7 @@ export default class InstructorDelivery extends LightningElement {
 		this._loadData({ objectName: "deliveries", data, placeholder: "Which Delivery?" });
 		if (this.findRecord({ list: this.deliveries.records, Id: currentId })) {
 			this.dataManager.fetchCoursesPerDelivery({ deliveryId: currentId });
+			this._getActiveDelivery();
 		} else {
 			this.deliveries.currentId = null;
 		}
@@ -220,4 +224,15 @@ export default class InstructorDelivery extends LightningElement {
 		this[objectName].options.unshift({ value: "", label: placeholder });
 	}
 	//#endregion
+
+	_getActiveDelivery() {
+		const currentDelivery = this.findRecord({ list: this.deliveries.records, Id: this.deliveries.currentId });
+		// console.log(currentDelivery);
+		// debugger;
+		if (currentDelivery.CurrentExerciseIsActive__c) {
+			this.exercises.activeId = currentDelivery.CurrentExercise__c;
+		} else {
+			this.exercises.activeId = null;
+		}
+	}
 }
