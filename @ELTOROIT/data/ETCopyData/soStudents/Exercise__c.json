@@ -1428,7 +1428,7 @@
 			"Course__c": "a01P000000DYbbWIAT",
 			"ExpectedDuration__c": "10 min",
 			"Id": "a04P0000007Rf0vIAC",
-			"Name": "Your Turn 14-1: Defend Against SOQL Injection�",
+			"Name": "Your Turn 14-1: Defend Against SOQL Injection",
 			"Order__c": 41
 		},
 		{
@@ -1461,7 +1461,7 @@
 			"Course__c": "a01P000000DYbbWIAT",
 			"ExpectedDuration__c": "45 mins",
 			"Id": "a04P0000007Rf0yIAC",
-			"Name": "Join Me 15-2: Create and Surface a Lightning Web Component (Optional)�",
+			"Name": "Join Me 15-2: Create and Surface a Lightning Web Component (Optional)",
 			"Order__c": 44
 		}
 	],

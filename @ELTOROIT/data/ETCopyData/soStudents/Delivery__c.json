@@ -11,7 +11,7 @@
 			"CurrentExercise__c": null,
 			"Id": "a02P000000BMM86IAH",
 			"Instructor__c": "Andres Perez",
-			"IsActive__c": false,
+			"IsActive__c": true,
 			"Name": "2022-12-05 Workday"
 		},
 		{
