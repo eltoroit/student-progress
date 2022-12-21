@@ -72,4 +72,8 @@
     </applicationVisibilities>
     <custom>false</custom>
     <userLicense>Salesforce</userLicense>
+    <loginIpRanges>
+        <endAddress>255.255.255.255</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
 </Profile>
