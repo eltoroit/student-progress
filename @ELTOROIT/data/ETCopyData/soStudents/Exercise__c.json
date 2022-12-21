@@ -1,423 +1,1469 @@
 {
-	"fetched": 52,
+	"fetched": 133,
 	"records": [
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2OAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007ReyqIAC"
 			},
-			"Id": "a012100000Abp2OAAR",
-			"Name": "Exercise 01-01: Prepare Your Training Org"
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007ReyqIAC",
+			"Name": "Your Turn 2-6: Debug your Code",
+			"Order__c": 7
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2PAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007ReyrIAC"
 			},
-			"Id": "a012100000Abp2PAAR",
-			"Name": "Exercise 02-01: Create Custom Object"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007ReyrIAC",
+			"Name": "Exercise 04-05: Implement Sharing Rules",
+			"Order__c": 18
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2QAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007ReysIAC"
 			},
-			"Id": "a012100000Abp2QAAR",
-			"Name": "Exercise 02-02: Create Custom Fields"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007ReysIAC",
+			"Name": "Exercise 04-06: Implement Manual Sharing",
+			"Order__c": 19
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2RAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007ReytIAC"
 			},
-			"Id": "a012100000Abp2RAAR",
-			"Name": "Exercise 02-03: Create Relationship Fields"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007ReytIAC",
+			"Name": "Exercise 05-01: Create a Validation Rule",
+			"Order__c": 20
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2SAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007ReyuIAC"
 			},
-			"Id": "a012100000Abp2SAAR",
-			"Name": "Exercise 02-04: Create a Self Relationship with Customer Story"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007ReyuIAC",
+			"Name": "Exercise 05-02: Mass Transfer Ownership of Records",
+			"Order__c": 21
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2TAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007ReyvIAC"
 			},
-			"Id": "a012100000Abp2TAAR",
-			"Name": "Exercise 02-05: Create a Custom Junction Object"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007ReyvIAC",
+			"Name": "Exercise 05-03 (OPTION #1): Import with Data Loader",
+			"Order__c": 22
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2UAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007ReywIAC"
 			},
-			"Id": "a012100000Abp2UAAR",
-			"IsActive__c": true,
-			"Name": "Exercise 02-06: Create an External Connection Using Salesforce Connect (OPTIO..."
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007ReywIAC",
+			"Name": "Exercise 06-01: Create a Lightning App",
+			"Order__c": 24
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2VAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007ReyxIAC"
 			},
-			"Id": "a012100000Abp2VAAR",
-			"Name": "Exercise 02-07: Create an External Lookup Relationship (OPTIONAL)"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007ReyxIAC",
+			"Name": "Exercise 06-02: Compare Table List View to Kanban View and Split View",
+			"Order__c": 25
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2WAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007ReyyIAC"
 			},
-			"Id": "a012100000Abp2WAAR",
-			"Name": "Exercise 02-08: Create an Indirect Lookup Relationship (OPTIONAL)"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007ReyyIAC",
+			"Name": "Exercise 06-03: Customize a Page Layout",
+			"Order__c": 26
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2XAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007ReyzIAC"
 			},
-			"Id": "a012100000Abp2XAAR",
-			"Name": "Exercise 02-09: Create a Cross-Object Formula Field"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007ReyzIAC",
+			"Name": "Exercise 06-04: Use Dynamic Forms to Filter Fields Based on a Checkbox",
+			"Order__c": 27
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2YAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rez0IAC"
 			},
-			"Id": "a012100000Abp2YAAR",
-			"Name": "Exercise 02-10: Create Roll-Up Summary Fields"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007Rez0IAC",
+			"Name": "Exercise 06-05: Create an Object-Speciﬁc Quick Action",
+			"Order__c": 28
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2ZAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rez1IAC"
 			},
-			"Id": "a012100000Abp2ZAAR",
-			"Name": "Exercise 03-01: Modify and Create Custom Proﬁles"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007Rez1IAC",
+			"Name": "Exercise 06-06: Create a Global Quick Action and a Global Layout",
+			"Order__c": 29
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2aAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rez2IAC"
 			},
-			"Id": "a012100000Abp2aAAB",
-			"Name": "Exercise 03-02: Create Permission Sets"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007Rez2IAC",
+			"Name": "Exercise 06-08: Create Page Layouts for Record Types",
+			"Order__c": 31
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2bAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rez3IAC"
 			},
-			"Id": "a012100000Abp2bAAB",
-			"Name": "Exercise 04-01: Create a Custom Object Queue"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007Rez3IAC",
+			"Name": "Exercise 07-01: Create a Contact Wizard Flow",
+			"Order__c": 32
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2cAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rez4IAC"
 			},
-			"Id": "a012100000Abp2cAAB",
-			"Name": "Exercise 04-02: Set Organization-Wide Defaults"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007Rez4IAC",
+			"Name": "Exercise 07-02: Create a New Version of Flow Contact Wizard",
+			"Order__c": 33
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2dAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rez5IAC"
 			},
-			"Id": "a012100000Abp2dAAB",
-			"Name": "Exercise 04-03: Implement a Role Hierarchy"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007Rez5IAC",
+			"Name": "Exercise 07-03: Update Sales Message using Loop Element",
+			"Order__c": 34
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2eAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rez6IAC"
 			},
-			"Id": "a012100000Abp2eAAB",
-			"Name": "Exercise 04-04: Create a Public Group"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007Rez6IAC",
+			"Name": "Exercise 07-04: Create a Flow to Capture Service Vendor Account Info",
+			"Order__c": 35
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2fAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rez7IAC"
 			},
-			"Id": "a012100000Abp2fAAB",
-			"Name": "Exercise 04-05: Implement Sharing Rules"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007Rez7IAC",
+			"Name": "Exercise 07-05: Create a Reusable Flow",
+			"Order__c": 36
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2gAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rez8IAC"
 			},
-			"Id": "a012100000Abp2gAAB",
-			"Name": "Exercise 04-06: Implement Manual Sharing"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007Rez8IAC",
+			"Name": "Exercise 07-06: Create a Login Flow to Verify User Info",
+			"Order__c": 37
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2hAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rez9IAC"
 			},
-			"Id": "a012100000Abp2hAAB",
-			"Name": "Exercise 05-01: Create a Validation Rule"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007Rez9IAC",
+			"Name": "Exercise 08-01: Create a Flow to Change Delivery to Virtual on Weekends",
+			"Order__c": 38
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2iAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezAIAS"
 			},
-			"Id": "a012100000Abp2iAAB",
-			"Name": "Exercise 05-02: Mass Transfer Ownership of Records"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezAIAS",
+			"Name": "Exercise 08-02: Create a Flow to Auto-Register New Technicians for Class",
+			"Order__c": 39
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2jAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezBIAS"
 			},
-			"Id": "a012100000Abp2jAAB",
-			"Name": "Exercise 05-03 (OPTION #1): Import with Data Loader"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezBIAS",
+			"Name": "Exercise 08-03: Add Notiﬁcations to Auto-Registration Flow",
+			"Order__c": 40
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2kAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezCIAS"
 			},
-			"Id": "a012100000Abp2kAAB",
-			"Name": "Exercise 06-01: Create a Lightning App"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezCIAS",
+			"Name": "Exercise 08-04: Create Custom Error Logging using Platform Events",
+			"Order__c": 41
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2lAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezDIAS"
 			},
-			"Id": "a012100000Abp2lAAB",
-			"Name": "Exercise 06-02: Compare Table List View to Kanban View and Split View"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezDIAS",
+			"Name": "Exercise 08-05: Create a Flow to Send Email When Course Attendee Is Deleted",
+			"Order__c": 42
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2mAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezEIAS"
 			},
-			"Id": "a012100000Abp2mAAB",
-			"Name": "Exercise 06-03: Customize a Page Layout"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezEIAS",
+			"Name": "Exercise 08-06: Create a Flow to Send an Email Reminder One Week Before Class",
+			"Order__c": 43
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2nAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezFIAS"
 			},
-			"Id": "a012100000Abp2nAAB",
-			"Name": "Exercise 06-04: Use Dynamic Forms to Filter Fields Based on a Checkbox"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezFIAS",
+			"Name": "Exercise 09-01: Review and Test Process Builder",
+			"Order__c": 44
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2oAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezGIAS"
 			},
-			"Id": "a012100000Abp2oAAB",
-			"Name": "Exercise 06-05: Create an Object-Speciﬁc Quick Action"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezGIAS",
+			"Name": "Exercise 10-01: Create Multi-Step Approval Process",
+			"Order__c": 45
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2pAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezHIAS"
 			},
-			"Id": "a012100000Abp2pAAB",
-			"Name": "Exercise 06-06: Create a Global Quick Action and a Global Layout"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezHIAS",
+			"Name": "Exercise 10-02: Add an “Items to Approve” Component to the Home Page",
+			"Order__c": 46
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2qAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezIIAS"
 			},
-			"Id": "a012100000Abp2qAAB",
-			"Name": "Exercise 06-07: Create Record Types"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezIIAS",
+			"Name": "Exercise 10-03: Auto-Submit Approval Requests with Flow",
+			"Order__c": 47
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2rAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezJIAS"
 			},
-			"Id": "a012100000Abp2rAAB",
-			"Name": "Exercise 06-08: Create Page Layouts for Record Types"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezJIAS",
+			"Name": "Exercise 12-01: Create a Flow Using Invocable Apex",
+			"Order__c": 48
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2sAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezKIAS"
 			},
-			"Id": "a012100000Abp2sAAB",
-			"Name": "Exercise 07-01: Create a Contact Wizard Flow"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezKIAS",
+			"Name": "Exercise 12-02: Fix Account Messages Flow",
+			"Order__c": 49
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2tAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezLIAS"
 			},
-			"Id": "a012100000Abp2tAAB",
-			"Name": "Exercise 07-02: Create a New Version of Flow Contact Wizard"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezLIAS",
+			"Name": "Exercise 12-03: Replace Contact Workﬂow with Before Record-Triggered Flow",
+			"Order__c": 50
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2uAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezMIAS"
 			},
-			"Id": "a012100000Abp2uAAB",
-			"Name": "Exercise 07-03: Update Sales Message using Loop Element"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezMIAS",
+			"Name": "Exercise 12-04: Replace Commission Process with After Record-Triggered Flow",
+			"Order__c": 51
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2vAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezNIAS"
 			},
-			"Id": "a012100000Abp2vAAB",
-			"Name": "Exercise 07-04: Create a Flow to Capture Service Vendor Account Info"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezNIAS",
+			"Name": "Exercise 13-01: Deploy Changes Using Change Sets",
+			"Order__c": 52
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2wAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezOIAS"
 			},
-			"Id": "a012100000Abp2wAAB",
-			"Name": "Exercise 07-05: Create a Reusable Flow"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezOIAS",
+			"Name": "Exercise 05-03 (OPTION #2): Import with dataloader.io",
+			"Order__c": 23
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2xAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezPIAS"
 			},
-			"Id": "a012100000Abp2xAAB",
-			"Name": "Exercise 07-06: Create a Login Flow to Verify User Info"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezPIAS",
+			"Name": "Exercise 01-01: Prepare Your Training Org",
+			"Order__c": 1
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2yAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezQIAS"
 			},
-			"Id": "a012100000Abp2yAAB",
-			"Name": "Exercise 08-01: Create a Flow to Change Delivery to Virtual on Weekends"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezQIAS",
+			"Name": "Exercise 02-01: Create Custom Object",
+			"Order__c": 2
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp2zAAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezRIAS"
 			},
-			"Id": "a012100000Abp2zAAB",
-			"Name": "Exercise 08-02: Create a Flow to Auto-Register New Technicians for Class"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezRIAS",
+			"Name": "Exercise 02-02: Create Custom Fields",
+			"Order__c": 3
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp30AAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezSIAS"
 			},
-			"Id": "a012100000Abp30AAB",
-			"Name": "Exercise 08-03: Add Notiﬁcations to Auto-Registration Flow"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezSIAS",
+			"Name": "Exercise 02-03: Create Relationship Fields",
+			"Order__c": 4
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp31AAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezTIAS"
 			},
-			"Id": "a012100000Abp31AAB",
-			"Name": "Exercise 08-04: Create Custom Error Logging using Platform Events"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezTIAS",
+			"Name": "Exercise 02-04: Create a Self Relationship with Customer Story",
+			"Order__c": 5
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp32AAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezUIAS"
 			},
-			"Id": "a012100000Abp32AAB",
-			"Name": "Exercise 08-05: Create a Flow to Send Email When Course Attendee Is Deleted"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezUIAS",
+			"Name": "Exercise 02-05: Create a Custom Junction Object",
+			"Order__c": 6
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp33AAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezVIAS"
 			},
-			"Id": "a012100000Abp33AAB",
-			"Name": "Exercise 08-06: Create a Flow to Send an Email Reminder One Week Before Class"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezVIAS",
+			"Name": "Exercise 02-06: Create an External Connection Using Salesforce Connect (OPTIONAL",
+			"Order__c": 7
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp34AAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezWIAS"
 			},
-			"Id": "a012100000Abp34AAB",
-			"Name": "Exercise 09-01: Review and Test Process Builder"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezWIAS",
+			"Name": "Exercise 02-07: Create an External Lookup Relationship (OPTIONAL)",
+			"Order__c": 8
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp35AAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezXIAS"
 			},
-			"Id": "a012100000Abp35AAB",
-			"Name": "Exercise 10-01: Create Multi-Step Approval Process"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezXIAS",
+			"Name": "Exercise 02-08: Create an Indirect Lookup Relationship (OPTIONAL)",
+			"Order__c": 9
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp36AAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezYIAS"
 			},
-			"Id": "a012100000Abp36AAB",
-			"Name": "Exercise 10-02: Add an “Items to Approve” Component to the Home Page"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezYIAS",
+			"Name": "Exercise 02-09: Create a Cross-Object Formula Field",
+			"Order__c": 10
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp37AAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezZIAS"
 			},
-			"Id": "a012100000Abp37AAB",
-			"Name": "Exercise 10-03: Auto-Submit Approval Requests with Flow"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezZIAS",
+			"Name": "Exercise 02-10: Create Roll-Up Summary Fields",
+			"Order__c": 11
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp38AAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezaIAC"
 			},
-			"Id": "a012100000Abp38AAB",
-			"Name": "Exercise 12-01: Create a Flow Using Invocable Apex"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezaIAC",
+			"Name": "Exercise 06-07: Create Record Types",
+			"Order__c": 30
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp39AAB"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezbIAC"
 			},
-			"Id": "a012100000Abp39AAB",
-			"Name": "Exercise 12-02: Fix Account Messages Flow"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezbIAC",
+			"Name": "Exercise 04-01: Create a Custom Object Queue",
+			"Order__c": 14
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp3AAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezcIAC"
 			},
-			"Id": "a012100000Abp3AAAR",
-			"Name": "Exercise 12-03: Replace Contact Workﬂow with Before Record-Triggered Flow"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezcIAC",
+			"Name": "Exercise 04-02: Set Organization-Wide Defaults",
+			"Order__c": 15
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp3BAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezdIAC"
 			},
-			"Id": "a012100000Abp3BAAR",
-			"Name": "Exercise 12-04: Replace Commission Process with After Record-Triggered Flow"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezdIAC",
+			"Name": "Exercise 04-03: Implement a Role Hierarchy",
+			"Order__c": 16
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp3CAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezeIAC"
 			},
-			"Id": "a012100000Abp3CAAR",
-			"Name": "Exercise 13-01: Deploy Changes Using Change Sets"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezeIAC",
+			"Name": "Exercise 04-04: Create a Public Group",
+			"Order__c": 17
 		},
 		{
 			"attributes": {
 				"type": "Exercise__c",
-				"url": "/services/data/v56.0/sobjects/Exercise__c/a012100000Abp3DAAR"
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezfIAC"
 			},
-			"Id": "a012100000Abp3DAAR",
-			"Name": "Exercise 05-03 (OPTION #2): Import with dataloader.io"
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezfIAC",
+			"Name": "Exercise 03-01: Modify and Create Custom Proﬁles",
+			"Order__c": 12
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezgIAC"
+			},
+			"Course__c": "a01P000000DYbbVIAT",
+			"ExpectedDuration__c": null,
+			"Id": "a04P0000007RezgIAC",
+			"Name": "Exercise 03-02: Create Permission Sets",
+			"Order__c": 13
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezhIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007RezhIAC",
+			"Name": "Your Turn 2-7B: Work with Lightning Data Service",
+			"Order__c": 9
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007ReziIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04P0000007ReziIAC",
+			"Name": "Your Turn 2-8: Work with Base Lightning Components",
+			"Order__c": 10
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezjIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "45 min",
+			"Id": "a04P0000007RezjIAC",
+			"Name": "Your Turn 2-9: Work with Events",
+			"Order__c": 11
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezkIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007RezkIAC",
+			"Name": "Your Turn 2-10: Communicate between Components",
+			"Order__c": 12
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezlIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "60 min",
+			"Id": "a04P0000007RezlIAC",
+			"Name": "Lab Phase 1: Output Data from Lightning Data Service",
+			"Order__c": 13
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezmIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "100 minutes",
+			"Id": "a04P0000007RezmIAC",
+			"Name": "Exercise 1-1: Meet the Prerequisites",
+			"Order__c": 1
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007ReznIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "10 min",
+			"Id": "a04P0000007ReznIAC",
+			"Name": "Your Turn 2-1: Review the Available Components",
+			"Order__c": 2
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezoIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "35 min",
+			"Id": "a04P0000007RezoIAC",
+			"Name": "Your Turn 3-1: Surface a Component in App Builder",
+			"Order__c": 14
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezpIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04P0000007RezpIAC",
+			"Name": "Your Turn 3-2: Build Components for Lightning Experience Record Pages",
+			"Order__c": 15
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezqIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04P0000007RezqIAC",
+			"Name": "Your Turn 2-7A: Work with Apex",
+			"Order__c": 8
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezrIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "30 min",
+			"Id": "a04P0000007RezrIAC",
+			"Name": "Your Turn 2-3: Theme a Lightning Web Component",
+			"Order__c": 4
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezsIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007RezsIAC",
+			"Name": "Your Turn 3-3: Surface a Component in Lightning Experience",
+			"Order__c": 16
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007ReztIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007ReztIAC",
+			"Name": "Your Turn 3-4: Override Standard Actions",
+			"Order__c": 17
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezuIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007RezuIAC",
+			"Name": "Your Turn 3-5: Create a Lightning Application",
+			"Order__c": 18
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezvIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007RezvIAC",
+			"Name": "Your Turn 3-6: Surface Components in Visualforce Pages",
+			"Order__c": 19
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezwIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "45 min",
+			"Id": "a04P0000007RezwIAC",
+			"Name": "Your Turn 4-1: Implement Vertical Navigation",
+			"Order__c": 20
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezxIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "35 min",
+			"Id": "a04P0000007RezxIAC",
+			"Name": "Your Turn 4-2: Use <lightning-data-table>",
+			"Order__c": 21
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezyIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04P0000007RezyIAC",
+			"Name": "Your Turn 4-3: Use <lightning-button-group>",
+			"Order__c": 22
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007RezzIAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007RezzIAC",
+			"Name": "Your Turn 4-4: Create a Responsive Layout",
+			"Order__c": 23
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf00IAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "40 min",
+			"Id": "a04P0000007Rf00IAC",
+			"Name": "Your Turn 5-1: Create a Responsive Datatable",
+			"Order__c": 24
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf01IAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04P0000007Rf01IAC",
+			"Name": "Your Turn 5-2: Use Custom Events and Public Methods",
+			"Order__c": 25
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf02IAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "35 min",
+			"Id": "a04P0000007Rf02IAC",
+			"Name": "Your Turn 5-3: Implement Toasts",
+			"Order__c": 26
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf03IAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "30 min",
+			"Id": "a04P0000007Rf03IAC",
+			"Name": "Your Turn 5-4: Use Slots to Implement Modal Notifications",
+			"Order__c": 27
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf04IAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf04IAC",
+			"Name": "Your Turn 5-5: Localize Your Components",
+			"Order__c": 28
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf05IAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "35 min",
+			"Id": "a04P0000007Rf05IAC",
+			"Name": "Your Turn 5-6: Add the \"Certification Popularity\" bar chart",
+			"Order__c": 29
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf06IAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04P0000007Rf06IAC",
+			"Name": "Your Turn 6-1: Implement a Form using Standard Controls",
+			"Order__c": 30
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf07IAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "40 min",
+			"Id": "a04P0000007Rf07IAC",
+			"Name": "Your Turn 6-2: Implement a Form using Custom Controls",
+			"Order__c": 31
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf08IAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007Rf08IAC",
+			"Name": "Your Turn 6-3: Validate Form Data",
+			"Order__c": 32
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf09IAC"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "35 min",
+			"Id": "a04P0000007Rf09IAC",
+			"Name": "Your Turn 6-4: View and Edit Salesforce Records",
+			"Order__c": 33
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0AIAS"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007Rf0AIAS",
+			"Name": "Your Turn 6-5: Display an Interstitial While Data is Loading",
+			"Order__c": 34
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0BIAS"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0BIAS",
+			"Name": "Your Turn 7-1: Deploy a Component to a Dev Hub",
+			"Order__c": 35
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0CIAS"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "75 min",
+			"Id": "a04P0000007Rf0CIAS",
+			"Name": "Lab Phase 2: Use Lightning Data Service CRUD Operations",
+			"Order__c": 36
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0DIAS"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007Rf0DIAS",
+			"Name": "Lab Phase 3: Read and Output Dynamic Data",
+			"Order__c": 37
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0EIAS"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007Rf0EIAS",
+			"Name": "Your Turn 2-4: Work with Component Properties",
+			"Order__c": 5
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0FIAS"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "30 min",
+			"Id": "a04P0000007Rf0FIAS",
+			"Name": "Your Turn 2-5: Handle DOM Events",
+			"Order__c": 6
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0GIAS"
+			},
+			"Course__c": "a01P000000DYbbUIAT",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04P0000007Rf0GIAS",
+			"Name": "Your Turn 2-2: Create a Lightning Web Component",
+			"Order__c": 3
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0HIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "5 min",
+			"Id": "a04P0000007Rf0HIAS",
+			"Name": "Watch Me 1-1: Explore the Certification App",
+			"Order__c": 1
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0IIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "60 min",
+			"Id": "a04P0000007Rf0IIAS",
+			"Name": "Join Me 1-2: Prepare Your Training Org",
+			"Order__c": 2
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0JIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "5 min",
+			"Id": "a04P0000007Rf0JIAS",
+			"Name": "Join Me 1-3: Create a Sandbox",
+			"Order__c": 3
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0KIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0KIAS",
+			"Name": "Join Me 3-1: See Apex in Action",
+			"Order__c": 4
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0LIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "10 min",
+			"Id": "a04P0000007Rf0LIAS",
+			"Name": "Join Me 3-2: Create and Use an Apex Class",
+			"Order__c": 5
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0MIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "45 min",
+			"Id": "a04P0000007Rf0MIAS",
+			"Name": "Join Me 3-3: Write, Test and Debug Apex",
+			"Order__c": 6
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0NIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "10 min",
+			"Id": "a04P0000007Rf0NIAS",
+			"Name": "Watch Me 3-4: Examine Implicit Operations",
+			"Order__c": 7
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0OIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "5 min",
+			"Id": "a04P0000007Rf0OIAS",
+			"Name": "Watch Me 3-5: Profile Limits Using Developer Console",
+			"Order__c": 8
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0PIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0PIAS",
+			"Name": "Your Turn 3-6: Work with a Custom Object",
+			"Order__c": 9
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0QIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "5 min",
+			"Id": "a04P0000007Rf0QIAS",
+			"Name": "Watch Me 4-1: Create and Run Query in the Developer Console",
+			"Order__c": 10
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0RIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007Rf0RIAS",
+			"Name": "Your Turn 4-2: Write a SOQL Query that Uses a WHERE Clause",
+			"Order__c": 11
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0SIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "10 min",
+			"Id": "a04P0000007Rf0SIAS",
+			"Name": "Your Turn 4-3: Write and Execute a SOQL Query in Apex",
+			"Order__c": 12
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0TIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "10 min",
+			"Id": "a04P0000007Rf0TIAS",
+			"Name": "Your Turn 4-4: Write a Dynamic Query in Apex",
+			"Order__c": 13
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0UIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0UIAS",
+			"Name": "Your Turn 4-5: Write and Test Child-to-Parent Relationship Queries",
+			"Order__c": 14
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0VIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007Rf0VIAS",
+			"Name": "Your Turn 4-6: Write and Test Parent-to-Child Relationship Queries",
+			"Order__c": 15
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0WIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0WIAS",
+			"Name": "Your Turn 4-7: Create a Simple SOSL Search",
+			"Order__c": 16
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0XIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04P0000007Rf0XIAS",
+			"Name": "Your Turn 5-1: Execute DML Commands",
+			"Order__c": 17
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0YIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0YIAS",
+			"Name": "Your Turn 5-2: Handle DML Errors and Exceptions",
+			"Order__c": 18
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0ZIAS"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007Rf0ZIAS",
+			"Name": "Join Me 6-1: Deploy Code from Sandbox to Production",
+			"Order__c": 19
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0aIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0aIAC",
+			"Name": "Your Turn 7-1: Define the Trigger's Business Logic",
+			"Order__c": 20
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0bIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0bIAC",
+			"Name": "Your Turn 8-1: Define an Apex Class",
+			"Order__c": 21
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0cIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "10 min",
+			"Id": "a04P0000007Rf0cIAC",
+			"Name": "Watch Me 9-1: Explore the Implicit Firing of Triggers",
+			"Order__c": 22
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0dIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "10 min",
+			"Id": "a04P0000007Rf0dIAC",
+			"Name": "Your Turn 9-2: View the Events that Occur During a Rollback",
+			"Order__c": 23
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0eIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04P0000007Rf0eIAC",
+			"Name": "Your Turn 9-3: Use a Platform Event for Immediate Error Logging",
+			"Order__c": 24
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0fIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0fIAC",
+			"Name": "Your Turn 10-1: Write and Run an Apex Test",
+			"Order__c": 25
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0gIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0gIAC",
+			"Name": "Your Turn 11-1: Refactor a Trigger to Avoid SOQL Limits",
+			"Order__c": 26
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0hIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0hIAC",
+			"Name": "Your Turn 11-2: Refactor a Trigger to Avoid DML Limits",
+			"Order__c": 27
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0iIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "5 min",
+			"Id": "a04P0000007Rf0iIAC",
+			"Name": "Your Turn 12-1: Create a Formula Field to Eliminate a Query",
+			"Order__c": 28
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0jIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "5 min",
+			"Id": "a04P0000007Rf0jIAC",
+			"Name": "Your Turn 12-2: Create Fields for Counting Certifications Elements",
+			"Order__c": 29
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0kIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0kIAC",
+			"Name": "Your Turn 12-3: Create Collections to Filter the Query",
+			"Order__c": 30
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0lIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007Rf0lIAC",
+			"Name": "Your Turn 12-4: Use a Map to Aggregate Results",
+			"Order__c": 31
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0mIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0mIAC",
+			"Name": "Your Turn 12-5: Create Certification Held Records",
+			"Order__c": 32
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0nIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "10 min",
+			"Id": "a04P0000007Rf0nIAC",
+			"Name": "Your Turn 12-6: Use a Workflow to Avoid Creation of Duplicate Records (optional)",
+			"Order__c": 33
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0oIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "10 min",
+			"Id": "a04P0000007Rf0oIAC",
+			"Name": "Join Me 13-1: Create a Simple Visualforce Page",
+			"Order__c": 34
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0pIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "10 min",
+			"Id": "a04P0000007Rf0pIAC",
+			"Name": "Your Turn 13-2: Create a Simple Technician Status Page",
+			"Order__c": 35
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0qIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0qIAC",
+			"Name": "Your Turn 13-3: Reference a Controller Extension is a Visualforce Page",
+			"Order__c": 36
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0rIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04P0000007Rf0rIAC",
+			"Name": "Your Turn 13-4: Create a Read/Write Property in a Custom Controller",
+			"Order__c": 37
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0sIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "25 min",
+			"Id": "a04P0000007Rf0sIAC",
+			"Name": "Your Turn 13-5: Redirecting to a Results Page",
+			"Order__c": 38
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0tIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "10 min",
+			"Id": "a04P0000007Rf0tIAC",
+			"Name": "Your Turn 13-6: Create a Page to Display a List of Records",
+			"Order__c": 39
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0uIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "15 min",
+			"Id": "a04P0000007Rf0uIAC",
+			"Name": "Your Turn 13-7: Create Mass Delete Page",
+			"Order__c": 40
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0vIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "10 min",
+			"Id": "a04P0000007Rf0vIAC",
+			"Name": "Your Turn 14-1: Defend Against SOQL Injection�",
+			"Order__c": 41
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0wIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007Rf0wIAC",
+			"Name": "Your Turn 14-2: Write a Test Class for SearchCoursesPage",
+			"Order__c": 42
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0xIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "20 min",
+			"Id": "a04P0000007Rf0xIAC",
+			"Name": "Join Me 15-1: Create and Surface an Aura Lightning Component (Optional)",
+			"Order__c": 43
+		},
+		{
+			"attributes": {
+				"type": "Exercise__c",
+				"url": "/services/data/v56.0/sobjects/Exercise__c/a04P0000007Rf0yIAC"
+			},
+			"Course__c": "a01P000000DYbbWIAT",
+			"ExpectedDuration__c": "45 mins",
+			"Id": "a04P0000007Rf0yIAC",
+			"Name": "Join Me 15-2: Create and Surface a Lightning Web Component (Optional)�",
+			"Order__c": 44
 		}
 	],
-	"total": 52
+	"total": 133
 }

@@ -1,0 +1,61 @@
+<template>
+	<div class="slds-text-heading_medium">
+		<lightning-card class="slds-is-relative">
+			<template if:true={loading}>
+				<lightning-spinner variant="brand"></lightning-spinner>
+			</template>
+			<lightning-button-group slot="actions">
+				<lightning-button
+					label="Register"
+					if:true={ui.btnRegister.isVisible}
+					disabled={ui.btnRegister.isDisabled}
+					onclick={onRegisterClick}
+				></lightning-button>
+				<lightning-button
+					label="Next"
+					variant="success"
+					if:true={ui.btnNext.isVisible}
+					disabled={ui.btnNext.isDisabled}
+					onclick={onNextClick}
+				></lightning-button>
+				<lightning-button
+					label="Refresh"
+					variant="brand"
+					if:true={ui.btnRefresh.isVisible}
+					disabled={ui.btnRefresh.isDisabled}
+					onclick={onRefreshClick}
+				></lightning-button>
+			</lightning-button-group>
+
+			<div class="slds-m-horizontal_xx-large">
+				<lightning-layout multiple-rows>
+					<lightning-layout-item size="12">
+						<lightning-combobox
+							name="Delivery"
+							label="Which class are you attending?"
+							value={deliveryId}
+							placeholder="Which class are you attending?"
+							options={deliveries}
+							onchange={onDeliveryChange}
+						></lightning-combobox>
+					</lightning-layout-item>
+					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+
+					<template if:true={ui.pnlStudent}>
+						<lightning-layout-item size="12">
+							<lightning-combobox
+								name="Student"
+								label="What's your name?"
+								value={studentId}
+								placeholder="What's your name?"
+								options={students}
+								onchange={onStudentChange}
+							></lightning-combobox>
+						</lightning-layout-item>
+						<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+					</template>
+				</lightning-layout>
+			</div>
+		</lightning-card>
+	</div>
+</template>

@@ -7,6 +7,7 @@ export default class Util {
 		success: "success",
 		info: "info"
 	};
+
 	static showNotification(cmp, { title = "", message = "", variant = "success" }) {
 		cmp.dispatchEvent(
 			new ShowToastEvent({
@@ -32,24 +33,24 @@ export default class Util {
 			let strMilliseconds = "";
 			if (withLeadingZeroes) {
 				if (days > 0) {
-					strDays = `${days}d`;
+					strDays = `${days} d`;
 				}
 				if (hours > 0 || days > 0) {
-					strHours = `${("00" + hours).slice(-2)}h`;
+					strHours = `${("00" + hours).slice(-2)} h`;
 				}
-				strMinutes = `${("00" + minutes).slice(-2)}m`;
-				strSeconds = `${("00" + seconds).slice(-2)}s`;
-				strMilliseconds = `${("000" + milliseconds).slice(-3)}ms`;
+				strMinutes = `${("00" + minutes).slice(-2)} m`;
+				strSeconds = `${("00" + seconds).slice(-2)} s`;
+				strMilliseconds = `${("000" + milliseconds).slice(-3)} ms`;
 			} else {
 				if (days > 0) {
-					strDays = `${days}d`;
+					strDays = `${days} d`;
 				}
 				if (hours > 0 || days > 0) {
-					strHours = `${hours}h`;
+					strHours = `${hours} h`;
 				}
-				strMinutes = `${minutes}m`;
-				strSeconds = `${seconds}s`;
-				strMilliseconds = `${milliseconds}ms`;
+				strMinutes = `${minutes} m`;
+				strSeconds = `${seconds} s`;
+				strMilliseconds = `${milliseconds} ms`;
 			}
 			switch (rounding) {
 				case "MILLIS": {
@@ -173,6 +174,54 @@ export default class Util {
 			output.days = parse({ start: startAt, end: endAt, rounding: "DAY" });
 		}
 
+		return output;
+	}
+
+	static setCookie({ key, value }) {
+		document.cookie = `${key}=${value}`;
+	}
+
+	static getCookie({ key }) {
+		let output = null;
+
+		document.cookie.split(";").find((cookie) => {
+			let isFound = cookie.trim().startsWith(key + "=");
+			if (isFound) {
+				output = cookie.split("=")[1];
+			}
+			return isFound;
+		});
+		return output;
+	}
+
+	static deleteCookie({ key }) {
+		document.cookie = `${key}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
+	}
+
+	static getEmoji({ status }) {
+		let output = "";
+		switch (status) {
+			case "03-DONE": {
+				output = "✅";
+				break;
+			}
+			case "01-WORKING": {
+				output = "👩‍💻";
+				break;
+			}
+			case "02-LATER": {
+				output = "🕒";
+				break;
+			}
+			case "00-START": {
+				output = "⚒️";
+				break;
+			}
+			default:
+				output = "❓";
+				break;
+		}
+		console.log(`*** ${status} => ${output}`);
 		return output;
 	}
 }

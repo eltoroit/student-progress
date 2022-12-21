@@ -1,0 +1,9 @@
+<template>
+	<template if:true={ui.pnlRegister}>
+		<c-student-register onnext={onNext}></c-student-register>
+	</template>
+
+	<template if:true={ui.pnlReport}>
+		<c-student-report onregister={showRegistrationPage}></c-student-report>
+	</template>
+</template>

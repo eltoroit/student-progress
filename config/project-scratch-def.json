@@ -15,6 +15,11 @@
 		},
 		"communitiesSettings": {
 			"enableNetworksEnabled": true
+		},
+		"securitySettings": {
+			"sessionSettings": {
+				"lockerServiceNext": false
+			}
 		}
 	}
 }
