@@ -20,8 +20,8 @@
 				"url": "/services/data/v56.0/sobjects/Delivery__c/a02P000000BMM8GIAX"
 			},
 			"CurrentExerciseIsActive__c": false,
-			"CurrentExerciseStart__c": "2022-12-12T21:29:35.000+0000",
-			"CurrentExercise__c": "a04P0000007Rf0PIAS",
+			"CurrentExerciseStart__c": "2022-12-16T13:34:12.000+0000",
+			"CurrentExercise__c": "a04P0000007Rf0oIAC",
 			"Id": "a02P000000BMM8GIAX",
 			"Instructor__c": "Andres Perez",
 			"IsActive__c": true,

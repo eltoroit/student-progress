@@ -30,6 +30,10 @@
     -   Needs to activate an exercise
 -   Review new class, and no students.
     -   There seems to be a glitch here...
+-   Duplicate students
+    -   I had two michael students in the class. Ask for FirstName and LastName when registering
+    -   Also add a "nickname"
+-   Make a option to call attendance
 
 # DONE
 
