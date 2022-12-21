@@ -5,6 +5,7 @@
 				<lightning-spinner variant="brand"></lightning-spinner>
 			</template>
 			<lightning-button-group slot="actions">
+				<lightning-button label="Random Student" onclick={onRandomClick}></lightning-button>
 				<lightning-button
 					label="Current"
 					onclick={onCurrentClick}
@@ -99,6 +100,10 @@
 
 					<lightning-layout-item size="4"> Duration: </lightning-layout-item>
 					<lightning-layout-item size="8">{activeExerciseTimer} </lightning-layout-item>
+					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+
+					<lightning-layout-item size="4"> Completion: </lightning-layout-item>
+					<lightning-layout-item size="8">{summary} </lightning-layout-item>
 				</template>
 
 				<template if:true={ui.pnlStudents}>

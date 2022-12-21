@@ -29,11 +29,13 @@ export default class InstructorCurrent extends LightningElement {
 	loading = true;
 	forceRefresh = 0;
 	errorMessage = "";
+	randomStudent = "";
 	activeExerciseTimer = null;
 	activeExerciseStartAt = null;
 	timers = { progress: null, screen: null };
 
 	// Lists
+	summary = "";
 	exercises = [];
 	deliveries = [];
 	activeExercise = {}; // The exercise the students are working on
@@ -162,6 +164,10 @@ export default class InstructorCurrent extends LightningElement {
 		this.wiredStudentsProgress = result;
 		let { data, error } = result;
 		if (data) {
+			const summary = {
+				total: 0
+			};
+
 			this.progress = [];
 			if (!data.TABLE) {
 				return;
@@ -174,6 +180,7 @@ export default class InstructorCurrent extends LightningElement {
 				};
 				if (student.IsInstructor__c) {
 					row.name += ` 🧑‍🏫`;
+					row.isInstructor = true;
 				}
 				if (student.Exercises_X_Students__r?.length > 0) {
 					const rowData = student.Exercises_X_Students__r[0];
@@ -191,9 +198,23 @@ export default class InstructorCurrent extends LightningElement {
 						row.durationObj = duration;
 						row.duration = duration.minutes.toString();
 					}
+
+					// Summary
+					if (!summary[row.status]) {
+						summary[row.status] = 0;
+					}
+					summary.total++;
+					summary[row.status]++;
 				}
 				return row;
 			});
+
+			let completed = summary.total;
+			if (summary["00-START"]) completed -= summary["00-START"];
+			if (summary["01-WORKING"]) completed -= summary["01-WORKING"];
+			this.summary = `${Math.round((completed * 100) / summary.total)}%`;
+
+			// Sort results
 			this.progress = this.progress.sort((a, b) => {
 				let output = 0;
 				if (a.status < b.status) {
@@ -273,6 +294,27 @@ export default class InstructorCurrent extends LightningElement {
 		const option = this.exercises.find((exercise) => exercise.value === Id);
 		this.currentExercise = option.exercise;
 		Utils.setCookie({ key: "currentExerciseId", value: this.currentExercise.Id });
+	}
+
+	onRandomClick() {
+		debugger;
+		/*
+			Works with a quick solution, but not a good solution
+			It's possible to choose A, B, C, A, D... Having a student be selected again soon after it was previously selected.
+			Or a student that is not selected often enough
+			Maintain a list of unselected students and randomize from there :-)
+			This list should be in the server, since a page refresh would reset it.
+			Have the random student be chosen via Apex where a field can be set
+		*/
+		const prevStudent = this.randomStudent;
+		do {
+			let students = this.progress.filter((row) => !row.isInstructor);
+			students = students.map((row) => row.name);
+			let idx = Math.floor(Math.random() * students.length);
+			this.randomStudent = students[idx];
+		} while (this.randomStudent === prevStudent);
+		// eslint-disable-next-line no-alert
+		alert(this.randomStudent);
 	}
 
 	onNextClick() {
