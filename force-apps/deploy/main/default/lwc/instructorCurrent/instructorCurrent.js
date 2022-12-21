@@ -337,18 +337,18 @@ export default class InstructorCurrent extends LightningElement {
 
 	async onRefreshClick() {
 		// This clock is to get the data
-		clearInterval(this.timers.progress);
-		this.timers.progress = setInterval(async () => {
-			this.forceRefresh++;
-			// try {
-			// 	await refreshApex(this.wiredActiveCxDs);
-			// 	await refreshApex(this.wiredAllExercisesForCxD);
-			// 	await refreshApex(this.wiredStudentsProgress);
-			// 	this.errorMessage = "";
-			// } catch (error) {
-			// 	this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
-			// }
-		}, 1e3);
+		// clearInterval(this.timers.progress);
+		// this.timers.progress = setInterval(async () => {
+		this.forceRefresh++;
+		// 	// try {
+		// 	// 	await refreshApex(this.wiredActiveCxDs);
+		// 	// 	await refreshApex(this.wiredAllExercisesForCxD);
+		// 	// 	await refreshApex(this.wiredStudentsProgress);
+		// 	// 	this.errorMessage = "";
+		// 	// } catch (error) {
+		// 	// 	this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
+		// 	// }
+		// }, 1e3);
 	}
 
 	onRowAction(event) {

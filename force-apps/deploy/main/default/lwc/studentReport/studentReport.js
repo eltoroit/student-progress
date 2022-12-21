@@ -22,10 +22,10 @@ export default class Student extends LightningElement {
 	exerciseIsActive = false;
 
 	connectedCallback() {
-		setInterval(() => {
-			console.log("*** Refresh");
-			this.onRefreshClick();
-		}, 5e3);
+		// setInterval(() => {
+		console.log("*** Refresh");
+		this.onRefreshClick();
+		// }, 5e3);
 	}
 
 	@wire(getStudentById, { studentId: "$studentId" })
