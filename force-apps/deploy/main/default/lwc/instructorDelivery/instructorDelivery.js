@@ -16,10 +16,10 @@ const EXERCISE_PROGRESS_COLUMNS = [
 		type: "action",
 		typeAttributes: {
 			rowActions: [
-				{ label: "I'm done", name: "Status|03-DONE" },
-				{ label: "I'm working", name: "Status|01-WORKING" },
-				{ label: "I'll finish later", name: "Status|02-LATER" },
-				{ label: "Reset", name: "Status|00-START" }
+				{ label: "I'm done", name: `Status|${Utils.STATES.DONE()}` },
+				{ label: "I'm working", name: `Status|${Utils.STATES.WORKING()}` },
+				{ label: "I'll finish later", name: `Status|${Utils.STATES.LATER()}` },
+				{ label: "Reset", name: `Status|${Utils.STATES.START()}` }
 			]
 		}
 	}
@@ -237,7 +237,6 @@ export default class InstructorDelivery extends LightningElement {
 	}
 
 	onNextClick() {
-		debugger;
 		const index = this.exercises.options.findIndex((exercise) => exercise.value === this.exercises.currentId);
 		const nextOption = this.exercises.options[index + 1];
 		this.selectExercise({ currentId: nextOption.value });
@@ -245,12 +244,10 @@ export default class InstructorDelivery extends LightningElement {
 
 	onStartClick() {
 		this.dataManager.doStartStopExercise({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId, isStart: true });
-		debugger;
 	}
 
 	onStopClick() {
 		this.dataManager.doStartStopExercise({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId, isStart: false });
-		debugger;
 	}
 
 	onRefreshClick() {
@@ -409,7 +406,7 @@ export default class InstructorDelivery extends LightningElement {
 					Status: ExS.Status__c,
 					DTTM: new Date(ExS.LastModifiedDate)
 				};
-				if (ExS.Status__c === "03-DONE") {
+				if (ExS.Status__c === Utils.STATES.DONE()) {
 					newExS.Ranking = index + 1;
 					newExS.Points = points--;
 				}
@@ -482,7 +479,7 @@ export default class InstructorDelivery extends LightningElement {
 				row.startAt = rowData.CreatedDate;
 				row.endAt = rowData.LastModifiedDate;
 
-				if (row.status === "03-DONE") {
+				if (row.status === Utils.STATES.DONE()) {
 					const duration = Utils.calculateDuration({
 						startAt: row.startAt,
 						endAt: row.endAt
@@ -502,8 +499,8 @@ export default class InstructorDelivery extends LightningElement {
 		});
 
 		let completed = summary.total;
-		if (summary["00-START"]) completed -= summary["00-START"];
-		if (summary["01-WORKING"]) completed -= summary["01-WORKING"];
+		if (summary[Utils.STATES.START()]) completed -= summary[Utils.STATES.START()];
+		if (summary[Utils.STATES.WORKING()]) completed -= summary[Utils.STATES.WORKING()];
 		this.exProgSummary = Math.round((completed * 100) / summary.total);
 
 		// Sort results

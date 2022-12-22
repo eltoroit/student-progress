@@ -8,9 +8,9 @@ import getStudentsProgress from "@salesforce/apex/Instructor.getStudentsProgress
 import getAllExercisesForCxD from "@salesforce/apex/Instructor.getAllExercisesForCxD";
 
 const actions = [
-	{ label: "I'm done", name: "Status|03-DONE" },
-	{ label: "I'm working", name: "Status|01-WORKING" },
-	{ label: "I'll finish later", name: "Status|02-LATER" }
+	{ label: "I'm done", name: `Status|${Utils.STATES.DONE()}` },
+	{ label: "I'm working", name: `Status|${Utils.STATES.WORKING()}` },
+	{ label: "I'll finish later", name: `Status|${Utils.STATES.LATER()}` }
 ];
 
 const columns = [

@@ -1,4 +1,11 @@
 public without sharing class Data {
+	@AuraEnabled(cacheable=true)
+	public static Map<String, String> getStates() {
+		Map<String, String> output = new Map<String, String>();
+
+		return output;
+	}
+
 	@AuraEnabled
 	public static List<Delivery__c> getActiveDeliveries() {
 		List<Delivery__c> output = new List<Delivery__c>();
@@ -143,7 +150,7 @@ public without sharing class Data {
 					if (missingStudentIds.size() > 0) {
 						List<Exercise_X_Student__c> newExS = new List<Exercise_X_Student__c>();
 						for (Id studentId : missingStudentIds) {
-							newExS.add(new Exercise_X_Student__c(Student__c = studentId, Exercise__c = exerciseId, Status__c = '00-START'));
+							newExS.add(new Exercise_X_Student__c(Student__c = studentId, Exercise__c = exerciseId, Status__c = STATES.START));
 						}
 						insert newExS;
 					} else {

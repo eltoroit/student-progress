@@ -8,6 +8,21 @@ export default class Util {
 		info: "info"
 	};
 
+	static STATES = {
+		START: () => {
+			return "00-START";
+		},
+		WORKING: () => {
+			return "01-WORKING";
+		},
+		LATER: () => {
+			return "02-LATER";
+		},
+		DONE: () => {
+			return "03-DONE";
+		}
+	};
+
 	static showNotification(cmp, { title = "", message = "", variant = "success" }) {
 		cmp.dispatchEvent(
 			new ShowToastEvent({
@@ -201,19 +216,19 @@ export default class Util {
 	static getEmoji({ status }) {
 		let output = "";
 		switch (status) {
-			case "03-DONE": {
+			case Util.STATES.DONE(): {
 				output = "✅";
 				break;
 			}
-			case "01-WORKING": {
+			case Util.STATES.WORKING(): {
 				output = "👩‍💻";
 				break;
 			}
-			case "02-LATER": {
+			case Util.STATES.LATER(): {
 				output = "🕒";
 				break;
 			}
-			case "00-START": {
+			case Util.STATES.START(): {
 				output = "⚒️";
 				break;
 			}

@@ -5,8 +5,11 @@
 -   Socket.io!!!!!
     -   Child component that fires events when a message is received
     -   @api function to publish events
+-   QR code is not working
+    -   Consider hardcoding the URL when deploying to production
 -   Student randomizer
     -   Move the data acquisition to the student layer?
+    -   
 -   Assign org Ids
     -   Include late registrations
     -   Display URL (login.salesforce.com), username, and password.
