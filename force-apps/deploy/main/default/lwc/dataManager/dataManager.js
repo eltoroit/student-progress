@@ -1,5 +1,6 @@
 import Utils from "c/utils";
 import { api, LightningElement } from "lwc";
+import getDeliveryProgress from "@salesforce/apex/Data.getDeliveryProgress";
 import getActiveDeliveries from "@salesforce/apex/Data.getActiveDeliveries";
 import getCoursesPerDelivery from "@salesforce/apex/Data.getCoursesPerDelivery";
 import getAllExercisesForCourse from "@salesforce/apex/Data.getAllExercisesForCourse";
@@ -7,26 +8,31 @@ import getAllExercisesForCourse from "@salesforce/apex/Data.getAllExercisesForCo
 export default class DataManager extends LightningElement {
 	@api filterKey = null;
 	@api filterValue = null;
-	@api isRefreshing = false;
 	oldValues = {};
 
 	@api fetchActiveDeliveries() {
-		this._processApexResults({ obj: "ActiveDeliveries", apexCall: getActiveDeliveries() });
+		this.callApex({ obj: "ActiveDeliveries", apexPromise: getActiveDeliveries(), isforceEvent: true });
 	}
 
 	@api fetchCoursesPerDelivery({ deliveryId }) {
-		this._processApexResults({ obj: "CoursesPerDelivery", apexCall: getCoursesPerDelivery({ deliveryId }) });
+		this.callApex({ obj: "CoursesPerDelivery", apexPromise: getCoursesPerDelivery({ deliveryId }), isforceEvent: true });
 	}
 
 	@api fetchAllExercisesForCourse({ courseId }) {
-		this._processApexResults({ obj: "AllExercisesForCourse", apexCall: getAllExercisesForCourse({ courseId }) });
+		this.callApex({ obj: "AllExercisesForCourse", apexPromise: getAllExercisesForCourse({ courseId }), isforceEvent: true });
+	}
+
+	@api async retrieveDeliveryProgress({ deliveryId }) {
+		let output = await this.callApex({ obj: "DeliveryProgress", apexPromise: getDeliveryProgress({ deliveryId }), isforceEvent: false });
+		return output;
 	}
 
 	onEventReceived(event) {
+		const isDispatchEvent = true;
 		const { entityName, recordIds } = event.detail;
 		switch (entityName) {
 			case "Delivery__c": {
-				this.fetchActiveDeliveries();
+				this.callApex({ obj: "ActiveDeliveries", apexPromise: getActiveDeliveries(), isDispatchEvent });
 				break;
 			}
 			default:
@@ -45,27 +51,38 @@ export default class DataManager extends LightningElement {
 		debugger;
 	}
 
-	_processApexResults({ obj, apexCall }) {
-		apexCall
-			.then((data) => {
-				const oldValue = this.oldValues[obj]?.data;
-				const newValue = JSON.stringify(data);
-				if (this.isRefreshing || oldValue !== newValue) {
-					this.oldValues[obj] = {
-						dttm: new Date(),
-						data: newValue
-					};
+	async callApex({ obj, apexPromise, isforceEvent = false, isDispatchEvent = false }) {
+		let output = null;
+		try {
+			const data = await apexPromise;
+			const oldValue = this.oldValues[obj]?.data;
+			const newValue = JSON.stringify(data);
+
+			console.log(
+				`*** CallApex | obj: ${obj} | isforceEvent: ${isforceEvent} | isDispatchEvent: ${isDispatchEvent}`,
+				"Old | ", oldValue ? JSON.parse(oldValue) : null,
+				"New | ", JSON.parse(newValue)
+			);
+
+			if (isforceEvent || isDispatchEvent) {
+				if (isforceEvent || oldValue !== newValue) {
 					this.dispatchEvent(new CustomEvent("data", { detail: { obj, data } }));
 				} else {
-					console.log(`*** Data was the same, skipping`);
+					console.log(`*** Request from data event and data was the same... skipping`);
 				}
-			})
-			.catch((error) => {
-				Utils.showNotification(this, {
-					title: "Error Getting Data",
-					message: `${obj}: ${JSON.stringify(error)}`,
-					variant: Utils.variants.error
-				});
+			}
+			this.oldValues[obj] = {
+				dttm: new Date(),
+				data: newValue
+			};
+			output = data;
+		} catch (ex) {
+			Utils.showNotification(this, {
+				title: "Error Getting Data",
+				message: `${obj}: ${JSON.stringify(ex)}`,
+				variant: Utils.variants.error
 			});
+		}
+		return output;
 	}
 }

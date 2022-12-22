@@ -100,6 +100,7 @@ export default class InstructorDelivery extends LightningElement {
 		ui.pnlSelectorDeliveries = true;
 		ui.pnlSelectorCourses = this.deliveries?.currentId;
 		ui.pnlSelectorExercises = this.courses?.currentId;
+		ui.pnlActiveExerciseName = this.courses?.currentId && this.exercises?.activeId && !exIsActive;
 		ui.pnlActiveExerciseData = exIsActive;
 		// ui.pnlStudents = exCurrentId;
 
@@ -150,7 +151,6 @@ export default class InstructorDelivery extends LightningElement {
 				break;
 			}
 		}
-		this.loading = false;
 	}
 
 	onTestClick() {
@@ -160,25 +160,25 @@ export default class InstructorDelivery extends LightningElement {
 
 	//#region options
 	onDeliveryChange(event) {
-		this._onOptionchange({ event, objectName: "deliveries", cookieName: "deliveryId" });
+		this.selectOption({ currentId: event.target.value, objectName: "deliveries", cookieName: "deliveryId" });
 		this.dataManager.fetchCoursesPerDelivery({ deliveryId: this.deliveries.currentId });
 		this.showActiveExerciseInformation();
+		this.showDeliveryProgress();
 	}
 
 	onCourseChange(event) {
-		this._onOptionchange({ event, objectName: "courses", cookieName: "courseId" });
+		this.selectOption({ currentId: event.target.value, objectName: "courses", cookieName: "courseId" });
 		this.dataManager.fetchAllExercisesForCourse({ courseId: this.courses.currentId });
 		this.showActiveExerciseInformation();
 	}
 
 	onExerciseChange(event) {
-		this._onOptionchange({ event, objectName: "exercises", cookieName: "exerciseId" });
+		this.selectOption({ currentId: event.target.value, objectName: "exercises", cookieName: "exerciseId" });
 		// this.dataManager.fetchAllExercisesForCourse({ courseId: this.courses.currentId });
 		this.showActiveExerciseInformation();
 	}
 
-	_onOptionchange({ event, objectName, cookieName }) {
-		let currentId = event.target.value;
+	selectOption({ currentId, objectName, cookieName }) {
 		if (currentId === "") currentId = null;
 		this[objectName] = { ...this[objectName] };
 		this[objectName].currentId = currentId;
@@ -195,18 +195,26 @@ export default class InstructorDelivery extends LightningElement {
 		if (this.findRecord({ list: this.deliveries.records, Id: currentId })) {
 			this.dataManager.fetchCoursesPerDelivery({ deliveryId: currentId });
 			this.showActiveExerciseInformation();
+			this.showDeliveryProgress();
 		} else {
 			this.deliveries.currentId = null;
+			this.loading = false;
 		}
 	}
 
 	loadCoursesPerDelivery({ data }) {
-		let currentId = this.courses.currentId;
 		this._loadData({ objectName: "courses", data, placeholder: "Which Course?" });
+		let currentId = this.courses.currentId;
+		if (this.courses.records.length === 1) {
+			// If there is only one course, then select it
+			currentId = this.courses.records[0].Id;
+			this.selectOption({ currentId, objectName: "courses", cookieName: "courseId" });
+		}
 		if (this.findRecord({ list: this.courses.records, Id: currentId })) {
 			this.dataManager.fetchAllExercisesForCourse({ courseId: currentId });
 		} else {
 			this.courses.currentId = null;
+			this.loading = false;
 		}
 	}
 
@@ -218,6 +226,7 @@ export default class InstructorDelivery extends LightningElement {
 		} else {
 			this.exercises.currentId = null;
 		}
+		this.loading = false;
 	}
 
 	_loadData({ objectName, data, placeholder }) {
@@ -239,30 +248,110 @@ export default class InstructorDelivery extends LightningElement {
 		if (this.deliveries.currentId) {
 			const currentDelivery = this.findRecord({ list: this.deliveries.records, Id: this.deliveries.currentId });
 			if (currentDelivery.CurrentExerciseIsActive__c) {
+				this.exercises.activeId = currentDelivery.CurrentExercise__c;
+				this.activeExercise = {
+					record: currentDelivery.CurrentExercise__r,
+					startAt: currentDelivery.CurrentExerciseStart__c
+				};
 				if (currentDelivery.CurrentExercise__c === this.exercises.currentId) {
-					this.exercises.activeId = currentDelivery.CurrentExercise__c;
-					this.activeExercise = {
-						timer: setInterval(() => {
-							try {
-								console.log("Update clock");
-								this.duration = Utils.calculateDuration({
-									startAt: this.activeExercise.startAt,
-									endAt: new Date()
-								}).seconds.toString();
-							} catch (ex) {
-								Utils.showNotification(this, {
-									title: "Error (Instructor)",
-									message: "Error updating timer",
-									variant: Utils.variants.error
-								});
-								console.log(ex);
-							}
-						}, 5e2),
-						record: currentDelivery.CurrentExercise__r,
-						startAt: currentDelivery.CurrentExerciseStart__c
-					};
+					this.activeExercise.timer = setInterval(() => {
+						try {
+							console.log(`*** Update clock`);
+							this.duration = Utils.calculateDuration({
+								startAt: this.activeExercise.startAt,
+								endAt: new Date()
+							}).seconds.toString();
+						} catch (ex) {
+							Utils.showNotification(this, {
+								title: "Error (Instructor)",
+								message: "Error updating timer",
+								variant: Utils.variants.error
+							});
+							console.log(`***`, ex);
+						}
+					}, 5e2);
 				}
 			}
 		}
+	}
+
+	async showDeliveryProgress() {
+		const data = await this.dataManager.retrieveDeliveryProgress({ deliveryId: this.deliveries.currentId });
+
+		// Parse data
+		const mapStudents = {};
+		const exercises = data.EXERCISES.map((ex) => ({ Id: ex.Id, Name: ex.Name }));
+		const students = data.STUDENTS.map((student) => {
+			const output = {
+				Id: student.Id,
+				Name: student.Name,
+				IsInstructor: student.IsInstructor__c,
+				Points: 0,
+				mExS: {}
+			};
+			mapStudents[student.Id] = output;
+			return output;
+		});
+
+		// Calculate points
+		data.EXERCISES.forEach((ex) => {
+			let points = students.length;
+			ex.Exercises_X_Students__r.forEach((ExS, index) => {
+				const newExS = {
+					ExerciseId: ExS.Exercise__c,
+					StudentId: ExS.Student__c,
+					Points: 0,
+					Ranking: 0,
+					Status: ExS.Status__c,
+					DTTM: new Date(ExS.LastModifiedDate)
+				};
+				if (ExS.Status__c === "03-DONE") {
+					newExS.Ranking = index + 1;
+					newExS.Points = points--;
+				}
+				const student = mapStudents[ExS.Student__c];
+				student.Points += newExS.Points;
+				student.mExS[ExS.Exercise__c] = newExS;
+			});
+		});
+
+		// Build the output data
+		let tableAllData = students.map((student) => {
+			const output = {
+				StudentId: student.Id,
+				Name: student.Name,
+				Points: student.Points,
+				IsInstructor: student.IsInstructor,
+				EX: []
+			};
+			exercises.forEach((ex, index) => {
+				const ExS = student.mExS[ex.Id];
+				const paddedIndex = `${index}`.padStart(3, "0");
+				const tmp = {
+					index: paddedIndex,
+					ranking: 0,
+					points: 0,
+					status: "?",
+					emoji: ""
+				};
+				if (ExS) {
+					tmp.ranking = ExS.Ranking;
+					tmp.points = ExS.Points;
+					tmp.status = ExS.Status;
+					tmp.emoji = Utils.getEmoji({ status: ExS.Status });
+				}
+				output.EX.push(tmp);
+			});
+			return output;
+		});
+
+		// Only the students
+		tableAllData = tableAllData.filter((row) => !row.IsInstructor);
+
+		// Sort it :-)
+		tableAllData = tableAllData.sort((a, b) => -(a.Points < b.Points ? -1 : 1));
+
+		// Notify
+		this.dispatchEvent(new CustomEvent("deliverydata", { detail: tableAllData }));
 	}
 }

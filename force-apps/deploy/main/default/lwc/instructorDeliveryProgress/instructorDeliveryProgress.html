@@ -1,0 +1,9 @@
+<template>
+	<lightning-card>
+		<lightning-button-group slot="actions">
+			<lightning-button label="Table" onclick={onShowTable}></lightning-button>
+			<lightning-button label="Refresh" onclick={onRefresh} variant="brand"></lightning-button>
+		</lightning-button-group>
+		<div class="chart slds-var-m-around_medium" lwc:dom="manual"></div>
+	</lightning-card>
+</template>

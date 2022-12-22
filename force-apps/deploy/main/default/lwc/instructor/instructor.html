@@ -6,7 +6,7 @@
 					<div class="slds-m-horizontal_xx-large">
 						<lightning-tabset active-tab-value="Instructor">
 							<lightning-tab label="Current Exercise" value="Instructor">
-								<c-instructor-delivery></c-instructor-delivery>
+								<c-instructor-delivery ondeliverydata={onDeliveryData}></c-instructor-delivery>
 								<!-- <c-instructor-current></c-instructor-current> -->
 							</lightning-tab>
 							<lightning-tab label="Student" value="Student">
@@ -18,6 +18,7 @@
 			</lightning-layout-item>
 			<lightning-layout-item size="4">
 				<div class="slds-m-horizontal_small">
+					<!-- Display QR Code -->
 					<lightning-card>
 						<lightning-layout multiple-rows>
 							<lightning-layout-item size="12" class="slds-align_absolute-center">
@@ -28,8 +29,10 @@
 							</lightning-layout-item>
 						</lightning-layout>
 					</lightning-card>
-					<br />
-					<c-instructor-progress current-course-delivery-key={currentCourseDeliveryKey}></c-instructor-progress>
+					<!-- Display delivery progress -->
+					<div class="slds-m-top_small">
+						<c-instructor-delivery-progress delivery-data={deliveryData}></c-instructor-delivery-progress>
+					</div>
 				</div>
 			</lightning-layout-item>
 		</lightning-layout>

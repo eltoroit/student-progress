@@ -221,7 +221,7 @@ export default class Util {
 				output = "❓";
 				break;
 		}
-		console.log(`*** ${status} => ${output}`);
+		// console.log(`*** ${status} => ${output}`);
 		return output;
 	}
 }

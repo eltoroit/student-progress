@@ -50,7 +50,7 @@ export default class EmpApiManager extends LightningElement {
 	disconnectedCallback() {
 		unsubscribe(this.empApi.subscription, (response) => {
 			// Response is true for successful unsubscribe
-			console.log("unsubscribe() response: ", JSON.stringify(response));
+			console.log(`*** unsubscribe() response: ${JSON.stringify(response)}`);
 			debugger;
 		});
 	}

@@ -2,12 +2,30 @@ import { api, LightningElement } from "lwc";
 import StudentsSR from "@salesforce/resourceUrl/Students";
 
 export default class Image extends LightningElement {
-	@api pathInSr;
 	@api maxWidth;
 	@api maxHeight;
+	_pathInSr;
+	counter = 0;
+	url = "";
 
-	get url() {
-		return `${StudentsSR}/${this.pathInSr}`;
+	@api
+	get pathInSr() {
+		return this._pathInSr;
+	}
+	set pathInSr(value) {
+		this._pathInSr = value;
+		this.computeUrl();
+	}
+
+	computeUrl() {
+		this.url = `${StudentsSR}/${this.pathInSr}?counter=${this.counter}`;
+	}
+
+	connectedCallback() {
+		setInterval(() => {
+			this.counter++;
+			this.computeUrl();
+		}, 1e3);
 	}
 
 	get style() {

@@ -1,5 +1,5 @@
 public without sharing class Data {
-	@AuraEnabled(cacheable=true)
+	@AuraEnabled
 	public static List<Delivery__c> getActiveDeliveries() {
 		List<Delivery__c> output = new List<Delivery__c>();
 
@@ -13,7 +13,7 @@ public without sharing class Data {
 		return output;
 	}
 
-	@AuraEnabled(cacheable=true)
+	@AuraEnabled
 	public static List<Course__c> getCoursesPerDelivery(Id deliveryId) {
 		List<Course__c> output = new List<Course__c>();
 		List<Course_X_Delivery__c> CxDs = [
@@ -30,7 +30,7 @@ public without sharing class Data {
 		return output;
 	}
 
-	@AuraEnabled(cacheable=true)
+	@AuraEnabled
 	public static List<Exercise__c> getAllExercisesForCourse(Id courseId) {
 		List<Exercise__c> output = new List<Exercise__c>();
 
@@ -45,27 +45,8 @@ public without sharing class Data {
 	}
 
 	@AuraEnabled
-	public static void updateStudentStatus(Id exerciseId, Id studentId, Id status) {
-		List<Exercise_X_Student__c> ExSs = [
-			SELECT Id, Name, Exercise__c, Student__c, Status__c
-			FROM Exercise_X_Student__c
-			WHERE Student__c = :studentId AND Exercise__c = :exerciseId
-		];
-		Exercise_X_Student__c ExS;
-		if (ExSs.size() == 0) {
-			ExS = new Exercise_X_Student__c(Exercise__c = exerciseId, Student__c = studentId);
-		} else if (ExSs.size() == 1) {
-			ExS = ExSs[0];
-		} else {
-			throw new AuraException('Multiple records per student');
-		}
-		ExS.Status__c = status;
-		upsert ExS;
-	}
-
-	@AuraEnabled(cacheable=true)
-	public static Map<String, Object> getClassReport(Id courseId, Id deliveryId) {
-		Map<String, Object> output = null;
+	public static Map<String, Object> getDeliveryProgress(Id deliveryId) {
+		Map<String, Object> output = new Map<String, Object>();
 
 		List<Student__c> students = [
 			SELECT Id, Name, IsInstructor__c
@@ -98,7 +79,26 @@ public without sharing class Data {
 		return output;
 	}
 
-	@AuraEnabled(cacheable=true)
+	@AuraEnabled
+	public static void updateStudentStatus(Id exerciseId, Id studentId, Id status) {
+		List<Exercise_X_Student__c> ExSs = [
+			SELECT Id, Name, Exercise__c, Student__c, Status__c
+			FROM Exercise_X_Student__c
+			WHERE Student__c = :studentId AND Exercise__c = :exerciseId
+		];
+		Exercise_X_Student__c ExS;
+		if (ExSs.size() == 0) {
+			ExS = new Exercise_X_Student__c(Exercise__c = exerciseId, Student__c = studentId);
+		} else if (ExSs.size() == 1) {
+			ExS = ExSs[0];
+		} else {
+			throw new AuraException('Multiple records per student');
+		}
+		ExS.Status__c = status;
+		upsert ExS;
+	}
+
+	@AuraEnabled
 	public static Map<String, Object> getExerciseProgress(Id courseId, Id deliveryId, Id exerciseId) {
 		Map<String, Object> output = new Map<String, Object>();
 
@@ -212,7 +212,7 @@ public without sharing class Data {
 		return student;
 	}
 
-	@AuraEnabled(cacheable=true)
+	@AuraEnabled
 	public static Map<String, Object> validateRegistration(Id deliveryId, Id studentId) {
 		Map<String, Object> output = new Map<String, Object>();
 		List<String> errors = new List<String>();

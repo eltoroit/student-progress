@@ -98,11 +98,15 @@
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
 				</template>
 
-				<template if:true={ui.pnlActiveExerciseData}>
+				<template if:true={ui.pnlActiveExerciseName}>
 					<lightning-layout-item size="4"> Active Exercise: </lightning-layout-item>
-					<lightning-layout-item size="8"> {activeExercise.record.Name} </lightning-layout-item>
+					<lightning-layout-item size="8">
+						<span class="slds-input slds-is-disabled">{activeExercise.record.Name}</span>
+					</lightning-layout-item>
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+				</template>
 
+				<template if:true={ui.pnlActiveExerciseData}>
 					<lightning-layout-item size="4"> Start: </lightning-layout-item>
 					<lightning-layout-item size="8">
 						<lightning-formatted-date-time value={activeExercise.startAt} hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
