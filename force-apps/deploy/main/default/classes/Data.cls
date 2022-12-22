@@ -44,103 +44,6 @@ public without sharing class Data {
 		return output;
 	}
 
-	@AuraEnabled(cacheable=true)
-	public static Exercise__c getActiveExercise(Id deliveryId) {
-		Exercise__c output = null;
-
-		List<Exercise__c> exercises = [
-			SELECT Id, Name
-			FROM Exercise__c
-			WHERE
-				Id IN (
-					SELECT CurrentExercise__c
-					FROM Delivery__c
-					WHERE Id = :deliveryId AND CurrentExerciseIsActive__c = TRUE
-				)
-		];
-		if (exercises.size() == 1) {
-			output = exercises[0];
-		}
-
-		return output;
-	}
-
-	@AuraEnabled(cacheable=true)
-	public static List<Student__c> getStudentsForDelivery(Id deliveryId) {
-		List<Student__c> output = new List<Student__c>();
-
-		output = [SELECT Id, Name FROM Student__c WHERE Delivery__c = :deliveryId ORDER BY Name ASC];
-
-		return output;
-	}
-
-	@AuraEnabled(cacheable=true)
-	public static Student__c getStudentById(Id studentId) {
-		Student__c output = new Student__c();
-
-		output = [SELECT Id, Name FROM Student__c WHERE Id = :studentId];
-
-		return output;
-	}
-
-	@AuraEnabled(cacheable=true)
-	public static Delivery__c getDeliveryById(Id deliveryId) {
-		Delivery__c output = new Delivery__c();
-
-		output = [
-			SELECT Id, Name, Instructor__c, CurrentExercise__r.Name, CurrentExerciseIsActive__c
-			FROM Delivery__c
-			WHERE Id = :deliveryId
-		];
-
-		return output;
-	}
-
-	@AuraEnabled(cacheable=true)
-	public static Exercise__c getExercisetById(Id exerciseId) {
-		Exercise__c output = new Exercise__c();
-
-		output = [SELECT Id, Name FROM Exercise__c WHERE Id = :exerciseId];
-
-		return output;
-	}
-
-	@AuraEnabled
-	public static Student__c registerStudent(Id deliveryId, String studentName) {
-		Student__c student = new Student__c();
-
-		student = new Student__c(Name = studentName, delivery__c = deliveryId, Key__c = deliveryId + '|' + studentName);
-		upsert student Key__c;
-
-		return student;
-	}
-
-	@AuraEnabled(cacheable=true)
-	public static Map<String, Object> validateRegistration(Id deliveryId, Id studentId) {
-		Map<String, Object> output = new Map<String, Object>();
-		List<String> errors = new List<String>();
-
-		output.put('student', '');
-		output.put('delivery', '');
-		List<Student__c> students = [SELECT Id, Name FROM Student__c WHERE Id = :studentId AND Delivery__c = :deliveryId];
-		if (students.size() == 1) {
-			output.put('student', students[0]);
-		} else {
-			errors.add('Invalid studentId');
-		}
-		List<Delivery__c> deliveries = [SELECT Id, Name FROM Delivery__c WHERE Id = :deliveryId AND IsActive__c = TRUE];
-		if (deliveries.size() == 1) {
-			output.put('delivery', deliveries[0]);
-		} else {
-			errors.add('Invalid deliveryId');
-		}
-		if (errors.size() > 0) {
-			throw new CalloutException('Registration data is not valid: ' + JSON.serialize(errors));
-		}
-
-		return output;
-	}
-
 	@AuraEnabled
 	public static void updateStudentStatus(Id exerciseId, Id studentId, Id status) {
 		List<Exercise_X_Student__c> ExSs = [
@@ -158,38 +61,6 @@ public without sharing class Data {
 		}
 		ExS.Status__c = status;
 		upsert ExS;
-	}
-
-	@AuraEnabled(cacheable=true)
-	public static Map<String, Object> getExerciseProgress(Id courseId, Id deliveryId, Id exerciseId) {
-		Map<String, Object> output = new Map<String, Object>();
-
-		List<Student__c> students = [
-			SELECT
-				Id,
-				Name,
-				IsInstructor__c,
-				(
-					SELECT Id, Status__c, CreatedDate, lastModifiedDate
-					FROM Exercises_X_Students__r
-					WHERE Exercise__c = :exerciseId
-				)
-			FROM Student__c
-			WHERE Delivery__c = :deliveryId
-			ORDER BY Name ASC
-		];
-
-		List<Delivery__c> deliveries = [
-			SELECT CurrentExercise__r.Name, CurrentExerciseStart__c, CurrentExerciseIsActive__c
-			FROM Delivery__c
-			WHERE Id = :deliveryId AND CurrentExercise__c != NULL
-		];
-
-		output.put('TABLE', students);
-		output.put('DELIVERIES', deliveries);
-		output.put('EXERCISES', getAllExercisesForCourse(courseId));
-
-		return output;
 	}
 
 	@AuraEnabled(cacheable=true)
@@ -223,6 +94,38 @@ public without sharing class Data {
 		];
 		output.put('STUDENTS', students);
 		output.put('EXERCISES', exercises);
+
+		return output;
+	}
+
+	@AuraEnabled(cacheable=true)
+	public static Map<String, Object> getExerciseProgress(Id courseId, Id deliveryId, Id exerciseId) {
+		Map<String, Object> output = new Map<String, Object>();
+
+		List<Student__c> students = [
+			SELECT
+				Id,
+				Name,
+				IsInstructor__c,
+				(
+					SELECT Id, Status__c, CreatedDate, lastModifiedDate
+					FROM Exercises_X_Students__r
+					WHERE Exercise__c = :exerciseId
+				)
+			FROM Student__c
+			WHERE Delivery__c = :deliveryId
+			ORDER BY Name ASC
+		];
+
+		List<Delivery__c> deliveries = [
+			SELECT CurrentExercise__r.Name, CurrentExerciseStart__c, CurrentExerciseIsActive__c
+			FROM Delivery__c
+			WHERE Id = :deliveryId AND CurrentExercise__c != NULL
+		];
+
+		output.put('TABLE', students);
+		output.put('DELIVERIES', deliveries);
+		output.put('EXERCISES', getAllExercisesForCourse(courseId));
 
 		return output;
 	}
@@ -295,6 +198,104 @@ public without sharing class Data {
 			FROM Delivery__c
 			WHERE Id = :deliveryId
 		];
+
+		return output;
+	}
+
+	@AuraEnabled
+	public static Student__c registerStudent(Id deliveryId, String studentName) {
+		Student__c student = new Student__c();
+
+		student = new Student__c(Name = studentName, delivery__c = deliveryId, Key__c = deliveryId + '|' + studentName);
+		upsert student Key__c;
+
+		return student;
+	}
+
+	@AuraEnabled(cacheable=true)
+	public static Map<String, Object> validateRegistration(Id deliveryId, Id studentId) {
+		Map<String, Object> output = new Map<String, Object>();
+		List<String> errors = new List<String>();
+
+		output.put('student', '');
+		output.put('delivery', '');
+		List<Student__c> students = [SELECT Id, Name FROM Student__c WHERE Id = :studentId AND Delivery__c = :deliveryId];
+		if (students.size() == 1) {
+			output.put('student', students[0]);
+		} else {
+			errors.add('Invalid studentId');
+		}
+		List<Delivery__c> deliveries = [SELECT Id, Name FROM Delivery__c WHERE Id = :deliveryId AND IsActive__c = TRUE];
+		if (deliveries.size() == 1) {
+			output.put('delivery', deliveries[0]);
+		} else {
+			errors.add('Invalid deliveryId');
+		}
+		if (errors.size() > 0) {
+			throw new CalloutException('Registration data is not valid: ' + JSON.serialize(errors));
+		}
+
+		return output;
+	}
+
+	// Other
+	@AuraEnabled(cacheable=true)
+	public static Exercise__c getActiveExercise(Id deliveryId) {
+		Exercise__c output = null;
+
+		List<Exercise__c> exercises = [
+			SELECT Id, Name
+			FROM Exercise__c
+			WHERE
+				Id IN (
+					SELECT CurrentExercise__c
+					FROM Delivery__c
+					WHERE Id = :deliveryId AND CurrentExerciseIsActive__c = TRUE
+				)
+		];
+		if (exercises.size() == 1) {
+			output = exercises[0];
+		}
+
+		return output;
+	}
+
+	@AuraEnabled(cacheable=true)
+	public static Student__c getStudentById(Id studentId) {
+		Student__c output = new Student__c();
+
+		output = [SELECT Id, Name FROM Student__c WHERE Id = :studentId];
+
+		return output;
+	}
+
+	@AuraEnabled(cacheable=true)
+	public static Delivery__c getDeliveryById(Id deliveryId) {
+		Delivery__c output = new Delivery__c();
+
+		output = [
+			SELECT Id, Name, Instructor__c, CurrentExercise__r.Name, CurrentExerciseIsActive__c
+			FROM Delivery__c
+			WHERE Id = :deliveryId
+		];
+
+		return output;
+	}
+
+	@AuraEnabled(cacheable=true)
+	public static Exercise__c getExercisetById(Id exerciseId) {
+		Exercise__c output = new Exercise__c();
+
+		output = [SELECT Id, Name FROM Exercise__c WHERE Id = :exerciseId];
+
+		return output;
+	}
+
+	@AuraEnabled(cacheable=true)
+	public static List<Student__c> getStudentsForDelivery(Id deliveryId) {
+		List<Student__c> output = new List<Student__c>();
+
+		output = [SELECT Id, Name FROM Student__c WHERE Delivery__c = :deliveryId ORDER BY Name ASC];
 
 		return output;
 	}

@@ -162,19 +162,19 @@ export default class InstructorDelivery extends LightningElement {
 	onDeliveryChange(event) {
 		this._onOptionchange({ event, objectName: "deliveries", cookieName: "deliveryId" });
 		this.dataManager.fetchCoursesPerDelivery({ deliveryId: this.deliveries.currentId });
-		this._getActiveExercise();
+		this.showActiveExerciseInformation();
 	}
 
 	onCourseChange(event) {
 		this._onOptionchange({ event, objectName: "courses", cookieName: "courseId" });
 		this.dataManager.fetchAllExercisesForCourse({ courseId: this.courses.currentId });
-		this._getActiveExercise();
+		this.showActiveExerciseInformation();
 	}
 
 	onExerciseChange(event) {
 		this._onOptionchange({ event, objectName: "exercises", cookieName: "exerciseId" });
 		// this.dataManager.fetchAllExercisesForCourse({ courseId: this.courses.currentId });
-		this._getActiveExercise();
+		this.showActiveExerciseInformation();
 	}
 
 	_onOptionchange({ event, objectName, cookieName }) {
@@ -194,7 +194,7 @@ export default class InstructorDelivery extends LightningElement {
 		this._loadData({ objectName: "deliveries", data, placeholder: "Which Delivery?" });
 		if (this.findRecord({ list: this.deliveries.records, Id: currentId })) {
 			this.dataManager.fetchCoursesPerDelivery({ deliveryId: currentId });
-			this._getActiveExercise();
+			this.showActiveExerciseInformation();
 		} else {
 			this.deliveries.currentId = null;
 		}
@@ -231,7 +231,7 @@ export default class InstructorDelivery extends LightningElement {
 	}
 	//#endregion
 
-	_getActiveExercise() {
+	showActiveExerciseInformation() {
 		clearInterval(this.activeExercise?.timer);
 		this.exercises.activeId = null;
 		this.activeExercise.record = null;
