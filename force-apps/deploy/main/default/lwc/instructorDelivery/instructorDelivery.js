@@ -1,21 +1,27 @@
 import Utils from "c/utils";
 import { LightningElement } from "lwc";
 
-const actions = [
-	{ label: "I'm done", name: "Status|03-DONE" },
-	{ label: "I'm working", name: "Status|01-WORKING" },
-	{ label: "I'll finish later", name: "Status|02-LATER" },
-	{ label: "Reset", name: "Status|00-START" }
-];
-
-const columns = [
-	{ label: "Emoji", fieldName: "emoji", fixedWidth: 40 },
+const EXERCISE_PROGRESS_COLUMNS = [
+	{
+		label: "",
+		type: "button",
+		hideLabel: true,
+		fixedWidth: 40,
+		typeAttributes: { variant: "base", name: "button|emoji", title: { fieldName: "status" }, label: { fieldName: "emoji" } }
+	},
 	// { label: "Status2", fieldName: "status" },
 	{ label: "Name", fieldName: "name" },
 	{ label: "Duration", fieldName: "duration" },
 	{
 		type: "action",
-		typeAttributes: { rowActions: actions }
+		typeAttributes: {
+			rowActions: [
+				{ label: "I'm done", name: "Status|03-DONE" },
+				{ label: "I'm working", name: "Status|01-WORKING" },
+				{ label: "I'll finish later", name: "Status|02-LATER" },
+				{ label: "Reset", name: "Status|00-START" }
+			]
+		}
 	}
 ];
 
@@ -24,7 +30,6 @@ export default class InstructorDelivery extends LightningElement {
 	filterValue = null;
 
 	// Controls
-	summary = "";
 	loading = true;
 	errorMessage = "";
 	randomStudent = "";
@@ -55,42 +60,44 @@ export default class InstructorDelivery extends LightningElement {
 		currentId: null
 	};
 
-	// Table
-	progress = [];
-	columns = columns;
+	// Exercise progress
+	exProgSummary = "";
+	exProgProgress = [];
+	exProgColumns = EXERCISE_PROGRESS_COLUMNS;
 
 	get ui() {
-		const exCurrentId = this.exercises?.currentId;
-		const currentCxDId = this.courses?.currentId;
-		const exIsActive =
-			this.exercises?.currentId &&
-			this.exercises?.activeId === this.exercises?.currentId &&
-			this.findRecord({ list: this.deliveries?.records, Id: this.deliveries?.currentId })?.CurrentExerciseIsActive__c;
-		let exercises = {};
-		if (this.exercises.options.length > 0) {
-			exercises = {
-				max: this.exercises.options.length - 1,
-				activeIdx: this.findRecord({ list: this.exercises?.records, Id: this.exercises?.activeId }),
-				currentIdx: this.findRecord({ list: this.exercises?.records, Id: this.exercises?.currentId })
-			};
-		}
+		const hasNext = () => {
+			const size = this.exercises?.records?.length;
+			if (isNaN(size)) return false;
+
+			const currentIdx = this.exercises?.options?.findIndex((option) => option.value === this.exercises?.currentId);
+			return currentIdx < size;
+		};
+
+		const isCurrentActive = () => {
+			return (
+				this.exercises?.currentId &&
+				this.exercises?.activeId === this.exercises?.currentId &&
+				this.findRecord({ list: this.deliveries?.records, Id: this.deliveries?.currentId })?.CurrentExerciseIsActive__c
+			);
+		};
 
 		const ui = {};
 		ui.btnCurrent = {
-			isVisible: currentCxDId,
-			isDisabled: !currentCxDId || exIsActive
+			isVisible: this.courses?.currentId,
+			isDisabled: !this.exercises?.activeId || isCurrentActive()
 		};
 		ui.btnNext = {
-			isVisible: currentCxDId,
-			isDisabled: !exCurrentId || exIsActive || exercises.currentIdx === exercises.max
+			isVisible: this.courses?.currentId,
+			isDisabled: this.exercises?.activeId || !this.exercises?.currentId || isCurrentActive() || !hasNext()
 		};
 		ui.btnStart = {
-			isVisible: currentCxDId,
-			isDisabled: !exCurrentId || exIsActive
+			isVisible: this.courses?.currentId,
+			isDisabled: this.exercises?.activeId || !this.exercises?.currentId || isCurrentActive()
 		};
 		ui.btnStop = {
-			isVisible: currentCxDId,
-			isDisabled: !exCurrentId || !exIsActive
+			isVisible: this.courses?.currentId,
+			isDisabled: !this.exercises?.activeId || !this.exercises?.currentId || !isCurrentActive()
 		};
 		ui.btnRefresh = {
 			isVisible: true,
@@ -100,9 +107,10 @@ export default class InstructorDelivery extends LightningElement {
 		ui.pnlSelectorDeliveries = true;
 		ui.pnlSelectorCourses = this.deliveries?.currentId;
 		ui.pnlSelectorExercises = this.courses?.currentId;
-		ui.pnlActiveExerciseName = this.courses?.currentId && this.exercises?.activeId && !exIsActive;
-		ui.pnlActiveExerciseData = exIsActive;
-		// ui.pnlStudents = exCurrentId;
+		ui.pnlActiveExerciseName = this.courses?.currentId && this.exercises?.activeId && !isCurrentActive();
+		ui.pnlActiveExerciseData = isCurrentActive();
+		ui.pnlCompletion = !isNaN(this.exProgSummary);
+		ui.pnlStudents = this.exercises?.currentId;
 
 		return ui;
 	}
@@ -150,6 +158,10 @@ export default class InstructorDelivery extends LightningElement {
 				this.parseDeliveryProgress({ data });
 				break;
 			}
+			case "ExerciseProgress": {
+				this.parseExerciseProgress({ data });
+				break;
+			}
 			default: {
 				debugger;
 				break;
@@ -157,32 +169,124 @@ export default class InstructorDelivery extends LightningElement {
 		}
 	}
 
-	onTestClick() {
-		debugger;
-		console.log(this.ui);
+	onRowAction(event) {
+		const row = event.detail.row;
+		const actionName = event.detail.action.name;
+		const actionNameParts = actionName.split("|");
+		const actionNameCommand = actionNameParts[0];
+		const actionValue = actionNameParts[1];
+
+		switch (actionNameCommand) {
+			// case "Status":
+			// 	updateStudentStatus({
+			// 		ExS: row.exsId,
+			// 		studentId: row.studentId,
+			// 		exerciseId: this.currentExerciseId,
+			// 		status: actionValue
+			// 	})
+			// 		.then(() => {})
+			// 		.catch((error) => {
+			// 			console.log(error);
+			// 			debugger;
+			// 		});
+			// 	break;
+			case "button": {
+				switch (actionValue) {
+					case "emoji": {
+						// Ignore
+						break;
+					}
+					default:
+						debugger;
+						break;
+				}
+				break;
+			}
+			default: {
+				debugger;
+			}
+		}
 	}
 
-	//#region options
+	onRandomClick() {
+		/*
+			Works with a quick solution, but not a good solution
+			It's possible to choose A, B, C, A, D... Having a student be selected again soon after it was previously selected.
+			Or a student that is not selected often enough
+			Maintain a list of unselected students and randomize from there :-)
+			This list should be in the server, since a page refresh would reset it.
+			Have the random student be chosen via Apex where a field can be set
+		*/
+		const prevStudent = this.randomStudent;
+		do {
+			let students = this.exProgProgress.filter((row) => !row.isInstructor);
+			students = students.map((row) => row.name);
+			let idx = Math.floor(Math.random() * students.length);
+			this.randomStudent = students[idx];
+		} while (this.randomStudent === prevStudent);
+		// eslint-disable-next-line no-alert
+		alert(this.randomStudent);
+	}
+
+	onCurrentClick() {
+		if (this.exercises.activeId) {
+			this.selectExercise({ currentId: this.exercises.activeId });
+		} else {
+			this.selectExercise({ currentId: this.exercises.currentId });
+		}
+	}
+
+	onNextClick() {
+		debugger;
+		const index = this.exercises.options.findIndex((exercise) => exercise.value === this.exercises.currentId);
+		const nextOption = this.exercises.options[index + 1];
+		this.selectExercise({ currentId: nextOption.value });
+	}
+
+	onStartClick() {
+		this.dataManager.doStartStopExercise({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId, isStart: true });
+		debugger;
+	}
+
+	onStopClick() {
+		this.dataManager.doStartStopExercise({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId, isStart: false });
+		debugger;
+	}
+
+	onRefreshClick() {
+		debugger;
+	}
+
+	//#region OPTIONS
 	onDeliveryChange(event) {
-		this.selectOption({ currentId: event.target.value, objectName: "deliveries", cookieName: "deliveryId" });
+		this.selectDelivery({ currentId: event.target.value });
+	}
+	selectDelivery({ currentId }) {
+		this.genericSelectOption({ currentId, objectName: "deliveries", cookieName: "deliveryId" });
 		this.dataManager.fetchCoursesPerDelivery({ deliveryId: this.deliveries.currentId });
-		this.showActiveExerciseInformation();
-		this.dataManager.retrieveDeliveryProgress({ deliveryId: this.deliveries.currentId });
+		this.parseActiveExerciseInformation();
+		this.dataManager.fetchDeliveryProgress({ deliveryId: this.deliveries.currentId });
 	}
 
 	onCourseChange(event) {
-		this.selectOption({ currentId: event.target.value, objectName: "courses", cookieName: "courseId" });
+		this.selectCourse({ currentId: event.target.value });
+	}
+	selectCourse({ currentId }) {
+		this.genericSelectOption({ currentId, objectName: "courses", cookieName: "courseId" });
 		this.dataManager.fetchAllExercisesForCourse({ courseId: this.courses.currentId });
-		this.showActiveExerciseInformation();
+		this.parseActiveExerciseInformation();
 	}
 
 	onExerciseChange(event) {
-		this.selectOption({ currentId: event.target.value, objectName: "exercises", cookieName: "exerciseId" });
-		// this.dataManager.fetchAllExercisesForCourse({ courseId: this.courses.currentId });
-		this.showActiveExerciseInformation();
+		this.selectExercise({ currentId: event.target.value });
+	}
+	selectExercise({ currentId }) {
+		this.genericSelectOption({ currentId, objectName: "exercises", cookieName: "exerciseId" });
+		this.parseActiveExerciseInformation();
+		this.dataManager.fetchExerciseProgress({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId });
 	}
 
-	selectOption({ currentId, objectName, cookieName }) {
+	genericSelectOption({ currentId, objectName, cookieName }) {
 		if (currentId === "") currentId = null;
 		this[objectName] = { ...this[objectName] };
 		this[objectName].currentId = currentId;
@@ -192,14 +296,12 @@ export default class InstructorDelivery extends LightningElement {
 	}
 	//#endregion
 
-	//#region loadData
+	//#region LOAD DATA
 	loadActiveDeliveries({ data }) {
 		let currentId = this.deliveries.currentId;
 		this._loadData({ objectName: "deliveries", data, placeholder: "Which Delivery?" });
 		if (this.findRecord({ list: this.deliveries.records, Id: currentId })) {
-			this.dataManager.fetchCoursesPerDelivery({ deliveryId: currentId });
-			this.showActiveExerciseInformation();
-			this.dataManager.retrieveDeliveryProgress({ deliveryId: this.deliveries.currentId });
+			this.selectDelivery({ currentId });
 		} else {
 			this.deliveries.currentId = null;
 			this.loading = false;
@@ -212,10 +314,9 @@ export default class InstructorDelivery extends LightningElement {
 		if (this.courses.records.length === 1) {
 			// If there is only one course, then select it
 			currentId = this.courses.records[0].Id;
-			this.selectOption({ currentId, objectName: "courses", cookieName: "courseId" });
 		}
 		if (this.findRecord({ list: this.courses.records, Id: currentId })) {
-			this.dataManager.fetchAllExercisesForCourse({ courseId: currentId });
+			this.selectCourse({ currentId });
 		} else {
 			this.courses.currentId = null;
 			this.loading = false;
@@ -226,7 +327,7 @@ export default class InstructorDelivery extends LightningElement {
 		let currentId = this.exercises.currentId;
 		this._loadData({ objectName: "exercises", data, placeholder: "Which Exercise?" });
 		if (this.findRecord({ list: this.exercises.records, Id: currentId })) {
-			// this.dataManager.fetchAllExercisesForCourse({ deliveryId: currentId });
+			this.selectExercise({ currentId });
 		} else {
 			this.exercises.currentId = null;
 		}
@@ -244,7 +345,8 @@ export default class InstructorDelivery extends LightningElement {
 	}
 	//#endregion
 
-	showActiveExerciseInformation() {
+	//#region PARSERS
+	parseActiveExerciseInformation() {
 		clearInterval(this.activeExercise?.timer);
 		this.exercises.activeId = null;
 		this.activeExercise.record = null;
@@ -356,4 +458,79 @@ export default class InstructorDelivery extends LightningElement {
 		// Notify
 		this.dispatchEvent(new CustomEvent("deliverydata", { detail: tableAllData }));
 	}
+
+	parseExerciseProgress({ data }) {
+		const summary = {
+			total: 0
+		};
+
+		this.exProgProgress = data.map((student) => {
+			const row = {
+				studentId: student.Id,
+				name: student.Name,
+				status: ""
+			};
+			if (student.IsInstructor__c) {
+				row.name += ` 🧑‍🏫`;
+				row.isInstructor = true;
+			}
+			if (student.Exercises_X_Students__r?.length > 0) {
+				const rowData = student.Exercises_X_Students__r[0];
+				row.exsId = rowData?.Id;
+				row.status = rowData?.Status__c;
+				row.emoji = Utils.getEmoji({ status: rowData?.Status__c });
+				row.startAt = rowData.CreatedDate;
+				row.endAt = rowData.LastModifiedDate;
+
+				if (row.status === "03-DONE") {
+					const duration = Utils.calculateDuration({
+						startAt: row.startAt,
+						endAt: row.endAt
+					});
+					row.durationObj = duration;
+					row.duration = duration.minutes.toString();
+				}
+
+				// Summary
+				if (!summary[row.status]) {
+					summary[row.status] = 0;
+				}
+				summary.total++;
+				summary[row.status]++;
+			}
+			return row;
+		});
+
+		let completed = summary.total;
+		if (summary["00-START"]) completed -= summary["00-START"];
+		if (summary["01-WORKING"]) completed -= summary["01-WORKING"];
+		this.exProgSummary = Math.round((completed * 100) / summary.total);
+
+		// Sort results
+		this.exProgProgress = this.exProgProgress.sort((a, b) => {
+			let output = 0;
+			if (a.status < b.status) {
+				output = -1;
+			} else if (a.status === b.status) {
+				if (a.durationObj?.seconds?.total < b.durationObj?.seconds?.total) {
+					output = 1;
+				} else if (a.durationObj?.seconds?.total === b.durationObj?.seconds?.total) {
+					if (a.name < b.name) {
+						output = -1;
+					} else if (a.name === b.name) {
+						output = 0;
+					} else if (a.name > b.name) {
+						output = 1;
+					}
+				} else if (a.durationObj?.seconds?.total > b.durationObj?.seconds?.total) {
+					output = -1;
+				}
+			} else if (a.status > b.status) {
+				output = 1;
+			}
+
+			return output;
+		});
+	}
+	//#endregion
 }

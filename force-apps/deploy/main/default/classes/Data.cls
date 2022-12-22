@@ -102,28 +102,7 @@ public without sharing class Data {
 	}
 
 	@AuraEnabled
-	public static void updateStudentStatus(Id exerciseId, Id studentId, Id status) {
-		List<Exercise_X_Student__c> ExSs = [
-			SELECT Id, Name, Exercise__c, Student__c, Status__c
-			FROM Exercise_X_Student__c
-			WHERE Student__c = :studentId AND Exercise__c = :exerciseId
-		];
-		Exercise_X_Student__c ExS;
-		if (ExSs.size() == 0) {
-			ExS = new Exercise_X_Student__c(Exercise__c = exerciseId, Student__c = studentId);
-		} else if (ExSs.size() == 1) {
-			ExS = ExSs[0];
-		} else {
-			throw new AuraException('Multiple records per student');
-		}
-		ExS.Status__c = status;
-		upsert ExS;
-	}
-
-	@AuraEnabled
-	public static Delivery__c startStopExercise(Id courseId, Id deliveryId, String exerciseId, Boolean isStart) {
-		Delivery__c output = null;
-
+	public static void startStopExercise(Id deliveryId, String exerciseId, Boolean isStart) {
 		try {
 			if (isStart) {
 				// Update delivery
@@ -183,13 +162,33 @@ public without sharing class Data {
 		} catch (Exception e) {
 			throw new AuraHandledException(e.getMessage());
 		}
-		output = [
-			SELECT CurrentExercise__r.Name, CurrentExerciseIsActive__c, CurrentExerciseStart__c
-			FROM Delivery__c
-			WHERE Id = :deliveryId
-		];
 
-		return output;
+		// return [
+		// 	SELECT CurrentExercise__r.Name, CurrentExerciseIsActive__c, CurrentExerciseStart__c
+		// 	FROM Delivery__c
+		// 	WHERE Id = :deliveryId
+		// ];
+	}
+
+	///////
+
+	@AuraEnabled
+	public static void updateStudentStatus(Id exerciseId, Id studentId, Id status) {
+		List<Exercise_X_Student__c> ExSs = [
+			SELECT Id, Name, Exercise__c, Student__c, Status__c
+			FROM Exercise_X_Student__c
+			WHERE Student__c = :studentId AND Exercise__c = :exerciseId
+		];
+		Exercise_X_Student__c ExS;
+		if (ExSs.size() == 0) {
+			ExS = new Exercise_X_Student__c(Exercise__c = exerciseId, Student__c = studentId);
+		} else if (ExSs.size() == 1) {
+			ExS = ExSs[0];
+		} else {
+			throw new AuraException('Multiple records per student');
+		}
+		ExS.Status__c = status;
+		upsert ExS;
 	}
 
 	@AuraEnabled

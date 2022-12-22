@@ -161,123 +161,115 @@ export default class InstructorCurrent extends LightningElement {
 		forceRefresh: "$forceRefresh"
 	})
 	wired_GetStudentsProgress(result) {
-		this.wiredStudentsProgress = result;
-		let { data, error } = result;
-		if (data) {
-			const summary = {
-				total: 0
-			};
-
-			this.progress = [];
-			if (!data.TABLE) {
-				return;
-			}
-			this.progress = data.TABLE.map((student) => {
-				const row = {
-					studentId: student.Id,
-					name: student.Name,
-					status: ""
-				};
-				if (student.IsInstructor__c) {
-					row.name += ` 🧑‍🏫`;
-					row.isInstructor = true;
-				}
-				if (student.Exercises_X_Students__r?.length > 0) {
-					const rowData = student.Exercises_X_Students__r[0];
-					row.exsId = rowData?.Id;
-					row.status = rowData?.Status__c;
-					row.emoji = Utils.getEmoji({ status: rowData?.Status__c });
-					row.startAt = rowData.CreatedDate;
-					row.endAt = rowData.LastModifiedDate;
-
-					if (row.status === "03-DONE") {
-						const duration = Utils.calculateDuration({
-							startAt: row.startAt,
-							endAt: row.endAt
-						});
-						row.durationObj = duration;
-						row.duration = duration.minutes.toString();
-					}
-
-					// Summary
-					if (!summary[row.status]) {
-						summary[row.status] = 0;
-					}
-					summary.total++;
-					summary[row.status]++;
-				}
-				return row;
-			});
-
-			let completed = summary.total;
-			if (summary["00-START"]) completed -= summary["00-START"];
-			if (summary["01-WORKING"]) completed -= summary["01-WORKING"];
-			this.summary = `${Math.round((completed * 100) / summary.total)}%`;
-
-			// Sort results
-			this.progress = this.progress.sort((a, b) => {
-				let output = 0;
-				if (a.status < b.status) {
-					output = -1;
-				} else if (a.status === b.status) {
-					if (a.durationObj?.seconds?.total < b.durationObj?.seconds?.total) {
-						output = 1;
-					} else if (a.durationObj?.seconds?.total === b.durationObj?.seconds?.total) {
-						if (a.name < b.name) {
-							output = -1;
-						} else if (a.name === b.name) {
-							output = 0;
-						} else if (a.name > b.name) {
-							output = 1;
-						}
-					} else if (a.durationObj?.seconds?.total > b.durationObj?.seconds?.total) {
-						output = -1;
-					}
-				} else if (a.status > b.status) {
-					output = 1;
-				}
-
-				return output;
-			});
-
-			// This timer is to update the clock, not to get the data
-			clearInterval(this.timers.screen);
-			this.timers.screen = null;
-			this.activeExerciseTimer = null;
-			if (data.DELIVERY) {
-				const startAt = new Date(data.DELIVERY.CurrentExerciseStart__c);
-				this.activeExerciseStartAt = startAt;
-				this.activeExerciseTimer = Utils.calculateDuration({
-					startAt,
-					endAt: new Date()
-				}).seconds.toString();
-				this.timers.screen = setInterval(() => {
-					try {
-						this.activeExerciseTimer = Utils.calculateDuration({
-							startAt,
-							endAt: new Date()
-						}).seconds.toString();
-					} catch (ex) {
-						Utils.showNotification(this, {
-							title: "Error (Instructor)",
-							message: "Error updating timer",
-							variant: Utils.variants.error
-						});
-						console.log(error);
-					}
-				}, 5e2);
-			}
-
-			this.loading = false;
-		} else if (error) {
-			Utils.showNotification(this, {
-				title: "Error (Instructor)",
-				message: "Error getting progress",
-				variant: Utils.variants.error
-			});
-			console.log(error);
-			this.loading = false;
-		}
+		// this.wiredStudentsProgress = result;
+		// let { data, error } = result;
+		// if (data) {
+		// 	const summary = {
+		// 		total: 0
+		// 	};
+		// 	this.progress = [];
+		// 	if (!data.TABLE) {
+		// 		return;
+		// 	}
+		// 	this.progress = data.TABLE.map((student) => {
+		// 		const row = {
+		// 			studentId: student.Id,
+		// 			name: student.Name,
+		// 			status: ""
+		// 		};
+		// 		if (student.IsInstructor__c) {
+		// 			row.name += ` 🧑‍🏫`;
+		// 			row.isInstructor = true;
+		// 		}
+		// 		if (student.Exercises_X_Students__r?.length > 0) {
+		// 			const rowData = student.Exercises_X_Students__r[0];
+		// 			row.exsId = rowData?.Id;
+		// 			row.status = rowData?.Status__c;
+		// 			row.emoji = Utils.getEmoji({ status: rowData?.Status__c });
+		// 			row.startAt = rowData.CreatedDate;
+		// 			row.endAt = rowData.LastModifiedDate;
+		// 			if (row.status === "03-DONE") {
+		// 				const duration = Utils.calculateDuration({
+		// 					startAt: row.startAt,
+		// 					endAt: row.endAt
+		// 				});
+		// 				row.durationObj = duration;
+		// 				row.duration = duration.minutes.toString();
+		// 			}
+		// 			// Summary
+		// 			if (!summary[row.status]) {
+		// 				summary[row.status] = 0;
+		// 			}
+		// 			summary.total++;
+		// 			summary[row.status]++;
+		// 		}
+		// 		return row;
+		// 	});
+		// 	let completed = summary.total;
+		// 	if (summary["00-START"]) completed -= summary["00-START"];
+		// 	if (summary["01-WORKING"]) completed -= summary["01-WORKING"];
+		// 	this.summary = `${Math.round((completed * 100) / summary.total)}%`;
+		// 	// Sort results
+		// 	this.progress = this.progress.sort((a, b) => {
+		// 		let output = 0;
+		// 		if (a.status < b.status) {
+		// 			output = -1;
+		// 		} else if (a.status === b.status) {
+		// 			if (a.durationObj?.seconds?.total < b.durationObj?.seconds?.total) {
+		// 				output = 1;
+		// 			} else if (a.durationObj?.seconds?.total === b.durationObj?.seconds?.total) {
+		// 				if (a.name < b.name) {
+		// 					output = -1;
+		// 				} else if (a.name === b.name) {
+		// 					output = 0;
+		// 				} else if (a.name > b.name) {
+		// 					output = 1;
+		// 				}
+		// 			} else if (a.durationObj?.seconds?.total > b.durationObj?.seconds?.total) {
+		// 				output = -1;
+		// 			}
+		// 		} else if (a.status > b.status) {
+		// 			output = 1;
+		// 		}
+		// 		return output;
+		// 	});
+		// 	// This timer is to update the clock, not to get the data
+		// 	clearInterval(this.timers.screen);
+		// 	this.timers.screen = null;
+		// 	this.activeExerciseTimer = null;
+		// 	if (data.DELIVERY) {
+		// 		const startAt = new Date(data.DELIVERY.CurrentExerciseStart__c);
+		// 		this.activeExerciseStartAt = startAt;
+		// 		this.activeExerciseTimer = Utils.calculateDuration({
+		// 			startAt,
+		// 			endAt: new Date()
+		// 		}).seconds.toString();
+		// 		this.timers.screen = setInterval(() => {
+		// 			try {
+		// 				this.activeExerciseTimer = Utils.calculateDuration({
+		// 					startAt,
+		// 					endAt: new Date()
+		// 				}).seconds.toString();
+		// 			} catch (ex) {
+		// 				Utils.showNotification(this, {
+		// 					title: "Error (Instructor)",
+		// 					message: "Error updating timer",
+		// 					variant: Utils.variants.error
+		// 				});
+		// 				console.log(error);
+		// 			}
+		// 		}, 5e2);
+		// 	}
+		// 	this.loading = false;
+		// } else if (error) {
+		// 	Utils.showNotification(this, {
+		// 		title: "Error (Instructor)",
+		// 		message: "Error getting progress",
+		// 		variant: Utils.variants.error
+		// 	});
+		// 	console.log(error);
+		// 	this.loading = false;
+		// }
 	}
 
 	onCourseDeliveryChange(event) {
