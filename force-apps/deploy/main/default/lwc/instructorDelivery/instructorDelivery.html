@@ -98,39 +98,36 @@
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
 				</template>
 
-				<lightning-button label="Click Me" onclick={onTestClick}></lightning-button>
-				*{ui.pnlActiveExerciseData}*
 				<template if:true={ui.pnlActiveExerciseData}>
-					***
-					<!-- 
 					<lightning-layout-item size="4"> Active Exercise: </lightning-layout-item>
-					<lightning-layout-item size="8"> {activeExercise.Name} </lightning-layout-item>
+					<lightning-layout-item size="8"> {activeExercise.record.Name} </lightning-layout-item>
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
 
 					<lightning-layout-item size="4"> Start: </lightning-layout-item>
 					<lightning-layout-item size="8">
-						<lightning-formatted-date-time value={activeExerciseStartAt} hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
+						<lightning-formatted-date-time value={activeExercise.startAt} hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
 					</lightning-layout-item>
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
 
 					<lightning-layout-item size="4"> Duration: </lightning-layout-item>
-					<lightning-layout-item size="8">{activeExerciseTimer} </lightning-layout-item>
+					<lightning-layout-item size="8">{duration} </lightning-layout-item>
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
-
-					<lightning-layout-item size="4"> Completion: </lightning-layout-item>
-					<lightning-layout-item size="8">{summary} </lightning-layout-item>
-                -->
+					<!-- 
+                        <lightning-layout-item size="4"> Completion: </lightning-layout-item>
+                        <lightning-layout-item size="8">{summary} </lightning-layout-item>
+                     -->
 				</template>
 
 				<!-- <template if:true={ui.pnlStudents}>
-					<lightning-layout-item size="12" class="slds-m-top_medium">
-						<div class="slds-scrollable_y" style="height: 400px; width: 100%">
-							<lightning-datatable key-field="name" data={progress} columns={columns} onrowaction={onRowAction} hide-checkbox-column>
-							</lightning-datatable>
-						</div>
-					</lightning-layout-item>
-				</template> -->
+                        <lightning-layout-item size="12" class="slds-m-top_medium">
+                            <div class="slds-scrollable_y" style="height: 400px; width: 100%">
+                                <lightning-datatable key-field="name" data={progress} columns={columns} onrowaction={onRowAction} hide-checkbox-column>
+                                </lightning-datatable>
+                            </div>
+                        </lightning-layout-item>
+                    </template> -->
 			</lightning-layout>
 		</lightning-card>
 	</div>
+	<lightning-button label="Click Me" onclick={onTestClick}></lightning-button>
 </template>

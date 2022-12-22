@@ -30,8 +30,12 @@ export default class InstructorDelivery extends LightningElement {
 	randomStudent = "";
 	dataManager = null;
 	timers = { screen: null };
-	activeExerciseTimer = null;
-	activeExerciseStartAt = null;
+	activeExercise = {
+		name: null,
+		timer: null,
+		startAt: null
+	};
+	duration = "";
 
 	// Lists
 	deliveries = {
@@ -158,17 +162,19 @@ export default class InstructorDelivery extends LightningElement {
 	onDeliveryChange(event) {
 		this._onOptionchange({ event, objectName: "deliveries", cookieName: "deliveryId" });
 		this.dataManager.fetchCoursesPerDelivery({ deliveryId: this.deliveries.currentId });
-		this._getActiveDelivery();
+		this._getActiveExercise();
 	}
 
 	onCourseChange(event) {
 		this._onOptionchange({ event, objectName: "courses", cookieName: "courseId" });
 		this.dataManager.fetchAllExercisesForCourse({ courseId: this.courses.currentId });
+		this._getActiveExercise();
 	}
 
 	onExerciseChange(event) {
 		this._onOptionchange({ event, objectName: "exercises", cookieName: "exerciseId" });
 		// this.dataManager.fetchAllExercisesForCourse({ courseId: this.courses.currentId });
+		this._getActiveExercise();
 	}
 
 	_onOptionchange({ event, objectName, cookieName }) {
@@ -188,7 +194,7 @@ export default class InstructorDelivery extends LightningElement {
 		this._loadData({ objectName: "deliveries", data, placeholder: "Which Delivery?" });
 		if (this.findRecord({ list: this.deliveries.records, Id: currentId })) {
 			this.dataManager.fetchCoursesPerDelivery({ deliveryId: currentId });
-			this._getActiveDelivery();
+			this._getActiveExercise();
 		} else {
 			this.deliveries.currentId = null;
 		}
@@ -225,14 +231,38 @@ export default class InstructorDelivery extends LightningElement {
 	}
 	//#endregion
 
-	_getActiveDelivery() {
-		const currentDelivery = this.findRecord({ list: this.deliveries.records, Id: this.deliveries.currentId });
-		// console.log(currentDelivery);
-		// debugger;
-		if (currentDelivery.CurrentExerciseIsActive__c) {
-			this.exercises.activeId = currentDelivery.CurrentExercise__c;
-		} else {
-			this.exercises.activeId = null;
+	_getActiveExercise() {
+		clearInterval(this.activeExercise?.timer);
+		this.exercises.activeId = null;
+		this.activeExercise.record = null;
+		this.activeExercise.startAt = null;
+		if (this.deliveries.currentId) {
+			const currentDelivery = this.findRecord({ list: this.deliveries.records, Id: this.deliveries.currentId });
+			if (currentDelivery.CurrentExerciseIsActive__c) {
+				if (currentDelivery.CurrentExercise__c === this.exercises.currentId) {
+					this.exercises.activeId = currentDelivery.CurrentExercise__c;
+					this.activeExercise = {
+						timer: setInterval(() => {
+							try {
+								console.log("Update clock");
+								this.duration = Utils.calculateDuration({
+									startAt: this.activeExercise.startAt,
+									endAt: new Date()
+								}).seconds.toString();
+							} catch (ex) {
+								Utils.showNotification(this, {
+									title: "Error (Instructor)",
+									message: "Error updating timer",
+									variant: Utils.variants.error
+								});
+								console.log(ex);
+							}
+						}, 5e2),
+						record: currentDelivery.CurrentExercise__r,
+						startAt: currentDelivery.CurrentExerciseStart__c
+					};
+				}
+			}
 		}
 	}
 }
