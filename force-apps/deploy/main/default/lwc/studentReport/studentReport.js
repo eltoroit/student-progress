@@ -23,7 +23,7 @@ export default class Student extends LightningElement {
 
 	connectedCallback() {
 		// setInterval(() => {
-		console.log("*** Refresh");
+		Utils.log("Refresh");
 		this.onRefreshClick();
 		// }, 5e3);
 	}
@@ -83,7 +83,7 @@ export default class Student extends LightningElement {
 		// 		this.errorMessage = "";
 		// 	})
 		// 	.catch((error) => {
-		// 		console.log(error);
+		// 		Utils.log(error);
 		// 		this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
 		// 	});
 	}
@@ -108,7 +108,7 @@ export default class Student extends LightningElement {
 			})
 			.catch((error) => {
 				this.loading = false;
-				console.log(error);
+				Utils.log(error);
 				Utils.showNotification(this, {
 					title: "Error",
 					message: "Error marking as done",

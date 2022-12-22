@@ -77,7 +77,7 @@ export default class StudentRegister extends LightningElement {
 				message: "Error getting deliveries",
 				variant: Utils.variants.error
 			});
-			console.log(error);
+			Utils.log(error);
 			this.loading = false;
 		}
 	}
@@ -102,7 +102,7 @@ export default class StudentRegister extends LightningElement {
 				message: "Error getting deliveries",
 				variant: Utils.variants.error
 			});
-			console.log(error);
+			Utils.log(error);
 			this.loading = false;
 		}
 	}
@@ -142,7 +142,7 @@ export default class StudentRegister extends LightningElement {
 						Utils.setCookie({ key: "studentId", value: this.student.Id });
 					})
 					.catch((err) => {
-						console.log(err);
+						Utils.log(err);
 						debugger;
 					});
 			}
@@ -183,12 +183,12 @@ export default class StudentRegister extends LightningElement {
 					Utils.deleteCookie({ key: "deliveryId" });
 
 					// this.timer = setInterval(() => {
-					console.log("*** Interval deliveries");
+					Utils.log("***Interval deliveries");
 					if (this.delivery.Id === "") {
-						console.log(`*** REFRESH ${this.delivery.Id}`);
+						Utils.log(`REFRESH ${this.delivery.Id}`);
 						this.onRefreshClick();
 					} else {
-						console.log(`*** CLEAR ${this.delivery.Id}`);
+						Utils.log(`CLEAR ${this.delivery.Id}`);
 						clearInterval(this.timer);
 					}
 					// }, 5e3);

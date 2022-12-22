@@ -1,11 +1,4 @@
 public without sharing class Data {
-	@AuraEnabled(cacheable=true)
-	public static Map<String, String> getStates() {
-		Map<String, String> output = new Map<String, String>();
-
-		return output;
-	}
-
 	@AuraEnabled
 	public static List<Delivery__c> getActiveDeliveries() {
 		List<Delivery__c> output = new List<Delivery__c>();
@@ -177,10 +170,8 @@ public without sharing class Data {
 		// ];
 	}
 
-	///////
-
 	@AuraEnabled
-	public static void updateStudentStatus(Id exerciseId, Id studentId, Id status) {
+	public static void updateStudentStatus(Id exerciseId, Id studentId, String status) {
 		List<Exercise_X_Student__c> ExSs = [
 			SELECT Id, Name, Exercise__c, Student__c, Status__c
 			FROM Exercise_X_Student__c
@@ -197,6 +188,8 @@ public without sharing class Data {
 		ExS.Status__c = status;
 		upsert ExS;
 	}
+
+	///////
 
 	@AuraEnabled
 	public static Student__c registerStudent(Id deliveryId, String studentName) {

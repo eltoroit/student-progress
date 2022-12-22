@@ -71,11 +71,9 @@ export default class InstructorDeliveryProgress extends LightningElement {
 			this._chartErrors = [];
 		} catch (ex) {
 			this._chartErrors.push(ex);
-			console.log(`***`, ex.message);
-			debugger;
 			if (this._chartErrors.length > 5) {
 				this._chartErrors.forEach((error) => {
-					console.log(error.message);
+					Utils.log(error.message);
 				});
 				// eslint-disable-next-line
 				alert(`Too many errors creating the chart have occurred. You will need to refresh the page!`);

@@ -102,7 +102,7 @@ export default class InstructorCurrent extends LightningElement {
 
 	connectedCallback() {
 		// debugger;
-		console.log("*** *** *** Connected Callback (read cookies)");
+		Utils.log("Connected Callback (read cookies)");
 
 		let Id = Utils.getCookie({ key: "currentExerciseId" });
 		if (Id) {
@@ -130,7 +130,7 @@ export default class InstructorCurrent extends LightningElement {
 				message: "Error getting deliveries",
 				variant: Utils.variants.error
 			});
-			console.log(error);
+			Utils.log(error);
 			this.loading = false;
 		}
 	}
@@ -150,7 +150,7 @@ export default class InstructorCurrent extends LightningElement {
 				message: "Error getting exercises",
 				variant: Utils.variants.error
 			});
-			console.log(error);
+			Utils.log(error);
 			this.loading = false;
 		}
 	}
@@ -256,7 +256,7 @@ export default class InstructorCurrent extends LightningElement {
 		// 					message: "Error updating timer",
 		// 					variant: Utils.variants.error
 		// 				});
-		// 				console.log(error);
+		// 				Utils.log(error);
 		// 			}
 		// 		}, 5e2);
 		// 	}
@@ -267,7 +267,7 @@ export default class InstructorCurrent extends LightningElement {
 		// 		message: "Error getting progress",
 		// 		variant: Utils.variants.error
 		// 	});
-		// 	console.log(error);
+		// 	Utils.log(error);
 		// 	this.loading = false;
 		// }
 	}
@@ -360,7 +360,7 @@ export default class InstructorCurrent extends LightningElement {
 				})
 					.then(() => {})
 					.catch((error) => {
-						console.log(error);
+						Utils.log(error);
 						debugger;
 					});
 				break;
@@ -391,7 +391,7 @@ export default class InstructorCurrent extends LightningElement {
 			})
 			.catch((err) => {
 				this.loading = false;
-				console.log(err);
+				Utils.log(err);
 				debugger;
 			});
 	}

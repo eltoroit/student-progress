@@ -1,6 +1,6 @@
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
-export default class Util {
+export default class Utils {
 	static variants = {
 		error: "error",
 		warning: "warning",
@@ -216,19 +216,19 @@ export default class Util {
 	static getEmoji({ status }) {
 		let output = "";
 		switch (status) {
-			case Util.STATES.DONE(): {
+			case Utils.STATES.DONE(): {
 				output = "✅";
 				break;
 			}
-			case Util.STATES.WORKING(): {
+			case Utils.STATES.WORKING(): {
 				output = "👩‍💻";
 				break;
 			}
-			case Util.STATES.LATER(): {
+			case Utils.STATES.LATER(): {
 				output = "🕒";
 				break;
 			}
-			case Util.STATES.START(): {
+			case Utils.STATES.START(): {
 				output = "⚒️";
 				break;
 			}
@@ -236,7 +236,24 @@ export default class Util {
 				output = "❓";
 				break;
 		}
-		// console.log(`*** ${status} => ${output}`);
+		// Utils.log(`${status} => ${output}`);
 		return output;
+	}
+
+	static log(...params) {
+		let from;
+		try {
+			throw new Error("TEST");
+		} catch (ex) {
+			const stack = ex.stack.split("\n");
+			stack.shift();
+
+			let caller = stack.find((line) => !line.includes("/utils.js:")).trim();
+			caller = caller.substring(caller.lastIndexOf("/") + 1);
+			caller = caller.substring(0, caller.length - 1);
+
+			from = `(${new Date().toJSON()} *** ${caller})`;
+		}
+		console.log(from, ...params);
 	}
 }

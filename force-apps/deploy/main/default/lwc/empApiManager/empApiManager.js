@@ -50,7 +50,7 @@ export default class EmpApiManager extends LightningElement {
 	disconnectedCallback() {
 		unsubscribe(this.empApi.subscription, (response) => {
 			// Response is true for successful unsubscribe
-			console.log(`*** unsubscribe() response: ${JSON.stringify(response)}`);
+			Utils.log(`unsubscribe() response: ${JSON.stringify(response)}`);
 			debugger;
 		});
 	}
@@ -58,17 +58,17 @@ export default class EmpApiManager extends LightningElement {
 	_processNewEventData({ eventData }) {
 		const payload = eventData.data.payload;
 		const key = `${payload.ChangeEventHeader.commitNumber}|${payload.ChangeEventHeader.entityName}`;
-		// console.log(`*** New Data (pending): ${key}`, payload);
+		// Utils.log(`New Data (pending): ${key}`, payload);
 		if (payload[this.filterKey]) {
 			// Payload has filter field
 			if (payload[this.filterKey] !== this.filterValue) {
 				// Payload filter field has a different value
-				// console.log(`*** Skip, key field is different value: ${key}`, payload);
+				// Utils.log(`Skip, key field is different value: ${key}`, payload);
 				return;
 			}
-			// console.log(`*** Key field is expected value: ${key}`, payload);
+			// Utils.log(`Key field is expected value: ${key}`, payload);
 		} else {
-			// console.log(`*** No key field: ${key}`, payload);
+			// Utils.log(`No key field: ${key}`, payload);
 		}
 		if (this.empApi.pending[key]) {
 			payload.ChangeEventHeader.recordIds.forEach((recordId) => this.empApi.pending[key].recordIds.add(recordId));
@@ -82,7 +82,7 @@ export default class EmpApiManager extends LightningElement {
 		this.empApi.pending[key].clock = setTimeout(() => {
 			const entityName = key.split("|")[1];
 			const recordIds = this.empApi.pending[key].recordIds;
-			console.log(`*** New Data (processing): ${entityName}`, recordIds);
+			Utils.log(`EmpApi (timer): Notify new data: ${entityName}`, recordIds);
 			this.dispatchEvent(
 				new CustomEvent("received", {
 					detail: {

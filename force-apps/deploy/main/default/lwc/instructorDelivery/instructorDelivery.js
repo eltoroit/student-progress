@@ -132,7 +132,7 @@ export default class InstructorDelivery extends LightningElement {
 			this.dataManager.fetchActiveDeliveries();
 		}, 0);
 
-		console.log("*** *** *** Connected Callback (read cookies)");
+		Utils.log("Connected Callback (read cookies)");
 		this.exercises.currentId = Utils.getCookie({ key: "exerciseId" });
 		this.deliveries.currentId = Utils.getCookie({ key: "deliveryId" });
 		this.courses.currentId = Utils.getCookie({ key: "courseId" });
@@ -140,7 +140,7 @@ export default class InstructorDelivery extends LightningElement {
 
 	onData(event) {
 		const { obj, data } = event.detail;
-		console.log(`*** obj: ${obj}`, JSON.parse(JSON.stringify(data)));
+		Utils.log(`Instructor Delivery (onData): ${obj}`, JSON.parse(JSON.stringify(data)));
 		switch (obj) {
 			case "ActiveDeliveries": {
 				this.loadActiveDeliveries({ data });
@@ -162,6 +162,11 @@ export default class InstructorDelivery extends LightningElement {
 				this.parseExerciseProgress({ data });
 				break;
 			}
+			case "Exercise_X_Student__c": {
+				this.dataManager.fetchExerciseProgress({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId });
+				this.dataManager.fetchDeliveryProgress({ deliveryId: this.deliveries.currentId });
+				break;
+			}
 			default: {
 				debugger;
 				break;
@@ -177,19 +182,15 @@ export default class InstructorDelivery extends LightningElement {
 		const actionValue = actionNameParts[1];
 
 		switch (actionNameCommand) {
-			// case "Status":
-			// 	updateStudentStatus({
-			// 		ExS: row.exsId,
-			// 		studentId: row.studentId,
-			// 		exerciseId: this.currentExerciseId,
-			// 		status: actionValue
-			// 	})
-			// 		.then(() => {})
-			// 		.catch((error) => {
-			// 			console.log(error);
-			// 			debugger;
-			// 		});
-			// 	break;
+			case "Status": {
+				this.dataManager.doUpdateStudentStatus({
+					deliveryId: this.deliveries.currentId,
+					exerciseId: this.exercises.currentId,
+					studentId: row.studentId,
+					status: actionValue
+				});
+				break;
+			}
 			case "button": {
 				switch (actionValue) {
 					case "emoji": {
@@ -370,7 +371,7 @@ export default class InstructorDelivery extends LightningElement {
 								message: "Error updating timer",
 								variant: Utils.variants.error
 							});
-							console.log(`***`, ex);
+							Utils.log(ex);
 						}
 					}, 5e2);
 				}

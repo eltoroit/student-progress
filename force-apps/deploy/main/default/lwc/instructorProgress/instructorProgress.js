@@ -105,7 +105,7 @@ export default class ClassProgress extends LightningElement {
 		// 		message: "Error getting class report",
 		// 		variant: Utils.variants.error
 		// 	});
-		// 	console.log(error);
+		// 	Utils.log(error);
 		// 	this.loading = false;
 		// }
 	}
@@ -155,7 +155,7 @@ export default class ClassProgress extends LightningElement {
 		try {
 			this._chart = new window.Chart(this._ctxChart, config);
 		} catch (ex) {
-			console.log(ex);
+			Utils.log(ex);
 			// eslint-disable-next-line
 			alert("An error creating the chart has occurred. You will need to refresh the page.");
 		}
