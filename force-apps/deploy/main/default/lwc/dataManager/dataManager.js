@@ -11,28 +11,26 @@ export default class DataManager extends LightningElement {
 	oldValues = {};
 
 	@api fetchActiveDeliveries() {
-		this.callApex({ obj: "ActiveDeliveries", apexPromise: getActiveDeliveries(), isforceEvent: true });
+		this.callApex({ obj: "ActiveDeliveries", apexPromise: getActiveDeliveries() });
 	}
 
 	@api fetchCoursesPerDelivery({ deliveryId }) {
-		this.callApex({ obj: "CoursesPerDelivery", apexPromise: getCoursesPerDelivery({ deliveryId }), isforceEvent: true });
+		this.callApex({ obj: "CoursesPerDelivery", apexPromise: getCoursesPerDelivery({ deliveryId }) });
 	}
 
 	@api fetchAllExercisesForCourse({ courseId }) {
-		this.callApex({ obj: "AllExercisesForCourse", apexPromise: getAllExercisesForCourse({ courseId }), isforceEvent: true });
+		this.callApex({ obj: "AllExercisesForCourse", apexPromise: getAllExercisesForCourse({ courseId }) });
 	}
 
-	@api async retrieveDeliveryProgress({ deliveryId }) {
-		let output = await this.callApex({ obj: "DeliveryProgress", apexPromise: getDeliveryProgress({ deliveryId }), isforceEvent: false });
-		return output;
+	@api retrieveDeliveryProgress({ deliveryId }) {
+		this.callApex({ obj: "DeliveryProgress", apexPromise: getDeliveryProgress({ deliveryId }) });
 	}
 
 	onEventReceived(event) {
-		const isDispatchEvent = true;
 		const { entityName, recordIds } = event.detail;
 		switch (entityName) {
 			case "Delivery__c": {
-				this.callApex({ obj: "ActiveDeliveries", apexPromise: getActiveDeliveries(), isDispatchEvent });
+				this.callApex({ obj: "ActiveDeliveries", apexPromise: getActiveDeliveries() });
 				break;
 			}
 			default:
@@ -51,26 +49,21 @@ export default class DataManager extends LightningElement {
 		debugger;
 	}
 
-	async callApex({ obj, apexPromise, isforceEvent = false, isDispatchEvent = false }) {
+	async callApex({ obj, apexPromise }) {
 		let output = null;
 		try {
 			const data = await apexPromise;
 			const oldValue = this.oldValues[obj]?.data;
 			const newValue = JSON.stringify(data);
 
-			console.log(
-				`*** CallApex | obj: ${obj} | isforceEvent: ${isforceEvent} | isDispatchEvent: ${isDispatchEvent}`,
-				"Old | ", oldValue ? JSON.parse(oldValue) : null,
-				"New | ", JSON.parse(newValue)
-			);
+			console.log(`*** CallApex | obj: ${obj} Old | `, oldValue ? JSON.parse(oldValue) : null, "New | ", JSON.parse(newValue));
 
-			if (isforceEvent || isDispatchEvent) {
-				if (isforceEvent || oldValue !== newValue) {
-					this.dispatchEvent(new CustomEvent("data", { detail: { obj, data } }));
-				} else {
-					console.log(`*** Request from data event and data was the same... skipping`);
-				}
+			if (oldValue !== newValue) {
+				this.dispatchEvent(new CustomEvent("data", { detail: { obj, data } }));
+			} else {
+				console.log(`*** Request from data event and data was the same... skipping`);
 			}
+
 			this.oldValues[obj] = {
 				dttm: new Date(),
 				data: newValue

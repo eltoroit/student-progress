@@ -7,7 +7,6 @@
 						<lightning-tabset active-tab-value="Instructor">
 							<lightning-tab label="Current Exercise" value="Instructor">
 								<c-instructor-delivery ondeliverydata={onDeliveryData}></c-instructor-delivery>
-								<!-- <c-instructor-current></c-instructor-current> -->
 							</lightning-tab>
 							<lightning-tab label="Student" value="Student">
 								<!-- <c-student></c-student> -->
@@ -19,15 +18,19 @@
 			<lightning-layout-item size="4">
 				<div class="slds-m-horizontal_small">
 					<!-- Display QR Code -->
-					<lightning-card>
-						<lightning-layout multiple-rows>
-							<lightning-layout-item size="12" class="slds-align_absolute-center">
-								<c-image path-in-sr="QR.png" max-width="100%"></c-image>
-							</lightning-layout-item>
-							<lightning-layout-item size="12" class="slds-align_absolute-center">
-								<a href="https://bit.ly/thStudentReporting" style="letter-spacing: 7px">https://bit.ly/thStudentReporting</a>
-							</lightning-layout-item>
-						</lightning-layout>
+					<lightning-card class="slds-is-relative">
+						<lightning-button label="Refresh" onclick={onQrRefresh} slot="actions"></lightning-button>
+						<template if:true={showQR}>
+							<lightning-layout multiple-rows>
+								<lightning-layout-item size="12" class="slds-align_absolute-center">
+									<c-image path-in-sr="QR.png" max-width="100%"></c-image>
+								</lightning-layout-item>
+								<lightning-layout-item size="12" class="slds-align_absolute-center">
+									<a href="https://bit.ly/thStudentReporting" style="letter-spacing: 7px">https://bit.ly/thStudentReporting</a>
+								</lightning-layout-item>
+							</lightning-layout>
+						</template>
+						<template if:false={showQR}> <lightning-spinner variant="brand"></lightning-spinner> </template>
 					</lightning-card>
 					<!-- Display delivery progress -->
 					<div class="slds-m-top_small">

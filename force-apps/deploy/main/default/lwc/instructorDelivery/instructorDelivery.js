@@ -146,6 +146,10 @@ export default class InstructorDelivery extends LightningElement {
 				this.loadExercisesForCourse({ data });
 				break;
 			}
+			case "DeliveryProgress": {
+				this.parseDeliveryProgress({ data });
+				break;
+			}
 			default: {
 				debugger;
 				break;
@@ -163,7 +167,7 @@ export default class InstructorDelivery extends LightningElement {
 		this.selectOption({ currentId: event.target.value, objectName: "deliveries", cookieName: "deliveryId" });
 		this.dataManager.fetchCoursesPerDelivery({ deliveryId: this.deliveries.currentId });
 		this.showActiveExerciseInformation();
-		this.showDeliveryProgress();
+		this.dataManager.retrieveDeliveryProgress({ deliveryId: this.deliveries.currentId });
 	}
 
 	onCourseChange(event) {
@@ -195,7 +199,7 @@ export default class InstructorDelivery extends LightningElement {
 		if (this.findRecord({ list: this.deliveries.records, Id: currentId })) {
 			this.dataManager.fetchCoursesPerDelivery({ deliveryId: currentId });
 			this.showActiveExerciseInformation();
-			this.showDeliveryProgress();
+			this.dataManager.retrieveDeliveryProgress({ deliveryId: this.deliveries.currentId });
 		} else {
 			this.deliveries.currentId = null;
 			this.loading = false;
@@ -275,9 +279,7 @@ export default class InstructorDelivery extends LightningElement {
 		}
 	}
 
-	async showDeliveryProgress() {
-		const data = await this.dataManager.retrieveDeliveryProgress({ deliveryId: this.deliveries.currentId });
-
+	parseDeliveryProgress({ data }) {
 		// Parse data
 		const mapStudents = {};
 		const exercises = data.EXERCISES.map((ex) => ({ Id: ex.Id, Name: ex.Name }));

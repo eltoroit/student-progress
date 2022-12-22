@@ -80,6 +80,28 @@ public without sharing class Data {
 	}
 
 	@AuraEnabled
+	public static List<Student__c> getExerciseProgress(Id deliveryId, Id exerciseId) {
+		List<Student__c> output = new List<Student__c>();
+
+		output = [
+			SELECT
+				Id,
+				Name,
+				IsInstructor__c,
+				(
+					SELECT Id, Status__c, CreatedDate, lastModifiedDate
+					FROM Exercises_X_Students__r
+					WHERE Exercise__c = :exerciseId
+				)
+			FROM Student__c
+			WHERE Delivery__c = :deliveryId
+			ORDER BY Name ASC
+		];
+
+		return output;
+	}
+
+	@AuraEnabled
 	public static void updateStudentStatus(Id exerciseId, Id studentId, Id status) {
 		List<Exercise_X_Student__c> ExSs = [
 			SELECT Id, Name, Exercise__c, Student__c, Status__c
@@ -96,38 +118,6 @@ public without sharing class Data {
 		}
 		ExS.Status__c = status;
 		upsert ExS;
-	}
-
-	@AuraEnabled
-	public static Map<String, Object> getExerciseProgress(Id courseId, Id deliveryId, Id exerciseId) {
-		Map<String, Object> output = new Map<String, Object>();
-
-		List<Student__c> students = [
-			SELECT
-				Id,
-				Name,
-				IsInstructor__c,
-				(
-					SELECT Id, Status__c, CreatedDate, lastModifiedDate
-					FROM Exercises_X_Students__r
-					WHERE Exercise__c = :exerciseId
-				)
-			FROM Student__c
-			WHERE Delivery__c = :deliveryId
-			ORDER BY Name ASC
-		];
-
-		List<Delivery__c> deliveries = [
-			SELECT CurrentExercise__r.Name, CurrentExerciseStart__c, CurrentExerciseIsActive__c
-			FROM Delivery__c
-			WHERE Id = :deliveryId AND CurrentExercise__c != NULL
-		];
-
-		output.put('TABLE', students);
-		output.put('DELIVERIES', deliveries);
-		output.put('EXERCISES', getAllExercisesForCourse(courseId));
-
-		return output;
 	}
 
 	@AuraEnabled

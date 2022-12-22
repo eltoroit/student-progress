@@ -17,6 +17,7 @@ export default class InstructorProgressTable extends LightningModal {
 			this.columns.push({
 				type: "number",
 				label: "Points",
+				initialWidth: 50,
 				fieldName: "points",
 				cellAttributes: { alignment: "right" }
 			});
