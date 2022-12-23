@@ -1,14 +1,17 @@
 import Utils from "c/utils";
 import { api, LightningElement } from "lwc";
-import startStopExercise from "@salesforce/apex/Data.startStopExercise";
+
 import getActiveDeliveries from "@salesforce/apex/Data.getActiveDeliveries";
 import getDeliveryProgress from "@salesforce/apex/Data.getDeliveryProgress";
 import getExerciseProgress from "@salesforce/apex/Data.getExerciseProgress";
-import updateStudentStatus from "@salesforce/apex/Data.updateStudentStatus";
 import getCoursesPerDelivery from "@salesforce/apex/Data.getCoursesPerDelivery";
+import getStudentsForDelivery from "@salesforce/apex/Data.getStudentsForDelivery";
 import getAllExercisesForCourse from "@salesforce/apex/Data.getAllExercisesForCourse";
-import validateStudentRegistration from "@salesforce/apex/Data.validateStudentRegistration";
 import getActiveDeliveriesWithCourses from "@salesforce/apex/Data.getActiveDeliveriesWithCourses";
+
+import startStopExercise from "@salesforce/apex/Data.startStopExercise";
+import updateStudentStatus from "@salesforce/apex/Data.updateStudentStatus";
+import validateStudentRegistration from "@salesforce/apex/Data.validateStudentRegistration";
 
 export default class ApexManager extends LightningElement {
 	@api filterKey = null;
@@ -44,6 +47,12 @@ export default class ApexManager extends LightningElement {
 	@api fetchExerciseProgress({ deliveryId, exerciseId }) {
 		if (deliveryId && exerciseId) {
 			this.callApex({ obj: "ExerciseProgress", apexPromise: getExerciseProgress({ deliveryId, exerciseId }) });
+		}
+	}
+
+	@api fetchStudentsForDelivery({ deliveryId }) {
+		if (deliveryId) {
+			this.callApex({ obj: "StudentsForDelivery", apexPromise: getStudentsForDelivery({ deliveryId }) });
 		}
 	}
 

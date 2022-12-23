@@ -116,6 +116,15 @@ public without sharing class Data {
 	}
 
 	@AuraEnabled
+	public static List<Student__c> getStudentsForDelivery(Id deliveryId) {
+		List<Student__c> output = new List<Student__c>();
+
+		output = [SELECT Id, Name FROM Student__c WHERE Delivery__c = :deliveryId ORDER BY Name ASC];
+
+		return output;
+	}
+
+	@AuraEnabled
 	public static void startStopExercise(Id deliveryId, String exerciseId, Boolean isStart) {
 		try {
 			if (isStart) {
@@ -298,15 +307,6 @@ public without sharing class Data {
 		Exercise__c output = new Exercise__c();
 
 		output = [SELECT Id, Name FROM Exercise__c WHERE Id = :exerciseId];
-
-		return output;
-	}
-
-	@AuraEnabled(cacheable=true)
-	public static List<Student__c> getStudentsForDelivery(Id deliveryId) {
-		List<Student__c> output = new List<Student__c>();
-
-		output = [SELECT Id, Name FROM Student__c WHERE Delivery__c = :deliveryId ORDER BY Name ASC];
 
 		return output;
 	}

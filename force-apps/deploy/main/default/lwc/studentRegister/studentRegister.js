@@ -4,7 +4,7 @@ import { api, LightningElement } from "lwc";
 
 export default class StudentRegister extends LightningElement {
 	// timer = null;
-	// loading = true;
+	loading = true;
 	// forceRefresh = 0;
 	@api apexManager = null;
 
@@ -57,6 +57,7 @@ export default class StudentRegister extends LightningElement {
 		}
 	}
 
+	//#region EVENTS
 	@api
 	onData({ obj, data }) {
 		switch (obj) {
@@ -66,6 +67,10 @@ export default class StudentRegister extends LightningElement {
 			}
 			case "ActiveDeliveriesWithCourses": {
 				// Ignore
+				break;
+			}
+			case "StudentsForDelivery": {
+				this.loadStudentsForDelivery({ data });
 				break;
 			}
 			// case "CoursesPerDelivery": {
@@ -95,17 +100,22 @@ export default class StudentRegister extends LightningElement {
 			}
 		}
 	}
+	//#endregion
 
+	//#region OPTIONS
 	onDeliveryChange(event) {
 		this.selectDelivery({ currentId: event.target.value });
 	}
-
 	selectDelivery({ currentId }) {
-		debugger;
 		this.genericSelectOption({ currentId, objectName: "deliveries", cookieName: "deliveryId" });
-		// this.apexManager.fetchCoursesPerDelivery({ deliveryId: this.deliveries.currentId });
-		// this.parseActiveExerciseInformation();
-		// this.apexManager.fetchDeliveryProgress({ deliveryId: this.deliveries.currentId });
+		this.apexManager.fetchStudentsForDelivery({ deliveryId: this.deliveries.currentId });
+	}
+
+	onStudentChange(event) {
+		this.selectStudent({ currentId: event.target.value });
+	}
+	selectStudent({ currentId }) {
+		this.genericSelectOption({ currentId, objectName: "students", cookieName: "studentId" });
 	}
 
 	genericSelectOption({ currentId, objectName, cookieName }) {
@@ -118,32 +128,46 @@ export default class StudentRegister extends LightningElement {
 			Utils.deleteCookie({ key: cookieName });
 		}
 	}
+	//#endregion
 
+	//#region LOAD DATA
 	loadActiveDeliveries({ data }) {
 		let currentId = this.deliveries.currentId;
 		this._loadData({
 			objectName: "deliveries",
 			data,
-			placeholder: "Which class are you attending?",
+			otherOptions: [{ value: "", label: "Which class are you attending?" }],
 			formatter: (record) => `${record.Name} (${record.Instructor__c})`
 		});
 		if (Utils.findRecord({ list: this.deliveries.records, Id: currentId })) {
-			debugger;
-			// 	this.selectDelivery({ currentId });
+			this.selectDelivery({ currentId });
 		} else {
 			debugger;
-			// 	this.courses.currentId = null;
-			// 	this.selectCourse({ currentId: null });
-			// 	this.exercises.activeId = null;
-			// 	this.exercises.currentId = null;
-			// 	this.selectExercise({ currentId: null });
-			// 	this.deliveries.currentId = null;
-			// 	this.selectDelivery({ currentId: null });
-			// 	this.loading = false;
+			this.students.currentId = null;
+			this.selectStudent({ currentId: null });
+			this.deliveries.currentId = null;
+			this.selectDelivery({ currentId: null });
+			this.loading = false;
 		}
 	}
 
-	_loadData({ objectName, data, placeholder, formatter }) {
+	loadStudentsForDelivery({ data }) {
+		let currentId = this.students.currentId;
+		this._loadData({
+			objectName: "students",
+			data,
+			otherOptions: [{ value: "CREATE", label: "I'm not in your list" }]
+		});
+		if (Utils.findRecord({ list: this.students.records, Id: currentId })) {
+			this.selectStudent({ currentId });
+		} else {
+			this.students.currentId = null;
+			this.selectStudent({ currentId: null });
+		}
+		this.loading = false;
+	}
+
+	_loadData({ objectName, data, otherOptions, formatter }) {
 		this[objectName] = { ...this[objectName] };
 		this[objectName].records = data;
 		this[objectName].options = data.map((record) => {
@@ -156,52 +180,9 @@ export default class StudentRegister extends LightningElement {
 			}
 			return option;
 		});
-		this[objectName].options.unshift({ value: "", label: placeholder });
+		otherOptions.forEach((option) => this[objectName].options.unshift(option));
 	}
-
-	// // Can you use a getter?
-	// @wire(getStudentsForDelivery, { deliveryId: "$deliveryId", forceRefresh: "$forceRefresh" })
-	// wired_GetStudentsForDelivery(result) {
-	// 	this.wiredStudents = result;
-	// 	let { data, error } = result;
-	// 	if (data) {
-	// 		this.students = data.map((student) => ({
-	// 			student,
-	// 			value: student.Id,
-	// 			label: student.Name
-	// 		}));
-	// 		this.students.unshift({ value: "", label: "What's your name?" });
-	// 		this.students.push({ value: "CREATE", label: "I'm not in your list" });
-	// 		this.loading = false;
-	// 	} else if (error) {
-	// 		Utils.showNotification(this, {
-	// 			title: "Error",
-	// 			message: "Error getting deliveries",
-	// 			variant: Utils.variants.error
-	// 		});
-	// 		Utils.logger.log(error);
-	// 		this.loading = false;
-	// 	}
-	// }
-
-	// onDeliveryChange(event) {
-	// 	this.loading = true;
-	// 	const Id = event.target.value;
-	// 	const option = this.deliveries.find((delivery) => delivery.value === Id);
-	// 	this.delivery = option.delivery;
-	// 	Utils.setCookie({ key: "deliveryId", value: this.delivery.Id });
-	// }
-
-	// onStudentChange(event) {
-	// 	const Id = event.target.value;
-	// 	const option = this.students.find((student) => student.value === Id);
-	// 	if (option.student) {
-	// 		this.student = option.student;
-	// 		Utils.setCookie({ key: "studentId", value: this.student.Id });
-	// 	} else {
-	// 		this.student = { Id: option.value };
-	// 	}
-	// }
+	//#endregion
 
 	// onRegisterClick() {
 	// 	LightningPrompt.open({
@@ -235,11 +216,6 @@ export default class StudentRegister extends LightningElement {
 	// 			}
 	// 		})
 	// 	);
-	// }
-
-	// onRefreshClick() {
-	// 	this.loading = false;
-	// 	this.forceRefresh++;
 	// }
 
 	// async validateRegistrationJS() {
