@@ -109,7 +109,7 @@ export default class InstructorDelivery extends LightningElement {
 		ui.pnlSelectorExercises = this.courses?.currentId;
 		ui.pnlActiveExerciseName = this.courses?.currentId && this.exercises?.activeId && !isCurrentActive();
 		ui.pnlActiveExerciseData = isCurrentActive();
-		ui.pnlCompletion = !isNaN(this.exProgSummary);
+		ui.pnlCompletion = this.exercises?.currentId && !isNaN(this.exProgSummary);
 		ui.pnlStudents = this.exercises?.currentId;
 
 		return ui;
@@ -253,6 +253,7 @@ export default class InstructorDelivery extends LightningElement {
 
 	onRefreshClick() {
 		debugger;
+		console.log(this.ui);
 	}
 
 	//#region OPTIONS
@@ -301,6 +302,9 @@ export default class InstructorDelivery extends LightningElement {
 		if (this.findRecord({ list: this.deliveries.records, Id: currentId })) {
 			this.selectDelivery({ currentId });
 		} else {
+			this.courses.currentId = null;
+			this.exercises.activeId = null;
+			this.exercises.currentId = null;
 			this.deliveries.currentId = null;
 			this.loading = false;
 		}
@@ -317,6 +321,8 @@ export default class InstructorDelivery extends LightningElement {
 			this.selectCourse({ currentId });
 		} else {
 			this.courses.currentId = null;
+			this.exercises.activeId = null;
+			this.exercises.currentId = null;
 			this.loading = false;
 		}
 	}
