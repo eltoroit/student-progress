@@ -272,19 +272,21 @@ export default class Utils {
 		}
 	};
 
-	static async validateStudentRegistration({ dataManager, deliveryId, studentId }) {
+	static async validateStudentRegistration({ apexManager, deliveryId, studentId }) {
+		let output;
 		try {
-			if (deliveryId == null && studentId == null) {
-				throw new Error("No registration information available");
+			if (deliveryId == null || studentId == null) {
+				// throw new Error("Delivery and student are required. Maybe the student has not registered before");
 			}
 
-			const data = await dataManager.doValidateStudentRegistration({ deliveryId, studentId });
-			Utils.setCookie({ key: "deliveryId", value: data.delivery.Id });
-			Utils.setCookie({ key: "studentId", value: data.student.Id });
+			output = await apexManager.doValidateStudentRegistration({ deliveryId, studentId });
+			Utils.setCookie({ key: "deliveryId", value: output.delivery.Id });
+			Utils.setCookie({ key: "studentId", value: output.student.Id });
 		} catch (ex) {
 			Utils.deleteCookie({ key: "deliveryId" });
 			Utils.deleteCookie({ key: "studentId" });
-			throw new Error(ex.body.message);
+			throw new Error(ex.body?.message ? ex.body?.message : ex);
 		}
+		return output;
 	}
 }

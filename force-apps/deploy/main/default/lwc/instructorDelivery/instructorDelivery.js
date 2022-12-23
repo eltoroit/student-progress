@@ -33,7 +33,7 @@ export default class InstructorDelivery extends LightningElement {
 	loading = true;
 	errorMessage = "";
 	randomStudent = "";
-	dataManager = null;
+	apexManager = null;
 	timers = { screen: null };
 	activeExercise = {
 		name: null,
@@ -122,8 +122,8 @@ export default class InstructorDelivery extends LightningElement {
 	connectedCallback() {
 		debugger;
 		setTimeout(() => {
-			this.dataManager = this.template.querySelector("c-data-manager");
-			this.dataManager.fetchActiveDeliveriesWithCourses();
+			this.apexManager = this.template.querySelector("c-apex-manager");
+			this.apexManager.fetchActiveDeliveriesWithCourses();
 		}, 0);
 
 		Utils.logger.log("Connected Callback (read cookies)");
@@ -168,8 +168,8 @@ export default class InstructorDelivery extends LightningElement {
 				break;
 			}
 			case "Exercise_X_Student__c": {
-				this.dataManager.fetchExerciseProgress({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId });
-				this.dataManager.fetchDeliveryProgress({ deliveryId: this.deliveries.currentId });
+				this.apexManager.fetchExerciseProgress({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId });
+				this.apexManager.fetchDeliveryProgress({ deliveryId: this.deliveries.currentId });
 				break;
 			}
 			default: {
@@ -188,7 +188,7 @@ export default class InstructorDelivery extends LightningElement {
 
 		switch (actionNameCommand) {
 			case "Status": {
-				this.dataManager.doUpdateStudentStatus({
+				this.apexManager.doUpdateStudentStatus({
 					deliveryId: this.deliveries.currentId,
 					exerciseId: this.exercises.currentId,
 					studentId: row.studentId,
@@ -249,11 +249,11 @@ export default class InstructorDelivery extends LightningElement {
 	}
 
 	onStartClick() {
-		this.dataManager.doStartStopExercise({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId, isStart: true });
+		this.apexManager.doStartStopExercise({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId, isStart: true });
 	}
 
 	onStopClick() {
-		this.dataManager.doStartStopExercise({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId, isStart: false });
+		this.apexManager.doStartStopExercise({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId, isStart: false });
 	}
 
 	onRefreshClick() {
@@ -268,9 +268,9 @@ export default class InstructorDelivery extends LightningElement {
 	}
 	selectDelivery({ currentId }) {
 		this.genericSelectOption({ currentId, objectName: "deliveries", cookieName: "deliveryId" });
-		this.dataManager.fetchCoursesPerDelivery({ deliveryId: this.deliveries.currentId });
+		this.apexManager.fetchCoursesPerDelivery({ deliveryId: this.deliveries.currentId });
 		this.parseActiveExerciseInformation();
-		this.dataManager.fetchDeliveryProgress({ deliveryId: this.deliveries.currentId });
+		this.apexManager.fetchDeliveryProgress({ deliveryId: this.deliveries.currentId });
 	}
 
 	onCourseChange(event) {
@@ -278,7 +278,7 @@ export default class InstructorDelivery extends LightningElement {
 	}
 	selectCourse({ currentId }) {
 		this.genericSelectOption({ currentId, objectName: "courses", cookieName: "courseId" });
-		this.dataManager.fetchAllExercisesForCourse({ courseId: this.courses.currentId });
+		this.apexManager.fetchAllExercisesForCourse({ courseId: this.courses.currentId });
 		this.parseActiveExerciseInformation();
 	}
 
@@ -288,7 +288,7 @@ export default class InstructorDelivery extends LightningElement {
 	selectExercise({ currentId }) {
 		this.genericSelectOption({ currentId, objectName: "exercises", cookieName: "exerciseId" });
 		this.parseActiveExerciseInformation();
-		this.dataManager.fetchExerciseProgress({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId });
+		this.apexManager.fetchExerciseProgress({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId });
 	}
 
 	genericSelectOption({ currentId, objectName, cookieName }) {

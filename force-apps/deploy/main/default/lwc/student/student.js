@@ -9,14 +9,14 @@ export default class Student extends LightningElement {
 	deliveryId = null;
 	filterKey = null;
 	filterValue = null;
-	dataManager = null;
+	apexManager = null;
 	panel = PANEL_REGISTER;
 
 	get ui() {
 		const ui = {};
 
-		ui.pnlReport = this.dataManager && this.panel === PANEL_REPORT;
-		ui.pnlRegister = this.dataManager && this.panel === PANEL_REGISTER;
+		ui.pnlReport = this.apexManager && this.panel === PANEL_REPORT;
+		ui.pnlRegister = this.apexManager && this.panel === PANEL_REGISTER;
 
 		return ui;
 	}
@@ -24,10 +24,9 @@ export default class Student extends LightningElement {
 	connectedCallback() {
 		debugger;
 		setTimeout(async () => {
-			this.dataManager = this.template.querySelector("c-data-manager");
+			this.apexManager = this.template.querySelector("c-apex-manager");
 			try {
-				await Utils.validateStudentRegistration({ dataManager: this.dataManager, deliveryId: this.deliveryId, studentId: this.studentId });
-				this.readCookies();
+				await Utils.validateStudentRegistration({ apexManager: this.apexManager, deliveryId: this.deliveryId, studentId: this.studentId });
 				this.showReportPage();
 			} catch (ex) {
 				this.showRegistrationPage();
@@ -39,11 +38,6 @@ export default class Student extends LightningElement {
 		this.panel = PANEL_REGISTER;
 	}
 
-	readCookies() {
-		this.studentId = Utils.getCookie({ key: "studentId" });
-		this.deliveryId = Utils.getCookie({ key: "deliveryId" });
-	}
-
 	onNext(event) {
 		this.studentId = event.detail.studentId;
 		this.deliveryId = event.detail.deliveryId;
@@ -52,8 +46,8 @@ export default class Student extends LightningElement {
 
 	async showReportPage() {
 		try {
-			await Utils.validateStudentRegistration({ dataManager: this.dataManager, deliveryId: this.deliveryId, studentId: this.studentId });
 			this.readCookies();
+			await Utils.validateStudentRegistration({ apexManager: this.apexManager, deliveryId: this.deliveryId, studentId: this.studentId });
 			this.panel = PANEL_REPORT;
 			setTimeout(() => {
 				// Timeout to show the next panel, before setting @api variables
@@ -64,5 +58,10 @@ export default class Student extends LightningElement {
 		} catch (ex) {
 			this.showRegistrationPage();
 		}
+	}
+
+	readCookies() {
+		this.studentId = Utils.getCookie({ key: "studentId" });
+		this.deliveryId = Utils.getCookie({ key: "deliveryId" });
 	}
 }

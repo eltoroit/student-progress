@@ -1,11 +1,11 @@
 <template>
-	<c-data-manager filter-key={filterKey} filter-value={filterValue} ondata={onData}></c-data-manager>
+	<c-apex-manager filter-key={filterKey} filter-value={filterValue} ondata={onData}></c-apex-manager>
 	<template if:true={ui.pnlRegister}>
-		<c-student-register data-manager={dataManager} onnext={onNext}></c-student-register>
+		<c-student-register apex-manager={apexManager} onnext={onNext}></c-student-register>
 	</template>
 
 	<template if:true={ui.pnlReport}>
 		REPORT
-		<!-- <c-student-report data-manager={dataManager} onregister={showRegistrationPage}></c-student-report> -->
+		<!-- <c-student-report apex-manager={apexManager} onregister={showRegistrationPage}></c-student-report> -->
 	</template>
 </template>

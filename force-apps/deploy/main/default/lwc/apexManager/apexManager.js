@@ -9,7 +9,7 @@ import getCoursesPerDelivery from "@salesforce/apex/Data.getCoursesPerDelivery";
 import getAllExercisesForCourse from "@salesforce/apex/Data.getAllExercisesForCourse";
 import getActiveDeliveriesWithCourses from "@salesforce/apex/Data.getActiveDeliveriesWithCourses";
 
-export default class DataManager extends LightningElement {
+export default class ApexManager extends LightningElement {
 	@api filterKey = null;
 	@api filterValue = null;
 	oldValues = {};
@@ -70,7 +70,7 @@ export default class DataManager extends LightningElement {
 
 	onEventReceived(event) {
 		const { entityName, recordIds } = event.detail;
-		Utils.logger.log("DataManager (onEventReceived): ", JSON.parse(JSON.stringify(event.detail)), entityName, recordIds);
+		Utils.logger.log("OnEventReceived: ", JSON.parse(JSON.stringify(event.detail)), entityName, recordIds);
 		switch (entityName) {
 			case "Delivery__c": {
 				this.fetchActiveDeliveriesWithCourses();

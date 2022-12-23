@@ -1,11 +1,12 @@
 import Utils from "c/utils";
-import { LightningElement } from "lwc";
-import LightningPrompt from "lightning/prompt";
+import { api, LightningElement } from "lwc";
+// import LightningPrompt from "lightning/prompt";
 
 export default class StudentRegister extends LightningElement {
 	// timer = null;
 	// loading = true;
 	// forceRefresh = 0;
+	@api apexManager = null;
 
 	deliveries = {
 		options: [],
@@ -41,11 +42,14 @@ export default class StudentRegister extends LightningElement {
 		return ui;
 	}
 
-	connectedCallback() {
-		this.readCookies();
-		this.validateRegistrationJS()
-			.then(() => {})
-			.catch(() => {});
+	async connectedCallback() {
+		try {
+			this.readCookies();
+			await Utils.validateStudentRegistration({ apexManager: this.apexManager, deliveryId: this.deliveryId, studentId: this.studentId });
+			// this.onNextClick();
+		} catch (ex) {
+			debugger;
+		}
 	}
 
 	// @wire(getActiveDeliveries, { forceRefresh: "$forceRefresh" })
@@ -161,7 +165,7 @@ export default class StudentRegister extends LightningElement {
 	// async validateRegistrationJS() {
 	// 	// clearInterval(this.timer);
 	// 	// return new Promise((resolve, reject) => {
-	// 	// 	await Utils.validateStudentRegistration({ dataManager: this.dataManager, deliveryId: this.deliveryId, studentId: this.studentId });
+	// 	// 	await Utils.validateStudentRegistration({ apexManager: this.apexManager, deliveryId: this.deliveryId, studentId: this.studentId });
 	// 	// 		.then((data) => {
 	// 	// 			this.student = data.student;
 	// 	// 			this.delivery = data.delivery;
