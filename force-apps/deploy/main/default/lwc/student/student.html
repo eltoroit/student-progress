@@ -1,8 +1,7 @@
 <template>
 	<c-data-manager filter-key={filterKey} filter-value={filterValue} ondata={onData}></c-data-manager>
 	<template if:true={ui.pnlRegister}>
-		REGISTER
-		<!-- <c-student-register data-manager={dataManager} onnext={onNext}></c-student-register> -->
+		<c-student-register data-manager={dataManager} onnext={onNext}></c-student-register>
 	</template>
 
 	<template if:true={ui.pnlReport}>
