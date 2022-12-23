@@ -19,33 +19,53 @@ export default class DataManager extends LightningElement {
 	}
 
 	@api fetchCoursesPerDelivery({ deliveryId }) {
-		this.callApex({ obj: "CoursesPerDelivery", apexPromise: getCoursesPerDelivery({ deliveryId }) });
+		if (deliveryId) {
+			this.callApex({ obj: "CoursesPerDelivery", apexPromise: getCoursesPerDelivery({ deliveryId }) });
+		}
 	}
 
 	@api fetchAllExercisesForCourse({ courseId }) {
-		this.callApex({ obj: "AllExercisesForCourse", apexPromise: getAllExercisesForCourse({ courseId }) });
+		if (courseId) {
+			this.callApex({ obj: "AllExercisesForCourse", apexPromise: getAllExercisesForCourse({ courseId }) });
+		}
 	}
 
 	@api fetchDeliveryProgress({ deliveryId }) {
-		this.callApex({ obj: "DeliveryProgress", apexPromise: getDeliveryProgress({ deliveryId }) });
+		if (deliveryId) {
+			this.callApex({ obj: "DeliveryProgress", apexPromise: getDeliveryProgress({ deliveryId }) });
+		}
 	}
 
 	@api fetchExerciseProgress({ deliveryId, exerciseId }) {
-		this.callApex({ obj: "ExerciseProgress", apexPromise: getExerciseProgress({ deliveryId, exerciseId }) });
+		if (deliveryId && exerciseId) {
+			this.callApex({ obj: "ExerciseProgress", apexPromise: getExerciseProgress({ deliveryId, exerciseId }) });
+		}
 	}
 
 	@api async doStartStopExercise({ deliveryId, exerciseId, isStart }) {
-		await this.callApex({ obj: null, apexPromise: startStopExercise({ deliveryId, exerciseId, isStart }) });
-		this.fetchActiveDeliveriesWithCourses();
+		if (deliveryId && exerciseId) {
+			await this.callApex({ obj: null, apexPromise: startStopExercise({ deliveryId, exerciseId, isStart }) });
+			this.fetchActiveDeliveriesWithCourses();
+		}
 	}
 
 	@api async doUpdateStudentStatus({ exerciseId, studentId, status }) {
-		await this.callApex({ obj: null, apexPromise: updateStudentStatus({ exerciseId, studentId, status }) });
+		if (exerciseId && studentId) {
+			await this.callApex({ obj: null, apexPromise: updateStudentStatus({ exerciseId, studentId, status }) });
+		} else {
+			throw new Error("Exercise and studentId are required");
+		}
 	}
 
 	@api async doValidateStudentRegistration({ deliveryId, studentId }) {
-		// eslint-disable-next-line no-return-await
-		return await this.callApex({ obj: null, apexPromise: validateStudentRegistration({ deliveryId, studentId }) });
+		let output = null;
+		if (deliveryId && studentId) {
+			// eslint-disable-next-line no-return-await
+			output = await this.callApex({ obj: null, apexPromise: validateStudentRegistration({ deliveryId, studentId }) });
+		} else {
+			throw new Error("Delivery and studentId are required");
+		}
+		return output;
 	}
 
 	onEventReceived(event) {
