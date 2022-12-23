@@ -1,11 +1,17 @@
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
 export default class Utils {
-	static variants = {
+	static msgVariants = {
 		error: "error",
 		warning: "warning",
 		success: "success",
 		info: "info"
+	};
+
+	static msgModes = {
+		sticky: "sticky", // remains visible until you click the close button
+		pester: "pester", // remains visible for 3 seconds and disappears automatically. No close button is provided
+		dismissible: "dismissible" // Remains visible until you click the close button or 3 seconds has elapsed, whichever comes first
 	};
 
 	static STATES = {
@@ -23,12 +29,13 @@ export default class Utils {
 		}
 	};
 
-	static showNotification(cmp, { title = "", message = "", variant = "success" }) {
+	static showNotification(cmp, { title = "", message = "", variant = "success", mode = "dismissible" }) {
 		cmp.dispatchEvent(
 			new ShowToastEvent({
 				title,
 				message,
-				variant
+				variant,
+				mode
 			})
 		);
 	}

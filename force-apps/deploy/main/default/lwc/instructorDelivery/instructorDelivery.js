@@ -119,16 +119,6 @@ export default class InstructorDelivery extends LightningElement {
 		return ui;
 	}
 
-	findRecord({ list, Id }) {
-		let output = list.filter((item) => item.Id === Id);
-		if (output.length === 1) {
-			output = output[0];
-		} else {
-			output = null;
-		}
-		return output;
-	}
-
 	connectedCallback() {
 		debugger;
 		setTimeout(() => {
@@ -142,6 +132,17 @@ export default class InstructorDelivery extends LightningElement {
 		this.courses.currentId = Utils.getCookie({ key: "courseId" });
 	}
 
+	findRecord({ list, Id }) {
+		let output = list.filter((item) => item.Id === Id);
+		if (output.length === 1) {
+			output = output[0];
+		} else {
+			output = null;
+		}
+		return output;
+	}
+
+	//#region EVENTS
 	onData(event) {
 		const { obj, data } = event.detail;
 		Utils.log(`Instructor Delivery (onData): ${obj}`, JSON.parse(JSON.stringify(data)));
@@ -259,6 +260,7 @@ export default class InstructorDelivery extends LightningElement {
 		debugger;
 		console.log(this.ui);
 	}
+	//#endregion
 
 	//#region OPTIONS
 	onDeliveryChange(event) {
@@ -295,6 +297,8 @@ export default class InstructorDelivery extends LightningElement {
 		this[objectName].currentId = currentId;
 		if (currentId) {
 			Utils.setCookie({ key: cookieName, value: currentId });
+		} else {
+			Utils.deleteCookie({ key: cookieName });
 		}
 	}
 	//#endregion
@@ -307,9 +311,15 @@ export default class InstructorDelivery extends LightningElement {
 			this.selectDelivery({ currentId });
 		} else {
 			this.courses.currentId = null;
+			this.selectCourse({ currentId: null });
+
 			this.exercises.activeId = null;
 			this.exercises.currentId = null;
+			this.selectExercise({ currentId: null });
+
 			this.deliveries.currentId = null;
+			this.selectDelivery({ currentId: null });
+
 			this.loading = false;
 		}
 	}
@@ -325,8 +335,12 @@ export default class InstructorDelivery extends LightningElement {
 			this.selectCourse({ currentId });
 		} else {
 			this.courses.currentId = null;
+			this.selectCourse({ currentId: null });
+
 			this.exercises.activeId = null;
 			this.exercises.currentId = null;
+			this.selectExercise({ currentId: null });
+
 			this.loading = false;
 		}
 	}
@@ -379,7 +393,8 @@ export default class InstructorDelivery extends LightningElement {
 							Utils.showNotification(this, {
 								title: "Error (Instructor)",
 								message: "Error updating timer",
-								variant: Utils.variants.error
+								variant: Utils.msgVariants.error,
+								mode: Utils.msgModes.sticky
 							});
 							Utils.log(ex);
 						}

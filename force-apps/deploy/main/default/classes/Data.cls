@@ -174,7 +174,7 @@ public without sharing class Data {
 				update new Delivery__c(Id = deliveryId, CurrentExerciseIsActive__c = false);
 			}
 		} catch (Exception e) {
-			throw new AuraHandledException(e.getMessage());
+			throw new CalloutException(e.getMessage());
 		}
 
 		// return [
@@ -197,22 +197,10 @@ public without sharing class Data {
 		} else if (ExSs.size() == 1) {
 			ExS = ExSs[0];
 		} else {
-			throw new AuraException('Multiple records per student');
+			throw new CalloutException('Multiple records per student');
 		}
 		ExS.Status__c = status;
 		upsert ExS;
-	}
-
-	///////
-
-	@AuraEnabled
-	public static Student__c registerStudent(Id deliveryId, String studentName) {
-		Student__c student = new Student__c();
-
-		student = new Student__c(Name = studentName, delivery__c = deliveryId, Key__c = deliveryId + '|' + studentName);
-		upsert student Key__c;
-
-		return student;
 	}
 
 	@AuraEnabled
@@ -226,19 +214,39 @@ public without sharing class Data {
 		if (students.size() == 1) {
 			output.put('student', students[0]);
 		} else {
-			errors.add('Invalid studentId');
+			errors.add('Student not found');
 		}
 		List<Delivery__c> deliveries = [SELECT Id, Name FROM Delivery__c WHERE Id = :deliveryId AND IsActive__c = TRUE];
 		if (deliveries.size() == 1) {
 			output.put('delivery', deliveries[0]);
 		} else {
-			errors.add('Invalid deliveryId');
+			errors.add('Delivery not found');
 		}
 		if (errors.size() > 0) {
-			throw new CalloutException('Registration data is not valid: ' + JSON.serialize(errors));
+			String reason = '';
+			if (errors.size() > 2) {
+				reason = JSON.serialize(errors);
+			} else if (errors.size() > 1) {
+				reason = 'Neither student nor delivery found';
+			} else {
+				reason = errors[0];
+			}
+			throw new CalloutException('Registration data is not valid | ' + reason + ' | Please register.');
 		}
 
 		return output;
+	}
+
+	///////
+
+	@AuraEnabled
+	public static Student__c registerStudent(Id deliveryId, String studentName) {
+		Student__c student = new Student__c();
+
+		student = new Student__c(Name = studentName, delivery__c = deliveryId, Key__c = deliveryId + '|' + studentName);
+		upsert student Key__c;
+
+		return student;
 	}
 
 	// Other

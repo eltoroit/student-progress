@@ -2,11 +2,12 @@ import Utils from "c/utils";
 import { api, LightningElement } from "lwc";
 import startStopExercise from "@salesforce/apex/Data.startStopExercise";
 import getDeliveryProgress from "@salesforce/apex/Data.getDeliveryProgress";
-import getActiveDeliveriesWithCourses from "@salesforce/apex/Data.getActiveDeliveriesWithCourses";
 import getExerciseProgress from "@salesforce/apex/Data.getExerciseProgress";
 import updateStudentStatus from "@salesforce/apex/Data.updateStudentStatus";
+import validateRegistration from "@salesforce/apex/Data.validateRegistration";
 import getCoursesPerDelivery from "@salesforce/apex/Data.getCoursesPerDelivery";
 import getAllExercisesForCourse from "@salesforce/apex/Data.getAllExercisesForCourse";
+import getActiveDeliveriesWithCourses from "@salesforce/apex/Data.getActiveDeliveriesWithCourses";
 
 export default class DataManager extends LightningElement {
 	@api filterKey = null;
@@ -42,6 +43,11 @@ export default class DataManager extends LightningElement {
 		await this.callApex({ obj: null, apexPromise: updateStudentStatus({ exerciseId, studentId, status }) });
 	}
 
+	@api async doValidateRegistration({ deliveryId, studentId }) {
+		// eslint-disable-next-line no-return-await
+		return await this.callApex({ obj: null, apexPromise: validateRegistration({ deliveryId, studentId }) });
+	}
+
 	onEventReceived(event) {
 		const { entityName, recordIds } = event.detail;
 		Utils.log("DataManager (onEventReceived): ", JSON.parse(JSON.stringify(event.detail)), entityName, recordIds);
@@ -66,7 +72,8 @@ export default class DataManager extends LightningElement {
 		Utils.showNotification(this, {
 			title: "Error Getting Data",
 			message: `EmpApi failed to get data: ${JSON.stringify(event.detail)}`,
-			variant: Utils.variants.error
+			variant: Utils.msgVariants.error,
+			mode: Utils.msgModes.sticky
 		});
 		debugger;
 	}
@@ -97,11 +104,17 @@ export default class DataManager extends LightningElement {
 			}
 			output = data;
 		} catch (ex) {
+			Utils.log(ex);
+			let message = "";
+			if (obj) message = `${obj}:`;
+			message += `${ex.body.message}`;
 			Utils.showNotification(this, {
-				title: "Error Getting Data",
-				message: `${obj}: ${JSON.stringify(ex)}`,
-				variant: Utils.variants.error
+				title: "Error calling Apex",
+				message,
+				variant: Utils.msgVariants.error,
+				mode: Utils.msgModes.sticky
 			});
+			throw ex;
 		}
 		return output;
 	}

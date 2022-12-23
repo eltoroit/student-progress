@@ -24,7 +24,8 @@ export default class EmpApiManager extends LightningElement {
 					Utils.showNotification(this, {
 						title: "Error Subscribing",
 						message: `EmpApi subscription: ${JSON.stringify(response)}`,
-						variant: Utils.variants.error
+						variant: Utils.msgVariants.error,
+						mode: Utils.msgModes.sticky
 					});
 				}
 			});
@@ -33,7 +34,8 @@ export default class EmpApiManager extends LightningElement {
 				Utils.showNotification(this, {
 					title: "Error Connecting",
 					message,
-					variant: Utils.variants.error
+					variant: Utils.msgVariants.error,
+					mode: Utils.msgModes.sticky
 				});
 				console.error(message);
 				debugger;
@@ -42,7 +44,8 @@ export default class EmpApiManager extends LightningElement {
 			Utils.showNotification(this, {
 				title: "Error Streaming API",
 				message: `EmpApi not available`,
-				variant: Utils.variants.error
+				variant: Utils.msgVariants.error,
+				mode: Utils.msgModes.sticky
 			});
 		}
 	}
