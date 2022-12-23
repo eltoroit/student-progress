@@ -43,13 +43,103 @@ export default class StudentRegister extends LightningElement {
 	}
 
 	async connectedCallback() {
-		try {
-			this.readCookies();
-			await Utils.validateStudentRegistration({ apexManager: this.apexManager, deliveryId: this.deliveryId, studentId: this.studentId });
+		this.readCookies();
+		const creds = await Utils.validateStudentRegistration({
+			apexManager: this.apexManager,
+			deliveryId: this.deliveryId,
+			studentId: this.studentId
+		});
+		if (creds) {
 			// this.onNextClick();
-		} catch (ex) {
+		} else {
 			Utils.logger.log("User needs to register");
+			this.apexManager.fetchActiveDeliveriesWithCourses();
 		}
+	}
+
+	@api
+	onData({ obj, data }) {
+		switch (obj) {
+			case "ActiveDeliveriesWithCourses": {
+				this.loadActiveDeliveriesWithCourses({ data });
+				break;
+			}
+			// case "CoursesPerDelivery": {
+			// 	this.loadCoursesPerDelivery({ data });
+			// 	break;
+			// }
+			// case "AllExercisesForCourse": {
+			// 	this.loadExercisesForCourse({ data });
+			// 	break;
+			// }
+			// case "DeliveryProgress": {
+			// 	this.parseDeliveryProgress({ data });
+			// 	break;
+			// }
+			// case "ExerciseProgress": {
+			// 	this.parseExerciseProgress({ data });
+			// 	break;
+			// }
+			// case "Exercise_X_Student__c": {
+			// 	this.apexManager.fetchExerciseProgress({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId });
+			// 	this.apexManager.fetchDeliveryProgress({ deliveryId: this.deliveries.currentId });
+			// 	break;
+			// }
+			default: {
+				debugger;
+				break;
+			}
+		}
+	}
+
+	onDeliveryChange(event) {
+		this.selectDelivery({ currentId: event.target.value });
+	}
+
+	selectDelivery({ currentId }) {
+		debugger;
+		this.genericSelectOption({ currentId, objectName: "deliveries", cookieName: "deliveryId" });
+		// this.apexManager.fetchCoursesPerDelivery({ deliveryId: this.deliveries.currentId });
+		// this.parseActiveExerciseInformation();
+		// this.apexManager.fetchDeliveryProgress({ deliveryId: this.deliveries.currentId });
+	}
+
+	genericSelectOption({ currentId, objectName, cookieName }) {
+		if (currentId === "") currentId = null;
+		this[objectName] = { ...this[objectName] };
+		this[objectName].currentId = currentId;
+		if (currentId) {
+			Utils.setCookie({ key: cookieName, value: currentId });
+		} else {
+			Utils.deleteCookie({ key: cookieName });
+		}
+	}
+
+	loadActiveDeliveriesWithCourses({ data }) {
+		let currentId = this.deliveries.currentId;
+		this._loadData({ objectName: "deliveries", data, placeholder: "Which class are you attending?" });
+		if (Utils.findRecord({ list: this.deliveries.records, Id: currentId })) {
+			// 	this.selectDelivery({ currentId });
+		} else {
+			// 	this.courses.currentId = null;
+			// 	this.selectCourse({ currentId: null });
+			// 	this.exercises.activeId = null;
+			// 	this.exercises.currentId = null;
+			// 	this.selectExercise({ currentId: null });
+			// 	this.deliveries.currentId = null;
+			// 	this.selectDelivery({ currentId: null });
+			// 	this.loading = false;
+		}
+	}
+
+	_loadData({ objectName, data, placeholder }) {
+		this[objectName] = { ...this[objectName] };
+		this[objectName].records = data;
+		this[objectName].options = data.map((record) => ({
+			value: record.Id,
+			label: record.Name
+		}));
+		this[objectName].options.unshift({ value: "", label: placeholder });
 	}
 
 	// @wire(getActiveDeliveries, { forceRefresh: "$forceRefresh" })

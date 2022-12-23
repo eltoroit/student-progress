@@ -60,10 +60,11 @@ export default class ApexManager extends LightningElement {
 	@api async doValidateStudentRegistration({ deliveryId, studentId }) {
 		let output = null;
 		if (deliveryId && studentId) {
-			// eslint-disable-next-line no-return-await
-			output = await this.callApex({ obj: null, apexPromise: validateStudentRegistration({ deliveryId, studentId }) });
-		} else {
-			throw new Error("[ApexManager] DeliveryId and studentId are required");
+			try {
+				output = await this.callApex({ obj: null, apexPromise: validateStudentRegistration({ deliveryId, studentId }) });
+			} catch (ex) {
+				output = null;
+			}
 		}
 		return output;
 	}

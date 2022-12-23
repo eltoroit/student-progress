@@ -27,11 +27,15 @@ export default class Student extends LightningElement {
 
 	async renderedCallback() {
 		if (!this.apexManager) {
-			try {
-				this.apexManager = this.template.querySelector("c-apex-manager");
-				await Utils.validateStudentRegistration({ apexManager: this.apexManager, deliveryId: this.deliveryId, studentId: this.studentId });
+			this.apexManager = this.template.querySelector("c-apex-manager");
+			const creds = await Utils.validateStudentRegistration({
+				apexManager: this.apexManager,
+				deliveryId: this.deliveryId,
+				studentId: this.studentId
+			});
+			if (creds) {
 				this.showReportPage();
-			} catch (ex) {
+			} else {
 				this.showRegistrationPage();
 			}
 		}
@@ -47,10 +51,23 @@ export default class Student extends LightningElement {
 		this.showReportPage();
 	}
 
+	onData(event) {
+		const { obj, data } = event.detail;
+		Utils.logger.log(`OnData: ${obj}`, JSON.parse(JSON.stringify(data)));
+		const pnlRegister = this.template.querySelector("c-student-register");
+		if (pnlRegister?.onData) {
+			pnlRegister?.onData({ obj, data });
+		}
+	}
+
 	async showReportPage() {
-		try {
-			this.readCookies();
-			await Utils.validateStudentRegistration({ apexManager: this.apexManager, deliveryId: this.deliveryId, studentId: this.studentId });
+		this.readCookies();
+		const creds = await Utils.validateStudentRegistration({
+			apexManager: this.apexManager,
+			deliveryId: this.deliveryId,
+			studentId: this.studentId
+		});
+		if (creds) {
 			this.panel = PANEL_REPORT;
 			setTimeout(() => {
 				// Timeout to show the next panel, before setting @api variables
@@ -58,7 +75,7 @@ export default class Student extends LightningElement {
 				studentReport.studentId = this.studentId;
 				studentReport.deliveryId = this.deliveryId;
 			}, 0);
-		} catch (ex) {
+		} else {
 			this.showRegistrationPage();
 		}
 	}

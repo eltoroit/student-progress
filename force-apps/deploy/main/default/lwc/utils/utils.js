@@ -256,36 +256,43 @@ export default class Utils {
 		},
 		_source: () => {
 			let source;
-			try {
-				throw new Error("TEST");
-			} catch (ex) {
-				const stack = ex.stack.split("\n");
-				stack.shift();
+			const stack = Error().stack.split("\n");
+			stack.shift();
 
-				let caller = stack.find((line) => !line.includes("/utils.js:")).trim();
-				caller = caller.substring(caller.lastIndexOf("/") + 1);
-				caller = caller.substring(0, caller.length - 1);
+			let caller = stack.find((line) => !line.includes("/utils.js:")).trim();
+			caller = caller.substring(caller.lastIndexOf("/") + 1);
+			caller = caller.substring(0, caller.length - 1);
 
-				source = `(${new Date().toJSON()} *** ${caller})`;
-			}
+			source = `(${new Date().toJSON()} *** ${caller})`;
+
 			return source;
 		}
 	};
 
 	static async validateStudentRegistration({ apexManager, deliveryId, studentId }) {
-		let output;
-		try {
-			if (deliveryId == null || studentId == null) {
-				throw new Error("[Utils] Delivery and student are required. Maybe the student has not registered before");
-			}
-
-			output = await apexManager.doValidateStudentRegistration({ deliveryId, studentId });
-			Utils.setCookie({ key: "deliveryId", value: output.delivery.Id });
-			Utils.setCookie({ key: "studentId", value: output.student.Id });
-		} catch (ex) {
+		let output = null;
+		if (deliveryId == null || studentId == null) {
 			Utils.deleteCookie({ key: "deliveryId" });
 			Utils.deleteCookie({ key: "studentId" });
-			throw new Error(ex.body?.message ? ex.body?.message : ex);
+		} else {
+			output = await apexManager.doValidateStudentRegistration({ deliveryId, studentId });
+			if (output) {
+				Utils.setCookie({ key: "deliveryId", value: output.delivery.Id });
+				Utils.setCookie({ key: "studentId", value: output.student.Id });
+			} else {
+				Utils.deleteCookie({ key: "deliveryId" });
+				Utils.deleteCookie({ key: "studentId" });
+			}
+		}
+		return output;
+	}
+
+	static findRecord({ list, Id }) {
+		let output = list.filter((item) => item.Id === Id);
+		if (output.length === 1) {
+			output = output[0];
+		} else {
+			output = null;
 		}
 		return output;
 	}
