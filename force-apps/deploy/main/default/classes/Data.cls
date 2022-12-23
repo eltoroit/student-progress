@@ -4,7 +4,7 @@ public without sharing class Data {
 		List<Delivery__c> output = new List<Delivery__c>();
 
 		output = [
-			SELECT Id, Name, Instructor__c, CurrentExercise__r.Name, CurrentExerciseStart__c, CurrentExerciseIsActive__c
+			SELECT Id, Name, Instructor__c
 			FROM Delivery__c
 			WHERE IsActive__c = TRUE
 			ORDER BY Name ASC

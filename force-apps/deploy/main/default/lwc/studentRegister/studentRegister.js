@@ -53,15 +53,19 @@ export default class StudentRegister extends LightningElement {
 			// this.onNextClick();
 		} else {
 			Utils.logger.log("User needs to register");
-			this.apexManager.fetchActiveDeliveriesWithCourses();
+			this.apexManager.fetchActiveDeliveries();
 		}
 	}
 
 	@api
 	onData({ obj, data }) {
 		switch (obj) {
+			case "ActiveDeliveries": {
+				this.loadActiveDeliveries({ data });
+				break;
+			}
 			case "ActiveDeliveriesWithCourses": {
-				this.loadActiveDeliveriesWithCourses({ data });
+				// Ignore
 				break;
 			}
 			// case "CoursesPerDelivery": {
@@ -115,12 +119,19 @@ export default class StudentRegister extends LightningElement {
 		}
 	}
 
-	loadActiveDeliveriesWithCourses({ data }) {
+	loadActiveDeliveries({ data }) {
 		let currentId = this.deliveries.currentId;
-		this._loadData({ objectName: "deliveries", data, placeholder: "Which class are you attending?" });
+		this._loadData({
+			objectName: "deliveries",
+			data,
+			placeholder: "Which class are you attending?",
+			formatter: (record) => `${record.Name} (${record.Instructor__c})`
+		});
 		if (Utils.findRecord({ list: this.deliveries.records, Id: currentId })) {
+			debugger;
 			// 	this.selectDelivery({ currentId });
 		} else {
+			debugger;
 			// 	this.courses.currentId = null;
 			// 	this.selectCourse({ currentId: null });
 			// 	this.exercises.activeId = null;
@@ -132,42 +143,21 @@ export default class StudentRegister extends LightningElement {
 		}
 	}
 
-	_loadData({ objectName, data, placeholder }) {
+	_loadData({ objectName, data, placeholder, formatter }) {
 		this[objectName] = { ...this[objectName] };
 		this[objectName].records = data;
-		this[objectName].options = data.map((record) => ({
-			value: record.Id,
-			label: record.Name
-		}));
+		this[objectName].options = data.map((record) => {
+			let option = {
+				value: record.Id,
+				label: record.Name
+			};
+			if (formatter) {
+				option.label = formatter(record);
+			}
+			return option;
+		});
 		this[objectName].options.unshift({ value: "", label: placeholder });
 	}
-
-	// @wire(getActiveDeliveries, { forceRefresh: "$forceRefresh" })
-	// wired_GetActiveDeliveries(result) {
-	// 	this.wiredDeliveries = result;
-	// 	let { data, error } = result;
-	// 	if (data) {
-	// 		this.deliveries = data.map((delivery) => ({
-	// 			delivery,
-	// 			value: delivery.Id,
-	// 			label: `${delivery.Name} (${delivery.Instructor__c})`
-	// 		}));
-	// 		if (data.length === 1) {
-	// 			this.delivery.Id = data[0].Id;
-	// 			Utils.setCookie({ key: "deliveryId", value: this.delivery.Id });
-	// 		}
-	// 		this.deliveries.unshift({ value: "", label: "Which class are you attending?" });
-	// 		this.loading = false;
-	// 	} else if (error) {
-	// 		Utils.showNotification(this, {
-	// 			title: "Error",
-	// 			message: "Error getting deliveries",
-	// 			variant: Utils.variants.error
-	// 		});
-	// 		Utils.logger.log(error);
-	// 		this.loading = false;
-	// 	}
-	// }
 
 	// // Can you use a getter?
 	// @wire(getStudentsForDelivery, { deliveryId: "$deliveryId", forceRefresh: "$forceRefresh" })

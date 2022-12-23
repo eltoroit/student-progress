@@ -143,6 +143,10 @@ export default class InstructorDelivery extends LightningElement {
 		const { obj, data } = event.detail;
 		Utils.logger.log(`OnData: ${obj}`, JSON.parse(JSON.stringify(data)));
 		switch (obj) {
+			case "ActiveDeliveries": {
+				// Ignore
+				break;
+			}
 			case "ActiveDeliveriesWithCourses": {
 				this.loadActiveDeliveriesWithCourses({ data });
 				break;
