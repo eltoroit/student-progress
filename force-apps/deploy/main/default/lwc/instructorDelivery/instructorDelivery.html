@@ -11,7 +11,12 @@
 				<lightning-spinner variant="brand"></lightning-spinner>
 			</template>
 			<lightning-button-group slot="actions">
-				<lightning-button label="Random Student" onclick={onRandomClick}></lightning-button>
+				<lightning-button
+					label="Random Student"
+					onclick={onRandomClick}
+					if:true={ui.btnRandom.isVisible}
+					disabled={ui.btnRandom.isDisabled}
+				></lightning-button>
 				<lightning-button
 					label="Current"
 					onclick={onCurrentClick}

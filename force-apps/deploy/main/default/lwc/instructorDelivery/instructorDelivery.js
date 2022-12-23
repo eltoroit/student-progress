@@ -83,6 +83,10 @@ export default class InstructorDelivery extends LightningElement {
 		};
 
 		const ui = {};
+		ui.btnRandom = {
+			isVisible: this.courses?.currentId,
+			isDisabled: !this.exercises?.currentId
+		};
 		ui.btnCurrent = {
 			isVisible: this.courses?.currentId,
 			isDisabled: !this.exercises?.activeId || isCurrentActive()
