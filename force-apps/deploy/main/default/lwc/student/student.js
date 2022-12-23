@@ -23,15 +23,18 @@ export default class Student extends LightningElement {
 
 	connectedCallback() {
 		debugger;
-		setTimeout(async () => {
-			this.apexManager = this.template.querySelector("c-apex-manager");
+	}
+
+	async renderedCallback() {
+		if (!this.apexManager) {
 			try {
+				this.apexManager = this.template.querySelector("c-apex-manager");
 				await Utils.validateStudentRegistration({ apexManager: this.apexManager, deliveryId: this.deliveryId, studentId: this.studentId });
 				this.showReportPage();
 			} catch (ex) {
 				this.showRegistrationPage();
 			}
-		}, 0);
+		}
 	}
 
 	showRegistrationPage() {

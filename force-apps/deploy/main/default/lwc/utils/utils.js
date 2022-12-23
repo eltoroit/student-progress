@@ -276,7 +276,7 @@ export default class Utils {
 		let output;
 		try {
 			if (deliveryId == null || studentId == null) {
-				// throw new Error("Delivery and student are required. Maybe the student has not registered before");
+				throw new Error("[Utils] Delivery and student are required. Maybe the student has not registered before");
 			}
 
 			output = await apexManager.doValidateStudentRegistration({ deliveryId, studentId });

@@ -231,7 +231,7 @@ public without sharing class Data {
 			} else {
 				reason = errors[0];
 			}
-			throw new CalloutException('Registration data is not valid | ' + reason + ' | Please register.');
+			throw new CalloutException('[Apex] Registration data is not valid | ' + reason + ' | Please register.');
 		}
 
 		return output;

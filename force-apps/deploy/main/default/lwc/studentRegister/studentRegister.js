@@ -48,7 +48,7 @@ export default class StudentRegister extends LightningElement {
 			await Utils.validateStudentRegistration({ apexManager: this.apexManager, deliveryId: this.deliveryId, studentId: this.studentId });
 			// this.onNextClick();
 		} catch (ex) {
-			debugger;
+			Utils.logger.log("User needs to register");
 		}
 	}
 

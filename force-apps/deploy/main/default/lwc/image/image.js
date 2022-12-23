@@ -25,7 +25,11 @@ export default class Image extends LightningElement {
 		setInterval(() => {
 			this.counter++;
 			this.computeUrl();
-		}, 1e3);
+		}, 5e3);
+	}
+
+	renderedCallback() {
+		console.log("Image renderedCallback");
 	}
 
 	get style() {

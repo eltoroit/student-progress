@@ -121,15 +121,21 @@ export default class InstructorDelivery extends LightningElement {
 
 	connectedCallback() {
 		debugger;
-		setTimeout(() => {
+	}
+
+	renderedCallback() {
+		if (!this.apexManager) {
 			this.apexManager = this.template.querySelector("c-apex-manager");
 			this.apexManager.fetchActiveDeliveriesWithCourses();
-		}, 0);
 
-		Utils.logger.log("Connected Callback (read cookies)");
-		this.exercises.currentId = Utils.getCookie({ key: "exerciseId" });
-		this.deliveries.currentId = Utils.getCookie({ key: "deliveryId" });
-		this.courses.currentId = Utils.getCookie({ key: "courseId" });
+			Utils.logger.log("Connected Callback (read cookies)");
+			this.deliveries.currentId = Utils.getCookie({ key: "deliveryId" });
+			this.courses.currentId = Utils.getCookie({ key: "courseId" });
+			this.exercises.currentId = Utils.getCookie({ key: "exerciseId" });
+			this.selectDelivery({ currentId: this.deliveries.currentId });
+			this.selectCourse({ currentId: this.courses.currentId });
+			this.selectExercise({ currentId: this.exercises.currentId });
+		}
 	}
 
 	findRecord({ list, Id }) {
