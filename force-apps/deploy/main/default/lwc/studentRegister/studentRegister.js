@@ -37,6 +37,7 @@ export default class StudentRegister extends LightningElement {
 		};
 
 		ui.pnlDeliveries = true;
+		ui.pnlRegister = this.students?.currentId;
 		ui.pnlStudents = this.deliveries?.currentId;
 
 		return ui;
