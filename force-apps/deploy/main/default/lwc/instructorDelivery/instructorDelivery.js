@@ -78,7 +78,7 @@ export default class InstructorDelivery extends LightningElement {
 			return (
 				this.exercises?.currentId &&
 				this.exercises?.activeId === this.exercises?.currentId &&
-				this.findRecord({ list: this.deliveries?.records, Id: this.deliveries?.currentId })?.CurrentExerciseIsActive__c
+				Utils.findRecord({ list: this.deliveries?.records, Id: this.deliveries?.currentId })?.CurrentExerciseIsActive__c
 			);
 		};
 
@@ -138,20 +138,10 @@ export default class InstructorDelivery extends LightningElement {
 		}
 	}
 
-	findRecord({ list, Id }) {
-		let output = list.filter((item) => item.Id === Id);
-		if (output.length === 1) {
-			output = output[0];
-		} else {
-			output = null;
-		}
-		return output;
-	}
-
 	//#region EVENTS
 	onData(event) {
 		const { obj, data } = event.detail;
-		Utils.logger.log(`Instructor Delivery (onData): ${obj}`, JSON.parse(JSON.stringify(data)));
+		Utils.logger.log(`OnData: ${obj}`, JSON.parse(JSON.stringify(data)));
 		switch (obj) {
 			case "ActiveDeliveriesWithCourses": {
 				this.loadActiveDeliveriesWithCourses({ data });
@@ -313,7 +303,7 @@ export default class InstructorDelivery extends LightningElement {
 	loadActiveDeliveriesWithCourses({ data }) {
 		let currentId = this.deliveries.currentId;
 		this._loadData({ objectName: "deliveries", data, placeholder: "Which Delivery?" });
-		if (this.findRecord({ list: this.deliveries.records, Id: currentId })) {
+		if (Utils.findRecord({ list: this.deliveries.records, Id: currentId })) {
 			this.selectDelivery({ currentId });
 		} else {
 			this.courses.currentId = null;
@@ -337,7 +327,7 @@ export default class InstructorDelivery extends LightningElement {
 			// If there is only one course, then select it
 			currentId = this.courses.records[0].Id;
 		}
-		if (this.findRecord({ list: this.courses.records, Id: currentId })) {
+		if (Utils.findRecord({ list: this.courses.records, Id: currentId })) {
 			this.selectCourse({ currentId });
 		} else {
 			this.courses.currentId = null;
@@ -354,7 +344,7 @@ export default class InstructorDelivery extends LightningElement {
 	loadExercisesForCourse({ data }) {
 		let currentId = this.exercises.currentId;
 		this._loadData({ objectName: "exercises", data, placeholder: "Which Exercise?" });
-		if (this.findRecord({ list: this.exercises.records, Id: currentId })) {
+		if (Utils.findRecord({ list: this.exercises.records, Id: currentId })) {
 			this.selectExercise({ currentId });
 		} else {
 			this.exercises.currentId = null;
@@ -380,7 +370,7 @@ export default class InstructorDelivery extends LightningElement {
 		this.activeExercise.record = null;
 		this.activeExercise.startAt = null;
 		if (this.deliveries.currentId) {
-			const currentDelivery = this.findRecord({ list: this.deliveries.records, Id: this.deliveries.currentId });
+			const currentDelivery = Utils.findRecord({ list: this.deliveries.records, Id: this.deliveries.currentId });
 			if (currentDelivery.CurrentExerciseIsActive__c) {
 				this.exercises.activeId = currentDelivery.CurrentExercise__c;
 				this.activeExercise = {

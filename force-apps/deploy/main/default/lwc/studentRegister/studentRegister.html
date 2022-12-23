@@ -34,9 +34,9 @@
 							<lightning-combobox
 								name="Delivery"
 								label="Which class are you attending?"
-								value={deliveryId}
+								value={deliveries.currentId}
 								placeholder="Which class are you attending?"
-								options={deliveries}
+								options={deliveries.options}
 								onchange={onDeliveryChange}
 							></lightning-combobox>
 						</lightning-layout-item>
