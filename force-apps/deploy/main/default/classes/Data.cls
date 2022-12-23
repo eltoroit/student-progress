@@ -204,7 +204,7 @@ public without sharing class Data {
 	}
 
 	@AuraEnabled
-	public static Map<String, Object> validateRegistration(Id deliveryId, Id studentId) {
+	public static Map<String, Object> validateStudentRegistration(Id deliveryId, Id studentId) {
 		Map<String, Object> output = new Map<String, Object>();
 		List<String> errors = new List<String>();
 

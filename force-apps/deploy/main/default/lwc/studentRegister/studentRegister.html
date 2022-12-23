@@ -29,19 +29,21 @@
 
 			<div class="slds-m-horizontal_xx-large">
 				<lightning-layout multiple-rows>
-					<lightning-layout-item size="12">
-						<lightning-combobox
-							name="Delivery"
-							label="Which class are you attending?"
-							value={deliveryId}
-							placeholder="Which class are you attending?"
-							options={deliveries}
-							onchange={onDeliveryChange}
-						></lightning-combobox>
-					</lightning-layout-item>
-					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+					<template if:true={ui.pnlDeliveries}>
+						<lightning-layout-item size="12">
+							<lightning-combobox
+								name="Delivery"
+								label="Which class are you attending?"
+								value={deliveryId}
+								placeholder="Which class are you attending?"
+								options={deliveries}
+								onchange={onDeliveryChange}
+							></lightning-combobox>
+						</lightning-layout-item>
+						<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+					</template>
 
-					<template if:true={ui.pnlStudent}>
+					<template if:true={ui.pnlStudents}>
 						<lightning-layout-item size="12">
 							<lightning-combobox
 								name="Student"

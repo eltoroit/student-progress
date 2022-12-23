@@ -243,24 +243,49 @@ export default class Utils {
 				output = "❓";
 				break;
 		}
-		// Utils.log(`${status} => ${output}`);
+		// Utils.logger.log(`${status} => ${output}`);
 		return output;
 	}
 
-	static log(...params) {
-		let from;
-		try {
-			throw new Error("TEST");
-		} catch (ex) {
-			const stack = ex.stack.split("\n");
-			stack.shift();
+	static logger = {
+		log: (...params) => {
+			console.log(Utils.logger._source(), ...params);
+		},
+		error: (...params) => {
+			console.error(Utils.logger._source(), ...params);
+		},
+		_source: () => {
+			let source;
+			try {
+				throw new Error("TEST");
+			} catch (ex) {
+				const stack = ex.stack.split("\n");
+				stack.shift();
 
-			let caller = stack.find((line) => !line.includes("/utils.js:")).trim();
-			caller = caller.substring(caller.lastIndexOf("/") + 1);
-			caller = caller.substring(0, caller.length - 1);
+				let caller = stack.find((line) => !line.includes("/utils.js:")).trim();
+				caller = caller.substring(caller.lastIndexOf("/") + 1);
+				caller = caller.substring(0, caller.length - 1);
 
-			from = `(${new Date().toJSON()} *** ${caller})`;
+				source = `(${new Date().toJSON()} *** ${caller})`;
+			}
+			return source;
 		}
-		console.log(from, ...params);
+	};
+
+	static async validateStudentRegistration({ dataManager, deliveryId, studentId }) {
+		debugger;
+		try {
+			if (deliveryId == null && studentId == null) {
+				throw new Error("No registration information available");
+			}
+
+			const data = await dataManager.doValidateStudentRegistration({ deliveryId, studentId });
+			Utils.setCookie({ key: "deliveryId", value: data.delivery.Id });
+			Utils.setCookie({ key: "studentId", value: data.student.Id });
+		} catch (ex) {
+			Utils.deleteCookie({ key: "deliveryId" });
+			Utils.deleteCookie({ key: "studentId" });
+			throw new Error(ex.body.message);
+		}
 	}
 }

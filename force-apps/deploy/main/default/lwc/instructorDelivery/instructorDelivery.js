@@ -126,7 +126,7 @@ export default class InstructorDelivery extends LightningElement {
 			this.dataManager.fetchActiveDeliveriesWithCourses();
 		}, 0);
 
-		Utils.log("Connected Callback (read cookies)");
+		Utils.logger.log("Connected Callback (read cookies)");
 		this.exercises.currentId = Utils.getCookie({ key: "exerciseId" });
 		this.deliveries.currentId = Utils.getCookie({ key: "deliveryId" });
 		this.courses.currentId = Utils.getCookie({ key: "courseId" });
@@ -145,7 +145,7 @@ export default class InstructorDelivery extends LightningElement {
 	//#region EVENTS
 	onData(event) {
 		const { obj, data } = event.detail;
-		Utils.log(`Instructor Delivery (onData): ${obj}`, JSON.parse(JSON.stringify(data)));
+		Utils.logger.log(`Instructor Delivery (onData): ${obj}`, JSON.parse(JSON.stringify(data)));
 		switch (obj) {
 			case "ActiveDeliveriesWithCourses": {
 				this.loadActiveDeliveriesWithCourses({ data });
@@ -258,7 +258,7 @@ export default class InstructorDelivery extends LightningElement {
 
 	onRefreshClick() {
 		debugger;
-		console.log(this.ui);
+		Utils.logger.log(this.ui);
 	}
 	//#endregion
 
@@ -384,6 +384,7 @@ export default class InstructorDelivery extends LightningElement {
 				if (currentDelivery.CurrentExercise__c === this.exercises.currentId) {
 					this.activeExercise.timer = setInterval(() => {
 						try {
+							// Leave this on the console, do not show time or source, that way the inspector can group them and show a counter.
 							console.log(`*** Update clock`);
 							this.duration = Utils.calculateDuration({
 								startAt: this.activeExercise.startAt,
@@ -396,7 +397,7 @@ export default class InstructorDelivery extends LightningElement {
 								variant: Utils.msgVariants.error,
 								mode: Utils.msgModes.sticky
 							});
-							Utils.log(ex);
+							Utils.logger.log(ex);
 						}
 					}, 5e2);
 				}

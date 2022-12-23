@@ -4,7 +4,7 @@ import startStopExercise from "@salesforce/apex/Data.startStopExercise";
 import getDeliveryProgress from "@salesforce/apex/Data.getDeliveryProgress";
 import getExerciseProgress from "@salesforce/apex/Data.getExerciseProgress";
 import updateStudentStatus from "@salesforce/apex/Data.updateStudentStatus";
-import validateRegistration from "@salesforce/apex/Data.validateRegistration";
+import validateStudentRegistration from "@salesforce/apex/Data.validateStudentRegistration";
 import getCoursesPerDelivery from "@salesforce/apex/Data.getCoursesPerDelivery";
 import getAllExercisesForCourse from "@salesforce/apex/Data.getAllExercisesForCourse";
 import getActiveDeliveriesWithCourses from "@salesforce/apex/Data.getActiveDeliveriesWithCourses";
@@ -43,14 +43,14 @@ export default class DataManager extends LightningElement {
 		await this.callApex({ obj: null, apexPromise: updateStudentStatus({ exerciseId, studentId, status }) });
 	}
 
-	@api async doValidateRegistration({ deliveryId, studentId }) {
+	@api async doValidateStudentRegistration({ deliveryId, studentId }) {
 		// eslint-disable-next-line no-return-await
-		return await this.callApex({ obj: null, apexPromise: validateRegistration({ deliveryId, studentId }) });
+		return await this.callApex({ obj: null, apexPromise: validateStudentRegistration({ deliveryId, studentId }) });
 	}
 
 	onEventReceived(event) {
 		const { entityName, recordIds } = event.detail;
-		Utils.log("DataManager (onEventReceived): ", JSON.parse(JSON.stringify(event.detail)), entityName, recordIds);
+		Utils.logger.log("DataManager (onEventReceived): ", JSON.parse(JSON.stringify(event.detail)), entityName, recordIds);
 		switch (entityName) {
 			case "Delivery__c": {
 				this.fetchActiveDeliveriesWithCourses();
@@ -62,7 +62,7 @@ export default class DataManager extends LightningElement {
 				break;
 			}
 			default:
-				Utils.log(JSON.parse(JSON.stringify(event.detail)), entityName, recordIds);
+				Utils.logger.log(JSON.parse(JSON.stringify(event.detail)), entityName, recordIds);
 				debugger;
 				break;
 		}
@@ -81,18 +81,18 @@ export default class DataManager extends LightningElement {
 	async callApex({ obj, apexPromise }) {
 		let output = null;
 		try {
-			Utils.log(`Call Apex`, obj);
+			Utils.logger.log(`Call Apex`, obj);
 			const data = await apexPromise;
 			if (obj) {
 				const oldValue = this.oldValues[obj]?.data;
 				const newValue = JSON.stringify(data);
 
-				Utils.log(`CallApex | obj: ${obj} | Old: `, oldValue ? JSON.parse(oldValue) : null, " | New: ", JSON.parse(newValue));
+				Utils.logger.log(`CallApex | obj: ${obj} | Old: `, oldValue ? JSON.parse(oldValue) : null, " | New: ", JSON.parse(newValue));
 
 				if (oldValue !== newValue) {
 					this.dispatchEvent(new CustomEvent("data", { detail: { obj, data } }));
 				} else {
-					Utils.log(`Request from data event and data was the same... skipping`);
+					Utils.logger.log(`Request from data event and data was the same... skipping`);
 				}
 
 				this.oldValues[obj] = {
@@ -100,11 +100,11 @@ export default class DataManager extends LightningElement {
 					data: newValue
 				};
 			} else {
-				Utils.log(`Obj was null`);
+				Utils.logger.log(`Obj was null`);
 			}
 			output = data;
 		} catch (ex) {
-			Utils.log(ex);
+			Utils.logger.log(ex);
 			let message = "";
 			if (obj) message = `${obj}:`;
 			message += `${ex.body.message}`;

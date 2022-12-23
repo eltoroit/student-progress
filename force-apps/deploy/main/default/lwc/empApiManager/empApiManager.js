@@ -37,7 +37,7 @@ export default class EmpApiManager extends LightningElement {
 					variant: Utils.msgVariants.error,
 					mode: Utils.msgModes.sticky
 				});
-				console.error(message);
+				Utils.logger.error(message);
 				debugger;
 			});
 		} else {
@@ -53,7 +53,7 @@ export default class EmpApiManager extends LightningElement {
 	disconnectedCallback() {
 		unsubscribe(this.empApi.subscription, (response) => {
 			// Response is true for successful unsubscribe
-			Utils.log(`unsubscribe() response: ${JSON.stringify(response)}`);
+			Utils.logger.log(`unsubscribe() response: ${JSON.stringify(response)}`);
 			debugger;
 		});
 	}
@@ -61,17 +61,17 @@ export default class EmpApiManager extends LightningElement {
 	_processNewEventData({ eventData }) {
 		const payload = eventData.data.payload;
 		const key = `${payload.ChangeEventHeader.commitNumber}|${payload.ChangeEventHeader.entityName}`;
-		// Utils.log(`New Data (pending): ${key}`, payload);
+		// Utils.logger.log(`New Data (pending): ${key}`, payload);
 		if (payload[this.filterKey]) {
 			// Payload has filter field
 			if (payload[this.filterKey] !== this.filterValue) {
 				// Payload filter field has a different value
-				// Utils.log(`Skip, key field is different value: ${key}`, payload);
+				// Utils.logger.log(`Skip, key field is different value: ${key}`, payload);
 				return;
 			}
-			// Utils.log(`Key field is expected value: ${key}`, payload);
+			// Utils.logger.log(`Key field is expected value: ${key}`, payload);
 		} else {
-			// Utils.log(`No key field: ${key}`, payload);
+			// Utils.logger.log(`No key field: ${key}`, payload);
 		}
 		if (this.empApi.pending[key]) {
 			payload.ChangeEventHeader.recordIds.forEach((recordId) => this.empApi.pending[key].recordIds.add(recordId));
@@ -85,7 +85,7 @@ export default class EmpApiManager extends LightningElement {
 		this.empApi.pending[key].clock = setTimeout(() => {
 			const entityName = key.split("|")[1];
 			const recordIds = this.empApi.pending[key].recordIds;
-			Utils.log(`EmpApi (timer): Notify new data: ${entityName}`, recordIds);
+			Utils.logger.log(`EmpApi (timer): Notify new data: ${entityName}`, recordIds);
 			this.dispatchEvent(
 				new CustomEvent("received", {
 					detail: {

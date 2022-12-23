@@ -26,18 +26,22 @@ export default class Student extends LightningElement {
 		setTimeout(async () => {
 			this.dataManager = this.template.querySelector("c-data-manager");
 			try {
-				await this.validateRegistrationJS();
+				await Utils.validateStudentRegistration({ dataManager: this.dataManager, deliveryId: this.deliveryId, studentId: this.studentId });
+				this.readCookies();
 				this.showReportPage();
 			} catch (ex) {
 				this.showRegistrationPage();
 			}
 		}, 0);
-		this.studentId = Utils.getCookie({ key: "studentId" });
-		this.deliveryId = Utils.getCookie({ key: "deliveryId" });
 	}
 
 	showRegistrationPage() {
 		this.panel = PANEL_REGISTER;
+	}
+
+	readCookies() {
+		this.studentId = Utils.getCookie({ key: "studentId" });
+		this.deliveryId = Utils.getCookie({ key: "deliveryId" });
 	}
 
 	onNext(event) {
@@ -48,7 +52,8 @@ export default class Student extends LightningElement {
 
 	async showReportPage() {
 		try {
-			await this.validateRegistrationJS();
+			await Utils.validateStudentRegistration({ dataManager: this.dataManager, deliveryId: this.deliveryId, studentId: this.studentId });
+			this.readCookies();
 			this.panel = PANEL_REPORT;
 			setTimeout(() => {
 				// Timeout to show the next panel, before setting @api variables
@@ -58,27 +63,6 @@ export default class Student extends LightningElement {
 			}, 0);
 		} catch (ex) {
 			this.showRegistrationPage();
-		}
-	}
-
-	async validateRegistrationJS() {
-		debugger;
-		try {
-			if (this.deliveryId == null && this.studentId == null) {
-				throw new Error("No registration information available");
-			}
-
-			const data = await this.dataManager.doValidateRegistration({ deliveryId: this.deliveryId, studentId: this.studentId });
-			this.studentId = data.student.Id;
-			this.deliveryId = data.delivery.Id;
-			Utils.setCookie({ key: "deliveryId", value: this.deliveryId });
-			Utils.setCookie({ key: "studentId", value: this.studentId });
-		} catch (ex) {
-			this.studentId = null;
-			this.deliveryId = null;
-			Utils.deleteCookie({ key: "deliveryId" });
-			Utils.deleteCookie({ key: "studentId" });
-			throw new Error(ex.body.message);
 		}
 	}
 }
