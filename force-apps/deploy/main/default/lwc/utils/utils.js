@@ -273,7 +273,6 @@ export default class Utils {
 	};
 
 	static async validateStudentRegistration({ dataManager, deliveryId, studentId }) {
-		debugger;
 		try {
 			if (deliveryId == null && studentId == null) {
 				throw new Error("No registration information available");
