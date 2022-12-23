@@ -1,12 +1,12 @@
 public without sharing class Data {
 	@AuraEnabled
-	public static List<Delivery__c> getActiveDeliveries() {
+	public static List<Delivery__c> getActiveDeliveriesWithCourses() {
 		List<Delivery__c> output = new List<Delivery__c>();
 
 		output = [
 			SELECT Id, Name, Instructor__c, CurrentExercise__r.Name, CurrentExerciseStart__c, CurrentExerciseIsActive__c
 			FROM Delivery__c
-			WHERE IsActive__c = TRUE
+			WHERE IsActive__c = TRUE AND Id IN (SELECT Delivery__c FROM Course_X_Delivery__c)
 			ORDER BY Name ASC
 		];
 

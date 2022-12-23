@@ -2,7 +2,7 @@ import Utils from "c/utils";
 import { api, LightningElement } from "lwc";
 import startStopExercise from "@salesforce/apex/Data.startStopExercise";
 import getDeliveryProgress from "@salesforce/apex/Data.getDeliveryProgress";
-import getActiveDeliveries from "@salesforce/apex/Data.getActiveDeliveries";
+import getActiveDeliveriesWithCourses from "@salesforce/apex/Data.getActiveDeliveriesWithCourses";
 import getExerciseProgress from "@salesforce/apex/Data.getExerciseProgress";
 import updateStudentStatus from "@salesforce/apex/Data.updateStudentStatus";
 import getCoursesPerDelivery from "@salesforce/apex/Data.getCoursesPerDelivery";
@@ -14,7 +14,7 @@ export default class DataManager extends LightningElement {
 	oldValues = {};
 
 	@api fetchActiveDeliveries() {
-		this.callApex({ obj: "ActiveDeliveries", apexPromise: getActiveDeliveries() });
+		this.callApex({ obj: "ActiveDeliveries", apexPromise: getActiveDeliveriesWithCourses() });
 	}
 
 	@api fetchCoursesPerDelivery({ deliveryId }) {
