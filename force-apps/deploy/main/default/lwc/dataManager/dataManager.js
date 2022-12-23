@@ -13,8 +13,8 @@ export default class DataManager extends LightningElement {
 	@api filterValue = null;
 	oldValues = {};
 
-	@api fetchActiveDeliveries() {
-		this.callApex({ obj: "ActiveDeliveries", apexPromise: getActiveDeliveriesWithCourses() });
+	@api fetchActiveDeliveriesWithCourses() {
+		this.callApex({ obj: "ActiveDeliveriesWithCourses", apexPromise: getActiveDeliveriesWithCourses() });
 	}
 
 	@api fetchCoursesPerDelivery({ deliveryId }) {
@@ -35,7 +35,7 @@ export default class DataManager extends LightningElement {
 
 	@api async doStartStopExercise({ deliveryId, exerciseId, isStart }) {
 		await this.callApex({ obj: null, apexPromise: startStopExercise({ deliveryId, exerciseId, isStart }) });
-		this.fetchActiveDeliveries();
+		this.fetchActiveDeliveriesWithCourses();
 	}
 
 	@api async doUpdateStudentStatus({ exerciseId, studentId, status }) {
@@ -47,7 +47,7 @@ export default class DataManager extends LightningElement {
 		Utils.log("DataManager (onEventReceived): ", JSON.parse(JSON.stringify(event.detail)), entityName, recordIds);
 		switch (entityName) {
 			case "Delivery__c": {
-				this.fetchActiveDeliveries();
+				this.fetchActiveDeliveriesWithCourses();
 				break;
 			}
 			case "Exercise_X_Student__c": {

@@ -133,7 +133,7 @@ export default class InstructorDelivery extends LightningElement {
 		debugger;
 		setTimeout(() => {
 			this.dataManager = this.template.querySelector("c-data-manager");
-			this.dataManager.fetchActiveDeliveries();
+			this.dataManager.fetchActiveDeliveriesWithCourses();
 		}, 0);
 
 		Utils.log("Connected Callback (read cookies)");
@@ -146,8 +146,8 @@ export default class InstructorDelivery extends LightningElement {
 		const { obj, data } = event.detail;
 		Utils.log(`Instructor Delivery (onData): ${obj}`, JSON.parse(JSON.stringify(data)));
 		switch (obj) {
-			case "ActiveDeliveries": {
-				this.loadActiveDeliveries({ data });
+			case "ActiveDeliveriesWithCourses": {
+				this.loadActiveDeliveriesWithCourses({ data });
 				break;
 			}
 			case "CoursesPerDelivery": {
@@ -300,7 +300,7 @@ export default class InstructorDelivery extends LightningElement {
 	//#endregion
 
 	//#region LOAD DATA
-	loadActiveDeliveries({ data }) {
+	loadActiveDeliveriesWithCourses({ data }) {
 		let currentId = this.deliveries.currentId;
 		this._loadData({ objectName: "deliveries", data, placeholder: "Which Delivery?" });
 		if (this.findRecord({ list: this.deliveries.records, Id: currentId })) {
