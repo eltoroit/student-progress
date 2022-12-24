@@ -9,6 +9,7 @@ import getStudentsForDelivery from "@salesforce/apex/Data.getStudentsForDelivery
 import getAllExercisesForCourse from "@salesforce/apex/Data.getAllExercisesForCourse";
 import getActiveDeliveriesWithCourses from "@salesforce/apex/Data.getActiveDeliveriesWithCourses";
 
+import registerStudent from "@salesforce/apex/Data.registerStudent";
 import startStopExercise from "@salesforce/apex/Data.startStopExercise";
 import updateStudentStatus from "@salesforce/apex/Data.updateStudentStatus";
 import validateStudentRegistration from "@salesforce/apex/Data.validateStudentRegistration";
@@ -83,18 +84,26 @@ export default class ApexManager extends LightningElement {
 		return output;
 	}
 
+	@api async doRegisterStudent({ deliveryId, student }) {
+		let output = null;
+		if (deliveryId && student) {
+			try {
+				output = await this.callApex({ obj: null, apexPromise: registerStudent({ deliveryId, student }) });
+			} catch (ex) {
+				output = null;
+			}
+		}
+		return output;
+	}
+
 	onEventReceived(event) {
 		const { entityName, recordIds } = event.detail;
 		Utils.logger.log("OnEventReceived: ", JSON.parse(JSON.stringify(event.detail)), entityName, recordIds);
 		switch (entityName) {
-			case "Delivery__c": {
-				this.fetchActiveDeliveries();
-				this.fetchActiveDeliveriesWithCourses();
-				break;
-			}
+			case "Student__c":
+			case "Delivery__c":
 			case "Exercise_X_Student__c": {
-				// I do not know how to get the data that is required, just bubble up and let the parent decide :-)
-				this.dispatchEvent(new CustomEvent("data", { detail: { obj: "Exercise_X_Student__c", data: recordIds } }));
+				this.dispatchEvent(new CustomEvent("data", { detail: { obj: entityName, data: recordIds } }));
 				break;
 			}
 			default:

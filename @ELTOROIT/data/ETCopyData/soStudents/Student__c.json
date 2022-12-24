@@ -53,8 +53,8 @@
 			"FirstName__c": "Achuth",
 			"Id": "a06DK00000B6lF6YAJ",
 			"IsInstructor__c": false,
-			"LastName__c": "NoLastName",
-			"Name": "Achuth NoLastName",
+			"LastName__c": null,
+			"Name": "Achuth MissingLastName",
 			"Nickname__c": "Achuth"
 		},
 		{
@@ -161,12 +161,12 @@
 				"url": "/services/data/v56.0/sobjects/Student__c/a06DK00000B6lFEYAZ"
 			},
 			"Delivery__c": "a02DK00000ELgxuYAD",
-			"Email__c": "no@email.com",
+			"Email__c": null,
 			"FirstName__c": "Andres",
 			"Id": "a06DK00000B6lFEYAZ",
 			"IsInstructor__c": true,
-			"LastName__c": "NoLastName",
-			"Name": "Andres NoLastName",
+			"LastName__c": "NoEmail",
+			"Name": "Andres NoEmail",
 			"Nickname__c": "Andres"
 		},
 		{
@@ -193,9 +193,9 @@
 			"FirstName__c": "Bhoopa",
 			"Id": "a06DK00000B6lFGYAZ",
 			"IsInstructor__c": false,
-			"LastName__c": "NoLastName",
-			"Name": "Bhoopa NoLastName",
-			"Nickname__c": "Bhoopa"
+			"LastName__c": "NoNickname",
+			"Name": "Bhoopa NoNickname",
+			"Nickname__c": null
 		},
 		{
 			"attributes": {

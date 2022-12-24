@@ -21,6 +21,7 @@ export default class StudentRegister extends LightningElement {
 	};
 
 	@track student = {
+		newId: null,
 		currentId: null,
 		firstName: null,
 		lastName: null,
@@ -36,12 +37,12 @@ export default class StudentRegister extends LightningElement {
 
 		ui.btnRegister = {
 			label: this.students?.currentId === "CREATE" ? "Register" : "Update",
-			isVisible: this.deliveries?.currentId && this.students?.currentId,
+			isVisible: this.deliveries?.currentId && this.students?.currentId && (this.student?.isChanged || this.students?.currentId === "CREATE"),
 			isDisabled: !this.student.isValid
 		};
 		ui.btnNext = {
-			isVisible: this.deliveries?.currentId && this.students?.currentId && this.students?.currentId !== "CREATE",
-			isDisabled: !this.student.isValid
+			isVisible: this.deliveries?.currentId && this.students?.currentId,
+			isDisabled: !this.student.isValid || this.students?.currentId === "CREATE" || this.student?.isChanged
 		};
 		ui.btnRefresh = {
 			isVisible: true,
@@ -86,27 +87,10 @@ export default class StudentRegister extends LightningElement {
 				this.loadStudentsForDelivery({ data });
 				break;
 			}
-			// case "CoursesPerDelivery": {
-			// 	this.loadCoursesPerDelivery({ data });
-			// 	break;
-			// }
-			// case "AllExercisesForCourse": {
-			// 	this.loadExercisesForCourse({ data });
-			// 	break;
-			// }
-			// case "DeliveryProgress": {
-			// 	this.parseDeliveryProgress({ data });
-			// 	break;
-			// }
-			// case "ExerciseProgress": {
-			// 	this.parseExerciseProgress({ data });
-			// 	break;
-			// }
-			// case "Exercise_X_Student__c": {
-			// 	this.apexManager.fetchExerciseProgress({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId });
-			// 	this.apexManager.fetchDeliveryProgress({ deliveryId: this.deliveries.currentId });
-			// 	break;
-			// }
+			case "Student__c": {
+				this.apexManager.fetchStudentsForDelivery({ deliveryId: this.deliveries.currentId });
+				break;
+			}
 			default: {
 				debugger;
 				break;
@@ -140,12 +124,50 @@ export default class StudentRegister extends LightningElement {
 		this.checkInputs({ isChanging: true });
 		event.target.reportValidity();
 	}
+	onStudentNicknameBlur() {
+		if (!this.student.nickname) {
+			this.student.nickname = this.student.firstName;
+			this.student.nicknameChanged = false;
+			setTimeout(() => {
+				this.checkInputs({ isChanging: true });
+			}, 0);
+		}
+	}
 
 	onStudentEmailChange(event) {
 		this.student.isChanged = true;
 		this.student.email = event.target.value;
 		this.checkInputs({ isChanging: true });
 	}
+
+	async onRegisterClick() {
+		this.loading = true;
+		const student = {
+			Id: this.student.currentId === "CREATE" ? null : this.student.currentId,
+			Name: `${this.student.firstName} ${this.student.lastName}`,
+			Delivery__c: this.deliveries.currentId,
+			FirstName__c: this.student.firstName,
+			LastName__c: this.student.lastName,
+			Nickname__c: this.student.nickname,
+			Email__c: this.student.email
+		};
+		if (student.FirstName__c !== student.Nickname__c) {
+			student.Name = `${student.Nickname__c} (${student.Name})`;
+		}
+		const newStudentData = await this.apexManager.doRegisterStudent({ deliveryId: this.deliveries.currentId, student });
+		this.student.newId = newStudentData.Id;
+	}
+
+	// onNextClick() {
+	// 	this.dispatchEvent(
+	// 		new CustomEvent("next", {
+	// 			detail: {
+	// 				deliveryId: this.delivery.Id,
+	// 				studentId: this.student.Id
+	// 			}
+	// 		})
+	// 	);
+	// }
 
 	checkInputs({ isChanging }) {
 		const updateComponent = (cmp) => {
@@ -210,7 +232,7 @@ export default class StudentRegister extends LightningElement {
 			}
 		}
 		this.student.isChanged = false;
-		this.student.nicknameChanged = false;
+		this.student.nicknameChanged = this.student.firstName !== this.student.nickname;
 		setTimeout(() => {
 			this.checkInputs({ isChanging: false });
 		}, 0);
@@ -250,7 +272,7 @@ export default class StudentRegister extends LightningElement {
 	}
 
 	loadStudentsForDelivery({ data }) {
-		let currentId = this.students.currentId;
+		let currentId = this.student.newId ? this.student.newId : this.students.currentId;
 		this._loadData({
 			objectName: "students",
 			data,
@@ -262,6 +284,7 @@ export default class StudentRegister extends LightningElement {
 			this.students.currentId = null;
 			this.selectStudent({ currentId: null });
 		}
+		this.student.newId = null;
 		this.loading = false;
 	}
 
@@ -281,73 +304,6 @@ export default class StudentRegister extends LightningElement {
 		otherOptions.forEach((option) => this[objectName].options.unshift(option));
 	}
 	//#endregion
-
-	// onRegisterClick() {
-	// 	LightningPrompt.open({
-	// 		label: "Registration", // this is the header text
-	// 		message: "What's your name?",
-	// 		variant: "header",
-	// 		theme: "inverse",
-	// 		defaultValue: ""
-	// 	}).then((studentName) => {
-	// 		if (studentName) {
-	// 			registerStudent({ deliveryId: this.delivery.Id, studentName })
-	// 				.then((student) => {
-	// 					refreshApex(this.wiredStudents);
-	// 					this.student = student;
-	// 					Utils.setCookie({ key: "studentId", value: this.student.Id });
-	// 				})
-	// 				.catch((err) => {
-	// 					Utils.logger.log(err);
-	// 					debugger;
-	// 				});
-	// 		}
-	// 	});
-	// }
-
-	// onNextClick() {
-	// 	this.dispatchEvent(
-	// 		new CustomEvent("next", {
-	// 			detail: {
-	// 				deliveryId: this.delivery.Id,
-	// 				studentId: this.student.Id
-	// 			}
-	// 		})
-	// 	);
-	// }
-
-	// async validateRegistrationJS() {
-	// 	// clearInterval(this.timer);
-	// 	// return new Promise((resolve, reject) => {
-	// 	// 	await Utils.validateStudentRegistration({ apexManager: this.apexManager, deliveryId: this.deliveryId, studentId: this.studentId });
-	// 	// 		.then((data) => {
-	// 	// 			this.student = data.student;
-	// 	// 			this.delivery = data.delivery;
-	// 	// 			Utils.setCookie({ key: "studentId", value: this.student.Id });
-	// 	// 			Utils.setCookie({ key: "deliveryId", value: this.delivery.Id });
-	// 	// 			resolve();
-	// 	// 		})
-	// 	// 		.catch((err) => {
-	// 	// 			this.student = {};
-	// 	// 			this.delivery = {};
-	// 	// 			Utils.deleteCookie({ key: "studentId" });
-	// 	// 			Utils.deleteCookie({ key: "deliveryId" });
-
-	// 	// 			// this.timer = setInterval(() => {
-	// 	// 			Utils.logger.log("***Interval deliveries");
-	// 	// 			if (this.delivery.Id === "") {
-	// 	// 				Utils.logger.log(`REFRESH ${this.delivery.Id}`);
-	// 	// 				this.onRefreshClick();
-	// 	// 			} else {
-	// 	// 				Utils.logger.log(`CLEAR ${this.delivery.Id}`);
-	// 	// 				clearInterval(this.timer);
-	// 	// 			}
-	// 	// 			// }, 5e3);
-
-	// 	// 			reject(err);
-	// 	// 		});
-	// 	// });
-	// }
 
 	readCookies() {
 		this.students.currentId = Utils.getCookie({ key: "studentId" });

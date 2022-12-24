@@ -119,7 +119,12 @@ public without sharing class Data {
 	public static List<Student__c> getStudentsForDelivery(Id deliveryId) {
 		List<Student__c> output = new List<Student__c>();
 
-		output = [SELECT Id, Name, FirstName__c, LastName__c, Nickname__c, Email__c FROM Student__c WHERE Delivery__c = :deliveryId ORDER BY Name ASC];
+		output = [
+			SELECT Id, Name, FirstName__c, LastName__c, Nickname__c, Email__c
+			FROM Student__c
+			WHERE Delivery__c = :deliveryId
+			ORDER BY Name ASC
+		];
 
 		return output;
 	}
@@ -246,15 +251,9 @@ public without sharing class Data {
 		return output;
 	}
 
-	///////
-
 	@AuraEnabled
-	public static Student__c registerStudent(Id deliveryId, String studentName) {
-		Student__c student = new Student__c();
-
-		student = new Student__c(Name = studentName, delivery__c = deliveryId);
+	public static Student__c registerStudent(Id deliveryId, Student__c student) {
 		upsert student;
-
 		return student;
 	}
 
