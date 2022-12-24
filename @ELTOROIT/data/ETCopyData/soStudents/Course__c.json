@@ -4,25 +4,25 @@
 		{
 			"attributes": {
 				"type": "Course__c",
-				"url": "/services/data/v56.0/sobjects/Course__c/a01P000000DYbbUIAT"
+				"url": "/services/data/v56.0/sobjects/Course__c/a01DK000007SKzzYAG"
 			},
-			"Id": "a01P000000DYbbUIAT",
+			"Id": "a01DK000007SKzzYAG",
 			"Name": "DEX602"
 		},
 		{
 			"attributes": {
 				"type": "Course__c",
-				"url": "/services/data/v56.0/sobjects/Course__c/a01P000000DYbbVIAT"
+				"url": "/services/data/v56.0/sobjects/Course__c/a01DK000007SL00YAG"
 			},
-			"Id": "a01P000000DYbbVIAT",
+			"Id": "a01DK000007SL00YAG",
 			"Name": "DEX403"
 		},
 		{
 			"attributes": {
 				"type": "Course__c",
-				"url": "/services/data/v56.0/sobjects/Course__c/a01P000000DYbbWIAT"
+				"url": "/services/data/v56.0/sobjects/Course__c/a01DK000007SL01YAG"
 			},
-			"Id": "a01P000000DYbbWIAT",
+			"Id": "a01DK000007SL01YAG",
 			"Name": "DEX450"
 		}
 	],

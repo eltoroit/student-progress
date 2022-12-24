@@ -252,8 +252,8 @@ public without sharing class Data {
 	public static Student__c registerStudent(Id deliveryId, String studentName) {
 		Student__c student = new Student__c();
 
-		student = new Student__c(Name = studentName, delivery__c = deliveryId, Key__c = deliveryId + '|' + studentName);
-		upsert student Key__c;
+		student = new Student__c(Name = studentName, delivery__c = deliveryId);
+		upsert student;
 
 		return student;
 	}

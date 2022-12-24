@@ -3,7 +3,6 @@
     <fullName>All</fullName>
     <columns>NAME</columns>
     <columns>Delivery__c</columns>
-    <columns>Key__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>
