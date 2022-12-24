@@ -20,6 +20,13 @@ export default class StudentRegister extends LightningElement {
 		currentId: null
 	};
 
+	student = {
+		firstName: "Andres JS",
+		lastName: "Perez JS",
+		nickname: "Andy JS",
+		email: "Andres@JS.com"
+	};
+
 	get ui() {
 		const ui = {};
 
@@ -109,7 +116,14 @@ export default class StudentRegister extends LightningElement {
 	}
 	selectDelivery({ currentId }) {
 		this.genericSelectOption({ currentId, objectName: "deliveries", cookieName: "deliveryId" });
-		this.apexManager.fetchStudentsForDelivery({ deliveryId: this.deliveries.currentId });
+		if (this.deliveries.currentId) {
+			this.apexManager.fetchStudentsForDelivery({ deliveryId: this.deliveries.currentId });
+		} else {
+			this.students.currentId = null;
+			this.selectStudent({ currentId: null });
+			this.deliveries.currentId = null;
+			// this.selectDelivery({ currentId: null });
+		}
 	}
 
 	onStudentChange(event) {
