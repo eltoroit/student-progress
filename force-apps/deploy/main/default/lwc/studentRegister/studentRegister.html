@@ -58,50 +58,75 @@
 						<lightning-layout-item size="12">
 							<div class="slds-grid slds-wrap slds-gutters">
 								<div class="slds-col slds-size_12-of-12 slds-medium-size_6-of-12 slds-m-bottom_small">
-									<label class="slds-form-element__label slds-text-heading_small">First Name</label>
+									<label class="slds-form-element__label slds-text-heading_small">
+										<abbr class="slds-required" title="required">* </abbr>First Name
+									</label>
 									<lightning-input
+										class="validateMe"
 										type="text"
 										name="FirstName"
 										variant="label-hidden"
 										value={student.firstName}
 										placeholder="First name"
+										onchange={onStudentFirstNameChange}
 										required
-										onchange={onStudentChange}
+										min-length="2"
+										max-length="80"
+										message-when-too-short="First name must be at least 2 characters"
+										message-when-value-missing="First name is missing"
 									></lightning-input>
 								</div>
 								<div class="slds-col slds-size_12-of-12 slds-medium-size_6-of-12 slds-m-bottom_small">
-									<label class="slds-form-element__label slds-text-heading_small">Last Name</label>
+									<label class="slds-form-element__label slds-text-heading_small">
+										<abbr class="slds-required" title="required">* </abbr>Last Name
+									</label>
 									<lightning-input
+										class="validateMe"
 										type="text"
 										name="LastName"
 										variant="label-hidden"
 										value={student.lastName}
 										placeholder="Last name"
+										onchange={onStudentLastNameChange}
 										required
-										onchange={onStudentChange}
+										min-length="2"
+										max-length="80"
+										message-when-too-short="Last name must be at least 2 characters"
+										message-when-value-missing="Last name is missing"
 									></lightning-input>
 								</div>
 								<div class="slds-col slds-size_12-of-12 slds-medium-size_6-of-12 slds-m-bottom_small">
-									<label class="slds-form-element__label slds-text-heading_small">Nickname</label>
+									<label class="slds-form-element__label slds-text-heading_small">
+										<abbr class="slds-required" title="required">* </abbr>Nickname
+									</label>
 									<lightning-input
+										class="validateMeXX"
 										type="text"
 										name="Nickname"
 										variant="label-hidden"
 										value={student.nickname}
 										placeholder="Nickname"
+										onchange={onStudentNicknameChange}
 										required
-										onchange={onStudentChange}
+										min-length="2"
+										max-length="80"
+										message-when-too-short="Nickname name must be at least 2 characters"
+										message-when-value-missing="Nickname name is missing"
 									></lightning-input>
 								</div>
 								<div class="slds-col slds-size_12-of-12 slds-medium-size_6-of-12 slds-m-bottom_small">
 									<label class="slds-form-element__label slds-text-heading_small">Email</label>
 									<lightning-input
+										class="validateMe"
 										type="text"
 										name="Email"
 										variant="label-hidden"
 										value={student.email}
 										placeholder="Email"
-										onchange={onStudentChange}
+										onchange={onStudentEmailChange}
+										message-when-type-mismatch="type-mismatch"
+										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+										message-when-pattern-mismatch="Please enter a valid email address"
 									></lightning-input>
 								</div>
 							</div>

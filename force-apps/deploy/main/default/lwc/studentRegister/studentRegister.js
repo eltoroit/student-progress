@@ -1,5 +1,5 @@
 import Utils from "c/utils";
-import { api, LightningElement } from "lwc";
+import { api, LightningElement, track } from "lwc";
 // import LightningPrompt from "lightning/prompt";
 
 export default class StudentRegister extends LightningElement {
@@ -20,11 +20,13 @@ export default class StudentRegister extends LightningElement {
 		currentId: null
 	};
 
-	student = {
+	@track student = {
 		firstName: "Andres JS",
 		lastName: "Perez JS",
 		nickname: "Andy JS",
-		email: "Andres@JS.com"
+		email: "andres@js.com",
+		nicknameChanged: false,
+		isValid: false
 	};
 
 	get ui() {
@@ -36,7 +38,7 @@ export default class StudentRegister extends LightningElement {
 		};
 		ui.btnNext = {
 			isVisible: this.deliveries?.currentId && this.students?.currentId && this.students?.currentId !== "CREATE",
-			isDisabled: false
+			isDisabled: !this.student.isValid
 		};
 		ui.btnRefresh = {
 			isVisible: true,
@@ -107,6 +109,37 @@ export default class StudentRegister extends LightningElement {
 				break;
 			}
 		}
+	}
+
+	onStudentFirstNameChange(event) {
+		this.student.firstName = event.target.value;
+		if (!this.student.nickname || !this.student.nicknameChanged) {
+			this.student.nicknameChanged = false;
+			this.student.nickname = this.student.firstName;
+		}
+		this.checkInputs();
+	}
+
+	onStudentLastNameChange(event) {
+		this.student.lastName = event.target.value;
+		this.checkInputs();
+	}
+
+	onStudentNicknameChange(event) {
+		this.student.nickname = event.target.value;
+		this.student.nicknameChanged = true;
+		this.checkInputs();
+		event.target.reportValidity();
+	}
+
+	onStudentEmailChange(event) {
+		this.student.email = event.target.value;
+		this.checkInputs();
+	}
+
+	checkInputs() {
+		let isValid = Array.from(this.template.querySelectorAll(".validateMe")).every((cmp) => cmp.reportValidity());
+		this.student.isValid = this.student.nickname && isValid;
 	}
 	//#endregion
 
@@ -179,6 +212,7 @@ export default class StudentRegister extends LightningElement {
 			this.students.currentId = null;
 			this.selectStudent({ currentId: null });
 		}
+		this.checkInputs();
 		this.loading = false;
 	}
 
