@@ -158,16 +158,9 @@ export default class StudentRegister extends LightningElement {
 		this.student.newId = newStudentData.Id;
 	}
 
-	// onNextClick() {
-	// 	this.dispatchEvent(
-	// 		new CustomEvent("next", {
-	// 			detail: {
-	// 				deliveryId: this.delivery.Id,
-	// 				studentId: this.student.Id
-	// 			}
-	// 		})
-	// 	);
-	// }
+	onNextClick() {
+		this.dispatchEvent(new CustomEvent("next"));
+	}
 
 	checkInputs({ isChanging }) {
 		const updateComponent = (cmp) => {

@@ -45,9 +45,7 @@ export default class Student extends LightningElement {
 		this.panel = PANEL_REGISTER;
 	}
 
-	onNext(event) {
-		this.studentId = event.detail.studentId;
-		this.deliveryId = event.detail.deliveryId;
+	onNext() {
 		this.showReportPage();
 	}
 
