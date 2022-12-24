@@ -6,7 +6,8 @@
 			</template>
 			<lightning-button-group slot="actions">
 				<lightning-button
-					label="Register"
+					label={ui.btnRegister.label}
+					variant="brand"
 					if:true={ui.btnRegister.isVisible}
 					disabled={ui.btnRegister.isDisabled}
 					onclick={onRegisterClick}
@@ -68,6 +69,7 @@
 										variant="label-hidden"
 										value={student.firstName}
 										placeholder="First name"
+										onblur={onStudentFirstNameBlur}
 										onchange={onStudentFirstNameChange}
 										required
 										min-length="2"
@@ -100,6 +102,7 @@
 										<abbr class="slds-required" title="required">* </abbr>Nickname
 									</label>
 									<lightning-input
+										class="validateMe"
 										type="text"
 										name="Nickname"
 										variant="label-hidden"

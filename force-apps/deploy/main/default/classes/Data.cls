@@ -119,7 +119,7 @@ public without sharing class Data {
 	public static List<Student__c> getStudentsForDelivery(Id deliveryId) {
 		List<Student__c> output = new List<Student__c>();
 
-		output = [SELECT Id, Name FROM Student__c WHERE Delivery__c = :deliveryId ORDER BY Name ASC];
+		output = [SELECT Id, Name, FirstName__c, LastName__c, Nickname__c, Email__c FROM Student__c WHERE Delivery__c = :deliveryId ORDER BY Name ASC];
 
 		return output;
 	}

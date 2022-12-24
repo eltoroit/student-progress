@@ -30,14 +30,13 @@ export default class EmpApiManager extends LightningElement {
 				}
 			});
 			onError((error) => {
-				const message = `EmpApi connection failed: ${JSON.stringify(error)}`;
 				Utils.showNotification(this, {
-					title: "Error Connecting",
-					message,
+					title: "EmpApi connection failed",
+					message: JSON.stringify(error),
 					variant: Utils.msgVariants.error,
 					mode: Utils.msgModes.sticky
 				});
-				Utils.logger.error(message);
+				Utils.logger.error(error);
 				debugger;
 			});
 		} else {
