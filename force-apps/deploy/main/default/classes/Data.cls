@@ -257,6 +257,50 @@ public without sharing class Data {
 		return student;
 	}
 
+	@AuraEnabled(cacheable=true)
+	public static Map<String, Object> getStudentDataByStudentId(Id studentId) {
+		Map<String, Object> output = new Map<String, Object>();
+
+		Student__c student = [
+			SELECT Id, Name, FirstName__c, LastName__c, Nickname__c, Email__c, Delivery__c
+			FROM Student__c
+			WHERE Id = :studentId
+		];
+
+		output.put('studentId', student.Id);
+		output.put('student', student);
+
+		Delivery__c delivery = [
+			SELECT Id, Name, CurrentExercise__c, CurrentExerciseStart__c, CurrentExerciseIsActive__c
+			FROM Delivery__c
+			WHERE Id = :student.Delivery__c
+		];
+
+		output.put('deliveryId', delivery.Id);
+		output.put('delivery', delivery);
+
+		if (delivery.CurrentExerciseIsActive__c) {
+			Exercise__c exercise = [
+				SELECT Id, Name
+				FROM Exercise__c
+				WHERE Id = :delivery.CurrentExercise__c
+			];
+
+			output.put('exerciseId', exercise.Id);
+			output.put('exercise', exercise);
+
+			Exercise_X_Student__c ExS = [
+				SELECT Id, Status__c
+				FROM Exercise_X_Student__c
+				WHERE Student__c = :student.Id AND Exercise__c = :exercise.Id
+			];
+
+			output.put('exerciseStatus', ExS.Status__c);
+		}
+
+		return output;
+	}
+
 	// Other
 	@AuraEnabled(cacheable=true)
 	public static Exercise__c getActiveExercise(Id deliveryId) {
@@ -275,15 +319,6 @@ public without sharing class Data {
 		if (exercises.size() == 1) {
 			output = exercises[0];
 		}
-
-		return output;
-	}
-
-	@AuraEnabled(cacheable=true)
-	public static Student__c getStudentById(Id studentId) {
-		Student__c output = new Student__c();
-
-		output = [SELECT Id, Name FROM Student__c WHERE Id = :studentId];
 
 		return output;
 	}

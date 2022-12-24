@@ -143,10 +143,6 @@ export default class InstructorDelivery extends LightningElement {
 		const { obj, data } = event.detail;
 		Utils.logger.log(`OnData: ${obj}`, JSON.parse(JSON.stringify(data)));
 		switch (obj) {
-			case "ActiveDeliveries": {
-				// Ignore
-				break;
-			}
 			case "ActiveDeliveriesWithCourses": {
 				this.loadActiveDeliveriesWithCourses({ data });
 				break;
@@ -165,6 +161,10 @@ export default class InstructorDelivery extends LightningElement {
 			}
 			case "ExerciseProgress": {
 				this.parseExerciseProgress({ data });
+				break;
+			}
+			case "Delivery__c": {
+				this.apexManager.fetchActiveDeliveriesWithCourses();
 				break;
 			}
 			case "Exercise_X_Student__c": {
@@ -267,28 +267,34 @@ export default class InstructorDelivery extends LightningElement {
 		this.selectDelivery({ currentId: event.target.value });
 	}
 	selectDelivery({ currentId }) {
-		this.genericSelectOption({ currentId, objectName: "deliveries", cookieName: "deliveryId" });
-		this.apexManager.fetchCoursesPerDelivery({ deliveryId: this.deliveries.currentId });
-		this.parseActiveExerciseInformation();
-		this.apexManager.fetchDeliveryProgress({ deliveryId: this.deliveries.currentId });
+		if (this.deliveries?.records?.length > 0) {
+			this.genericSelectOption({ currentId, objectName: "deliveries", cookieName: "deliveryId" });
+			this.apexManager.fetchCoursesPerDelivery({ deliveryId: this.deliveries.currentId });
+			this.parseActiveExerciseInformation();
+			this.apexManager.fetchDeliveryProgress({ deliveryId: this.deliveries.currentId });
+		}
 	}
 
 	onCourseChange(event) {
 		this.selectCourse({ currentId: event.target.value });
 	}
 	selectCourse({ currentId }) {
-		this.genericSelectOption({ currentId, objectName: "courses", cookieName: "courseId" });
-		this.apexManager.fetchAllExercisesForCourse({ courseId: this.courses.currentId });
-		this.parseActiveExerciseInformation();
+		if (this.courses?.records?.length > 0) {
+			this.genericSelectOption({ currentId, objectName: "courses", cookieName: "courseId" });
+			this.apexManager.fetchAllExercisesForCourse({ courseId: this.courses.currentId });
+			this.parseActiveExerciseInformation();
+		}
 	}
 
 	onExerciseChange(event) {
 		this.selectExercise({ currentId: event.target.value });
 	}
 	selectExercise({ currentId }) {
-		this.genericSelectOption({ currentId, objectName: "exercises", cookieName: "exerciseId" });
-		this.parseActiveExerciseInformation();
-		this.apexManager.fetchExerciseProgress({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId });
+		if (this.exercises?.records?.length > 0) {
+			this.genericSelectOption({ currentId, objectName: "exercises", cookieName: "exerciseId" });
+			this.parseActiveExerciseInformation();
+			this.apexManager.fetchExerciseProgress({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId });
+		}
 	}
 
 	genericSelectOption({ currentId, objectName, cookieName }) {

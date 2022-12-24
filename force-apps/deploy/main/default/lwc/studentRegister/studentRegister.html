@@ -67,7 +67,7 @@
 										type="text"
 										name="FirstName"
 										variant="label-hidden"
-										value={student.firstName}
+										value={studentData.firstName}
 										placeholder="First name"
 										onblur={onStudentFirstNameBlur}
 										onchange={onStudentFirstNameChange}
@@ -87,7 +87,7 @@
 										type="text"
 										name="LastName"
 										variant="label-hidden"
-										value={student.lastName}
+										value={studentData.lastName}
 										placeholder="Last name"
 										onchange={onStudentLastNameChange}
 										required
@@ -106,7 +106,7 @@
 										type="text"
 										name="Nickname"
 										variant="label-hidden"
-										value={student.nickname}
+										value={studentData.nickname}
 										placeholder="Nickname"
 										onblur={onStudentNicknameBlur}
 										onchange={onStudentNicknameChange}
@@ -124,7 +124,7 @@
 										type="text"
 										name="Email"
 										variant="label-hidden"
-										value={student.email}
+										value={studentData.email}
 										placeholder="Email"
 										onchange={onStudentEmailChange}
 										message-when-type-mismatch="type-mismatch"

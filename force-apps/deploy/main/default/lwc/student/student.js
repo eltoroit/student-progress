@@ -41,10 +41,6 @@ export default class Student extends LightningElement {
 		}
 	}
 
-	showRegistrationPage() {
-		this.panel = PANEL_REGISTER;
-	}
-
 	onNext() {
 		this.showReportPage();
 	}
@@ -52,9 +48,17 @@ export default class Student extends LightningElement {
 	onData(event) {
 		const { obj, data } = event.detail;
 		Utils.logger.log(`OnData: ${obj}`, JSON.parse(JSON.stringify(data)));
-		const pnlRegister = this.template.querySelector("c-student-register");
-		if (pnlRegister?.onData) {
-			pnlRegister?.onData({ obj, data });
+		if (this.ui.pnlRegister) {
+			const pnlRegister = this.template.querySelector("c-student-register");
+			if (pnlRegister?.onData) {
+				pnlRegister?.onData({ obj, data });
+			}
+		}
+		if (this.ui.pnlReport) {
+			const pnlReport = this.template.querySelector("c-student-report");
+			if (pnlReport?.onData) {
+				pnlReport?.onData({ obj, data });
+			}
 		}
 	}
 
@@ -68,14 +72,18 @@ export default class Student extends LightningElement {
 		if (creds) {
 			this.panel = PANEL_REPORT;
 			setTimeout(() => {
-				// Timeout to show the next panel, before setting @api variables
-				const studentReport = this.template.querySelector("c-student-report");
-				studentReport.studentId = this.studentId;
-				studentReport.deliveryId = this.deliveryId;
+				this.template.querySelector("c-student-report").onPanelLoad();
 			}, 0);
 		} else {
 			this.showRegistrationPage();
 		}
+	}
+
+	showRegistrationPage() {
+		this.panel = PANEL_REGISTER;
+		setTimeout(() => {
+			this.template.querySelector("c-student-register").onPanelLoad();
+		}, 0);
 	}
 
 	readCookies() {
