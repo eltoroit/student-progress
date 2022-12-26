@@ -9,14 +9,14 @@
         <isConsumerSecretOptional>true</isConsumerSecretOptional>
         <isIntrospectAllTokens>false</isIntrospectAllTokens>
         <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
-        <scopes>Basic</scopes>
         <scopes>Api</scopes>
+        <!-- <scopes>Basic</scopes>
         <scopes>Web</scopes>
         <scopes>Full</scopes>
         <scopes>RefreshToken</scopes>
         <scopes>OpenID</scopes>
         <scopes>CustomPermissions</scopes>
-        <scopes>Lightning</scopes>
+        <scopes>Lightning</scopes> -->
     </oauthConfig>
     <oauthPolicy>
         <ipRelaxation>ENFORCE</ipRelaxation>
