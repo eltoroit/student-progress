@@ -9,6 +9,9 @@
     <enrichedFields>
         <name>Exercise__c</name>
     </enrichedFields>
+    <enrichedFields>
+        <name>Delivery__c</name>
+    </enrichedFields>
     <eventChannel>StudentEvents__chn</eventChannel>
     <selectedEntity>Exercise_X_Student__ChangeEvent</selectedEntity>
 </PlatformEventChannelMember>
