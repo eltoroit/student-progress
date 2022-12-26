@@ -4,7 +4,7 @@
 
 import Utils from "c/utils";
 import { api, LightningElement } from "lwc";
-import ChartJS from "@salesforce/resourceUrl/chartjs_v280";
+import srStudents from "@salesforce/resourceUrl/Students";
 import { loadScript } from "lightning/platformResourceLoader";
 import instructorDeliveryProgressTable from "c/instructorDeliveryProgressTable";
 
@@ -34,7 +34,7 @@ export default class InstructorDeliveryProgress extends LightningElement {
 	async makeChart() {
 		if (!this._ctxChart) {
 			try {
-				await loadScript(this, ChartJS);
+				await loadScript(this, `${srStudents}/chartjs_v280.js`);
 				const canvas = document.createElement("canvas");
 				this.template.querySelector("div.chart").appendChild(canvas);
 				this._ctxChart = canvas.getContext("2d");
