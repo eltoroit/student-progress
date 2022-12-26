@@ -14,10 +14,17 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>NewMessage.EntityName__c</assignToReference>
+            <assignToReference>NewMessage.Delivery__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>NewMessage.Records__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>1.0</numberValue>
             </value>
         </assignmentItems>
         <connector>
