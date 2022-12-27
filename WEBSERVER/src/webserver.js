@@ -15,7 +15,7 @@ export default class Weberver {
 		this.app = express();
 		this.app.set("view engine", "ejs");
 		this.app.use(express.static("public"));
-		this.allowCORS();
+		this.allowExpressCORS();
 
 		this.makeHTTP();
 		if (!process.env.DYNO) {
@@ -27,6 +27,7 @@ export default class Weberver {
 		this.httpServer = http.createServer(this.app);
 		const io = new Server(this.httpServer, {
 			/* options */
+			cors: this.allowSocketioCORS(),
 		});
 		io.on("connection", (socket) => {
 			this.ioconn(socket);
@@ -52,27 +53,7 @@ export default class Weberver {
 		this.httpsServer = https.createServer(certs, this.app);
 		const ios = new Server(this.httpsServer, {
 			/* options */
-			cors: {
-				// Access-Control-Allow-Origin
-				origin: (origin, callback) => {
-					const isValid = true;
-					if (isValid) {
-						// Valid Origin
-						return callback(null, true);
-					} else {
-						// Invalid origin
-						return callback(new Error("Invalid Origin"), false);
-					}
-				},
-				// Access-Control-Allow-Methods
-				methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-				// Access-Control-Allow-Headers
-				allowedHeaders: "Accept, Authorization, Content-Type, X-Requested-With, Range",
-				// Access-Control-Expose-Headers
-				exposedHeaders: "Content-Length",
-				// Access-Control-Allow-Credentials
-				credentials: "true",
-			},
+			cors: this.allowSocketioCORS(),
 		});
 		ios.on("connection", (socket) => {
 			this.ioconn(socket);
@@ -83,7 +64,7 @@ export default class Weberver {
 		});
 	}
 
-	allowCORS() {
+	allowExpressCORS() {
 		this.app.use((req, res, next) => {
 			res.header("Access-Control-Allow-Origin", req.get("Origin") || "*");
 			res.header("Access-Control-Allow-Credentials", "true");
@@ -96,6 +77,30 @@ export default class Weberver {
 				return next();
 			}
 		});
+	}
+
+	allowSocketioCORS() {
+		return {
+			// Access-Control-Allow-Origin
+			origin: (origin, callback) => {
+				const isValid = true;
+				if (isValid) {
+					// Valid Origin
+					return callback(null, true);
+				} else {
+					// Invalid origin
+					return callback(new Error("Invalid Origin"), false);
+				}
+			},
+			// Access-Control-Allow-Methods
+			methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+			// Access-Control-Allow-Headers
+			allowedHeaders: "Accept, Authorization, Content-Type, X-Requested-With, Range",
+			// Access-Control-Expose-Headers
+			exposedHeaders: "Content-Length",
+			// Access-Control-Allow-Credentials
+			credentials: "true",
+		};
 	}
 
 	ioconn(socket) {

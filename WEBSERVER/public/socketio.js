@@ -41,6 +41,7 @@ export default class MySocketIO {
 				data.push({ ping: new Date().toJSON() });
 				this.socket.emit("PING", data);
 			}
+			document.querySelector("#output").innerHTML = JSON.stringify(data, null, 2);
 		});
 	}
 
