@@ -1,0 +1,49 @@
+<template>
+	<div class="slds-text-heading_medium">
+		<lightning-layout>
+			<lightning-layout-item size="8">
+				<lightning-card>
+					<div class="slds-m-horizontal_xx-large">
+						<lightning-tabset active-tab-value="Instructor">
+							<lightning-tab label="Current Exercise" value="Instructor">
+								<c-instructor-delivery ondeliverydata={onDeliveryData}></c-instructor-delivery>
+							</lightning-tab>
+							<lightning-tab label="Student" value="Student">
+								<c-student></c-student>
+							</lightning-tab>
+						</lightning-tabset>
+					</div>
+				</lightning-card>
+			</lightning-layout-item>
+			<lightning-layout-item size="4">
+				<div class="slds-m-horizontal_small">
+					<!-- Display QR Code -->
+					<lightning-card class="slds-is-relative">
+						<lightning-button label="Refresh" onclick={onQrRefresh} slot="actions"></lightning-button>
+						<template if:true={showQR}>
+							<lightning-layout multiple-rows>
+								<lightning-layout-item size="12" class="slds-align_absolute-center">
+									<c-image path-in-sr="QR.png" max-width="100%"></c-image>
+								</lightning-layout-item>
+								<lightning-layout-item size="12" class="slds-align_absolute-center">
+									<a href="https://sfdc.co/thStudentReporting" style="letter-spacing: 7px" target="_blank"
+										>https://sfdc.co/thStudentReporting</a
+									>
+								</lightning-layout-item>
+							</lightning-layout>
+						</template>
+						<template if:false={showQR}> <lightning-spinner variant="brand"></lightning-spinner> </template>
+					</lightning-card>
+					<!-- Display delivery progress -->
+					<div class="slds-m-top_small">
+						<c-instructor-delivery-progress delivery-data={deliveryData}></c-instructor-delivery-progress>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+	</div>
+	<div style="display: none">
+		<!-- Do I really need this? -->
+		{currentCourseDeliveryKey}
+	</div>
+</template>

@@ -1,0 +1,142 @@
+<template>
+	<div class="slds-text-heading_medium">
+		<lightning-card class="slds-is-relative">
+			<template if:true={loading}>
+				<lightning-spinner variant="brand"></lightning-spinner>
+			</template>
+			<lightning-button-group slot="actions">
+				<lightning-button
+					label={ui.btnRegister.label}
+					variant="brand"
+					if:true={ui.btnRegister.isVisible}
+					disabled={ui.btnRegister.isDisabled}
+					onclick={onRegisterClick}
+				></lightning-button>
+				<lightning-button
+					label="Next"
+					variant="success"
+					if:true={ui.btnNext.isVisible}
+					disabled={ui.btnNext.isDisabled}
+					onclick={onNextClick}
+				></lightning-button>
+			</lightning-button-group>
+
+			<div class="slds-m-horizontal_xx-large">
+				<lightning-layout multiple-rows>
+					<template if:true={ui.pnlDeliveries}>
+						<lightning-layout-item size="12">
+							<div class="slds-form-element">
+								<label class="slds-form-element__label slds-text-heading_small">Which class are you attending?</label>
+								<lightning-combobox
+									name="Delivery"
+									variant="label-hidden"
+									value={deliveries.currentId}
+									placeholder="Which class are you attending?"
+									options={deliveries.options}
+									onchange={onDeliveryChange}
+								></lightning-combobox>
+							</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+					</template>
+
+					<template if:true={ui.pnlStudents}>
+						<lightning-layout-item size="12">
+							<label class="slds-form-element__label slds-text-heading_small">What's your name?</label>
+							<lightning-combobox
+								name="Student"
+								variant="label-hidden"
+								value={students.currentId}
+								placeholder="What's your name?"
+								options={students.options}
+								onchange={onStudentChange}
+							></lightning-combobox>
+						</lightning-layout-item>
+						<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+					</template>
+
+					<template if:true={ui.pnlRegister}>
+						<lightning-layout-item size="12">
+							<div class="slds-grid slds-wrap slds-gutters">
+								<div class="slds-col slds-size_12-of-12 slds-medium-size_6-of-12 slds-m-bottom_small">
+									<label class="slds-form-element__label slds-text-heading_small">
+										<abbr class="slds-required" title="required">* </abbr>First Name
+									</label>
+									<lightning-input
+										class="validateMe"
+										type="text"
+										name="FirstName"
+										variant="label-hidden"
+										value={studentData.firstName}
+										placeholder="First name"
+										onblur={onStudentFirstNameBlur}
+										onchange={onStudentFirstNameChange}
+										required
+										min-length="2"
+										max-length="80"
+										message-when-too-short="First name must be at least 2 characters"
+										message-when-value-missing="First name is missing"
+									></lightning-input>
+								</div>
+								<div class="slds-col slds-size_12-of-12 slds-medium-size_6-of-12 slds-m-bottom_small">
+									<label class="slds-form-element__label slds-text-heading_small">
+										<abbr class="slds-required" title="required">* </abbr>Last Name
+									</label>
+									<lightning-input
+										class="validateMe"
+										type="text"
+										name="LastName"
+										variant="label-hidden"
+										value={studentData.lastName}
+										placeholder="Last name"
+										onchange={onStudentLastNameChange}
+										required
+										min-length="2"
+										max-length="80"
+										message-when-too-short="Last name must be at least 2 characters"
+										message-when-value-missing="Last name is missing"
+									></lightning-input>
+								</div>
+								<div class="slds-col slds-size_12-of-12 slds-medium-size_6-of-12 slds-m-bottom_small">
+									<label class="slds-form-element__label slds-text-heading_small">
+										<abbr class="slds-required" title="required">* </abbr>Nickname
+									</label>
+									<lightning-input
+										class="validateMe"
+										type="text"
+										name="Nickname"
+										variant="label-hidden"
+										value={studentData.nickname}
+										placeholder="Nickname"
+										onblur={onStudentNicknameBlur}
+										onchange={onStudentNicknameChange}
+										required
+										min-length="2"
+										max-length="80"
+										message-when-too-short="Nickname name must be at least 2 characters"
+										message-when-value-missing="Nickname name is missing"
+									></lightning-input>
+								</div>
+								<div class="slds-col slds-size_12-of-12 slds-medium-size_6-of-12 slds-m-bottom_small">
+									<label class="slds-form-element__label slds-text-heading_small">Email</label>
+									<lightning-input
+										class="validateMe"
+										type="text"
+										name="Email"
+										variant="label-hidden"
+										value={studentData.email}
+										placeholder="Email"
+										onchange={onStudentEmailChange}
+										message-when-type-mismatch="type-mismatch"
+										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+										message-when-pattern-mismatch="Please enter a valid email address"
+									></lightning-input>
+								</div>
+							</div>
+						</lightning-layout-item>
+					</template>
+				</lightning-layout>
+			</div>
+		</lightning-card>
+	</div>
+</template>
