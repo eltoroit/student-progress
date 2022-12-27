@@ -108,30 +108,64 @@ export default class ApexManager extends LightningElement {
 	//#endregion
 
 	onEventReceived(event) {
-		const { entityName, recordIds } = event.detail;
-		Utils.logger.log("OnEventReceived: ", JSON.parse(JSON.stringify(event.detail)), entityName, recordIds);
+		debugger;
+		const { entityName, deliveryId, count } = event.detail;
 		switch (entityName) {
 			case "Delivery__c":
 			case "Student__c":
 			case "Exercise_X_Student__c": {
-				this.dispatchEvent(new CustomEvent("data", { detail: { obj: entityName, data: recordIds } }));
+				this.dispatchEvent(
+					new CustomEvent("data", {
+						detail: {
+							obj: entityName,
+							data: deliveryId,
+							count
+						}
+					})
+				);
 				break;
 			}
 			default:
-				Utils.logger.log(JSON.parse(JSON.stringify(event.detail)), entityName, recordIds);
+				Utils.logger.log(JSON.parse(JSON.stringify(event.detail)), event.detail);
 				debugger;
 				break;
 		}
 	}
 
-	onEventError(event) {
-		Utils.showNotification(this, {
-			title: "Error Getting Data",
-			message: `EmpApi failed to get data: ${JSON.stringify(event.detail)}`,
-			variant: Utils.msgVariants.error,
-			mode: Utils.msgModes.sticky
-		});
-		debugger;
+	onConnection(event) {
+		const { message, type } = event.detail;
+		switch (type) {
+			case "INFO": {
+				Utils.showNotification(this, {
+					title: "Socket.io",
+					message: message,
+					variant: Utils.msgVariants.info,
+					mode: Utils.msgModes.dismissible
+				});
+				break;
+			}
+			case "ERROR": {
+				Utils.showNotification(this, {
+					title: "Socket.io",
+					message: message,
+					variant: Utils.msgVariants.error,
+					mode: Utils.msgModes.sticky
+				});
+				break;
+			}
+			case "RECONNECT": {
+				Utils.showNotification(this, {
+					title: "Socket.io",
+					message: message,
+					variant: Utils.msgVariants.success,
+					mode: Utils.msgModes.dismissible
+				});
+				break;
+			}
+			default:
+				debugger;
+				break;
+		}
 	}
 
 	async callApex({ obj, apexPromise, forceEvent = false }) {
