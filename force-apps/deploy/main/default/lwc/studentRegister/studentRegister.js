@@ -5,6 +5,7 @@ import { api, LightningElement, track } from "lwc";
 export default class StudentRegister extends LightningElement {
 	loading = true;
 	@api apexManager = null;
+	@api isWaitForUpdate = false;
 
 	deliveries = {
 		options: [],
@@ -220,9 +221,6 @@ export default class StudentRegister extends LightningElement {
 				this.studentData.lastName = studentRecord.LastName__c;
 				this.studentData.nickname = studentRecord.Nickname__c;
 				this.studentData.email = studentRecord.Email__c;
-				setTimeout(() => {
-					this.onNextClick();
-				}, 5e3);
 			} else {
 				clearStudent();
 			}
@@ -231,6 +229,9 @@ export default class StudentRegister extends LightningElement {
 		this.studentData.nicknameChanged = this.studentData.firstName !== this.studentData.nickname;
 		setTimeout(() => {
 			this.checkInputs({ isChanging: false });
+			if (!this.isWaitForUpdate && this.studentData.isValid) {
+				this.onNextClick();
+			}
 		}, 0);
 	}
 

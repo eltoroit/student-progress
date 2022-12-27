@@ -36,9 +36,13 @@ export default class Student extends LightningElement {
 			if (creds) {
 				this.showReportPage();
 			} else {
-				this.showRegistrationPage();
+				this.showRegistrationPage({ isWaitForUpdate: false });
 			}
 		}
+	}
+
+	onShowRegistrationPage() {
+		this.showRegistrationPage({ isWaitForUpdate: true });
 	}
 
 	onNext() {
@@ -79,10 +83,12 @@ export default class Student extends LightningElement {
 		}
 	}
 
-	showRegistrationPage() {
+	showRegistrationPage({ isWaitForUpdate }) {
 		this.panel = PANEL_REGISTER;
 		setTimeout(() => {
-			this.template.querySelector("c-student-register").onPanelLoad();
+			const cmp = this.template.querySelector("c-student-register");
+			cmp.onPanelLoad();
+			cmp.isWaitForUpdate = isWaitForUpdate;
 		}, 0);
 	}
 
