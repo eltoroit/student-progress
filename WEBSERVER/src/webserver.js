@@ -88,8 +88,10 @@ export default class Weberver {
 		this.socket = socket;
 
 		// receive a message from the client
-		socket.on("fromClient", (...args) => {
-			debugger;
+		this.socket.on("PING", (data) => {
+			data[data.length - 1].pong = new Date().toJSON();
+			console.log(JSON.stringify(data));
+			this.socket.emit("PONG", data);
 		});
 	}
 

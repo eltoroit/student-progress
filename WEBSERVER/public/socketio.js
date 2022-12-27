@@ -34,6 +34,17 @@ export default class MySocketIO {
 		this.socket.on("ServerData", (data) => {
 			console.log(`ServerData`, data);
 		});
+
+		this.socket.on("PONG", (data) => {
+			console.log(`PING-PONG`, data);
+			if (data.length < 3) {
+				data.push({ ping: new Date().toJSON() });
+				this.socket.emit("PING", data);
+			}
+		});
+	}
+
+	ping() {
+		this.socket.emit("PING", [{ ping: new Date().toJSON() }]);
 	}
 }
-const mySIO = new MySocketIO();
