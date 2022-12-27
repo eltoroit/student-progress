@@ -17,18 +17,21 @@ export default class Weberver {
 		this.app.use(express.static("public"));
 		this.allowCORS();
 
-		// this.makeHTTP();
-		this.makeHTTPS();
+		this.makeHTTP();
+		if (!process.env.DYNO) {
+			this.makeHTTPS();
+		}
 		this.routes();
 	}
 	makeHTTP() {
+		const HTTP_PORT = process.env.HTTP_PORT || process.env.HTTP_PORT_LOCAL;
 		this.httpServer = http.createServer(this.app);
 		this.io = new Server(this.httpServer, {
 			/* options */
 		});
 		this.io.on("connection", this.ioconn);
-		this.httpServer.listen(process.env.HTTP_PORT, () => {
-			console.log(`HTTP Server running at: http://localhost:${process.env.HTTP_PORT}/`);
+		this.httpServer.listen(HTTP_PORT, () => {
+			console.log(`HTTP Server running at: http://localhost:${HTTP_PORT}/`);
 		});
 	}
 	makeHTTPS() {
@@ -64,8 +67,8 @@ export default class Weberver {
 		this.ios.on("connection", (socket) => {
 			this.ioconn(socket);
 		});
-		this.httpsServer.listen(process.env.HTTPS_PORT, () => {
-			console.log(`HTTPS Server running at: https://localhost:${process.env.HTTPS_PORT}/`);
+		this.httpsServer.listen(process.env.HTTPS_PORT_LOCAL, () => {
+			console.log(`HTTPS Server running at: https://localhost:${process.env.HTTPS_PORT_LOCAL}/`);
 		});
 	}
 
