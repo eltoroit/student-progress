@@ -1,10 +1,5 @@
 <template>
-	<c-apex-manager filter-key={filterKey} filter-value={filterValue} ondata={onData}></c-apex-manager>
-	<template if:true={errorMessage}>
-		<lightning-layout-item size="12">
-			<div class="slds-notify slds-notify_alert slds-alert_error slds-m-bottom_x-small" role="alert">{errorMessage}</div>
-		</lightning-layout-item>
-	</template>
+	<c-apex-manager filter-key={filterKey} filter-value={filterValue} ondata={onData} oniostatus={onIOStatus}></c-apex-manager>
 	<div class="slds-text-heading_medium">
 		<lightning-card class="slds-is-relative">
 			<template if:true={loading}>
@@ -126,7 +121,7 @@
 					<lightning-layout-item size="12" class="slds-m-top_medium">
 						<div class="slds-scrollable_y" style="height: 400px; width: 100%">
 							<lightning-datatable
-								key-field="name"
+								key-field="studentId"
 								data={exProgProgress}
 								columns={exProgColumns}
 								onrowaction={onRowAction}
@@ -139,4 +134,5 @@
 			</lightning-layout>
 		</lightning-card>
 	</div>
+	<c-iostatus event-data={iostatusEventData}></c-iostatus>
 </template>

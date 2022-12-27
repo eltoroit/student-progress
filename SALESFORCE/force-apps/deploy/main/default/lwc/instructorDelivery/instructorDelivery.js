@@ -31,7 +31,6 @@ export default class InstructorDelivery extends LightningElement {
 
 	// Controls
 	loading = true;
-	errorMessage = "";
 	randomStudent = "";
 	apexManager = null;
 	timers = { screen: null };
@@ -40,6 +39,7 @@ export default class InstructorDelivery extends LightningElement {
 		timer: null,
 		startAt: null
 	};
+	iostatusEventData = null;
 	duration = "";
 
 	// Lists
@@ -260,6 +260,10 @@ export default class InstructorDelivery extends LightningElement {
 	onRefreshClick() {
 		debugger;
 		Utils.logger.log(this.ui);
+	}
+
+	onIOStatus(event) {
+		this.iostatusEventData = event.detail;
 	}
 	//#endregion
 

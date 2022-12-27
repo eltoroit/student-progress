@@ -132,42 +132,6 @@ export default class ApexManager extends LightningElement {
 		}
 	}
 
-	onConnection(event) {
-		const { message, type } = event.detail;
-		switch (type) {
-			case "INFO": {
-				Utils.showNotification(this, {
-					title: "Socket.io",
-					message: message,
-					variant: Utils.msgVariants.info,
-					mode: Utils.msgModes.dismissible
-				});
-				break;
-			}
-			case "ERROR": {
-				Utils.showNotification(this, {
-					title: "Socket.io",
-					message: message,
-					variant: Utils.msgVariants.error,
-					mode: Utils.msgModes.sticky
-				});
-				break;
-			}
-			case "RECONNECT": {
-				Utils.showNotification(this, {
-					title: "Socket.io",
-					message: message,
-					variant: Utils.msgVariants.success,
-					mode: Utils.msgModes.dismissible
-				});
-				break;
-			}
-			default:
-				debugger;
-				break;
-		}
-	}
-
 	async callApex({ obj, apexPromise, forceEvent = false }) {
 		let output = null;
 		try {
