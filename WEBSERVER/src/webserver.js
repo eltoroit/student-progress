@@ -33,8 +33,14 @@ export default class Weberver {
 		});
 
 		const HTTP_PORT = process.env.PORT || process.env.HTTP_PORT_LOCAL;
+		let serverURL = "";
+		if (process.env.DYNO) {
+			serverURL = `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`;
+		} else {
+			serverURL = `http://localhost:${HTTP_PORT}`;
+		}
 		this.httpServer.listen(HTTP_PORT, () => {
-			console.log(`HTTP Server running at: http://${process.env.DYNO ? process.env.HEROKU_APP_NAME : "localhost"}:${HTTP_PORT}/`);
+			console.log(`HTTP Server running at: ${serverURL}/`);
 		});
 	}
 	makeHTTPS() {
@@ -73,7 +79,7 @@ export default class Weberver {
 		});
 
 		this.httpsServer.listen(process.env.HTTPS_PORT_LOCAL, () => {
-			console.log(`HTTPS Server running at: https://${process.env.DYNO ? process.env.HEROKU_APP_NAME : "localhost"}:${process.env.HTTPS_PORT_LOCAL}/`);
+			console.log(`HTTPS Server running at: https://localhost:${process.env.HTTPS_PORT_LOCAL}/`);
 		});
 	}
 
