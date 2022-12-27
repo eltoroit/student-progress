@@ -24,14 +24,17 @@ export default class Weberver {
 		this.routes();
 	}
 	makeHTTP() {
-		const HTTP_PORT = process.env.PORT || process.env.HTTP_PORT_LOCAL;
 		this.httpServer = http.createServer(this.app);
-		this.io = new Server(this.httpServer, {
+		const io = new Server(this.httpServer, {
 			/* options */
 		});
-		this.io.on("connection", this.ioconn);
+		io.on("connection", (socket) => {
+			this.ioconn(socket);
+		});
+
+		const HTTP_PORT = process.env.PORT || process.env.HTTP_PORT_LOCAL;
 		this.httpServer.listen(HTTP_PORT, () => {
-			console.log(`HTTP Server running at: http://localhost:${HTTP_PORT}/`);
+			console.log(`HTTP Server running at: http://${process.env.DYNO ? process.env.HEROKU_APP_NAME : "localhost"}:${HTTP_PORT}/`);
 		});
 	}
 	makeHTTPS() {
@@ -39,8 +42,9 @@ export default class Weberver {
 			key: fs.readFileSync("certs/server.key"),
 			cert: fs.readFileSync("certs/server.cert"),
 		};
+
 		this.httpsServer = https.createServer(certs, this.app);
-		this.ios = new Server(this.httpsServer, {
+		const ios = new Server(this.httpsServer, {
 			/* options */
 			cors: {
 				// Access-Control-Allow-Origin
@@ -64,11 +68,12 @@ export default class Weberver {
 				credentials: "true",
 			},
 		});
-		this.ios.on("connection", (socket) => {
+		ios.on("connection", (socket) => {
 			this.ioconn(socket);
 		});
+
 		this.httpsServer.listen(process.env.HTTPS_PORT_LOCAL, () => {
-			console.log(`HTTPS Server running at: https://localhost:${process.env.HTTPS_PORT_LOCAL}/`);
+			console.log(`HTTPS Server running at: https://${process.env.DYNO ? process.env.HEROKU_APP_NAME : "localhost"}:${process.env.HTTPS_PORT_LOCAL}/`);
 		});
 	}
 
@@ -105,7 +110,7 @@ export default class Weberver {
 
 	routes() {
 		this.app.get("/", (req, res) => {
-			res.render("pages/socketio");
+			res.render("pages/socketio", { ioserver: process.env.ioserver });
 		});
 	}
 }

@@ -7,9 +7,9 @@
 		<script type="module">
 			import MySocketIO from "/socketio.js";
 			const mySIO = new MySocketIO();
-
+			const ioserver = "<%= ioserver %>";
 			document.querySelector("#hello").addEventListener("click", () => {
-				mySIO.ping();
+				mySIO.ping(ioserver);
 			});
 		</script>
 	</head>

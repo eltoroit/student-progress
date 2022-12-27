@@ -4,8 +4,8 @@ import { io } from "./socket.io.esm.min.js";
 export default class MySocketIO {
 	socket;
 
-	constructor() {
-		this.socket = io("https://localhost:3001");
+	constructor(ioserver) {
+		this.socket = io(ioserver);
 		this.connection();
 		this.listen();
 	}
