@@ -1,0 +1,5 @@
+- HTTPS Web Server
+  - https://timonweb.com/javascript/running-expressjs-server-over-https/
+- Certs
+  - `openssl req -nodes -new -x509 -keyout server.key -out server.cert`
+-
