@@ -24,7 +24,7 @@ export default class Weberver {
 		this.routes();
 	}
 	makeHTTP() {
-		const HTTP_PORT = process.env.HTTP_PORT || process.env.HTTP_PORT_LOCAL;
+		const HTTP_PORT = process.env.PORT || process.env.HTTP_PORT_LOCAL;
 		this.httpServer = http.createServer(this.app);
 		this.io = new Server(this.httpServer, {
 			/* options */
