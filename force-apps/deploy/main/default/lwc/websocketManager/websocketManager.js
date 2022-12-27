@@ -43,6 +43,12 @@ export default class WebsocketManager extends LightningElement {
 			});
 		});
 
+		this.socket.io.on("error", (error) => {
+			message = `Socket.io | Unable to connect | ${error}`;
+			Utils.logger.log(message, error);
+			this.dispatchEvent(new CustomEvent("connection", { detail: { message, type: "ERROR" } }));
+		});
+
 		this.socket.io.on("reconnect", (...args) => {
 			message = `Socket.io | Connection restablished`;
 			Utils.logger.log(message, args);
