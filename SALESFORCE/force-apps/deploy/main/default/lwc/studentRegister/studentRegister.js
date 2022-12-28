@@ -169,7 +169,9 @@ export default class StudentRegister extends LightningElement {
 
 	checkInputs({ isChanging }) {
 		const updateComponent = (cmp) => {
-			if (cmp.value !== this.studentData[cmp.name]) {
+			const cmpValue = cmp.value ? cmp.value : null;
+			const storedValue = this.studentData[cmp.name] ? this.studentData[cmp.name] : null;
+			if (cmpValue !== storedValue) {
 				cmp.focus();
 				cmp.value = `${cmp.value}`;
 				cmp.blur();
