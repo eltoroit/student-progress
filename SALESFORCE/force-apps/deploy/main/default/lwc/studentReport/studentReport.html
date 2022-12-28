@@ -18,19 +18,19 @@
 
 				<template if:true={ui.pnlDelivery}>
 					<lightning-layout-item size="4"> Delivery </lightning-layout-item>
-					<lightning-layout-item size="8">{studentData.delivery.Name}</lightning-layout-item>
+					<lightning-layout-item size="8">{studentData.deliveryName}</lightning-layout-item>
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
 				</template>
 
 				<template if:true={ui.pnlStudent}>
 					<lightning-layout-item size="4"> Student </lightning-layout-item>
-					<lightning-layout-item size="8">{studentData.student.Name}</lightning-layout-item>
+					<lightning-layout-item size="8">{studentData.studentName}</lightning-layout-item>
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
 				</template>
 
 				<template if:true={ui.pnlExercise}>
 					<lightning-layout-item size="4"> Exercise </lightning-layout-item>
-					<lightning-layout-item size="8">{studentData.exercise.Name}</lightning-layout-item>
+					<lightning-layout-item size="8">{studentData.exerciseName}</lightning-layout-item>
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
 
 					<lightning-layout-item size="12" medium-device-size="4">

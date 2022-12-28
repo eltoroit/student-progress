@@ -17,38 +17,40 @@ export default class Student extends LightningElement {
 		delivery: null,
 		exerciseId: null,
 		exercise: null,
-		exerciseStatus: null
+		exerciseStatus: null,
+		get studentName() {
+			return this.student?.Name;
+		},
+		get deliveryName() {
+			return this.delivery?.Name;
+		},
+		get exerciseName() {
+			return this.exercise?.Name;
+		}
 	};
 
 	get ui() {
 		const ui = {};
 
-		ui.pnlDelivery = this.studentData?.delivery?.Id;
-		ui.pnlStudent = this.studentData?.student?.Id;
-		ui.pnlExercise = this.studentData?.exercise?.Id;
+		ui.pnlDelivery = this.studentData?.deliveryId && this.studentData?.deliveryId === this.studentData?.delivery?.Id;
+		ui.pnlStudent = this.studentData?.studentId && this.studentData?.studentId === this.studentData?.student?.Id;
+		ui.pnlExercise = this.studentData?.exerciseId && this.studentData?.exerciseId === this.studentData?.exercise?.Id;
 		return ui;
 	}
 
 	//#region EVENTS
 	@api
 	onData({ obj, data }) {
+		Utils.logger.log(`onData ${obj}`, JSON.parse(JSON.stringify(data)));
 		switch (obj) {
 			case "StudentDataByStudentId": {
 				this.loadStudentDataByStudentId({ data });
 				break;
 			}
-			// case "ActiveDeliveriesWithCourses": {
-			// 	// Ignore
-			// 	break;
-			// }
-			// case "StudentsForDelivery": {
-			// 	this.loadStudentsForDelivery({ data });
-			// 	break;
-			// }
-			// case "Student__c": {
-			// 	this.apexManager.fetchStudentsForDelivery({ deliveryId: this.deliveries.currentId });
-			// 	break;
-			// }
+			case "Delivery__c": {
+				this.apexManager.fetchStudentDataByStudentId({ studentId: this.studentData.studentId });
+				break;
+			}
 			default: {
 				debugger;
 				break;
@@ -78,6 +80,7 @@ export default class Student extends LightningElement {
 
 	//#region LOAD DATA
 	loadStudentDataByStudentId({ data }) {
+		// Object.assign(this.studentData, data);
 		this.studentData.studentId = data.studentId;
 		this.studentData.student = data.student;
 		this.studentData.deliveryId = data.deliveryId;

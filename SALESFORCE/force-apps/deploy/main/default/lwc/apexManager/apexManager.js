@@ -7,7 +7,7 @@ import getExerciseProgress from "@salesforce/apex/Data.getExerciseProgress";
 import getCoursesPerDelivery from "@salesforce/apex/Data.getCoursesPerDelivery";
 import getStudentsForDelivery from "@salesforce/apex/Data.getStudentsForDelivery";
 import getAllExercisesForCourse from "@salesforce/apex/Data.getAllExercisesForCourse";
-import getStudentDataByStudentId from "@salesforce/apex/Data.getStudentDataByStudentId";
+import getStudentDataByStudentIdNotCache from "@salesforce/apex/Data.getStudentDataByStudentIdNotCache";
 import getActiveDeliveriesWithCourses from "@salesforce/apex/Data.getActiveDeliveriesWithCourses";
 
 import registerStudent from "@salesforce/apex/Data.registerStudent";
@@ -61,7 +61,7 @@ export default class ApexManager extends LightningElement {
 
 	@api fetchStudentDataByStudentId({ studentId }) {
 		if (studentId) {
-			this.callApex({ obj: "StudentDataByStudentId", apexPromise: getStudentDataByStudentId({ studentId }), forceEvent: true });
+			this.callApex({ obj: "StudentDataByStudentId", apexPromise: getStudentDataByStudentIdNotCache({ studentId }), forceEvent: true });
 		}
 	}
 	//#endregion
@@ -108,7 +108,6 @@ export default class ApexManager extends LightningElement {
 	//#endregion
 
 	onEventReceived(event) {
-		debugger;
 		const { entityName, deliveryId, count } = event.detail;
 		switch (entityName) {
 			case "Delivery__c":
