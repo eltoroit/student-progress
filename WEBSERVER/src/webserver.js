@@ -6,10 +6,7 @@ import { Server } from "socket.io";
 
 export default class Weberver {
 	io;
-	ios;
 	app;
-	httpServer;
-	httpsServer;
 
 	createServer() {
 		this.app = express();
@@ -24,14 +21,8 @@ export default class Weberver {
 		this.routes();
 	}
 	makeHTTP() {
-		this.httpServer = http.createServer(this.app);
-		const io = new Server(this.httpServer, {
-			/* options */
-			cors: this.allowSocketioCORS(),
-		});
-		io.on("connection", (socket) => {
-			this.ioconn(socket);
-		});
+		const httpServer = http.createServer(this.app);
+		this.makeSocketio({ httpServer });
 
 		const HTTP_PORT = process.env.PORT || process.env.HTTP_PORT_LOCAL;
 		let serverURL = "";
@@ -40,7 +31,7 @@ export default class Weberver {
 		} else {
 			serverURL = `http://localhost:${HTTP_PORT}`;
 		}
-		this.httpServer.listen(HTTP_PORT, () => {
+		httpServer.listen(HTTP_PORT, () => {
 			console.log(`HTTP Server running at: ${serverURL}/`);
 		});
 	}
@@ -50,17 +41,18 @@ export default class Weberver {
 			cert: fs.readFileSync("certs/server.cert"),
 		};
 
-		this.httpsServer = https.createServer(certs, this.app);
-		const ios = new Server(this.httpsServer, {
+		const httpsServer = https.createServer(certs, this.app);
+		httpsServer.listen(process.env.HTTPS_PORT_LOCAL, () => {
+			console.log(`HTTPS Server running at: https://localhost:${process.env.HTTPS_PORT_LOCAL}/`);
+		});
+	}
+	makeSocketio({ httpServer }) {
+		this.io = new Server(httpServer, {
 			/* options */
 			cors: this.allowSocketioCORS(),
 		});
-		ios.on("connection", (socket) => {
+		this.io.on("connection", (socket) => {
 			this.ioconn(socket);
-		});
-
-		this.httpsServer.listen(process.env.HTTPS_PORT_LOCAL, () => {
-			console.log(`HTTPS Server running at: https://localhost:${process.env.HTTPS_PORT_LOCAL}/`);
 		});
 	}
 
@@ -110,13 +102,16 @@ export default class Weberver {
 		this.socket.on("PING", (data) => {
 			data[data.length - 1].pong = new Date().toJSON();
 			console.log(JSON.stringify(data));
-			this.socket.emit("PONG", data);
+			this.io.emit("PONG", data);
 		});
 	}
 
 	ionotify({ eventName, data }) {
 		console.log(JSON.stringify({ eventName, data }));
-		this.socket.emit(eventName, data);
+		// Only to the sender
+		// this.socket.emit(eventName, data);
+		// To everybody
+		this.io.emit(eventName, data);
 	}
 
 	routes() {
