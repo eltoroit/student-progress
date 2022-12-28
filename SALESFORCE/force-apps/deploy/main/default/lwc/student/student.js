@@ -84,7 +84,7 @@ export default class Student extends LightningElement {
 				this.template.querySelector("c-student-report").onPanelLoad();
 			}, 0);
 		} else {
-			this.showRegistrationPage();
+			this.showRegistrationPage({ isWaitForUpdate: true });
 		}
 	}
 
