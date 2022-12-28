@@ -10,14 +10,15 @@ export default class WebsocketManager extends LightningElement {
 	async connectedCallback() {
 		try {
 			await loadScript(this, `${srStudents}/socket.io.min.js`);
-			this.socket = window.io("https://localhost:3001");
+			this.socket = window.io("https://th-student-reporting-staging.herokuapp.com"); /// This should be read from some config settings (MDT?)
 			this.connection();
 			this.listen();
 			this.initialized = true;
 		} catch (ex) {
 			Utils.logger.error(ex);
-			// eslint-disable-next-line no-alert
-			alert("Can't initialize Socket.io");
+			this.dispatchEvent(
+				new CustomEvent("iostatus", { bubbles: true, composed: true, detail: { message: "Can't initialize Socket.io", color: "red" } })
+			);
 			debugger;
 		}
 	}
@@ -27,32 +28,32 @@ export default class WebsocketManager extends LightningElement {
 		this.socket.on("connect", () => {
 			const engine = this.socket.io.engine;
 			// In most cases, prints "polling"
-			message = `Socket.io | Connected using [${engine.transport.name}]`;
-			this.dispatchEvent(new CustomEvent("connection", { detail: { message, type: "INFO" } }));
+			message = `Socket.io | Connected using ${engine.transport.name}`;
+			this.dispatchEvent(new CustomEvent("iostatus", { bubbles: true, composed: true, detail: { message, color: "yellow" } }));
 
 			engine.once("upgrade", () => {
 				// called when the transport is upgraded (i.e. from HTTP long-polling to WebSocket), in most cases, prints "websocket"
-				message = `Socket.io | Connection upgrade to [${engine.transport.name}]`;
-				this.dispatchEvent(new CustomEvent("connection", { detail: { message, type: "INFO" } }));
+				message = `Socket.io | Connection upgrade to ${engine.transport.name}`;
+				this.dispatchEvent(new CustomEvent("iostatus", { bubbles: true, composed: true, detail: { message, color: "green" } }));
 			});
 
 			engine.on("close", (...args) => {
 				message = `Socket.io | Connection lost`;
 				Utils.logger.log(message, args);
-				this.dispatchEvent(new CustomEvent("connection", { detail: { message, type: "ERROR" } }));
+				this.dispatchEvent(new CustomEvent("iostatus", { bubbles: true, composed: true, detail: { message, color: "red" } }));
 			});
 		});
 
 		this.socket.io.on("error", (error) => {
 			message = `Socket.io | Unable to connect | ${error}`;
 			Utils.logger.log(message, error);
-			this.dispatchEvent(new CustomEvent("connection", { detail: { message, type: "ERROR" } }));
+			this.dispatchEvent(new CustomEvent("iostatus", { bubbles: true, composed: true, detail: { message, color: "red" } }));
 		});
-
+		
 		this.socket.io.on("reconnect", (...args) => {
 			message = `Socket.io | Connection restablished`;
 			Utils.logger.log(message, args);
-			this.dispatchEvent(new CustomEvent("connection", { detail: { message, type: "RECONNECT" } }));
+			this.dispatchEvent(new CustomEvent("iostatus", { bubbles: true, composed: true, detail: { message, color: "green" } }));
 		});
 	}
 

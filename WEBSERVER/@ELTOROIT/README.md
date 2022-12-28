@@ -1,5 +1,8 @@
-- HTTPS Web Server
-  - https://timonweb.com/javascript/running-expressjs-server-over-https/
-- Certs
-  - `openssl req -nodes -new -x509 -keyout server.key -out server.cert`
+-   HTTPS Web Server
+    -   https://timonweb.com/javascript/running-expressjs-server-over-https/
+-   Certs
+    -   `openssl req -nodes -new -x509 -keyout server.key -out server.cert`
 -
+
+https://devcenter.heroku.com/articles/dyno-metadata
+heroku labs:enable runtime-dyno-metadata -a th-student-reporting-staging

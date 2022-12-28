@@ -4,8 +4,8 @@ import { io } from "./socket.io.esm.min.js";
 export default class MySocketIO {
 	socket;
 
-	constructor() {
-		this.socket = io("https://localhost:3001");
+	constructor(ioserver) {
+		this.socket = io(ioserver);
 		this.connection();
 		this.listen();
 	}
@@ -41,6 +41,7 @@ export default class MySocketIO {
 				data.push({ ping: new Date().toJSON() });
 				this.socket.emit("PING", data);
 			}
+			document.querySelector("#output").innerHTML = JSON.stringify(data, null, 2);
 		});
 	}
 

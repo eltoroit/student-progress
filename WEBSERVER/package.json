@@ -3,7 +3,8 @@
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"serve": "nodemon src/index.js"
+		"monitor": "nodemon src/index.js",
+		"start": "node src/index.js"
 	},
 	"license": "ISC",
 	"dependencies": {

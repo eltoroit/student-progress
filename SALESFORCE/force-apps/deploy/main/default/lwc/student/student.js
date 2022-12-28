@@ -11,6 +11,7 @@ export default class Student extends LightningElement {
 	filterValue = null;
 	apexManager = null;
 	panel = PANEL_REGISTER;
+	iostatusEventData = null;
 
 	get ui() {
 		const ui = {};
@@ -64,6 +65,10 @@ export default class Student extends LightningElement {
 				pnlReport?.onData({ obj, data });
 			}
 		}
+	}
+
+	onIOStatus(event) {
+		this.iostatusEventData = event.detail;
 	}
 
 	async showReportPage() {
