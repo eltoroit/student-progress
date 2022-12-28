@@ -1,6 +1,7 @@
 import Utils from "c/utils";
 import { api, LightningElement } from "lwc";
 
+import pickRandomStudent from "@salesforce/apex/Data.pickRandomStudent";
 import getActiveDeliveries from "@salesforce/apex/Data.getActiveDeliveries";
 import getDeliveryProgress from "@salesforce/apex/Data.getDeliveryProgress";
 import getExerciseProgress from "@salesforce/apex/Data.getExerciseProgress";
@@ -69,14 +70,14 @@ export default class ApexManager extends LightningElement {
 	//#region ACTIONS
 	@api async doStartStopExercise({ deliveryId, exerciseId, isStart }) {
 		if (deliveryId && exerciseId) {
-			await this.callApex({ obj: null, apexPromise: startStopExercise({ deliveryId, exerciseId, isStart }), forceEvent: true });
+			await this.callApex({ obj: null, apexPromise: startStopExercise({ deliveryId, exerciseId, isStart }), forceEvent: false });
 			this.fetchActiveDeliveriesWithCourses();
 		}
 	}
 
 	@api async doUpdateStudentStatus({ exerciseId, studentId, status }) {
 		if (exerciseId && studentId) {
-			await this.callApex({ obj: null, apexPromise: updateStudentStatus({ exerciseId, studentId, status }), forceEvent: true });
+			await this.callApex({ obj: null, apexPromise: updateStudentStatus({ exerciseId, studentId, status }), forceEvent: false });
 		} else {
 			throw new Error("Exercise and studentId are required");
 		}
@@ -86,7 +87,7 @@ export default class ApexManager extends LightningElement {
 		let output = null;
 		if (deliveryId && studentId) {
 			try {
-				output = await this.callApex({ obj: null, apexPromise: validateStudentRegistration({ deliveryId, studentId }), forceEvent: true });
+				output = await this.callApex({ obj: null, apexPromise: validateStudentRegistration({ deliveryId, studentId }), forceEvent: false });
 			} catch (ex) {
 				output = null;
 			}
@@ -98,7 +99,19 @@ export default class ApexManager extends LightningElement {
 		let output = null;
 		if (deliveryId && student) {
 			try {
-				output = await this.callApex({ obj: null, apexPromise: registerStudent({ deliveryId, student }), forceEvent: true });
+				output = await this.callApex({ obj: null, apexPromise: registerStudent({ deliveryId, student }), forceEvent: false });
+			} catch (ex) {
+				output = null;
+			}
+		}
+		return output;
+	}
+
+	@api async doPickRandomStudent({ deliveryId }) {
+		let output = null;
+		if (deliveryId) {
+			try {
+				output = await this.callApex({ obj: null, apexPromise: pickRandomStudent({ deliveryId }), forceEvent: false });
 			} catch (ex) {
 				output = null;
 			}

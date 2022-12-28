@@ -301,6 +301,31 @@ public without sharing class Data {
 		return output;
 	}
 
+	@AuraEnabled
+	public static Student__c pickRandomStudent(Id deliveryId) {
+		Student__c output = new Student__c();
+
+		// Find al students for the delivery
+		List<Student__c> students = [
+			SELECT Id, Name, FirstName__c, LastName__c, Nickname__c, Email__c, ChosenDTTM__c
+			FROM Student__c
+			WHERE Delivery__c = :deliveryId AND IsInstructor__c = FALSE
+			ORDER BY ChosenDTTM__c ASC
+		];
+
+		// Randomly pick a student who has not been chosen on a while
+		Double dRandomIndex = Math.random() * (students.size() / 2);
+		dRandomIndex = Math.floor(dRandomIndex);
+		Integer iRandomIndex = Integer.valueOf(dRandomIndex);
+		output = students[iRandomIndex];
+
+		// Update timestamp, so it's not chosen soon
+		output.ChosenDTTM__c = Datetime.now();
+		update output;
+
+		return output;
+	}
+
 	// // Other
 	// @AuraEnabled(cacheable=true)
 	// public static Exercise__c getActiveExercise(Id deliveryId) {

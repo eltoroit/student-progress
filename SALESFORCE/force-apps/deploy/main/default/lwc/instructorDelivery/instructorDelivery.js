@@ -216,23 +216,34 @@ export default class InstructorDelivery extends LightningElement {
 	}
 
 	onRandomClick() {
-		/*
-			Works with a quick solution, but not a good solution
-			It's possible to choose A, B, C, A, D... Having a student be selected again soon after it was previously selected.
-			Or a student that is not selected often enough
-			Maintain a list of unselected students and randomize from there :-)
-			This list should be in the server, since a page refresh would reset it.
-			Have the random student be chosen via Apex where a field can be set
-		*/
-		const prevStudent = this.randomStudent;
-		do {
-			let students = this.exProgProgress.filter((row) => !row.isInstructor);
-			students = students.map((row) => row.name);
-			let idx = Math.floor(Math.random() * students.length);
-			this.randomStudent = students[idx];
-		} while (this.randomStudent === prevStudent);
-		// eslint-disable-next-line no-alert
-		alert(this.randomStudent);
+		debugger;
+		let counter = 20;
+		let timer = setInterval(async () => {
+			counter--;
+			if (counter > 0) {
+				const student = await this.apexManager.doPickRandomStudent({ deliveryId: this.deliveries.currentId });
+				Utils.logger.log(`${student.Name} | ${student.ChosenDTTM__c}`);
+			} else {
+				clearInterval(timer);
+			}
+		}, 1e3);
+		// /*
+		// 	Works with a quick solution, but not a good solution
+		// 	It's possible to choose A, B, C, A, D... Having a student be selected again soon after it was previously selected.
+		// 	Or a student that is not selected often enough
+		// 	Maintain a list of unselected students and randomize from there :-)
+		// 	This list should be in the server, since a page refresh would reset it.
+		// 	Have the random student be chosen via Apex where a field can be set
+		// */
+		// const prevStudent = this.randomStudent;
+		// do {
+		// 	let students = this.exProgProgress.filter((row) => !row.isInstructor);
+		// 	students = students.map((row) => row.name);
+		// 	let idx = Math.floor(Math.random() * students.length);
+		// 	this.randomStudent = students[idx];
+		// } while (this.randomStudent === prevStudent);
+		// // eslint-disable-next-line no-alert
+		// alert(this.randomStudent);
 	}
 
 	onCurrentClick() {
