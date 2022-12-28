@@ -257,11 +257,6 @@ export default class InstructorDelivery extends LightningElement {
 		this.apexManager.doStartStopExercise({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId, isStart: false });
 	}
 
-	onRefreshClick() {
-		debugger;
-		Utils.logger.log(this.ui);
-	}
-
 	onIOStatus(event) {
 		this.iostatusEventData = event.detail;
 	}
@@ -386,7 +381,7 @@ export default class InstructorDelivery extends LightningElement {
 		this.activeExercise.startAt = null;
 		if (this.deliveries.currentId) {
 			const currentDelivery = Utils.findRecord({ list: this.deliveries.records, Id: this.deliveries.currentId });
-			if (currentDelivery.CurrentExerciseIsActive__c) {
+			if (currentDelivery?.CurrentExerciseIsActive__c) {
 				this.exercises.activeId = currentDelivery.CurrentExercise__c;
 				this.activeExercise = {
 					record: currentDelivery.CurrentExercise__r,

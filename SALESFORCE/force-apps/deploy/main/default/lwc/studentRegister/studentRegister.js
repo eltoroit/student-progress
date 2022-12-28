@@ -72,6 +72,10 @@ export default class StudentRegister extends LightningElement {
 				this.loadStudentsForDelivery({ data });
 				break;
 			}
+			case "Delivery__c": {
+				this.apexManager.fetchActiveDeliveries();
+				break;
+			}
 			case "Student__c": {
 				this.apexManager.fetchStudentsForDelivery({ deliveryId: this.deliveries.currentId });
 				break;
@@ -165,9 +169,11 @@ export default class StudentRegister extends LightningElement {
 
 	checkInputs({ isChanging }) {
 		const updateComponent = (cmp) => {
-			cmp.focus();
-			cmp.value = `${cmp.value}`;
-			cmp.blur();
+			if (cmp.value !== this.studentData[cmp.name]) {
+				cmp.focus();
+				cmp.value = `${cmp.value}`;
+				cmp.blur();
+			}
 		};
 		const cmps = Array.from(this.template.querySelectorAll(".validateMe"));
 
@@ -181,7 +187,10 @@ export default class StudentRegister extends LightningElement {
 
 	//#region OPTIONS
 	onDeliveryChange(event) {
-		this.selectDelivery({ currentId: event.target.value });
+		const currentId = event.target.value;
+		if (currentId !== this.deliveries.currentId) {
+			this.selectDelivery({ currentId });
+		}
 	}
 	selectDelivery({ currentId }) {
 		this.genericSelectOption({ currentId, objectName: "deliveries", cookieName: "deliveryId" });
@@ -196,7 +205,10 @@ export default class StudentRegister extends LightningElement {
 	}
 
 	onStudentChange(event) {
-		this.selectStudent({ currentId: event.target.value });
+		const currentId = event.target.value;
+		if (currentId !== this.students.currentId) {
+			this.selectStudent({ currentId });
+		}
 	}
 	selectStudent({ currentId }) {
 		const clearStudent = () => {
@@ -259,7 +271,6 @@ export default class StudentRegister extends LightningElement {
 		if (Utils.findRecord({ list: this.deliveries.records, Id: currentId })) {
 			this.selectDelivery({ currentId });
 		} else {
-			debugger;
 			this.students.currentId = null;
 			this.selectStudent({ currentId: null });
 			this.deliveries.currentId = null;

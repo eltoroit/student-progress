@@ -17,38 +17,44 @@ export default class Student extends LightningElement {
 		delivery: null,
 		exerciseId: null,
 		exercise: null,
-		exerciseStatus: null
+		exerciseStatus: null,
+		get studentName() {
+			return this.student?.Name;
+		},
+		get deliveryName() {
+			return this.delivery?.Name;
+		},
+		get exerciseName() {
+			return this.exercise?.Name;
+		}
 	};
 
 	get ui() {
 		const ui = {};
 
-		ui.pnlDelivery = this.studentData?.delivery?.Id;
-		ui.pnlStudent = this.studentData?.student?.Id;
-		ui.pnlExercise = this.studentData?.exercise?.Id;
+		ui.pnlDelivery = this.studentData?.deliveryId && this.studentData?.deliveryId === this.studentData?.delivery?.Id;
+		ui.pnlStudent = this.studentData?.studentId && this.studentData?.studentId === this.studentData?.student?.Id;
+		ui.pnlExercise = this.studentData?.exerciseId && this.studentData?.exerciseId === this.studentData?.exercise?.Id;
 		return ui;
 	}
 
 	//#region EVENTS
 	@api
 	onData({ obj, data }) {
+		Utils.logger.log(`onData ${obj}`, JSON.parse(JSON.stringify(data)));
 		switch (obj) {
 			case "StudentDataByStudentId": {
 				this.loadStudentDataByStudentId({ data });
 				break;
 			}
-			// case "ActiveDeliveriesWithCourses": {
-			// 	// Ignore
-			// 	break;
-			// }
-			// case "StudentsForDelivery": {
-			// 	this.loadStudentsForDelivery({ data });
-			// 	break;
-			// }
-			// case "Student__c": {
-			// 	this.apexManager.fetchStudentsForDelivery({ deliveryId: this.deliveries.currentId });
-			// 	break;
-			// }
+			case "Delivery__c": {
+				this.apexManager.fetchStudentDataByStudentId({ studentId: this.studentData.studentId });
+				break;
+			}
+			case "Exercise_X_Student__c": {
+				this.loading = false;
+				break;
+			}
 			default: {
 				debugger;
 				break;
@@ -74,10 +80,25 @@ export default class Student extends LightningElement {
 	onRegisterClick() {
 		this.dispatchEvent(new CustomEvent("register"));
 	}
+
+	onDoneClick() {
+		this.updateStatus(Utils.STATES.DONE());
+	}
+	onWorkingClick() {
+		this.updateStatus(Utils.STATES.WORKING());
+	}
+	onLaterClick() {
+		this.updateStatus(Utils.STATES.LATER());
+	}
+	updateStatus(status) {
+		this.loading = true;
+		this.apexManager.doUpdateStudentStatus({ exerciseId: this.studentData.exerciseId, studentId: this.studentData.studentId, status });
+	}
 	//#endregion
 
 	//#region LOAD DATA
 	loadStudentDataByStudentId({ data }) {
+		// Object.assign(this.studentData, data);
 		this.studentData.studentId = data.studentId;
 		this.studentData.student = data.student;
 		this.studentData.deliveryId = data.deliveryId;
@@ -93,89 +114,4 @@ export default class Student extends LightningElement {
 		this.studentData.studentId = Utils.getCookie({ key: "studentId" });
 		this.studentData.deliveryId = Utils.getCookie({ key: "deliveryId" });
 	}
-
-	// @wire(getStudentById, { studentId: "$studentId" })
-	// wired_GetStudentById(result) {
-	// 	let { data, error } = result;
-	// 	if (data) {
-	// 		this.student = data;
-	// 	} else if (error) {
-	// 		this.student = {};
-	// 	}
-	// }
-
-	// @wire(getDeliveryById, { deliveryId: "$deliveryId", forceRefresh: "$forceRefresh" })
-	// wired_GetDeliveryById(result) {
-	// 	this.wiredDeliver = result;
-	// 	let { data, error } = result;
-	// 	if (data) {
-	// 		this.delivery = { ...data };
-	// 		if (this.delivery) {
-	// 			this.delivery.Name = `${data.Name} (${data.Instructor__c})`;
-	// 		}
-	// 		this.exercise = data.CurrentExercise__r;
-	// 		this.exerciseId = data.CurrentExercise__c;
-	// 		this.exerciseIsActive = data.CurrentExerciseIsActive__c;
-	// 		if (!this.exerciseId) {
-	// 			this.exercise = {};
-	// 		}
-	// 		this.loading = false;
-	// 	} else if (error) {
-	// 		this.delivery = {};
-	// 		this.loading = false;
-	// 	}
-	// }
-
-	// @wire(getExercisetById, { exerciseId: "$exerciseId" })
-	// wired_GetExercisetById(result) {
-	// 	let { data, error } = result;
-	// 	if (data) {
-	// 		this.exercise = data;
-	// 		this.loading = false;
-	// 	} else if (error) {
-	// 		this.exercise = {};
-	// 		this.loading = false;
-	// 	}
-	// }
-
-	// onRefreshClick() {
-	// 	this.forceRefresh++;
-	// 	// refreshApex(this.wiredDeliver)
-	// 	// 	.then(() => {
-	// 	// 		this.errorMessage = "";
-	// 	// 	})
-	// 	// 	.catch((error) => {
-	// 	// 		Utils.log(error);
-	// 	// 		this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
-	// 	// 	});
-	// }
-
-	// onDoneClick() {
-	// 	this.updateStatus("03-DONE");
-	// }
-	// onWorkingClick() {
-	// 	this.updateStatus("01-WORKING");
-	// }
-	// onLaterClick() {
-	// 	this.updateStatus("02-LATER");
-	// }
-	// updateStatus(status) {
-	// 	this.loading = true;
-	// 	updateStatus({ exerciseId: this.exerciseId, studentId: this.studentId, status })
-	// 		.then(() => {
-	// 			Utils.showNotification(this, { title: "Success", message: "Thanks for completing the exercise" });
-	// 			setTimeout(() => {
-	// 				this.loading = false;
-	// 			}, 1e3);
-	// 		})
-	// 		.catch((error) => {
-	// 			this.loading = false;
-	// 			Utils.log(error);
-	// 			Utils.showNotification(this, {
-	// 				title: "Error",
-	// 				message: "Error marking as done",
-	// 				variant: Utils.variants.error
-	// 			});
-	// 		});
-	// }
 }
