@@ -56,6 +56,25 @@ export default class Weberver {
 		});
 	}
 
+	ioconn(socket) {
+		this.socket = socket;
+
+		// receive a message from the client
+		this.socket.on("PING", (data) => {
+			data[data.length - 1].pong = new Date().toJSON();
+			console.log(JSON.stringify(data));
+			this.io.emit("PONG", data);
+		});
+	}
+
+	ionotify({ eventName, data }) {
+		console.log(JSON.stringify({ eventName, data }));
+		// Only to the sender
+		// this.socket.emit(eventName, data);
+		// To everybody
+		this.io.emit(eventName, data);
+	}
+
 	allowExpressCORS() {
 		this.app.use((req, res, next) => {
 			res.header("Access-Control-Allow-Origin", req.get("Origin") || "*");
@@ -93,25 +112,6 @@ export default class Weberver {
 			// Access-Control-Allow-Credentials
 			credentials: "true",
 		};
-	}
-
-	ioconn(socket) {
-		this.socket = socket;
-
-		// receive a message from the client
-		this.socket.on("PING", (data) => {
-			data[data.length - 1].pong = new Date().toJSON();
-			console.log(JSON.stringify(data));
-			this.io.emit("PONG", data);
-		});
-	}
-
-	ionotify({ eventName, data }) {
-		console.log(JSON.stringify({ eventName, data }));
-		// Only to the sender
-		// this.socket.emit(eventName, data);
-		// To everybody
-		this.io.emit(eventName, data);
 	}
 
 	routes() {
