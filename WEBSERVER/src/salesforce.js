@@ -18,7 +18,7 @@ export default class Salesforce {
 	async oauthUNPWLogin() {
 		this.conn = new jsforce.Connection({
 			oauth2: {
-				loginUrl: "https://aries-reservoir-3351-dev-ed.scratch.my.salesforce.com",
+				loginUrl: "https://test.salesforce.com",
 				clientId: process.env.consumerKey,
 				clientSecret: process.env.consumerSecret,
 				redirectUri: process.env.redirectUri,
@@ -45,7 +45,6 @@ export default class Salesforce {
 			this.conn.login(process.env.username, process.env.password, (err, userInfo) => {
 				if (err) {
 					console.error(err);
-					alert(err);
 					reject(err);
 				} else {
 					console.log(`${type} | _sessionType | ${this.conn._sessionType}`);
