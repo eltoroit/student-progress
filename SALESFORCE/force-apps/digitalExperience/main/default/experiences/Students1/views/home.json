@@ -8,7 +8,7 @@
       "componentAttributes" : {
         "maxHeight" : "50px",
         "maxWidth" : "",
-        "pathInSr" : "LogoMobile.png"
+        "pathInSr" : "LogoMobile050px.png"
       },
       "componentName" : "c:image",
       "id" : "54f40845-1587-43a0-a5df-acc7e7c3a8a5",

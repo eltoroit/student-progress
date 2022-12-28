@@ -2,17 +2,11 @@
 
 # TO DO
 
--   Socket.io!!!!!
-    -   I tired using EmpAPI, but it's not supported on mobile devices.
-        -   https://developer.salesforce.com/docs/component-library/bundle/lightning:empApi/documentation
-        -   "This component is supported only in desktop browsers."
-    -   Child component that fires events when a message is received
-    -   @api function to publish events
 -   QR code is not working
     -   Consider hardcoding the URL when deploying to production
 -   Student randomizer
     -   Move the data acquisition to the student layer?
-    -
+    -   Use a modal dialog
 -   Assign org Ids
     -   Include late registrations
     -   Display URL (login.salesforce.com), username, and password.
@@ -40,6 +34,10 @@
     -   I had two michael students in the class. Ask for FirstName and LastName when registering
     -   Also add a "nickname"
 -   Make a option to call attendance
+-   Exceeding plaform events on large data changes.
+    -   25 Students, 20 Exercises, 20 classes will exceed the daily limits
+    -   Do not use PE to change the status of the exercise, do a callout instead or call the Socket.io directly
+-   Think of addiing Socket.io rooms for the deliveryId
 
 # DONE
 
@@ -60,3 +58,9 @@
 -   Display expected duration
 -   On the instrcutor page reporting the particular exercise (for any exercise, even previous ones), be able to change the status of the student
     -   Add a row action to select "DONE, WORKING, LATER" states.
+-   Socket.io!!!!!
+    -   I tired using EmpAPI, but it's not supported on mobile devices.
+        -   https://developer.salesforce.com/docs/component-library/bundle/lightning:empApi/documentation
+        -   "This component is supported only in desktop browsers."
+    -   Child component that fires events when a message is received
+    -   @api function to publish events
