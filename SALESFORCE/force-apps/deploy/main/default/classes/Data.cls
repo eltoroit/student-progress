@@ -258,7 +258,7 @@ public without sharing class Data {
 	}
 
 	@AuraEnabled
-	public static Map<String, Object> getStudentDataByStudentIdNotCache(Id studentId) {
+	public static Map<String, Object> getStudentDataByStudentId(Id studentId) {
 		Map<String, Object> output = new Map<String, Object>();
 
 		Student__c student = [
