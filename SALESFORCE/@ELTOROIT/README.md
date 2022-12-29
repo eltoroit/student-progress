@@ -2,8 +2,6 @@
 
 # TO DO
 
--   QR code is not working
-    -   Consider hardcoding the URL when deploying to production
 -   Student randomizer
     -   Move the data acquisition to the student layer?
     -   Use a modal dialog
@@ -24,20 +22,20 @@
 -   Add a timer for breaks
     -   Steal the clock from THCM
 -   Exercise should automatically stop when all students are done (or they indicated "LATER")
--   Display the time it took an student to complete the exercise
 -   Let the instructor connect via phone/tablet
     -   Salesforce App
     -   Needs to activate an exercise
--   Review new class, and no students.
-    -   There seems to be a glitch here...
--   Duplicate students
-    -   I had two michael students in the class. Ask for FirstName and LastName when registering
-    -   Also add a "nickname"
 -   Make a option to call attendance
 -   Exceeding plaform events on large data changes.
     -   25 Students, 20 Exercises, 20 classes will exceed the daily limits
     -   Do not use PE to change the status of the exercise, do a callout instead or call the Socket.io directly
 -   Think of addiing Socket.io rooms for the deliveryId
+-   QR code is not being shown consistently
+    -   Consider hardcoding the URL when deploying to production
+    -   Consider hosting the images in Heroku to avoid Static Resources, but do this once Heroku is in production
+-   Consider CDC for Deliveries
+    -   That way we can detect which fields changed and determine if it's just the exercise or something on the delivery being changed
+    -   Should we move the Exercise information to a child object?
 
 # DONE
 
@@ -64,3 +62,7 @@
         -   "This component is supported only in desktop browsers."
     -   Child component that fires events when a message is received
     -   @api function to publish events
+-   Duplicate students
+    -   I had two michael students in the class. Ask for FirstName and LastName when registering
+    -   Also add a "nickname"
+-   Display the time it took an student to complete the exercise
