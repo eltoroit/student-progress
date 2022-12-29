@@ -3,9 +3,33 @@
     <fullName>Status__c</fullName>
     <externalId>false</externalId>
     <label>Status</label>
-    <length>10</length>
     <required>true</required>
     <trackTrending>false</trackTrending>
-    <type>Text</type>
-    <unique>false</unique>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>00-START</fullName>
+                <default>false</default>
+                <label>00-START</label>
+            </value>
+            <value>
+                <fullName>01-WORKING</fullName>
+                <default>false</default>
+                <label>01-WORKING</label>
+            </value>
+            <value>
+                <fullName>02-LATER</fullName>
+                <default>false</default>
+                <label>02-LATER</label>
+            </value>
+            <value>
+                <fullName>03-DONE</fullName>
+                <default>false</default>
+                <label>03-DONE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
 </CustomField>
