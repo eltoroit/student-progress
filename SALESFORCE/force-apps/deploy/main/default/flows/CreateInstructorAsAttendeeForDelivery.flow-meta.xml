@@ -7,25 +7,43 @@
         <locationX>176</locationX>
         <locationY>335</locationY>
         <assignmentItems>
-            <assignToReference>Instructor.Name</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Instructor__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Instructor.Delivery__c</assignToReference>
+            <assignToReference>Student.Delivery__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>Instructor.IsInstructor__c</assignToReference>
+            <assignToReference>Student.IsInstructor__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Student.FirstName__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.InstructorLookup__r.FirstName__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Student.LastName__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.InstructorLookup__r.LastName__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Student.Nickname__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.InstructorLookup__r.Nickname__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Student.Email__c</assignToReference>
+            <operator>Assign</operator>
         </assignmentItems>
         <connector>
             <targetReference>Insert010</targetReference>
@@ -58,7 +76,7 @@
         <label>Insert010 DML instructor</label>
         <locationX>176</locationX>
         <locationY>455</locationY>
-        <inputReference>Instructor</inputReference>
+        <inputReference>Student</inputReference>
     </recordCreates>
     <start>
         <locationX>50</locationX>
@@ -70,9 +88,9 @@
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
-        <name>Instructor</name>
+        <name>Student</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

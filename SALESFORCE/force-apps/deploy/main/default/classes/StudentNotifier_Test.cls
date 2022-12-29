@@ -18,7 +18,7 @@ public with sharing class StudentNotifier_Test {
 		delivery.CurrentExerciseIsActive__c = true;
 		delivery.CurrentExerciseStart__c = Datetime.now();
 		delivery.Name = 'Test Delivery';
-		delivery.Instructor__c = 'Andres Perez';
+		// delivery.Instructor__c = 'Andres Perez';
 		delivery.IsActive__c = true;
 		insert delivery;
 
