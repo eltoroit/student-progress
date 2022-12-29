@@ -15,7 +15,7 @@ public with sharing class AttendeeNotifier_Test {
 
 		Attendee__c instructor = new Attendee__c();
 		instructor.ChosenDTTM__c = DateTime.now();
-		instructor.Delivery__c = delivery.Id;
+		instructor.Delivery__c = null;
 		instructor.Email__c = 'aperez@salesforce.com';
 		instructor.FirstName__c = 'Andres';
 		instructor.IsInstructor__c = true;
@@ -48,7 +48,7 @@ public with sharing class AttendeeNotifier_Test {
 		ExA.Delivery__c = 'Test Value For Delivery Id';
 		ExA.Exercise__c = exercise.Id;
 		ExA.Status__c = '00-START';
-		ExA.Attendee__c = attendee.Id;
+		ExA.Attendee__c = instructor.Id;
 		insert ExA;
 	}
 }
