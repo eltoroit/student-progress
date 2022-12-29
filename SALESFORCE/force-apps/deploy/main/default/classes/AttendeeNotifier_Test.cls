@@ -13,12 +13,23 @@ public with sharing class AttendeeNotifier_Test {
 		exercise.Order__c = 1;
 		insert exercise;
 
+		Attendee__c instructor = new Attendee__c();
+		instructor.ChosenDTTM__c = DateTime.now();
+		instructor.Delivery__c = delivery.Id;
+		instructor.Email__c = 'aperez@salesforce.com';
+		instructor.FirstName__c = 'Andres';
+		instructor.IsInstructor__c = true;
+		instructor.LastName__c = 'Perez';
+		instructor.Nickname__c = 'ELTOROIT';
+		instructor.Name = 'Test Name';
+		insert instructor;
+
 		Delivery__c delivery = new Delivery__c();
 		delivery.CurrentExercise__c = exercise.Id;
 		delivery.CurrentExerciseIsActive__c = true;
 		delivery.CurrentExerciseStart__c = Datetime.now();
 		delivery.Name = 'Test Delivery';
-		// delivery.Instructor__c = 'Andres Perez';
+		delivery.InstructorLookup__c = instructor.Id;
 		delivery.IsActive__c = true;
 		insert delivery;
 
@@ -26,17 +37,6 @@ public with sharing class AttendeeNotifier_Test {
 		note.Delivery__c = delivery.Id;
 		note.Note__c = 'Sample note';
 		insert note;
-
-		Attendee__c attendee = new Attendee__c();
-		attendee.ChosenDTTM__c = DateTime.now();
-		attendee.Delivery__c = delivery.Id;
-		attendee.Email__c = 'aperez@salesforce.com';
-		attendee.FirstName__c = 'Andres';
-		attendee.IsInstructor__c = true;
-		attendee.LastName__c = 'Perez';
-		attendee.Nickname__c = 'ELTOROIT';
-		attendee.Name = 'Test Name';
-		insert attendee;
 
 		Course_X_Delivery__c CxD = new Course_X_Delivery__c();
 		CxD.Course__c = course.Id;

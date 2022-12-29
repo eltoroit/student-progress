@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>InstructorLookup__c</fullName>
-    <deleteConstraint>SetNull</deleteConstraint>
+    <deleteConstraint>Restrict</deleteConstraint>
     <externalId>false</externalId>
-    <label>InstructorL</label>
-    <referenceTo>Instructor__c</referenceTo>
+    <label>Instructor</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Attendee selected must be an instructor</errorMessage>
+        <filterItems>
+            <field>Attendee__c.IsInstructor__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Attendee__c</referenceTo>
     <relationshipLabel>Deliveries</relationshipLabel>
     <relationshipName>Deliveries</relationshipName>
-    <required>false</required>
+    <required>true</required>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>
 </CustomField>

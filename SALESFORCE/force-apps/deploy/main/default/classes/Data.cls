@@ -4,7 +4,7 @@ public without sharing class Data {
 		List<Delivery__c> output = new List<Delivery__c>();
 
 		output = [
-			SELECT Id, Name, Instructor__c
+			SELECT Id, Name, InstructorName__c
 			FROM Delivery__c
 			WHERE IsActive__c = TRUE
 			ORDER BY Name ASC
@@ -18,7 +18,7 @@ public without sharing class Data {
 		List<Delivery__c> output = new List<Delivery__c>();
 
 		output = [
-			SELECT Id, Name, Instructor__c, CurrentExercise__r.Name, CurrentExerciseStart__c, CurrentExerciseIsActive__c
+			SELECT Id, Name, InstructorName__c, CurrentExercise__r.Name, CurrentExerciseStart__c, CurrentExerciseIsActive__c
 			FROM Delivery__c
 			WHERE IsActive__c = TRUE AND Id IN (SELECT Delivery__c FROM Course_X_Delivery__c)
 			ORDER BY Name ASC
@@ -190,12 +190,6 @@ public without sharing class Data {
 		} catch (Exception e) {
 			throw new CalloutException(e.getMessage());
 		}
-
-		// return [
-		// 	SELECT CurrentExercise__r.Name, CurrentExerciseIsActive__c, CurrentExerciseStart__c
-		// 	FROM Delivery__c
-		// 	WHERE Id = :deliveryId
-		// ];
 	}
 
 	@AuraEnabled
@@ -325,48 +319,4 @@ public without sharing class Data {
 
 		return output;
 	}
-
-	// // Other
-	// @AuraEnabled(cacheable=true)
-	// public static Exercise__c getActiveExercise(Id deliveryId) {
-	// 	Exercise__c output = null;
-
-	// 	List<Exercise__c> exercises = [
-	// 		SELECT Id, Name
-	// 		FROM Exercise__c
-	// 		WHERE
-	// 			Id IN (
-	// 				SELECT CurrentExercise__c
-	// 				FROM Delivery__c
-	// 				WHERE Id = :deliveryId AND CurrentExerciseIsActive__c = TRUE
-	// 			)
-	// 	];
-	// 	if (exercises.size() == 1) {
-	// 		output = exercises[0];
-	// 	}
-
-	// 	return output;
-	// }
-
-	// @AuraEnabled(cacheable=true)
-	// public static Delivery__c getDeliveryById(Id deliveryId) {
-	// 	Delivery__c output = new Delivery__c();
-
-	// 	output = [
-	// 		SELECT Id, Name, Instructor__c, CurrentExercise__r.Name, CurrentExerciseIsActive__c
-	// 		FROM Delivery__c
-	// 		WHERE Id = :deliveryId
-	// 	];
-
-	// 	return output;
-	// }
-
-	// @AuraEnabled(cacheable=true)
-	// public static Exercise__c getExercisetById(Id exerciseId) {
-	// 	Exercise__c output = new Exercise__c();
-
-	// 	output = [SELECT Id, Name FROM Exercise__c WHERE Id = :exerciseId];
-
-	// 	return output;
-	// }
 }

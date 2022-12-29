@@ -268,7 +268,7 @@ export default class AttendeeRegister extends LightningElement {
 			objectName: "deliveries",
 			data,
 			otherOptions: [{ value: "", label: "Which class are you attending?" }],
-			formatter: (record) => `${record.Name} (${record.Instructor__c})`
+			formatter: (record) => `${record.Name} (${record.InstructorName__c})`
 		});
 		if (Utils.findRecord({ list: this.deliveries.records, Id: currentId })) {
 			this.selectDelivery({ currentId });

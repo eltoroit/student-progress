@@ -2,13 +2,11 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>All</fullName>
     <columns>NAME</columns>
-    <columns>InstructorText__c</columns>
     <columns>IsActive__c</columns>
     <columns>CurrentExercise__c</columns>
     <columns>CurrentExerciseIsActive__c</columns>
     <columns>CurrentExerciseStart__c</columns>
-    <columns>Instructor__c</columns>
-    <columns>InstructorLookup__c</columns>
+    <columns>InstructorName__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>
