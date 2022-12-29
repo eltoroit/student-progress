@@ -13,7 +13,7 @@ import getClassReport from "@salesforce/apex/Instructor.getClassReport";
 export default class ClassProgress extends LightningElement {
 	@api currentCourseDeliveryKey = "";
 
-	students = [];
+	attendees = [];
 	exercises = [];
 	loading = false;
 	tableAllData = [];
@@ -28,51 +28,51 @@ export default class ClassProgress extends LightningElement {
 		// this.wiredGetClassReport = result;
 		// let { data, error } = result;
 		// if (data) {
-		// 	const mapStudents = {};
+		// 	const mapAttendees = {};
 		// 	this.exercises = data.EXERCISES.map((ex) => ({ Id: ex.Id, Name: ex.Name }));
-		// 	this.students = data.STUDENTS.map((student) => {
+		// 	this.attendees = data.ATTENDEES.map((attendee) => {
 		// 		const output = {
-		// 			Id: student.Id,
-		// 			Name: student.Name,
-		// 			IsInstructor: student.IsInstructor__c,
+		// 			Id: attendee.Id,
+		// 			Name: attendee.Name,
+		// 			IsInstructor: attendee.IsInstructor__c,
 		// 			Points: 0,
-		// 			mExS: {}
+		// 			mExA: {}
 		// 		};
-		// 		mapStudents[student.Id] = output;
+		// 		mapAttendees[attendee.Id] = output;
 		// 		return output;
 		// 	});
 		// 	// Calculate points
 		// 	data.EXERCISES.forEach((ex) => {
-		// 		let points = this.students.length;
-		// 		ex.Exercises_X_Students__r.forEach((ExS, index) => {
-		// 			const newExS = {
-		// 				ExerciseId: ExS.Exercise__c,
-		// 				StudentId: ExS.Student__c,
+		// 		let points = this.attendees.length;
+		// 		ex.Exercises_X_Attendees__r.forEach((ExA, index) => {
+		// 			const newExA = {
+		// 				ExerciseId: ExA.Exercise__c,
+		// 				AttendeeId: ExA.Attendee__c,
 		// 				Points: 0,
 		// 				Ranking: 0,
-		// 				Status: ExS.Status__c,
-		// 				DTTM: new Date(ExS.LastModifiedDate)
+		// 				Status: ExA.Status__c,
+		// 				DTTM: new Date(ExA.LastModifiedDate)
 		// 			};
-		// 			if (ExS.Status__c === "03-DONE") {
-		// 				newExS.Ranking = index + 1;
-		// 				newExS.Points = points--;
+		// 			if (ExA.Status__c === "03-DONE") {
+		// 				newExA.Ranking = index + 1;
+		// 				newExA.Points = points--;
 		// 			}
-		// 			const student = mapStudents[ExS.Student__c];
-		// 			student.Points += newExS.Points;
-		// 			student.mExS[ExS.Exercise__c] = newExS;
+		// 			const attendee = mapAttendees[ExA.Attendee__c];
+		// 			attendee.Points += newExA.Points;
+		// 			attendee.mExA[ExA.Exercise__c] = newExA;
 		// 		});
 		// 	});
 		// 	// Build the output data
-		// 	this.tableAllData = this.students.map((student) => {
+		// 	this.tableAllData = this.attendees.map((attendee) => {
 		// 		const output = {
-		// 			StudentId: student.Id,
-		// 			Name: student.Name,
-		// 			Points: student.Points,
-		// 			IsInstructor: student.IsInstructor,
+		// 			AttendeeId: attendee.Id,
+		// 			Name: attendee.Name,
+		// 			Points: attendee.Points,
+		// 			IsInstructor: attendee.IsInstructor,
 		// 			EX: []
 		// 		};
 		// 		this.exercises.forEach((ex, index) => {
-		// 			const ExS = student.mExS[ex.Id];
+		// 			const ExA = attendee.mExA[ex.Id];
 		// 			const paddedIndex = `${index}`.padStart(3, "0");
 		// 			const tmp = {
 		// 				index: paddedIndex,
@@ -81,17 +81,17 @@ export default class ClassProgress extends LightningElement {
 		// 				status: "?",
 		// 				emoji: ""
 		// 			};
-		// 			if (ExS) {
-		// 				tmp.ranking = ExS.Ranking;
-		// 				tmp.points = ExS.Points;
-		// 				tmp.status = ExS.Status;
-		// 				tmp.emoji = Utils.getEmoji({ status: ExS.Status });
+		// 			if (ExA) {
+		// 				tmp.ranking = ExA.Ranking;
+		// 				tmp.points = ExA.Points;
+		// 				tmp.status = ExA.Status;
+		// 				tmp.emoji = Utils.getEmoji({ status: ExA.Status });
 		// 			}
 		// 			output.EX.push(tmp);
 		// 		});
 		// 		return output;
 		// 	});
-		// 	// Only the students
+		// 	// Only the attendees
 		// 	this.tableAllData = this.tableAllData.filter((row) => !row.IsInstructor);
 		// 	// Sort it :-)
 		// 	this.tableAllData = this.tableAllData.sort((a, b) => -(a.Points < b.Points ? -1 : 1));
@@ -138,7 +138,7 @@ export default class ClassProgress extends LightningElement {
 				datasets: [
 					{
 						backgroundColor: "#639dff",
-						label: "Students",
+						label: "Attendees",
 						data
 					}
 				]
@@ -173,7 +173,7 @@ export default class ClassProgress extends LightningElement {
 	async onShowTable() {
 		await instructorProgressTable.open({
 			size: "large",
-			studentsData: this.tableAllData
+			attendeesData: this.tableAllData
 		});
 	}
 }

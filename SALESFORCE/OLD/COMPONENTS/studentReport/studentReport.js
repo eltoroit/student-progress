@@ -1,17 +1,17 @@
 import Utils from "c/utils";
 import { api, LightningElement, wire } from "lwc";
 // import { refreshApex } from "@salesforce/apex";
-import updateStatus from "@salesforce/apex/Student.updateStatus";
-import getStudentById from "@salesforce/apex/Student.getStudentById";
-import getDeliveryById from "@salesforce/apex/Student.getDeliveryById";
-import getExercisetById from "@salesforce/apex/Student.getExercisetById";
+import updateStatus from "@salesforce/apex/Attendee.updateStatus";
+import getAttendeeById from "@salesforce/apex/Attendee.getAttendeeById";
+import getDeliveryById from "@salesforce/apex/Attendee.getDeliveryById";
+import getExercisetById from "@salesforce/apex/Attendee.getExercisetById";
 
-export default class Student extends LightningElement {
+export default class Attendee extends LightningElement {
 	forceRefresh = 0;
 	loading = true;
-	student = {};
+	attendee = {};
 	errorMessage = "";
-	@api studentId = null;
+	@api attendeeId = null;
 
 	delivery = {};
 	wiredDeliver = null;
@@ -28,13 +28,13 @@ export default class Student extends LightningElement {
 		// }, 5e3);
 	}
 
-	@wire(getStudentById, { studentId: "$studentId" })
-	wired_GetStudentById(result) {
+	@wire(getAttendeeById, { attendeeId: "$attendeeId" })
+	wired_GetAttendeeById(result) {
 		let { data, error } = result;
 		if (data) {
-			this.student = data;
+			this.attendee = data;
 		} else if (error) {
-			this.student = {};
+			this.attendee = {};
 		}
 	}
 
@@ -99,7 +99,7 @@ export default class Student extends LightningElement {
 	}
 	updateStatus(status) {
 		this.loading = true;
-		updateStatus({ exerciseId: this.exerciseId, studentId: this.studentId, status })
+		updateStatus({ exerciseId: this.exerciseId, attendeeId: this.attendeeId, status })
 			.then(() => {
 				Utils.showNotification(this, { title: "Success", message: "Thanks for completing the exercise" });
 				setTimeout(() => {

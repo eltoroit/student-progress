@@ -1,20 +1,20 @@
 import Utils from "c/utils";
 import { api, LightningElement } from "lwc";
 
-import pickRandomStudent from "@salesforce/apex/Data.pickRandomStudent";
+import pickRandomAttendee from "@salesforce/apex/Data.pickRandomAttendee";
 import getActiveDeliveries from "@salesforce/apex/Data.getActiveDeliveries";
 import getDeliveryProgress from "@salesforce/apex/Data.getDeliveryProgress";
 import getExerciseProgress from "@salesforce/apex/Data.getExerciseProgress";
 import getCoursesPerDelivery from "@salesforce/apex/Data.getCoursesPerDelivery";
-import getStudentsForDelivery from "@salesforce/apex/Data.getStudentsForDelivery";
+import getAttendeesForDelivery from "@salesforce/apex/Data.getAttendeesForDelivery";
 import getAllExercisesForCourse from "@salesforce/apex/Data.getAllExercisesForCourse";
-import getStudentDataByStudentId from "@salesforce/apex/Data.getStudentDataByStudentId";
+import getAttendeeDataByAttendeeId from "@salesforce/apex/Data.getAttendeeDataByAttendeeId";
 import getActiveDeliveriesWithCourses from "@salesforce/apex/Data.getActiveDeliveriesWithCourses";
 
-import registerStudent from "@salesforce/apex/Data.registerStudent";
+import registerAttendee from "@salesforce/apex/Data.registerAttendee";
 import startStopExercise from "@salesforce/apex/Data.startStopExercise";
-import updateStudentStatus from "@salesforce/apex/Data.updateStudentStatus";
-import validateStudentRegistration from "@salesforce/apex/Data.validateStudentRegistration";
+import updateAttendeeStatus from "@salesforce/apex/Data.updateAttendeeStatus";
+import validateAttendeeRegistration from "@salesforce/apex/Data.validateAttendeeRegistration";
 
 export default class ApexManager extends LightningElement {
 	@api filterKey = null;
@@ -54,15 +54,15 @@ export default class ApexManager extends LightningElement {
 		}
 	}
 
-	@api fetchStudentsForDelivery({ deliveryId }) {
+	@api fetchAttendeesForDelivery({ deliveryId }) {
 		if (deliveryId) {
-			this.callApex({ obj: "StudentsForDelivery", apexPromise: getStudentsForDelivery({ deliveryId }), forceEvent: true });
+			this.callApex({ obj: "AttendeesForDelivery", apexPromise: getAttendeesForDelivery({ deliveryId }), forceEvent: true });
 		}
 	}
 
-	@api fetchStudentDataByStudentId({ studentId }) {
-		if (studentId) {
-			this.callApex({ obj: "StudentDataByStudentId", apexPromise: getStudentDataByStudentId({ studentId }), forceEvent: true });
+	@api fetchAttendeeDataByAttendeeId({ attendeeId }) {
+		if (attendeeId) {
+			this.callApex({ obj: "AttendeeDataByAttendeeId", apexPromise: getAttendeeDataByAttendeeId({ attendeeId }), forceEvent: true });
 		}
 	}
 	//#endregion
@@ -75,19 +75,19 @@ export default class ApexManager extends LightningElement {
 		}
 	}
 
-	@api async doUpdateStudentStatus({ exerciseId, studentId, status }) {
-		if (exerciseId && studentId) {
-			await this.callApex({ obj: null, apexPromise: updateStudentStatus({ exerciseId, studentId, status }), forceEvent: false });
+	@api async doUpdateAttendeeStatus({ exerciseId, attendeeId, status }) {
+		if (exerciseId && attendeeId) {
+			await this.callApex({ obj: null, apexPromise: updateAttendeeStatus({ exerciseId, attendeeId, status }), forceEvent: false });
 		} else {
-			throw new Error("Exercise and studentId are required");
+			throw new Error("Exercise and attendeeId are required");
 		}
 	}
 
-	@api async doValidateStudentRegistration({ deliveryId, studentId }) {
+	@api async doValidateAttendeeRegistration({ deliveryId, attendeeId }) {
 		let output = null;
-		if (deliveryId && studentId) {
+		if (deliveryId && attendeeId) {
 			try {
-				output = await this.callApex({ obj: null, apexPromise: validateStudentRegistration({ deliveryId, studentId }), forceEvent: false });
+				output = await this.callApex({ obj: null, apexPromise: validateAttendeeRegistration({ deliveryId, attendeeId }), forceEvent: false });
 			} catch (ex) {
 				output = null;
 			}
@@ -95,11 +95,11 @@ export default class ApexManager extends LightningElement {
 		return output;
 	}
 
-	@api async doRegisterStudent({ deliveryId, student }) {
+	@api async doRegisterAttendee({ deliveryId, attendee }) {
 		let output = null;
-		if (deliveryId && student) {
+		if (deliveryId && attendee) {
 			try {
-				output = await this.callApex({ obj: null, apexPromise: registerStudent({ deliveryId, student }), forceEvent: false });
+				output = await this.callApex({ obj: null, apexPromise: registerAttendee({ deliveryId, attendee }), forceEvent: false });
 			} catch (ex) {
 				output = null;
 			}
@@ -107,11 +107,11 @@ export default class ApexManager extends LightningElement {
 		return output;
 	}
 
-	@api async doPickRandomStudent({ deliveryId }) {
+	@api async doPickRandomAttendee({ deliveryId }) {
 		let output = null;
 		if (deliveryId) {
 			try {
-				output = await this.callApex({ obj: null, apexPromise: pickRandomStudent({ deliveryId }), forceEvent: false });
+				output = await this.callApex({ obj: null, apexPromise: pickRandomAttendee({ deliveryId }), forceEvent: false });
 			} catch (ex) {
 				output = null;
 			}
@@ -124,8 +124,8 @@ export default class ApexManager extends LightningElement {
 		const { entityName, deliveryId, count } = event.detail;
 		switch (entityName) {
 			case "Delivery__c":
-			case "Student__c":
-			case "Exercise_X_Student__c": {
+			case "Attendee__c":
+			case "Exercise_X_Attendee__c": {
 				this.dispatchEvent(
 					new CustomEvent("data", {
 						detail: {

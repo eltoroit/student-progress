@@ -3,8 +3,8 @@ import { LightningElement, wire } from "lwc";
 // import { refreshApex } from "@salesforce/apex";
 import getActiveCxDs from "@salesforce/apex/Instructor.getActiveCxDs";
 import startStopExercise from "@salesforce/apex/Instructor.startStopExercise";
-import updateStudentStatus from "@salesforce/apex/Instructor.updateStudentStatus";
-import getStudentsProgress from "@salesforce/apex/Instructor.getStudentsProgress";
+import updateAttendeeStatus from "@salesforce/apex/Instructor.updateAttendeeStatus";
+import getAttendeesProgress from "@salesforce/apex/Instructor.getAttendeesProgress";
 import getAllExercisesForCxD from "@salesforce/apex/Instructor.getAllExercisesForCxD";
 
 const actions = [
@@ -29,7 +29,7 @@ export default class InstructorCurrent extends LightningElement {
 	loading = true;
 	forceRefresh = 0;
 	errorMessage = "";
-	randomStudent = "";
+	randomAttendee = "";
 	activeExerciseTimer = null;
 	activeExerciseStartAt = null;
 	timers = { progress: null, screen: null };
@@ -38,13 +38,13 @@ export default class InstructorCurrent extends LightningElement {
 	summary = "";
 	exercises = [];
 	deliveries = [];
-	activeExercise = {}; // The exercise the students are working on
+	activeExercise = {}; // The exercise the attendees are working on
 	currentExercise = {}; // The exercise currently being selected (displayed)
 	currentCourseDelivery = {}; // The CxD being selected
 	currentCourseDeliveryKey = "";
 
 	wiredActiveCxDs = null;
-	wiredStudentsProgress = null;
+	wiredAttendeesProgress = null;
 	wiredAllExercisesForCxD = null;
 
 	// Table
@@ -91,7 +91,7 @@ export default class InstructorCurrent extends LightningElement {
 		ui.pnlDeliveriesSelector = true;
 		ui.pnlExercisesSelector = currentCxD;
 		ui.pnlActiveExerciseData = exIsActive;
-		ui.pnlStudents = exCurrent.Id;
+		ui.pnlAttendees = exCurrent.Id;
 
 		return ui;
 	}
@@ -155,13 +155,13 @@ export default class InstructorCurrent extends LightningElement {
 		}
 	}
 
-	@wire(getStudentsProgress, {
+	@wire(getAttendeesProgress, {
 		CxD: "$currentCourseDeliveryKey",
 		exerciseId: "$currentExerciseId",
 		forceRefresh: "$forceRefresh"
 	})
-	wired_GetStudentsProgress(result) {
-		// this.wiredStudentsProgress = result;
+	wired_GetAttendeesProgress(result) {
+		// this.wiredAttendeesProgress = result;
 		// let { data, error } = result;
 		// if (data) {
 		// 	const summary = {
@@ -171,19 +171,19 @@ export default class InstructorCurrent extends LightningElement {
 		// 	if (!data.TABLE) {
 		// 		return;
 		// 	}
-		// 	this.progress = data.TABLE.map((student) => {
+		// 	this.progress = data.TABLE.map((attendee) => {
 		// 		const row = {
-		// 			studentId: student.Id,
-		// 			name: student.Name,
+		// 			attendeeId: attendee.Id,
+		// 			name: attendee.Name,
 		// 			status: ""
 		// 		};
-		// 		if (student.IsInstructor__c) {
+		// 		if (attendee.IsInstructor__c) {
 		// 			row.name += ` 🧑‍🏫`;
 		// 			row.isInstructor = true;
 		// 		}
-		// 		if (student.Exercises_X_Students__r?.length > 0) {
-		// 			const rowData = student.Exercises_X_Students__r[0];
-		// 			row.exsId = rowData?.Id;
+		// 		if (attendee.Exercises_X_Attendees__r?.length > 0) {
+		// 			const rowData = attendee.Exercises_X_Attendees__r[0];
+		// 			row.ExAId = rowData?.Id;
 		// 			row.status = rowData?.Status__c;
 		// 			row.emoji = Utils.getEmoji({ status: rowData?.Status__c });
 		// 			row.startAt = rowData.CreatedDate;
@@ -292,21 +292,21 @@ export default class InstructorCurrent extends LightningElement {
 		debugger;
 		/*
 			Works with a quick solution, but not a good solution
-			It's possible to choose A, B, C, A, D... Having a student be selected again soon after it was previously selected.
-			Or a student that is not selected often enough
-			Maintain a list of unselected students and randomize from there :-)
+			It's possible to choose A, B, C, A, D... Having a attendee be selected again soon after it was previously selected.
+			Or a attendee that is not selected often enough
+			Maintain a list of unselected attendees and randomize from there :-)
 			This list should be in the server, since a page refresh would reset it.
-			Have the random student be chosen via Apex where a field can be set
+			Have the random attendee be chosen via Apex where a field can be set
 		*/
-		const prevStudent = this.randomStudent;
+		const prevAttendee = this.randomAttendee;
 		do {
-			let students = this.progress.filter((row) => !row.isInstructor);
-			students = students.map((row) => row.name);
-			let idx = Math.floor(Math.random() * students.length);
-			this.randomStudent = students[idx];
-		} while (this.randomStudent === prevStudent);
+			let attendees = this.progress.filter((row) => !row.isInstructor);
+			attendees = attendees.map((row) => row.name);
+			let idx = Math.floor(Math.random() * attendees.length);
+			this.randomAttendee = attendees[idx];
+		} while (this.randomAttendee === prevAttendee);
 		// eslint-disable-next-line no-alert
-		alert(this.randomStudent);
+		alert(this.randomAttendee);
 	}
 
 	onNextClick() {
@@ -335,7 +335,7 @@ export default class InstructorCurrent extends LightningElement {
 		// 	// try {
 		// 	// 	await refreshApex(this.wiredActiveCxDs);
 		// 	// 	await refreshApex(this.wiredAllExercisesForCxD);
-		// 	// 	await refreshApex(this.wiredStudentsProgress);
+		// 	// 	await refreshApex(this.wiredAttendeesProgress);
 		// 	// 	this.errorMessage = "";
 		// 	// } catch (error) {
 		// 	// 	this.errorMessage = `Error refreshing data. ${error.statusText} ${error.body.message}`;
@@ -352,9 +352,9 @@ export default class InstructorCurrent extends LightningElement {
 
 		switch (actionNameCommand) {
 			case "Status":
-				updateStudentStatus({
-					ExS: row.exsId,
-					studentId: row.studentId,
+				updateAttendeeStatus({
+					ExA: row.ExAId,
+					attendeeId: row.attendeeId,
 					exerciseId: this.currentExerciseId,
 					status: actionValue
 				})

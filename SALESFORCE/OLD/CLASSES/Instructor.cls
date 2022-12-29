@@ -39,9 +39,9 @@ public without sharing class Instructor {
 		return null;
 	}
 
-	// Display table of student status for exercise
+	// Display table of attendee status for exercise
 	@AuraEnabled(cacheable=true)
-	public static Map<String, Object> getStudentsProgress(String CxD, String exerciseId) {
+	public static Map<String, Object> getAttendeesProgress(String CxD, String exerciseId) {
 		// Map<String, Object> output = new Map<String, Object>();
 
 		// System.debug('*' + CxD + '*');
@@ -50,17 +50,17 @@ public without sharing class Instructor {
 		// 	String courseId = parts[0];
 		// 	String deliveryId = parts[1];
 
-		// 	List<Student__c> students = [
+		// 	List<Attendee__c> attendees = [
 		// 		SELECT
 		// 			Id,
 		// 			Name,
 		// 			IsInstructor__c,
 		// 			(
 		// 				SELECT ID, Status__c, CreatedDate, lastModifiedDate
-		// 				FROM Exercises_X_Students__r
+		// 				FROM Exercises_X_Attendees__r
 		// 				WHERE Exercise__c = :exerciseId
 		// 			)
-		// 		FROM Student__c
+		// 		FROM Attendee__c
 		// 		WHERE Delivery__c = :deliveryId
 		// 		ORDER BY Name ASC
 		// 	];
@@ -74,7 +74,7 @@ public without sharing class Instructor {
 		// 	} catch (Exception ex) {
 		// 		// Do not handle this, just ignore it.
 		// 	}
-		// 	output.put('TABLE', students);
+		// 	output.put('TABLE', attendees);
 		// 	output.put('DELIVERY', delivery);
 		// 	output.put('EXERCISES', Instructor.getAllExercisesForCxD(CxD));
 		// }
@@ -95,9 +95,9 @@ public without sharing class Instructor {
 		// 	String courseId = parts[0];
 		// 	String deliveryId = parts[1];
 
-		// 	List<Student__c> students = [
+		// 	List<Attendee__c> attendees = [
 		// 		SELECT Id, Name, IsInstructor__c
-		// 		FROM Student__c
+		// 		FROM Attendee__c
 		// 		WHERE Delivery__c = :deliveryId
 		// 		ORDER BY Name
 		// 	];
@@ -106,21 +106,21 @@ public without sharing class Instructor {
 		// 			Id,
 		// 			Name,
 		// 			(
-		// 				SELECT ID, Student__c, Student__r.Name, Status__c, lastModifiedDate
-		// 				FROM Exercises_X_Students__r
-		// 				WHERE Student__c IN :students
+		// 				SELECT ID, Attendee__c, Attendee__r.Name, Status__c, lastModifiedDate
+		// 				FROM Exercises_X_Attendees__r
+		// 				WHERE Attendee__c IN :attendees
 		// 				ORDER BY lastModifiedDate ASC
 		// 			)
 		// 		FROM Exercise__c
 		// 		WHERE
 		// 			Id IN (
 		// 				SELECT Exercise__c
-		// 				FROM Exercise_X_Student__c
-		// 				WHERE Student__r.Delivery__c = :deliveryId
+		// 				FROM Exercise_X_Attendee__c
+		// 				WHERE Attendee__r.Delivery__c = :deliveryId
 		// 			)
 		// 		ORDER BY Name
 		// 	];
-		// 	output.put('STUDENTS', students);
+		// 	output.put('ATTENDEES', attendees);
 		// 	output.put('EXERCISES', exercises);
 		// }
 
@@ -147,53 +147,53 @@ public without sharing class Instructor {
 		// 				CurrentExerciseStart__c = Datetime.now()
 		// 			);
 
-		// 			List<Student__c> students = [
+		// 			List<Attendee__c> attendees = [
 		// 				SELECT Id, Name
-		// 				FROM Student__c
+		// 				FROM Attendee__c
 		// 				WHERE Delivery__c = :deliveryId
 		// 				ORDER BY Name
 		// 			];
 
-		// 			List<Exercise_X_Student__c> existingExS = [
-		// 				SELECT Student__c
-		// 				FROM Exercise_X_Student__c
-		// 				WHERE Student__r.Delivery__c = :deliveryId AND Exercise__c = :exerciseId
+		// 			List<Exercise_X_Attendee__c> existingExA = [
+		// 				SELECT Attendee__c
+		// 				FROM Exercise_X_Attendee__c
+		// 				WHERE Attendee__r.Delivery__c = :deliveryId AND Exercise__c = :exerciseId
 		// 			];
 
-		// 			if (existingExS.size() < students.size()) {
-		// 				// Must create missing ExS
-		// 				Set<Id> missingStudentIds = new Set<Id>();
-		// 				for (Student__c student : students) {
-		// 					missingStudentIds.add(student.Id);
+		// 			if (existingExA.size() < attendees.size()) {
+		// 				// Must create missing ExA
+		// 				Set<Id> missingAttendeeIds = new Set<Id>();
+		// 				for (Attendee__c attendee : attendees) {
+		// 					missingAttendeeIds.add(attendee.Id);
 		// 				}
-		// 				for (Exercise_X_Student__c ExS : existingExS) {
-		// 					missingStudentIds.remove(ExS.Student__c);
+		// 				for (Exercise_X_Attendee__c ExA : existingExA) {
+		// 					missingAttendeeIds.remove(ExA.Attendee__c);
 		// 				}
-		// 				if (missingStudentIds.size() > 0) {
-		// 					List<Exercise_X_Student__c> newExS = new List<Exercise_X_Student__c>();
-		// 					for (Id studentId : missingStudentIds) {
-		// 						newExS.add(
-		// 							new Exercise_X_Student__c(
-		// 								Student__c = studentId,
+		// 				if (missingAttendeeIds.size() > 0) {
+		// 					List<Exercise_X_Attendee__c> newExA = new List<Exercise_X_Attendee__c>();
+		// 					for (Id attendeeId : missingAttendeeIds) {
+		// 						newExA.add(
+		// 							new Exercise_X_Attendee__c(
+		// 								Attendee__c = attendeeId,
 		// 								Exercise__c = exerciseId,
 		// 								Status__c = '00-START'
 		// 							)
 		// 						);
 		// 					}
-		// 					insert newExS;
+		// 					insert newExA;
 		// 				} else {
 		// 					throw new CalloutException('I thought you said we were missing records...');
 		// 				}
-		// 			} else if (students.size() == existingExS.size()) {
+		// 			} else if (attendees.size() == existingExA.size()) {
 		// 				// Good to go
 		// 			} else {
 		// 				// Why?
 		// 				throw new CalloutException(
 		// 					'There are [' +
-		// 					existingExS.size() +
-		// 					'] ExS records, but only [' +
-		// 					students.size() +
-		// 					'] students'
+		// 					existingExA.size() +
+		// 					'] ExA records, but only [' +
+		// 					attendees.size() +
+		// 					'] attendees'
 		// 				);
 		// 			}
 		// 		} else {
@@ -214,16 +214,16 @@ public without sharing class Instructor {
 	}
 
 	@AuraEnabled
-	public static void updateStudentStatus(String ExS, String exerciseId, String studentId, String status) {
-		// Exercise_X_Student__c record = new Exercise_X_Student__c(
-		// 	Student__c = studentId,
+	public static void updateAttendeeStatus(String ExA, String exerciseId, String attendeeId, String status) {
+		// Exercise_X_Attendee__c record = new Exercise_X_Attendee__c(
+		// 	Attendee__c = attendeeId,
 		// 	Exercise__c = exerciseId,
 		// 	Status__c = status
 		// );
-		// if (String.isEmpty(ExS)) {
+		// if (String.isEmpty(ExA)) {
 		// 	insert record;
 		// } else {
-		// 	record.Id = ExS;
+		// 	record.Id = ExA;
 		// 	update record;
 		// }
 	}

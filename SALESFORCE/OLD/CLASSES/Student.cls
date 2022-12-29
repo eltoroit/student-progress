@@ -1,4 +1,4 @@
-public without sharing class Student {
+public without sharing class Attendee {
 	@AuraEnabled(cacheable=true)
 	public static List<Delivery__c> getActiveDeliveries() {
 		// List<Delivery__c> output = new List<Delivery__c>();
@@ -15,22 +15,22 @@ public without sharing class Student {
 	}
 
 	@AuraEnabled(cacheable=true)
-	public static List<Student__c> getStudentsForDelivery(String deliveryId) {
-		// List<Student__c> output = new List<Student__c>();
+	public static List<Attendee__c> getAttendeesForDelivery(String deliveryId) {
+		// List<Attendee__c> output = new List<Attendee__c>();
 
 		// // System.debug(deliveryId);
-		// // output = [SELECT Id, Name FROM Student__c WHERE Delivery__c = :deliveryId ORDER BY Name ASC];
+		// // output = [SELECT Id, Name FROM Attendee__c WHERE Delivery__c = :deliveryId ORDER BY Name ASC];
 
 		// return output;
 		return null;
 	}
 
 	@AuraEnabled(cacheable=true)
-	public static Student__c getStudentById(String studentId) {
-		// Student__c output = new Student__c();
+	public static Attendee__c getAttendeeById(String attendeeId) {
+		// Attendee__c output = new Attendee__c();
 
-		// System.debug(studentId);
-		// output = [SELECT Id, Name FROM Student__c WHERE Id = :studentId];
+		// System.debug(attendeeId);
+		// output = [SELECT Id, Name FROM Attendee__c WHERE Id = :attendeeId];
 
 		// return output;
 		return null;
@@ -86,33 +86,33 @@ public without sharing class Student {
 	}
 
 	@AuraEnabled
-	public static Student__c registerStudent(String deliveryId, String studentName) {
-		// Student__c student = new Student__c();
+	public static Attendee__c registerAttendee(String deliveryId, String attendeeName) {
+		// Attendee__c attendee = new Attendee__c();
 
 		// System.debug(deliveryId);
-		// System.debug(studentName);
-		// student = new Student__c(Name = studentName, delivery__c = deliveryId, Key__c = deliveryId + '|' + studentName);
-		// upsert student Key__c;
+		// System.debug(attendeeName);
+		// attendee = new Attendee__c(Name = attendeeName, delivery__c = deliveryId, Key__c = deliveryId + '|' + attendeeName);
+		// upsert attendee Key__c;
 
-		// return student;
+		// return attendee;
 		return null;
 	}
 
 	@AuraEnabled(cacheable=true)
-	public static Map<String, Object> validateRegistration(String deliveryId, String studentId) {
+	public static Map<String, Object> validateRegistration(String deliveryId, String attendeeId) {
 		// Map<String, Object> output = new Map<String, Object>();
 		// List<String> errors = new List<String>();
 
 		// System.debug(deliveryId);
-		// System.debug(studentId);
+		// System.debug(attendeeId);
 
-		// output.put('student', '');
+		// output.put('attendee', '');
 		// output.put('delivery', '');
-		// List<Student__c> students = [SELECT Id, Name FROM Student__c WHERE Id = :studentId AND Delivery__c = :deliveryId];
-		// if (students.size() == 1) {
-		// 	output.put('student', students[0]);
+		// List<Attendee__c> attendees = [SELECT Id, Name FROM Attendee__c WHERE Id = :attendeeId AND Delivery__c = :deliveryId];
+		// if (attendees.size() == 1) {
+		// 	output.put('attendee', attendees[0]);
 		// } else {
-		// 	errors.add('Invalid studentId');
+		// 	errors.add('Invalid attendeeId');
 		// }
 		// List<Delivery__c> deliveries = [SELECT Id, Name FROM Delivery__c WHERE Id = :deliveryId AND IsActive__c = TRUE];
 		// if (deliveries.size() == 1) {
@@ -129,14 +129,14 @@ public without sharing class Student {
 	}
 
 	@AuraEnabled
-	public static void updateStatus(String exerciseId, String studentId, String status) {
+	public static void updateStatus(String exerciseId, String attendeeId, String status) {
 		// System.debug(exerciseId);
-		// System.debug(studentId);
+		// System.debug(attendeeId);
 		// System.debug(status);
-		// List<Exercise_X_Student__c> ExSs = [
-		// 	SELECT Id, Name, Exercise__c, Student__c, Status__c
-		// 	FROM Exercise_X_Student__c
-		// 	WHERE Student__c = :studentId AND Exercise__c = :exerciseId
+		// List<Exercise_X_Attendee__c> ExAs = [
+		// 	SELECT Id, Name, Exercise__c, Attendee__c, Status__c
+		// 	FROM Exercise_X_Attendee__c
+		// 	WHERE Attendee__c = :attendeeId AND Exercise__c = :exerciseId
 		// ];
 		// // This code could be removed later... :-)
 		// // START
@@ -158,15 +158,15 @@ public without sharing class Student {
 		// 	}
 		// }
 		// // END
-		// Exercise_X_Student__c ExS;
-		// if (ExSs.size() == 0) {
-		// 	ExS = new Exercise_X_Student__c(Exercise__c = exerciseId, Student__c = studentId);
-		// } else if (ExSs.size() == 1) {
-		// 	ExS = ExSs[0];
+		// Exercise_X_Attendee__c ExA;
+		// if (ExAs.size() == 0) {
+		// 	ExA = new Exercise_X_Attendee__c(Exercise__c = exerciseId, Attendee__c = attendeeId);
+		// } else if (ExAs.size() == 1) {
+		// 	ExA = ExAs[0];
 		// } else {
-		// 	throw new AuraException('Multiple records per student');
+		// 	throw new AuraException('Multiple records per attendee');
 		// }
-		// ExS.Status__c = status;
-		// upsert ExS;
+		// ExA.Status__c = status;
+		// upsert ExA;
 	}
 }

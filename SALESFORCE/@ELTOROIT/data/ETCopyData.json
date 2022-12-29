@@ -1,6 +1,6 @@
 {
-  "orgSource": "soStudents",
-  "orgDestination": "soStudents",
+  "orgSource": "soAttendees",
+  "orgDestination": "soAttendees",
   "sObjectsData": [
     {
       "name": "Course__c",
@@ -35,7 +35,7 @@
       "orderBy": "Id"
     },
     {
-      "name": "Exercise_X_Student__c",
+      "name": "Exercise_X_Attendee__c",
       "ignoreFields": "",
       "externalIdField": null,
       "twoPassReferenceFields": "",
@@ -51,7 +51,7 @@
       "orderBy": "Id"
     },
     {
-      "name": "Student__c",
+      "name": "Attendee__c",
       "ignoreFields": "",
       "externalIdField": null,
       "twoPassReferenceFields": "",

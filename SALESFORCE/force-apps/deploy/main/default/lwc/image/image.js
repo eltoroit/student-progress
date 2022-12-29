@@ -1,5 +1,5 @@
 import { api, LightningElement } from "lwc";
-import StudentsSR from "@salesforce/resourceUrl/Students";
+import AttendeesSR from "@salesforce/resourceUrl/Attendees";
 
 export default class Image extends LightningElement {
 	@api maxWidth;
@@ -18,7 +18,7 @@ export default class Image extends LightningElement {
 	}
 
 	computeUrl() {
-		this.url = `${StudentsSR}/${this.pathInSr}?counter=${this.counter}`;
+		this.url = `${AttendeesSR}/${this.pathInSr}?counter=${this.counter}`;
 	}
 
 	connectedCallback() {

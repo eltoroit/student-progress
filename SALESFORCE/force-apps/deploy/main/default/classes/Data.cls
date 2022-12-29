@@ -62,9 +62,9 @@ public without sharing class Data {
 	public static Map<String, Object> getDeliveryProgress(Id deliveryId) {
 		Map<String, Object> output = new Map<String, Object>();
 
-		List<Student__c> students = [
+		List<Attendee__c> attendees = [
 			SELECT Id, Name, IsInstructor__c
-			FROM Student__c
+			FROM Attendee__c
 			WHERE Delivery__c = :deliveryId
 			ORDER BY Name
 		];
@@ -73,29 +73,29 @@ public without sharing class Data {
 				Id,
 				Name,
 				(
-					SELECT ID, Student__c, Student__r.Name, Status__c, lastModifiedDate
-					FROM Exercises_X_Students__r
-					WHERE Student__c IN :students
+					SELECT ID, Attendee__c, Attendee__r.Name, Status__c, lastModifiedDate
+					FROM Exercises_X_Attendees__r
+					WHERE Attendee__c IN :attendees
 					ORDER BY lastModifiedDate ASC
 				)
 			FROM Exercise__c
 			WHERE
 				Id IN (
 					SELECT Exercise__c
-					FROM Exercise_X_Student__c
-					WHERE Student__r.Delivery__c = :deliveryId
+					FROM Exercise_X_Attendee__c
+					WHERE Attendee__r.Delivery__c = :deliveryId
 				)
 			ORDER BY Name
 		];
-		output.put('STUDENTS', students);
+		output.put('ATTENDEES', attendees);
 		output.put('EXERCISES', exercises);
 
 		return output;
 	}
 
 	@AuraEnabled
-	public static List<Student__c> getExerciseProgress(Id deliveryId, Id exerciseId) {
-		List<Student__c> output = new List<Student__c>();
+	public static List<Attendee__c> getExerciseProgress(Id deliveryId, Id exerciseId) {
+		List<Attendee__c> output = new List<Attendee__c>();
 
 		output = [
 			SELECT
@@ -104,10 +104,10 @@ public without sharing class Data {
 				IsInstructor__c,
 				(
 					SELECT Id, Status__c, CreatedDate, lastModifiedDate
-					FROM Exercises_X_Students__r
+					FROM Exercises_X_Attendees__r
 					WHERE Exercise__c = :exerciseId
 				)
-			FROM Student__c
+			FROM Attendee__c
 			WHERE Delivery__c = :deliveryId
 			ORDER BY Name ASC
 		];
@@ -116,12 +116,12 @@ public without sharing class Data {
 	}
 
 	@AuraEnabled
-	public static List<Student__c> getStudentsForDelivery(Id deliveryId) {
-		List<Student__c> output = new List<Student__c>();
+	public static List<Attendee__c> getAttendeesForDelivery(Id deliveryId) {
+		List<Attendee__c> output = new List<Attendee__c>();
 
 		output = [
 			SELECT Id, Name, FirstName__c, LastName__c, Nickname__c, Email__c
-			FROM Student__c
+			FROM Attendee__c
 			WHERE Delivery__c = :deliveryId
 			ORDER BY Name ASC
 		];
@@ -146,42 +146,42 @@ public without sharing class Data {
 				delivery.CurrentExerciseIsActive__c = true;
 				update delivery;
 
-				// Create ExS records
-				List<Student__c> students = [
+				// Create ExA records
+				List<Attendee__c> attendees = [
 					SELECT Id, Name
-					FROM Student__c
+					FROM Attendee__c
 					WHERE Delivery__c = :deliveryId
 					ORDER BY Name
 				];
 
-				List<Exercise_X_Student__c> existingExS = [
-					SELECT Student__c
-					FROM Exercise_X_Student__c
-					WHERE Student__r.Delivery__c = :deliveryId AND Exercise__c = :exerciseId
+				List<Exercise_X_Attendee__c> existingExA = [
+					SELECT Attendee__c
+					FROM Exercise_X_Attendee__c
+					WHERE Attendee__r.Delivery__c = :deliveryId AND Exercise__c = :exerciseId
 				];
 
-				if (existingExS.size() < students.size()) {
-					Set<Id> missingStudentIds = new Set<Id>();
-					for (Student__c student : students) {
-						missingStudentIds.add(student.Id);
+				if (existingExA.size() < attendees.size()) {
+					Set<Id> missingAttendeeIds = new Set<Id>();
+					for (Attendee__c attendee : attendees) {
+						missingAttendeeIds.add(attendee.Id);
 					}
-					for (Exercise_X_Student__c ExS : existingExS) {
-						missingStudentIds.remove(ExS.Student__c);
+					for (Exercise_X_Attendee__c ExA : existingExA) {
+						missingAttendeeIds.remove(ExA.Attendee__c);
 					}
-					if (missingStudentIds.size() > 0) {
-						List<Exercise_X_Student__c> newExS = new List<Exercise_X_Student__c>();
-						for (Id studentId : missingStudentIds) {
-							newExS.add(new Exercise_X_Student__c(Student__c = studentId, Exercise__c = exerciseId, Status__c = STATES.START));
+					if (missingAttendeeIds.size() > 0) {
+						List<Exercise_X_Attendee__c> newExA = new List<Exercise_X_Attendee__c>();
+						for (Id attendeeId : missingAttendeeIds) {
+							newExA.add(new Exercise_X_Attendee__c(Attendee__c = attendeeId, Exercise__c = exerciseId, Status__c = STATES.START));
 						}
-						insert newExS;
+						insert newExA;
 					} else {
 						throw new CalloutException('I thought you said we were missing records...');
 					}
-				} else if (students.size() == existingExS.size()) {
+				} else if (attendees.size() == existingExA.size()) {
 					// Good to go
 				} else {
 					// Why?
-					String msg = 'There are [' + existingExS.size() + '] ExS records, but only [' + students.size() + '] students';
+					String msg = 'There are [' + existingExA.size() + '] ExA records, but only [' + attendees.size() + '] attendees';
 					throw new CalloutException(msg);
 				}
 			} else {
@@ -199,36 +199,36 @@ public without sharing class Data {
 	}
 
 	@AuraEnabled
-	public static void updateStudentStatus(Id exerciseId, Id studentId, String status) {
-		List<Exercise_X_Student__c> ExSs = [
-			SELECT Id, Name, Exercise__c, Student__c, Status__c
-			FROM Exercise_X_Student__c
-			WHERE Student__c = :studentId AND Exercise__c = :exerciseId
+	public static void updateAttendeeStatus(Id exerciseId, Id attendeeId, String status) {
+		List<Exercise_X_Attendee__c> ExAs = [
+			SELECT Id, Name, Exercise__c, Attendee__c, Status__c
+			FROM Exercise_X_Attendee__c
+			WHERE Attendee__c = :attendeeId AND Exercise__c = :exerciseId
 		];
-		Exercise_X_Student__c ExS;
-		if (ExSs.size() == 0) {
-			ExS = new Exercise_X_Student__c(Exercise__c = exerciseId, Student__c = studentId);
-		} else if (ExSs.size() == 1) {
-			ExS = ExSs[0];
+		Exercise_X_Attendee__c ExA;
+		if (ExAs.size() == 0) {
+			ExA = new Exercise_X_Attendee__c(Exercise__c = exerciseId, Attendee__c = attendeeId);
+		} else if (ExAs.size() == 1) {
+			ExA = ExAs[0];
 		} else {
-			throw new CalloutException('Multiple records per student');
+			throw new CalloutException('Multiple records per attendee');
 		}
-		ExS.Status__c = status;
-		upsert ExS;
+		ExA.Status__c = status;
+		upsert ExA;
 	}
 
 	@AuraEnabled
-	public static Map<String, Object> validateStudentRegistration(Id deliveryId, Id studentId) {
+	public static Map<String, Object> validateAttendeeRegistration(Id deliveryId, Id attendeeId) {
 		Map<String, Object> output = new Map<String, Object>();
 		List<String> errors = new List<String>();
 
-		output.put('student', '');
+		output.put('attendee', '');
 		output.put('delivery', '');
-		List<Student__c> students = [SELECT Id, Name FROM Student__c WHERE Id = :studentId AND Delivery__c = :deliveryId];
-		if (students.size() == 1) {
-			output.put('student', students[0]);
+		List<Attendee__c> attendees = [SELECT Id, Name FROM Attendee__c WHERE Id = :attendeeId AND Delivery__c = :deliveryId];
+		if (attendees.size() == 1) {
+			output.put('attendee', attendees[0]);
 		} else {
-			errors.add('Student not found');
+			errors.add('Attendee not found');
 		}
 		List<Delivery__c> deliveries = [SELECT Id, Name FROM Delivery__c WHERE Id = :deliveryId AND IsActive__c = TRUE];
 		if (deliveries.size() == 1) {
@@ -241,7 +241,7 @@ public without sharing class Data {
 			if (errors.size() > 2) {
 				reason = JSON.serialize(errors);
 			} else if (errors.size() > 1) {
-				reason = 'Neither student nor delivery found';
+				reason = 'Neither attendee nor delivery found';
 			} else {
 				reason = errors[0];
 			}
@@ -252,28 +252,28 @@ public without sharing class Data {
 	}
 
 	@AuraEnabled
-	public static Student__c registerStudent(Id deliveryId, Student__c student) {
-		upsert student;
-		return student;
+	public static Attendee__c registerAttendee(Id deliveryId, Attendee__c attendee) {
+		upsert attendee;
+		return attendee;
 	}
 
 	@AuraEnabled
-	public static Map<String, Object> getStudentDataByStudentId(Id studentId) {
+	public static Map<String, Object> getAttendeeDataByAttendeeId(Id attendeeId) {
 		Map<String, Object> output = new Map<String, Object>();
 
-		Student__c student = [
+		Attendee__c attendee = [
 			SELECT Id, Name, FirstName__c, LastName__c, Nickname__c, Email__c, Delivery__c
-			FROM Student__c
-			WHERE Id = :studentId
+			FROM Attendee__c
+			WHERE Id = :attendeeId
 		];
 
-		output.put('studentId', student.Id);
-		output.put('student', student);
+		output.put('attendeeId', attendee.Id);
+		output.put('attendee', attendee);
 
 		Delivery__c delivery = [
 			SELECT Id, Name, CurrentExercise__c, CurrentExerciseStart__c, CurrentExerciseIsActive__c
 			FROM Delivery__c
-			WHERE Id = :student.Delivery__c
+			WHERE Id = :attendee.Delivery__c
 		];
 
 		output.put('deliveryId', delivery.Id);
@@ -289,35 +289,35 @@ public without sharing class Data {
 			output.put('exerciseId', exercise.Id);
 			output.put('exercise', exercise);
 
-			Exercise_X_Student__c ExS = [
+			Exercise_X_Attendee__c ExA = [
 				SELECT Id, Status__c
-				FROM Exercise_X_Student__c
-				WHERE Student__c = :student.Id AND Exercise__c = :exercise.Id
+				FROM Exercise_X_Attendee__c
+				WHERE Attendee__c = :attendee.Id AND Exercise__c = :exercise.Id
 			];
 
-			output.put('exerciseStatus', ExS.Status__c);
+			output.put('exerciseStatus', ExA.Status__c);
 		}
 
 		return output;
 	}
 
 	@AuraEnabled
-	public static Student__c pickRandomStudent(Id deliveryId) {
-		Student__c output = new Student__c();
+	public static Attendee__c pickRandomAttendee(Id deliveryId) {
+		Attendee__c output = new Attendee__c();
 
-		// Find al students for the delivery
-		List<Student__c> students = [
+		// Find al attendees for the delivery
+		List<Attendee__c> attendees = [
 			SELECT Id, Name, FirstName__c, LastName__c, Nickname__c, Email__c, ChosenDTTM__c
-			FROM Student__c
+			FROM Attendee__c
 			WHERE Delivery__c = :deliveryId AND IsInstructor__c = FALSE
 			ORDER BY ChosenDTTM__c ASC
 		];
 
-		// Randomly pick a student who has not been chosen on a while
-		Double dRandomIndex = Math.random() * (students.size() / 2);
+		// Randomly pick a attendee who has not been chosen on a while
+		Double dRandomIndex = Math.random() * (attendees.size() / 2);
 		dRandomIndex = Math.floor(dRandomIndex);
 		Integer iRandomIndex = Integer.valueOf(dRandomIndex);
-		output = students[iRandomIndex];
+		output = attendees[iRandomIndex];
 
 		// Update timestamp, so it's not chosen soon
 		output.ChosenDTTM__c = Datetime.now();
