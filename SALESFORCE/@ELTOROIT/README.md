@@ -2,9 +2,6 @@
 
 # TO DO
 
--   Attendee randomizer
-    -   Move the data acquisition to the attendee layer?
-    -   Use a modal dialog
 -   Assign org Ids
     -   Include late registrations
     -   Display URL (login.salesforce.com), username, and password.
@@ -16,26 +13,25 @@
     -   Include images, and links
     -   Sorted by CreatedDate
     -   Add a note to the exercise, like "We took a break while doing the exercise"
--   Delivery could have a field of class location
-    -   Company (if private)
-    -   City
 -   Add a timer for breaks
     -   Steal the clock from THCM
 -   Exercise should automatically stop when all attendees are done (or they indicated "LATER")
--   Let the instructor connect via phone/tablet
-    -   Salesforce App
-    -   Needs to activate an exercise
--   Make a option to call attendance
--   Exceeding plaform events on large data changes.
-    -   25 Attendees, 20 Exercises, 20 classes will exceed the daily limits
-    -   Do not use PE to change the status of the exercise, do a callout instead or call the Socket.io directly
--   Think of addiing Socket.io rooms for the deliveryId
+-   Make an option to call attendance
 -   QR code is not being shown consistently
     -   Consider hardcoding the URL when deploying to production
     -   Consider hosting the images in Heroku to avoid Static Resources, but do this once Heroku is in production
--   Consider CDC for Deliveries
-    -   That way we can detect which fields changed and determine if it's just the exercise or something on the delivery being changed
-    -   Should we move the Exercise information to a child object?
+-   Revisit Socket.io events
+    -   There is a slight delay when the student reports the completion, and the instructor screen being updated.
+        -   This could probably ork faster if the student emits a socket to the instructor
+    -   Do I really have to refresh the whole screen when anything changes?
+        -   Can I be smart and only do what's required when I receive a notification?
+    -   Think of adding Socket.io rooms for the deliveryId
+-   Exceeding plaform events on large data changes.
+    -   25 Attendees, 20 Exercises, 20 classes will exceed the daily limits
+    -   Do not use PE to change the status of the exercise, do a callout instead or call the Socket.io directly
+-   Let the instructor connect via phone/tablet
+    -   Salesforce App
+    -   Needs to activate an exercise
 
 # DONE
 
@@ -66,3 +62,9 @@
     -   I had two michael attendees in the class. Ask for FirstName and LastName when registering
     -   Also add a "nickname"
 -   Display the time it took an attendee to complete the exercise
+-   Attendee randomizer
+    -   Move the data acquisition to the attendee layer?
+    -   Use a modal dialog
+-   Delivery could have a field of class location
+    -   Company (if private)
+    -   City

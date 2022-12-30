@@ -148,7 +148,7 @@ export default class ApexManager extends LightningElement {
 	async callApex({ obj, apexPromise, forceEvent = false }) {
 		let output = null;
 		try {
-			Utils.logger.log(`Call Apex`, obj);
+			// Utils.logger.log(`Call Apex`, obj);
 			const data = await apexPromise;
 			if (obj) {
 				const oldValue = this.oldValues[obj]?.data;

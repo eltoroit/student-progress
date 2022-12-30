@@ -1,4 +1,8 @@
 public with sharing class Notifier {
+	public enum BASIC_RULES {
+		IGNORE
+	}
+
 	public static List<NotifySocket__e> publishEvents(String entityName, String keyFieldName, Map<String, List<String>> mapRules) {
 		List<NotifySocket__e> socketEvents = processRecords(entityName, keyFieldName, mapRules);
 		publishEvents(socketEvents);
@@ -10,6 +14,13 @@ public with sharing class Notifier {
 		List<NotifySocket__e> socketEvents = new List<NotifySocket__e>();
 		List<SObject> sobjs = Trigger.isDelete ? Trigger.old : Trigger.new;
 		Map<Id, Map<String, Integer>> data = new Map<Id, Map<String, Integer>>();
+
+		// Add system fields to ignore
+		List<String> ignorefields = new List<String>();
+		if (mapRules.containsKey(String.valueOf(NOTIFIER.BASIC_RULES.IGNORE))) {
+			ignorefields = mapRules.get(String.valueOf(NOTIFIER.BASIC_RULES.IGNORE));
+		}
+		ignorefields.addAll(new List<String>{ 'LastModifiedDate', 'SystemModstamp' });
 
 		// Process all records, grouping changes by rules
 		for (SObject sobj : sobjs) {
@@ -69,8 +80,6 @@ public with sharing class Notifier {
 		Map<String, List<String>> output = new Map<String, List<String>>();
 		Map<String, String> parsedRules = new Map<String, String>();
 
-		// Add system fields (if needed)
-
 		// Parse rules
 		for (String ruleName : mapRules.keySet()) {
 			for (String fieldName : mapRules.get(ruleName)) {
@@ -86,7 +95,7 @@ public with sharing class Notifier {
 		// Process record
 		Map<String, Object> newValues = sobjNew.getPopulatedFieldsAsMap();
 		for (String fieldName : newValues.keyset()) {
-			if (parsedRules.get(fieldName) == 'IGNORE') {
+			if (parsedRules.get(fieldName) == String.valueOf(NOTIFIER.BASIC_RULES.IGNORE)) {
 				// Skip field
 			} else {
 				Boolean isChanged = true;

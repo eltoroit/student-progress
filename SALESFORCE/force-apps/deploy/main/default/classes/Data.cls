@@ -301,7 +301,7 @@ public without sharing class Data {
 
 		// Find al attendees for the delivery
 		List<Attendee__c> attendees = [
-			SELECT Id, Name, FirstName__c, LastName__c, Nickname__c, Email__c, ChosenDTTM__c
+			SELECT Id, Name__c, FirstName__c, LastName__c, Nickname__c, Email__c, ChosenDTTM__c
 			FROM Attendee__c
 			WHERE Delivery__c = :deliveryId AND IsInstructor__c = FALSE
 			ORDER BY ChosenDTTM__c ASC
