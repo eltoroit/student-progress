@@ -1,5 +1,6 @@
 import Utils from "c/utils";
 import { LightningElement } from "lwc";
+import LightningAlert from "lightning/alert";
 
 const EXERCISE_PROGRESS_COLUMNS = [
 	{
@@ -216,35 +217,15 @@ export default class InstructorDelivery extends LightningElement {
 		}
 	}
 
-	onRandomClick() {
-		debugger;
-		let counter = 20;
-		let timer = setInterval(async () => {
-			counter--;
-			if (counter > 0) {
-				const attendee = await this.apexManager.doPickRandomAttendee({ deliveryId: this.deliveries.currentId });
-				Utils.logger.log(`${attendee.Name} | ${attendee.ChosenDTTM__c}`);
-			} else {
-				clearInterval(timer);
-			}
-		}, 1e3);
-		// /*
-		// 	Works with a quick solution, but not a good solution
-		// 	It's possible to choose A, B, C, A, D... Having a attendee be selected again soon after it was previously selected.
-		// 	Or a attendee that is not selected often enough
-		// 	Maintain a list of unselected attendees and randomize from there :-)
-		// 	This list should be in the server, since a page refresh would reset it.
-		// 	Have the random attendee be chosen via Apex where a field can be set
-		// */
-		// const prevAttendee = this.randomAttendee;
-		// do {
-		// 	let attendees = this.exProgProgress.filter((row) => !row.isInstructor);
-		// 	attendees = attendees.map((row) => row.name);
-		// 	let idx = Math.floor(Math.random() * attendees.length);
-		// 	this.randomAttendee = attendees[idx];
-		// } while (this.randomAttendee === prevAttendee);
-		// // eslint-disable-next-line no-alert
-		// alert(this.randomAttendee);
+	async onRandomClick() {
+		const attendee = await this.apexManager.doPickRandomAttendee({ deliveryId: this.deliveries.currentId });
+		Utils.logger.log(`${attendee.Name__c} | ${attendee.ChosenDTTM__c}`);
+		await LightningAlert.open({
+			message: attendee.Name__c,
+			variant: "header",
+			label: "Your turn!",
+			theme: "inverse"
+		});
 	}
 
 	onCurrentClick() {
