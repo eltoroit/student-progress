@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Delivery_Requires_Instructor</fullName>
+    <active>true</active>
+    <errorConditionFormula>IsActive__c &amp;&amp; InstructorLookup__c == null</errorConditionFormula>
+    <errorMessage>Active deliveries require an instructor</errorMessage>
+</ValidationRule>

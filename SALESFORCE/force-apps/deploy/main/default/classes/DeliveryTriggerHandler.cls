@@ -10,11 +10,13 @@ public without sharing class DeliveryTriggerHandler {
 
 		System.assertEquals(true, Trigger.isInsert || Trigger.isUpdate);
 
-		// Only worry about deliveries that have changed instructors
+		// Only worry about deliveries that are active and have changed instructors
 		List<Delivery__c> deliveriesWithInstructorsChange = new List<Delivery__c>();
 		for (Delivery__c delivery : triggerNew) {
-			// Assume [delivery.InstructorLookup__c] is a requird field
-			if (triggerOldMap?.get(delivery.Id)?.InstructorLookup__c != delivery.InstructorLookup__c) {
+			if (
+				triggerOldMap?.get(delivery.Id)?.IsActive__c != delivery.IsActive__c ||
+				triggerOldMap?.get(delivery.Id)?.InstructorLookup__c != delivery.InstructorLookup__c
+			) {
 				deliveriesWithInstructorsChange.add(delivery);
 			}
 		}
@@ -22,15 +24,17 @@ public without sharing class DeliveryTriggerHandler {
 		// Delete existing instructors
 		delete [SELECT Id FROM Attendee__c WHERE Delivery__c IN :deliveriesWithInstructorsChange AND IsInstructor__c = TRUE];
 
-		// Collect instructor master records and their deliveries
+		// Collect instructor master records and their deliveries (if they are active)
 		Map<Id, List<Delivery__c>> masterInstructorWithDeliveries = new Map<Id, List<Delivery__c>>();
 		for (Delivery__c delivery : deliveriesWithInstructorsChange) {
-			List<Delivery__c> deliveries = new List<Delivery__c>();
-			if (masterInstructorWithDeliveries.containsKey(delivery.InstructorLookup__c)) {
-				deliveries = masterInstructorWithDeliveries.get(delivery.InstructorLookup__c);
+			if (delivery.IsActive__c) {
+				List<Delivery__c> deliveries = new List<Delivery__c>();
+				if (masterInstructorWithDeliveries.containsKey(delivery.InstructorLookup__c)) {
+					deliveries = masterInstructorWithDeliveries.get(delivery.InstructorLookup__c);
+				}
+				deliveries.add(delivery);
+				masterInstructorWithDeliveries.put(delivery.InstructorLookup__c, deliveries);
 			}
-			deliveries.add(delivery);
-			masterInstructorWithDeliveries.put(delivery.InstructorLookup__c, deliveries);
 		}
 
 		// Find master instructor records
@@ -42,17 +46,19 @@ public without sharing class DeliveryTriggerHandler {
 			]
 		);
 
-		// Create new instructors
+		// Create new instructors for the active deliveries
 		List<Attendee__c> newInstructorAsAttendees = new List<Attendee__c>();
 		for (Id masterInstructorId : masterInstructorWithDeliveries.keySet()) {
 			for (Delivery__c delivery : masterInstructorWithDeliveries.get(masterInstructorId)) {
-				Boolean preserveId = false;
-				Boolean isDeepClone = true;
-				Attendee__c newAttendee = masterInstructors.get(masterInstructorId).clone(preserveId, isDeepClone);
-				newAttendee.Delivery__c = delivery.Id;
-				newAttendee.IsInstructor__c = true;
-				newAttendee.RecordTypeId = Schema.SObjectType.Attendee__c.getRecordTypeInfosByName().get('Attendee').getRecordTypeId();
-				newInstructorAsAttendees.add(newAttendee);
+				if (delivery.IsActive__c) {
+					Boolean preserveId = false;
+					Boolean isDeepClone = true;
+					Attendee__c newAttendee = masterInstructors.get(masterInstructorId).clone(preserveId, isDeepClone);
+					newAttendee.Delivery__c = delivery.Id;
+					newAttendee.IsInstructor__c = true;
+					newAttendee.RecordTypeId = Schema.SObjectType.Attendee__c.getRecordTypeInfosByName().get('Attendee').getRecordTypeId();
+					newInstructorAsAttendees.add(newAttendee);
+				}
 			}
 		}
 		insert newInstructorAsAttendees;

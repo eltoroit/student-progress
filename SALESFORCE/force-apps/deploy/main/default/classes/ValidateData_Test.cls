@@ -1,5 +1,5 @@
 @isTest
-public without sharing class TestValidateData {
+public without sharing class ValidateData_Test {
 	@testSetup
 	static void makeSingleRecords() {
 		Course__c course = new Course__c();
