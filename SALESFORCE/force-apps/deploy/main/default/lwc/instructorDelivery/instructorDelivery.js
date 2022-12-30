@@ -163,6 +163,7 @@ export default class InstructorDelivery extends LightningElement {
 				this.parseExerciseProgress({ data });
 				break;
 			}
+			case "EXERCISE":
 			case "Attendee__c":
 			case "Delivery__c": {
 				this.apexManager.fetchActiveDeliveriesWithCourses();

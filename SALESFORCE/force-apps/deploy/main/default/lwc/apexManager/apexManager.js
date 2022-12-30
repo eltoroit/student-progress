@@ -123,6 +123,7 @@ export default class ApexManager extends LightningElement {
 	onEventReceived(event) {
 		const { entityName, deliveryId, count } = event.detail;
 		switch (entityName) {
+			case "EXERCISE":
 			case "Delivery__c":
 			case "Attendee__c":
 			case "Exercise_X_Attendee__c": {

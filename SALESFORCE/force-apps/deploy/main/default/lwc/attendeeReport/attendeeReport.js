@@ -43,6 +43,7 @@ export default class Attendee extends LightningElement {
 				this.loadAttendeeDataByAttendeeId({ data });
 				break;
 			}
+			case "EXERCISE":
 			case "Delivery__c": {
 				this.apexManager.fetchAttendeeDataByAttendeeId({ attendeeId: this.attendeeData.attendeeId });
 				break;
