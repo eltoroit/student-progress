@@ -6,12 +6,13 @@
 				"type": "Delivery__c",
 				"url": "/services/data/v56.0/sobjects/Delivery__c/a03DC000002IhIsYAK"
 			},
+			"Company__c": null,
 			"CurrentExerciseIsActive__c": false,
 			"CurrentExerciseStart__c": null,
 			"CurrentExercise__c": null,
 			"Id": "a03DC000002IhIsYAK",
-			"InstructorLookup__c": null,
-			"IsActive__c": false,
+			"InstructorLookup__c": "a00DC000002K6cdYAC",
+			"Location__c": null,
 			"Name": "2022-12-05 Workday"
 		},
 		{
@@ -19,12 +20,13 @@
 				"type": "Delivery__c",
 				"url": "/services/data/v56.0/sobjects/Delivery__c/a03DC000002IhItYAK"
 			},
-			"CurrentExerciseIsActive__c": false,
-			"CurrentExerciseStart__c": "2022-12-16T13:34:12.000+0000",
-			"CurrentExercise__c": "a05DC000001ZEthYAG",
+			"Company__c": null,
+			"CurrentExerciseIsActive__c": true,
+			"CurrentExerciseStart__c": "2022-12-30T16:30:09.000+0000",
+			"CurrentExercise__c": "a05DC000001ZEtAYAW",
 			"Id": "a03DC000002IhItYAK",
-			"InstructorLookup__c": null,
-			"IsActive__c": false,
+			"InstructorLookup__c": "a00DC000002K6cdYAC",
+			"Location__c": null,
 			"Name": "2022-12-12 Ministry Ontario"
 		}
 	],

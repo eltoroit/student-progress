@@ -36,6 +36,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Delivery__c.Address__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Delivery__c.Company__c</field>
         <readable>true</readable>
     </fieldPermissions>

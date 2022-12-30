@@ -20,7 +20,7 @@
     },
     {
       "name": "Delivery__c",
-      "ignoreFields": "",
+      "ignoreFields": "IsActive__c",
       "externalIdField": null,
       "twoPassReferenceFields": "InstructorLookup__c",
       "where": null,

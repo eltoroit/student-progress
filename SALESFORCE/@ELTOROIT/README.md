@@ -2,9 +2,6 @@
 
 # TO DO
 
--   Attendee randomizer
-    -   Move the data acquisition to the attendee layer?
-    -   Use a modal dialog
 -   Assign org Ids
     -   Include late registrations
     -   Display URL (login.salesforce.com), username, and password.
@@ -71,3 +68,6 @@
     -   I had two michael attendees in the class. Ask for FirstName and LastName when registering
     -   Also add a "nickname"
 -   Display the time it took an attendee to complete the exercise
+-   Attendee randomizer
+    -   Move the data acquisition to the attendee layer?
+    -   Use a modal dialog
