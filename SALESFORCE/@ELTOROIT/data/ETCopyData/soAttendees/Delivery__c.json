@@ -10,8 +10,8 @@
 			"CurrentExerciseStart__c": null,
 			"CurrentExercise__c": null,
 			"Id": "a0353000001T8h4AAC",
-			"InstructorLookup__c": "a0053000003T2uAAAS",
-			"IsActive__c": true,
+			"InstructorLookup__c": null,
+			"IsActive__c": false,
 			"Name": "2022-12-05 Workday"
 		},
 		{
@@ -23,8 +23,8 @@
 			"CurrentExerciseStart__c": "2022-12-16T13:34:12.000+0000",
 			"CurrentExercise__c": "a0553000000pcvnAAA",
 			"Id": "a0353000001T8h5AAC",
-			"InstructorLookup__c": "a0053000003T2uAAAS",
-			"IsActive__c": true,
+			"InstructorLookup__c": null,
+			"IsActive__c": false,
 			"Name": "2022-12-12 Ministry Ontario"
 		}
 	],

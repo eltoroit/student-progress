@@ -66,18 +66,7 @@ public without sharing class TestValidateData {
 	}
 
 	@IsTest
-	private static void validateRequiredFields() {
-		// Salesforce that if a field is required, it has a value. Here we are checking that the administrator has not made the field not required
-		validateRequiredFields('Attendee__c', 'FirstName__c');
-		validateRequiredFields('Attendee__c', 'LastName__c');
-		validateRequiredFields('Course_X_Delivery__c', 'Order__c');
-		validateRequiredFields('Delivery__c', 'InstructorLookup__c');
-		validateRequiredFields('Exercise__c', 'Order__c');
-		validateRequiredFields('Exercise_X_Attendee__c', 'Status__c');
-	}
-
-	@IsTest
-	private static void validateAttendeeRequiresDelivery() {
+	private static void attendeeRequiresDelivery() {
 		Attendee__c student = (Attendee__c) clone(getFullRecords('Attendee__c', 'RecordType.Name = \'Attendee\'', 'RecordType.Name')[0]);
 		System.assertEquals('Attendee', student.RecordType.Name);
 
@@ -95,7 +84,7 @@ public without sharing class TestValidateData {
 	}
 
 	@IsTest
-	private static void validateInstructorsCanNotHaveDelivery() {
+	private static void instructorsCanNotHaveDelivery() {
 		Attendee__c instructor = (Attendee__c) clone(getFullRecords('Attendee__c', 'RecordType.Name = \'Instructor\'', 'RecordType.Name')[0]);
 		System.assertEquals('Instructor', instructor.RecordType.Name);
 
@@ -104,7 +93,7 @@ public without sharing class TestValidateData {
 		try {
 			instructor.Delivery__c = delivery.Id;
 			insert instructor;
-			System.assert(false, 'Instructors can not have deliveries');
+			System.assert(false, 'Instructors can\'t have delivery');
 		} catch (Exception ex) {
 			List<String> expectedMessages = new List<String>{
 				'Insert failed',
@@ -116,6 +105,39 @@ public without sharing class TestValidateData {
 				System.assert(ex.getMessage().contains(expectedMessage), 'Expecting: ' + expectedMessage);
 			}
 		}
+	}
+
+	@IsTest
+	private static void activeDeliveriesRequireInstructor() {
+		Delivery__c delivery = (Delivery__c) clone(getFullRecords('Delivery__c')[0]);
+
+		try {
+			delivery.IsActive__c = true;
+			delivery.InstructorLookup__c = null;
+			insert delivery;
+			System.assert(false, 'Active deliveries require an instructor');
+		} catch (Exception ex) {
+			List<String> expectedMessages = new List<String>{
+				'Insert failed',
+				'FIELD_CUSTOM_VALIDATION_EXCEPTION',
+				'Active deliveries require an instructor'
+			};
+			System.assertEquals('System.DmlException', ex.getTypeName(), 'Expecting: System.DmlException');
+			for (String expectedMessage : expectedMessages) {
+				System.assert(ex.getMessage().contains(expectedMessage), 'Expecting: ' + expectedMessage);
+			}
+		}
+	}
+
+	@IsTest
+	private static void validateRequiredFields() {
+		// Salesforce that if a field is required, it has a value. Here we are checking that the administrator has not made the field not required
+		validateRequiredFields('Attendee__c', 'FirstName__c');
+		validateRequiredFields('Attendee__c', 'LastName__c');
+		validateRequiredFields('Course_X_Delivery__c', 'Order__c');
+		// validateRequiredFields('Delivery__c', 'InstructorLookup__c');
+		validateRequiredFields('Exercise__c', 'Order__c');
+		validateRequiredFields('Exercise_X_Attendee__c', 'Status__c');
 	}
 
 	private static void validateRequiredFields(String SObjectName, String FieldName) {
