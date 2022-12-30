@@ -12,7 +12,7 @@
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>InstructorLookup__c</field>
             </layoutItems>
         </layoutColumns>
@@ -96,12 +96,21 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Name__c</fields>
+        <fields>ChosenDTTM__c</fields>
+        <fields>IsInstructor__c</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>Email__c</fields>
+        <fields>LastName__c</fields>
+        <fields>FirstName__c</fields>
+        <fields>Nickname__c</fields>
         <relatedList>Attendee__c.Delivery__c</relatedList>
-        <sortField>NAME</sortField>
-        <sortOrder>Asc</sortOrder>
+        <sortField>IsInstructor__c</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Note__c</fields>
         <relatedList>Note__c.Delivery__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
@@ -110,7 +119,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hDR000008dpdY</masterLabel>
+        <masterLabel>00hDC000000RjMu</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
