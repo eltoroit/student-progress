@@ -429,7 +429,7 @@ export default class InstructorDelivery extends LightningElement {
 		const attendees = data.ATTENDEES.map((attendee) => {
 			const output = {
 				Id: attendee.Id,
-				Name: attendee.Name,
+				Name: attendee.Name__c,
 				IsInstructor: attendee.IsInstructor__c,
 				Points: 0,
 				mExA: {}
@@ -508,7 +508,7 @@ export default class InstructorDelivery extends LightningElement {
 		this.exProgProgress = data.map((attendee) => {
 			const row = {
 				attendeeId: attendee.Id,
-				name: attendee.Name,
+				name: attendee.Name__c,
 				status: ""
 			};
 			if (attendee.IsInstructor__c) {
