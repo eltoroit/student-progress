@@ -36,6 +36,11 @@
 -   Consider CDC for Deliveries
     -   That way we can detect which fields changed and determine if it's just the exercise or something on the delivery being changed
     -   Should we move the Exercise information to a child object?
+-   Revisit Socket.io events
+    -   There is a slight delay when the student reports the completion, and the instructor screen being updated.
+        -   This could probably ork faster if the student emits a socket to the instructor
+    -   Do I really have to refresh the whole screen when anything changes?
+        -   Can I be smart and only do what's required when I receive a notification?
 
 # DONE
 

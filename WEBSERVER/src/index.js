@@ -23,9 +23,9 @@ ws.createServer();
 	// await sf.soapLogin();
 	await sf.oauthUNPWLogin();
 	sf.subscribe({
-		callback: (eventName, data) => {
+		callback: ({ eventName, data }) => {
 			console.log("Notifying Socket.io", { eventName, data });
-			ws.ionotify(eventName, data);
+			ws.ionotify({ eventName, data });
 		},
 	});
 })();

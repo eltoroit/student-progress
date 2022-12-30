@@ -69,7 +69,7 @@ export default class Weberver {
 	}
 
 	ionotify({ eventName, data }) {
-		console.log(JSON.stringify({ eventName, data }));
+		// console.log(JSON.stringify({ eventName, data }));
 		// Only to the sender
 		// this.socket.emit(eventName, data);
 		// To everybody
