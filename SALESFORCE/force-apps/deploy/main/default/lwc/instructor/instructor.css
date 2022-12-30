@@ -1,0 +1,9 @@
+.justified {
+	text-align: justify;
+}
+
+.justified:after {
+	content: "";
+	display: inline-block;
+	width: 100%;
+}

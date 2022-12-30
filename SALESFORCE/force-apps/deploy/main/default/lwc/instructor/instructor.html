@@ -6,10 +6,18 @@
 					<div class="slds-m-horizontal_xx-large">
 						<lightning-tabset active-tab-value="Instructor">
 							<lightning-tab label="Current Exercise" value="Instructor">
-								<c-instructor-delivery ondeliverydata={onDeliveryData}></c-instructor-delivery>
+								<!-- <c-instructor-delivery ondeliverydata={onDeliveryData}></c-instructor-delivery> -->
+								<lightning-layout>
+									<lightning-layout-item size="9">
+										<c-instructor-delivery ondeliverydata={onDeliveryData}></c-instructor-delivery>
+									</lightning-layout-item>
+									<lightning-layout-item size="3">
+										<c-attendee></c-attendee>
+									</lightning-layout-item>
+								</lightning-layout>
 							</lightning-tab>
-							<lightning-tab label="Student" value="Student">
-								<c-student></c-student>
+							<lightning-tab label="Attendee" value="Attendee">
+								<!-- <c-attendee></c-attendee> -->
 							</lightning-tab>
 						</lightning-tabset>
 					</div>
@@ -26,9 +34,9 @@
 									<c-image path-in-sr="QR.png" max-width="100%"></c-image>
 								</lightning-layout-item>
 								<lightning-layout-item size="12" class="slds-align_absolute-center">
-									<a href="https://sfdc.co/thStudentReporting" style="letter-spacing: 0.2rem" target="_blank"
-										>https://sfdc.co/thStudentReporting</a
-									>
+									<a href={urlAttendees} style="width: 100%; padding: 5px" target="_blank">
+										<div class="justified">{urlAttendeesWithSpaces}</div>
+									</a>
 								</lightning-layout-item>
 							</lightning-layout>
 						</template>

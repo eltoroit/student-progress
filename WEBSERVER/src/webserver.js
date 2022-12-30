@@ -42,6 +42,7 @@ export default class Weberver {
 		};
 
 		const httpsServer = https.createServer(certs, this.app);
+		this.makeSocketio({ httpsServer });
 		httpsServer.listen(process.env.HTTPS_PORT_LOCAL, () => {
 			console.log(`HTTPS Server running at: https://localhost:${process.env.HTTPS_PORT_LOCAL}/`);
 		});
@@ -56,8 +57,28 @@ export default class Weberver {
 		});
 	}
 
+	ioconn(socket) {
+		this.socket = socket;
+
+		// receive a message from the client
+		this.socket.on("PING", (data) => {
+			data[data.length - 1].pong = new Date().toJSON();
+			console.log(JSON.stringify(data));
+			this.io.emit("PONG", data);
+		});
+	}
+
+	ionotify({ eventName, data }) {
+		// console.log(JSON.stringify({ eventName, data }));
+		// Only to the sender
+		// this.socket.emit(eventName, data);
+		// To everybody
+		this.io.emit(eventName, data);
+	}
+
 	allowExpressCORS() {
 		this.app.use((req, res, next) => {
+			// console.log("CORS: Web");
 			res.header("Access-Control-Allow-Origin", req.get("Origin") || "*");
 			res.header("Access-Control-Allow-Credentials", "true");
 			res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
@@ -75,6 +96,7 @@ export default class Weberver {
 		return {
 			// Access-Control-Allow-Origin
 			origin: (origin, callback) => {
+				// console.log("CORS: Socket.io");
 				const isValid = true;
 				if (isValid) {
 					// Valid Origin
@@ -93,25 +115,6 @@ export default class Weberver {
 			// Access-Control-Allow-Credentials
 			credentials: "true",
 		};
-	}
-
-	ioconn(socket) {
-		this.socket = socket;
-
-		// receive a message from the client
-		this.socket.on("PING", (data) => {
-			data[data.length - 1].pong = new Date().toJSON();
-			console.log(JSON.stringify(data));
-			this.io.emit("PONG", data);
-		});
-	}
-
-	ionotify({ eventName, data }) {
-		console.log(JSON.stringify({ eventName, data }));
-		// Only to the sender
-		// this.socket.emit(eventName, data);
-		// To everybody
-		this.io.emit(eventName, data);
 	}
 
 	routes() {

@@ -1,0 +1,15 @@
+{
+	"fetched": 1,
+	"records": [
+		{
+			"attributes": {
+				"type": "Note__c",
+				"url": "/services/data/v56.0/sobjects/Note__c/a06DP00000MpHaGYAV"
+			},
+			"Delivery__c": "a03DP00000AgUQMYA3",
+			"Id": "a06DP00000MpHaGYAV",
+			"Note__c": "<p>This is a <strong>sample</strong> note</p>"
+		}
+	],
+	"total": 1
+}

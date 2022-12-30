@@ -269,20 +269,20 @@ export default class Utils {
 		}
 	};
 
-	static async validateStudentRegistration({ apexManager, deliveryId, studentId }) {
+	static async validateAttendeeRegistration({ apexManager, deliveryId, attendeeId }) {
 		let output = null;
-		if (deliveryId == null || studentId == null) {
+		if (deliveryId == null || attendeeId == null) {
 			// Should I clear these?
 			// Utils.deleteCookie({ key: "deliveryId" });
-			// Utils.deleteCookie({ key: "studentId" });
+			// Utils.deleteCookie({ key: "attendeeId" });
 		} else {
-			output = await apexManager.doValidateStudentRegistration({ deliveryId, studentId });
+			output = await apexManager.doValidateAttendeeRegistration({ deliveryId, attendeeId });
 			if (output) {
 				Utils.setCookie({ key: "deliveryId", value: output.delivery.Id });
-				Utils.setCookie({ key: "studentId", value: output.student.Id });
+				Utils.setCookie({ key: "attendeeId", value: output.attendee.Id });
 			} else {
 				Utils.deleteCookie({ key: "deliveryId" });
-				Utils.deleteCookie({ key: "studentId" });
+				Utils.deleteCookie({ key: "attendeeId" });
 			}
 		}
 		return output;

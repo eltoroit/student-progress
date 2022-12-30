@@ -9,7 +9,7 @@ export default class EmpApiManager extends LightningElement {
 		pending: {},
 		replayId: -1,
 		subscription: {},
-		channelName: "/data/StudentEvents__chn"
+		channelName: "/data/AttendeeEvents__chn"
 	};
 
 	connectedCallback() {
