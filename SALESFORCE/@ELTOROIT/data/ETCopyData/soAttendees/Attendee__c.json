@@ -53,7 +53,7 @@
 			"FirstName__c": "Achuth",
 			"Id": "a06DK00000B6lF6YAJ",
 			"IsInstructor__c": false,
-			"LastName__c": null,
+			"LastName__c": "MissingLastName",
 			"Name": "Achuth MissingLastName",
 			"Nickname__c": "Achuth"
 		},

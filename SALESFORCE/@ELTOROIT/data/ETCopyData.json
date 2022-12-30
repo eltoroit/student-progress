@@ -22,7 +22,7 @@
       "name": "Delivery__c",
       "ignoreFields": "",
       "externalIdField": null,
-      "twoPassReferenceFields": "",
+      "twoPassReferenceFields": "InstructorLookup__c",
       "where": null,
       "orderBy": "Id"
     },
