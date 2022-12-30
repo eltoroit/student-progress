@@ -24,7 +24,7 @@ ws.createServer();
 	await sf.oauthUNPWLogin();
 	sf.subscribe({
 		callback: ({ eventName, data }) => {
-			console.log("Notifying Socket.io", { eventName, data });
+			console.log("Notifying Socket.io", JSON.stringify({ eventName, data }));
 			ws.ionotify({ eventName, data });
 		},
 	});
