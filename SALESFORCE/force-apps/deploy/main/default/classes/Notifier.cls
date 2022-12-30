@@ -15,6 +15,13 @@ public with sharing class Notifier {
 		List<SObject> sobjs = Trigger.isDelete ? Trigger.old : Trigger.new;
 		Map<Id, Map<String, Integer>> data = new Map<Id, Map<String, Integer>>();
 
+		// Add system fields to ignore
+		List<String> ignorefields = new List<String>();
+		if (mapRules.containsKey(String.valueOf(NOTIFIER.BASIC_RULES.IGNORE))) {
+			ignorefields = mapRules.get(String.valueOf(NOTIFIER.BASIC_RULES.IGNORE));
+		}
+		ignorefields.addAll(new List<String>{ 'LastModifiedDate', 'SystemModstamp' });
+
 		// Process all records, grouping changes by rules
 		for (SObject sobj : sobjs) {
 			Id deliveryId = (Id) sobj.get(keyFieldName);
@@ -72,13 +79,6 @@ public with sharing class Notifier {
 	) {
 		Map<String, List<String>> output = new Map<String, List<String>>();
 		Map<String, String> parsedRules = new Map<String, String>();
-
-		// Add system fields (if needed)
-		List<String> ignorefields = new List<String>();
-		if (mapRules.containsKey(String.valueOf(NOTIFIER.BASIC_RULES.IGNORE))) {
-			ignorefields = mapRules.get(String.valueOf(NOTIFIER.BASIC_RULES.IGNORE));
-		}
-		ignorefields.addAll(new List<String>{ 'LastModifiedDate', 'SystemModstamp' });
 
 		// Parse rules
 		for (String ruleName : mapRules.keySet()) {
