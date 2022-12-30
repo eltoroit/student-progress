@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>InstructorName__c</fullName>
     <externalId>false</externalId>
-    <formula>InstructorLookup__r.Name</formula>
+    <formula>InstructorLookup__r.Name__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Instructor Name</label>
     <required>false</required>

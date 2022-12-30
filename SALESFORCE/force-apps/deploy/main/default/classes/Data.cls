@@ -63,7 +63,7 @@ public without sharing class Data {
 		Map<String, Object> output = new Map<String, Object>();
 
 		List<Attendee__c> attendees = [
-			SELECT Id, Name, IsInstructor__c
+			SELECT Id, Name__c, IsInstructor__c
 			FROM Attendee__c
 			WHERE Delivery__c = :deliveryId
 			ORDER BY Name
@@ -100,7 +100,7 @@ public without sharing class Data {
 		output = [
 			SELECT
 				Id,
-				Name,
+				Name__c,
 				IsInstructor__c,
 				(
 					SELECT Id, Status__c, CreatedDate, lastModifiedDate
@@ -120,7 +120,7 @@ public without sharing class Data {
 		List<Attendee__c> output = new List<Attendee__c>();
 
 		output = [
-			SELECT Id, Name, FirstName__c, LastName__c, Nickname__c, Email__c
+			SELECT Id, Name__c, FirstName__c, LastName__c, Nickname__c, Email__c
 			FROM Attendee__c
 			WHERE Delivery__c = :deliveryId
 			ORDER BY Name ASC
@@ -256,7 +256,7 @@ public without sharing class Data {
 		Map<String, Object> output = new Map<String, Object>();
 
 		Attendee__c attendee = [
-			SELECT Id, Name, FirstName__c, LastName__c, Nickname__c, Email__c, Delivery__c
+			SELECT Id, Name__c, FirstName__c, LastName__c, Nickname__c, Email__c, Delivery__c
 			FROM Attendee__c
 			WHERE Id = :attendeeId
 		];

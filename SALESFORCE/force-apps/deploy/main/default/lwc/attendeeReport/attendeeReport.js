@@ -1,9 +1,5 @@
 import Utils from "c/utils";
 import { api, LightningElement, track } from "lwc";
-// import updateStatus from "@salesforce/apex/Attendee.updateStatus";
-// import getAttendeeById from "@salesforce/apex/Attendee.getAttendeeById";
-// import getDeliveryById from "@salesforce/apex/Attendee.getDeliveryById";
-// import getExercisetById from "@salesforce/apex/Attendee.getExercisetById";
 
 export default class Attendee extends LightningElement {
 	loading = true;
@@ -19,7 +15,7 @@ export default class Attendee extends LightningElement {
 		exercise: null,
 		exerciseStatus: null,
 		get attendeeName() {
-			return this.attendee?.Name;
+			return this.attendee?.Name__c;
 		},
 		get deliveryName() {
 			return this.delivery?.Name;
@@ -47,6 +43,7 @@ export default class Attendee extends LightningElement {
 				this.loadAttendeeDataByAttendeeId({ data });
 				break;
 			}
+			case "EXERCISE":
 			case "Delivery__c": {
 				this.apexManager.fetchAttendeeDataByAttendeeId({ attendeeId: this.attendeeData.attendeeId });
 				break;

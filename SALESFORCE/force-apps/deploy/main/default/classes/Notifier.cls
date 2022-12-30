@@ -1,4 +1,4 @@
-public with sharing class AttendeeNotifier {
+public with sharing class Notifier {
 	public static List<NotifySocket__e> publishEvents(String entityName, String keyFieldName, Map<String, List<String>> mapRules) {
 		List<NotifySocket__e> socketEvents = processRecords(entityName, keyFieldName, mapRules);
 		publishEvents(socketEvents);

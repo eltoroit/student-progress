@@ -268,7 +268,7 @@ export default class AttendeeRegister extends LightningElement {
 			objectName: "deliveries",
 			data,
 			otherOptions: [{ value: "", label: "Which class are you attending?" }],
-			formatter: (record) => `${record.Name} (${record.InstructorName__c})`
+			formatter: (record) => `${record.Name} [${record.InstructorName__c}]`
 		});
 		if (Utils.findRecord({ list: this.deliveries.records, Id: currentId })) {
 			this.selectDelivery({ currentId });
@@ -286,7 +286,8 @@ export default class AttendeeRegister extends LightningElement {
 		this._loadData({
 			objectName: "attendees",
 			data,
-			otherOptions: [{ value: "CREATE", label: "I'm not in your list" }]
+			otherOptions: [{ value: "CREATE", label: "I'm not in your list" }],
+			formatter: (record) => `${record.Name__c}`
 		});
 		if (Utils.findRecord({ list: this.attendees.records, Id: currentId })) {
 			this.selectAttendee({ currentId });
