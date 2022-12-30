@@ -6,5 +6,5 @@ trigger tDelivery on Delivery__c(after insert, after update, after delete) {
 	String keyFieldName = 'Id';
 	Map<String, List<String>> mapRules = new Map<String, List<String>>();
 	mapRules.put('EXERCISE', new List<String>{ 'CurrentExercise__c', 'CurrentExerciseIsActive__c', 'CurrentExerciseStart__c' });
-	AttendeeNotifier.publishEvents('Exercise_X_Attendee__c', keyFieldName, mapRules);
+	Notifier.publishEvents('Delivery__c', keyFieldName, mapRules);
 }
