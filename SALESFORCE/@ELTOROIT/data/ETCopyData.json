@@ -39,7 +39,7 @@
       "ignoreFields": "",
       "externalIdField": null,
       "twoPassReferenceFields": "",
-      "where": null,
+      "where": "Attendee__r.IsInstructor__c = false",
       "orderBy": "Id"
     },
     {
