@@ -22,7 +22,7 @@
       "name": "Delivery__c",
       "ignoreFields": "",
       "externalIdField": null,
-      "twoPassReferenceFields": "InstructorLookup__c",
+      "twoPassReferenceFields": "",
       "where": null,
       "orderBy": "Id"
     },
@@ -54,7 +54,7 @@
       "name": "Attendee__c",
       "ignoreFields": "",
       "externalIdField": null,
-      "twoPassReferenceFields": "",
+      "twoPassReferenceFields": "Delivery__c",
       "where": "IsInstructor__c = false",
       "orderBy": "Id"
     }

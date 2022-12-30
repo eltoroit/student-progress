@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Instructors_cannot_have_delivery</fullName>
+    <active>true</active>
+    <errorConditionFormula>RecordType.Name = &apos;Instructor&apos; &amp;&amp; Delivery__c != null</errorConditionFormula>
+    <errorMessage>Instructors can&apos;t have delivery</errorMessage>
+</ValidationRule>

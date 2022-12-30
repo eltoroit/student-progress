@@ -17,7 +17,7 @@
     <referenceTo>Attendee__c</referenceTo>
     <relationshipLabel>Deliveries</relationshipLabel>
     <relationshipName>Deliveries</relationshipName>
-    <required>false</required>
+    <required>true</required>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>
 </CustomField>
