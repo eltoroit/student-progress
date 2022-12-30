@@ -155,11 +155,14 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Attendee</label>
     <nameField>
-        <label>Attendee Name</label>
-        <type>Text</type>
+        <displayFormat>Attendee-{0000}</displayFormat>
+        <label>Attendee Number</label>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Attendees</pluralLabel>
-    <searchLayouts></searchLayouts>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Name__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

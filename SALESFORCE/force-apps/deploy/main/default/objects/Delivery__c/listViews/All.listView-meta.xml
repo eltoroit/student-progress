@@ -6,7 +6,7 @@
     <columns>CurrentExercise__c</columns>
     <columns>CurrentExerciseIsActive__c</columns>
     <columns>CurrentExerciseStart__c</columns>
-    <columns>InstructorName__c</columns>
+    <columns>InstructorLookup__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

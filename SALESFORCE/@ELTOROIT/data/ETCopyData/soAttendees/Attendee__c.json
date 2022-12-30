@@ -1,440 +1,442 @@
 {
-	"fetched": 31,
+	"fetched": 29,
 	"records": [
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lF0YAJ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6bQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxuYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVyQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Andres",
-			"Id": "a06DK00000B6lF0YAJ",
+			"Id": "a008F000002jC6bQAE",
 			"IsInstructor__c": true,
 			"LastName__c": "Perez",
-			"Name": "Andres Perez",
+			"Name__c": "Andres Perez",
 			"Nickname__c": "Andres"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lF1YAJ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6cQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Andres",
-			"Id": "a06DK00000B6lF1YAJ",
+			"Id": "a008F000002jC6cQAE",
 			"IsInstructor__c": true,
 			"LastName__c": "Perez",
-			"Name": "Andres Perez",
+			"Name__c": "Andres Perez",
 			"Nickname__c": "Andres"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lF5YAJ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6dQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxuYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVyQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Matias",
-			"Id": "a06DK00000B6lF5YAJ",
+			"Id": "a008F000002jC6dQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Matias NoLastName",
+			"Name__c": "Matias NoLastName",
 			"Nickname__c": "Matias"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lF6YAJ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6eQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxuYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVyQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Achuth",
-			"Id": "a06DK00000B6lF6YAJ",
+			"Id": "a008F000002jC6eQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "MissingLastName",
-			"Name": "Achuth MissingLastName",
+			"Name__c": "Achuth MissingLastName",
 			"Nickname__c": "Achuth"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lF7YAJ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6fQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxuYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVyQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Monisha",
-			"Id": "a06DK00000B6lF7YAJ",
+			"Id": "a008F000002jC6fQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Monisha NoLastName",
+			"Name__c": "Monisha NoLastName",
 			"Nickname__c": "Monisha"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lF8YAJ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6gQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxuYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVyQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Sameer",
-			"Id": "a06DK00000B6lF8YAJ",
+			"Id": "a008F000002jC6gQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Sameer NoLastName",
-			"Nickname__c": "Sameer"
+			"Name__c": "Sam (Sameer NoLastName)",
+			"Nickname__c": "Sam"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lF9YAJ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6hQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxuYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVyQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Chris",
-			"Id": "a06DK00000B6lF9YAJ",
+			"Id": "a008F000002jC6hQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Chris NoLastName",
+			"Name__c": "Chris NoLastName",
 			"Nickname__c": "Chris"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFAYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6iQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxuYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVyQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Vaibhav",
-			"Id": "a06DK00000B6lFAYAZ",
+			"Id": "a008F000002jC6iQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Vaibhav NoLastName",
+			"Name__c": "Vaibhav NoLastName",
 			"Nickname__c": "Vaibhav"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFBYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6jQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxuYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVyQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Kyle",
-			"Id": "a06DK00000B6lFBYAZ",
+			"Id": "a008F000002jC6jQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "Tejada",
-			"Name": "Kyle Tejada",
-			"Nickname__c": "Kyle"
+			"Name__c": "KT (Kyle Tejada)",
+			"Nickname__c": "KT"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFCYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6kQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxuYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVyQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Lakshmi",
-			"Id": "a06DK00000B6lFCYAZ",
+			"Id": "a008F000002jC6kQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Lakshmi NoLastName",
+			"Name__c": "Lakshmi NoLastName",
 			"Nickname__c": "Lakshmi"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFDYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6lQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxuYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVyQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Priyanka",
-			"Id": "a06DK00000B6lFDYAZ",
+			"Id": "a008F000002jC6lQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Priyanka NoLastName",
+			"Name__c": "Priyanka NoLastName",
 			"Nickname__c": "Priyanka"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFEYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6nQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxuYAD",
-			"Email__c": null,
-			"FirstName__c": "Andres",
-			"Id": "a06DK00000B6lFEYAZ",
-			"IsInstructor__c": true,
-			"LastName__c": "NoEmail",
-			"Name": "Andres NoEmail",
-			"Nickname__c": "Andres"
-		},
-		{
-			"attributes": {
-				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFFYAZ"
-			},
-			"Delivery__c": "a02DK00000ELgxuYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVyQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Ramadhar",
-			"Id": "a06DK00000B6lFFYAZ",
+			"Id": "a008F000002jC6nQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "Mishra",
-			"Name": "Ramadhar Mishra",
+			"Name__c": "Ramadhar Mishra",
 			"Nickname__c": "Ramadhar"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFGYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6qQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxuYAD",
-			"Email__c": "no@email.com",
-			"FirstName__c": "Bhoopa",
-			"Id": "a06DK00000B6lFGYAZ",
-			"IsInstructor__c": false,
-			"LastName__c": "NoNickname",
-			"Name": "Bhoopa NoNickname",
-			"Nickname__c": null
-		},
-		{
-			"attributes": {
-				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFHYAZ"
-			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
-			"Email__c": "no@email.com",
-			"FirstName__c": "Andres",
-			"Id": "a06DK00000B6lFHYAZ",
-			"IsInstructor__c": true,
-			"LastName__c": "NoLastName",
-			"Name": "Andres NoLastName",
-			"Nickname__c": "Andres"
-		},
-		{
-			"attributes": {
-				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFIYAZ"
-			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Derek",
-			"Id": "a06DK00000B6lFIYAZ",
+			"Id": "a008F000002jC6qQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "Chow",
-			"Name": "Derek Chow",
+			"Name__c": "Derek Chow",
 			"Nickname__c": "Derek"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFJYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6rQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Jude",
-			"Id": "a06DK00000B6lFJYAZ",
+			"Id": "a008F000002jC6rQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Jude NoLastName",
+			"Name__c": "Jude NoLastName",
 			"Nickname__c": "Jude"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFKYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6sQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Atika",
-			"Id": "a06DK00000B6lFKYAZ",
+			"Id": "a008F000002jC6sQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Atika NoLastName",
+			"Name__c": "Atika NoLastName",
 			"Nickname__c": "Atika"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFLYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6tQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "MIchael",
-			"Id": "a06DK00000B6lFLYAZ",
+			"Id": "a008F000002jC6tQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "MIchael NoLastName",
+			"Name__c": "MIchael NoLastName",
 			"Nickname__c": "MIchael"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFMYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6uQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Sathish",
-			"Id": "a06DK00000B6lFMYAZ",
+			"Id": "a008F000002jC6uQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Sathish NoLastName",
+			"Name__c": "Sathish NoLastName",
 			"Nickname__c": "Sathish"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFNYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6vQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Sean",
-			"Id": "a06DK00000B6lFNYAZ",
+			"Id": "a008F000002jC6vQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Sean NoLastName",
+			"Name__c": "Sean NoLastName",
 			"Nickname__c": "Sean"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFOYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6wQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Rajinder",
-			"Id": "a06DK00000B6lFOYAZ",
+			"Id": "a008F000002jC6wQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Rajinder NoLastName",
+			"Name__c": "Rajinder NoLastName",
 			"Nickname__c": "Rajinder"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFPYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6xQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Gursevak",
-			"Id": "a06DK00000B6lFPYAZ",
+			"Id": "a008F000002jC6xQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "Sharma",
-			"Name": "Gursevak Sharma",
+			"Name__c": "Gursevak Sharma",
 			"Nickname__c": "Gursevak"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFQYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6yQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Lawrence",
-			"Id": "a06DK00000B6lFQYAZ",
+			"Id": "a008F000002jC6yQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Lawrence NoLastName",
+			"Name__c": "Lawrence NoLastName",
 			"Nickname__c": "Lawrence"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFRYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC6zQAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Ray",
-			"Id": "a06DK00000B6lFRYAZ",
+			"Id": "a008F000002jC6zQAE",
 			"IsInstructor__c": false,
 			"LastName__c": "Wu",
-			"Name": "Ray Wu",
+			"Name__c": "Ray Wu",
 			"Nickname__c": "Ray"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFSYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC70QAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "ILYA",
-			"Id": "a06DK00000B6lFSYAZ",
+			"Id": "a008F000002jC70QAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "ILYA NoLastName",
+			"Name__c": "ILYA NoLastName",
 			"Nickname__c": "ILYA"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFTYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC71QAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Peter",
-			"Id": "a06DK00000B6lFTYAZ",
+			"Id": "a008F000002jC71QAE",
 			"IsInstructor__c": false,
 			"LastName__c": "Liang",
-			"Name": "Peter Liang",
+			"Name__c": "Peter Liang",
 			"Nickname__c": "Peter"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFUYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC72QAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Harkanwar",
-			"Id": "a06DK00000B6lFUYAZ",
+			"Id": "a008F000002jC72QAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Harkanwar NoLastName",
+			"Name__c": "Harkanwar NoLastName",
 			"Nickname__c": "Harkanwar"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFWYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC73QAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Robin",
-			"Id": "a06DK00000B6lFWYAZ",
+			"Id": "a008F000002jC73QAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Robin NoLastName",
+			"Name__c": "Robin NoLastName",
 			"Nickname__c": "Robin"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFXYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC74QAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Krishna",
-			"Id": "a06DK00000B6lFXYAZ",
+			"Id": "a008F000002jC74QAE",
 			"IsInstructor__c": false,
 			"LastName__c": "NoLastName",
-			"Name": "Krishna NoLastName",
+			"Name__c": "Krishna NoLastName",
 			"Nickname__c": "Krishna"
 		},
 		{
 			"attributes": {
 				"type": "Attendee__c",
-				"url": "/services/data/v56.0/sobjects/Attendee__c/a06DK00000B6lFYYAZ"
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC75QAE"
 			},
-			"Delivery__c": "a02DK00000ELgxvYAD",
+			"ChosenDTTM__c": null,
+			"Delivery__c": "a038F000001HQVzQAO",
 			"Email__c": "no@email.com",
 			"FirstName__c": "Manoj",
-			"Id": "a06DK00000B6lFYYAZ",
+			"Id": "a008F000002jC75QAE",
 			"IsInstructor__c": false,
 			"LastName__c": "Rastogi",
-			"Name": "Manoj Rastogi",
+			"Name__c": "Manoj Rastogi",
 			"Nickname__c": "Manoj"
+		},
+		{
+			"attributes": {
+				"type": "Attendee__c",
+				"url": "/services/data/v56.0/sobjects/Attendee__c/a008F000002jC7VQAU"
+			},
+			"ChosenDTTM__c": null,
+			"Delivery__c": null,
+			"Email__c": "no@email.com",
+			"FirstName__c": "Andres",
+			"Id": "a008F000002jC7VQAU",
+			"IsInstructor__c": false,
+			"LastName__c": "Perez",
+			"Name__c": "Andres Perez",
+			"Nickname__c": "Andres",
+			"RecordTypeId": "0128F000000RoMyQAK"
 		}
 	],
-	"total": 31
+	"total": 29
 }

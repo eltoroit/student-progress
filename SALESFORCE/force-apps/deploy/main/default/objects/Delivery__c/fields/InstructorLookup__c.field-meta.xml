@@ -6,11 +6,11 @@
     <label>Instructor</label>
     <lookupFilter>
         <active>true</active>
-        <errorMessage>Attendee selected must be an instructor</errorMessage>
+        <errorMessage>Attendee selected must be an instructor master record</errorMessage>
         <filterItems>
-            <field>Attendee__c.IsInstructor__c</field>
+            <field>Attendee__c.RecordTypeId</field>
             <operation>equals</operation>
-            <value>True</value>
+            <value>Instructor</value>
         </filterItems>
         <isOptional>false</isOptional>
     </lookupFilter>

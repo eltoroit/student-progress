@@ -7,7 +7,7 @@
         <locationX>182</locationX>
         <locationY>311</locationY>
         <assignmentItems>
-            <assignToReference>$Record.Name</assignToReference>
+            <assignToReference>$Record.Name__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>CalculateName</elementReference>
@@ -23,7 +23,7 @@
         <locationX>50</locationX>
         <locationY>551</locationY>
         <assignmentItems>
-            <assignToReference>$Record.Name</assignToReference>
+            <assignToReference>$Record.Name__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>CalculateNameWithNickname</elementReference>
@@ -46,6 +46,13 @@
                     <stringValue></stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Nickname__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.FirstName__c</elementReference>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Assign020</targetReference>
             </connector>
@@ -61,7 +68,7 @@
     <formulas>
         <name>CalculateNameWithNickname</name>
         <dataType>String</dataType>
-        <expression>{!$Record.Nickname__c} + &quot; (&quot; + {!$Record.Name} + &quot;)&quot;</expression>
+        <expression>{!$Record.Nickname__c} + &quot; (&quot; + {!$Record.Name__c} + &quot;)&quot;</expression>
     </formulas>
     <interviewLabel>Assign Name to Attendee {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Assign Name to Attendee</label>

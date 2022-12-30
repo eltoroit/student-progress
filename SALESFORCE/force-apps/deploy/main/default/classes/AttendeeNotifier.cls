@@ -14,24 +14,25 @@ public with sharing class AttendeeNotifier {
 		// Process all records, grouping changes by rules
 		for (SObject sobj : sobjs) {
 			Id deliveryId = (Id) sobj.get(keyFieldName);
-
-			SObject sobjOld = null;
-			if (Trigger.isUpdate) {
-				sobjOld = Trigger.oldMap.get(sobj.Id);
-			}
-
-			Map<String, List<String>> fieldsChangedGroupedByRule = findFieldsChangedGroupedByRule(sobj, sobjOld, entityName, mapRules);
-			for (String ruleName : fieldsChangedGroupedByRule.keySet()) {
-				Map<String, Integer> dataByDeliveryId = new Map<String, Integer>();
-				if (data.containsKey(deliveryId)) {
-					dataByDeliveryId = data.get(deliveryId);
+			if (deliveryId != null) {
+				SObject sobjOld = null;
+				if (Trigger.isUpdate) {
+					sobjOld = Trigger.oldMap.get(sobj.Id);
 				}
-				Integer count = 0;
-				if (dataByDeliveryId.containsKey(ruleName)) {
-					count = dataByDeliveryId.get(ruleName);
+
+				Map<String, List<String>> fieldsChangedGroupedByRule = findFieldsChangedGroupedByRule(sobj, sobjOld, entityName, mapRules);
+				for (String ruleName : fieldsChangedGroupedByRule.keySet()) {
+					Map<String, Integer> dataByDeliveryId = new Map<String, Integer>();
+					if (data.containsKey(deliveryId)) {
+						dataByDeliveryId = data.get(deliveryId);
+					}
+					Integer count = 0;
+					if (dataByDeliveryId.containsKey(ruleName)) {
+						count = dataByDeliveryId.get(ruleName);
+					}
+					dataByDeliveryId.put(ruleName, ++count);
+					data.put(deliveryId, dataByDeliveryId);
 				}
-				dataByDeliveryId.put(ruleName, ++count);
-				data.put(deliveryId, dataByDeliveryId);
 			}
 		}
 
