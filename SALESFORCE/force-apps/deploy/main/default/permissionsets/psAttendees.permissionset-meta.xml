@@ -36,6 +36,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Delivery__c.Company__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Delivery__c.CurrentExerciseIsActive__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -62,6 +67,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Delivery__c.IsActive__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Delivery__c.Location__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
