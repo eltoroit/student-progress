@@ -1,4 +1,8 @@
-trigger tDelivery on DElivery__c(after insert, after update, after delete) {
+trigger tDelivery on Delivery__c(after insert, after update, after delete) {
+	// Create instructor record in the delivery
+	DeliveryTriggerHandler.CreateInstructorAsAttendee(Trigger.new, Trigger.oldMap);
+
+	// Publish Events
 	String keyFieldName = 'Id';
 	Map<String, List<String>> mapRules = new Map<String, List<String>>();
 	mapRules.put('IGNORE', new List<String>{ 'InstructorLookup__c' });

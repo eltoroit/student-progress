@@ -21,7 +21,7 @@ public with sharing class AttendeeNotifier_Test {
 		instructor.IsInstructor__c = true;
 		instructor.LastName__c = 'Perez';
 		instructor.Nickname__c = 'ELTOROIT';
-		instructor.Name = 'Test Name';
+		instructor.Name__c = 'Test Name';
 		insert instructor;
 
 		Delivery__c delivery = new Delivery__c();

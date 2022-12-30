@@ -76,7 +76,7 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Attendee__c-Attendee Layout</layout>
-        <recordType>Attendee__c.Delivery</recordType>
+        <recordType>Attendee__c.Attendee</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Attendee__c-Instructor Layout</layout>
