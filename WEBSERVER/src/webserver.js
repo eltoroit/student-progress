@@ -78,7 +78,7 @@ export default class Weberver {
 
 	allowExpressCORS() {
 		this.app.use((req, res, next) => {
-			console.log("CORS: Web");
+			// console.log("CORS: Web");
 			res.header("Access-Control-Allow-Origin", req.get("Origin") || "*");
 			res.header("Access-Control-Allow-Credentials", "true");
 			res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
@@ -96,7 +96,7 @@ export default class Weberver {
 		return {
 			// Access-Control-Allow-Origin
 			origin: (origin, callback) => {
-				console.log("CORS: Socket.io");
+				// console.log("CORS: Socket.io");
 				const isValid = true;
 				if (isValid) {
 					// Valid Origin
