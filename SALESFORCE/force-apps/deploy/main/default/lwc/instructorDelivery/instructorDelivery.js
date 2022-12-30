@@ -31,7 +31,7 @@ export default class InstructorDelivery extends LightningElement {
 
 	// Controls
 	loading = true;
-	randomStudent = "";
+	randomAttendee = "";
 	apexManager = null;
 	timers = { screen: null };
 	activeExercise = {
@@ -114,7 +114,7 @@ export default class InstructorDelivery extends LightningElement {
 		ui.pnlActiveExerciseName = this.courses?.currentId && this.exercises?.activeId && !isCurrentActive();
 		ui.pnlActiveExerciseData = isCurrentActive();
 		ui.pnlCompletion = this.exercises?.currentId && !isNaN(this.exProgSummary);
-		ui.pnlStudents = this.exercises?.currentId;
+		ui.pnlAttendees = this.exercises?.currentId;
 
 		return ui;
 	}
@@ -163,12 +163,12 @@ export default class InstructorDelivery extends LightningElement {
 				this.parseExerciseProgress({ data });
 				break;
 			}
-			case "Student__c":
+			case "Attendee__c":
 			case "Delivery__c": {
 				this.apexManager.fetchActiveDeliveriesWithCourses();
 				break;
 			}
-			case "Exercise_X_Student__c": {
+			case "Exercise_X_Attendee__c": {
 				this.apexManager.fetchExerciseProgress({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId });
 				this.apexManager.fetchDeliveryProgress({ deliveryId: this.deliveries.currentId });
 				break;
@@ -189,10 +189,10 @@ export default class InstructorDelivery extends LightningElement {
 
 		switch (actionNameCommand) {
 			case "Status": {
-				this.apexManager.doUpdateStudentStatus({
+				this.apexManager.doUpdateAttendeeStatus({
 					deliveryId: this.deliveries.currentId,
 					exerciseId: this.exercises.currentId,
-					studentId: row.studentId,
+					attendeeId: row.attendeeId,
 					status: actionValue
 				});
 				break;
@@ -216,23 +216,34 @@ export default class InstructorDelivery extends LightningElement {
 	}
 
 	onRandomClick() {
-		/*
-			Works with a quick solution, but not a good solution
-			It's possible to choose A, B, C, A, D... Having a student be selected again soon after it was previously selected.
-			Or a student that is not selected often enough
-			Maintain a list of unselected students and randomize from there :-)
-			This list should be in the server, since a page refresh would reset it.
-			Have the random student be chosen via Apex where a field can be set
-		*/
-		const prevStudent = this.randomStudent;
-		do {
-			let students = this.exProgProgress.filter((row) => !row.isInstructor);
-			students = students.map((row) => row.name);
-			let idx = Math.floor(Math.random() * students.length);
-			this.randomStudent = students[idx];
-		} while (this.randomStudent === prevStudent);
-		// eslint-disable-next-line no-alert
-		alert(this.randomStudent);
+		debugger;
+		let counter = 20;
+		let timer = setInterval(async () => {
+			counter--;
+			if (counter > 0) {
+				const attendee = await this.apexManager.doPickRandomAttendee({ deliveryId: this.deliveries.currentId });
+				Utils.logger.log(`${attendee.Name} | ${attendee.ChosenDTTM__c}`);
+			} else {
+				clearInterval(timer);
+			}
+		}, 1e3);
+		// /*
+		// 	Works with a quick solution, but not a good solution
+		// 	It's possible to choose A, B, C, A, D... Having a attendee be selected again soon after it was previously selected.
+		// 	Or a attendee that is not selected often enough
+		// 	Maintain a list of unselected attendees and randomize from there :-)
+		// 	This list should be in the server, since a page refresh would reset it.
+		// 	Have the random attendee be chosen via Apex where a field can be set
+		// */
+		// const prevAttendee = this.randomAttendee;
+		// do {
+		// 	let attendees = this.exProgProgress.filter((row) => !row.isInstructor);
+		// 	attendees = attendees.map((row) => row.name);
+		// 	let idx = Math.floor(Math.random() * attendees.length);
+		// 	this.randomAttendee = attendees[idx];
+		// } while (this.randomAttendee === prevAttendee);
+		// // eslint-disable-next-line no-alert
+		// alert(this.randomAttendee);
 	}
 
 	onCurrentClick() {
@@ -413,53 +424,53 @@ export default class InstructorDelivery extends LightningElement {
 
 	parseDeliveryProgress({ data }) {
 		// Parse data
-		const mapStudents = {};
+		const mapAttendees = {};
 		const exercises = data.EXERCISES.map((ex) => ({ Id: ex.Id, Name: ex.Name }));
-		const students = data.STUDENTS.map((student) => {
+		const attendees = data.ATTENDEES.map((attendee) => {
 			const output = {
-				Id: student.Id,
-				Name: student.Name,
-				IsInstructor: student.IsInstructor__c,
+				Id: attendee.Id,
+				Name: attendee.Name,
+				IsInstructor: attendee.IsInstructor__c,
 				Points: 0,
-				mExS: {}
+				mExA: {}
 			};
-			mapStudents[student.Id] = output;
+			mapAttendees[attendee.Id] = output;
 			return output;
 		});
 
 		// Calculate points
 		data.EXERCISES.forEach((ex) => {
-			let points = students.length;
-			ex.Exercises_X_Students__r.forEach((ExS, index) => {
-				const newExS = {
-					ExerciseId: ExS.Exercise__c,
-					StudentId: ExS.Student__c,
+			let points = attendees.length;
+			ex.Exercises_X_Attendees__r.forEach((ExA, index) => {
+				const newExA = {
+					ExerciseId: ExA.Exercise__c,
+					AttendeeId: ExA.Attendee__c,
 					Points: 0,
 					Ranking: 0,
-					Status: ExS.Status__c,
-					DTTM: new Date(ExS.LastModifiedDate)
+					Status: ExA.Status__c,
+					DTTM: new Date(ExA.LastModifiedDate)
 				};
-				if (ExS.Status__c === Utils.STATES.DONE()) {
-					newExS.Ranking = index + 1;
-					newExS.Points = points--;
+				if (ExA.Status__c === Utils.STATES.DONE()) {
+					newExA.Ranking = index + 1;
+					newExA.Points = points--;
 				}
-				const student = mapStudents[ExS.Student__c];
-				student.Points += newExS.Points;
-				student.mExS[ExS.Exercise__c] = newExS;
+				const attendee = mapAttendees[ExA.Attendee__c];
+				attendee.Points += newExA.Points;
+				attendee.mExA[ExA.Exercise__c] = newExA;
 			});
 		});
 
 		// Build the output data
-		let tableAllData = students.map((student) => {
+		let tableAllData = attendees.map((attendee) => {
 			const output = {
-				StudentId: student.Id,
-				Name: student.Name,
-				Points: student.Points,
-				IsInstructor: student.IsInstructor,
+				AttendeeId: attendee.Id,
+				Name: attendee.Name,
+				Points: attendee.Points,
+				IsInstructor: attendee.IsInstructor,
 				EX: []
 			};
 			exercises.forEach((ex, index) => {
-				const ExS = student.mExS[ex.Id];
+				const ExA = attendee.mExA[ex.Id];
 				const paddedIndex = `${index}`.padStart(3, "0");
 				const tmp = {
 					index: paddedIndex,
@@ -468,18 +479,18 @@ export default class InstructorDelivery extends LightningElement {
 					status: "?",
 					emoji: ""
 				};
-				if (ExS) {
-					tmp.ranking = ExS.Ranking;
-					tmp.points = ExS.Points;
-					tmp.status = ExS.Status;
-					tmp.emoji = Utils.getEmoji({ status: ExS.Status });
+				if (ExA) {
+					tmp.ranking = ExA.Ranking;
+					tmp.points = ExA.Points;
+					tmp.status = ExA.Status;
+					tmp.emoji = Utils.getEmoji({ status: ExA.Status });
 				}
 				output.EX.push(tmp);
 			});
 			return output;
 		});
 
-		// Only the students
+		// Only the attendees
 		tableAllData = tableAllData.filter((row) => !row.IsInstructor);
 
 		// Sort it :-)
@@ -494,19 +505,19 @@ export default class InstructorDelivery extends LightningElement {
 			total: 0
 		};
 
-		this.exProgProgress = data.map((student) => {
+		this.exProgProgress = data.map((attendee) => {
 			const row = {
-				studentId: student.Id,
-				name: student.Name,
+				attendeeId: attendee.Id,
+				name: attendee.Name,
 				status: ""
 			};
-			if (student.IsInstructor__c) {
+			if (attendee.IsInstructor__c) {
 				row.name += ` 🧑‍🏫`;
 				row.isInstructor = true;
 			}
-			if (student.Exercises_X_Students__r?.length > 0) {
-				const rowData = student.Exercises_X_Students__r[0];
-				row.exsId = rowData?.Id;
+			if (attendee.Exercises_X_Attendees__r?.length > 0) {
+				const rowData = attendee.Exercises_X_Attendees__r[0];
+				row.ExAId = rowData?.Id;
 				row.status = rowData?.Status__c;
 				row.emoji = Utils.getEmoji({ status: rowData?.Status__c });
 				row.startAt = rowData.CreatedDate;

@@ -1,0 +1,22 @@
+{
+	"fetched": 2,
+	"records": [
+		{
+			"attributes": {
+				"type": "RecordType",
+				"url": "/services/data/v56.0/sobjects/RecordType/01253000000dRItAAM"
+			},
+			"DeveloperName": "Attendee",
+			"Id": "01253000000dRItAAM"
+		},
+		{
+			"attributes": {
+				"type": "RecordType",
+				"url": "/services/data/v56.0/sobjects/RecordType/01253000000dRIuAAM"
+			},
+			"DeveloperName": "Instructor",
+			"Id": "01253000000dRIuAAM"
+		}
+	],
+	"total": 2
+}

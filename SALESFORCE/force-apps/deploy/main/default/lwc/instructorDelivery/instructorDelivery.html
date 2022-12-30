@@ -7,7 +7,7 @@
 		</template>
 		<lightning-button-group slot="actions">
 			<lightning-button
-				label="Random Student"
+				label="Random Attendee"
 				onclick={onRandomClick}
 				if:true={ui.btnRandom.isVisible}
 				disabled={ui.btnRandom.isDisabled}
@@ -112,11 +112,11 @@
 				<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
 			</template>
 
-			<template if:true={ui.pnlStudents}>
+			<template if:true={ui.pnlAttendees}>
 				<lightning-layout-item size="12" class="slds-m-top_medium">
 					<div class="slds-scrollable_y" style="height: 400px; width: 100%">
 						<lightning-datatable
-							key-field="studentId"
+							key-field="attendeeId"
 							data={exProgProgress}
 							columns={exProgColumns}
 							onrowaction={onRowAction}

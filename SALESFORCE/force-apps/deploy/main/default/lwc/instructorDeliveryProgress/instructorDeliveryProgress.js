@@ -4,7 +4,7 @@
 
 import Utils from "c/utils";
 import { api, LightningElement } from "lwc";
-import srStudents from "@salesforce/resourceUrl/Students";
+import srAttendees from "@salesforce/resourceUrl/Attendees";
 import { loadScript } from "lightning/platformResourceLoader";
 import instructorDeliveryProgressTable from "c/instructorDeliveryProgressTable";
 
@@ -34,7 +34,7 @@ export default class InstructorDeliveryProgress extends LightningElement {
 	async makeChart() {
 		if (!this._ctxChart) {
 			try {
-				await loadScript(this, `${srStudents}/chartjs_v280.js`);
+				await loadScript(this, `${srAttendees}/chartjs_v280.js`);
 				const canvas = document.createElement("canvas");
 				this.template.querySelector("div.chart").appendChild(canvas);
 				this._ctxChart = canvas.getContext("2d");
@@ -58,7 +58,7 @@ export default class InstructorDeliveryProgress extends LightningElement {
 						datasets: [
 							{
 								backgroundColor: "#639dff",
-								label: "Students",
+								label: "Attendees",
 								data
 							}
 						]
@@ -94,7 +94,7 @@ export default class InstructorDeliveryProgress extends LightningElement {
 	async onShowTable() {
 		await instructorDeliveryProgressTable.open({
 			size: "large",
-			studentsData: this.deliveryData
+			attendeesData: this.deliveryData
 		});
 	}
 }

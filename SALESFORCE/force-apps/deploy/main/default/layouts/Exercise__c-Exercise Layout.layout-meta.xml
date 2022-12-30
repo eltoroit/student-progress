@@ -79,10 +79,10 @@
     </platformActionList>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>Student__c.NAME</fields>
+        <fields>Attendee__c.NAME</fields>
         <fields>LAST_UPDATE</fields>
         <fields>Status__c</fields>
-        <relatedList>Exercise_X_Student__c.Exercise__c</relatedList>
+        <relatedList>Exercise_X_Attendee__c.Exercise__c</relatedList>
         <sortField>LAST_UPDATE</sortField>
         <sortOrder>Asc</sortOrder>
     </relatedLists>

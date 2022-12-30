@@ -20,7 +20,7 @@
 
 # --- Batch variables
 	# Alias for scratch org
-	ALIAS=soStudents
+	ALIAS=soAttendees
 
 	# How long will the scratch org live (max 30)
 	DAYS=1
@@ -31,7 +31,7 @@
 
 	# Permission Set names
 	# Sample: PACKAGES=("PS_01" "PS_02" "PS_03")
-	PERM_SETS=("psStudents")
+	PERM_SETS=("psAttendees")
 
 	# Prepare scratch org for deployment. Some metadata needs to be deployed first.
 	# Sample: PREPARE_ORG=("@ELTOROIT/metadata/API/")

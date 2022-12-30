@@ -42,6 +42,7 @@ export default class Weberver {
 		};
 
 		const httpsServer = https.createServer(certs, this.app);
+		this.makeSocketio({ httpsServer });
 		httpsServer.listen(process.env.HTTPS_PORT_LOCAL, () => {
 			console.log(`HTTPS Server running at: https://localhost:${process.env.HTTPS_PORT_LOCAL}/`);
 		});
@@ -54,45 +55,6 @@ export default class Weberver {
 		this.io.on("connection", (socket) => {
 			this.ioconn(socket);
 		});
-	}
-
-	allowExpressCORS() {
-		this.app.use((req, res, next) => {
-			res.header("Access-Control-Allow-Origin", req.get("Origin") || "*");
-			res.header("Access-Control-Allow-Credentials", "true");
-			res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
-			res.header("Access-Control-Expose-Headers", "Content-Length");
-			res.header("Access-Control-Allow-Headers", "Accept, Authorization, Content-Type, X-Requested-With, Range");
-			if (req.method === "OPTIONS") {
-				return res.sendStatus(200);
-			} else {
-				return next();
-			}
-		});
-	}
-
-	allowSocketioCORS() {
-		return {
-			// Access-Control-Allow-Origin
-			origin: (origin, callback) => {
-				const isValid = true;
-				if (isValid) {
-					// Valid Origin
-					return callback(null, true);
-				} else {
-					// Invalid origin
-					return callback(new Error("Invalid Origin"), false);
-				}
-			},
-			// Access-Control-Allow-Methods
-			methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-			// Access-Control-Allow-Headers
-			allowedHeaders: "Accept, Authorization, Content-Type, X-Requested-With, Range",
-			// Access-Control-Expose-Headers
-			exposedHeaders: "Content-Length",
-			// Access-Control-Allow-Credentials
-			credentials: "true",
-		};
 	}
 
 	ioconn(socket) {
@@ -112,6 +74,47 @@ export default class Weberver {
 		// this.socket.emit(eventName, data);
 		// To everybody
 		this.io.emit(eventName, data);
+	}
+
+	allowExpressCORS() {
+		this.app.use((req, res, next) => {
+			console.log("CORS: Web");
+			res.header("Access-Control-Allow-Origin", req.get("Origin") || "*");
+			res.header("Access-Control-Allow-Credentials", "true");
+			res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
+			res.header("Access-Control-Expose-Headers", "Content-Length");
+			res.header("Access-Control-Allow-Headers", "Accept, Authorization, Content-Type, X-Requested-With, Range");
+			if (req.method === "OPTIONS") {
+				return res.sendStatus(200);
+			} else {
+				return next();
+			}
+		});
+	}
+
+	allowSocketioCORS() {
+		return {
+			// Access-Control-Allow-Origin
+			origin: (origin, callback) => {
+				console.log("CORS: Socket.io");
+				const isValid = true;
+				if (isValid) {
+					// Valid Origin
+					return callback(null, true);
+				} else {
+					// Invalid origin
+					return callback(new Error("Invalid Origin"), false);
+				}
+			},
+			// Access-Control-Allow-Methods
+			methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+			// Access-Control-Allow-Headers
+			allowedHeaders: "Accept, Authorization, Content-Type, X-Requested-With, Range",
+			// Access-Control-Expose-Headers
+			exposedHeaders: "Content-Length",
+			// Access-Control-Allow-Credentials
+			credentials: "true",
+		};
 	}
 
 	routes() {
