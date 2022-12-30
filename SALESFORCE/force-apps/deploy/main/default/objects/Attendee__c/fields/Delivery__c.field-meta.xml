@@ -7,7 +7,7 @@
     <referenceTo>Delivery__c</referenceTo>
     <relationshipLabel>Attendees</relationshipLabel>
     <relationshipName>Attendees</relationshipName>
-    <required>true</required>
+    <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>
 </CustomField>
