@@ -1,6 +1,6 @@
 import Utils from "c/utils";
 import { LightningElement } from "lwc";
-import srStudents from "@salesforce/resourceUrl/Students";
+import srAttendees from "@salesforce/resourceUrl/Attendees";
 import { loadScript } from "lightning/platformResourceLoader";
 
 export default class WebsocketManager extends LightningElement {
@@ -9,8 +9,8 @@ export default class WebsocketManager extends LightningElement {
 
 	async connectedCallback() {
 		try {
-			await loadScript(this, `${srStudents}/socket.io.min.js`);
-			this.socket = window.io("https://th-student-reporting-staging.herokuapp.com"); /// This should be read from some config settings (MDT?)
+			await loadScript(this, `${srAttendees}/socket.io.min.js`);
+			this.socket = window.io("https://th-attendee-reporting-staging.herokuapp.com"); /// This should be read from some config settings (MDT?)
 			this.connection();
 			this.listen();
 			this.initialized = true;
@@ -49,7 +49,7 @@ export default class WebsocketManager extends LightningElement {
 			Utils.logger.log(message, error);
 			this.dispatchEvent(new CustomEvent("iostatus", { bubbles: true, composed: true, detail: { message, color: "red" } }));
 		});
-		
+
 		this.socket.io.on("reconnect", (...args) => {
 			message = `Socket.io | Connection restablished`;
 			Utils.logger.log(message, args);

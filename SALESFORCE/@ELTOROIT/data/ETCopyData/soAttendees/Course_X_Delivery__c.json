@@ -1,0 +1,26 @@
+{
+	"fetched": 2,
+	"records": [
+		{
+			"attributes": {
+				"type": "Course_X_Delivery__c",
+				"url": "/services/data/v56.0/sobjects/Course_X_Delivery__c/a0153000002BMRfAAO"
+			},
+			"Course__c": "a0253000002ASm5AAG",
+			"Delivery__c": "a0353000001T8h4AAC",
+			"Id": "a0153000002BMRfAAO",
+			"Order__c": 1
+		},
+		{
+			"attributes": {
+				"type": "Course_X_Delivery__c",
+				"url": "/services/data/v56.0/sobjects/Course_X_Delivery__c/a0153000002BMRgAAO"
+			},
+			"Course__c": "a0253000002ASm7AAG",
+			"Delivery__c": "a0353000001T8h5AAC",
+			"Id": "a0153000002BMRgAAO",
+			"Order__c": 1
+		}
+	],
+	"total": 2
+}

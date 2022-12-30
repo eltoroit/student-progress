@@ -3,11 +3,11 @@
     <isVisibleByExternalUsers>false</isVisibleByExternalUsers>
     <language>en_US</language>
     <masterLabel>THAcadSide</masterLabel>
-    <originNetwork>Students</originNetwork>
+    <originNetwork>Attendees</originNetwork>
     <relationships>
         <network>
             <access>VIEWER</access>
-            <name>Students</name>
+            <name>Attendees</name>
         </network>
         <workspace>
             <access>INFERRED</access>

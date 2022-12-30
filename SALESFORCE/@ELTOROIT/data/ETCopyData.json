@@ -1,6 +1,6 @@
 {
-  "orgSource": "soStudents",
-  "orgDestination": "soStudents",
+  "orgSource": "soAttendees",
+  "orgDestination": "soAttendees",
   "sObjectsData": [
     {
       "name": "Course__c",
@@ -22,7 +22,7 @@
       "name": "Delivery__c",
       "ignoreFields": "",
       "externalIdField": null,
-      "twoPassReferenceFields": "",
+      "twoPassReferenceFields": "InstructorLookup__c",
       "where": null,
       "orderBy": "Id"
     },
@@ -35,7 +35,7 @@
       "orderBy": "Id"
     },
     {
-      "name": "Exercise_X_Student__c",
+      "name": "Exercise_X_Attendee__c",
       "ignoreFields": "",
       "externalIdField": null,
       "twoPassReferenceFields": "",
@@ -51,15 +51,23 @@
       "orderBy": "Id"
     },
     {
-      "name": "Student__c",
+      "name": "Attendee__c",
       "ignoreFields": "",
       "externalIdField": null,
       "twoPassReferenceFields": "",
-      "where": null,
+      "where": "IsInstructor__c = false",
       "orderBy": "Id"
     }
   ],
-  "sObjectsMetadata": [],
+  "sObjectsMetadata": [
+    {
+      "name": "RecordType",
+      "matchBy": "DeveloperName",
+      "fieldsToExport": "DeveloperName,Id",
+      "where": null,
+      "orderBy": "DeveloperName"
+    }
+  ],
   "rootFolder": "ETCopyData",
   "includeAllCustom": true,
   "customObjectsToIgnore": null,

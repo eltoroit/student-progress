@@ -12,7 +12,7 @@
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>InstructorLookup__c</field>
             </layoutItems>
         </layoutColumns>
@@ -96,7 +96,7 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>Student__c.Delivery__c</relatedList>
+        <relatedList>Attendee__c.Delivery__c</relatedList>
         <sortField>NAME</sortField>
         <sortOrder>Asc</sortOrder>
     </relatedLists>

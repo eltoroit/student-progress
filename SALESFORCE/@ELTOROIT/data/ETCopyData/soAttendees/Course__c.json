@@ -1,0 +1,30 @@
+{
+	"fetched": 3,
+	"records": [
+		{
+			"attributes": {
+				"type": "Course__c",
+				"url": "/services/data/v56.0/sobjects/Course__c/a0253000002ASm5AAG"
+			},
+			"Id": "a0253000002ASm5AAG",
+			"Name": "DEX602"
+		},
+		{
+			"attributes": {
+				"type": "Course__c",
+				"url": "/services/data/v56.0/sobjects/Course__c/a0253000002ASm6AAG"
+			},
+			"Id": "a0253000002ASm6AAG",
+			"Name": "DEX403"
+		},
+		{
+			"attributes": {
+				"type": "Course__c",
+				"url": "/services/data/v56.0/sobjects/Course__c/a0253000002ASm7AAG"
+			},
+			"Id": "a0253000002ASm7AAG",
+			"Name": "DEX450"
+		}
+	],
+	"total": 3
+}
