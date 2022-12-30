@@ -6,10 +6,18 @@
 					<div class="slds-m-horizontal_xx-large">
 						<lightning-tabset active-tab-value="Instructor">
 							<lightning-tab label="Current Exercise" value="Instructor">
-								<c-instructor-delivery ondeliverydata={onDeliveryData}></c-instructor-delivery>
+								<!-- <c-instructor-delivery ondeliverydata={onDeliveryData}></c-instructor-delivery> -->
+								<lightning-layout>
+									<lightning-layout-item size="9">
+										<c-instructor-delivery ondeliverydata={onDeliveryData}></c-instructor-delivery>
+									</lightning-layout-item>
+									<lightning-layout-item size="3">
+										<c-attendee></c-attendee>
+									</lightning-layout-item>
+								</lightning-layout>
 							</lightning-tab>
 							<lightning-tab label="Attendee" value="Attendee">
-								<c-attendee></c-attendee>
+								<!-- <c-attendee></c-attendee> -->
 							</lightning-tab>
 						</lightning-tabset>
 					</div>
