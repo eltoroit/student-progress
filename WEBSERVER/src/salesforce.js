@@ -60,6 +60,7 @@ export default class Salesforce {
 
 	_processNewEventData({ eventData, callback }) {
 		const payload = eventData.payload;
+		console.log("Received event from Salesforce", payload);
 
 		const parsedData = {};
 		parsedData.entityName = payload.EntityName__c;
