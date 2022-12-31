@@ -4,18 +4,18 @@
 		{
 			"attributes": {
 				"type": "RecordType",
-				"url": "/services/data/v56.0/sobjects/RecordType/012DP0000018RM0YAM"
+				"url": "/services/data/v56.0/sobjects/RecordType/012DM0000017KrAYAU"
 			},
 			"DeveloperName": "Attendee",
-			"Id": "012DP0000018RM0YAM"
+			"Id": "012DM0000017KrAYAU"
 		},
 		{
 			"attributes": {
 				"type": "RecordType",
-				"url": "/services/data/v56.0/sobjects/RecordType/012DP0000018RM1YAM"
+				"url": "/services/data/v56.0/sobjects/RecordType/012DM0000017KrBYAU"
 			},
 			"DeveloperName": "Instructor",
-			"Id": "012DP0000018RM1YAM"
+			"Id": "012DM0000017KrBYAU"
 		}
 	],
 	"total": 2

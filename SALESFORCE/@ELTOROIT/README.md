@@ -38,6 +38,8 @@
     -   Needs to activate an exercise
     -   Can watch the timer during a break
 -   Add more spinners
+-   Add Survey link for the delivery
+-
 
 # DONE
 
