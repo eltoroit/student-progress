@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Org_numbers_gap_is_reasonable</fullName>
+    <active>true</active>
+    <description>I&apos;m assuming a class with 100 students is the max</description>
+    <errorConditionFormula>VALUE(OrgLastNumber__c) - VALUE(OrgFirstNumber__c) &gt; 100</errorConditionFormula>
+    <errorMessage>The org numbers have a big gap, please review. Max: 100</errorMessage>
+</ValidationRule>

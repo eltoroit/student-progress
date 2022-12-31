@@ -36,9 +36,24 @@
 				disabled={ui.btnRandom.isDisabled}
 			></lightning-button>
 			<lightning-button-menu label="Orgs" icon-name="utility:desktop" if:true={ui.btnMenuOrgs}>
-				<lightning-menu-item label="View"></lightning-menu-item>
-				<lightning-menu-item label="Assign"></lightning-menu-item>
-				<lightning-menu-item label="Reset"></lightning-menu-item>
+				<lightning-menu-item
+					label="View"
+					onclick={onOrgViewClick}
+					if:true={ui.btnOrgsView.isVisible}
+					disabled={ui.btnOrgsView.isDisabled}
+				></lightning-menu-item>
+				<lightning-menu-item
+					label="Assign"
+					onclick={onOrgAssignClick}
+					if:true={ui.btnOrgsAssign.isVisible}
+					disabled={ui.btnOrgsAssign.isDisabled}
+				></lightning-menu-item>
+				<lightning-menu-item
+					label="Reset"
+					onclick={onOrgResetClick}
+					if:true={ui.btnOrgsReset.isVisible}
+					disabled={ui.btnOrgsReset.isDisabled}
+				></lightning-menu-item>
 			</lightning-button-menu>
 		</lightning-button-group>
 		<lightning-layout multiple-rows>

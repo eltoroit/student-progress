@@ -16,19 +16,7 @@
 					</lightning-layout-item>
 				</template>
 
-				<template if:true={ui.pnlDelivery}>
-					<lightning-layout-item size="4"> Delivery </lightning-layout-item>
-					<lightning-layout-item size="8">{attendeeData.deliveryName}</lightning-layout-item>
-					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
-				</template>
-
-				<template if:true={ui.pnlAttendee}>
-					<lightning-layout-item size="4"> Attendee </lightning-layout-item>
-					<lightning-layout-item size="8">{attendeeData.attendeeName}</lightning-layout-item>
-					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
-				</template>
-
-				<template if:true={ui.pnlExercise}>
+				<template if:true={ui.pnlButtons}>
 					<lightning-layout-item size="4"> Exercise </lightning-layout-item>
 					<lightning-layout-item size="8">{attendeeData.exerciseName}</lightning-layout-item>
 					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
@@ -54,6 +42,32 @@
 							</button>
 						</div>
 					</lightning-layout-item>
+				</template>
+
+				<template if:true={ui.pnlDelivery}>
+					<lightning-layout-item size="4"> Delivery </lightning-layout-item>
+					<lightning-layout-item size="8">{attendeeData.deliveryName}</lightning-layout-item>
+					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+				</template>
+
+				<template if:true={ui.pnlAttendee}>
+					<lightning-layout-item size="4"> Attendee </lightning-layout-item>
+					<lightning-layout-item size="8">{attendeeData.attendeeName}</lightning-layout-item>
+					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+				</template>
+
+				<template if:true={ui.pnlOrg}>
+					<lightning-layout-item size="4"> Username </lightning-layout-item>
+					<lightning-layout-item size="8">{attendeeData.attendee.Org_Username__c}</lightning-layout-item>
+					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+
+					<lightning-layout-item size="4"> Password Assigned </lightning-layout-item>
+					<lightning-layout-item size="8">{attendeeData.attendee.Org_Password_Assigned__c}</lightning-layout-item>
+					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
+
+					<lightning-layout-item size="4"> Password Change To </lightning-layout-item>
+					<lightning-layout-item size="8">{attendeeData.attendee.Org_Password_Changed__c}</lightning-layout-item>
+					<lightning-layout-item size="12" class="slds-m-top_small"></lightning-layout-item>
 				</template>
 			</lightning-layout>
 		</div>

@@ -22,10 +22,10 @@ export default class Image extends LightningElement {
 	}
 
 	connectedCallback() {
-		setInterval(() => {
-			this.counter++;
-			this.computeUrl();
-		}, 5e3);
+		// setInterval(() => {
+		// 	this.counter++;
+		// 	this.computeUrl();
+		// }, 5e3);
 	}
 
 	renderedCallback() {

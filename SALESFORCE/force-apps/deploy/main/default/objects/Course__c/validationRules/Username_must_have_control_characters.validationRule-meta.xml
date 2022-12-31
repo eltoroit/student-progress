@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Username_must_have_control_characters</fullName>
+    <active>true</active>
+    <description>#####</description>
+    <errorConditionFormula>NOT(CONTAINS(OrgUsername__c,&apos;#####&apos;) )</errorConditionFormula>
+    <errorMessage>The username must have the control characters (#####)</errorMessage>
+</ValidationRule>

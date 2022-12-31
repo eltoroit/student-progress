@@ -1,4 +1,5 @@
 public without sharing class Data {
+	// #region ACTIONS
 	@AuraEnabled
 	public static List<Delivery__c> getActiveDeliveries() {
 		List<Delivery__c> output = new List<Delivery__c>();
@@ -102,6 +103,7 @@ public without sharing class Data {
 				Id,
 				Name__c,
 				IsInstructor__c,
+				Org_Username__c,
 				(
 					SELECT Id, Status__c, CreatedDate, lastModifiedDate
 					FROM Exercises_X_Attendees__r
@@ -128,7 +130,9 @@ public without sharing class Data {
 
 		return output;
 	}
+	// #endregion
 
+	// #region ACTIONS
 	@AuraEnabled
 	public static void startStopExercise(Id deliveryId, String exerciseId, Boolean isStart) {
 		try {
@@ -256,7 +260,17 @@ public without sharing class Data {
 		Map<String, Object> output = new Map<String, Object>();
 
 		Attendee__c attendee = [
-			SELECT Id, Name__c, FirstName__c, LastName__c, Nickname__c, Email__c, Delivery__c
+			SELECT
+				Id,
+				Name__c,
+				FirstName__c,
+				LastName__c,
+				Nickname__c,
+				Email__c,
+				Delivery__c,
+				Org_Username__c,
+				Org_Password_Assigned__c,
+				Org_Password_Changed__c
 			FROM Attendee__c
 			WHERE Id = :attendeeId
 		];
@@ -319,4 +333,61 @@ public without sharing class Data {
 
 		return output;
 	}
+
+	@AuraEnabled
+	public static void AssignOrgNumbers(Id deliveryId, Id courseId, Boolean isReset) {
+		Delivery__c delivery = [
+			SELECT Id, OrgFirstNumber__c, OrgLastNumber__c, (SELECT Id, Org_Username__c FROM Attendees__r ORDER BY IsInstructor__c DESC, Name__c ASC)
+			FROM Delivery__c
+			WHERE Id = :deliveryId
+		];
+		if (isReset) {
+			for (Attendee__c att : delivery.Attendees__r) {
+				att.Org_Username__c = null;
+				att.Org_Password_Assigned__c = null;
+				att.Org_Password_Changed__c = null;
+			}
+		} else {
+			Integer orgFirstNumber = Integer.valueOf(delivery.OrgFirstNumber__c);
+			Integer orgLastNumber = Integer.valueOf(delivery.OrgLastNumber__c);
+			System.assert(delivery.Attendees__r.size() < (orgLastNumber - orgFirstNumber), 'There are not enough orgs for this delivery');
+			Course__c course = [SELECT Id, Name, OrgUsername__c, OrgPasswordAssigned__c, OrgPasswordChanged__c FROM Course__c WHERE Id = :courseId];
+			List<String> unParts = course.OrgUsername__c.split('#####');
+
+			// Make map with currently assigned orgs
+			List<String> allUsernames = new List<String>();
+			List<String> availableUsernames = new List<String>();
+			List<Attendee__c> requiresUsername = new List<Attendee__c>();
+			Map<String, Attendee__c> assignedUsernames = new Map<String, Attendee__c>();
+
+			// Initialize collections
+			for (Integer orgNumber = orgFirstNumber; orgNumber <= orgLastNumber; orgNumber++) {
+				String username = unParts[0] + orgNumber + unParts[1];
+				allUsernames.add(username);
+				availableUsernames.add(username);
+				assignedUsernames.put(username, null);
+			}
+
+			// Reserve usernames already assigned
+			for (Attendee__c att : delivery.Attendees__r) {
+				String username = att.Org_Username__c;
+				if (username != null) {
+					assignedUsernames.put(username, att);
+					availableUsernames.remove(availableUsernames.indexOf(username));
+				} else {
+					requiresUsername.add(att);
+				}
+			}
+
+			for (Attendee__c att : requiresUsername) {
+				String username = availableUsernames[0];
+				availableUsernames.remove(availableUsernames.indexOf(username));
+				att.Org_Username__c = username;
+				att.Org_Password_Assigned__c = course.OrgPasswordAssigned__c;
+				att.Org_Password_Changed__c = course.OrgPasswordChanged__c;
+			}
+		}
+		update delivery.Attendees__r;
+	}
+	// #endregion
 }

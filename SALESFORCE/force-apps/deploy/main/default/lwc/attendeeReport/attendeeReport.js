@@ -28,9 +28,20 @@ export default class Attendee extends LightningElement {
 	get ui() {
 		const ui = {};
 
-		ui.pnlDelivery = this.attendeeData?.deliveryId && this.attendeeData?.deliveryId === this.attendeeData?.delivery?.Id;
-		ui.pnlAttendee = this.attendeeData?.attendeeId && this.attendeeData?.attendeeId === this.attendeeData?.attendee?.Id;
-		ui.pnlExercise = this.attendeeData?.exerciseId && this.attendeeData?.exerciseId === this.attendeeData?.exercise?.Id;
+		const hasDelivery = () => {
+			return this.attendeeData?.deliveryId && this.attendeeData?.deliveryId === this.attendeeData?.delivery?.Id;
+		};
+		const hasAttendee = () => {
+			return this.attendeeData?.attendeeId && this.attendeeData?.attendeeId === this.attendeeData?.attendee?.Id;
+		};
+		const hasExercise = () => {
+			return this.attendeeData?.deliveryId && this.attendeeData?.deliveryId === this.attendeeData?.delivery?.Id;
+		};
+
+		ui.pnlDelivery = hasDelivery();
+		ui.pnlAttendee = hasAttendee();
+		ui.pnlButtons = hasExercise();
+		ui.pnlOrg = hasAttendee() && this.attendeeData?.attendee?.Org_Username__c;
 		return ui;
 	}
 
@@ -44,6 +55,7 @@ export default class Attendee extends LightningElement {
 				break;
 			}
 			case "EXERCISE":
+			case "Attendee__c":
 			case "Delivery__c": {
 				this.apexManager.fetchAttendeeDataByAttendeeId({ attendeeId: this.attendeeData.attendeeId });
 				break;

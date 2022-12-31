@@ -33,7 +33,7 @@ export default class WebsocketManager extends LightningElement {
 
 			engine.once("upgrade", () => {
 				// called when the transport is upgraded (i.e. from HTTP long-polling to WebSocket), in most cases, prints "websocket"
-				message = `Socket.io | Connection upgrade to ${engine.transport.name}`;
+				message = `Socket.io | Connection upgraded to ${engine.transport.name}`;
 				this.dispatchEvent(new CustomEvent("iostatus", { bubbles: true, composed: true, detail: { message, color: "green" } }));
 			});
 

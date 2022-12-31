@@ -93,14 +93,24 @@ public with sharing class Notifier {
 		}
 
 		// Process record
-		Map<String, Object> newValues = sobjNew.getPopulatedFieldsAsMap();
-		for (String fieldName : newValues.keyset()) {
+		Set<String> fieldNames = new Set<String>();
+		Map<String, Object> oldValues = new Map<String, Object>();
+		Map<String, Object> newValues = new Map<String, Object>();
+
+		newValues = sobjNew.getPopulatedFieldsAsMap();
+		fieldNames.addAll(newValues.keySet());
+		
+		if (sobjOld != null) {
+			oldValues = sobjOld?.getPopulatedFieldsAsMap();
+			fieldNames.addAll(oldValues.keySet());
+		}
+		
+		for (String fieldName : fieldNames) {
 			if (parsedRules.get(fieldName) == String.valueOf(NOTIFIER.BASIC_RULES.IGNORE)) {
 				// Skip field
 			} else {
 				Boolean isChanged = true;
 				if (sobjOld != null) {
-					Map<String, Object> oldValues = sobjOld.getPopulatedFieldsAsMap();
 					isChanged = newValues.get(fieldName) != oldValues.get(fieldName);
 				}
 				if (isChanged) {

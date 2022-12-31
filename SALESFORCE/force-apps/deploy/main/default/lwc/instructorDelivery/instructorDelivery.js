@@ -13,6 +13,7 @@ const EXERCISE_PROGRESS_COLUMNS = [
 	// { label: "Status2", fieldName: "status" },
 	{ label: "Name", fieldName: "name" },
 	{ label: "Duration", fieldName: "duration" },
+	{ label: "Username", fieldName: "username" },
 	{
 		type: "action",
 		typeAttributes: {
@@ -115,6 +116,19 @@ export default class InstructorDelivery extends LightningElement {
 		};
 
 		ui.btnMenuOrgs = this.courses?.currentId;
+		ui.btnOrgsView = {
+			isVisible: this.courses?.currentId,
+			isDisabled: false
+		};
+		ui.btnOrgsAssign = {
+			isVisible: this.courses?.currentId,
+			isDisabled: false
+		};
+		ui.btnOrgsReset = {
+			isVisible: this.courses?.currentId,
+			isDisabled: false
+		};
+
 		ui.pnlSelectorDeliveries = true;
 		ui.pnlSelectorCourses = this.deliveries?.currentId;
 		ui.pnlSelectorExercises = this.courses?.currentId;
@@ -171,11 +185,11 @@ export default class InstructorDelivery extends LightningElement {
 				break;
 			}
 			case "EXERCISE":
-			case "Attendee__c":
 			case "Delivery__c": {
 				this.apexManager.fetchActiveDeliveriesWithCourses();
 				break;
 			}
+			case "Attendee__c":
 			case "Exercise_X_Attendee__c": {
 				this.apexManager.fetchExerciseProgress({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId });
 				this.apexManager.fetchDeliveryProgress({ deliveryId: this.deliveries.currentId });
@@ -262,6 +276,17 @@ export default class InstructorDelivery extends LightningElement {
 		if (this.exercises.activeId) {
 			this.apexManager.doStartStopExercise({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId, isStart: false });
 		}
+	}
+
+	onOrgViewClick() {
+		debugger;
+		// this.apexManager.
+	}
+	onOrgAssignClick() {
+		this.apexManager.doAssignOrgNumbers({ deliveryId: this.deliveries.currentId, courseId: this.courses.currentId });
+	}
+	onOrgResetClick() {
+		this.apexManager.doResetOrgNumbers({ deliveryId: this.deliveries.currentId, courseId: this.courses.currentId });
 	}
 
 	onIOStatus(event) {
@@ -517,6 +542,7 @@ export default class InstructorDelivery extends LightningElement {
 				row.name += ` 🧑‍🏫`;
 				row.isInstructor = true;
 			}
+			row.username = attendee.Org_Username__c;
 			if (attendee.Exercises_X_Attendees__r?.length > 0) {
 				const rowData = attendee.Exercises_X_Attendees__r[0];
 				row.ExAId = rowData?.Id;
@@ -524,7 +550,6 @@ export default class InstructorDelivery extends LightningElement {
 				row.emoji = Utils.getEmoji({ status: rowData?.Status__c });
 				row.startAt = rowData.CreatedDate;
 				row.endAt = rowData.LastModifiedDate;
-
 				if (row.status === Utils.STATES.DONE()) {
 					const duration = Utils.calculateDuration({
 						startAt: row.startAt,
@@ -550,6 +575,12 @@ export default class InstructorDelivery extends LightningElement {
 		this.exProgSummary = Math.round((completed * 100) / summary.total);
 		if (completed === summary.total) {
 			this.onStopClick();
+			Utils.showNotification(this, {
+				title: "Exercise completed",
+				message: "All students have reported completion of this exercise",
+				variant: Utils.msgVariants.success,
+				mode: Utils.msgModes.dismissible
+			});
 		}
 
 		// Sort results

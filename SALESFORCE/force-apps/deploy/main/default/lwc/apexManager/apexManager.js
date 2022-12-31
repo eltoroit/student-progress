@@ -1,6 +1,7 @@
 import Utils from "c/utils";
 import { api, LightningElement } from "lwc";
 
+import AssignOrgNumbers from "@salesforce/apex/Data.AssignOrgNumbers";
 import pickRandomAttendee from "@salesforce/apex/Data.pickRandomAttendee";
 import getActiveDeliveries from "@salesforce/apex/Data.getActiveDeliveries";
 import getDeliveryProgress from "@salesforce/apex/Data.getDeliveryProgress";
@@ -118,6 +119,18 @@ export default class ApexManager extends LightningElement {
 		}
 		return output;
 	}
+
+	@api async doAssignOrgNumbers({ deliveryId, courseId }) {
+		if (deliveryId && courseId) {
+			await this.callApex({ obj: null, apexPromise: AssignOrgNumbers({ deliveryId, courseId, isReset: false }), forceEvent: false });
+		}
+	}
+	@api async doResetOrgNumbers({ deliveryId, courseId }) {
+		if (deliveryId && courseId) {
+			await this.callApex({ obj: null, apexPromise: AssignOrgNumbers({ deliveryId, courseId, isReset: true }), forceEvent: false });
+		}
+	}
+
 	//#endregion
 
 	onEventReceived(event) {

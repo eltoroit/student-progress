@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Org_numbers_must_increase</fullName>
+    <active>true</active>
+    <errorConditionFormula>VALUE(OrgFirstNumber__c) &gt;  VALUE(OrgLastNumber__c) - 1</errorConditionFormula>
+    <errorMessage>Last org number must be greater than Org start number</errorMessage>
+</ValidationRule>
