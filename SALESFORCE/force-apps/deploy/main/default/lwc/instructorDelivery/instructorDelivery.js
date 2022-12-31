@@ -58,7 +58,8 @@ export default class InstructorDelivery extends LightningElement {
 		options: [],
 		records: [],
 		activeId: null,
-		currentId: null
+		currentId: null,
+		lastActiveId: null
 	};
 
 	// Exercise progress
@@ -71,7 +72,7 @@ export default class InstructorDelivery extends LightningElement {
 			const size = this.exercises?.records?.length;
 			if (isNaN(size)) return false;
 
-			const currentIdx = this.exercises?.options?.findIndex((option) => option.value === this.exercises?.currentId);
+			const currentIdx = this.exercises?.options?.findIndex((option) => option.value === this.exercises?.lastActiveId);
 			return currentIdx < size;
 		};
 
@@ -83,36 +84,37 @@ export default class InstructorDelivery extends LightningElement {
 			);
 		};
 
+		const isCurrentDifferentLastActive = () => {
+			return (
+				this.exercises?.lastActiveId &&
+				this.exercises?.lastActiveId !== this.exercises?.currentId &&
+				Utils.findRecord({ list: this.exercises?.records, Id: this.exercises?.lastActiveId })
+			);
+		};
+
 		const ui = {};
 		ui.btnRandom = {
 			isVisible: this.courses?.currentId,
-			isDisabled: !this.exercises?.currentId
-		};
-		ui.btnCurrent = {
-			isVisible: false, // this.courses?.currentId
-			isDisabled: !this.exercises?.currentId || !this.exercises?.activeId || isCurrentActive()
-		};
-		// ui.btnNext = {
-		// 	isVisible: this.courses?.currentId,
-		// 	isDisabled: !this.exercises?.currentId || !this.exercises?.currentId || this.exercises?.activeId || isCurrentActive() || !hasNext()
-		// };
-		ui.btnStart = {
-			isVisible: false, // this.courses?.currentId
-			isDisabled: !this.courses?.currentId || this.exercises?.activeId || !this.exercises?.currentId || isCurrentActive()
-		};
-		ui.btnStop = {
-			isVisible: false, // 
-			isDisabled: !this.courses?.currentId || !this.exercises?.activeId || !this.exercises?.currentId || !isCurrentActive()
-		};
-		ui.btnRefresh = {
-			isVisible: true,
 			isDisabled: false
 		};
-		ui.btnStop.isVisible = !ui.btnStop.isDisabled;
-		ui.btnStart.isVisible = !ui.btnStart.isDisabled;
-		ui.btnStart.isVisible = !ui.btnStart.isDisabled;
-		ui.btnCurrent.isVisible = !ui.btnCurrent.isDisabled;
+		ui.btnCurrent = {
+			isVisible: this.courses?.currentId && this.exercises?.lastActiveId && isCurrentDifferentLastActive(),
+			isDisabled: false
+		};
+		ui.btnNext = {
+			isVisible: false,
+			isDisabled: false
+		};
+		ui.btnStart = {
+			isVisible: this.courses?.currentId && !this.exercises?.activeId && this.exercises?.currentId && !isCurrentActive(),
+			isDisabled: false
+		};
+		ui.btnStop = {
+			isVisible: this.courses?.currentId && this.exercises?.activeId && isCurrentActive(),
+			isDisabled: false
+		};
 
+		ui.btnMenuOrgs = this.courses?.currentId;
 		ui.pnlSelectorDeliveries = true;
 		ui.pnlSelectorCourses = this.deliveries?.currentId;
 		ui.pnlSelectorExercises = this.courses?.currentId;
@@ -125,7 +127,7 @@ export default class InstructorDelivery extends LightningElement {
 	}
 
 	connectedCallback() {
-		debugger;
+		// debugger;
 	}
 
 	renderedCallback() {
@@ -222,26 +224,32 @@ export default class InstructorDelivery extends LightningElement {
 	}
 
 	async onRandomClick() {
+		this.loading = true;
 		const attendee = await this.apexManager.doPickRandomAttendee({ deliveryId: this.deliveries.currentId });
 		Utils.logger.log(`${attendee.Name__c} | ${attendee.ChosenDTTM__c}`);
-		await LightningAlert.open({
-			message: attendee.Name__c,
-			variant: "header",
-			label: "Your turn!",
-			theme: "inverse"
-		});
+		setTimeout(async () => {
+			this.loading = false;
+			await LightningAlert.open({
+				message: attendee.Name__c,
+				variant: "header",
+				label: "Your turn!",
+				theme: "inverse"
+			});
+		}, 1e3);
 	}
 
 	onCurrentClick() {
 		if (this.exercises.activeId) {
 			this.selectExercise({ currentId: this.exercises.activeId });
+		} else if (this.exercises.lastActiveId) {
+			this.selectExercise({ currentId: this.exercises.lastActiveId });
 		} else {
 			this.selectExercise({ currentId: this.exercises.currentId });
 		}
 	}
 
 	onNextClick() {
-		const index = this.exercises.options.findIndex((exercise) => exercise.value === this.exercises.currentId);
+		const index = this.exercises.options.findIndex((exercise) => exercise.value === this.exercises.lastActiveId);
 		const nextOption = this.exercises.options[index + 1];
 		this.selectExercise({ currentId: nextOption.value });
 	}
@@ -251,7 +259,9 @@ export default class InstructorDelivery extends LightningElement {
 	}
 
 	onStopClick() {
-		this.apexManager.doStartStopExercise({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId, isStart: false });
+		if (this.exercises.activeId) {
+			this.apexManager.doStartStopExercise({ deliveryId: this.deliveries.currentId, exerciseId: this.exercises.currentId, isStart: false });
+		}
 	}
 
 	onIOStatus(event) {
@@ -316,8 +326,9 @@ export default class InstructorDelivery extends LightningElement {
 			this.courses.currentId = null;
 			this.selectCourse({ currentId: null });
 
-			this.exercises.activeId = null;
 			this.exercises.currentId = null;
+			this.exercises.activeId = null;
+			this.exercises.lastActiveId = null;
 			this.selectExercise({ currentId: null });
 
 			this.deliveries.currentId = null;
@@ -340,8 +351,9 @@ export default class InstructorDelivery extends LightningElement {
 			this.courses.currentId = null;
 			this.selectCourse({ currentId: null });
 
-			this.exercises.activeId = null;
 			this.exercises.currentId = null;
+			this.exercises.activeId = null;
+			this.exercises.lastActiveId = null;
 			this.selectExercise({ currentId: null });
 
 			this.loading = false;
@@ -374,10 +386,14 @@ export default class InstructorDelivery extends LightningElement {
 	parseActiveExerciseInformation() {
 		clearInterval(this.activeExercise?.timer);
 		this.exercises.activeId = null;
+		// this.exercises.lastActiveId = null;
 		this.activeExercise.record = null;
 		this.activeExercise.startAt = null;
 		if (this.deliveries.currentId) {
 			const currentDelivery = Utils.findRecord({ list: this.deliveries.records, Id: this.deliveries.currentId });
+			if (currentDelivery.CurrentExercise__c) {
+				this.exercises.lastActiveId = currentDelivery.CurrentExercise__c;
+			}
 			if (currentDelivery?.CurrentExerciseIsActive__c) {
 				this.exercises.activeId = currentDelivery.CurrentExercise__c;
 				this.activeExercise = {
@@ -532,6 +548,9 @@ export default class InstructorDelivery extends LightningElement {
 		if (summary[Utils.STATES.START()]) completed -= summary[Utils.STATES.START()];
 		if (summary[Utils.STATES.WORKING()]) completed -= summary[Utils.STATES.WORKING()];
 		this.exProgSummary = Math.round((completed * 100) / summary.total);
+		if (completed === summary.total) {
+			this.onStopClick();
+		}
 
 		// Sort results
 		this.exProgProgress = this.exProgProgress.sort((a, b) => {

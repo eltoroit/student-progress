@@ -23,7 +23,7 @@ export default class Attendee extends LightningElement {
 	}
 
 	connectedCallback() {
-		debugger;
+		// debugger;
 	}
 
 	async renderedCallback() {

@@ -15,7 +15,6 @@
     -   Add a note to the exercise, like "We took a break while doing the exercise"
 -   Add a timer for breaks
     -   Steal the clock from THCM
--   Exercise should automatically stop when all attendees are done (or they indicated "LATER")
 -   Make an option to call attendance
 -   QR code is not being shown consistently
     -   Consider hardcoding the URL when deploying to production
@@ -75,3 +74,4 @@
 -   Delivery could have a field of class location
     -   Company (if private)
     -   City
+-   Exercise should automatically stop when all attendees are done (or they indicated "LATER")

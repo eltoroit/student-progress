@@ -64,6 +64,7 @@ export default class AttendeeRegister extends LightningElement {
 				this.loadActiveDeliveries({ data });
 				break;
 			}
+			case "Exercise_X_Attendee__c":
 			case "ActiveDeliveriesWithCourses": {
 				// Ignore
 				break;
@@ -76,6 +77,7 @@ export default class AttendeeRegister extends LightningElement {
 				this.apexManager.fetchActiveDeliveries();
 				break;
 			}
+			case "EXERCISE": 
 			case "Attendee__c": {
 				this.apexManager.fetchAttendeesForDelivery({ deliveryId: this.deliveries.currentId });
 				break;
