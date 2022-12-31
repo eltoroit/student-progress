@@ -23,6 +23,11 @@
 -   Revisit Socket.io events
     -   There is a slight delay when the student reports the completion, and the instructor screen being updated.
         -   This could probably ork faster if the student emits a socket to the instructor
+        -   Emit events from JavaScript to JavaScript
+            -   This will increase speed
+            -   Still go get the data for acuracy
+            -   Send all the data needed for the UI change in the socket event
+            -   Receive the events and then in JavaScript determine if this event is for me, and act on that or just ignore it
     -   Do I really have to refresh the whole screen when anything changes?
         -   Can I be smart and only do what's required when I receive a notification?
     -   Think of adding Socket.io rooms for the deliveryId
@@ -32,6 +37,8 @@
 -   Let the instructor connect via phone/tablet
     -   Salesforce App
     -   Needs to activate an exercise
+    -   Can watch the timer during a break
+-   Add more spinners
 
 # DONE
 

@@ -6,19 +6,19 @@
 			<lightning-spinner variant="brand"></lightning-spinner>
 		</template>
 		<lightning-button-group slot="actions">
-			<lightning-button
+			<!-- <lightning-button
 				label="Random Attendee"
 				onclick={onRandomClick}
 				if:true={ui.btnRandom.isVisible}
 				disabled={ui.btnRandom.isDisabled}
-			></lightning-button>
+			></lightning-button> -->
 			<lightning-button
 				label="Current"
 				onclick={onCurrentClick}
 				if:true={ui.btnCurrent.isVisible}
 				disabled={ui.btnCurrent.isDisabled}
 			></lightning-button>
-			<lightning-button label="Next" onclick={onNextClick} if:true={ui.btnNext.isVisible} disabled={ui.btnNext.isDisabled}></lightning-button>
+			<!-- <lightning-button label="Next" onclick={onNextClick} if:true={ui.btnNext.isVisible} disabled={ui.btnNext.isDisabled}></lightning-button> -->
 			<lightning-button
 				label="Start"
 				variant="success"
@@ -33,6 +33,19 @@
 				if:true={ui.btnStop.isVisible}
 				disabled={ui.btnStop.isDisabled}
 			></lightning-button>
+			<lightning-button-menu icon-name="utility:people">
+				<lightning-menu-item
+					label="Pick random attendee"
+					onclick={onRandomClick}
+					if:true={ui.btnRandom.isVisible}
+					disabled={ui.btnRandom.isDisabled}
+				></lightning-menu-item>
+				<lightning-menu-divider></lightning-menu-divider>
+				<lightning-menu-subheader label="Orgs"></lightning-menu-subheader>
+				<lightning-menu-item label="View"></lightning-menu-item>
+				<lightning-menu-item label="Assign"></lightning-menu-item>
+				<lightning-menu-item label="Reset"></lightning-menu-item>
+			</lightning-button-menu>
 		</lightning-button-group>
 		<lightning-layout multiple-rows>
 			<template if:true={ui.pnlSelectorDeliveries}>

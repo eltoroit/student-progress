@@ -89,25 +89,29 @@ export default class InstructorDelivery extends LightningElement {
 			isDisabled: !this.exercises?.currentId
 		};
 		ui.btnCurrent = {
-			isVisible: this.courses?.currentId,
-			isDisabled: !this.exercises?.activeId || isCurrentActive()
+			isVisible: false, // this.courses?.currentId
+			isDisabled: !this.exercises?.currentId || !this.exercises?.activeId || isCurrentActive()
 		};
-		ui.btnNext = {
-			isVisible: this.courses?.currentId,
-			isDisabled: this.exercises?.activeId || !this.exercises?.currentId || isCurrentActive() || !hasNext()
-		};
+		// ui.btnNext = {
+		// 	isVisible: this.courses?.currentId,
+		// 	isDisabled: !this.exercises?.currentId || !this.exercises?.currentId || this.exercises?.activeId || isCurrentActive() || !hasNext()
+		// };
 		ui.btnStart = {
-			isVisible: this.courses?.currentId,
-			isDisabled: this.exercises?.activeId || !this.exercises?.currentId || isCurrentActive()
+			isVisible: false, // this.courses?.currentId
+			isDisabled: !this.courses?.currentId || this.exercises?.activeId || !this.exercises?.currentId || isCurrentActive()
 		};
 		ui.btnStop = {
-			isVisible: this.courses?.currentId,
-			isDisabled: !this.exercises?.activeId || !this.exercises?.currentId || !isCurrentActive()
+			isVisible: false, // 
+			isDisabled: !this.courses?.currentId || !this.exercises?.activeId || !this.exercises?.currentId || !isCurrentActive()
 		};
 		ui.btnRefresh = {
 			isVisible: true,
 			isDisabled: false
 		};
+		ui.btnStop.isVisible = !ui.btnStop.isDisabled;
+		ui.btnStart.isVisible = !ui.btnStart.isDisabled;
+		ui.btnStart.isVisible = !ui.btnStart.isDisabled;
+		ui.btnCurrent.isVisible = !ui.btnCurrent.isDisabled;
 
 		ui.pnlSelectorDeliveries = true;
 		ui.pnlSelectorCourses = this.deliveries?.currentId;
