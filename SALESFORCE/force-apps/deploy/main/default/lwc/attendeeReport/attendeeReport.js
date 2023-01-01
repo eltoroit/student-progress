@@ -41,7 +41,7 @@ export default class Attendee extends LightningElement {
 		ui.pnlDelivery = hasDelivery();
 		ui.pnlAttendee = hasAttendee();
 		ui.pnlButtons = hasExercise();
-		ui.pnlOrg = hasAttendee() && this.attendeeData?.attendee?.Org_Username__c;
+		ui.pnlOrg = hasAttendee() && this.attendeeData?.attendee?.OrgUsername__c;
 		return ui;
 	}
 

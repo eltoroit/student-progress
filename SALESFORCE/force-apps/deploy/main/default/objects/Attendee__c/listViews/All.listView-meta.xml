@@ -6,7 +6,7 @@
     <columns>Delivery__c</columns>
     <columns>IsInstructor__c</columns>
     <columns>RECORDTYPE</columns>
-    <columns>Org_Username__c</columns>
+    <columns>OrgUsername__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

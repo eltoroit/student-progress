@@ -542,7 +542,7 @@ export default class InstructorDelivery extends LightningElement {
 				row.name += ` 🧑‍🏫`;
 				row.isInstructor = true;
 			}
-			row.username = attendee.Org_Username__c;
+			row.username = attendee.OrgUsername__c;
 			if (attendee.Exercises_X_Attendees__r?.length > 0) {
 				const rowData = attendee.Exercises_X_Attendees__r[0];
 				row.ExAId = rowData?.Id;

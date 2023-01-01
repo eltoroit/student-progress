@@ -103,7 +103,7 @@ public without sharing class Data {
 				Id,
 				Name__c,
 				IsInstructor__c,
-				Org_Username__c,
+				OrgUsername__c,
 				(
 					SELECT Id, Status__c, CreatedDate, lastModifiedDate
 					FROM Exercises_X_Attendees__r
@@ -251,6 +251,7 @@ public without sharing class Data {
 
 	@AuraEnabled
 	public static Attendee__c registerAttendee(Id deliveryId, Attendee__c attendee) {
+		attendee.recordTypeId = Schema.SObjectType.Attendee__c.getRecordTypeInfosByName().get('Attendee').getRecordTypeId();
 		upsert attendee;
 		return attendee;
 	}
@@ -268,9 +269,9 @@ public without sharing class Data {
 				Nickname__c,
 				Email__c,
 				Delivery__c,
-				Org_Username__c,
-				Org_Password_Assigned__c,
-				Org_Password_Changed__c
+				OrgUsername__c,
+				OrgPasswordAssigned__c,
+				OrgPasswordChanged__c
 			FROM Attendee__c
 			WHERE Id = :attendeeId
 		];
@@ -337,15 +338,15 @@ public without sharing class Data {
 	@AuraEnabled
 	public static void AssignOrgNumbers(Id deliveryId, Id courseId, Boolean isReset) {
 		Delivery__c delivery = [
-			SELECT Id, OrgFirstNumber__c, OrgLastNumber__c, (SELECT Id, Org_Username__c FROM Attendees__r ORDER BY IsInstructor__c DESC, Name__c ASC)
+			SELECT Id, OrgFirstNumber__c, OrgLastNumber__c, (SELECT Id, OrgUsername__c FROM Attendees__r ORDER BY IsInstructor__c DESC, Name__c ASC)
 			FROM Delivery__c
 			WHERE Id = :deliveryId
 		];
 		if (isReset) {
 			for (Attendee__c att : delivery.Attendees__r) {
-				att.Org_Username__c = null;
-				att.Org_Password_Assigned__c = null;
-				att.Org_Password_Changed__c = null;
+				att.OrgUsername__c = null;
+				att.OrgPasswordAssigned__c = null;
+				att.OrgPasswordChanged__c = null;
 			}
 		} else {
 			Integer orgFirstNumber = Integer.valueOf(delivery.OrgFirstNumber__c);
@@ -370,7 +371,7 @@ public without sharing class Data {
 
 			// Reserve usernames already assigned
 			for (Attendee__c att : delivery.Attendees__r) {
-				String username = att.Org_Username__c;
+				String username = att.OrgUsername__c;
 				if (username != null) {
 					assignedUsernames.put(username, att);
 					availableUsernames.remove(availableUsernames.indexOf(username));
@@ -382,9 +383,9 @@ public without sharing class Data {
 			for (Attendee__c att : requiresUsername) {
 				String username = availableUsernames[0];
 				availableUsernames.remove(availableUsernames.indexOf(username));
-				att.Org_Username__c = username;
-				att.Org_Password_Assigned__c = course.OrgPasswordAssigned__c;
-				att.Org_Password_Changed__c = course.OrgPasswordChanged__c;
+				att.OrgUsername__c = username;
+				att.OrgPasswordAssigned__c = course.OrgPasswordAssigned__c;
+				att.OrgPasswordChanged__c = course.OrgPasswordChanged__c;
 			}
 		}
 		update delivery.Attendees__r;

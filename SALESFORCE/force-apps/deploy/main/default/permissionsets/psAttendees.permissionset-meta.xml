@@ -36,17 +36,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Attendee__c.Org_Password_Assigned__c</field>
+        <field>Attendee__c.OrgPasswordAssigned__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Attendee__c.Org_Password_Changed__c</field>
+        <field>Attendee__c.OrgPasswordChanged__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Attendee__c.Org_Username__c</field>
+        <field>Attendee__c.OrgUsername__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

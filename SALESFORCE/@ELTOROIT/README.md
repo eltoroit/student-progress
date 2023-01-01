@@ -2,23 +2,15 @@
 
 # TO DO
 
--   Assign org Ids
-    -   Include late registrations
-    -   Display URL (login.salesforce.com), username, and password.
-        -   Click on any text will copy to clipboard
-    -   DEX602 only needs the org at the start of the class on Monday
-    -   Some private workshops have a combination of courses and the orgs change during the week
+-   Add Survey link for the delivery
+-   Add a timer for breaks
+    -   Steal the clock from THCM
 -   Class notes
     -   Export to PDF and email it to attendees
     -   Include images, and links
     -   Sorted by CreatedDate
     -   Add a note to the exercise, like "We took a break while doing the exercise"
--   Add a timer for breaks
-    -   Steal the clock from THCM
 -   Make an option to call attendance
--   QR code is not being shown consistently
-    -   Consider hardcoding the URL when deploying to production
-    -   Consider hosting the images in Heroku to avoid Static Resources, but do this once Heroku is in production
 -   Revisit Socket.io events
     -   There is a slight delay when the student reports the completion, and the instructor screen being updated.
         -   This could probably ork faster if the student emits a socket to the instructor
@@ -30,6 +22,7 @@
     -   Do I really have to refresh the whole screen when anything changes?
         -   Can I be smart and only do what's required when I receive a notification?
     -   Think of adding Socket.io rooms for the deliveryId
+-   Add more spinners
 -   Exceeding plaform events on large data changes.
     -   25 Attendees, 20 Exercises, 20 classes will exceed the daily limits
     -   Do not use PE to change the status of the exercise, do a callout instead or call the Socket.io directly
@@ -37,9 +30,9 @@
     -   Salesforce App
     -   Needs to activate an exercise
     -   Can watch the timer during a break
--   Add more spinners
--   Add Survey link for the delivery
--
+-   QR code is not being shown consistently
+    -   Consider hardcoding the URL when deploying to production
+    -   Consider hosting the images in Heroku to avoid Static Resources, but do this once Heroku is in production
 
 # DONE
 
@@ -77,3 +70,9 @@
     -   Company (if private)
     -   City
 -   Exercise should automatically stop when all attendees are done (or they indicated "LATER")
+-   Assign org Ids
+    -   Include late registrations
+    -   Display URL (login.salesforce.com), username, and password.
+        -   Click on any text will copy to clipboard
+    -   DEX602 only needs the org at the start of the class on Monday
+    -   Some private workshops have a combination of courses and the orgs change during the week
