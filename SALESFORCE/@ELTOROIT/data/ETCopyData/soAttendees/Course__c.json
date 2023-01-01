@@ -4,9 +4,9 @@
 		{
 			"attributes": {
 				"type": "Course__c",
-				"url": "/services/data/v56.0/sobjects/Course__c/a02DM00000Cbz2gYAB"
+				"url": "/services/data/v56.0/sobjects/Course__c/a028F000002hW95QAE"
 			},
-			"Id": "a02DM00000Cbz2gYAB",
+			"Id": "a028F000002hW95QAE",
 			"Name": "DEX602",
 			"OrgPasswordAssigned__c": "Password1",
 			"OrgPasswordChanged__c": "Password2",
@@ -15,9 +15,9 @@
 		{
 			"attributes": {
 				"type": "Course__c",
-				"url": "/services/data/v56.0/sobjects/Course__c/a02DM00000Cbz2hYAB"
+				"url": "/services/data/v56.0/sobjects/Course__c/a028F000002hW96QAE"
 			},
-			"Id": "a02DM00000Cbz2hYAB",
+			"Id": "a028F000002hW96QAE",
 			"Name": "DEX403",
 			"OrgPasswordAssigned__c": "Password1",
 			"OrgPasswordChanged__c": "Password2",
@@ -26,9 +26,9 @@
 		{
 			"attributes": {
 				"type": "Course__c",
-				"url": "/services/data/v56.0/sobjects/Course__c/a02DM00000Cbz2iYAB"
+				"url": "/services/data/v56.0/sobjects/Course__c/a028F000002hW97QAE"
 			},
-			"Id": "a02DM00000Cbz2iYAB",
+			"Id": "a028F000002hW97QAE",
 			"Name": "DEX450",
 			"OrgPasswordAssigned__c": "Password1",
 			"OrgPasswordChanged__c": "Password2",
