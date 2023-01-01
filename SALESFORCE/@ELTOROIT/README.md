@@ -5,6 +5,18 @@
 -   Add Survey link for the delivery
 -   Add a timer for breaks
     -   Steal the clock from THCM
+        -   https://git.soma.salesforce.com/aperez/THCM/tree/master/Salesforce/force-apps/deploy/main/default/lwc
+    -   Show clock with classroom time
+-   Points
+    -   Do not give points for 1st, 2nd, 3rd
+        -   Assuing 15 students: 15, 14, 13, 12, 11, 10, ...
+    -   Instead divide the class in groups
+        -   3 groups
+            -   Assuming 20 students: (1-7)(8-14)(15-20)
+            -   Assuming 15 students: (1-5)(6-10)(11-15)
+            -   Assuming 10 students: (1-3)(4-6)(7-10)
+        -   Give points per group (3, 2, 1)
+    -   This will allow to be more competitive
 -   Class notes
     -   Export to PDF and email it to attendees
     -   Include images, and links

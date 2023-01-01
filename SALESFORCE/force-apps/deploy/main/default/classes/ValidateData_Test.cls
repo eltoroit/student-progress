@@ -58,8 +58,8 @@ public without sharing class ValidateData_Test {
 		insert CxD;
 
 		Exercise_X_Attendee__c ExA = new Exercise_X_Attendee__c();
-		ExA.Attendee__c = instructor.Id;
-		ExA.Delivery__c = 'Test Value 4 De...';
+		ExA.Attendee__c = student.Id;
+		ExA.Delivery__c = delivery.Id;
 		ExA.Exercise__c = exercise.Id;
 		ExA.Status__c = '00-START';
 		insert ExA;
