@@ -10,7 +10,7 @@ export default class WebsocketManager extends LightningElement {
 	async connectedCallback() {
 		try {
 			await loadScript(this, `${srAttendees}/socket.io.min.js`);
-			this.socket = window.io("https://th-attendee-reporting-staging.herokuapp.com"); /// This should be read from some config settings (MDT?)
+			this.socket = window.io("https://th-attendee-reporting-bug.herokuapp.com"); /// This should be read from some config settings (MDT?)
 			this.connection();
 			this.listen();
 			this.initialized = true;
