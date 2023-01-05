@@ -1,4 +1,14 @@
-# How to improve it?
+# Heroku
+
+-   Export config vars
+    `heroku config --app=th-attendee-reporting-staging --shell`
+-   Import config vars
+    `heroku config:set --app=th-attendee-reporting-bug VAR=VALUE`
+-   Copy from app to app
+    `heroku config:set $(heroku config -s -a [source-app] |grep -v '^HEROKU_') -a [destination-app]`
+    `heroku config:set $(heroku config -s -a th-attendee-reporting-staging |grep -v '^HEROKU_') -a th-attendee-reporting-bug`
+-   Enable Heroku Labs config vars
+    `heroku labs:enable runtime-dyno-metadata -a th-attendee-reporting-bug`
 
 # TO DO
 
